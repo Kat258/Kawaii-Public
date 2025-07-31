@@ -30,11 +30,9 @@ public class Step extends Module {
 			add(new BooleanSetting("InBlockPause", true));
 	public final BooleanSetting sneakingPause =
 			add(new BooleanSetting("SneakingPause", true));
-	public final BooleanSetting pathingPause =
-			add(new BooleanSetting("PathingPause", true));
 	public Step() {
-		super("Step", "Steps up blocks.", Category.Movement);
-		setChinese("步行辅助");
+		super("Step", Category.Movement);
+		INSTANCE = this;
 	}
 
 	@Override
@@ -50,9 +48,9 @@ public class Step extends Module {
 	}
 
 	boolean timer;
-    @Override
-    public void onUpdate() {
-		if (pathingPause.getValue() || sneakingPause.getValue() && mc.player.isSneaking() || inBlockPause.getValue() && Kawaii.PLAYER.insideBlock || mc.player.isInLava() || mc.player.isTouchingWater() || inWebPause.getValue() && Kawaii.PLAYER.isInWeb(mc.player) || !mc.player.isOnGround() || onlyMoving.getValue() && !MovementUtil.isMoving() || surroundPause.getValue() && (Surround.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
+	@Override
+	public void onUpdate() {
+		if ( sneakingPause.getValue() && mc.player.isSneaking() || inBlockPause.getValue() && Kawaii.PLAYER.insideBlock || mc.player.isInLava() || mc.player.isTouchingWater() || inWebPause.getValue() && Kawaii.PLAYER.isInWeb(mc.player) || !mc.player.isOnGround() || onlyMoving.getValue() && !MovementUtil.isMoving() || surroundPause.getValue() && (Surround.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
 			mc.player.setStepHeight(0.6f);
 			return;
 		}

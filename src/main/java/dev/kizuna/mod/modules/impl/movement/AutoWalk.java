@@ -6,11 +6,11 @@ import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 public class AutoWalk extends Module {
     public AutoWalk() {
         super("AutoWalk", Category.Movement);
-        setChinese("自动前进");
         INSTANCE = this;
     }
     public enum Mode {
         Forward,
+        Path
     }
 
     EnumSetting<Mode> mode = add(new EnumSetting<>("Mode", Mode.Forward));
@@ -32,5 +32,9 @@ public class AutoWalk extends Module {
         if (mode.is(Mode.Forward)) {
             mc.options.forwardKey.setPressed(true);
         }
+    }
+
+    public boolean forward() {
+        return isOn() && mode.is(Mode.Forward);
     }
 }

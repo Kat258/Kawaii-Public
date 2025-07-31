@@ -19,8 +19,7 @@ import java.util.stream.Collectors;
 
 public class Arraylist extends Module {
     public Arraylist() {
-        super("ArrayList", Category.Client);
-        setChinese("功能列表");
+        super("Arraylist", Category.Client);
         INSTANCE = this;
     }
 
@@ -42,12 +41,12 @@ public class Arraylist extends Module {
     private final BooleanSetting scissor = add(new BooleanSetting("Scissor", false));
     private final BooleanSetting onlyBind = add(new BooleanSetting("OnlyBind", false));
     private final EnumSetting<ColorMode> colorMode = add(new EnumSetting<>("ColorMode", ColorMode.Pulse));
+    private final ColorSetting color = add(new ColorSetting("Color", new Color(173, 0, 0, 255), () -> colorMode.getValue() != ColorMode.Rainbow));
     private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> colorMode.getValue() == ColorMode.Rainbow ));
     private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> colorMode.getValue() == ColorMode.Rainbow ));
+    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> colorMode.getValue() == ColorMode.Rainbow));
     private final SliderSetting pulseSpeed = add(new SliderSetting("PulseSpeed", 1, 0, 5, 0.1, () -> colorMode.getValue() == ColorMode.Pulse ));
     private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50, () -> colorMode.getValue() == ColorMode.Pulse));
-    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> colorMode.getValue() == ColorMode.Rainbow));
-    private final ColorSetting color = add(new ColorSetting("Color", new Color(173, 0, 0, 255), () -> colorMode.getValue() != ColorMode.Rainbow));
     private final ColorSetting endColor = add(new ColorSetting("EndColor", new Color(255, 0, 0, 255), () -> colorMode.getValue() == ColorMode.Pulse));
     private final BooleanSetting rect = add(new BooleanSetting("Rect", true));
     private final BooleanSetting backGround = add(new BooleanSetting("BackGround", true).setParent());
@@ -204,7 +203,7 @@ public class Arraylist extends Module {
     }
 
 
-    private Color rainbow(int delay) {
+    public Color rainbow(int delay) {
         if (colorMode.getValue() == ColorMode.Pulse) {
             return ColorUtil.pulseColor(color.getValue(), endColor.getValue(), delay, pulseCounter.getValueInt(), pulseSpeed.getValue());
         } else if (colorMode.getValue() == ColorMode.Rainbow) {
@@ -220,7 +219,7 @@ public class Arraylist extends Module {
         }
         return mc.textRenderer.getWidth(text);
     }
-    
+
     private int getFontHeight() {
         if (font.getValue()) {
             return (int) FontRenderers.ui.getFontHeight();

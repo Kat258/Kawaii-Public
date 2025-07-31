@@ -187,7 +187,7 @@ public abstract class MixinMinecraftClient extends ReentrantThreadExecutor<Runna
 			return;
 		}
 
-		setWindowIcon(Kawaii.class.getResourceAsStream("/icon.png"), Kawaii.class.getResourceAsStream("/icon.png"));
+		setWindowIcon(Kawaii.class.getResourceAsStream("/assets/minecraft/icon.png"), Kawaii.class.getResourceAsStream("/assets/minecraft/icon.png"));
 	}
 
 	public void setWindowIcon(InputStream img16x16, InputStream img32x32) {
