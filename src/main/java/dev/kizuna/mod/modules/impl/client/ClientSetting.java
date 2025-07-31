@@ -21,7 +21,7 @@ public class ClientSetting extends Module {
     public final BooleanSetting titleFix = add(new BooleanSetting("TitleFix", true, () -> page.is(Page.Game)));
     private final BooleanSetting portalGui = add(new BooleanSetting("PortalGui", true, () -> page.is(Page.Game)));
 
-    public final StringSetting windowTitle = add(new StringSetting("WindowTitle", Kawaii.NAME, () -> page.is(Page.Misc)));
+    public final StringSetting windowTitle = add(new StringSetting("WindowTitle", "idea64", () -> page.is(Page.Misc)));
     public final BooleanSetting titleOverride = add(new BooleanSetting("TitleOverride", true, () -> page.is(Page.Misc)));
     public final BooleanSetting debug = add(new BooleanSetting("DebugException", true, () -> page.is(Page.Misc)));
     public final BooleanSetting caughtException = add(new BooleanSetting("CaughtException", false, () -> page.is(Page.Misc)).setParent());

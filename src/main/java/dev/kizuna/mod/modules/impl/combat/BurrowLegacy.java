@@ -50,10 +50,8 @@ public class BurrowLegacy extends Module {
     private final BooleanSetting usingPause = add(new BooleanSetting("UsingPause", false));
     private final BooleanSetting down = add(new BooleanSetting("Down", true));
     private final BooleanSetting noSelfPos = add(new BooleanSetting("NoSelfPos", false));
-    private final BooleanSetting packetPlace =
-            add(new BooleanSetting("PacketPlace", true));
-    private final BooleanSetting sound =
-            add(new BooleanSetting("Sound", true));
+    private final BooleanSetting packetPlace = add(new BooleanSetting("PacketPlace", true));
+    private final BooleanSetting sound = add(new BooleanSetting("Sound", true));
     private final SliderSetting blocksPer = add(new SliderSetting("BlocksPer", 4, 1, 4, 1));
     private final EnumSetting<RotateMode> rotate = add(new EnumSetting<>("RotateMode", RotateMode.Bypass));
     private final BooleanSetting breakCrystal = add(new BooleanSetting("Break", true));
@@ -71,7 +69,7 @@ public class BurrowLegacy extends Module {
     private final List<BlockPos> placePos = new ArrayList<>();
 
     public BurrowLegacy() {
-        super("Burrow", Category.Combat);
+        super("BurrowLegacy", Category.Combat);
         setChinese("卡黑曜石");
         INSTANCE = this;
     }
