@@ -32,8 +32,7 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ShulkerStealer extends Module {
-    public static ShulkerStealer INSTANCE;
-     private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", true));
+    private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", true));
     private final SliderSetting disableTime = add(new SliderSetting("DisableTime", 500, 0, 1000));
     public final BooleanSetting rotate = add(new BooleanSetting("Rotate", true));
     private final BooleanSetting place = add(new BooleanSetting("Place", true));
@@ -46,9 +45,9 @@ public class ShulkerStealer extends Module {
     private final SliderSetting minRange = add(new SliderSetting("MinRange", 1.0f, 0.0f, 3f));
     private final BooleanSetting mine = add(new BooleanSetting("Mine", true));
     private final BooleanSetting take = add(new BooleanSetting("Take", true));
+    private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, () -> take.getValue()));
     private final SliderSetting empty = add(new SliderSetting("Empty", 1, 0, 36, () -> take.getValue()));
     private final BooleanSetting smart = add(new BooleanSetting("Smart", true, () -> take.getValue()).setParent());
-    private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, () -> take.getValue()));
     private final SliderSetting helmet = add(new SliderSetting("Helmet", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting chestplate = add(new SliderSetting("ChestPlate", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting leggings = add(new SliderSetting("Leggings", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
@@ -66,7 +65,6 @@ public class ShulkerStealer extends Module {
     private final SliderSetting web = add(new SliderSetting("Web", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting glowstone = add(new SliderSetting("Glowstone", 256, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting anchor = add(new SliderSetting("Anchor", 256, 0, 512, () -> take.getValue() && smart.isOpen()));
-    private final SliderSetting obsidian = add(new SliderSetting("Glowstone", 256, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting piston = add(new SliderSetting("Piston", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting redstone = add(new SliderSetting("RedStone", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting pearl = add(new SliderSetting("Pearl", 16, 0, 64, () -> take.getValue() && smart.isOpen()));
@@ -74,7 +72,6 @@ public class ShulkerStealer extends Module {
 
     public ShulkerStealer() {
         super("ShulkerStealer", "Auto place shulker and replenish", Category.Player);
-        INSTANCE = this;
     }
 
     public int findShulker() {
@@ -162,7 +159,6 @@ public class ShulkerStealer extends Module {
         this.stealCountList[5] = (int) (this.web.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.COBWEB)));
         this.stealCountList[6] = (int) (this.glowstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.GLOWSTONE)));
         this.stealCountList[7] = (int) (this.anchor.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.RESPAWN_ANCHOR)));
-        this.stealCountList[6] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
         this.stealCountList[8] = (int) (this.pearl.getValue() - InventoryUtil.getItemCount(Items.ENDER_PEARL));
         this.stealCountList[9] = (int) (this.turtleMaster.getValue() - InventoryUtil.getPotCount(StatusEffects.RESISTANCE));
         this.stealCountList[10] = (int) (this.helmet.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.HELMET));
@@ -231,16 +227,14 @@ public class ShulkerStealer extends Module {
             }
             return;
         }
+        if (mergeStacks.getValue() && mc.player.currentScreenHandler instanceof ShulkerBoxScreenHandler shulker) {
+            mergeStacks(shulker);
+        }
         opend = true;
         if (!this.take.getValue()) {
             if (autoDisable.getValue()) this.disable2();
             return;
         }
-
-        if (mergeStacks.getValue() && mc.player.currentScreenHandler instanceof ShulkerBoxScreenHandler shulker) {
-            mergeStacks(shulker);
-        }
-
         boolean take = false;
         if (mc.player.currentScreenHandler instanceof ShulkerBoxScreenHandler shulker) {
             for (Slot slot : shulker.slots) {
@@ -254,6 +248,15 @@ public class ShulkerStealer extends Module {
         if (autoDisable.getValue() && !take) this.disable2();
     }
 
+    private void disable2() {
+        if (disableTimer.passedMs(disableTime.getValueInt())){
+            if(close.getValue()){
+                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+                mc.player.closeHandledScreen();
+            }
+            disable();
+        }
+    }
     private void mergeStacks(ShulkerBoxScreenHandler shulker) {
         Map<Item, List<Slot>> itemSlotsMap = new HashMap<>();
         for (Slot slot : shulker.slots) {
@@ -286,16 +289,6 @@ public class ShulkerStealer extends Module {
                 );
                 targetSpace -= amount;
             }
-        }
-    }
-
-    private void disable2() {
-        if (disableTimer.passedMs(disableTime.getValueInt())){
-            if(close.getValue()){
-                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
-                mc.player.closeHandledScreen();
-            }
-            disable();
         }
     }
     private boolean needSteal(final ItemStack i) {
