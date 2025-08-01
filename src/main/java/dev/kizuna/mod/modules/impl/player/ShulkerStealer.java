@@ -45,9 +45,9 @@ public class ShulkerStealer extends Module {
     private final SliderSetting minRange = add(new SliderSetting("MinRange", 1.0f, 0.0f, 3f));
     private final BooleanSetting mine = add(new BooleanSetting("Mine", true));
     private final BooleanSetting take = add(new BooleanSetting("Take", true));
-    private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, () -> take.getValue()));
-    private final SliderSetting empty = add(new SliderSetting("Empty", 1, 0, 36, () -> take.getValue()));
-    private final BooleanSetting smart = add(new BooleanSetting("Smart", true, () -> take.getValue()).setParent());
+    private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, take::getValue));
+    private final SliderSetting empty = add(new SliderSetting("Empty", 1, 0, 36, take::getValue));
+    private final BooleanSetting smart = add(new BooleanSetting("Smart", true, take::getValue).setParent());
     private final SliderSetting helmet = add(new SliderSetting("Helmet", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting chestplate = add(new SliderSetting("ChestPlate", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting leggings = add(new SliderSetting("Leggings", 1, 0, 36, () -> take.getValue() && smart.isOpen()));
@@ -258,39 +258,39 @@ public class ShulkerStealer extends Module {
         }
     }
     private void mergeStacks(ShulkerBoxScreenHandler shulker) {
-        Map<Item, List<Slot>> itemSlotsMap = new HashMap<>();
-        for (Slot slot : shulker.slots) {
-            if (slot.id >= 27 || slot.getStack().isEmpty()) continue;
-            Item item = slot.getStack().getItem();
-            itemSlotsMap.computeIfAbsent(item, k -> new ArrayList<>()).add(slot);
-        }
-        for (List<Slot> slots : itemSlotsMap.values()) {
-            if (slots.size() < 2) continue;
-            slots.sort((a, b) -> Integer.compare(b.getStack().getCount(), a.getStack().getCount()));
-            Slot targetSlot = slots.get(0);
-            int targetSpace = targetSlot.getStack().getMaxCount() - targetSlot.getStack().getCount();
-            if (targetSpace <= 0) continue;
-            for (int i = 1; i < slots.size() && targetSpace > 0; i++) {
-                Slot sourceSlot = slots.get(i);
-                ItemStack sourceStack = sourceSlot.getStack();
-                int amount = Math.min(sourceStack.getCount(), targetSpace);
-                if (amount <= 0) continue;
+            Map<Item, List<Slot>> itemSlotsMap = new HashMap<>();
+            for (Slot slot : shulker.slots) {
+                if (slot.id >= 27 || slot.getStack().isEmpty()) continue;
+                Item item = slot.getStack().getItem();
+                itemSlotsMap.computeIfAbsent(item, k -> new ArrayList<>()).add(slot);
+            }
+            for (List<Slot> slots : itemSlotsMap.values()) {
+                if (slots.size() < 2) continue;
+                slots.sort((a, b) -> Integer.compare(b.getStack().getCount(), a.getStack().getCount()));
+                Slot targetSlot = slots.get(0);
+                int targetSpace = targetSlot.getStack().getMaxCount() - targetSlot.getStack().getCount();
+                if (targetSpace <= 0) continue;
+                for (int i = 1; i < slots.size() && targetSpace > 0; i++) {
+                    Slot sourceSlot = slots.get(i);
+                    ItemStack sourceStack = sourceSlot.getStack();
+                    int amount = Math.min(sourceStack.getCount(), targetSpace);
+                    if (amount <= 0) continue;
 
-                // 2
-                mc.interactionManager.clickSlot(shulker.syncId, sourceSlot.id, 0, SlotActionType.PICKUP, mc.player);
-                mc.interactionManager.clickSlot(shulker.syncId, targetSlot.id, 0, SlotActionType.PICKUP, mc.player);
+                    // 2
+                    mc.interactionManager.clickSlot(shulker.syncId, sourceSlot.id, 0, SlotActionType.PICKUP, mc.player);
+                    mc.interactionManager.clickSlot(shulker.syncId, targetSlot.id, 0, SlotActionType.PICKUP, mc.player);
 
-                if (sourceStack.getCount() > amount) mc.interactionManager.clickSlot(
-                        shulker.syncId,
-                        sourceSlot.id,
-                        0,
-                        SlotActionType.PICKUP
-                        , mc.player
-                );
-                targetSpace -= amount;
+                    if (sourceStack.getCount() > amount && InventoryUtil.getEmptySlotCount() > empty.getValue()) mc.interactionManager.clickSlot(
+                            shulker.syncId,
+                            sourceSlot.id,
+                            0,
+                            SlotActionType.PICKUP
+                            , mc.player
+                    );
+                    targetSpace -= amount;
+                }
             }
         }
-    }
     private boolean needSteal(final ItemStack i) {
         if (i.getItem().equals(Items.END_CRYSTAL) && this.stealCountList[0] > 0) {
             stealCountList[0] = stealCountList[0] - i.getCount();

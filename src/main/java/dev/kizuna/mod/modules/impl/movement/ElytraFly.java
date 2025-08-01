@@ -30,12 +30,10 @@ public class ElytraFly extends Module {
     private final BooleanSetting autoStop = add(new BooleanSetting("AutoStop", true));
     private final BooleanSetting sprint = add(new BooleanSetting("Sprint", true, () -> mode.is(Mode.Bounce)));
     public final BooleanSetting autoJump = add(new BooleanSetting("AutoJump", true, () -> mode.is(Mode.Bounce)));
-    private final SliderSetting pitch =
-            add(new SliderSetting("Pitch", 88, -90, 90, .1, () -> mode.is(Mode.Bounce)));
+    private final SliderSetting pitch = add(new SliderSetting("Pitch", 88, -90, 90, .1, () -> mode.is(Mode.Bounce)));
     private final BooleanSetting instantFly = add(new BooleanSetting("AutoStart", true, () -> !mode.is(Mode.Bounce)));
     private final BooleanSetting firework = add(new BooleanSetting("Firework", false, () -> !mode.is(Mode.Bounce)));
-    private final SliderSetting delay =
-            add(new SliderSetting("Delay", 1000, 0, 20000, 50, () -> !mode.is(Mode.Bounce)));
+    private final SliderSetting delay = add(new SliderSetting("Delay", 1000, 0, 20000, 50, () -> !mode.is(Mode.Bounce)));
     private final SliderSetting timeout = add(new SliderSetting("Timeout", 0.5F, 0.1F, 1F, () -> !mode.is(Mode.Bounce)));
     public final SliderSetting upPitch = add(new SliderSetting("UpPitch", 0.0f, 0.0f, 90.0f, () -> mode.getValue() == Mode.Control));
     public final SliderSetting upFactor = add(new SliderSetting("UpFactor", 1.0f, 0.0f, 10.0f, () -> mode.getValue() == Mode.Control));
