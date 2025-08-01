@@ -165,7 +165,7 @@ public class Scaffold extends Module {
         }
     }
 
-    private boolean faceVector(Vec3d directionVec) {
+    private boolean faceVector(Vec3d directionVec) { //设置转头
         if (!yawStep.getValue()) {
             Kawaii.ROTATION.lookAt(directionVec);
             return true;
