@@ -224,7 +224,7 @@ public class ObiPlacer extends Module {
                 if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > range.getValue()) {
                     continue;
                 }
-                if (!canPlaceCrystal(pos, true, false)) continue;
+                if (!canPlaceBase(pos, true, false)) continue;
                 CombatUtil.modifyPos = pos.down();
                 CombatUtil.modifyBlockState = Blocks.OBSIDIAN.getDefaultState();
                 if (behindWall(pos)) continue;
@@ -273,7 +273,7 @@ public class ObiPlacer extends Module {
         }
     }
 
-    public boolean canPlaceCrystal(BlockPos pos, boolean ignoreCrystal, boolean ignoreItem) {
+    public boolean canPlaceBase(BlockPos pos, boolean ignoreCrystal, boolean ignoreItem) {
         BlockPos obsPos = pos.down();
         BlockPos boost = obsPos.up();
         BlockPos boost2 = boost.up();

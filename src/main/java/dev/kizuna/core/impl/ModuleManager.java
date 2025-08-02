@@ -138,6 +138,7 @@ public class ModuleManager implements Wrapper {
         addModule(new XRay());
         addModule(new ObiPlacer());
         //addModule(new RaytraceBypass());
+        addModule(new MyPing());
         addModule(new PacketEat());
         addModule(new PacketFly());
         addModule(new PacketMine());

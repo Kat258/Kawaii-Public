@@ -6,6 +6,7 @@ import dev.kizuna.api.utils.math.MathUtil;
 import dev.kizuna.api.utils.render.TextUtil;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.mod.modules.impl.combat.KawaiiAura;
 import dev.kizuna.mod.modules.impl.exploit.Blink;
 import dev.kizuna.mod.modules.impl.player.PacketMine;
 import dev.kizuna.mod.modules.impl.player.TimerModule;
@@ -29,6 +30,8 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
+
+import static dev.kizuna.mod.modules.impl.combat.KawaiiAura.crystalPos;
 import static dev.kizuna.mod.modules.settings.impl.ColorSetting.timer;
 
 public class HUD extends Module {
@@ -69,7 +72,7 @@ public class HUD extends Module {
     private final BooleanSetting pvphud = add(new BooleanSetting("PVPHud", false, () -> page.getValue() == Pages.Module).setParent());
     private final BooleanSetting totemtext = add(new BooleanSetting("TotemText", false, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
     private final BooleanSetting potiontext = add(new BooleanSetting("PotionText", false, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
-    private final SliderSetting pvpHudOffset = add(new SliderSetting("PVPHudOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
+    private final SliderSetting pvpHudOffset = add(new SliderSetting("PVPOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
 
     private final BooleanSetting mineprogress = add(new BooleanSetting("MineProgress", false, () -> page.getValue() == Pages.Module).setParent());
     private final SliderSetting yOffset = add(new SliderSetting("MineProgressY", 1, -45, 450, () -> page.getValue() == Pages.Module && mineprogress.isOpen()));
@@ -79,6 +82,9 @@ public class HUD extends Module {
 
     private final BooleanSetting blinkhud = add (new BooleanSetting("BlinkHud", false, () -> page.getValue() == Pages.Module).setParent());
     private final SliderSetting blinky = add (new SliderSetting("BlinkOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && blinkhud.isOpen()));
+
+    private final BooleanSetting crystalTarget = add(new BooleanSetting("CrystalTarget", false, () -> page.getValue() == Pages.Module).setParent());
+    private final SliderSetting crystalOffset = add (new SliderSetting("CrystalOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && crystalTarget.isOpen()));
 
     private Map<String, Integer> players = new HashMap<>();
     int pulseProgress = 0;
@@ -227,7 +233,7 @@ public class HUD extends Module {
         if (mineprogress.getValue()) {
             String string = PacketMine.INSTANCE.getInfo();
             if (!string.equals("Done")) {
-                string = "[" + string + "]";
+                string = "[" + PacketMine.INSTANCE.getInfo() + "]";
             }
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + yOffset.getValueInt());
         }
@@ -253,16 +259,17 @@ public class HUD extends Module {
             }
         }
         if (timerprogress.getValue()){
-            String timingString = "Timing ";
-            String timerInfo = TimerModule.INSTANCE.getInfo();
-            String string = timingString + timerInfo;
+            String string = "Timing " + TimerModule.INSTANCE.getInfo();
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + timery.getValueInt());
         }
         if ((blinkhud.getValue()) && Blink.INSTANCE.isOn()){
-            String blinkString = "BlinkPacket ";
-            String blinkinfo = Blink.INSTANCE.getInfo();
-            String string = blinkString + blinkinfo;
+            String string = "BlinkPacket" + Blink.INSTANCE.getInfo();
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + blinky.getValueInt());
+        }
+        if ((crystalTarget.getValue())){
+            String targetName = (crystalPos != null && KawaiiAura.INSTANCE.displayTarget != null) ? KawaiiAura.INSTANCE.displayTarget.getName().getString() : "None";
+            String string = "Target [" + targetName + "]";
+            drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + crystalOffset.getValueInt());
         }
     }
 

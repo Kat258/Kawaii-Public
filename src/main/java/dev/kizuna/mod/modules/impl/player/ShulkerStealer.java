@@ -227,7 +227,7 @@ public class ShulkerStealer extends Module {
             }
             return;
         }
-        if (mergeStacks.getValue() && mc.player.currentScreenHandler instanceof ShulkerBoxScreenHandler shulker) {
+        if (mergeStacks.getValue() && mc.player.currentScreenHandler instanceof ShulkerBoxScreenHandler shulker && InventoryUtil.getEmptySlotCount() > empty.getValue()) {
             mergeStacks(shulker);
         }
         opend = true;
@@ -280,7 +280,7 @@ public class ShulkerStealer extends Module {
                     mc.interactionManager.clickSlot(shulker.syncId, sourceSlot.id, 0, SlotActionType.PICKUP, mc.player);
                     mc.interactionManager.clickSlot(shulker.syncId, targetSlot.id, 0, SlotActionType.PICKUP, mc.player);
 
-                    if (sourceStack.getCount() > amount && InventoryUtil.getEmptySlotCount() > empty.getValue()) mc.interactionManager.clickSlot(
+                    if (sourceStack.getCount() > amount) mc.interactionManager.clickSlot(
                             shulker.syncId,
                             sourceSlot.id,
                             0,
