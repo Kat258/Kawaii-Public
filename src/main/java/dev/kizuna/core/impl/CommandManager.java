@@ -1,5 +1,6 @@
 package dev.kizuna.core.impl;
 
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import dev.kizuna.Kawaii;
 import dev.kizuna.api.interfaces.IChatHudHook;
 import dev.kizuna.api.utils.Wrapper;
@@ -7,6 +8,7 @@ import dev.kizuna.mod.commands.Command;
 import dev.kizuna.mod.commands.impl.*;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.ClientSetting;
+import net.minecraft.command.CommandSource;
 import net.minecraft.text.Text;
 
 import java.util.HashMap;
@@ -35,6 +37,7 @@ public class CommandManager implements Wrapper {
         registerCommand(new ToggleCommand());
         registerCommand(new TradeCommand());
         registerCommand(new WatermarkCommand());
+        //registerCommand(new KitCommand());
     }
 
     private void registerCommand(Command command) {
@@ -68,6 +71,9 @@ public class CommandManager implements Wrapper {
             // Runs the command.
             command.runCommand(parameterList);
         }
+    }
+    public static LiteralArgumentBuilder<CommandSource> literal(final String name) {
+        return LiteralArgumentBuilder.literal(name);
     }
     public static void sendChatMessage(String message) {
         if (Module.nullCheck()) return;
