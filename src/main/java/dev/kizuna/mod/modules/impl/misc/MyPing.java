@@ -8,10 +8,8 @@ import net.minecraft.client.network.PlayerListEntry;
 import java.util.*;
 
 public class MyPing extends Module {
-    private final SliderSetting randoms =
-            add(new SliderSetting("Random", 3, 0, 20,1));
-    private final SliderSetting delay =
-            add(new SliderSetting("Delay", 5, 0, 60,0.1).setSuffix("s"));
+    private final SliderSetting randoms = add(new SliderSetting("Random", 3, 0, 20,1));
+    private final SliderSetting delay = add(new SliderSetting("Delay", 5, 0, 60,0.1).setSuffix("s"));
 
     public MyPing() {
         super("MyPing", Category.Misc);
@@ -41,7 +39,7 @@ public class MyPing extends Module {
         } else {
             ping = String.valueOf(playerListEntry.getLatency());
         }
-        mc.getNetworkHandler().sendChatMessage("My Ping:" + ping + " ["  + randomString + "]");
+        mc.getNetworkHandler().sendChatMessage("My Ping:" + ping + " [" + randomString + "]");
     }
 
 
