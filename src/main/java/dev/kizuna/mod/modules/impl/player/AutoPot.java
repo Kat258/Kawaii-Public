@@ -38,6 +38,7 @@ public class AutoPot extends Module {
     private final BooleanSetting usingPause = add(new BooleanSetting("UsingPause", true));
     private final BooleanSetting onlyGround = add(new BooleanSetting("OnlyGround", true));
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
+    private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", false));
     private final Timer delayTimer = new Timer();
 
     public AutoPot() {
@@ -86,6 +87,7 @@ public class AutoPot extends Module {
                     Kawaii.ROTATION.snapBack();
                 }
                 delayTimer.reset();
+                if (autoDisable.getValue()) disable();
             } else if ((newSlot = findPotion(targetEffect)) != -1) {
                 Kawaii.ROTATION.snapAt(Kawaii.ROTATION.rotationYaw, 90);
                 InventoryUtil.switchToSlot(newSlot);
@@ -95,6 +97,7 @@ public class AutoPot extends Module {
                     Kawaii.ROTATION.snapBack();
                 }
                 delayTimer.reset();
+                if (autoDisable.getValue()) disable();
             }
         }
     }

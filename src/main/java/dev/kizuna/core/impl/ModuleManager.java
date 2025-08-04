@@ -172,6 +172,7 @@ public class ModuleManager implements Wrapper {
         addModule(new XCarry());
         addModule(new Zoom());
         addModule(new BetterTab());
+        addModule(new PlayerNotifier());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
