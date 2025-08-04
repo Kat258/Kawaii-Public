@@ -20,6 +20,8 @@ public class BreakESP extends Module {
 	public static BreakESP INSTANCE;
 	private final ColorSetting box = add(new ColorSetting("Box", new Color(255, 255, 255, 255)).injectBoolean(true));
 	private final ColorSetting fill = add(new ColorSetting("Fill", new Color(255, 255, 255, 100)).injectBoolean(true));
+	private final ColorSetting nameESP = add(new ColorSetting("NameESP", new Color(255, 255, 255, 255)).injectBoolean(true));
+	private final ColorSetting breakProgress = add(new ColorSetting("BreakProgress", new Color(255, 6, 6, 255)).injectBoolean(true));
 	public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 500, 0, 2000).setSuffix("ms"));
 	public final SliderSetting breakTime = add(new SliderSetting("BreakTime", 2.5, 0, 5, 0.1).setSuffix("s"));
 	private final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut));
@@ -44,9 +46,14 @@ public class BreakESP extends Module {
 			if (box.booleanValue) {
 				Render3DUtil.drawBox(matrixStack, cbox, box.getValue());
 			}
-			Render3DUtil.drawText3D(breakData.getEntity().getName().getString(), breakData.pos.toCenterPos().add(0, 0.15, 0), -1);
-			double breakTime = this.breakTime.getValue() * 1000;
-			Render3DUtil.drawText3D(Text.of(df.format(Math.min(1, breakData.timer.getPassedTimeMs() / breakTime) * 100)), breakData.pos.toCenterPos().add(0, -0.15, 0), 0, 0, 1, ColorUtil.fadeColor(new Color(255, 6, 6), new Color(0, 255, 12), breakData.timer.getPassedTimeMs() / breakTime));
+			if (nameESP.booleanValue) {
+				Render3DUtil.drawText3D(breakData.getEntity().getName().getString(), breakData.pos.toCenterPos().add(0, 0.15, 0), nameESP.getValue().getRGB());
+			}
+			if (breakProgress.booleanValue) {
+				double breakTime = this.breakTime.getValue() * 1000;
+				double progress = Math.min(1, breakData.timer.getPassedTimeMs() / breakTime);
+				Render3DUtil.drawText3D(Text.of(df.format(progress * 100)), breakData.pos.toCenterPos().add(0, -0.15, 0), 0, 0, 1, ColorUtil.fadeColor(new Color(255, 6, 6), new Color(0, 255, 12), progress));
+			}
 			//mc.world.isAir(breakData.pos) ? "Broken" : "Breaking"
 		}
 	}

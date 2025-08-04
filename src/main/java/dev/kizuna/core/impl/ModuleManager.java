@@ -171,6 +171,7 @@ public class ModuleManager implements Wrapper {
         addModule(new ViewModel());
         addModule(new XCarry());
         addModule(new Zoom());
+        addModule(new BetterTab());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 

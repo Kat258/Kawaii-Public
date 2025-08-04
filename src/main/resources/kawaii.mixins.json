@@ -76,7 +76,8 @@
     "mixins.MixinTitleScreen",
     "mixins.MixinTotemParticle",
     "mixins.MixinWorld",
-    "mixins.MixinWorldRenderer"
+    "mixins.MixinWorldRenderer",
+    "mixins.MixinPlayerListHud"
   ],
   "injectors": {
     "defaultRequire": 1
