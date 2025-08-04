@@ -39,6 +39,7 @@ public class AutoPot extends Module {
     private final BooleanSetting onlyGround = add(new BooleanSetting("OnlyGround", true));
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
     private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", false));
+    private final BooleanSetting noCheck = add(new BooleanSetting("NoCheck", false));
     private final Timer delayTimer = new Timer();
 
     public AutoPot() {
@@ -56,14 +57,14 @@ public class AutoPot extends Module {
     @Override
     public void onUpdate() {
         if (!onlyGround.getValue() || mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0)))) {
-            if (speed.getValue() && !mc.player.hasStatusEffect(StatusEffects.SPEED)) {
+            if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
                 throwing = checkThrow(StatusEffects.SPEED);
                 if (isThrow() && delayTimer.passedMs(delay.getValue() * 1000)) {
                     throwPotion(StatusEffects.SPEED);
                     return;
                 }
             }
-            if (resistance.getValue() && (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2)) {
+            if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
                 throwing = checkThrow(StatusEffects.RESISTANCE);
                 if (isThrow() && delayTimer.passedMs(delay.getValue() * 1000)) {
                     throwPotion(StatusEffects.RESISTANCE);
