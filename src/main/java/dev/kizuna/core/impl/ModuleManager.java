@@ -74,8 +74,8 @@ public class ModuleManager implements Wrapper {
         addModule(new BowBomb());
         addModule(new BreakESP());
         addModule(new TrueAttackCooldown());
-        addModule(new BurrowLegacy());
         addModule(new Burrow());
+        addModule(new Selffill());
         addModule(new CameraClip());
         addModule(new ChatAppend());
         addModule(new AutoBurrow());
