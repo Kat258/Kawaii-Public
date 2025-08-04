@@ -68,7 +68,8 @@ public class ShulkerStealer extends Module {
     private final SliderSetting piston = add(new SliderSetting("Piston", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting redstone = add(new SliderSetting("RedStone", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting pearl = add(new SliderSetting("Pearl", 16, 0, 64, () -> take.getValue() && smart.isOpen()));
-    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private final SliderSetting obsidian = add(new SliderSetting("Obsidian", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
+    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public ShulkerStealer() {
         super("ShulkerStealer", "Auto place shulker and replenish", Category.Player);
@@ -171,6 +172,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[17] = (int) (this.piston.getValue() - InventoryUtil.getClassCount(PistonBlock.class));
         this.stealCountList[18] = (int) (this.redstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.REDSTONE_BLOCK)));
         this.stealCountList[19] = (int) (this.cfruit.getValue() - InventoryUtil.getItemCount(Items.CHORUS_FRUIT));
+        this.stealCountList[20] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
     }
 
     @Override
@@ -258,39 +260,39 @@ public class ShulkerStealer extends Module {
         }
     }
     private void mergeStacks(ShulkerBoxScreenHandler shulker) {
-            Map<Item, List<Slot>> itemSlotsMap = new HashMap<>();
-            for (Slot slot : shulker.slots) {
-                if (slot.id >= 27 || slot.getStack().isEmpty()) continue;
-                Item item = slot.getStack().getItem();
-                itemSlotsMap.computeIfAbsent(item, k -> new ArrayList<>()).add(slot);
-            }
-            for (List<Slot> slots : itemSlotsMap.values()) {
-                if (slots.size() < 2) continue;
-                slots.sort((a, b) -> Integer.compare(b.getStack().getCount(), a.getStack().getCount()));
-                Slot targetSlot = slots.get(0);
-                int targetSpace = targetSlot.getStack().getMaxCount() - targetSlot.getStack().getCount();
-                if (targetSpace <= 0) continue;
-                for (int i = 1; i < slots.size() && targetSpace > 0; i++) {
-                    Slot sourceSlot = slots.get(i);
-                    ItemStack sourceStack = sourceSlot.getStack();
-                    int amount = Math.min(sourceStack.getCount(), targetSpace);
-                    if (amount <= 0) continue;
+        Map<Item, List<Slot>> itemSlotsMap = new HashMap<>();
+        for (Slot slot : shulker.slots) {
+            if (slot.id >= 27 || slot.getStack().isEmpty()) continue;
+            Item item = slot.getStack().getItem();
+            itemSlotsMap.computeIfAbsent(item, k -> new ArrayList<>()).add(slot);
+        }
+        for (List<Slot> slots : itemSlotsMap.values()) {
+            if (slots.size() < 2) continue;
+            slots.sort((a, b) -> Integer.compare(b.getStack().getCount(), a.getStack().getCount()));
+            Slot targetSlot = slots.get(0);
+            int targetSpace = targetSlot.getStack().getMaxCount() - targetSlot.getStack().getCount();
+            if (targetSpace <= 0) continue;
+            for (int i = 1; i < slots.size() && targetSpace > 0; i++) {
+                Slot sourceSlot = slots.get(i);
+                ItemStack sourceStack = sourceSlot.getStack();
+                int amount = Math.min(sourceStack.getCount(), targetSpace);
+                if (amount <= 0) continue;
 
-                    // 2
-                    mc.interactionManager.clickSlot(shulker.syncId, sourceSlot.id, 0, SlotActionType.PICKUP, mc.player);
-                    mc.interactionManager.clickSlot(shulker.syncId, targetSlot.id, 0, SlotActionType.PICKUP, mc.player);
+                // 2
+                mc.interactionManager.clickSlot(shulker.syncId, sourceSlot.id, 0, SlotActionType.PICKUP, mc.player);
+                mc.interactionManager.clickSlot(shulker.syncId, targetSlot.id, 0, SlotActionType.PICKUP, mc.player);
 
-                    if (sourceStack.getCount() > amount) mc.interactionManager.clickSlot(
-                            shulker.syncId,
-                            sourceSlot.id,
-                            0,
-                            SlotActionType.PICKUP
-                            , mc.player
-                    );
-                    targetSpace -= amount;
-                }
+                if (sourceStack.getCount() > amount) mc.interactionManager.clickSlot(
+                        shulker.syncId,
+                        sourceSlot.id,
+                        0,
+                        SlotActionType.PICKUP
+                        , mc.player
+                );
+                targetSpace -= amount;
             }
         }
+    }
     private boolean needSteal(final ItemStack i) {
         if (i.getItem().equals(Items.END_CRYSTAL) && this.stealCountList[0] > 0) {
             stealCountList[0] = stealCountList[0] - i.getCount();
@@ -375,6 +377,10 @@ public class ShulkerStealer extends Module {
         }
         if (i.getItem().equals(Items.CHORUS_FRUIT) && this.stealCountList[19] > 0) {
             stealCountList[19] = stealCountList[19] - i.getCount();
+            return true;
+        }
+        if (i.getItem().equals(Item.fromBlock(Blocks.OBSIDIAN)) && this.stealCountList[20] > 0) {
+            stealCountList[20] = stealCountList[20] - i.getCount();
             return true;
         }
         return false;
