@@ -51,6 +51,7 @@ public class NameTags extends Module {
     private final ColorSetting rect = add(new ColorSetting("Rect", new Color(0x99000001, true)).injectBoolean(true));
     private final ColorSetting friendColor = add(new ColorSetting("FriendColor", new Color(0xFF1DFF1D, true)));
     private final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFFFFFFF, true)));
+    private final BooleanSetting mTag = add(new BooleanSetting("MTag", false));
 
     public final EnumSetting<Font> font = add(new EnumSetting<>("FontMode", Font.Fast));
     private final SliderSetting armorHeight = add(new SliderSetting("ArmorHeight", 0.3f, -10, 10f));
@@ -297,7 +298,13 @@ public class NameTags extends Module {
     private String translateGamemode(GameMode gamemode) {
         if (gamemode == null) return "§7[BOT]";
         return switch (gamemode) {
-            case SURVIVAL -> "§b[S]";
+            case SURVIVAL -> {
+                if (mTag.getValue()) {
+                    yield "§d[M]";
+                } else {
+                    yield "§b[S]";
+                }
+            }
             case CREATIVE -> "§c[C]";
             case SPECTATOR -> "§7[SP]";
             case ADVENTURE -> "§e[A]";
