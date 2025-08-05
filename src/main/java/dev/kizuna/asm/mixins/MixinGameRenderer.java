@@ -91,10 +91,10 @@ public class MixinGameRenderer {
 
     @Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D", at = @At("HEAD"), cancellable = true)
     public void getFov(Camera camera, float tickDelta, boolean changingFov, CallbackInfoReturnable<Double> ci) {
-        if (!this.renderingPanorama && (CustomFov.INSTANCE.isOn() || Zoom.INSTANCE.isOn())) {
+        if (!this.renderingPanorama|| Zoom.INSTANCE.isOn()) {
             double d = 70.0;
             if (changingFov) {
-                if (CustomFov.INSTANCE.isOn()) {
+                if (CustomFov.INSTANCE.isOn() &&CustomFov.INSTANCE.fov.getValue()) {
                     double fov = CustomFov.INSTANCE.fovValue.getValue();
 
                     if (Zoom.on) {

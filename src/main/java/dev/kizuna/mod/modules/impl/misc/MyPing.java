@@ -1,5 +1,6 @@
 package dev.kizuna.mod.modules.impl.misc;
 
+import dev.kizuna.api.utils.entity.MovementUtil;
 import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
@@ -8,10 +9,8 @@ import net.minecraft.client.network.PlayerListEntry;
 import java.util.*;
 
 public class MyPing extends Module {
-    private final SliderSetting randoms =
-            add(new SliderSetting("Random", 3, 0, 20,1));
-    private final SliderSetting delay =
-            add(new SliderSetting("Delay", 5, 0, 60,0.1).setSuffix("s"));
+    private final SliderSetting randoms = add(new SliderSetting("Random", 3, 0, 20,1));
+    private final SliderSetting delay = add(new SliderSetting("Delay", 5, 0, 60,0.1).setSuffix("s"));
 
     public MyPing() {
         super("MyPing", Category.Misc);
@@ -24,7 +23,7 @@ public class MyPing extends Module {
 
     Random random = new Random();
     Timer timer = new Timer();
-    private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    private static final String CHARACTERS = "0123456789";
 
     @Override
     public void onUpdate() {
@@ -32,7 +31,6 @@ public class MyPing extends Module {
         timer.reset();
         String randomString = generateRandomString(randoms.getValueInt());
         if (!randomString.isEmpty()) {
-            randomString = " " + randomString;
         }
         PlayerListEntry playerListEntry = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid());
         String ping;
@@ -41,7 +39,7 @@ public class MyPing extends Module {
         } else {
             ping = String.valueOf(playerListEntry.getLatency());
         }
-        mc.getNetworkHandler().sendChatMessage("My Ping:" + ping + " ["  + randomString + "]");
+        mc.getNetworkHandler().sendChatMessage("My Ping: " + ping + "ms" + "("+ randomString + ")");
     }
 
 
