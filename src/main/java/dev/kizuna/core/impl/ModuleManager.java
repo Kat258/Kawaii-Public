@@ -47,6 +47,7 @@ public class ModuleManager implements Wrapper {
         addModule(new AspectRatio());
         addModule(new NewChunks());
         addModule(new KillAura());
+        addModule(new SpinBot());
         addModule(new AutoAnchor());
         addModule(new AutoArmor());
         addModule(new AutoCity());
@@ -138,8 +139,9 @@ public class ModuleManager implements Wrapper {
         addModule(new PacketControl());
         addModule(new XRay());
         addModule(new ObiPlacer());
-        //addModule(new RaytraceBypass());
+        addModule(new RaytraceBypass());
         addModule(new MyPing());
+        addModule(new ClickTP());
         addModule(new PacketEat());
         addModule(new PacketFly());
         addModule(new PacketMine());

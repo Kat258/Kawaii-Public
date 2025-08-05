@@ -16,7 +16,7 @@ public final class Kawaii implements ModInitializer {
     }
 
     public static final String NAME = "Kawaii";
-    public static final String VERSION = "0.3.7";
+    public static final String VERSION = "0.3.8";
     public static String PREFIX = ";";
     public static final EventBus EVENT_BUS = new EventBus();
     public static ExecutorService EXECUTOR = Executors.newCachedThreadPool();
