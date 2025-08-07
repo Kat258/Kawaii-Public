@@ -56,7 +56,6 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoEZ());
         addModule(new SelfTrap());
         addModule(new InventorySorter());
-        addModule(new OffFirework());
         addModule(new PacketThrow());
         addModule(new AutoHeal());
         addModule(new AutoPot());
@@ -105,6 +104,7 @@ public class ModuleManager implements Wrapper {
         addModule(new PearlSpoof());
         addModule(new FakePearl());
         addModule(new PearlMark());
+        addModule(new ItemTag());
         addModule(new PingSpoof());
         addModule(new FakePlayer());
         addModule(new Spammer());

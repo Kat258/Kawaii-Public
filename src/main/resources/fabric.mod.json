@@ -5,8 +5,9 @@
   "name": "Kawaii",
   "description": "Kawaii client",
   "authors": [
-    "Steve_sb",
-    "KuChaZi1337"
+    "steve_sb",
+    "KuChaZi1337",
+    "Mark_7601"
   ],
   "accessWidener": "kawaii.accesswidener",
   "environment": "*",
