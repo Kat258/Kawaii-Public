@@ -3,10 +3,12 @@ package dev.kizuna.mod.modules.impl.movement;
 import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.eventbus.EventPriority;
 import dev.kizuna.api.events.impl.*;
+import dev.kizuna.api.utils.entity.EntityUtil;
+import dev.kizuna.api.utils.entity.InventoryUtil;
 import dev.kizuna.api.utils.entity.MovementUtil;
 import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.mod.modules.Module;
-import dev.kizuna.mod.modules.impl.player.OffFirework;
+import dev.kizuna.mod.modules.settings.impl.BindSetting;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
@@ -18,7 +20,9 @@ import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
+import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.network.packet.s2c.play.PlayerPositionLookS2CPacket;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 
@@ -32,7 +36,9 @@ public class ElytraFly extends Module {
     public final BooleanSetting autoJump = add(new BooleanSetting("AutoJump", true, () -> mode.is(Mode.Bounce)));
     private final SliderSetting pitch = add(new SliderSetting("Pitch", 88, -90, 90, .1, () -> mode.is(Mode.Bounce)));
     private final BooleanSetting instantFly = add(new BooleanSetting("AutoStart", true, () -> !mode.is(Mode.Bounce)));
-    private final BooleanSetting firework = add(new BooleanSetting("Firework", false, () -> !mode.is(Mode.Bounce)));
+    private final BooleanSetting firework = add(new BooleanSetting("Firework", false).setParent());
+    public final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true, firework::isOpen));
+    private final BindSetting fireworkkey = add(new BindSetting("FireworkKey", -1));
     private final SliderSetting delay = add(new SliderSetting("Delay", 1000, 0, 20000, 50, () -> !mode.is(Mode.Bounce)));
     private final SliderSetting timeout = add(new SliderSetting("Timeout", 0.5F, 0.1F, 1F, () -> !mode.is(Mode.Bounce)));
     public final SliderSetting upPitch = add(new SliderSetting("UpPitch", 0.0f, 0.0f, 90.0f, () -> mode.getValue() == Mode.Control));
@@ -106,9 +112,8 @@ public class ElytraFly extends Module {
             mc.player.jumpingCooldown = 0;
             return;
         } else {
-            if (firework.getValue() && fireworkTimer.passed(delay.getValueInt()) && MovementUtil.isMoving() && !mc.player.isUsingItem() && mc.player.isFallFlying()) {
-                OffFirework.INSTANCE.off();
-                fireworkTimer.reset();
+            if (firework.getValue() && fireworkkey.isPressed() && MovementUtil.isMoving() && !mc.player.isUsingItem() && mc.player.isFallFlying()) {
+                usefirework();
             }
         }
         if (!mc.player.isFallFlying()) {
@@ -230,6 +235,23 @@ public class ElytraFly extends Module {
     public static boolean checkConditions(ClientPlayerEntity player) {
         ItemStack itemStack = player.getEquippedStack(EquipmentSlot.CHEST);
         return (!player.getAbilities().flying && !player.hasVehicle() && !player.isClimbing() && itemStack.isOf(Items.ELYTRA) && ElytraItem.isUsable(itemStack));
+    }
+    public void usefirework() {
+        ElytraFly.INSTANCE.fireworkTimer.reset();
+        int firework;
+        if (mc.player.getMainHandStack().getItem() == Items.FIREWORK_ROCKET) {
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+        } else if (inventory.getValue() && (firework = InventoryUtil.findItemInventorySlot(Items.FIREWORK_ROCKET)) != -1) {
+            InventoryUtil.inventorySwap(firework, mc.player.getInventory().selectedSlot);
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            InventoryUtil.inventorySwap(firework, mc.player.getInventory().selectedSlot);
+            EntityUtil.syncInventory();
+        } else if ((firework = InventoryUtil.findItem(Items.FIREWORK_ROCKET)) != -1) {
+            int old = mc.player.getInventory().selectedSlot;
+            InventoryUtil.switchToSlot(firework);
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            InventoryUtil.switchToSlot(old);
+        }
     }
 
     private static boolean ignoreGround(ClientPlayerEntity player) {

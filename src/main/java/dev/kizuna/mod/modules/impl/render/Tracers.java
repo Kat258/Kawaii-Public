@@ -1,5 +1,6 @@
 package dev.kizuna.mod.modules.impl.render;
 
+import dev.kizuna.Kawaii;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.mod.modules.Module;
@@ -28,7 +29,7 @@ public class Tracers extends Module {
 		setChinese("追踪者");
 	}
 
-    @Override
+	@Override
 	public void onRender3D(MatrixStack matrixStack) {
 		boolean prev_bob = mc.options.getBobView().getValue();
 		mc.options.getBobView().setValue(false);
@@ -37,7 +38,10 @@ public class Tracers extends Module {
 				if (entity instanceof ItemEntity && item.booleanValue) {
 					drawLine(entity.getPos(), item.getValue());
 				} else if (entity instanceof PlayerEntity && player.booleanValue && entity != mc.player) {
-					drawLine(entity.getPos(), player.getValue());
+					PlayerEntity playerEntity = (PlayerEntity) entity;
+					if (!Kawaii.FRIEND.isFriend(playerEntity)) {
+						drawLine(entity.getPos(), player.getValue());
+					}
 				}
 			}
 		}

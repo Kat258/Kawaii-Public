@@ -22,7 +22,7 @@ public class TimerModule extends Module {
 	private final BooleanSetting tickShift = add(new BooleanSetting("TickShift", true).setParent());
 	private final SliderSetting shiftTimer = add(new SliderSetting("ShiftTimer", 2, 1, 10, 0.1, tickShift::isOpen));
 	private final SliderSetting accumulate = add(new SliderSetting("Charge", 2000f, 1f, 10000f, 50f, tickShift::isOpen).setSuffix("ms"));
-	private final SliderSetting minAccumulate = add(new SliderSetting("MinCharge", 500f, 1f, 10000f, 50f, () -> tickShift.isOpen()).setSuffix("ms"));
+	private final SliderSetting minAccumulate = add(new SliderSetting("MinCharge", 500f, 1f, 10000f, 50f, tickShift::isOpen).setSuffix("ms"));
 	private final BooleanSetting smooth = add(new BooleanSetting("Smooth", true, tickShift::isOpen).setParent());
 	private final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> smooth.isOpen() && tickShift.isOpen()));
 	private final BooleanSetting reset = add(new BooleanSetting("Reset", true, tickShift::isOpen));

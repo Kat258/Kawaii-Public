@@ -50,6 +50,7 @@ public class NameTags extends Module {
     private final ColorSetting outline = add(new ColorSetting("Outline", new Color(0x99FFFFFF, true)).injectBoolean(true));
     private final ColorSetting rect = add(new ColorSetting("Rect", new Color(0x99000001, true)).injectBoolean(true));
     private final ColorSetting friendColor = add(new ColorSetting("FriendColor", new Color(0xFF1DFF1D, true)));
+    private final ColorSetting enemyColor = add(new ColorSetting("EnemyColor", new Color(0xFF1DFF1D, true)));
     private final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFFFFFFF, true)));
     private final BooleanSetting mTag = add(new BooleanSetting("MTag", false));
 
@@ -262,13 +263,22 @@ public class NameTags extends Module {
                     Render2DUtil.drawRect(context.getMatrices(), tagX + textWidth + 2, (float) (posY - 14f), 1, 12, outline.getValue());
                 }
                 if (chosenFont == Font.Fancy) {
-                    FontRenderers.ui.drawString(context.getMatrices(), final_string, tagX, (float) posY - 10, Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue().getRGB() : this.color.getValue().getRGB());
+                    Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
+                    if (Kawaii.ENEMY.isEnemy(ent)) {
+                        renderColor = enemyColor.getValue();
+                    }
+                    FontRenderers.ui.drawString(context.getMatrices(), final_string, tagX, (float) posY - 10, renderColor.getRGB());
                 } else {
                     context.getMatrices().push();
                     context.getMatrices().translate(tagX, ((float) posY - 11), 0);
-                    context.drawText(mc.textRenderer, final_string, 0, 0, Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue().getRGB() : this.color.getValue().getRGB(), true);
+                    Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
+                    if (Kawaii.ENEMY.isEnemy(ent)) {
+                        renderColor = enemyColor.getValue();
+                    }
+                    context.drawText(mc.textRenderer, final_string, 0, 0, renderColor.getRGB(), true);
                     context.getMatrices().pop();
                 }
+
                 context.getMatrices().pop();
             }
         }

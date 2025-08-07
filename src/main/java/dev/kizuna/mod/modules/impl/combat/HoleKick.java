@@ -34,7 +34,7 @@ public class HoleKick extends Module {
     private final BooleanSetting onlyGround = add(new BooleanSetting("OnlyGround", false));
     private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", true));
     private final BooleanSetting breakCrystal = add(new BooleanSetting("BreakCrystal", true));
-    private final BooleanSetting preferPiston = add(new BooleanSetting("CrystalSync", true));
+    private final BooleanSetting crystalSync = add(new BooleanSetting("CrystalSync", true));
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
     private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6.0));
     private final SliderSetting placeRange = add(new SliderSetting("PlaceRange", 5.0, 0.0, 6.0));
@@ -78,7 +78,7 @@ public class HoleKick extends Module {
         if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
         for (PlayerEntity player : CombatUtil.getEnemies(range.getValue())) {
             if (!canPush(player)) continue;
-            if (preferPiston.getValue() && !canPush(player)) {
+            if (crystalSync.getValue() && !canPush(player)) {
                 KawaiiAura.INSTANCE.lastBreakTimer.reset();
                 return;
             }

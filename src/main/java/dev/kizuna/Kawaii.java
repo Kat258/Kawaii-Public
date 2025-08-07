@@ -35,6 +35,7 @@ public final class Kawaii implements ModInitializer {
     public static PopManager POP;
     public static FriendManager FRIEND;
     public static TimerManager TIMER;
+    public static EnemyManager ENEMY;
     public static ShaderManager SHADER;
     public static FPSManager FPS;
     public static ServerManager SERVER;
@@ -52,6 +53,7 @@ public final class Kawaii implements ModInitializer {
         COMMAND = new CommandManager();
         GUI = new GuiManager();
         FRIEND = new FriendManager();
+        ENEMY = new EnemyManager();
         XRAY = new XrayManager();
         TRADE = new TradeManager();
         ROTATION = new RotationManager();
@@ -86,6 +88,7 @@ public final class Kawaii implements ModInitializer {
         System.out.println("[" + Kawaii.NAME + "] Saving");
         CONFIG.saveSettings();
         FRIEND.save();
+        ENEMY.save();
         XRAY.save();
         TRADE.save();
         System.out.println("[" + Kawaii.NAME + "] Saved");

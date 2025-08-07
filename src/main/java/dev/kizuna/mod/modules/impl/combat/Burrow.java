@@ -515,19 +515,6 @@ public class Burrow extends Module {
     }
 
     private int getBlock() {
-//        if (inventory.getValue()) {{
-//                if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
-//                    return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
-//                }
-//                return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
-//            }
-//        } else {
-//            if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue() || !netheriteblock.getValue()) {
-//                return InventoryUtil.findBlock(Blocks.OBSIDIAN);
-//            }
-//            return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
-//        }
-//    }
         if (inventory.getValue()) {
             if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
@@ -537,7 +524,7 @@ public class Burrow extends Module {
             if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlock(Blocks.OBSIDIAN);
             }
-            if (netheriteblock.getValue()) { // 将此条件单独作为一个 if 语句
+            if (netheriteblock.getValue()) {
                 return InventoryUtil.findBlock(Blocks.NETHERITE_BLOCK);
             }
             return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
