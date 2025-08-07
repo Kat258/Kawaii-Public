@@ -22,6 +22,7 @@ public class CommandManager implements Wrapper {
         registerCommand(new BindCommand());
         registerCommand(new BindsCommand());
         registerCommand(new ClipCommand());
+        //registerCommand(new KitCommand());
         registerCommand(new FriendCommand());
         registerCommand(new XrayCommand());
         registerCommand(new GamemodeCommand());
@@ -37,7 +38,6 @@ public class CommandManager implements Wrapper {
         registerCommand(new ToggleCommand());
         registerCommand(new TradeCommand());
         registerCommand(new WatermarkCommand());
-        //registerCommand(new KitCommand());
     }
 
     private void registerCommand(Command command) {

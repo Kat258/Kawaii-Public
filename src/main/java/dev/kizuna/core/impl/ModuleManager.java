@@ -158,6 +158,7 @@ public class ModuleManager implements Wrapper {
         addModule(new Scaffold());
         addModule(new Shader());
         addModule(new AntiCrawl());
+        //addModule(new AutoRegear());
         addModule(new AntiRegear());
         addModule(new AntiBowBomb());
         addModule(new SafeWalk());

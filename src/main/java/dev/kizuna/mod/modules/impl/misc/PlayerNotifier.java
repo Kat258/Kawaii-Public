@@ -53,12 +53,12 @@ public class PlayerNotifier extends Module {
         if (firstRun) {firstRun = false;lastPlayers = currentPlayers;lastTime = currentTime;return;}
         for (Map.Entry<UUID, String> e : currentPlayers.entrySet()) {UUID id = e.getKey();
             if (!lastPlayers.containsKey(id)) {
-                CommandManager.sendChatMessage("§8[§a+§8]§7 " + e.getValue());
+                CommandManager.sendChatMessage("§r[§dPlayer Notifier§r]§8[§a+§8]§7 " + e.getValue());
             }
         }
         for (Map.Entry<UUID, String> e : lastPlayers.entrySet()) {UUID id = e.getKey();
             if (!currentPlayers.containsKey(id)) {
-                CommandManager.sendChatMessage("§8[§c-§8]§7 " + e.getValue());
+                CommandManager.sendChatMessage("§r[§dPlayer Notifier§r]§8[§c-§8]§7 " + e.getValue());
             }
         }
         lastPlayers = currentPlayers;

@@ -22,9 +22,9 @@ public class BetterTab extends Module {
     public static BetterTab INSTANCE;
 
     private final BooleanSetting self = add(new BooleanSetting("HighlightSelf", true));
-    private final ColorSetting selfColor = add(new ColorSetting("SelfColor", new Color(250, 130, 30)).injectBoolean(true));
+    private final ColorSetting selfColor = add(new ColorSetting("SelfColor", new Color(250, 130, 30), self::getValue));
     private final BooleanSetting friends = add(new BooleanSetting("HighlightFriends", true));
-    private final ColorSetting friendColor = add(new ColorSetting("FriendColor", new Color(0, 255, 127)).injectBoolean(true));
+    private final ColorSetting friendColor = add(new ColorSetting("FriendColor", new Color(0, 255, 127), friends::getValue));
     public final BooleanSetting accurateLatency = add(new BooleanSetting("AccurateLatency", true));
     private final BooleanSetting gamemode = add(new BooleanSetting("Gamemode", false));
     public final SliderSetting tabSize = add(new SliderSetting("TabSize", 100, 1, 1000));
