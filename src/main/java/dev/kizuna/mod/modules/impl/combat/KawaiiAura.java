@@ -103,17 +103,17 @@ public class KawaiiAura extends Module {
     private final BooleanSetting render = add(new BooleanSetting("Render", true, () -> page.getValue() == Page.Render));
     private final BooleanSetting sync = add(new BooleanSetting("Sync", true, () -> page.getValue() == Page.Render && render.getValue()));
     private final BooleanSetting shrink = add(new BooleanSetting("Shrink", true, () -> page.getValue() == Page.Render && render.getValue()));
-    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false, () -> page.getValue() == Page.Render && render.getValue()));
     private final ColorSetting box = add(new ColorSetting("Box", new Color(255, 255, 255, 255), () -> page.getValue() == Page.Render && render.getValue()).injectBoolean(true));
-    private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 1.5d, 0.01d, 3d, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
     private final ColorSetting fill = add(new ColorSetting("Fill", new Color(255, 255, 255, 100), () -> page.getValue() == Page.Render && render.getValue()).injectBoolean(true));
     private final SliderSetting sliderSpeed = add(new SliderSetting("SliderSpeed", 0.2, 0.01, 1, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
     private final SliderSetting startFadeTime = add(new SliderSetting("StartFade", 0.3d, 0d, 2d, 0.01, () -> page.getValue() == Page.Render && render.getValue()).setSuffix("s"));
     private final SliderSetting fadeSpeed = add(new SliderSetting("FadeSpeed", 0.2d, 0.01d, 1d, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
-    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> page.getValue() == Page.Render));
-    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> page.getValue() == Page.Render));
-    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> page.getValue() == Page.Render));
-    private final ColorSetting rbcolor = add(new ColorSetting("RainbowColor", new Color(255, 255, 255, 50), () -> page.getValue() == Page.Render));
+    private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 1.5d, 0.01d, 3d, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
+    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false, () -> page.getValue() == Page.Render && render.getValue()).setParent());
+    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> page.getValue() == Page.Render && rainbow.isOpen()));
+    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> page.getValue() == Page.Render && rainbow.isOpen()));
+    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> page.getValue() == Page.Render && rainbow.isOpen()));
+    private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> page.getValue() == Page.Render && rainbow.isOpen()));
 
     private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Jello, () -> page.getValue() == Page.Render));
     private final ColorSetting color = add(new ColorSetting("TargetColor", new Color(255, 255, 255, 50), () -> page.getValue() == Page.Render));
@@ -210,17 +210,20 @@ public class KawaiiAura extends Module {
             updateCrystalPos();
         }
     }
-
     public Color getColor(int counter) {
         if (rainbow.getValue()) {
             return rainbow(counter);
         }
-        return rbcolor.getValue();
+        int alpha = (int) (rbalpha.getValue() * 255.0 / 100.0);
+        return new Color(255, 255, 255, alpha);
     }
 
     public Color rainbow(int delay) {
         double rainbowState = Math.ceil((System.currentTimeMillis() * rainbowSpeed.getValue() + delay * rainbowDelay.getValue()) / 20.0);
-        return Color.getHSBColor((float) (rainbowState % 360.0 / 360), saturation.getValueFloat() / 255.0f, 1.0f);
+        float alpha = (float) (rbalpha.getValue() / 255.0f);
+        Color baseColor = Color.getHSBColor((float) (rainbowState % 360.0 / 360), saturation.getValueFloat() / 255.0f, 1.0f);
+        int alphaInt = (int) (alpha * 255);
+        return new Color(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue(), alphaInt);
     }
 
     @Override

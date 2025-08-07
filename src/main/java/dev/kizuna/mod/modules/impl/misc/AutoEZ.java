@@ -15,14 +15,13 @@ import java.util.Random;
 public class AutoEZ extends Module {
     public enum Type {
         Custom,
+        My,
         AutoSex
     }
     private final EnumSetting<Type> type = add(new EnumSetting<>("Type", Type.Custom));
-    private final SliderSetting range =
-            add(new SliderSetting("Range", 10, 0, 20,.1));
+    private final SliderSetting range = add(new SliderSetting("Range", 10, 0, 20,.1));
     private final StringSetting message = add(new StringSetting("Message", "EZ %player%", () -> type.getValue() == Type.Custom));
-    private final SliderSetting randoms =
-            add(new SliderSetting("Random", 3, 0, 20,1));
+    private final SliderSetting randoms = add(new SliderSetting("Random", 3, 0, 20,1));
     public AutoEZ() {
         super("AutoEZ", Category.Misc);
         setChinese("自动嘲讽");
@@ -54,6 +53,7 @@ public class AutoEZ extends Module {
             switch (type.getValue())  {
                 case Custom -> mc.getNetworkHandler().sendChatMessage(message.getValue().replaceAll("%player%", player.getName().getString()) + randomString);
                 case AutoSex -> mc.getNetworkHandler().sendChatMessage(sex.get(random.nextInt(sex.size() - 1)) + " " + player.getName().getString() + randomString);
+                case My -> mc.getNetworkHandler().sendChatMessage("%player% 互联网这一块,你到头了".replaceAll("%player%", player.getName().getString()));
             }
         }
     }
