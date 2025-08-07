@@ -43,6 +43,7 @@ public class Burrow extends Module {
     private final SliderSetting delay = add(new SliderSetting("Delay", 500, 0, 1000, () -> !disable.getValue()));
     private final SliderSetting webTime = add(new SliderSetting("WebTime", 0, 0, 500));
     private final BooleanSetting enderChest = add(new BooleanSetting("EnderChest", true));
+    private final BooleanSetting netheriteblock = add(new BooleanSetting("NetheriteBlock", true));
     private final BooleanSetting antiLag = add(new BooleanSetting("AntiLag", false));
     private final BooleanSetting detectMine = add(new BooleanSetting("DetectMining", false));
     private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false));
@@ -108,7 +109,7 @@ public class Burrow extends Module {
         int oldSlot = mc.player.getInventory().selectedSlot;
         int block;
         if ((block = getBlock()) == -1) {
-            CommandManager.sendChatMessageWidthId("§c§oObsidian" + (enderChest.getValue() ? "/EnderChest" : "") + "?", hashCode());
+            CommandManager.sendChatMessageWidthId("§c§oObsidian" + (enderChest.getValue() ? "/EnderChest" : "") + (netheriteblock.getValue() ? "/EnderChest" : "")+ "?", hashCode());
             disable();
             return;
         }
@@ -514,6 +515,19 @@ public class Burrow extends Module {
     }
 
     private int getBlock() {
+//        if (inventory.getValue()) {{
+//                if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
+//                    return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
+//                }
+//                return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
+//            }
+//        } else {
+//            if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue() || !netheriteblock.getValue()) {
+//                return InventoryUtil.findBlock(Blocks.OBSIDIAN);
+//            }
+//            return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
+//        }
+//    }
         if (inventory.getValue()) {
             if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
@@ -522,6 +536,9 @@ public class Burrow extends Module {
         } else {
             if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlock(Blocks.OBSIDIAN);
+            }
+            if (netheriteblock.getValue()) { // 将此条件单独作为一个 if 语句
+                return InventoryUtil.findBlock(Blocks.NETHERITE_BLOCK);
             }
             return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
         }

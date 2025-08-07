@@ -1,17 +1,23 @@
 package dev.kizuna.api.utils.entity;
 
+import com.google.common.collect.Lists;
 import dev.kizuna.api.utils.Wrapper;
 import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.item.*;
+import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
 import net.minecraft.network.packet.c2s.play.PickFromInventoryC2SPacket;
 import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
 import net.minecraft.potion.PotionUtil;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
+import net.minecraft.util.collection.DefaultedList;
 
 import java.util.ArrayList;
 import java.util.HashMap;

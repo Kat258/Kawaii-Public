@@ -4,12 +4,14 @@ import dev.kizuna.api.events.eventbus.EventPriority;
 import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.api.events.impl.RotateEvent;
 import dev.kizuna.api.utils.math.*;
+import dev.kizuna.mod.modules.impl.combat.PacketThrow;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.utils.entity.EntityUtil;
 import dev.kizuna.mod.modules.Module;
+import net.minecraft.data.DataGenerator;
 import net.minecraft.item.BowItem;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 
@@ -31,16 +33,17 @@ public class SpinBot extends Module {
 
     @EventHandler
     public void onPacket(PacketEvent.Send event) {
-        if (event.getPacket() instanceof PlayerActionC2SPacket packet && packet.getAction() == PlayerActionC2SPacket.Action.RELEASE_USE_ITEM && mc.player.getActiveItem().getItem() instanceof BowItem) {
+            if (event.getPacket() instanceof PlayerActionC2SPacket packet && packet.getAction() == PlayerActionC2SPacket.Action.RELEASE_USE_ITEM && mc.player.getActiveItem().getItem() instanceof BowItem) {
             EntityUtil.sendYawAndPitch(mc.player.getYaw(), mc.player.getPitch());
         }
+            if (PacketThrow.INSTANCE.throwing && PacketThrow.INSTANCE.isThrow() && PacketThrow.INSTANCE.isOn());
     }
 
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onUpdateWalkingPlayerPre(RotateEvent event) {
-        if (pitchMode.getValue() == Mode.RandomAngle)
-            rotationPitch = MathUtil.random(90, -90);
+            if (pitchMode.getValue() == Mode.RandomAngle)
+                rotationPitch = MathUtil.random(90, -90);
 
         if (yawMode.getValue() == Mode.RandomAngle)
             rotationYaw = MathUtil.random(0, 360);

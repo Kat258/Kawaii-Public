@@ -1,5 +1,6 @@
-package dev.kizuna.mod.modules.impl.combat;
+/*package dev.kizuna.mod.modules.impl.combat;
 
+import com.google.common.collect.Lists;
 import com.google.gson.*;
 import dev.kizuna.api.events.Event;
 import dev.kizuna.api.events.eventbus.EventHandler;
@@ -7,44 +8,38 @@ import dev.kizuna.api.events.impl.TickEvent;
 import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.core.impl.CommandManager;
 import dev.kizuna.mod.modules.Module;
-import dev.kizuna.mod.modules.impl.player.TimerModule;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
+import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
 import net.minecraft.registry.Registries;
 import net.minecraft.screen.GenericContainerScreenHandler;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ShulkerBoxScreenHandler;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.Identifier;
-import net.shoreline.client.Shoreline;
-import net.shoreline.client.api.config.Config;
-import net.shoreline.client.api.config.setting.NumberConfig;
-import net.shoreline.client.api.module.ModuleCategory;
-import net.shoreline.client.api.module.ToggleModule;
-import net.shoreline.client.impl.event.TickEvent;
-import net.shoreline.client.init.Managers;
-import net.shoreline.client.util.math.timer.CacheTimer;
-import net.shoreline.client.util.math.timer.Timer;
-import net.shoreline.eventbus.annotation.EventListener;
-import net.shoreline.eventbus.event.StageEvent;
+import net.minecraft.util.collection.DefaultedList;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class AutoRegear extends Module
-{
-    private static AutoRegear INSTANCE;
+import static dev.kizuna.core.Manager.getFile;
 
+public class AutoRegear extends Module {
+    public static AutoRegear INSTANCE;
     private final SliderSetting delay = (new SliderSetting("Delay",0.0f, 0.15f, 2.0f));
-
     private final Timer clickTimer = new Timer();
     private final Map<Integer, Item> regearInventory = new ConcurrentHashMap<>();
 
@@ -103,8 +98,8 @@ public class AutoRegear extends Module
                     if (clickTimer.passed(delay.getValue() * 1000))
                     {
                         int swapSlot = validSlots.remove();
-                        Managers.INVENTORY.pickupSlot(swapSlot);
-                        Managers.INVENTORY.pickupSlot(slotId);
+                        pickupSlot(swapSlot);
+                        pickupSlot(slotId);
                         clickTimer.reset();
                     }
 
@@ -146,8 +141,8 @@ public class AutoRegear extends Module
                     if (clickTimer.passed(delay.getValue() * 1000))
                     {
                         int swapSlot = validSlots.remove();
-                        Managers.INVENTORY.pickupSlot(swapSlot);
-                        Managers.INVENTORY.pickupSlot(slotId);
+                        pickupSlot(swapSlot);
+                        pickupSlot(slotId);
                         clickTimer.reset();
                     }
 
@@ -156,14 +151,14 @@ public class AutoRegear extends Module
             }
         }
     }
+    public static File regear = getFile("regear.json");
 
     public void clearPlayerInventory()
     {
         regearInventory.clear();
     }
 
-    public void savePlayerInventory()
-    {
+    public void savePlayerInventory() {
         regearInventory.clear();
         for (int i = 0; i < 35; i++)
         {
@@ -180,7 +175,7 @@ public class AutoRegear extends Module
         }
         try
         {
-            Path regearFile = Shoreline.CONFIG.getClientDirectory().resolve("regear.json");
+            Path regearFile = regear.toPath();
             if (!Files.exists(regearFile))
             {
                 Files.createFile(regearFile);
@@ -205,7 +200,7 @@ public class AutoRegear extends Module
 
     public void loadRegearFile()
     {
-        Path regearFile = Shoreline.CONFIG.getClientDirectory().resolve("regear.json");
+        Path regearFile = regear.toPath();
         if (!Files.exists(regearFile))
         {
             return;
@@ -220,7 +215,7 @@ public class AutoRegear extends Module
             {
                 JsonObject jsonObject = jsonElement.getAsJsonObject();
                 int slotId = jsonObject.get("slotId").getAsInt();
-                Item item = Registries.ITEM.get(Identifier.of(jsonObject.get("item").getAsString()));
+                Item item = Registries.ITEM.get(Identifier.of(jsonObject.get("namespace").getAsString(), jsonObject.get("item").getAsString()));
                 regearInventory.put(slotId, item);
             }
         }
@@ -229,4 +224,33 @@ public class AutoRegear extends Module
             exception.printStackTrace();
         }
     }
+    private int pickupSlot(final int slot) {
+        return click(slot, 0, SlotActionType.PICKUP);
+    }
+    private int click(int slot, int button, SlotActionType type) {
+        if (slot < 0) {
+            return -1;
+        }
+        ScreenHandler screenHandler = mc.player.currentScreenHandler;
+        DefaultedList<Slot> defaultedList = screenHandler.slots;
+        int i = defaultedList.size();
+        ArrayList<ItemStack> list = Lists.newArrayListWithCapacity(i);
+        for (Slot slot1 : defaultedList)
+        {
+            list.add(slot1.getStack().copy());
+        }
+        screenHandler.onSlotClick(slot, button, type, mc.player);
+        Int2ObjectOpenHashMap<ItemStack> int2ObjectMap = new Int2ObjectOpenHashMap<>();
+        for (int j = 0; j < i; ++j)
+        {
+            ItemStack itemStack2;
+            ItemStack itemStack = list.get(j);
+            if (ItemStack.areEqual(itemStack, itemStack2 = defaultedList.get(j).getStack())) continue;
+            int2ObjectMap.put(j, itemStack2.copy());
+        }
+        mc.player.networkHandler.sendPacket(new ClickSlotC2SPacket(screenHandler.syncId, screenHandler.getRevision(), slot, button, type, screenHandler.getCursorStack().copy(), int2ObjectMap));
+        return screenHandler.getRevision();
+    }
 }
+*/
+
