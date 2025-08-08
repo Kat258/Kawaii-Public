@@ -169,4 +169,11 @@ public class MovementUtil implements Wrapper {
         if (mc.player.isSneaking()) defaultSpeed /= 5;
         return defaultSpeed;
     }
+    public static boolean isInputtingMovement()
+    {
+        return mc.options.forwardKey.isPressed()
+                || mc.options.backKey.isPressed()
+                || mc.options.leftKey.isPressed()
+                || mc.options.rightKey.isPressed();
+    }
 }

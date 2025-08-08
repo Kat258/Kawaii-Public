@@ -14,7 +14,7 @@ public class CustomFov extends Module {
     public final BooleanSetting aspectRatio = add(new BooleanSetting("AspectRatio",false));
     public final SliderSetting aspectRatioValue = add(new SliderSetting("Ratio", 1.78, 0.0, 5.0, 0.01, aspectRatio::getValue));
     public CustomFov() {
-        super("Fov", Category.Render);
+        super("CustomFov", Category.Render);
         INSTANCE = this;
     }
 }

@@ -44,7 +44,6 @@ public class ModuleManager implements Wrapper {
         addModule(new AntiWeak());
         addModule(new AutoTrade());
         addModule(new AddFriend());
-        addModule(new AspectRatio());
         addModule(new NewChunks());
         addModule(new KillAura());
         addModule(new SpinBot());

@@ -22,7 +22,6 @@ public class ItemTag extends Module {
                 Style style = Style.EMPTY.withColor(Formatting.WHITE).withParent(Style.EMPTY);
                 itemNameText.setStyle(style);
                 itemEntity.setCustomName(itemNameText);
-
                 itemEntity.setCustomNameVisible(true);
             }
         }

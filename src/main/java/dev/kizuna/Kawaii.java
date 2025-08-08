@@ -2,6 +2,7 @@ package dev.kizuna;
 
 import dev.kizuna.api.events.eventbus.EventBus;
 import dev.kizuna.core.impl.*;
+import dev.kizuna.mod.modules.impl.combat.AutoRegear;
 import net.fabricmc.api.ModInitializer;
 
 import java.lang.invoke.MethodHandles;
@@ -91,6 +92,7 @@ public final class Kawaii implements ModInitializer {
         ENEMY.save();
         XRAY.save();
         TRADE.save();
+        AutoRegear.INSTANCE.saveRegearFile();
         System.out.println("[" + Kawaii.NAME + "] Saved");
     }
 }

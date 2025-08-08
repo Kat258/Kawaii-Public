@@ -41,7 +41,7 @@ public class Velocity extends Module {
 	@Override
 	public String getInfo() {
 		if (mode.is(Mode.Custom))
-			return horizontal.getValueInt() + "%, " + vertical.getValueInt() + "%";
+			return horizontal.getValueInt() + "% " + vertical.getValueInt() + "%";
 		return mode.getValue().name();
 	}
 	private final Timer lagBackTimer = new Timer();
