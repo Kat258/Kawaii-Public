@@ -22,7 +22,7 @@ public class CommandManager implements Wrapper {
         registerCommand(new BindCommand());
         registerCommand(new BindsCommand());
         registerCommand(new ClipCommand());
-        //registerCommand(new KitCommand());
+        registerCommand(new KitCommand());
         registerCommand(new EnemyCommand());
         registerCommand(new FriendCommand());
         registerCommand(new XrayCommand());

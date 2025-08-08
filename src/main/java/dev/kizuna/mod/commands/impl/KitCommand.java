@@ -1,4 +1,4 @@
-/*package dev.kizuna.mod.commands.impl;
+package dev.kizuna.mod.commands.impl;
 
 import dev.kizuna.Kawaii;
 import dev.kizuna.core.impl.CommandManager;
@@ -39,7 +39,7 @@ public class KitCommand extends Command {
         if (count == 1) {
             String input = seperated.get(seperated.size() - 1).toLowerCase();
             List<String> correct = new ArrayList<>();
-            List<String> list = List.of("save", "clean");
+            List<String> list = List.of("save", "clear");
             for (String x : list) {
                 if (input.equalsIgnoreCase(Kawaii.PREFIX) || x.toLowerCase().startsWith(input)) {
                     correct.add(x);
@@ -57,4 +57,4 @@ public class KitCommand extends Command {
         }
         return null;
     }
-}*/
+}

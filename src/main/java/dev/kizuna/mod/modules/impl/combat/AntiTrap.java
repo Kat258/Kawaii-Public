@@ -19,26 +19,31 @@ public class AntiTrap extends Module {
 
         BlockPos playerPos = mc.player.getBlockPos();
         BlockPos headPos = playerPos.up(2);
-        boolean foundBlock = false;
-        BlockPos targetPos = null;
+        java.util.List<BlockPos> candidatePositions = new java.util.ArrayList<>();
 
         for (int x = -1; x <= 1; x++) {
             for (int z = -1; z <= 1; z++) {
                 if (x == 0 && z == 0) continue;
                 BlockPos checkPos = headPos.add(x, 0, z);
-                if (hasBlock(checkPos)) {targetPos = checkPos;foundBlock = true;break;}
+                if (hasBlock(checkPos)) {
+                    candidatePositions.add(checkPos.up());
+                }
             }
-            if (foundBlock) break;
         }
 
-        if (!foundBlock && hasBlock(headPos)) {
-            targetPos = headPos;
-            foundBlock = true;
+        if (hasBlock(headPos)) {
+            candidatePositions.add(headPos.up());
         }
-        if (foundBlock && targetPos != null) {
-            teleport(targetPos.up());
-            disable();
-        } else {disable();}
+
+        for (BlockPos pos : candidatePositions) {
+            if (!hasBlock(pos) && !hasBlock(pos.up()) && !hasBlock(pos.up(2))) {
+                teleport(pos);
+                disable();
+                return;
+            }
+        }
+
+        disable();
     }
 
     private boolean hasBlock(BlockPos pos) {
