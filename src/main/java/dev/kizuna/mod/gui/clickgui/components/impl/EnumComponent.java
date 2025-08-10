@@ -106,9 +106,9 @@ public class EnumComponent extends Component {
 		MatrixStack matrixStack = drawContext.getMatrices();
 
 		if (ClickGui.INSTANCE.mainEnd.booleanValue) {
-			Render2DUtil.drawRectHorizontal(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : Kawaii.GUI.getColor(), ClickGui.INSTANCE.mainEnd.getValue());
+			Render2DUtil.drawRectHorizontal(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : ClickGui.INSTANCE.color.getValue(), ClickGui.INSTANCE.mainEnd.getValue());
 		} else {
-			Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : Kawaii.GUI.getColor());
+			Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : ClickGui.INSTANCE.color.getValue());
 		}
 		TextUtil.drawString(drawContext, setting.getName() + ": " + setting.getValue().name(), x + 4, y + getTextOffsetY(), -1);
 		TextUtil.drawString(drawContext, setting.popped ? "-" : "+", x + width - 11, y + getTextOffsetY(), new Color(255, 255, 255).getRGB());

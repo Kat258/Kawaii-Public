@@ -3,6 +3,7 @@ package dev.kizuna.mod.gui.font;
 import com.google.common.base.Preconditions;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.kizuna.Kawaii;
+import dev.kizuna.mod.modules.impl.client.ClickGui;
 import it.unimi.dsi.fastutil.chars.Char2IntArrayMap;
 import it.unimi.dsi.fastutil.chars.Char2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
@@ -238,7 +239,7 @@ public class FontRenderer implements Closeable {
         for (int i = 0; i < chars.length; i++) {
             char c = chars[i];
 
-            Color color = Kawaii.GUI.getColor();
+            Color color = ClickGui.INSTANCE.enableTextS.getValue();
 
             a = color.getAlpha() / 255f;
 
