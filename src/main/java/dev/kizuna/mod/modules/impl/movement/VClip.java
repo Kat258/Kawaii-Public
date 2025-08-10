@@ -8,13 +8,12 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.math.BlockPos;
 
 public class VClip extends Module {
-    private final SliderSetting yaw = (new SliderSetting("Yaw",0,1,10));
     public VClip() {
         super("VClip", Category.Movement);
         setChinese("纵向穿墙");
     }
-
     final EnumSetting<Mode> mode = add(new EnumSetting<>("Mode", Mode.Jump));
+    final SliderSetting yaw = add(new SliderSetting("Yaw",1,1,10, () -> mode.getValue() == Mode.Teleport));
 
     public enum Mode {
         Glitch,
@@ -28,7 +27,7 @@ public class VClip extends Module {
         disable();
         switch (mode.getValue()) {
             case Teleport -> {
-                mc.player.setPosition(mc.player.getX(), yaw.getValue(), mc.player.getZ());
+                mc.player.setPosition(mc.player.getX(), mc.player.getY() + yaw.getValue(), mc.player.getZ());
                 mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY(), mc.player.getZ(), true));
             }
             case Jump -> {
