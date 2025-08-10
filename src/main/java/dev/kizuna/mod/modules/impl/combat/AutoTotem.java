@@ -92,7 +92,7 @@ public class AutoTotem extends Module {
 			}
 			return;
 		}
-		if (mc.player.getMainHandStack().getItem() == TOTEM_OF_UNDYING || mc.player.getOffHandStack().getItem() == TOTEM_OF_UNDYING) {
+		if (mc.player.getOffHandStack().getItem() == TOTEM_OF_UNDYING) {
 			return;
 		}
 		int itemSlot = findItemInventorySlot(TOTEM_OF_UNDYING);
