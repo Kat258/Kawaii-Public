@@ -1,10 +1,14 @@
 package dev.kizuna.mod.modules.impl.movement;
 
+import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
+import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
+import net.minecraft.util.math.BlockPos;
 
 public class VClip extends Module {
+    private final SliderSetting yaw = (new SliderSetting("Yaw",0,1,10));
     public VClip() {
         super("VClip", Category.Movement);
         setChinese("纵向穿墙");
@@ -15,7 +19,8 @@ public class VClip extends Module {
     public enum Mode {
         Glitch,
         Teleport,
-        Jump
+        Jump,
+        EscapeTrap
     }
 
     @Override
@@ -23,7 +28,7 @@ public class VClip extends Module {
         disable();
         switch (mode.getValue()) {
             case Teleport -> {
-                mc.player.setPosition(mc.player.getX(), mc.player.getY() + 3, mc.player.getZ());
+                mc.player.setPosition(mc.player.getX(), yaw.getValue(), mc.player.getZ());
                 mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(mc.player.getX(), mc.player.getY(), mc.player.getZ(), true));
             }
             case Jump -> {
@@ -60,6 +65,45 @@ public class VClip extends Module {
                         posZ,
                         onGround));
             }
+            case EscapeTrap -> {
+                BlockPos playerPos = mc.player.getBlockPos();
+                BlockPos headPos = playerPos.up(2);
+                java.util.List<BlockPos> candidatePositions = new java.util.ArrayList<>();
+
+                for (int x = -1; x <= 1; x++) {
+                    for (int z = -1; z <= 1; z++) {
+                        if (x == 0 && z == 0) continue;
+                        BlockPos checkPos = headPos.add(x, 0, z);
+                        if (hasBlock(checkPos)) {
+                            candidatePositions.add(checkPos.up());
+                        }
+                    }
+                }
+                if (hasBlock(headPos)) {
+                    candidatePositions.add(headPos.up());
+                }
+                for (BlockPos pos : candidatePositions) {
+                    if (!hasBlock(pos) && !hasBlock(pos.up()) && !hasBlock(pos.up(2))) {
+                        teleport(pos);
+                        disable();
+                        return;
+                    }
+                }
+            }
         }
+    }
+    private boolean hasBlock(BlockPos pos) {
+        return !mc.world.isAir(pos) && BlockUtil.getBlock(pos).getHardness() >= 0;
+    }
+
+    private void teleport(BlockPos pos) {
+        if (hasBlock(pos) || hasBlock(pos.up()) || hasBlock(pos.up(2))) {
+            return;
+        }
+        double x = pos.getX() + 0.5;
+        double y = pos.getY();
+        double z = pos.getZ() + 0.5;
+        mc.player.setPosition(x, y, z);
+        mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(x, y, z, true));
     }
 }

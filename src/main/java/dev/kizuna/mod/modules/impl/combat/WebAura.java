@@ -36,7 +36,7 @@ public class WebAura extends Module {
     public static WebAura INSTANCE;
     public WebAura() {
         super("AutoWeb", Category.Combat);
-        setChinese("蜘蛛网光环");
+        setChinese("盘丝洞");
         INSTANCE = this;
     }
 
