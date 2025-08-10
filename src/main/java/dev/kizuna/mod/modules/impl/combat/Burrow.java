@@ -427,7 +427,8 @@ public class Burrow extends Module {
         return new BlockPos((int) Math.floor(p_Player.getX()), (int) Math.floor(p_Player.getY()), (int) Math.floor(p_Player.getZ()));
     }
 
-    private void sendPlayerPacket(double x, double y,double z,boolean onGround) {
+    private void sendPlayerPacket(double x, double y,double z,boolean onGround)
+    {
         if (mc.player != null) {
             mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(x, y, z, onGround));
         }

@@ -16,7 +16,6 @@ public final class Kawaii implements ModInitializer {
         load();
     }
 
-    public static boolean beta = true;//beta user判定 给user推送垃圾版本【呲牙】
     public static final String NAME = "Kawaii";
     public static final String VERSION = "0.3.9";
     public static String PREFIX = ";";
@@ -68,7 +67,6 @@ public final class Kawaii implements ModInitializer {
         FPS = new FPSManager();
         SERVER = new ServerManager();
         CONFIG.loadSettings();
-        AutoRegear.INSTANCE.loadRegearFile();
         System.out.println("[" + Kawaii.NAME + "] loaded");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
