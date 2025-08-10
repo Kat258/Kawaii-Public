@@ -3,18 +3,19 @@ package dev.kizuna.asm.mixins;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.llamalad7.mixinextras.sugar.ref.LocalIntRef;
 import dev.kizuna.mod.modules.impl.render.BetterTab;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.PlayerListHud;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyConstant;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Mixin(PlayerListHud.class)
@@ -26,12 +27,20 @@ public abstract class MixinPlayerListHud {
     @Inject(method = "collectPlayerEntries", at = @At("RETURN"), cancellable = true)
     private void modifyPlayerCount(CallbackInfoReturnable<List<PlayerListEntry>> info) {
         BetterTab module = BetterTab.INSTANCE;
-        if (module.isOn()) {
-            List<PlayerListEntry> entries = info.getReturnValue();
-            double maxSize = module.tabSize.getValue();
-            if (entries.size() > maxSize) {
-                info.setReturnValue(entries.subList(0, (int) maxSize));
-            }
+        if (module == null || !module.isOn()) return;
+
+        List<PlayerListEntry> fullList = Collections.emptyList();
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc != null && mc.getNetworkHandler() != null) {
+            fullList = new ArrayList<>(mc.getNetworkHandler().getPlayerList());
+        }
+
+        int maxSize = (int) module.tabSize.getValue();
+
+        if (fullList.size() > maxSize) {
+            info.setReturnValue(fullList.subList(0, maxSize));
+        } else {
+            info.setReturnValue(fullList);
         }
     }
 
