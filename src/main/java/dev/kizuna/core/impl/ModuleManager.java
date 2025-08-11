@@ -32,6 +32,7 @@ public class ModuleManager implements Wrapper {
     public ModuleManager() {
         if (Kawaii.beta){
             addModule(new ClickTP());
+            addModule(new TargetTP());
         }
         addModule(new VClip());
         addModule(new Glide());

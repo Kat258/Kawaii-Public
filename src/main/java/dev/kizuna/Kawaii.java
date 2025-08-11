@@ -68,6 +68,7 @@ public final class Kawaii implements ModInitializer {
         FPS = new FPSManager();
         SERVER = new ServerManager();
         CONFIG.loadSettings();
+        AutoRegear.INSTANCE.loadRegearFile();
         System.out.println("[" + Kawaii.NAME + "] loaded");
 
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
