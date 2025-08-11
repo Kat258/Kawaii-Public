@@ -30,6 +30,9 @@ public class ModuleManager implements Wrapper {
     public static Mod lastLoadMod;
 
     public ModuleManager() {
+        if (Kawaii.beta){
+            addModule(new ClickTP());
+        }
         addModule(new VClip());
         addModule(new Glide());
         addModule(new AutoDupe());
@@ -140,7 +143,6 @@ public class ModuleManager implements Wrapper {
         addModule(new ObiPlacer());
         addModule(new RaytraceBypass());
         addModule(new MyPing());
-        addModule(new ClickTP());
         addModule(new PacketEat());
         addModule(new PacketFly());
         addModule(new PacketMine());

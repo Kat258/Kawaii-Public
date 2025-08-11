@@ -16,6 +16,7 @@ public final class Kawaii implements ModInitializer {
         load();
     }
 
+    public static boolean beta = true;
     public static final String NAME = "Kawaii";
     public static final String VERSION = "0.3.9";
     public static String PREFIX = ";";

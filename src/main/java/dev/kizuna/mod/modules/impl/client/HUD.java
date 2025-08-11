@@ -6,11 +6,13 @@ import dev.kizuna.api.utils.math.MathUtil;
 import dev.kizuna.api.utils.render.TextUtil;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.Module;
-import dev.kizuna.mod.modules.impl.combat.KawaiiAura;
 import dev.kizuna.mod.modules.impl.exploit.Blink;
 import dev.kizuna.mod.modules.impl.player.PacketMine;
 import dev.kizuna.mod.modules.impl.player.TimerModule;
-import dev.kizuna.mod.modules.settings.impl.*;
+import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
+import dev.kizuna.mod.modules.settings.impl.ColorSetting;
+import dev.kizuna.mod.modules.settings.impl.EnumSetting;
+import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.network.PlayerListEntry;
@@ -31,7 +33,6 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
 
-import static dev.kizuna.mod.modules.impl.combat.KawaiiAura.crystalPos;
 import static dev.kizuna.mod.modules.settings.impl.ColorSetting.timer;
 
 public class HUD extends Module {
@@ -60,7 +61,7 @@ public class HUD extends Module {
     public final BooleanSetting coords = add(new BooleanSetting("Coords", true, () -> page.getValue() == Pages.Module));
 
     public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true, () -> page.getValue() == Pages.Module).setParent());
-    public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% §f%version%-nightly §8 %time%", () -> page.getValue() == Pages.Module && waterMark.isOpen()));
+    //public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% §f%version%-nightly §8 %time%", () -> page.getValue() == Pages.Module && waterMark.isOpen()));
     public final SliderSetting waterMarkoffset = add(new SliderSetting("WaterMarkOffset", 1, 0, 100, -1, () -> page.getValue() == Pages.Module && waterMark.isOpen()));
 
     private final BooleanSetting textRadar = add(new BooleanSetting("TextRadar", false, () -> page.getValue() == Pages.Module).setParent());
@@ -82,9 +83,6 @@ public class HUD extends Module {
 
     private final BooleanSetting blinkhud = add (new BooleanSetting("BlinkHud", false, () -> page.getValue() == Pages.Module).setParent());
     private final SliderSetting blinky = add (new SliderSetting("BlinkOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && blinkhud.isOpen()));
-
-    private final BooleanSetting crystalTarget = add(new BooleanSetting("CrystalTarget", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting crystalOffset = add (new SliderSetting("CrystalOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && crystalTarget.isOpen()));
 
     private Map<String, Integer> players = new HashMap<>();
     int pulseProgress = 0;
@@ -120,10 +118,14 @@ public class HUD extends Module {
             Kawaii.GUI.armorHud.draw(drawContext, tickDelta, null);
         }
         if (waterMark.getValue()) {
-            if (pulse.booleanValue) {
-                TextUtil.drawStringPulse(drawContext, waterMarkString.getValue().replaceAll("%version%", Kawaii.VERSION).replaceAll("%hackname%", Kawaii.NAME).replaceAll("%time%",getTime()), waterMarkoffset.getValueInt(), waterMarkoffset.getValueInt(), color.getValue(), pulse.getValue(), pulseSpeed.getValue(), pulseCounter.getValueInt(), customFont.getValue());
+            if (Kawaii.beta) {
+                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "-nightly" + "§8 %time%".replaceAll("%time%",getTime()),
+                        waterMarkoffset.getValueInt(),
+                        waterMarkoffset.getValueInt());
             } else {
-                TextUtil.drawString(drawContext, waterMarkString.getValue().replaceAll("%version%", Kawaii.VERSION).replaceAll("%hackname%", Kawaii.NAME).replaceAll("%time%",getTime()), waterMarkoffset.getValueInt(), waterMarkoffset.getValueInt(), color.getValue().getRGB(), customFont.getValue());
+                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "§8 %time%".replaceAll("%time%",getTime()),
+                        waterMarkoffset.getValueInt(),
+                        waterMarkoffset.getValueInt());
             }
         }
         int fontHeight = getHeight();
@@ -265,11 +267,6 @@ public class HUD extends Module {
         if ((blinkhud.getValue()) && Blink.INSTANCE.isOn()){
             String string = "BlinkPacket" + Blink.INSTANCE.getInfo();
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + blinky.getValueInt());
-        }
-        if ((crystalTarget.getValue())){
-            String targetName = (crystalPos != null && KawaiiAura.INSTANCE.displayTarget != null) ? KawaiiAura.INSTANCE.displayTarget.getName().getString() : "None";
-            String string = "Target [" + targetName + "]";
-            drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + crystalOffset.getValueInt());
         }
     }
 

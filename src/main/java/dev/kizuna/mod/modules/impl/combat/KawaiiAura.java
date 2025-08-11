@@ -63,91 +63,96 @@ public class KawaiiAura extends Module {
     public final Timer lastBreakTimer = new Timer();
     private final Timer placeTimer = new Timer(), noPosTimer = new Timer(), switchTimer = new Timer(), calcDelay = new Timer();
 
-    private final EnumSetting<Page> page = add(new EnumSetting<>("Page", Page.General));
-    //General
-    private final BooleanSetting preferAnchor = add(new BooleanSetting("PreferAnchor", true, () -> page.getValue() == Page.General));
-    private final BooleanSetting breakOnlyHasCrystal = add(new BooleanSetting("OnlyHold", true, () -> page.getValue() == Page.General));
-    private final EnumSetting<SwingSide> swingMode = add(new EnumSetting<>("Swing", SwingSide.All, () -> page.getValue() == Page.General));
-    private final BooleanSetting eatingPause = add(new BooleanSetting("EatingPause", true, () -> page.getValue() == Page.General));
-    private final SliderSetting switchCooldown = add(new SliderSetting("SwitchPause", 100, 0, 1000, () -> page.getValue() == Page.General).setSuffix("ms"));
-    private final SliderSetting targetRange = add(new SliderSetting("TargetRange", 12.0, 0.0, 20.0, () -> page.getValue() == Page.General).setSuffix("m"));
-    private final SliderSetting updateDelay = add(new SliderSetting("UpdateDelay", 50, 0, 1000, () -> page.getValue() == Page.General).setSuffix("ms"));
-    private final SliderSetting wallRange = add(new SliderSetting("WallRange", 6.0, 0.0, 6.0, () -> page.getValue() == Page.General).setSuffix("m"));
-    //Rotate
-    private final BooleanSetting rotate = add(new BooleanSetting("Rotate", true, () -> page.getValue() == Page.Rotation).setParent());
-    private final BooleanSetting onBreak = add(new BooleanSetting("OnBreak", false, () -> rotate.isOpen() && page.getValue() == Page.Rotation));
-    private final SliderSetting yOffset = add(new SliderSetting("YOffset", 0.05, 0, 1, 0.01, () -> rotate.isOpen() && onBreak.getValue() && page.getValue() == Page.Rotation));
-    private final BooleanSetting yawStep = add(new BooleanSetting("YawStep", false, () -> rotate.isOpen() && page.getValue() == Page.Rotation));
-    private final SliderSetting steps = add(new SliderSetting("Steps", 0.05, 0, 1, 0.01, () -> rotate.isOpen() && yawStep.getValue() && page.getValue() == Page.Rotation));
-    private final BooleanSetting checkFov = add(new BooleanSetting("OnlyLooking", true, () -> rotate.isOpen() && yawStep.getValue() && page.getValue() == Page.Rotation));
-    private final SliderSetting fov = add(new SliderSetting("Fov", 30, 0, 50, () -> rotate.isOpen() && yawStep.getValue() && checkFov.getValue() && page.getValue() == Page.Rotation));
-    private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> rotate.isOpen() && yawStep.getValue() && page.getValue() == Page.Rotation));
-    //Place
-    private final SliderSetting autoMinDamage = add(new SliderSetting("PistonMin", 5.0, 0.0, 36.0, () -> page.getValue() == Page.Interact).setSuffix("dmg"));
-    private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, () -> page.getValue() == Page.Interact).setSuffix("dmg"));
-    private final SliderSetting maxSelf = add(new SliderSetting("Self", 12.0, 0.0, 36.0, () -> page.getValue() == Page.Interact).setSuffix("dmg"));
-    private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6, () -> page.getValue() == Page.Interact).setSuffix("m"));
-    private final SliderSetting noSuicide = add(new SliderSetting("NoSuicide", 3.0, 0.0, 10.0, () -> page.getValue() == Page.Interact).setSuffix("hp"));
-    private final BooleanSetting smart = add(new BooleanSetting("Smart", true, () -> page.getValue() == Page.Interact));
-    private final BooleanSetting place = add(new BooleanSetting("Place", true, () -> page.getValue() == Page.Interact).setParent());
-    private final SliderSetting placeDelay = add(new SliderSetting("PlaceDelay", 300, 0, 1000, () -> page.getValue() == Page.Interact && place.isOpen()).setSuffix("ms"));
-    private final EnumSetting<SwapMode> autoSwap = add(new EnumSetting<>("AutoSwap", SwapMode.Off, () -> page.getValue() == Page.Interact && place.isOpen()));
-    private final BooleanSetting afterBreak = add(new BooleanSetting("AfterBreak", true, () -> page.getValue() == Page.Interact && place.isOpen()));
-    private final BooleanSetting breakSetting = add(new BooleanSetting("Break", true, () -> page.getValue() == Page.Interact).setParent());
-    private final SliderSetting breakDelay = add(new SliderSetting("BreakDelay", 300, 0, 1000, () -> page.getValue() == Page.Interact && breakSetting.isOpen()).setSuffix("ms"));
-    private final SliderSetting minAge = add(new SliderSetting("MinAge", 0, 0, 20, () -> page.getValue() == Page.Interact && breakSetting.isOpen()).setSuffix("tick"));
-    private final BooleanSetting breakRemove = add(new BooleanSetting("Remove", false, () -> page.getValue() == Page.Interact && breakSetting.isOpen()));
-    private final BooleanSetting onlyTick = add(new BooleanSetting("OnlyTick", true, () -> page.getValue() == Page.Interact));
-    //Render
-    private final ColorSetting text = add(new ColorSetting("Text", new Color(-1), () -> page.getValue() == Page.Render).injectBoolean(true));
-    private final BooleanSetting render = add(new BooleanSetting("Render", true, () -> page.getValue() == Page.Render));
-    private final BooleanSetting sync = add(new BooleanSetting("Sync", true, () -> page.getValue() == Page.Render && render.getValue()));
-    private final BooleanSetting shrink = add(new BooleanSetting("Shrink", true, () -> page.getValue() == Page.Render && render.getValue()));
-    private final ColorSetting box = add(new ColorSetting("Box", new Color(255, 255, 255, 255), () -> page.getValue() == Page.Render && render.getValue()).injectBoolean(true));
-    private final ColorSetting fill = add(new ColorSetting("Fill", new Color(255, 255, 255, 100), () -> page.getValue() == Page.Render && render.getValue()).injectBoolean(true));
-    private final SliderSetting sliderSpeed = add(new SliderSetting("SliderSpeed", 0.2, 0.01, 1, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
-    private final SliderSetting startFadeTime = add(new SliderSetting("StartFade", 0.3d, 0d, 2d, 0.01, () -> page.getValue() == Page.Render && render.getValue()).setSuffix("s"));
-    private final SliderSetting fadeSpeed = add(new SliderSetting("FadeSpeed", 0.2d, 0.01d, 1d, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
-    private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 1.5d, 0.01d, 3d, 0.01, () -> page.getValue() == Page.Render && render.getValue()));
-    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false, () -> page.getValue() == Page.Render && render.getValue()).setParent());
-    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> page.getValue() == Page.Render && rainbow.isOpen()));
-    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> page.getValue() == Page.Render && rainbow.isOpen()));
-    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> page.getValue() == Page.Render && rainbow.isOpen()));
-    private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> page.getValue() == Page.Render && rainbow.isOpen()));
 
-    private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Jello, () -> page.getValue() == Page.Render));
-    private final ColorSetting color = add(new ColorSetting("TargetColor", new Color(255, 255, 255, 50), () -> page.getValue() == Page.Render));
-    private final ColorSetting hitColor = add(new ColorSetting("HitColor", new Color(255, 255, 255, 150), () -> page.getValue() == Page.Render));
-    public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 2000, 1, () -> page.getValue() == Page.Render && mode.is(TargetESP.Box)));
-    public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> page.getValue() == Page.Render && mode.is(TargetESP.Box)));
+    //General
+    private final BooleanSetting general = add (new BooleanSetting("General",true).setParent());
+    private final BooleanSetting preferAnchor = add(new BooleanSetting("PreferAnchor", true, general::isOpen));
+    private final BooleanSetting breakOnlyHasCrystal = add(new BooleanSetting("OnlyHold", true, general::isOpen));
+    private final EnumSetting<SwingSide> swingMode = add(new EnumSetting<>("Swing", SwingSide.All, general::isOpen));
+    private final BooleanSetting eatingPause = add(new BooleanSetting("EatingPause", true, general::isOpen));
+    private final SliderSetting switchCooldown = add(new SliderSetting("SwitchPause", 100, 0, 1000, general::isOpen).setSuffix("ms"));
+    private final SliderSetting targetRange = add(new SliderSetting("TargetRange", 12.0, 0.0, 20.0, general::isOpen).setSuffix("m"));
+    private final SliderSetting updateDelay = add(new SliderSetting("UpdateDelay", 50, 0, 1000, general::isOpen).setSuffix("ms"));
+    private final SliderSetting wallRange = add(new SliderSetting("WallRange", 6.0, 0.0, 6.0, general::isOpen).setSuffix("m"));
+    //Rotate
+    private final BooleanSetting rotate = add(new BooleanSetting("Rotate", true).setParent());
+    private final BooleanSetting onBreak = add(new BooleanSetting("OnBreak", false, rotate::isOpen));
+    private final SliderSetting yOffset = add(new SliderSetting("YOffset", 0.05, 0, 1, 0.01, () -> rotate.isOpen() && onBreak.getValue()));
+    private final BooleanSetting yawStep = add(new BooleanSetting("YawStep", false, rotate::isOpen));
+    private final SliderSetting steps = add(new SliderSetting("Steps", 0.05, 0, 1, 0.01, () -> rotate.isOpen() && yawStep.getValue()));
+    private final BooleanSetting checkFov = add(new BooleanSetting("OnlyLooking", true, () -> rotate.isOpen() && yawStep.getValue()));
+    private final SliderSetting fov = add(new SliderSetting("Fov", 30, 0, 50, () -> rotate.isOpen() && yawStep.getValue() && checkFov.getValue()));
+    private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> rotate.isOpen() && yawStep.getValue()));
+    //Place
+    private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
+    private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
+    private final SliderSetting maxSelf = add(new SliderSetting("Self", 12.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
+    private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6, place::isOpen).setSuffix("m"));
+    private final SliderSetting noSuicide = add(new SliderSetting("NoSuicide", 3.0, 0.0, 10.0, place::isOpen).setSuffix("hp"));
+    private final BooleanSetting smart = add(new BooleanSetting("Smart", true, place::isOpen));
+    private final SliderSetting placeDelay = add(new SliderSetting("PlaceDelay", 300, 0, 1000, place::isOpen).setSuffix("ms"));
+    private final EnumSetting<SwapMode> autoSwap = add(new EnumSetting<>("AutoSwap", SwapMode.Off, place::isOpen));
+    private final BooleanSetting afterBreak = add(new BooleanSetting("AfterBreak", true, place::isOpen));
+    private final SliderSetting autoMinDamage = add(new SliderSetting("PistonMin", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
+    //Break
+    private final BooleanSetting breakSetting = add(new BooleanSetting("Break", true).setParent());
+    private final SliderSetting breakDelay = add(new SliderSetting("BreakDelay", 300, 0, 1000, breakSetting::isOpen).setSuffix("ms"));
+    private final SliderSetting minAge = add(new SliderSetting("MinAge", 0, 0, 20, breakSetting::isOpen).setSuffix("tick"));
+    private final BooleanSetting breakRemove = add(new BooleanSetting("Remove", false, breakSetting::isOpen));
+    private final BooleanSetting onlyTick = add(new BooleanSetting("OnlyTick", true, breakSetting::isOpen));
+    //Render
+    private final BooleanSetting render = add(new BooleanSetting("Render", true).setParent());
+    private final BooleanSetting sync = add(new BooleanSetting("Sync", true, () -> render.isOpen() && render.getValue()));
+    private final BooleanSetting shrink = add(new BooleanSetting("Shrink", true, () -> render.isOpen() && render.getValue()));
+    private final ColorSetting box = add(new ColorSetting("Box", new Color(255, 255, 255, 255), () -> render.isOpen() && render.getValue())).injectBoolean(true);
+    private final ColorSetting fill = add(new ColorSetting("Fill", new Color(255, 255, 255, 100), () -> render.isOpen() && render.getValue()).injectBoolean(true));
+    private final SliderSetting sliderSpeed = add(new SliderSetting("SliderSpeed", 0.2, 0.01, 1, 0.01, () -> render.isOpen() && render.getValue()));
+    private final SliderSetting startFadeTime = add(new SliderSetting("StartFade", 0.3d, 0d, 2d, 0.01, () -> render.isOpen() && render.getValue()).setSuffix("s"));
+    private final SliderSetting fadeSpeed = add(new SliderSetting("FadeSpeed", 0.2d, 0.01d, 1d, 0.01, () -> render.isOpen() && render.getValue()));
+    private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 1.5d, 0.01d, 3d, 0.01, () -> render.isOpen() && render.getValue()));
+    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false,render::isOpen).setParent());
+    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> render.isOpen() && rainbow.getValue()));
+    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> render.isOpen() && rainbow.getValue()));
+    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> render.isOpen() && rainbow.getValue()));
+    private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> render.isOpen() && rainbow.getValue()));
+    private final ColorSetting text = add(new ColorSetting("Text", new Color(-1), () -> render.isOpen() && rainbow.getValue()));
+
+    private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Jello, render::isOpen));
+    private final ColorSetting color = add(new ColorSetting("TargetColor", new Color(255, 255, 255, 50), render::isOpen));
+    private final ColorSetting hitColor = add(new ColorSetting("HitColor", new Color(255, 255, 255, 150), render::isOpen));
+    public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 2000, 1, () -> render.isOpen() && mode.is(TargetESP.Box)));
+    public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> render.isOpen() && mode.is(TargetESP.Box)));
     //Calc
-    private final BooleanSetting thread = add(new BooleanSetting("Thread", true, () -> page.getValue() == Page.Calc));
-    private final BooleanSetting doCrystal = add(new BooleanSetting("ThreadInteract", false, () -> page.getValue() == Page.Calc));
-    private final BooleanSetting lite = add(new BooleanSetting("LessCPU", false, () -> page.getValue() == Page.Calc));
-    private final SliderSetting predictTicks = add(new SliderSetting("Predict", 4, 0, 10, () -> page.getValue() == Page.Calc).setSuffix("ticks"));
-    private final BooleanSetting terrainIgnore = add(new BooleanSetting("TerrainIgnore", true, () -> page.getValue() == Page.Calc));
+    private final BooleanSetting calc = add(new BooleanSetting("Calc", true).setParent());
+    private final BooleanSetting thread = add(new BooleanSetting("Thread", true, calc::isOpen));
+    private final BooleanSetting doCrystal = add(new BooleanSetting("ThreadInteract", false, calc::isOpen));
+    private final BooleanSetting lite = add(new BooleanSetting("LessCPU", false, calc::isOpen));
+    private final SliderSetting predictTicks = add(new SliderSetting("Predict", 4, 0, 10, calc::isOpen).setSuffix("ticks"));
+    private final BooleanSetting terrainIgnore = add(new BooleanSetting("TerrainIgnore", true, calc::isOpen));
     //Misc
-    private final BooleanSetting ignoreMine = add(new BooleanSetting("IgnoreMine", true, () -> page.getValue() == Page.Misc).setParent());
-    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> page.getValue() == Page.Misc && ignoreMine.isOpen()).setSuffix("%"));
-    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, () -> page.getValue() == Page.Misc).setParent());
-    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> page.getValue() == Page.Misc && antiSurround.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, () -> page.getValue() == Page.Misc).setParent());
-    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> page.getValue() == Page.Misc && slowPlace.isOpen()).setSuffix("ms"));
-    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> page.getValue() == Page.Misc && slowPlace.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, () -> page.getValue() == Page.Misc).setParent());
-    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> page.getValue() == Page.Misc && forcePlace.isOpen()).setSuffix("health"));
-    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> page.getValue() == Page.Misc && forcePlace.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, () -> page.getValue() == Page.Misc).setParent());
-    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> page.getValue() == Page.Misc && armorBreaker.isOpen()).setSuffix("%"));
-    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> page.getValue() == Page.Misc && armorBreaker.isOpen()).setSuffix("dmg"));
-    private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, () -> page.getValue() == Page.Misc));
-    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, () -> page.getValue() == Page.Misc).setParent());
-    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> page.getValue() == Page.Misc && forceWeb.isOpen()));
-    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> page.getValue() == Page.Misc && forceWeb.isOpen()));
+    private final BooleanSetting misc = add(new BooleanSetting("Misc", true).setParent());
+    private final BooleanSetting ignoreMine = add(new BooleanSetting("IgnoreMine", true, misc::isOpen));
+    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> misc.isOpen() && ignoreMine.isOpen()).setSuffix("%"));
+    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent());
+    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen() && antiSurround.isOpen()).setSuffix("dmg"));
+    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent());
+    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("ms"));
+    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("dmg"));
+    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent());
+    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen()).setSuffix("health"));
+    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen()).setSuffix("dmg"));
+    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, misc::isOpen).setParent());
+    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> misc.isOpen() && armorBreaker.isOpen()).setSuffix("%"));
+    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen()).setSuffix("dmg"));
+    private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, misc::isOpen));
+    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent());
+    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen()));
+    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen()));
     //WebSync
-    private final SliderSetting hurtTime = add(new SliderSetting("HurtTime", 10, 0, 10, 1, () -> page.getValue() == Page.WebSync).setSuffix("Tick"));
-    private final SliderSetting waitHurt = add(new SliderSetting("WaitHurt", 10, 0, 10, 1, () -> page.getValue() == Page.WebSync).setSuffix("Tick"));
-    private final SliderSetting synctick = add(new SliderSetting("Tick", 10, 0, 10, 1, () -> page.getValue() == Page.WebSync).setSuffix("Tick"));
+    private final BooleanSetting websync = add(new BooleanSetting("WebSync", true).setParent());
+    private final SliderSetting hurtTime = add(new SliderSetting("HurtTime", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
+    private final SliderSetting waitHurt = add(new SliderSetting("WaitHurt", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
+    private final SliderSetting synctick = add(new SliderSetting("Tick", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
 
     public PlayerEntity displayTarget;
     private final Animation animation = new Animation();

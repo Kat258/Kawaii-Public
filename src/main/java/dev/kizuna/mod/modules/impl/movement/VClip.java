@@ -1,5 +1,6 @@
 package dev.kizuna.mod.modules.impl.movement;
 
+import dev.kizuna.Kawaii;
 import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
@@ -65,27 +66,29 @@ public class VClip extends Module {
                         onGround));
             }
             case EscapeTrap -> {
-                BlockPos playerPos = mc.player.getBlockPos();
-                BlockPos headPos = playerPos.up(2);
-                java.util.List<BlockPos> candidatePositions = new java.util.ArrayList<>();
+                if (Kawaii.beta) {
+                    BlockPos playerPos = mc.player.getBlockPos();
+                    BlockPos headPos = playerPos.up(2);
+                    java.util.List<BlockPos> candidatePositions = new java.util.ArrayList<>();
 
-                for (int x = -1; x <= 1; x++) {
-                    for (int z = -1; z <= 1; z++) {
-                        if (x == 0 && z == 0) continue;
-                        BlockPos checkPos = headPos.add(x, 0, z);
-                        if (hasBlock(checkPos)) {
-                            candidatePositions.add(checkPos.up());
+                    for (int x = -1; x <= 1; x++) {
+                        for (int z = -1; z <= 1; z++) {
+                            if (x == 0 && z == 0) continue;
+                            BlockPos checkPos = headPos.add(x, 0, z);
+                            if (hasBlock(checkPos)) {
+                                candidatePositions.add(checkPos.up());
+                            }
                         }
                     }
-                }
-                if (hasBlock(headPos)) {
-                    candidatePositions.add(headPos.up());
-                }
-                for (BlockPos pos : candidatePositions) {
-                    if (!hasBlock(pos) && !hasBlock(pos.up()) && !hasBlock(pos.up(2))) {
-                        teleport(pos);
-                        disable();
-                        return;
+                    if (hasBlock(headPos)) {
+                        candidatePositions.add(headPos.up());
+                    }
+                    for (BlockPos pos : candidatePositions) {
+                        if (!hasBlock(pos) && !hasBlock(pos.up()) && !hasBlock(pos.up(2))) {
+                            teleport(pos);
+                            disable();
+                            return;
+                        }
                     }
                 }
             }

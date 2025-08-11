@@ -18,35 +18,38 @@ import java.awt.*;
 
 public class ClickGui extends Module {
 	public static ClickGui INSTANCE;
-	private final EnumSetting<Pages> page = add(new EnumSetting<>("Page", Pages.General));
-	public final EnumSetting<Type> uiType = add(new EnumSetting<>("UIType", Type.Old, () -> page.getValue() == Pages.Element));
-	public final BooleanSetting activeBox = add(new BooleanSetting("ActiveBox", true, () -> page.getValue() == Pages.Element));
-	public final BooleanSetting center = add(new BooleanSetting("Center", false, () -> page.getValue() == Pages.Element));
-	public final ColorSetting bind = add(new ColorSetting("Bind", new Color(255, 255, 255), () -> page.getValue() == Pages.Element).injectBoolean(false));
-	public final ColorSetting gear = add(new ColorSetting("Gear", new Color(255, 255, 255), () -> page.getValue() == Pages.Element).injectBoolean(true));
-
-	public final BooleanSetting chinese = add(new BooleanSetting("Chinese", false, () -> page.getValue() == Pages.General));
-	public final BooleanSetting font = add(new BooleanSetting("Font", true, () -> page.getValue() == Pages.General));
-	public final BooleanSetting maxFill = add(new BooleanSetting("MaxFill", false, () -> page.getValue() == Pages.General));
-	public final BooleanSetting sound = add(new BooleanSetting("Sound", true, () -> page.getValue() == Pages.General));
-	public final SliderSetting height = add(new SliderSetting("Height", 15, 10, 20, 1, () -> page.getValue() == Pages.General));
-	public final EnumSetting<Mode> mode = add(new EnumSetting<>("EnableAnim", Mode.Pull, () -> page.getValue() == Pages.General));
-	public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 1000, 1, () -> page.getValue() == Pages.General));
-	public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.QuadInOut, () -> page.getValue() == Pages.General));
-
-	public final ColorSetting color = add(new ColorSetting("Main", 6976702, () -> page.getValue() == Pages.Color));
-	public final ColorSetting mainEnd = add(new ColorSetting("MainEnd", -2113929216, () -> page.getValue() == Pages.Color).injectBoolean(false));
-	public final ColorSetting mainHover = add(new ColorSetting("Hover", 1392508928, () -> page.getValue() == Pages.Color));
-	public final ColorSetting bar = add(new ColorSetting("Bar", -613780290, () -> page.getValue() == Pages.Color));
-	public final ColorSetting barEnd = add(new ColorSetting("BarEnd", -2113929216, () -> page.getValue() == Pages.Color).injectBoolean(false));
-	public final ColorSetting disableText = add(new ColorSetting("DisableText", new Color(255, 255, 255), () -> page.getValue() == Pages.Color));
-	public final ColorSetting enableText = add(new ColorSetting("EnableText", 6976702, () -> page.getValue() == Pages.Color));
-	public final ColorSetting enableTextS = add(new ColorSetting("EnableText2", 6976702, () -> page.getValue() == Pages.Color));
-	public final ColorSetting module = add(new ColorSetting("Module", 0, () -> page.getValue() == Pages.Color));
-	public final ColorSetting moduleHover = add(new ColorSetting("ModuleHover", 1880627224, () -> page.getValue() == Pages.Color));
-	public final ColorSetting setting = add(new ColorSetting("Setting", 4144959, () -> page.getValue() == Pages.Color));
-	public final ColorSetting settingHover = add(new ColorSetting("SettingHover", 1392508928, () -> page.getValue() == Pages.Color));
-	public final ColorSetting background = add(new ColorSetting("Background", 1966080, () -> page.getValue() == Pages.Color));
+	//Element
+	private final BooleanSetting element = add(new BooleanSetting("Element",true).setParent());
+	public final EnumSetting<Type> uiType = add(new EnumSetting<>("UIType", Type.Old,element::isOpen));
+	public final BooleanSetting activeBox = add(new BooleanSetting("ActiveBox", true,element::isOpen));
+	public final BooleanSetting center = add(new BooleanSetting("Center", false,element::isOpen));
+	public final ColorSetting bind = add(new ColorSetting("Bind", new Color(255, 255, 255),element::isOpen).injectBoolean(false));
+	public final ColorSetting gear = add(new ColorSetting("Gear", new Color(255, 255, 255),element::isOpen).injectBoolean(true));
+//General
+	private final BooleanSetting general = add(new BooleanSetting("General",true).setParent());
+	public final BooleanSetting chinese = add(new BooleanSetting("Chinese", false,general::isOpen));
+	public final BooleanSetting font = add(new BooleanSetting("Font", true,general::isOpen));
+	public final BooleanSetting maxFill = add(new BooleanSetting("MaxFill", false,general::isOpen));
+	public final BooleanSetting sound = add(new BooleanSetting("Sound", true,general::isOpen));
+	public final SliderSetting height = add(new SliderSetting("Height", 15, 10, 20, 1,general::isOpen));
+	public final EnumSetting<Mode> mode = add(new EnumSetting<>("EnableAnim", Mode.Pull,general::isOpen));
+	public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 1000, 1,general::isOpen));
+	public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.QuadInOut,general::isOpen));
+//Color
+	private final BooleanSetting colorb = add(new BooleanSetting("Color",true).setParent());
+	public final ColorSetting color = add(new ColorSetting("Main", 6976702,colorb::isOpen));
+	public final ColorSetting mainEnd = add(new ColorSetting("MainEnd", -2113929216,colorb::isOpen).injectBoolean(false));
+	public final ColorSetting mainHover = add(new ColorSetting("Hover", 1392508928,colorb::isOpen));
+	public final ColorSetting bar = add(new ColorSetting("Bar", -613780290,colorb::isOpen));
+	public final ColorSetting barEnd = add(new ColorSetting("BarEnd", -2113929216,colorb::isOpen).injectBoolean(false));
+	public final ColorSetting disableText = add(new ColorSetting("DisableText", new Color(255, 255, 255),colorb::isOpen));
+	public final ColorSetting enableText = add(new ColorSetting("EnableText", 6976702,colorb::isOpen));
+	public final ColorSetting enableTextS = add(new ColorSetting("EnableText2", 6976702,colorb::isOpen));
+	public final ColorSetting module = add(new ColorSetting("Module", 0,colorb::isOpen));
+	public final ColorSetting moduleHover = add(new ColorSetting("ModuleHover", 1880627224,colorb::isOpen));
+	public final ColorSetting setting = add(new ColorSetting("Setting", 4144959,colorb::isOpen));
+	public final ColorSetting settingHover = add(new ColorSetting("SettingHover", 1392508928,colorb::isOpen));
+	public final ColorSetting background = add(new ColorSetting("Background", 1966080,colorb::isOpen));
 	public ClickGui() {
 		super("ClickGui", Category.Client);
 		setChinese("菜单");
