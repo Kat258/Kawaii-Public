@@ -3,6 +3,7 @@ package dev.kizuna.core.impl;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.kizuna.api.interfaces.IShaderEffect;
+import dev.kizuna.api.utils.render.Render3DUtil;
 import ladysnake.satin.api.managed.ManagedShaderEffect;
 import ladysnake.satin.api.managed.ShaderEffectManager;
 import dev.kizuna.api.utils.Wrapper;
@@ -25,6 +26,7 @@ public class ShaderManager implements Wrapper {
 
     public static ManagedShaderEffect DEFAULT_OUTLINE;
     public static ManagedShaderEffect SMOKE_OUTLINE;
+    public static ManagedShaderEffect PULSE_OUTLINE;
     public static ManagedShaderEffect GRADIENT_OUTLINE;
     public static ManagedShaderEffect SNOW_OUTLINE;
     public static ManagedShaderEffect FLOW_OUTLINE;
@@ -33,6 +35,7 @@ public class ShaderManager implements Wrapper {
     public static ManagedShaderEffect DEFAULT;
     public static ManagedShaderEffect SMOKE;
     public static ManagedShaderEffect GRADIENT;
+    public static ManagedShaderEffect PULSE;
     public static ManagedShaderEffect SNOW;
     public static ManagedShaderEffect FLOW;
     public static ManagedShaderEffect RAINBOW;
@@ -80,6 +83,7 @@ public class ShaderManager implements Wrapper {
         return switch (mode) {
             case Gradient -> GRADIENT;
             case Smoke -> SMOKE;
+            case Pulse -> PULSE;
             case Snow -> SNOW;
             case Flow -> FLOW;
             case Rainbow -> RAINBOW;
@@ -91,6 +95,7 @@ public class ShaderManager implements Wrapper {
         return switch (mode) {
             case Gradient -> GRADIENT_OUTLINE;
             case Smoke -> SMOKE_OUTLINE;
+            case Pulse -> PULSE_OUTLINE;
             case Snow -> SNOW_OUTLINE;
             case Flow -> FLOW_OUTLINE;
             case Rainbow -> RAINBOW_OUTLINE;
@@ -154,6 +159,26 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f);
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.render(mc.getTickDelta());
+        } else if (shader == ShaderManager.Shader.Pulse) {
+            effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
+            effect.setUniformValue("oct", (int) shaderChams.octaves.getValue());
+
+            effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
+            effect.setUniformValue("quality", shaderChams.smoothness.getValueFloat());
+            effect.setUniformValue("divider", shaderChams.divider.getValueFloat());
+            effect.setUniformValue("maxSample", shaderChams.maxSample.getValueFloat());
+            effect.setUniformValue("factor", (float) shaderChams.factor.getValue());
+            effect.setUniformValue("moreGradient", (float) shaderChams.gradient.getValue());
+
+            effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f);
+            effect.setUniformValue("color2", shaderChams.fill2.getValue().getRed() / 255f, shaderChams.fill2.getValue().getGreen() / 255f, shaderChams.fill2.getValue().getBlue() / 255f);
+            effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
+            effect.setUniformValue("minAlpha", shaderChams.alpha.getValueFloat() / 255f);
+
+            effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
+            effect.setUniformValue("time", time);
+            effect.render(mc.getTickDelta());
+            time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Snow) {
             effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f, shaderChams.fill.getValue().getAlpha() / 255f);
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
@@ -180,6 +205,7 @@ public class ShaderManager implements Wrapper {
     public void reloadShaders() {
         DEFAULT = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/outline.json"));
         SMOKE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/smoke.json"));
+        PULSE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/pulse.json"));
         GRADIENT = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/gradient.json"));
         SNOW = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/snow.json"));
         FLOW = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/flow.json"));
@@ -193,6 +219,14 @@ public class ShaderManager implements Wrapper {
         });
 
         SMOKE_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/smoke.json"), managedShaderEffect -> {
+            PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
+            if (effect == null) return;
+
+            ((IShaderEffect) effect).addHook("bufIn", mc.worldRenderer.getEntityOutlinesFramebuffer());
+            ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
+        });
+
+        PULSE_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/pulse.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -242,8 +276,8 @@ public class ShaderManager implements Wrapper {
     }
 
     public boolean fullNullCheck() {
-        if (GRADIENT == null || SMOKE == null || DEFAULT == null || FLOW == null || RAINBOW == null
-                || GRADIENT_OUTLINE == null || SMOKE_OUTLINE == null || DEFAULT_OUTLINE == null || FLOW_OUTLINE == null || RAINBOW_OUTLINE == null
+        if (GRADIENT == null || SMOKE == null || PULSE == null || DEFAULT == null || FLOW == null || RAINBOW == null || SNOW == null
+                || GRADIENT_OUTLINE == null || SMOKE_OUTLINE == null || PULSE_OUTLINE == null || DEFAULT_OUTLINE == null || FLOW_OUTLINE == null || RAINBOW_OUTLINE == null || SNOW_OUTLINE == null
                 || shaderBuffer == null) {
             if (mc.getFramebuffer() == null) return true;
             shaderBuffer = new MyFramebuffer(mc.getFramebuffer().textureWidth, mc.getFramebuffer().textureHeight);
@@ -260,6 +294,7 @@ public class ShaderManager implements Wrapper {
     public enum Shader {
         Solid,
         Smoke,
+        Pulse,
         Gradient,
         Snow,
         Flow,

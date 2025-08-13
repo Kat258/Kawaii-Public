@@ -1,29 +1,30 @@
 package dev.kizuna.mod.modules.impl.player;
 
-import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.player.PlayerEntity;
+import dev.kizuna.Kawaii;
 import dev.kizuna.api.utils.combat.CombatUtil;
 import dev.kizuna.api.utils.entity.EntityUtil;
 import dev.kizuna.api.utils.entity.InventoryUtil;
-import dev.kizuna.api.utils.math.*;
+import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.api.utils.world.BlockPosX;
-import dev.kizuna.Kawaii;
+import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
+import dev.kizuna.mod.modules.impl.combat.KawaiiAura;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.util.Hand;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.potion.PotionUtil;
+import net.minecraft.util.Hand;
 
 import java.util.List;
 
@@ -40,6 +41,7 @@ public class AutoPot extends Module {
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
     private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", false));
     private final BooleanSetting noCheck = add(new BooleanSetting("NoCheck", false));
+    private final BooleanSetting pauseModule = add(new BooleanSetting("PauseModule", true));
     private final Timer delayTimer = new Timer();
 
     public AutoPot() {
@@ -77,6 +79,9 @@ public class AutoPot extends Module {
     public void throwPotion(StatusEffect targetEffect) {
         int oldSlot = mc.player.getInventory().selectedSlot;
         int newSlot;
+        if (pauseModule.getValue()) {
+            KawaiiAura.INSTANCE.lastBreakTimer.reset();
+        }
         for (PlayerEntity player : CombatUtil.getEnemies(range.getValue())) {
             if (inventory.getValue() && (newSlot = findPotionInventorySlot(targetEffect)) != -1) {
                 Kawaii.ROTATION.snapAt(Kawaii.ROTATION.rotationYaw, 90);

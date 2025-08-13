@@ -35,6 +35,7 @@ public class Shader extends Module {
     public final EnumSetting<ShaderManager.Shader> mode = add(new EnumSetting<>("Mode", ShaderManager.Shader.Solid, () -> page.getValue() == Page.Shader));
     public final SliderSetting speed = add(new SliderSetting("Speed", 4, 0, 20, 0.1, () -> page.getValue() == Page.Shader));
     public final ColorSetting fill = add(new ColorSetting("Color", new Color(255,255,255), () -> page.getValue() == Page.Shader));
+    public final ColorSetting fill2 = add(new ColorSetting("Color2", new Color(255,255,255), () -> page.getValue() == Page.Shader));
 
     public final SliderSetting maxSample =
             add(new SliderSetting("MaxSample", 10.0f, 0f, 20.0f, () -> page.getValue() == Page.Shader));
