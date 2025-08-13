@@ -14,9 +14,13 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import java.text.Collator;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 @Mixin(PlayerListHud.class)
 public abstract class MixinPlayerListHud {
@@ -34,6 +38,14 @@ public abstract class MixinPlayerListHud {
         if (mc != null && mc.getNetworkHandler() != null) {
             fullList = new ArrayList<>(mc.getNetworkHandler().getPlayerList());
         }
+
+        final Collator collator = Collator.getInstance(Locale.CHINA);
+        collator.setStrength(Collator.PRIMARY);
+
+        Collections.sort(fullList, Comparator.comparing(
+                entry -> Objects.toString(entry.getProfile().getName(), ""),
+                (a, b) -> compareNames(a, b, collator)
+        ));
 
         int maxSize = (int) module.tabSize.getValue();
 
@@ -79,5 +91,49 @@ public abstract class MixinPlayerListHud {
             context.drawTextWithShadow(textRenderer, text, x + width - textRenderer.getWidth(text), y, color);
             ci.cancel();
         }
+    }
+
+    private static int charCategory(char c) {
+        if (c == '_') return 0;
+        if (c >= '0' && c <= '9') return 1;
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) return 2;
+        if (isChinese(c)) return 3;
+        return 4;
+    }
+
+    private static boolean isChinese(char c) {
+        Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+        return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+                || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B;
+    }
+
+    private static int compareNames(String a, String b, Collator collator) {
+        if (a == null) a = "";
+        if (b == null) b = "";
+        int la = a.length(), lb = b.length();
+        int n = Math.min(la, lb);
+
+        for (int i = 0; i < n; i++) {
+            char ca = a.charAt(i);
+            char cb = b.charAt(i);
+            int caCat = charCategory(ca);
+            int cbCat = charCategory(cb);
+            if (caCat != cbCat) return Integer.compare(caCat, cbCat);
+
+            if (caCat == 2) {
+                char laChr = Character.toLowerCase(ca);
+                char lbChr = Character.toLowerCase(cb);
+                if (laChr != lbChr) return Character.compare(laChr, lbChr);
+                if (ca != cb) return Character.compare(ca, cb);
+            } else if (caCat == 3) {
+                int cmp = collator.compare(a, b);
+                if (cmp != 0) return cmp;
+            } else {
+                if (ca != cb) return Character.compare(ca, cb);
+            }
+        }
+        return Integer.compare(la, lb);
     }
 }

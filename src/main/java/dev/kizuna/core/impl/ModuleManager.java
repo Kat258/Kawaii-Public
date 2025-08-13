@@ -179,6 +179,10 @@ public class ModuleManager implements Wrapper {
         addModule(new Zoom());
         addModule(new BetterTab());
         addModule(new PlayerNotifier());
+        addModule(new PingFix());
+        addModule(new BedrockPhase());
+        addModule(new DeathTP());
+        addModule(new SelfWeb());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
