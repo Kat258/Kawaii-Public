@@ -95,7 +95,7 @@ public class VClip extends Module {
         }
     }
     private boolean hasBlock(BlockPos pos) {
-        return !mc.world.isAir(pos) && BlockUtil.getBlock(pos).getHardness() >= 0;
+        return !mc.world.isAir(pos);
     }
 
     private void teleport(BlockPos pos) {
