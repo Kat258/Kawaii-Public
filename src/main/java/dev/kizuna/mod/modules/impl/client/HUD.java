@@ -58,7 +58,8 @@ public class HUD extends Module {
     public final BooleanSetting speed = add(new BooleanSetting("Speed", true, () -> page.getValue() == Pages.Module));
     public final BooleanSetting brand = add(new BooleanSetting("Brand", false, () -> page.getValue() == Pages.Module));
     public final BooleanSetting potions = add(new BooleanSetting("Potions", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting coords = add(new BooleanSetting("Coords", true, () -> page.getValue() == Pages.Module));
+    public final BooleanSetting coords = add(new BooleanSetting("Coords", true, () -> page.getValue() == Pages.Module).setParent());
+    public final BooleanSetting fakeCoords = add(new BooleanSetting("FakeCoords",false, () -> page.getValue() == Pages.Module && coords.isOpen()));
 
     public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true, () -> page.getValue() == Pages.Module).setParent());
     //public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% §f%version%-nightly §8 %time%", () -> page.getValue() == Pages.Module && waterMark.isOpen()));
@@ -217,20 +218,28 @@ public class HUD extends Module {
         }
 
         if (coords.getValue()) {
-            boolean inNether = mc.world.getRegistryKey().equals(World.NETHER);
+            if (!fakeCoords.getValue()) {
+                boolean inNether = mc.world.getRegistryKey().equals(World.NETHER);
 
-            int posX = mc.player.getBlockX();
-            int posY = mc.player.getBlockY();
-            int posZ = mc.player.getBlockZ();
+                int posX = mc.player.getBlockX();
+                int posY = mc.player.getBlockY();
+                int posZ = mc.player.getBlockZ();
 
-            float factor = !inNether ? 0.125F : 8.0F;
+                float factor = !inNether ? 0.125F : 8.0F;
 
-            int anotherWorldX = (int) (mc.player.getX() * factor);
-            int anotherWorldZ = (int) (mc.player.getZ() * factor);
+                int anotherWorldX = (int) (mc.player.getX() * factor);
+                int anotherWorldZ = (int) (mc.player.getZ() * factor);
 
-            String coordsString = "XYZ §f" + (inNether ? (posX + ", " + posY + ", " + posZ + " §7[§f" + anotherWorldX + ", " + anotherWorldZ + "§7]§f") : (posX + ", " + posY + ", " + posZ + "§7 [§f" + anotherWorldX + ", " + anotherWorldZ + "§7]"));
+                String coordsString = "XYZ §f" + (inNether ? (posX + ", " + posY + ", " + posZ + " §7[§f" + anotherWorldX + ", " + anotherWorldZ + "§7]§f") : (posX + ", " + posY + ", " + posZ + "§7 [§f" + anotherWorldX + ", " + anotherWorldZ + "§7]"));
 
-            drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
+                drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
+            }
+            if (fakeCoords.getValue()){
+
+                String coordsString = "XYZ §f" + "臭傻逼想看你爹坐标?";
+
+                drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
+            }
         }
         if (mineprogress.getValue()) {
             String string = PacketMine.INSTANCE.getInfo();
