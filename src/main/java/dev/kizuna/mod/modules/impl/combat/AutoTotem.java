@@ -66,14 +66,12 @@ public class AutoTotem extends Module {
 			return;
 		}
 		int gAppleSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
-		if (gappleoffhand.getValue() && mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && gAppleSlot != 0) {
-			if (totems == 0) {
+		if (gappleoffhand.getValue() && mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && gAppleSlot != 0 && totems == 0) {
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gAppleSlot, 0, SlotActionType.PICKUP, mc.player);
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 45, 0, SlotActionType.PICKUP, mc.player);
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gAppleSlot, 0, SlotActionType.PICKUP, mc.player);
 				EntityUtil.syncInventory();
 				timer.reset();
-			}
 		}
 		if (swordGApple.getValue() && !mainHand.getValue() && mc.player.getMainHandStack().getItem() instanceof SwordItem && mc.options.useKey.isPressed()) {
 			if (mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && mc.player.getOffHandStack().getItem() != Items.GOLDEN_APPLE) {
