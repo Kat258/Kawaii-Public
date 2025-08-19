@@ -183,6 +183,7 @@ public class ModuleManager implements Wrapper {
         addModule(new BedrockPhase());
         addModule(new DeathTP());
         addModule(new SelfWeb());
+        addModule(new AutoPotSneak());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
