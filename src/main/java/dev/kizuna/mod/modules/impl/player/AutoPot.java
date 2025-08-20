@@ -49,7 +49,7 @@ public class AutoPot extends Module {
     public final BindSetting boostKey = add(new BindSetting("BoostKey", -1));
 
     private final BooleanSetting sneak = add(new BooleanSetting("Sneak", true));
-    private final SliderSetting duration = add(new SliderSetting("Duration", 100, 0, 10000).setSuffix("ms"));
+    private final SliderSetting duration = add(new SliderSetting("Duration", 50, 0, 10000).setSuffix("ms"));
     private final SliderSetting throwDelay = add(new SliderSetting("ThrowDelay", 50, 0, 2000).setSuffix("ms"));
 
     private final Timer delayTimer = new Timer();
@@ -63,6 +63,7 @@ public class AutoPot extends Module {
     private boolean throwing = false;
     private boolean sneakingFromAuto = false;
     private boolean boostPrev = false;
+    private boolean deferredBoost = false;
 
     private long throwStart = 0L;
     private StatusEffect pendingEffect = null;
@@ -95,11 +96,41 @@ public class AutoPot extends Module {
             }
         }
 
+        if (deferredBoost) {
+            if (mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0)))) {
+                if (pendingEffect != null) {
+                    if (throwPotion(pendingEffect)) {
+                        delayTimer.reset();
+                        deferredBoost = false;
+                        pendingEffect = null;
+                        boostPrev = false;
+                    }
+                } else {
+                    deferredBoost = false;
+                    boostPrev = false;
+                }
+            }
+        }
+
         if (single.getValue()) {
             boolean pressed = false;
             try { pressed = boostKey.isPressed(); } catch (Throwable ignored) {}
 
             if (pressed && !boostPrev) {
+                if (onlyGround.getValue() && !(mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0))))) {
+                    StatusEffect toQueue = null;
+                    if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
+                        toQueue = StatusEffects.SPEED;
+                    } else if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
+                        toQueue = StatusEffects.RESISTANCE;
+                    }
+                    if (toQueue != null) {
+                        pendingEffect = toQueue;
+                        deferredBoost = true;
+                        boostPrev = true;
+                    }
+                    return;
+                }
                 if (delayTimer.passedMs((long) (delay.getValue() * 1000))) {
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
                         throwing = checkThrow(StatusEffects.SPEED);
@@ -116,6 +147,9 @@ public class AutoPot extends Module {
                 }
             }
             boostPrev = pressed;
+            if (pendingEffect != null) {
+                try { throwPotion(pendingEffect); } catch (Throwable ignored) {}
+            }
             return;
         }
 
@@ -156,6 +190,19 @@ public class AutoPot extends Module {
         }
 
         long now = System.currentTimeMillis();
+
+        List<PlayerEntity> enemies = CombatUtil.getEnemies(range.getValue());
+        if (enemies == null || enemies.isEmpty()) {
+            if (pendingEffect == targetEffect) {
+                pendingEffect = null;
+                throwStart = 0L;
+                try {
+                    mc.getNetworkHandler().sendPacket(new ClientCommandC2SPacket(mc.player, ClientCommandC2SPacket.Mode.RELEASE_SHIFT_KEY));
+                } catch (Throwable ignored) {}
+                sneakingFromAuto = false;
+            }
+            return false;
+        }
 
         if (sneak.getValue() && (long) throwDelay.getValue() > 0L) {
             if (pendingEffect == null || pendingEffect != targetEffect) {
