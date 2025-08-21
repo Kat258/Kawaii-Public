@@ -43,7 +43,7 @@ public class PopChams extends Module {
     private final EnumSetting<Mode> mode = add(new EnumSetting<>("Mode", Mode.Simple));
     private final BooleanSetting secondLayer = add(new BooleanSetting("SecondLayer", false));
     private final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFFFFF)));
-    private final SliderSetting ySpeed = add(new SliderSetting("YSpeed", 0, -10, 10));
+    private final SliderSetting ySpeed = add(new SliderSetting("YSpeed", 0, -10, 10,0.1));
     private final SliderSetting aSpeed = add(new SliderSetting("AlphaSpeed", 5.0, 1, 100));
     private final SliderSetting rotSpeed = add(new SliderSetting("RotationSpeed", 0.25f, 0f, 6f));
 
@@ -127,8 +127,12 @@ public class PopChams extends Module {
             RenderSystem.setShader(GameRenderer::getPositionProgram);
             buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
         }
-
-        RenderSystem.setShaderColor(color.getValue().getRed(), color.getValue().getGreen(), color.getValue().getBlue(), alpha / 255f);
+        RenderSystem.setShaderColor(
+                color.getValue().getRed() / 255.0f,
+                color.getValue().getGreen() / 255.0f,
+                color.getValue().getBlue() / 255.0f,
+                alpha / 255f
+        );
 
         modelBase.render(matrices, buffer, 10, 0, color.getValue().getRed(), color.getValue().getGreen(), color.getValue().getBlue(), alpha / 255f);
         Render2DUtil.endBuilding(buffer);
