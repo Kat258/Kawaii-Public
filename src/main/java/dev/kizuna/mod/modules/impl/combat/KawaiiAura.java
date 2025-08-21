@@ -115,7 +115,7 @@ public class KawaiiAura extends Module {
     private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> render.isOpen() && rainbow.getValue()));
     private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> render.isOpen() && rainbow.getValue()));
     private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> render.isOpen() && rainbow.getValue()));
-    private final ColorSetting text = add(new ColorSetting("Text", new Color(-1), () -> render.isOpen() && rainbow.getValue()));
+    private final ColorSetting text = add(new ColorSetting("Text", new Color(-1), render::isOpen).injectBoolean(true));
 
     private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Jello, render::isOpen));
     private final ColorSetting color = add(new ColorSetting("TargetColor", new Color(255, 255, 255, 50), render::isOpen));

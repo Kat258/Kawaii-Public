@@ -13,6 +13,11 @@ import net.minecraft.client.network.PendingUpdateManager;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.mob.AmbientEntity;
+import net.minecraft.entity.mob.Angerable;
+import net.minecraft.entity.mob.Monster;
+import net.minecraft.entity.passive.PassiveEntity;
+import net.minecraft.entity.passive.SquidEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
@@ -145,5 +150,14 @@ public class EntityUtil implements Wrapper {
 
     public static void syncInventory() {
         if (AntiCheat.INSTANCE.inventorySync.getValue()) mc.getNetworkHandler().sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+    }
+    public static boolean isMonster(Entity e) {
+        return e instanceof Monster;
+    }
+    public static boolean isNeutral(Entity e) {
+        return e instanceof Angerable && !((Angerable)e).hasAngerTime();
+    }
+    public static boolean isPassive(Entity e) {
+        return e instanceof PassiveEntity || e instanceof AmbientEntity || e instanceof SquidEntity;
     }
 }

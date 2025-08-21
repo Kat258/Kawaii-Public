@@ -15,6 +15,7 @@ import java.awt.*;
 
 public class Render2DUtil implements Wrapper {
 
+
     public static final Identifier capture = new Identifier("textures/capture.png");
 
     public static void horizontalGradient(MatrixStack matrices, float x1, float y1, float x2, float y2, Color startColor, Color endColor) {
@@ -155,4 +156,118 @@ public class Render2DUtil implements Wrapper {
     public static void endRender() {
         RenderSystem.disableBlend();
     }
+    private static void addQuad(
+            BufferBuilder buffer,
+            Matrix4f matrix,
+            float x1, float y1,
+            float x2, float y2,
+            int color
+    ) {
+        buffer.vertex(matrix, x1, y2, 0).color(color);
+        buffer.vertex(matrix, x2, y2, 0).color(color);
+        buffer.vertex(matrix, x2, y1, 0).color(color);
+        buffer.vertex(matrix, x1, y1, 0).color(color);
+    }
+
+    public static void drawRectOutline(
+            MatrixStack matrices,
+            float rectX,
+            float rectY,
+            float rectWidth,
+            float rectHeight,
+            Color color,
+            float thickness,
+            Boolean upSide,
+            Boolean downSide,
+            Boolean leftSide,
+            Boolean rightSide
+    ) {
+        float spacing = 0.2f;
+        float outlineX = rectX - spacing - thickness;
+        float outlineY = rectY - spacing - thickness;
+        float outlineWidth = rectWidth + 2 * (spacing + thickness);
+        float outlineHeight = rectHeight + 2 * (spacing + thickness);
+
+        Matrix4f matrix = matrices.peek().getPositionMatrix();
+        Tessellator tessellator = Tessellator.getInstance();
+        setupRender();
+        RenderSystem.setShader(GameRenderer::getPositionColorProgram);
+        BufferBuilder buffer = tessellator.getBuffer();  // 1.20.4 获取 BufferBuilder
+        buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);  // 1.20.4 调用 begin
+        int rgb = color.getRGB();
+
+        float xEnd = outlineX + outlineWidth;
+        float yEnd = outlineY + outlineHeight;
+        float t = thickness;
+
+        // Upside
+        if (upSide) {
+            addQuad(buffer, matrix,
+                    outlineX + t, outlineY,
+                    xEnd - t, outlineY + t,
+                    rgb
+            );
+        }
+
+        // Right Side
+        if (rightSide) {
+            addQuad(buffer, matrix,
+                    xEnd - t, outlineY + t,
+                    xEnd, yEnd - t,
+                    rgb
+            );
+        }
+
+        // Downside
+        if (downSide) {
+            addQuad(buffer, matrix,
+                    outlineX + t, yEnd - t,
+                    xEnd - t, yEnd,
+                    rgb
+            );
+        }
+
+        // Left Side
+        if (leftSide) {
+            addQuad(buffer, matrix,
+                    outlineX, outlineY + t,
+                    outlineX + t, yEnd - t,
+                    rgb
+            );
+        }
+
+        // Top Left Corner
+        addQuad(buffer, matrix,
+                outlineX, outlineY,
+                outlineX + t, outlineY + t,
+                rgb
+        );
+        // Top Right Corner
+        addQuad(buffer, matrix,
+                xEnd - t, outlineY,
+                xEnd, outlineY + t,
+                rgb
+        );
+        // Lower Right Corner
+        addQuad(buffer, matrix,
+                xEnd - t, yEnd - t,
+                xEnd, yEnd,
+                rgb
+        );
+        // Lower Left Corner
+        addQuad(buffer, matrix,
+                outlineX, yEnd - t,
+                outlineX + t, yEnd,
+                rgb
+        );
+
+        BufferRenderer.drawWithGlobalProgram(buffer.end());
+        endRender();
+    }
+    public static void endBuilding(BufferBuilder bb) {
+        BufferBuilder.BuiltBuffer builtBuffer = bb.endNullable();
+        if (builtBuffer != null)
+            BufferRenderer.drawWithGlobalProgram(builtBuffer);
+    }
+
 }

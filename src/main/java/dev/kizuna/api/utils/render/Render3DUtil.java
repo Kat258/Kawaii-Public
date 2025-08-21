@@ -269,6 +269,44 @@ public class Render3DUtil implements Wrapper {
     public static void drawLine(Vec3d start, Vec3d end, Color color) {
         drawLine(start.x, start.getY(), start.z, end.getX(), end.getY(), end.getZ(), color, 1);
     }
+    public static void drawLine(Box b, Color color, float lineWidth) {
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.disableDepthTest();
+
+        MatrixStack matrices = matrixFrom(b.minX, b.minY, b.minZ);
+        Tessellator tessellator = RenderSystem.renderThreadTesselator();
+        BufferBuilder buffer = tessellator.getBuffer();
+
+        RenderSystem.disableCull();
+        RenderSystem.setShader(GameRenderer::getRenderTypeLinesProgram);
+
+        RenderSystem.lineWidth(lineWidth);
+        buffer.begin(VertexFormat.DrawMode.LINES, VertexFormats.LINES);
+        Box box = b.offset(new Vec3d(b.minX, b.minY, b.minZ).negate());
+        float x1 = (float) box.minX;
+        float y1 = (float) box.minY;
+        float z1 = (float) box.minZ;
+        float x2 = (float) box.maxX;
+        float y2 = (float) box.maxY;
+        float z2 = (float) box.maxZ;
+        vertexLine(matrices, buffer, x1, y1, z1, x2, y1, z1, color);
+        vertexLine(matrices, buffer, x2, y1, z1, x2, y1, z2, color);
+        vertexLine(matrices, buffer, x2, y1, z2, x1, y1, z2, color);
+        vertexLine(matrices, buffer, x1, y1, z2, x1, y1, z1, color);
+        vertexLine(matrices, buffer, x1, y1, z2, x1, y2, z2, color);
+        vertexLine(matrices, buffer, x1, y1, z1, x1, y2, z1, color);
+        vertexLine(matrices, buffer, x2, y1, z2, x2, y2, z2, color);
+        vertexLine(matrices, buffer, x2, y1, z1, x2, y2, z1, color);
+        vertexLine(matrices, buffer, x1, y2, z1, x2, y2, z1, color);
+        vertexLine(matrices, buffer, x2, y2, z1, x2, y2, z2, color);
+        vertexLine(matrices, buffer, x2, y2, z2, x1, y2, z2, color);
+        vertexLine(matrices, buffer, x1, y2, z2, x1, y2, z1, color);
+        tessellator.draw();
+        RenderSystem.enableCull();
+        RenderSystem.enableDepthTest();
+        RenderSystem.disableBlend();
+    }
     public static void drawLine(double x1, double y1, double z1, double x2, double y2, double z2, Color color, float width) {
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();

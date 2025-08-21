@@ -1,5 +1,6 @@
 package dev.kizuna.mod.modules.impl.player;
 
+import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.eventbus.EventPriority;
 import dev.kizuna.api.events.impl.ClickBlockEvent;
@@ -14,7 +15,6 @@ import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.asm.accessors.IPlayerMoveC2SPacket;
-import dev.kizuna.Kawaii;
 import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
@@ -37,9 +37,7 @@ import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.decoration.ArmorStandEntity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.item.AirBlockItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
+import net.minecraft.item.*;
 import net.minecraft.network.packet.c2s.play.PlayerActionC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
@@ -62,6 +60,7 @@ public class PacketMine extends Module {
 		Rotation,
 		Render,
 	}
+
 	public static final List<Block> godBlocks = Arrays.asList(Blocks.COMMAND_BLOCK, Blocks.LAVA_CAULDRON, Blocks.LAVA, Blocks.WATER_CAULDRON, Blocks.WATER, Blocks.BEDROCK, Blocks.BARRIER, Blocks.END_PORTAL, Blocks.NETHER_PORTAL, Blocks.END_PORTAL_FRAME);
 	private final EnumSetting<Page> page = add(new EnumSetting<>("Page", Page.General));
 	private final SliderSetting delay = add(new SliderSetting("Delay", 50, 0, 500, 1, () -> page.is(Page.General)));
@@ -82,8 +81,10 @@ public class PacketMine extends Module {
 	private final BooleanSetting swing = add(new BooleanSetting("Swing", true, () -> page.is(Page.General)));
 	private final BooleanSetting endSwing = add(new BooleanSetting("EndSwing", false, () -> page.is(Page.General)));
 	public final EnumSetting<SwingSide> swingMode = add(new EnumSetting<>("SwingMode", SwingSide.All, () -> page.is(Page.General)));
-
+	//check
 	private final BooleanSetting switchReset = add(new BooleanSetting("SwitchReset", false, () -> page.is(Page.Check)));
+	private final BooleanSetting autoswitch = add(new BooleanSetting("AutoSwitch", false, () -> page.is(Page.Check)));
+	//private final SliderSetting switchProgressThreshold = add(new SliderSetting("SwitchProgressThreshold", 0.8f, 0.0f, 1.0f, 0.01f, () -> page.is(Page.Check)));
 	public final BooleanSetting preferWeb = add(new BooleanSetting("PreferWeb", true, () -> page.is(Page.Check)));
 	public final BooleanSetting preferHead = add(new BooleanSetting("PreferHead", true, () -> page.is(Page.Check)));
 	public final BooleanSetting farCancel = add(new BooleanSetting("FarCancel", false, () -> page.is(Page.Check)));
@@ -101,7 +102,7 @@ public class PacketMine extends Module {
 	private final SliderSetting steps = add(new SliderSetting("Steps", 0.05, 0, 1, 0.01, () -> page.is(Page.Rotation)));
 	private final BooleanSetting checkFov = add(new BooleanSetting("OnlyLooking", true, () -> page.is(Page.Rotation)));
 	private final SliderSetting fov = add(new SliderSetting("Fov", 30, 0, 50, () -> page.is(Page.Rotation)));
-	private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> page.is(Page.Rotation)));
+	private final SliderSetting priority = add(new SliderSetting("Priority", 10, 0, 100, () -> page.is(Page.Rotation)));
 
 	public final BooleanSetting crystal = add(new BooleanSetting("Crystal", false, () -> page.is(Page.Place)).setParent());
 	private final BooleanSetting onlyHeadBomber = add(new BooleanSetting("OnlyCev", true, () -> page.is(Page.Place) && crystal.isOpen()));
@@ -115,13 +116,15 @@ public class PacketMine extends Module {
 	private final SliderSetting placeDelay = add(new SliderSetting("PlaceDelay", 100, 0, 1000, () -> page.is(Page.Place)));
 
 	private final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> page.is(Page.Render)));
-	public final ColorSetting startColor = add(new ColorSetting("StartColor",new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
-	public final ColorSetting endColor = add(new ColorSetting("EndColor",new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
+	public final ColorSetting startColor = add(new ColorSetting("StartColor", new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
+	public final ColorSetting endColor = add(new ColorSetting("EndColor", new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
 	private final EnumSetting<Easing> fadeEase = add(new EnumSetting<>("FadeEase", Easing.CubicInOut, () -> page.is(Page.Render)));
-	public final ColorSetting doubleColor = add(new ColorSetting("DoubleColor",new Color(88, 94, 255, 100), () -> doubleBreak.getValue() && page.is(Page.Render)));
+	public final ColorSetting doubleColor = add(new ColorSetting("DoubleColor", new Color(88, 94, 255, 100), () -> doubleBreak.getValue() && page.is(Page.Render)));
 	private final BooleanSetting text = add(new BooleanSetting("Text", true, () -> page.is(Page.Render)));
 	private final BooleanSetting box = add(new BooleanSetting("Box", true, () -> page.is(Page.Render)));
 	private final BooleanSetting outline = add(new BooleanSetting("Outline", true, () -> page.is(Page.Render)));
+	private final BooleanSetting bold = add(new BooleanSetting("Bold", false)).setParent();
+	private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 4,1,5,0.1, bold::isOpen));
 	int lastSlot = -1;
 	public Vec3d directionVec = null;
 	public static PacketMine INSTANCE;
@@ -137,9 +140,9 @@ public class PacketMine extends Module {
 	private final Timer delayTimer = new Timer();
 	private final Timer placeTimer = new Timer();
 	public static boolean sendGroundPacket = false;
+
 	public PacketMine() {
 		super("PacketMine", Category.Player);
-		setChinese("发包挖掘");
 		INSTANCE = this;
 	}
 
@@ -148,10 +151,11 @@ public class PacketMine extends Module {
 			return breakPos;
 		}
 		return null;
- 	}
+	}
+
 	@Override
 	public String getInfo() {
-		if (progress >= 1) {
+		if (progress >= 100) {
 			return "Done";
 		}
 		return df.format(progress * 100) + "%";
@@ -164,6 +168,7 @@ public class PacketMine extends Module {
 			return InventoryUtil.findItem(Items.END_CRYSTAL);
 		}
 	}
+
 	private int findBlock(Block block) {
 		if (!hotBar.getValue()) {
 			return InventoryUtil.findBlockInventorySlot(block);
@@ -171,7 +176,9 @@ public class PacketMine extends Module {
 			return InventoryUtil.findBlock(block);
 		}
 	}
+
 	private final Timer sync = new Timer();
+
 	@EventHandler()
 	public void onRotate(LookAtEvent event) {
 		if (rotate.getValue() && yawStep.getValue() && directionVec != null && !sync.passed(syncTime.getValue())) {
@@ -188,9 +195,10 @@ public class PacketMine extends Module {
 	}
 
 	static DecimalFormat df = new DecimalFormat("0.0");
+
 	@Override
 	public void onRender3D(MatrixStack matrixStack) {
-        if (!mc.player.isCreative()) {
+		if (!mc.player.isCreative()) {
 			if (secondPos != null) {
 				if (isAir(secondPos)) {
 					secondPos = null;
@@ -211,7 +219,7 @@ public class PacketMine extends Module {
 				Render3DUtil.draw3DBox(matrixStack, new Box(breakPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), getColor(animationTime.ease(fadeEase.getValue())), outline.getValue(), box.getValue());
 				if (text.getValue()) {
 					if (isAir(breakPos)) {
-						Render3DUtil.drawText3D("Waiting", breakPos.toCenterPos(), -1);
+						Render3DUtil.drawText3D("Done", breakPos.toCenterPos(), -1);
 					} else {
 						if ((int) mineTimer.getPassedTimeMs() < breakTime) {
 							Render3DUtil.drawText3D(df.format(progress * 100) + "%", breakPos.toCenterPos(), -1);
@@ -239,9 +247,9 @@ public class PacketMine extends Module {
 		int eB = endColor.getValue().getBlue();
 		int eA = endColor.getValue().getAlpha();
 		return new Color((int) (sR + (eR - sR) * quad),
-                (int) (sG + (eG - sG) * quad),
-                (int) (sB + (eB - sB) * quad),
-                (int) (sA + (eA - sA) * quad));
+				(int) (sG + (eG - sG) * quad),
+				(int) (sB + (eB - sB) * quad),
+				(int) (sA + (eA - sA) * quad));
 	}
 
 	@Override
@@ -259,6 +267,7 @@ public class PacketMine extends Module {
 
 	boolean done = false;
 	boolean skip = false;
+
 	@Override
 	public void onUpdate() {
 		if (skip) {
@@ -515,7 +524,7 @@ public class PacketMine extends Module {
 			BlockUtil.placeCrystal(breakPos.up(), rotate.getValue());
 			doSwap(oldSlot, crystal);
 			placeTimer.reset();
-            return !waitPlace.getValue();
+			return !waitPlace.getValue();
 		}
 		return true;
 	}
@@ -616,11 +625,13 @@ public class PacketMine extends Module {
 
 	public static boolean noEntity(BlockPos pos, boolean ignoreItem) {
 		for (Entity entity : BlockUtil.getEntities(new Box(pos))) {
-			if (entity instanceof ItemEntity && ignoreItem || entity instanceof ArmorStandEntity && AntiCheat.INSTANCE.obsMode.getValue()) continue;
+			if (entity instanceof ItemEntity && ignoreItem || entity instanceof ArmorStandEntity && AntiCheat.INSTANCE.obsMode.getValue())
+				continue;
 			return false;
 		}
 		return true;
 	}
+
 	public void mine(BlockPos pos) {
 		if (nullCheck()) {
 			return;
@@ -658,7 +669,8 @@ public class PacketMine extends Module {
 		done = false;
 		animationTime.reset();
 		skip = true;
-    }
+	}
+
 	private boolean shouldCrystal() {
 		return crystal.getValue() && (!onlyHeadBomber.getValue() || obsidian.isPressed()) || AutoCev.INSTANCE.isOn();
 	}
@@ -744,18 +756,31 @@ public class PacketMine extends Module {
 			}
 			return;
 		}
+		if (autoswitch.getValue()) {
+			if (breakPos == null || (doubleBreak.getValue() && isAir(secondPos))) {
+				return;
+			}
+			double progress = (double) mineTimer.getPassedTimeMs() / getBreakTime(breakPos, mc.player.getInventory().selectedSlot);
+			if (progress >= 0.8) {
+				int pickaxeSlot = getTool(breakPos);
+				if (pickaxeSlot != -1) {
+					InventoryUtil.switchToSlot(pickaxeSlot);
+					return;
+				}
+			}
+		}
 		if (!(event.getPacket() instanceof PlayerActionC2SPacket)) {
 			return;
 		}
 		if (((PlayerActionC2SPacket) event.getPacket()).getAction() == PlayerActionC2SPacket.Action.START_DESTROY_BLOCK) {
 			if (breakPos == null || !((PlayerActionC2SPacket) event.getPacket()).getPos().equals(breakPos)) {
-				//if (cancelPacket.getValue()) event.cancel();
+				// if (cancelPacket.getValue()) event.cancel();
 				return;
 			}
 			startPacket = true;
 		} else if (((PlayerActionC2SPacket) event.getPacket()).getAction() == PlayerActionC2SPacket.Action.STOP_DESTROY_BLOCK) {
 			if (breakPos == null || !((PlayerActionC2SPacket) event.getPacket()).getPos().equals(breakPos)) {
-				//if (cancelPacket.getValue()) event.cancel();
+				// if (cancelPacket.getValue()) event.cancel();
 				return;
 			}
 			if (!instant.getValue()) {

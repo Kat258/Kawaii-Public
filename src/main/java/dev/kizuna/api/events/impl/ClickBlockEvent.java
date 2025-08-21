@@ -21,5 +21,6 @@ public class ClickBlockEvent extends Event {
     public BlockPos getPos() {
         return pos;
     }
+
 }
 

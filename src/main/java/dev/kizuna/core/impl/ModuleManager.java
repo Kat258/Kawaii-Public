@@ -77,6 +77,7 @@ public class ModuleManager implements Wrapper {
         addModule(new Blocker());
         addModule(new BowBomb());
         addModule(new BreakESP());
+        addModule(new Chams());
         addModule(new TrueAttackCooldown());
         addModule(new Burrow());
         addModule(new Selffill());
@@ -162,6 +163,7 @@ public class ModuleManager implements Wrapper {
         addModule(new AntiCrawl());
         addModule(new AutoRegear());
         addModule(new AntiRegear());
+        addModule(new TwoDESP());
         addModule(new AntiBowBomb());
         addModule(new SafeWalk());
         addModule(new NoJumpDelay());

@@ -7,7 +7,7 @@ public class TotemEvent extends Event {
     private final PlayerEntity player;
 
     public TotemEvent(PlayerEntity player) {
-        super(Stage.Post);
+        super(Event.Stage.Post);
         this.player = player;
     }
 

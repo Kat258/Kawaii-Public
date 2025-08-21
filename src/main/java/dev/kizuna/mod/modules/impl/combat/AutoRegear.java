@@ -10,6 +10,7 @@ import dev.kizuna.core.impl.CommandManager;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

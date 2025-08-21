@@ -22,17 +22,15 @@ import static net.minecraft.item.Items.TOTEM_OF_UNDYING;
 
 public class AutoTotem extends Module {
 	private final BooleanSetting mainHand =
-			add(new BooleanSetting("MainHand", false).setParent());
-	private final BooleanSetting holdGApple =
-			add(new BooleanSetting("HoldGApple", false,mainHand::isOpen));
+			add(new BooleanSetting("MainHand", false));
 	private final BooleanSetting crystal =
 			add(new BooleanSetting("Crystal", false, () -> !mainHand.getValue()));
-	private final BooleanSetting swordGApple =
-			add(new BooleanSetting("SwordGApple", false, () -> !mainHand.getValue()));
+	private final BooleanSetting gapple =
+			add(new BooleanSetting("Gapple", false, () -> !mainHand.getValue()));
 	private final SliderSetting health =
 			add(new SliderSetting("Health", 16.0f, 0.0f, 36.0f, 0.1));
 	private final BooleanSetting gappleoffhand =
-			add(new BooleanSetting("GAppleOffhand", false));
+			add(new BooleanSetting("GappleOffhand", false));
 
 	public AutoTotem() {
 		super("AutoTotem", Category.Combat);
@@ -62,18 +60,10 @@ public class AutoTotem extends Module {
 		if (mc.currentScreen != null && !(mc.currentScreen instanceof ChatScreen) && !(mc.currentScreen instanceof InventoryScreen) && !(mc.currentScreen instanceof ClickGuiScreen) && !(mc.currentScreen instanceof GameMenuScreen)) {
 			return;
 		}
-		if (!timer.passedMs(200)) {
+		if (!timer.passedMs(50)) {
 			return;
 		}
-		int gAppleSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
-		if (gappleoffhand.getValue() && mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && gAppleSlot != 0 && totems == 0) {
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gAppleSlot, 0, SlotActionType.PICKUP, mc.player);
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 45, 0, SlotActionType.PICKUP, mc.player);
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gAppleSlot, 0, SlotActionType.PICKUP, mc.player);
-				EntityUtil.syncInventory();
-				timer.reset();
-		}
-		if (swordGApple.getValue() && !mainHand.getValue() && mc.player.getMainHandStack().getItem() instanceof SwordItem && mc.options.useKey.isPressed()) {
+		if (gapple.getValue() && !mainHand.getValue() && mc.player.getMainHandStack().getItem() instanceof SwordItem && mc.options.useKey.isPressed()) {
 			if (mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && mc.player.getOffHandStack().getItem() != Items.GOLDEN_APPLE) {
 				int itemSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
 				if (itemSlot == -1) {
@@ -89,29 +79,7 @@ public class AutoTotem extends Module {
 			}
 			return;
 		}
-        if (holdGApple.getValue() && mc.player.getMainHandStack().getItem() == TOTEM_OF_UNDYING && mc.options.useKey.isPressed()) {
-            if (mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && mc.player.getOffHandStack().getItem() != Items.GOLDEN_APPLE) {
-                int itemSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
-				int totemSlot = InventoryUtil.getItemCount(TOTEM_OF_UNDYING);
-                if (itemSlot == -1) {
-                    itemSlot = findItemInventorySlot(Items.GOLDEN_APPLE);
-                }
-                if (itemSlot != -1) {
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 45, 0, SlotActionType.PICKUP, mc.player);
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
-					if (mc.player.getInventory().getStack(0).getItem() != TOTEM_OF_UNDYING) {
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, totemSlot, 0, SlotActionType.PICKUP, mc.player);
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 36, 0, SlotActionType.PICKUP, mc.player);
-						mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, totemSlot, 0, SlotActionType.PICKUP, mc.player);
-						EntityUtil.syncInventory();
-						timer.reset();
-					}
-				}
-            }
-            return;
-        }
-        if (mc.player.getHealth() + mc.player.getAbsorptionAmount() > health.getValue()) {
+		if (mc.player.getHealth() + mc.player.getAbsorptionAmount() > health.getValue()) {
 			if (!mainHand.getValue() && crystal.getValue() && mc.player.getOffHandStack().getItem() != Items.END_CRYSTAL) {
 				int itemSlot = findItemInventorySlot(Items.END_CRYSTAL);
 				if (itemSlot != -1) {
@@ -124,28 +92,38 @@ public class AutoTotem extends Module {
 			}
 			return;
 		}
-		int itemSlot = findItemInventorySlot(TOTEM_OF_UNDYING);
-		if (mainHand.getValue()) {
-			if (mc.player.getMainHandStack().getItem() != TOTEM_OF_UNDYING) {
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 36, 0, SlotActionType.PICKUP, mc.player);
-				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
-				EntityUtil.syncInventory();
-				timer.reset();
-			}
-		}
-		if (mc.player.getOffHandStack().getItem() == TOTEM_OF_UNDYING && mc.player.getMainHandStack().getItem() == TOTEM_OF_UNDYING) {
+		if (mc.player.getMainHandStack().getItem() == TOTEM_OF_UNDYING || mc.player.getOffHandStack().getItem() == TOTEM_OF_UNDYING) {
 			return;
 		}
+		int itemSlot = findItemInventorySlot(TOTEM_OF_UNDYING);
 		if (itemSlot != -1) {
-			if (!mc.player.isUsingItem() && holdGApple.getValue()){
+			if (mainHand.getValue()) {
+				InventoryUtil.switchToSlot(0);
+				if (mc.player.getInventory().getStack(0).getItem() != TOTEM_OF_UNDYING) {
+					mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
+					mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 36, 0, SlotActionType.PICKUP, mc.player);
+					mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
+					EntityUtil.syncInventory();
+				}
+			} else {
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 45, 0, SlotActionType.PICKUP, mc.player);
 				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, itemSlot, 0, SlotActionType.PICKUP, mc.player);
 				EntityUtil.syncInventory();
 			}
+			timer.reset();
 		}
 		totems = InventoryUtil.getItemCount(TOTEM_OF_UNDYING);
+		int gappleSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
+		if (gappleoffhand.getValue() && mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE) {
+			if (totems == 0) {
+				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gappleSlot, 0, SlotActionType.PICKUP, mc.player);
+				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, 45, 0, SlotActionType.PICKUP, mc.player);
+				mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, gappleSlot, 0, SlotActionType.PICKUP, mc.player);
+				EntityUtil.syncInventory();
+				timer.reset();
+			}
+		}
 	}
 
 	public static int findItemInventorySlot(Item item) {

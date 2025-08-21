@@ -25,7 +25,7 @@ public class ClickGui extends Module {
 	public final BooleanSetting center = add(new BooleanSetting("Center", false,element::isOpen));
 	public final ColorSetting bind = add(new ColorSetting("Bind", new Color(255, 255, 255),element::isOpen).injectBoolean(false));
 	public final ColorSetting gear = add(new ColorSetting("Gear", new Color(255, 255, 255),element::isOpen).injectBoolean(true));
-//General
+	//General
 	private final BooleanSetting general = add(new BooleanSetting("General",true).setParent());
 	public final BooleanSetting chinese = add(new BooleanSetting("Chinese", false,general::isOpen));
 	public final BooleanSetting font = add(new BooleanSetting("Font", true,general::isOpen));
@@ -35,7 +35,7 @@ public class ClickGui extends Module {
 	public final EnumSetting<Mode> mode = add(new EnumSetting<>("EnableAnim", Mode.Pull,general::isOpen));
 	public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 1000, 1,general::isOpen));
 	public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.QuadInOut,general::isOpen));
-//Color
+	//Color
 	private final BooleanSetting colorb = add(new BooleanSetting("Color",true).setParent());
 	public final ColorSetting color = add(new ColorSetting("Main", 6976702,colorb::isOpen));
 	public final ColorSetting mainEnd = add(new ColorSetting("MainEnd", -2113929216,colorb::isOpen).injectBoolean(false));
