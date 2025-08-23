@@ -69,7 +69,9 @@ public class ShulkerStealer extends Module {
     private final SliderSetting redstone = add(new SliderSetting("RedStone", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting pearl = add(new SliderSetting("Pearl", 16, 0, 64, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting obsidian = add(new SliderSetting("Obsidian", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
-    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private final SliderSetting slowfalling = add(new SliderSetting("slowfalling", 6, 0, 36, () -> take.getValue() && smart.isOpen()));
+    private final SliderSetting cryobsidian = add(new SliderSetting("CryObsidian", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
+    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public ShulkerStealer() {
         super("ShulkerStealer", "Auto place shulker and replenish", Category.Player);
@@ -173,6 +175,8 @@ public class ShulkerStealer extends Module {
         this.stealCountList[18] = (int) (this.redstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.REDSTONE_BLOCK)));
         this.stealCountList[19] = (int) (this.cfruit.getValue() - InventoryUtil.getItemCount(Items.CHORUS_FRUIT));
         this.stealCountList[20] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
+        this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount(StatusEffects.SLOW_FALLING));
+        this.stealCountList[22] = (int) (this.cryobsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.CRYING_OBSIDIAN)));
     }
 
     @Override
@@ -381,6 +385,19 @@ public class ShulkerStealer extends Module {
         }
         if (i.getItem().equals(Item.fromBlock(Blocks.OBSIDIAN)) && this.stealCountList[20] > 0) {
             stealCountList[20] = stealCountList[20] - i.getCount();
+            return true;
+        }
+        if(i.getItem().equals(Items.SPLASH_POTION) && this.stealCountList[21] > 0) {
+            List<StatusEffectInstance> effects = new ArrayList<>(PotionUtil.getPotionEffects(i));
+            for (StatusEffectInstance potionEffect : effects) {
+                if (potionEffect.getEffectType() == StatusEffects.SLOW_FALLING) {
+                    stealCountList[21] = stealCountList[21] - i.getCount();
+                    return true;
+                }
+            }
+        }
+        if (i.getItem().equals(Item.fromBlock(Blocks.CRYING_OBSIDIAN)) && this.stealCountList[22] > 0) {
+            stealCountList[22] = stealCountList[22] - i.getCount();
             return true;
         }
         return false;

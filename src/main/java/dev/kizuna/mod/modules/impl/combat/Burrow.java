@@ -44,6 +44,7 @@ public class Burrow extends Module {
     private final SliderSetting webTime = add(new SliderSetting("WebTime", 0, 0, 500));
     private final BooleanSetting enderChest = add(new BooleanSetting("EnderChest", true));
     private final BooleanSetting netheriteblock = add(new BooleanSetting("NetheriteBlock", true));
+    private final BooleanSetting cryObisidan = add(new BooleanSetting("CryObisidan", false));
     private final BooleanSetting antiLag = add(new BooleanSetting("AntiLag", false));
     private final BooleanSetting detectMine = add(new BooleanSetting("DetectMining", false));
     private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false));
@@ -109,7 +110,12 @@ public class Burrow extends Module {
         int oldSlot = mc.player.getInventory().selectedSlot;
         int block;
         if ((block = getBlock()) == -1) {
-            CommandManager.sendChatMessageWidthId("§c§oObsidian" + (enderChest.getValue() ? "/EnderChest" : "") + (netheriteblock.getValue() ? "/EnderChest" : "")+ "?", hashCode());
+            StringBuilder sb = new StringBuilder("§c§oObsidian");
+            if (enderChest.getValue()) sb.append("/EnderChest");
+            if (netheriteblock.getValue()) sb.append("/NetheriteBlock");
+            if (cryObisidan.getValue()) sb.append("/CryObisidan");
+            sb.append("?");
+            CommandManager.sendChatMessageWidthId(sb.toString(), hashCode());
             disable();
             return;
         }
@@ -516,18 +522,37 @@ public class Burrow extends Module {
 
     private int getBlock() {
         if (inventory.getValue()) {
+            if (netheriteblock.getValue()) {
+                int s = InventoryUtil.findBlockInventorySlot(Blocks.NETHERITE_BLOCK);
+                if (s != -1) return s;
+            }
+            if (cryObisidan.getValue()) {
+                int s = InventoryUtil.findBlockInventorySlot(Blocks.CRYING_OBSIDIAN);
+                if (s != -1) return s;
+            }
             if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
             }
-            return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
+            if (enderChest.getValue()) {
+                return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
+            }
+            return -1;
         } else {
+            if (netheriteblock.getValue()) {
+                int s = InventoryUtil.findBlock(Blocks.NETHERITE_BLOCK);
+                if (s != -1) return s;
+            }
+            if (cryObisidan.getValue()) {
+                int s = InventoryUtil.findBlock(Blocks.CRYING_OBSIDIAN);
+                if (s != -1) return s;
+            }
             if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlock(Blocks.OBSIDIAN);
             }
-            if (netheriteblock.getValue()) {
-                return InventoryUtil.findBlock(Blocks.NETHERITE_BLOCK);
+            if (enderChest.getValue()) {
+                return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
             }
-            return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
+            return -1;
         }
     }
 

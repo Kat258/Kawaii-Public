@@ -38,7 +38,6 @@ public class AutoPot extends Module {
     private final SliderSetting delay = add(new SliderSetting("Delay", 5, 0, 10).setSuffix("s"));
     private final BooleanSetting speed = add(new BooleanSetting("Speed", true));
     private final BooleanSetting resistance = add(new BooleanSetting("Resistance", true));
-    private final BooleanSetting slowFalling = add(new BooleanSetting("SlowFalling", true));
     private final BooleanSetting usingPause = add(new BooleanSetting("UsingPause", true));
     private final BooleanSetting onlyGround = add(new BooleanSetting("OnlyGround", true));
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
@@ -47,13 +46,17 @@ public class AutoPot extends Module {
 
     private final BooleanSetting single = add(new BooleanSetting("Single", false));
     public final BindSetting boostKey = add(new BindSetting("BoostKey", -1));
+    public final BooleanSetting slowFalling = add(new BooleanSetting("SlowFallingPotion", false));
+    public final BindSetting slowFallKey = add(new BindSetting("SlowFallKey", -1));
 
     private final BooleanSetting sneak = add(new BooleanSetting("Sneak", true));
     private final SliderSetting duration = add(new SliderSetting("Duration", 50, 0, 10000).setSuffix("ms"));
     private final SliderSetting throwDelay = add(new SliderSetting("ThrowDelay", 50, 0, 2000).setSuffix("ms"));
+    private final SliderSetting slowFallDelay = add(new SliderSetting("SlowFallDelay", 500, 0, 5000).setSuffix("ms"));
 
     private final Timer delayTimer = new Timer();
     private final Timer sneakTimer = new Timer();
+    private final Timer slowFallTimer = new Timer();
 
     public AutoPot() {
         super("AutoPot", Category.Player);
@@ -62,6 +65,8 @@ public class AutoPot extends Module {
 
     private boolean throwing = false;
     private boolean sneakingFromAuto = false;
+    private boolean slowFallQueued = false;
+    private boolean slowFallPrev = false;
     private boolean boostPrev = false;
     private boolean deferredBoost = false;
 
@@ -80,6 +85,7 @@ public class AutoPot extends Module {
         pendingEffect = null;
         throwStart = 0L;
         boostPrev = false;
+        slowFallPrev = false;
     }
 
     @Override
@@ -95,6 +101,21 @@ public class AutoPot extends Module {
                 sneakingFromAuto = false;
             }
         }
+
+        try {
+            boolean pressed = slowFalling.getValue() && slowFallKey.isPressed();
+            long interval = (long) slowFallDelay.getValue();
+            if (interval <= 0) interval = 50;
+
+            if (pressed) {
+                if (!slowFallPrev || slowFallTimer.passedMs(interval)) {
+                    try {
+                        if (throwSlowFalling()) slowFallTimer.reset();
+                    } catch (Throwable ignored) {}
+                }
+            }
+            slowFallPrev = pressed;
+        } catch (Throwable ignored) {}
 
         if (deferredBoost) {
             if (mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0)))) {
@@ -132,6 +153,16 @@ public class AutoPot extends Module {
                     return;
                 }
                 if (delayTimer.passedMs((long) (delay.getValue() * 1000))) {
+                    if (slowFallQueued && slowFalling.getValue()) {
+                        try {
+                            if (throwSlowFalling()) {
+                                delayTimer.reset();
+                                slowFallQueued = false;
+                                boostPrev = pressed;
+                                return;
+                            }
+                        } catch (Throwable ignored) {}
+                    }
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
                         throwing = checkThrow(StatusEffects.SPEED);
                         if (isThrow()) {
@@ -261,6 +292,48 @@ public class AutoPot extends Module {
         return true;
     }
 
+    public boolean throwSlowFalling() {
+        StatusEffect target = StatusEffects.SLOW_FALLING;
+        ItemStack main = mc.player.getMainHandStack();
+        if (Item.getRawId(main.getItem()) == Item.getRawId(Items.SPLASH_POTION)) {
+            List<StatusEffectInstance> effects = PotionUtil.getPotionEffects(main);
+            for (StatusEffectInstance eff : effects) {
+                if (eff.getEffectType() == target) {
+                    Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
+                    sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+                    if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
+                    return true;
+
+                }
+            }
+        }
+
+        if (inventory.getValue()) {
+            int invSlot = findPotionInventorySlot(target);
+            if (invSlot != -1) {
+                int current = mc.player.getInventory().selectedSlot;
+                InventoryUtil.inventorySwap(invSlot, current);
+                Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
+                sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+                InventoryUtil.inventorySwap(invSlot, current);
+                EntityUtil.syncInventory();
+                if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
+                return true;
+            }
+        }
+
+        int hot = findPotion(target);
+        if (hot != -1) {
+            int old = mc.player.getInventory().selectedSlot;
+            InventoryUtil.switchToSlot(hot);
+            Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            InventoryUtil.switchToSlot(old);
+            if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
+            return true;
+        }
+        return false;
+    }
     public static int findPotionInventorySlot(StatusEffect targetEffect) {
         for (int i = 0; i < 45; ++i) {
             ItemStack itemStack = mc.player.getInventory().getStack(i);
