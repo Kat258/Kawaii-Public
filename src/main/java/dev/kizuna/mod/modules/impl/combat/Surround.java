@@ -49,7 +49,8 @@ public class Surround extends Module {
             add(new BooleanSetting("InventorySwap", true, () -> page.is(Page.General)));
     private final BooleanSetting enderChest =
             add(new BooleanSetting("EnderChest", true, () -> page.is(Page.General)));
-
+    private final BooleanSetting cryingObsidian =
+            add(new BooleanSetting("CryingObsidian", false, () -> page.is(Page.General)));
     private final BooleanSetting rotate =
             add(new BooleanSetting("Rotate", true, () -> page.getValue() == Page.Rotate));
     private final BooleanSetting yawStep =
@@ -62,7 +63,7 @@ public class Surround extends Module {
             add(new SliderSetting("Fov", 5f, 0f, 30f, () -> checkFov.getValue() && page.getValue() == Page.Rotate));
     private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () ->page.getValue() == Page.Rotate));
 
-    
+
     private final BooleanSetting detectMining =
             add(new BooleanSetting("DetectMining", false, () -> page.is(Page.Check)));
     private final BooleanSetting usingPause =
@@ -78,7 +79,7 @@ public class Surround extends Module {
         Rotate,
         Check,
     }
-    
+
     double startX = 0;
     double startY = 0;
     double startZ = 0;
@@ -160,7 +161,7 @@ public class Surround extends Module {
         double distanceToStart = MathHelper.sqrt((float) mc.player.squaredDistanceTo(startX, startY, startZ));
 
         if (getBlock() == -1) {
-            CommandManager.sendChatMessageWidthId("§c§oObsidian" + (enderChest.getValue() ? "/EnderChest" : "") + "?", hashCode());
+            CommandManager.sendChatMessageWidthId("§c§o" + (cryingObsidian.getValue() ? "CryingObsidian/Obsidian" : "Obsidian") + (enderChest.getValue() ? "/EnderChest" : "") + "?", hashCode());
             disable();
             return;
         }
@@ -269,11 +270,17 @@ public class Surround extends Module {
 
     private int getBlock() {
         if (inventory.getValue()) {
+            if (cryingObsidian.getValue() && InventoryUtil.findBlockInventorySlot(Blocks.CRYING_OBSIDIAN) != -1) {
+                return InventoryUtil.findBlockInventorySlot(Blocks.CRYING_OBSIDIAN);
+            }
             if (InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
             }
             return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
         } else {
+            if (cryingObsidian.getValue() && InventoryUtil.findBlock(Blocks.CRYING_OBSIDIAN) != -1) {
+                return InventoryUtil.findBlock(Blocks.CRYING_OBSIDIAN);
+            }
             if (InventoryUtil.findBlock(Blocks.OBSIDIAN) != -1 || !enderChest.getValue()) {
                 return InventoryUtil.findBlock(Blocks.OBSIDIAN);
             }
