@@ -11,6 +11,7 @@ import dev.kizuna.api.utils.render.TextUtil;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.player.Freecam;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.render.DiffuseLighting;
@@ -31,10 +32,12 @@ import org.joml.Vector4d;
 import java.awt.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class NameTags extends Module {
     public static NameTags INSTANCE;
+
     private final SliderSetting scale = add(new SliderSetting("Scale", 0.68f, 0.1f, 2f, 0.01));
     private final SliderSetting minScale = add(new SliderSetting("MinScale", 0.2f, 0.1f, 1f, 0.01));
     private final SliderSetting scaled = add(new SliderSetting("Scaled", 1, 0, 2, 0.01));
@@ -47,6 +50,7 @@ public class NameTags extends Module {
     private final BooleanSetting distance = add(new BooleanSetting("Distance", true));
     private final BooleanSetting pops = add(new BooleanSetting("TotemPops", true));
     private final BooleanSetting enchants = add(new BooleanSetting("Enchants", true));
+    private final BooleanSetting showFallTime = add(new BooleanSetting("ShowFallTime", true));
     private final ColorSetting outline = add(new ColorSetting("Outline", new Color(0x99FFFFFF, true)).injectBoolean(true));
     private final ColorSetting rect = add(new ColorSetting("Rect", new Color(0x99000001, true)).injectBoolean(true));
     private final ColorSetting friendColor = add(new ColorSetting("FriendColor", new Color(0xFF1DFF1D, true)));
@@ -58,13 +62,48 @@ public class NameTags extends Module {
     private final SliderSetting armorHeight = add(new SliderSetting("ArmorHeight", 0.3f, -10, 10f));
     private final SliderSetting armorScale = add(new SliderSetting("ArmorScale", 0.9f, 0.1f, 2f, 0.01f));
     private final EnumSetting<Armor> armorMode = add(new EnumSetting<>("ArmorMode", Armor.Full));
-    private boolean containsChinese(String text) {
-        return text.matches(".*[\u4e00-\u9fa5].*");
-    }
+
+    private static final Map<UUID, Long> slowFallExpiry = new ConcurrentHashMap<>();
+    private static final double MATCH_RADIUS = 12.0;
+    private static final double MATCH_RADIUS_SQ = MATCH_RADIUS * MATCH_RADIUS;
 
     public NameTags() {
         super("NameTags", Category.Render);
         INSTANCE = this;
+    }
+
+    public static void onArrowImpact(double x, double y, double z) {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc == null || mc.world == null) return;
+        PlayerEntity closest = null;
+        double best = Double.MAX_VALUE;
+        for (PlayerEntity p : mc.world.getPlayers()) {
+            double dx = p.getX() - x;
+            double dy = p.getY() - y;
+            double dz = p.getZ() - z;
+            double d2 = dx * dx + dy * dy + dz * dz;
+            if (d2 < best) { best = d2; closest = p; }
+        }
+        if (closest != null && best <= MATCH_RADIUS_SQ) {
+            slowFallExpiry.put(closest.getUuid(), System.currentTimeMillis() + 30_000L);
+        }
+    }
+
+    public static void onTotemUse(double x, double y, double z) {
+        MinecraftClient mc = MinecraftClient.getInstance();
+        if (mc == null || mc.world == null) return;
+        PlayerEntity closest = null;
+        double best = Double.MAX_VALUE;
+        for (PlayerEntity p : mc.world.getPlayers()) {
+            double dx = p.getX() - x;
+            double dy = p.getY() - y;
+            double dz = p.getZ() - z;
+            double d2 = dx * dx + dy * dy + dz * dz;
+            if (d2 < best) { best = d2; closest = p; }
+        }
+        if (closest != null && best <= MATCH_RADIUS_SQ) {
+            slowFallExpiry.remove(closest.getUuid());
+        }
     }
 
     private boolean isChinese(String str) {
@@ -75,10 +114,19 @@ public class NameTags extends Module {
         }
         return false;
     }
+
+    private boolean containsChinese(String text) {
+        return text != null && text.matches(".*[\u4e00-\u9fa5].*");
+    }
+
     @Override
     public void onRender2D(DrawContext context, float tickDelta) {
+        if (mc == null || mc.world == null) return;
+        long now = System.currentTimeMillis();
+
         for (PlayerEntity ent : mc.world.getPlayers()) {
             if (ent == mc.player && mc.options.getPerspective().isFirstPerson() && Freecam.INSTANCE.isOff()) continue;
+
             double x = ent.prevX + (ent.getX() - ent.prevX) * mc.getTickDelta();
             double y = ent.prevY + (ent.getY() - ent.prevY) * mc.getTickDelta();
             double z = ent.prevZ + (ent.getZ() - ent.prevZ) * mc.getTickDelta();
@@ -91,7 +139,24 @@ public class NameTags extends Module {
                 position.y = Math.min(vector.y, position.y);
                 position.z = Math.max(vector.x, position.z);
 
-                String final_string = "";
+                String fallPrefix = "";
+                if (showFallTime.getValue()) {
+                    Long expiry = slowFallExpiry.get(ent.getUuid());
+                    if (expiry != null) {
+                        long remain = expiry - now;
+                        if (remain > 0) {
+                            int sec = (int) Math.ceil(remain / 1000.0);
+                            int m = sec / 60;
+                            int s = sec % 60;
+                            fallPrefix = Formatting.AQUA.toString() + String.format("%02d:%02d ", m, s);
+                        } else {
+                            slowFallExpiry.remove(ent.getUuid());
+                        }
+                    }
+                }
+
+                String final_string = fallPrefix;
+
                 if (god.getValue() && ent.hasStatusEffect(StatusEffects.SLOWNESS)) {
                     final_string += "§4GOD ";
                 }
@@ -119,23 +184,19 @@ public class NameTags extends Module {
                 float diff = (float) (endPosX - posX) / 2;
                 float textWidth;
 
-
-                boolean containsChinese = isChinese(final_string);
+                boolean hasCJK = isChinese(final_string);
                 Font chosenFont = font.getValue();
-                if (chosenFont == Font.Fancy && containsChinese) {
-                    chosenFont = Font.Fast;
-                }
+                if (chosenFont == Font.Fancy && hasCJK) chosenFont = Font.Fast;
 
                 if (chosenFont == Font.Fancy) {
-                    textWidth = (FontRenderers.ui.getWidth(final_string) * 1);
+                    textWidth = (FontRenderers.ui.getWidth(final_string));
                 } else {
                     textWidth = mc.textRenderer.getWidth(final_string);
                 }
 
-                float tagX = (float) ((posX + diff - textWidth / 2) * 1);
+                float tagX = (float) ((posX + diff - textWidth / 2));
 
                 ArrayList<ItemStack> stacks = new ArrayList<>();
-
                 stacks.add(ent.getMainHandStack());
                 stacks.add(ent.getInventory().armor.get(3));
                 stacks.add(ent.getInventory().armor.get(2));
@@ -164,13 +225,7 @@ public class NameTags extends Module {
                             float durability = armorComponent.getMaxDamage() - armorComponent.getDamage();
                             int percent = (int) ((durability / (float) armorComponent.getMaxDamage()) * 100F);
                             Color color;
-                            if (percent <= 33) {
-                                color = Color.RED;
-                            } else if (percent <= 66) {
-                                color = Color.ORANGE;
-                            } else {
-                                color = Color.GREEN;
-                            }
+                            if (percent <= 33) color = Color.RED; else if (percent <= 66) color = Color.ORANGE; else color = Color.GREEN;
                             switch (armorMode.getValue()) {
                                 case OnlyArmor -> {
                                     if (count > 1 && count < 6) {
@@ -232,9 +287,7 @@ public class NameTags extends Module {
                                         case "minecraft:efficiency" -> encName = "E" + level;
                                         case "minecraft:unbreaking" -> encName = "U" + level;
                                         case "minecraft:power" -> encName = "PO" + level;
-                                        default -> {
-                                            continue;
-                                        }
+                                        default -> { continue; }
                                     }
 
                                     if (isChinese(encName)) {
@@ -264,17 +317,13 @@ public class NameTags extends Module {
                 }
                 if (chosenFont == Font.Fancy) {
                     Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
-                    if (Kawaii.ENEMY.isEnemy(ent)) {
-                        renderColor = enemyColor.getValue();
-                    }
+                    if (Kawaii.ENEMY.isEnemy(ent)) renderColor = enemyColor.getValue();
                     FontRenderers.ui.drawString(context.getMatrices(), final_string, tagX, (float) posY - 10, renderColor.getRGB());
                 } else {
                     context.getMatrices().push();
                     context.getMatrices().translate(tagX, ((float) posY - 11), 0);
                     Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
-                    if (Kawaii.ENEMY.isEnemy(ent)) {
-                        renderColor = enemyColor.getValue();
-                    }
+                    if (Kawaii.ENEMY.isEnemy(ent)) renderColor = enemyColor.getValue();
                     context.drawText(mc.textRenderer, final_string, 0, 0, renderColor.getRGB(), true);
                     context.getMatrices().pop();
                 }
@@ -290,12 +339,8 @@ public class NameTags extends Module {
         if (playerListEntry == null) return "-1";
         int ping = playerListEntry.getLatency();
         Formatting color = Formatting.GREEN;
-        if (ping >= 100) {
-            color = Formatting.YELLOW;
-        }
-        if (ping >= 250) {
-            color = Formatting.RED;
-        }
+        if (ping >= 100) color = Formatting.YELLOW;
+        if (ping >= 250) color = Formatting.RED;
         return color.toString() + ping;
     }
 
@@ -308,13 +353,7 @@ public class NameTags extends Module {
     private String translateGamemode(GameMode gamemode) {
         if (gamemode == null) return "§7[BOT]";
         return switch (gamemode) {
-            case SURVIVAL -> {
-                if (mTag.getValue()) {
-                    yield "§d[M]";
-                } else {
-                    yield "§b[S]";
-                }
-            }
+            case SURVIVAL -> { if (mTag.getValue()) yield "§d[M]"; else yield "§b[S]"; }
             case CREATIVE -> "§c[C]";
             case SPECTATOR -> "§7[SP]";
             case ADVENTURE -> "§e[A]";
@@ -323,15 +362,9 @@ public class NameTags extends Module {
 
     private Formatting getHealthColor(@NotNull PlayerEntity entity) {
         int health = (int) ((int) entity.getHealth() + entity.getAbsorptionAmount());
-        if (health >= 18) {
-            return Formatting.GREEN;
-        }
-        if (health >= 12) {
-            return Formatting.YELLOW;
-        }
-        if (health >= 6) {
-            return Formatting.RED;
-        }
+        if (health >= 18) return Formatting.GREEN;
+        if (health >= 12) return Formatting.YELLOW;
+        if (health >= 6) return Formatting.RED;
         return Formatting.DARK_RED;
     }
 
@@ -341,11 +374,7 @@ public class NameTags extends Module {
         return bd.floatValue();
     }
 
-    public enum Font {
-        Fancy, Fast
-    }
+    public enum Font { Fancy, Fast }
 
-    public enum Armor {
-        None, Full, Durability, Item, OnlyArmor
-    }
+    public enum Armor { None, Full, Durability, Item, OnlyArmor }
 }

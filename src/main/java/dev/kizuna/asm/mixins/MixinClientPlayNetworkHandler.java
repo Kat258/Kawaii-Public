@@ -5,6 +5,7 @@ import dev.kizuna.api.events.impl.EntityVelocityUpdateEvent;
 import dev.kizuna.api.events.impl.GameLeftEvent;
 import dev.kizuna.api.events.impl.SendMessageEvent;
 import dev.kizuna.mod.modules.impl.client.ServerApply;
+import dev.kizuna.mod.modules.impl.render.NameTags;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientCommonNetworkHandler;
 import net.minecraft.client.network.ClientConnectionState;
@@ -17,6 +18,8 @@ import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.TeleportConfirmC2SPacket;
 import net.minecraft.network.packet.s2c.play.*;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -24,6 +27,8 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.Locale;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class MixinClientPlayNetworkHandler extends ClientCommonNetworkHandler {
@@ -192,6 +197,32 @@ public abstract class MixinClientPlayNetworkHandler extends ClientCommonNetworkH
                 this.connection
                         .send(new PlayerMoveC2SPacket.Full(playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), Kawaii.ROTATION.rotationYaw, Kawaii.ROTATION.rotationPitch, false));
             }
+        }
+    }
+    @Inject(method = "onPlaySound", at = @At("HEAD"))
+    private void kawaii$onPlaySound(PlaySoundS2CPacket packet, CallbackInfo ci) {
+        String id = null;
+        try {
+            RegistryEntry<SoundEvent> entry = packet.getSound();
+            SoundEvent se = entry.value();
+            id = se.getId().toString();
+        } catch (Throwable ignored) {
+            try { id = String.valueOf(packet.getSound()); } catch (Throwable ignored2) {}
+        }
+        if (id == null) return;
+
+
+        String s = id.toLowerCase(Locale.ROOT);
+        double x = packet.getX();
+        double y = packet.getY();
+        double z = packet.getZ();
+
+        if (s.contains("entity.arrow.hit_player") || (s.contains("arrow") && s.contains("hit"))) {
+            NameTags.onArrowImpact(x, y, z);
+            return;
+        }
+        if (s.contains("item.totem.use")) {
+            NameTags.onTotemUse(x, y, z);
         }
     }
 }
