@@ -77,7 +77,8 @@
     "mixins.MixinTotemParticle",
     "mixins.MixinWorld",
     "mixins.MixinWorldRenderer",
-    "mixins.MixinPlayerListHud"
+    "mixins.MixinPlayerListHud",
+    "mixins.MixinEntityTrackedData"
   ],
   "injectors": {
     "defaultRequire": 1

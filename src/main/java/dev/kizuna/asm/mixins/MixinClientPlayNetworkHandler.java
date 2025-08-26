@@ -199,30 +199,4 @@ public abstract class MixinClientPlayNetworkHandler extends ClientCommonNetworkH
             }
         }
     }
-    @Inject(method = "onPlaySound", at = @At("HEAD"))
-    private void kawaii$onPlaySound(PlaySoundS2CPacket packet, CallbackInfo ci) {
-        String id = null;
-        try {
-            RegistryEntry<SoundEvent> entry = packet.getSound();
-            SoundEvent se = entry.value();
-            id = se.getId().toString();
-        } catch (Throwable ignored) {
-            try { id = String.valueOf(packet.getSound()); } catch (Throwable ignored2) {}
-        }
-        if (id == null) return;
-
-
-        String s = id.toLowerCase(Locale.ROOT);
-        double x = packet.getX();
-        double y = packet.getY();
-        double z = packet.getZ();
-
-        if (s.contains("entity.arrow.hit_player") || (s.contains("arrow") && s.contains("hit"))) {
-            NameTags.onArrowImpact(x, y, z);
-            return;
-        }
-        if (s.contains("item.totem.use")) {
-            NameTags.onTotemUse(x, y, z);
-        }
-    }
 }

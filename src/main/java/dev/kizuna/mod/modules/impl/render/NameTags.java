@@ -16,12 +16,13 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.render.DiffuseLighting;
 import net.minecraft.client.render.RenderLayer;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Style;
+import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
@@ -64,46 +65,26 @@ public class NameTags extends Module {
     private final EnumSetting<Armor> armorMode = add(new EnumSetting<>("ArmorMode", Armor.Full));
 
     private static final Map<UUID, Long> slowFallExpiry = new ConcurrentHashMap<>();
-    private static final double MATCH_RADIUS = 12.0;
-    private static final double MATCH_RADIUS_SQ = MATCH_RADIUS * MATCH_RADIUS;
+
+    private static final Map<UUID, Integer> lastStuckArrowCount = new ConcurrentHashMap<>();
 
     public NameTags() {
         super("NameTags", Category.Render);
         INSTANCE = this;
     }
 
-    public static void onArrowImpact(double x, double y, double z) {
-        MinecraftClient mc = MinecraftClient.getInstance();
-        if (mc == null || mc.world == null) return;
-        PlayerEntity closest = null;
-        double best = Double.MAX_VALUE;
-        for (PlayerEntity p : mc.world.getPlayers()) {
-            double dx = p.getX() - x;
-            double dy = p.getY() - y;
-            double dz = p.getZ() - z;
-            double d2 = dx * dx + dy * dy + dz * dz;
-            if (d2 < best) { best = d2; closest = p; }
-        }
-        if (closest != null && best <= MATCH_RADIUS_SQ) {
-            slowFallExpiry.put(closest.getUuid(), System.currentTimeMillis() + 30_000L);
-        }
+    public static void markPlayerShot(PlayerEntity player) {
+        if (player == null) return;
+        slowFallExpiry.put(player.getUuid(), System.currentTimeMillis() + 30_000L);
     }
 
-    public static void onTotemUse(double x, double y, double z) {
-        MinecraftClient mc = MinecraftClient.getInstance();
-        if (mc == null || mc.world == null) return;
-        PlayerEntity closest = null;
-        double best = Double.MAX_VALUE;
-        for (PlayerEntity p : mc.world.getPlayers()) {
-            double dx = p.getX() - x;
-            double dy = p.getY() - y;
-            double dz = p.getZ() - z;
-            double d2 = dx * dx + dy * dy + dz * dz;
-            if (d2 < best) { best = d2; closest = p; }
-        }
-        if (closest != null && best <= MATCH_RADIUS_SQ) {
-            slowFallExpiry.remove(closest.getUuid());
-        }
+
+    public static int getLastStuckCount(UUID uuid) {
+        return lastStuckArrowCount.getOrDefault(uuid, 0);
+    }
+    public static void setLastStuckCount(UUID uuid, int count) {
+        if (uuid == null) return;
+        lastStuckArrowCount.put(uuid, count);
     }
 
     private boolean isChinese(String str) {
@@ -116,7 +97,7 @@ public class NameTags extends Module {
     }
 
     private boolean containsChinese(String text) {
-        return text != null && text.matches(".*[\u4e00-\u9fa5].*");
+        return text != null && text.matches(".*[\\u4e00-\\u9fa5].*");
     }
 
     @Override
