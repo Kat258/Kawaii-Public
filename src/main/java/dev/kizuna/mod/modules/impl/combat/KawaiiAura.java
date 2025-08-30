@@ -89,6 +89,8 @@ public class KawaiiAura extends Module {
     private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
     private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent());
     private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("dmg"));
+    private final SliderSetting minBaseRange = add(new SliderSetting("MinBaseRange", 5.0, 0.0, 6, () -> place.isOpen() && base.isOpen()).setSuffix("m"));
+    private final SliderSetting maxBaseRange = add(new SliderSetting("MaxBaseRange", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("m"));
     private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen()).setSuffix("ms"));
     private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen()));
     private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
@@ -478,79 +480,81 @@ public class KawaiiAura extends Module {
     }
 
     private void update() {
-        if (nullCheck()) return;
-        if (!baseDelayTimer.passedMs((long) updateDelay.getValue())) return;
-        if (eatingPause.getValue() && mc.player.isUsingItem()) {
-            baseTempPos = null;
-            return;
-        }
-        if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) {
-            baseTempPos = null;
-            return;
-        }
-        baseDelayTimer.reset();
-        breakBaseDamage = 0;
-        baseTempPos = null;
-        tempBaseDamage = 0f;
-        ArrayList<PlayerAndPredict> list = new ArrayList<>();
-        for (PlayerEntity target : CombatUtil.getEnemies(targetRange.getValueFloat())) {
-            if (target.hurtTime <= hurtTime.getValueInt()) {
-                list.add(new PlayerAndPredict(target));
+        if (base.getValue()) {
+            if (nullCheck()) return;
+            if (!baseDelayTimer.passedMs((long) updateDelay.getValue())) return;
+            if (eatingPause.getValue() && mc.player.isUsingItem()) {
+                baseTempPos = null;
+                return;
             }
-        }
-        PlayerAndPredict self = new PlayerAndPredict(mc.player);
-        if (!list.isEmpty()) {
-            for (BlockPos pos : BlockUtil.getSphere((float) range.getValue() + 1)) {
-                CombatUtil.modifyPos = null;
-                if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > range.getValue()) {
-                    continue;
+            if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) {
+                baseTempPos = null;
+                return;
+            }
+            baseDelayTimer.reset();
+            breakBaseDamage = 0;
+            baseTempPos = null;
+            tempBaseDamage = 0f;
+            ArrayList<PlayerAndPredict> list = new ArrayList<>();
+            for (PlayerEntity target : CombatUtil.getEnemies(maxBaseRange.getValueFloat())) {
+                if (target.hurtTime <= hurtTime.getValueInt()) {
+                    list.add(new PlayerAndPredict(target));
                 }
-                if (!canPlaceBase(pos, true, false)) continue;
-                CombatUtil.modifyPos = pos.down();
-                CombatUtil.modifyBlockState = Blocks.OBSIDIAN.getDefaultState();
-                if (behindWall(pos)) continue;
-                if (!canTouch(pos.down())) continue;
-                for (PlayerAndPredict pap : list) {
-                    if (pos.down().getY() > pap.player.getBlockY()) continue;
-                    if (lite.getValue() && liteCheck(pos.toCenterPos().add(0, -0.5, 0), pap.predict.getPos())) {
+            }
+            PlayerAndPredict self = new PlayerAndPredict(mc.player);
+            if (!list.isEmpty()) {
+                for (BlockPos pos : BlockUtil.getSphere((float) minBaseRange.getValue() + 1)) {
+                    CombatUtil.modifyPos = null;
+                    if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > minBaseRange.getValue()) {
                         continue;
                     }
-                    float damage = calculateDamage(pos, pap.player, pap.predict);
-                    if (baseTempPos == null || damage > tempBaseDamage) {
-                        float selfDamage = calculateDamage(pos, self.player, self.predict);
-                        if (selfDamage > maxSelf.getValue()) continue;
-                        if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
+                    if (!canPlaceBase(pos, true, false)) continue;
+                    CombatUtil.modifyPos = pos.down();
+                    CombatUtil.modifyBlockState = Blocks.OBSIDIAN.getDefaultState();
+                    if (behindWall(pos)) continue;
+                    if (!canTouch(pos.down())) continue;
+                    for (PlayerAndPredict pap : list) {
+                        if (pos.down().getY() > pap.player.getBlockY()) continue;
+                        if (lite.getValue() && liteCheck(pos.toCenterPos().add(0, -0.5, 0), pap.predict.getPos())) {
                             continue;
-                        if (damage < EntityUtil.getHealth(pap.player)) {
-                            if (damage < getBaseDamage(pap.player)) continue;
-                            if (smart.getValue()) {
-                                if (getBaseDamage(pap.player) == forceMin.getValue()) {
-                                    if (damage < selfDamage - 2.5) {
-                                        continue;
-                                    }
-                                } else {
-                                    if (damage < selfDamage) {
-                                        continue;
+                        }
+                        float damage = calculateDamage(pos, pap.player, pap.predict);
+                        if (baseTempPos == null || damage > tempBaseDamage) {
+                            float selfDamage = calculateDamage(pos, self.player, self.predict);
+                            if (selfDamage > maxSelf.getValue()) continue;
+                            if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
+                                continue;
+                            if (damage < EntityUtil.getHealth(pap.player)) {
+                                if (damage < getBaseDamage(pap.player)) continue;
+                                if (smart.getValue()) {
+                                    if (getBaseDamage(pap.player) == forceMin.getValue()) {
+                                        if (damage < selfDamage - 2.5) {
+                                            continue;
+                                        }
+                                    } else {
+                                        if (damage < selfDamage) {
+                                            continue;
+                                        }
                                     }
                                 }
                             }
+                            displayTarget = pap.player;
+                            baseTempPos = pos.down();
+                            tempBaseDamage = damage;
                         }
-                        displayTarget = pap.player;
-                        baseTempPos = pos.down();
-                        tempBaseDamage = damage;
+                    }
+                }
+                CombatUtil.modifyPos = null;
+                if (baseTempPos != null) {
+                    if (!BlockUtil.canPlace(baseTempPos, minBaseRange.getValue())) {
+                        baseTempPos = null;
+                        tempBaseDamage = 0;
                     }
                 }
             }
-            CombatUtil.modifyPos = null;
-            if (baseTempPos != null) {
-                if (!BlockUtil.canPlace(baseTempPos, range.getValue())) {
-                    baseTempPos = null;
-                    tempBaseDamage = 0;
-                }
+            if (doCrystal.getValue() && baseTempPos != null) {
+                doCrystal(baseTempPos);
             }
-        }
-        if (doCrystal.getValue() && baseTempPos != null) {
-            doPlace(baseTempPos);
         }
     }
 
