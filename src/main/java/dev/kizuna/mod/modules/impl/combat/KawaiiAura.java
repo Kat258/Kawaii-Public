@@ -88,7 +88,7 @@ public class KawaiiAura extends Module {
     //Place
     private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
     private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent());
-    private final SliderSetting minBaseDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("dmg"));
+    private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("dmg"));
     private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen()).setSuffix("ms"));
     private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen()));
     private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
