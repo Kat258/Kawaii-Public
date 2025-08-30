@@ -154,9 +154,18 @@ public class NameTags extends Module {
                 if (distance.getValue()) {
                     final_string += " " + Formatting.RESET + String.format("%.1f", mc.player.distanceTo(ent)) + "m";
                 }
-                if (pops.getValue() && Kawaii.POP.getPop(ent.getName().getString()) != 0) {
-                    final_string += " §bPop" + " " + Formatting.LIGHT_PURPLE + Kawaii.POP.getPop(ent.getName().getString());
+                if (pops.getValue()) {
+                    Integer currentPopCount = Kawaii.POP.getPop(ent.getName().getString());
+                    Integer lastPopCount = lastStuckArrowCount.getOrDefault(ent.getUuid(), 0);
+
+                    if (currentPopCount > lastPopCount) {
+                        slowFallExpiry.remove(ent.getUuid());
+                        lastStuckArrowCount.put(ent.getUuid(), currentPopCount);
+                    }
+
+                    final_string += " §bPop" + " " + Formatting.LIGHT_PURPLE + currentPopCount.toString();
                 }
+
 
                 double posX = position.x;
                 double posY = position.y;

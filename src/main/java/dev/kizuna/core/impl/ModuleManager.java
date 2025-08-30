@@ -58,7 +58,7 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoEat());
         addModule(new AutoEZ());
         addModule(new SelfTrap());
-        addModule(new InventorySorter());
+        addModule(new InventorySort());
         addModule(new PacketThrow());
         addModule(new AutoHeal());
         addModule(new AutoPot());
@@ -74,7 +74,7 @@ public class ModuleManager implements Wrapper {
         addModule(new HitboxDesync());
         addModule(new BlockStrafe());
         addModule(new FastSwim());
-        addModule(new Blocker());
+        addModule(new AntiCity());
         addModule(new BowBomb());
         addModule(new BreakESP());
         addModule(new Chams());
@@ -86,7 +86,7 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoBurrow());
         addModule(new Colors());
         addModule(new ShulkerStealer());
-        addModule(new LavaFiller());
+        addModule(new LavaFill());
         addModule(new CityESP());
         addModule(new ClickGui());
         addModule(new WallClip());
@@ -153,7 +153,7 @@ public class ModuleManager implements Wrapper {
         addModule(new PlaceRender());
         addModule(new InteractTweaks());
         addModule(new PopChams());
-        addModule(new PopCounter());
+        addModule(new PopCount());
         addModule(new TrueDurability());
         addModule(new Replenish());
         addModule(new ServerApply());
@@ -180,7 +180,7 @@ public class ModuleManager implements Wrapper {
         addModule(new XCarry());
         addModule(new Zoom());
         addModule(new BetterTab());
-        addModule(new PlayerNotifier());
+        addModule(new PlayerNotify());
         addModule(new PingFix());
         addModule(new BedrockPhase());
         addModule(new DeathTP());

@@ -15,15 +15,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class PlayerNotifier extends Module {
-    public static PlayerNotifier INSTANCE;
+public class PlayerNotify extends Module {
+    public static PlayerNotify INSTANCE;
     private long lastTime;
     private Map<UUID, String> lastPlayers;
     private boolean firstRun;
     private final MinecraftClient mc = MinecraftClient.getInstance();
 
-    public PlayerNotifier() {
-        super("PlayerNotifier", Category.Misc);
+    public PlayerNotify() {
+        super("PlayerNotify", Category.Misc);
         setChinese("玩家通知");
         INSTANCE = this;
     }

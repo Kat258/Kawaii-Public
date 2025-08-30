@@ -38,28 +38,34 @@ import static dev.kizuna.api.utils.world.BlockUtil.canReplace;
 public class Burrow extends Module {
     public static Burrow INSTANCE;
     private final Timer timer = new Timer();
-    private final Timer webTimer = new Timer();
     private final BooleanSetting disable = add(new BooleanSetting("Disable", true));
     private final SliderSetting delay = add(new SliderSetting("Delay", 500, 0, 1000, () -> !disable.getValue()));
-    private final SliderSetting webTime = add(new SliderSetting("WebTime", 0, 0, 500));
-    private final BooleanSetting enderChest = add(new BooleanSetting("EnderChest", true));
-    private final BooleanSetting netheriteblock = add(new BooleanSetting("NetheriteBlock", true));
-    private final BooleanSetting cryObisidan = add(new BooleanSetting("CryObisidan", false));
+
+    private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false));
+    private final BooleanSetting hObsidian = add(new BooleanSetting("HObsidian", false, headFill::isOpen));
+    private final BooleanSetting henderChest = add(new BooleanSetting("HEnderChest", true, headFill::isOpen));
+    private final BooleanSetting hnetheriteblock = add(new BooleanSetting("HNetheriteBlock", true, headFill::isOpen));
+    private final BooleanSetting hcryObisidan = add(new BooleanSetting("HCryObsidian", false, headFill::isOpen));
+
+    private final BooleanSetting blockType = add(new BooleanSetting("BurrowBlock", true).setParent());
+    private final BooleanSetting enderChest = add(new BooleanSetting("EnderChest", true, blockType::isOpen));
+    private final BooleanSetting netheriteblock = add(new BooleanSetting("NetheriteBlock", true, blockType::isOpen));
+    private final BooleanSetting cryObisidan = add(new BooleanSetting("CryObsidian", false, blockType::isOpen));
+
     private final BooleanSetting antiLag = add(new BooleanSetting("AntiLag", false));
     private final BooleanSetting detectMine = add(new BooleanSetting("DetectMining", false));
-    private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false));
     private final BooleanSetting usingPause = add(new BooleanSetting("UsingPause", false));
     private final BooleanSetting down = add(new BooleanSetting("Down", true));
     private final BooleanSetting noSelfPos = add(new BooleanSetting("NoSelfPos", false));
     private final BooleanSetting packetPlace = add(new BooleanSetting("PacketPlace", true));
     private final BooleanSetting sound = add(new BooleanSetting("Sound", true));
     private final SliderSetting blocksPer = add(new SliderSetting("BlocksPer", 4, 1, 4, 1));
-    private final EnumSetting<RotateMode> rotate = add(new EnumSetting<>("RotateMode", RotateMode.Bypass));
     private final BooleanSetting breakCrystal = add(new BooleanSetting("Break", true));
     private final BooleanSetting wait = add(new BooleanSetting("Wait", true, () -> !disable.getValue()));
     private final BooleanSetting fakeMove = add(new BooleanSetting("FakeMove", true).setParent());
-    private final BooleanSetting center = add(new BooleanSetting("AllowCenter", false, () -> fakeMove.isOpen()));
+    private final BooleanSetting center = add(new BooleanSetting("AllowCenter", false, fakeMove::isOpen));
     private final BooleanSetting inventory = add(new BooleanSetting("InventorySwap", true));
+    private final EnumSetting<RotateMode> rotate = add(new EnumSetting<>("RotateMode", RotateMode.Bypass));
     private final EnumSetting<LagBackMode> lagMode = add(new EnumSetting<>("LagMode", LagBackMode.TrollHack));
     private final EnumSetting<LagBackMode> aboveLagMode = add(new EnumSetting<>("MoveLagMode", LagBackMode.Smart));
     private final SliderSetting smartX = add(new SliderSetting("SmartXZ", 3, 0, 10, 0.1, () -> lagMode.getValue() == LagBackMode.Smart || aboveLagMode.getValue() == LagBackMode.Smart));
@@ -87,14 +93,7 @@ public class Burrow extends Module {
 
     @Override
     public void onUpdate() {
-        if (Kawaii.PLAYER.isInWeb(mc.player)) {
-            webTimer.reset();
-            return;
-        }
         if (usingPause.getValue() && mc.player.isUsingItem()) {
-            return;
-        }
-        if (!webTimer.passed(webTime.getValue())) {
             return;
         }
         if (!disable.getValue() && !timer.passed(delay.getValue())) {
@@ -110,12 +109,7 @@ public class Burrow extends Module {
         int oldSlot = mc.player.getInventory().selectedSlot;
         int block;
         if ((block = getBlock()) == -1) {
-            StringBuilder sb = new StringBuilder("§c§oObsidian");
-            if (enderChest.getValue()) sb.append("/EnderChest");
-            if (netheriteblock.getValue()) sb.append("/NetheriteBlock");
-            if (cryObisidan.getValue()) sb.append("/CryObisidan");
-            sb.append("?");
-            CommandManager.sendChatMessageWidthId(sb.toString(), hashCode());
+            CommandManager.sendChatMessageWidthId("§c§oNo block can Burrow", hashCode());
             disable();
             return;
         }
@@ -230,10 +224,18 @@ public class Burrow extends Module {
             placeBlock(pos12, rotate);
         }
         if (this.headFill.getValue() && above) {
-            placeBlock(pos5, rotate);
-            placeBlock(pos6, rotate);
-            placeBlock(pos7, rotate);
-            placeBlock(pos8, rotate);
+            int headFillBlock = getHeadfillBlock();
+            if (headFillBlock != -1) {
+                doSwap(headFillBlock);
+                placeBlock(pos5, rotate);
+                placeBlock(pos6, rotate);
+                placeBlock(pos7, rotate);
+                placeBlock(pos8, rotate);
+            } else {
+                CommandManager.sendChatMessageWidthId("§c§oNo block can headfill", hashCode());
+                disable();
+                return;
+            }
         }
         if (inventory.getValue()) {
             doSwap(block);
@@ -357,6 +359,8 @@ public class Burrow extends Module {
         }
         if (disable.getValue()) disable();
     }
+
+
     private BlockPos playerPos(PlayerEntity targetEntity) {
         return new BlockPos((int) Math.floor(targetEntity.getX()), (int) Math.round(targetEntity.getY()), (int) Math.floor(targetEntity.getZ()));
     }
@@ -493,7 +497,7 @@ public class Burrow extends Module {
         if (!BlockUtil.airPlace() && BlockUtil.getPlaceSide(pos) == null) {
             return false;
         }
-        if (!BlockUtil.canReplace(pos)) {
+        if (!canReplace(pos)) {
             return false;
         }
         if (detectMine.getValue() && Kawaii.BREAK.isMining(pos)) {
@@ -555,7 +559,41 @@ public class Burrow extends Module {
             return -1;
         }
     }
-
+    private int getHeadfillBlock() {
+        if (inventory.getValue()) {
+            if (hObsidian.getValue() && InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !henderChest.getValue()) {
+                return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
+            }
+            if (hnetheriteblock.getValue()) {
+                int s = InventoryUtil.findBlockInventorySlot(Blocks.NETHERITE_BLOCK);
+                if (s != -1) return s;
+            }
+            if (hcryObisidan.getValue()) {
+                int s = InventoryUtil.findBlockInventorySlot(Blocks.CRYING_OBSIDIAN);
+                if (s != -1) return s;
+            }
+            if (henderChest.getValue()) {
+                return InventoryUtil.findBlockInventorySlot(Blocks.ENDER_CHEST);
+            }
+            return -1;
+        } else {
+            if (hnetheriteblock.getValue()) {
+                int s = InventoryUtil.findBlock(Blocks.NETHERITE_BLOCK);
+                if (s != -1) return s;
+            }
+            if (hcryObisidan.getValue()) {
+                int s = InventoryUtil.findBlock(Blocks.CRYING_OBSIDIAN);
+                if (s != -1) return s;
+            }
+            if (hObsidian.getValue() && InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN) != -1 || !henderChest.getValue()) {
+                return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
+            }
+            if (henderChest.getValue()) {
+                return InventoryUtil.findBlock(Blocks.ENDER_CHEST);
+            }
+            return -1;
+        }
+    }
     private enum RotateMode {Bypass, Normal, None}
 
     private enum LagBackMode {

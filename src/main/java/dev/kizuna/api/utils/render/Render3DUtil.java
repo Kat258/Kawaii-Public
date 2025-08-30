@@ -14,6 +14,7 @@ import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix3f;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
@@ -36,6 +37,11 @@ public class Render3DUtil implements Wrapper {
 
     public static void drawText3D(String text, Vec3d vec3d, Color color) {
         drawText3D(Text.of(text), vec3d.x, vec3d.y, vec3d.z, 0, 0, 1, color.getRGB());
+    }
+
+    public static void drawTextIn3D(String text, Vec3d vec3d, Color color) {
+        drawText3D(Text.of(text), vec3d.x, vec3d.y, vec3d.z, -0.2, 0, 1, color.getRGB());
+        //懒得写,给水晶用吧(掉帧)
     }
 
     public static void drawText3D(String text, Vec3d vec3d, int color) {
@@ -64,16 +70,20 @@ public class Render3DUtil implements Wrapper {
 
         matrices.push();
         matrices.translate(1, 1, 0);
-        mc.textRenderer.draw(Text.of(text.getString().replaceAll("§[a-zA-Z0-9]", "")), -halfWidth, 0f, 0x202020, false, matrices.peek().getPositionMatrix(), immediate, TextRenderer.TextLayerType.SEE_THROUGH, 0, 0xf000f0);
+        FontRenderers.ui.drawCenteredString(matrices, text.getString().replaceAll("§[a-zA-Z0-9]", ""), -halfWidth, 0f, 0x202020);
         immediate.draw();
         matrices.pop();
 
-        mc.textRenderer.draw(text.copy(), -halfWidth, 0f, color, false, matrices.peek().getPositionMatrix(), immediate, TextRenderer.TextLayerType.SEE_THROUGH, 0, 0xf000f0);
+        matrices.push();
+        matrices.translate(1, 1, 0);
+        FontRenderers.ui.drawCenteredString(matrices, text.getString(), -halfWidth, 0f, color);
         immediate.draw();
+        matrices.pop();
 
         RenderSystem.disableBlend();
         RenderSystem.enableDepthTest();
     }
+
     public static void drawTextIn3D(String text, Vec3d pos, double offX, double offY, double textOffset, Color color) {
         MatrixStack matrices = new MatrixStack();
         Camera camera = mc.gameRenderer.getCamera();
@@ -268,44 +278,6 @@ public class Render3DUtil implements Wrapper {
     }
     public static void drawLine(Vec3d start, Vec3d end, Color color) {
         drawLine(start.x, start.getY(), start.z, end.getX(), end.getY(), end.getZ(), color, 1);
-    }
-    public static void drawLine(Box b, Color color, float lineWidth) {
-        RenderSystem.enableBlend();
-        RenderSystem.defaultBlendFunc();
-        RenderSystem.disableDepthTest();
-
-        MatrixStack matrices = matrixFrom(b.minX, b.minY, b.minZ);
-        Tessellator tessellator = RenderSystem.renderThreadTesselator();
-        BufferBuilder buffer = tessellator.getBuffer();
-
-        RenderSystem.disableCull();
-        RenderSystem.setShader(GameRenderer::getRenderTypeLinesProgram);
-
-        RenderSystem.lineWidth(lineWidth);
-        buffer.begin(VertexFormat.DrawMode.LINES, VertexFormats.LINES);
-        Box box = b.offset(new Vec3d(b.minX, b.minY, b.minZ).negate());
-        float x1 = (float) box.minX;
-        float y1 = (float) box.minY;
-        float z1 = (float) box.minZ;
-        float x2 = (float) box.maxX;
-        float y2 = (float) box.maxY;
-        float z2 = (float) box.maxZ;
-        vertexLine(matrices, buffer, x1, y1, z1, x2, y1, z1, color);
-        vertexLine(matrices, buffer, x2, y1, z1, x2, y1, z2, color);
-        vertexLine(matrices, buffer, x2, y1, z2, x1, y1, z2, color);
-        vertexLine(matrices, buffer, x1, y1, z2, x1, y1, z1, color);
-        vertexLine(matrices, buffer, x1, y1, z2, x1, y2, z2, color);
-        vertexLine(matrices, buffer, x1, y1, z1, x1, y2, z1, color);
-        vertexLine(matrices, buffer, x2, y1, z2, x2, y2, z2, color);
-        vertexLine(matrices, buffer, x2, y1, z1, x2, y2, z1, color);
-        vertexLine(matrices, buffer, x1, y2, z1, x2, y2, z1, color);
-        vertexLine(matrices, buffer, x2, y2, z1, x2, y2, z2, color);
-        vertexLine(matrices, buffer, x2, y2, z2, x1, y2, z2, color);
-        vertexLine(matrices, buffer, x1, y2, z2, x1, y2, z1, color);
-        tessellator.draw();
-        RenderSystem.enableCull();
-        RenderSystem.enableDepthTest();
-        RenderSystem.disableBlend();
     }
     public static void drawLine(double x1, double y1, double z1, double x2, double y2, double z2, Color color, float width) {
         RenderSystem.enableBlend();

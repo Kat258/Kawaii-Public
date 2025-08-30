@@ -10,14 +10,14 @@ import dev.kizuna.core.impl.CommandManager;
 import dev.kizuna.mod.modules.Module;
 import net.minecraft.entity.player.PlayerEntity;
 
-public class PopCounter
+public class PopCount
         extends Module {
 
-    public static PopCounter INSTANCE;
+    public static PopCount INSTANCE;
     public final BooleanSetting unPop =
             add(new BooleanSetting("Dead", true));
-    public PopCounter() {
-        super("PopCounter", "Counts players totem pops", Category.Misc);
+    public PopCount() {
+        super("PopCount", "Counts players totem pops", Category.Misc);
         setChinese("图腾计数器");
         INSTANCE = this;
     }

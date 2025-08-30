@@ -12,9 +12,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.slot.SlotActionType;
 
-public class InventorySorter extends Module {
-    public InventorySorter() {
-        super("InventorySorter", Category.Player);
+public class InventorySort extends Module {
+    public InventorySort() {
+        super("InventorySort", Category.Player);
         setChinese("背包整理");
     }
 

@@ -21,8 +21,8 @@ import net.minecraft.util.math.Direction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Blocker extends Module {
-    public static Blocker INSTANCE ;
+public class AntiCity extends Module {
+    public static AntiCity INSTANCE ;
     final Timer timer = new Timer();
     private final EnumSetting<Page> page = add(new EnumSetting<>("Page", Page.General));
     private final SliderSetting delay =
@@ -56,9 +56,9 @@ public class Blocker extends Module {
     private final List<BlockPos> placePos = new ArrayList<>();
     private int placeProgress = 0;
 
-    public Blocker() {
-        super("Blocker", Category.Combat);
-        setChinese("水晶阻挡");
+    public AntiCity() {
+        super("AntiCity", Category.Combat);
+        setChinese("粽子");
         INSTANCE = this;
     }
 

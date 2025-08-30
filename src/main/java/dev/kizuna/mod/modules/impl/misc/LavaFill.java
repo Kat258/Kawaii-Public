@@ -12,7 +12,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.fluid.LavaFluid;
 import net.minecraft.util.math.BlockPos;
 
-public class LavaFiller extends Module {
+public class LavaFill extends Module {
     private final BooleanSetting inventory =
             add(new BooleanSetting("InventorySwap", true));
     private final SliderSetting range =
@@ -32,8 +32,8 @@ public class LavaFiller extends Module {
     private final Timer timer = new Timer();
 
     int progress = 0;
-    public LavaFiller() {
-        super("LavaFiller", Category.Misc);
+    public LavaFill() {
+        super("LavaFill", Category.Misc);
         setChinese("自动填岩浆");
     }
 
