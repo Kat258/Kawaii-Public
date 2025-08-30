@@ -60,9 +60,11 @@ import static dev.kizuna.api.utils.world.BlockUtil.*;
 public class KawaiiAura extends Module {
     public static KawaiiAura INSTANCE;
     public static BlockPos crystalPos;
+    public static BlockPos basePos;
     public final Timer lastBreakTimer = new Timer();
     private final Timer placeTimer = new Timer(), noPosTimer = new Timer(), switchTimer = new Timer(), calcDelay = new Timer();
-
+    private final Timer placeBaseTimer = new Timer();
+    private final Timer baseDelayTimer = new Timer();
 
     //General
     private final BooleanSetting general = add (new BooleanSetting("General",true).setParent());
@@ -85,6 +87,10 @@ public class KawaiiAura extends Module {
     private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> rotate.isOpen() && yawStep.getValue()));
     //Place
     private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
+    private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent());
+    private final SliderSetting minBaseDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("dmg"));
+    private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen()).setSuffix("ms"));
+    private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen()));
     private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting maxSelf = add(new SliderSetting("Self", 12.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6, place::isOpen).setSuffix("m"));
@@ -157,9 +163,12 @@ public class KawaiiAura extends Module {
     public PlayerEntity displayTarget;
     private final Animation animation = new Animation();
     public float breakDamage, tempDamage, lastDamage;
+    public float breakBaseDamage, tempBaseDamage, lastBaseDamage;
     public Vec3d directionVec = null;
+    public Vec3d baseDirectionVec = null;
     double currentFade = 0;
     public BlockPos tempPos, breakPos, syncPos;
+    private BlockPos baseTempPos;
     private Vec3d placeVec3d, curVec3d;
 
     public enum TargetESP {
@@ -197,6 +206,10 @@ public class KawaiiAura extends Module {
     public void onDisable() {
         crystalPos = null;
         tempPos = null;
+        if (base.getValue()) {
+            basePos = null;
+            baseTempPos = null;
+        }
     }
 
     @Override
@@ -204,6 +217,8 @@ public class KawaiiAura extends Module {
         crystalPos = null;
         tempPos = null;
         breakPos = null;
+        basePos = null;
+        baseTempPos = null;
         displayTarget = null;
         syncTimer.reset();
         lastBreakTimer.reset();
@@ -263,6 +278,7 @@ public class KawaiiAura extends Module {
     }
 
     private void doInteract() {
+        baseDirectionVec = null;
         if (shouldReturn()) {
             return;
         }
@@ -272,6 +288,9 @@ public class KawaiiAura extends Module {
         }
         if (crystalPos != null) {
             doCrystal(crystalPos);
+        }
+        if (base.getValue() && basePos != null) {
+            doPlaceBase(basePos);
         }
     }
 
@@ -292,8 +311,11 @@ public class KawaiiAura extends Module {
 
     private void updateCrystalPos() {
         getCrystalPos();
+        update();
         lastDamage = tempDamage;
         crystalPos = tempPos;
+        lastBaseDamage = tempBaseDamage;
+        basePos = baseTempPos;
     }
 
     private boolean shouldReturn() {
@@ -302,10 +324,6 @@ public class KawaiiAura extends Module {
             return true;
         }
         if (preferAnchor.getValue() && AutoAnchor.INSTANCE.currentPos != null) {
-            lastBreakTimer.reset();
-            return true;
-        }
-        if (ObiPlacer.INSTANCE.onRotate(new LookAtEvent())) {
             lastBreakTimer.reset();
             return true;
         }
@@ -459,12 +477,101 @@ public class KawaiiAura extends Module {
         }
     }
 
+    private void update() {
+        if (nullCheck()) return;
+        if (!baseDelayTimer.passedMs((long) updateDelay.getValue())) return;
+        if (eatingPause.getValue() && mc.player.isUsingItem()) {
+            baseTempPos = null;
+            return;
+        }
+        if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) {
+            baseTempPos = null;
+            return;
+        }
+        baseDelayTimer.reset();
+        breakBaseDamage = 0;
+        baseTempPos = null;
+        tempBaseDamage = 0f;
+        ArrayList<PlayerAndPredict> list = new ArrayList<>();
+        for (PlayerEntity target : CombatUtil.getEnemies(targetRange.getValueFloat())) {
+            if (target.hurtTime <= hurtTime.getValueInt()) {
+                list.add(new PlayerAndPredict(target));
+            }
+        }
+        PlayerAndPredict self = new PlayerAndPredict(mc.player);
+        if (!list.isEmpty()) {
+            for (BlockPos pos : BlockUtil.getSphere((float) range.getValue() + 1)) {
+                CombatUtil.modifyPos = null;
+                if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > range.getValue()) {
+                    continue;
+                }
+                if (!canPlaceBase(pos, true, false)) continue;
+                CombatUtil.modifyPos = pos.down();
+                CombatUtil.modifyBlockState = Blocks.OBSIDIAN.getDefaultState();
+                if (behindWall(pos)) continue;
+                if (!canTouch(pos.down())) continue;
+                for (PlayerAndPredict pap : list) {
+                    if (pos.down().getY() > pap.player.getBlockY()) continue;
+                    if (lite.getValue() && liteCheck(pos.toCenterPos().add(0, -0.5, 0), pap.predict.getPos())) {
+                        continue;
+                    }
+                    float damage = calculateDamage(pos, pap.player, pap.predict);
+                    if (baseTempPos == null || damage > tempBaseDamage) {
+                        float selfDamage = calculateDamage(pos, self.player, self.predict);
+                        if (selfDamage > maxSelf.getValue()) continue;
+                        if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
+                            continue;
+                        if (damage < EntityUtil.getHealth(pap.player)) {
+                            if (damage < getBaseDamage(pap.player)) continue;
+                            if (smart.getValue()) {
+                                if (getBaseDamage(pap.player) == forceMin.getValue()) {
+                                    if (damage < selfDamage - 2.5) {
+                                        continue;
+                                    }
+                                } else {
+                                    if (damage < selfDamage) {
+                                        continue;
+                                    }
+                                }
+                            }
+                        }
+                        displayTarget = pap.player;
+                        baseTempPos = pos.down();
+                        tempBaseDamage = damage;
+                    }
+                }
+            }
+            CombatUtil.modifyPos = null;
+            if (baseTempPos != null) {
+                if (!BlockUtil.canPlace(baseTempPos, range.getValue())) {
+                    baseTempPos = null;
+                    tempBaseDamage = 0;
+                }
+            }
+        }
+        if (doCrystal.getValue() && baseTempPos != null) {
+            doPlace(baseTempPos);
+        }
+    }
+
     public boolean canPlaceCrystal(BlockPos pos, boolean ignoreCrystal, boolean ignoreItem) {
         BlockPos obsPos = pos.down();
         BlockPos boost = obsPos.up();
         BlockPos boost2 = boost.up();
 
         return (getBlock(obsPos) == Blocks.BEDROCK || getBlock(obsPos) == Blocks.OBSIDIAN)
+                && BlockUtil.getClickSideStrict(obsPos) != null
+                && noEntityBlockCrystal(boost, ignoreCrystal, ignoreItem)
+                && noEntityBlockCrystal(boost2, ignoreCrystal, ignoreItem)
+                && (mc.world.isAir(boost) || hasCrystal(boost) && getBlock(boost) == Blocks.FIRE)
+                && (!ClientSetting.INSTANCE.lowVersion.getValue() || mc.world.isAir(boost2));
+    }
+    public boolean canPlaceBase(BlockPos pos, boolean ignoreCrystal, boolean ignoreItem) {
+        BlockPos obsPos = pos.down();
+        BlockPos boost = obsPos.up();
+        BlockPos boost2 = boost.up();
+
+        return (getBlock(obsPos) == Blocks.BEDROCK || getBlock(obsPos) == Blocks.OBSIDIAN || BlockUtil.canPlace(obsPos, range.getValue()))
                 && BlockUtil.getClickSideStrict(obsPos) != null
                 && noEntityBlockCrystal(boost, ignoreCrystal, ignoreItem)
                 && noEntityBlockCrystal(boost2, ignoreCrystal, ignoreItem)
@@ -491,14 +598,8 @@ public class KawaiiAura extends Module {
         return true;
     }
 
-    public boolean behindWall(BlockPos pos) {
-        Vec3d testVec;
-        /*if (CombatSetting.INSTANCE.lowVersion.getValue()) {
-            testVec = new Vec3d(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
-        } else {
-            testVec = new Vec3d(pos.getX() + 0.5, pos.getY() + 2 * 0.85, pos.getZ() + 0.5);
-        }*/
-        testVec = new Vec3d(pos.getX() + 0.5, pos.getY() + 2 * 0.85, pos.getZ() + 0.5);
+    private boolean behindWall(BlockPos pos) {
+        Vec3d testVec = new Vec3d(pos.getX() + 0.5, pos.getY() + 2 * 0.85, pos.getZ() + 0.5);
         HitResult result = mc.world.raycast(new RaycastContext(EntityUtil.getEyesPos(), testVec, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player));
         if (result == null || result.getType() == HitResult.Type.MISS) return false;
         return mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > wallRange.getValue();
@@ -558,6 +659,9 @@ public class KawaiiAura extends Module {
             return autoMinDamage.getValueFloat();
         }
         return minDamage.getValue();
+    }
+    private double getBaseDamage(PlayerEntity target) {
+        return minBaseDamage.getValue();
     }
 
     public boolean findCrystal() {
@@ -648,6 +752,45 @@ public class KawaiiAura extends Module {
             }
         }
     }
+    private void doPlaceBase(BlockPos pos) {
+        if (!placeBaseTimer.passedMs((long) placeBaseDelay.getValue())) return;
+        if (detectMining.getValue() && Kawaii.BREAK.isMining(pos)) return;
+        int block = getBaseBlock();
+        if (block == -1) return;
+        Direction side = BlockUtil.getPlaceSide(pos);
+        if (side == null) return;
+        Vec3d directionVec = new Vec3d(pos.getX() + 0.5 + side.getVector().getX() * 0.5, pos.getY() + 0.5 + side.getVector().getY() * 0.5, pos.getZ() + 0.5 + side.getVector().getZ() * 0.5);
+        if (!BlockUtil.canPlace(pos, range.getValue())) return;
+        if (rotate.getValue()) {
+            if (!faceVector(directionVec)) return;
+        }
+        int old = mc.player.getInventory().selectedSlot;
+        doSwap(block);
+        if (BlockUtil.airPlace()) {
+            BlockUtil.placedPos.add(pos);
+            BlockUtil.clickBlock(pos, Direction.DOWN, false, Hand.MAIN_HAND);
+        } else {
+            BlockUtil.placedPos.add(pos);
+            BlockUtil.clickBlock(pos.offset(side), side.getOpposite(), false, Hand.MAIN_HAND);
+        }
+        if (autoSwap.is(SwapMode.Inventory)) {
+            doSwap(block);
+            EntityUtil.syncInventory();
+        } else {
+            doSwap(old);
+        }
+        if (rotate.getValue() && !yawStep.getValue() && AntiCheat.INSTANCE.snapBack.getValue()) {
+            Kawaii.ROTATION.snapBack();
+        }
+        placeBaseTimer.reset();
+    }
+    private int getBaseBlock() {
+        if (autoSwap.getValue() == SwapMode.Inventory) {
+            return InventoryUtil.findBlockInventorySlot(Blocks.OBSIDIAN);
+        } else {
+            return InventoryUtil.findBlock(Blocks.OBSIDIAN);
+        }
+    }
 
     private void doSwap(int slot) {
         if (autoSwap.getValue() == SwapMode.Silent || autoSwap.getValue() == SwapMode.Normal) {
@@ -687,9 +830,6 @@ public class KawaiiAura extends Module {
         return !checkFov.getValue();
     }
 
-    private enum Page {
-        General, Interact, Misc, Rotation, Calc, Render , WebSync
-    }
 
     private enum SwapMode {
         Off, Normal, Silent, Inventory

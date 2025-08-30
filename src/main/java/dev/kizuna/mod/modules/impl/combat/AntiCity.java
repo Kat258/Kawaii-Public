@@ -138,7 +138,7 @@ public class AntiCity extends Module {
                 }
             }
         }
-        if (feet.getValue() && (!onlySurround.getValue() || Surround.INSTANCE.isOn())) {
+        if (feet.getValue() && (!onlySurround.getValue() || FeetPlace.INSTANCE.isOn())) {
             for (double x : offset) {
                 for (double z : offset) {
                     for (Direction i : Direction.values()) {

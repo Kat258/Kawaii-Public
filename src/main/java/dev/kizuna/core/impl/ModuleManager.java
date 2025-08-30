@@ -142,7 +142,7 @@ public class ModuleManager implements Wrapper {
         addModule(new MoveFix());
         addModule(new PacketControl());
         addModule(new XRay());
-        addModule(new ObiPlacer());
+//        addModule(new ObiPlacer());
         addModule(new RaytraceBypass());
         addModule(new MyPing());
         addModule(new PacketEat());
@@ -173,7 +173,7 @@ public class ModuleManager implements Wrapper {
         addModule(new Sprint());
         addModule(new Strafe());
         addModule(new Step());
-        addModule(new Surround());
+        addModule(new FeetPlace());
         addModule(new TotemParticle());
         addModule(new Velocity());
         addModule(new ViewModel());

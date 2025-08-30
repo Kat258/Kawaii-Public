@@ -5,8 +5,8 @@ import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.impl.UpdateWalkingPlayerEvent;
 import dev.kizuna.api.utils.entity.MovementUtil;
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.mod.modules.impl.combat.FeetPlace;
 import dev.kizuna.mod.modules.impl.combat.SelfTrap;
-import dev.kizuna.mod.modules.impl.combat.Surround;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
@@ -50,7 +50,7 @@ public class Step extends Module {
 	boolean timer;
 	@Override
 	public void onUpdate() {
-		if ( sneakingPause.getValue() && mc.player.isSneaking() || inBlockPause.getValue() && Kawaii.PLAYER.insideBlock || mc.player.isInLava() || mc.player.isTouchingWater() || inWebPause.getValue() && Kawaii.PLAYER.isInWeb(mc.player) || !mc.player.isOnGround() || onlyMoving.getValue() && !MovementUtil.isMoving() || surroundPause.getValue() && (Surround.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
+		if ( sneakingPause.getValue() && mc.player.isSneaking() || inBlockPause.getValue() && Kawaii.PLAYER.insideBlock || mc.player.isInLava() || mc.player.isTouchingWater() || inWebPause.getValue() && Kawaii.PLAYER.isInWeb(mc.player) || !mc.player.isOnGround() || onlyMoving.getValue() && !MovementUtil.isMoving() || surroundPause.getValue() && (FeetPlace.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
 			mc.player.setStepHeight(0.6f);
 			return;
 		}

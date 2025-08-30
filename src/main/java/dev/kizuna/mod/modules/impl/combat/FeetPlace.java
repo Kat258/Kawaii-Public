@@ -23,8 +23,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.*;
 
 
-public class Surround extends Module {
-    public static Surround INSTANCE;
+public class FeetPlace extends Module {
+    public static FeetPlace INSTANCE;
     private final Timer timer = new Timer();
     public final EnumSetting<Page> page = add(new EnumSetting<>("Page", Page.General));
     public final SliderSetting placeDelay =
@@ -84,8 +84,8 @@ public class Surround extends Module {
     double startY = 0;
     double startZ = 0;
     int progress = 0;
-    public Surround() {
-        super("Surround", "Surrounds you with Obsidian", Category.Combat);
+    public FeetPlace() {
+        super("FeetPlace", "Surrounds you with Obsidian", Category.Combat);
         setChinese("围脚");
         INSTANCE = this;
     }

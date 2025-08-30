@@ -1,3 +1,4 @@
+/*
 package dev.kizuna.mod.modules.impl.combat;
 
 import com.mojang.authlib.GameProfile;
@@ -446,3 +447,4 @@ public class ObiPlacer extends Module {
         }
     }
 }
+*/
