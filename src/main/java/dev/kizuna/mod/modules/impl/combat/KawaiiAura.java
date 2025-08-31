@@ -929,7 +929,7 @@ public class KawaiiAura extends Module {
                 }
             }
             if (text.booleanValue && lastDamage > 0) {
-                if (!noPosTimer.passedMs((long) (startFadeTime.getValue() * 1000))) Render3DUtil.drawText3D(df.format(lastDamage), curVec3d, text.getValue());
+                if (!noPosTimer.passedMs((long) (startFadeTime.getValue() * 1000))) Render3DUtil.drawTextIn3D(df.format(lastDamage), curVec3d, text.getValue());
             }
         }
     }

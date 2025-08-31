@@ -59,7 +59,7 @@ public class HUD extends Module {
     public final BooleanSetting brand = add(new BooleanSetting("Brand", false, () -> page.getValue() == Pages.Module));
     public final BooleanSetting potions = add(new BooleanSetting("Potions", true, () -> page.getValue() == Pages.Module));
     public final BooleanSetting coords = add(new BooleanSetting("Coords", true, () -> page.getValue() == Pages.Module).setParent());
-    public final BooleanSetting fakeCoords = add(new BooleanSetting("FakeCoords",false, () -> page.getValue() == Pages.Module && coords.isOpen()));
+    public final BooleanSetting fakeCoords = add(new BooleanSetting("FakeCoords", false, () -> page.getValue() == Pages.Module && coords.isOpen()));
 
     public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true, () -> page.getValue() == Pages.Module).setParent());
     //public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% §f%version%-nightly §8 %time%", () -> page.getValue() == Pages.Module && waterMark.isOpen()));
@@ -67,7 +67,9 @@ public class HUD extends Module {
 
     private final BooleanSetting textRadar = add(new BooleanSetting("TextRadar", false, () -> page.getValue() == Pages.Module).setParent());
     private final SliderSetting updatedelay = add(new SliderSetting("UpdateDelay", 5, 0, 1000, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
-    private final BooleanSetting TextRadarhealth = add(new BooleanSetting("Health", false, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
+    private final BooleanSetting textRadarhealth = add(new BooleanSetting("Health", false, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
+    private final BooleanSetting textRadarPos = add(new BooleanSetting("Distance", false, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
+    private final SliderSetting maxYaw = add(new SliderSetting("MaxYaw", 60,0,400, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
 
     public final BooleanSetting armor = add(new BooleanSetting("Armor", true, () -> page.getValue() == Pages.Module));
 
@@ -80,10 +82,10 @@ public class HUD extends Module {
     private final SliderSetting yOffset = add(new SliderSetting("MineProgressY", 1, -45, 450, () -> page.getValue() == Pages.Module && mineprogress.isOpen()));
 
     private final BooleanSetting timerprogress = add(new BooleanSetting("TimerProgress", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting timery = add(new SliderSetting("TimerOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && timerprogress.isOpen()));
+    private final SliderSetting timery = add(new SliderSetting("TimerOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && timerprogress.isOpen()));
 
-    private final BooleanSetting blinkhud = add (new BooleanSetting("BlinkHud", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting blinky = add (new SliderSetting("BlinkOffset",1 ,-45 ,450, () -> page.getValue() == Pages.Module && blinkhud.isOpen()));
+    private final BooleanSetting blinkhud = add(new BooleanSetting("BlinkHud", false, () -> page.getValue() == Pages.Module).setParent());
+    private final SliderSetting blinky = add(new SliderSetting("BlinkOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && blinkhud.isOpen()));
 
     private Map<String, Integer> players = new HashMap<>();
     int pulseProgress = 0;
@@ -120,11 +122,11 @@ public class HUD extends Module {
         }
         if (waterMark.getValue()) {
             if (Kawaii.beta) {
-                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "-nightly" + "§8 %time%".replaceAll("%time%",getTime()),
+                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "-nightly" + "§8 %time%".replaceAll("%time%", getTime()),
                         waterMarkoffset.getValueInt(),
                         waterMarkoffset.getValueInt());
             } else {
-                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "§8 %time%".replaceAll("%time%",getTime()),
+                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "§8 %time%".replaceAll("%time%", getTime()),
                         waterMarkoffset.getValueInt(),
                         waterMarkoffset.getValueInt());
             }
@@ -234,7 +236,7 @@ public class HUD extends Module {
 
                 drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
             }
-            if (fakeCoords.getValue()){
+            if (fakeCoords.getValue()) {
 
                 String coordsString = "XYZ §f" + "臭傻逼想看你爹坐标?";
 
@@ -269,11 +271,11 @@ public class HUD extends Module {
                 pvpHudY += textHeight;
             }
         }
-        if (timerprogress.getValue()){
+        if (timerprogress.getValue()) {
             String string = "Timing " + TimerModule.INSTANCE.getInfo();
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + timery.getValueInt());
         }
-        if ((blinkhud.getValue()) && Blink.INSTANCE.isOn()){
+        if ((blinkhud.getValue()) && Blink.INSTANCE.isOn()) {
             String string = "BlinkPacket" + Blink.INSTANCE.getInfo();
             drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + blinky.getValueInt());
         }
@@ -314,22 +316,30 @@ public class HUD extends Module {
         for (PlayerEntity player : mc.world.getPlayers()) {
             if (player.isInvisible() || player.getName().equals(mc.player.getName())) continue;
 
+            int playerY = (int) player.getY();
+            int maxYawValue = maxYaw.getValueInt();
+
+            if (playerY > maxYawValue) continue; // 新增条件，只处理 Y 坐标不超过 maxYaw 值的玩家
+
             int distanceInt = (int) mc.player.distanceTo(player);
             String distance = dfDistance.format(distanceInt);
 
-            if (distanceInt >= 25) {
-                distanceSB.append(Formatting.GREEN);
-
-            } else if (distanceInt > 10) {
-                distanceSB.append(Formatting.YELLOW);
-
-            } else {
-                distanceSB.append(Formatting.RED);
+            if (distanceInt >= 0) {
+                distanceSB.append(Formatting.WHITE);
             }
             distanceSB.append(distance);
 
-            retval.put((TextRadarhealth.getValue() ? (getHealthColor(player) + String.valueOf(round2(player.getAbsorptionAmount() + player.getHealth())) + " ") : "") + (Kawaii.FRIEND.isFriend(player) ? Formatting.AQUA : Formatting.RESET) + player.getName().getString() + " " + Formatting.WHITE + "[" + Formatting.RESET + distanceSB + "m" + Formatting.WHITE + "] " + Formatting.GREEN, (int) mc.player.distanceTo(player));
+            String playerInfo =
+                    (textRadarhealth.getValue() ?
+                            (getHealthColor(player) + String.valueOf(round2(player.getAbsorptionAmount() + player.getHealth())) + " ") : "") +
+                            (Kawaii.FRIEND.isFriend(player) ? Formatting.GREEN : Formatting.RESET) +
+                            (Kawaii.ENEMY.isEnemy(player) ? Formatting.DARK_RED : Formatting.RESET) +
+                            player.getName().getString() + " " +
+                            (textRadarPos.getValue() ?
+                                    distanceSB + "m" : "")
+                            + Formatting.GREEN;
 
+            retval.put(playerInfo, distanceInt);
             distanceSB.setLength(0);
         }
 
@@ -339,6 +349,8 @@ public class HUD extends Module {
 
         return retval;
     }
+
+
     private Formatting getHealthColor(@NotNull PlayerEntity entity) {
         int health = (int) ((int) entity.getHealth() + entity.getAbsorptionAmount());
         if (health <= 15 && health > 7) return Formatting.YELLOW;

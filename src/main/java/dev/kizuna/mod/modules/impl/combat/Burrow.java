@@ -41,7 +41,7 @@ public class Burrow extends Module {
     private final BooleanSetting disable = add(new BooleanSetting("Disable", true));
     private final SliderSetting delay = add(new SliderSetting("Delay", 500, 0, 1000, () -> !disable.getValue()));
 
-    private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false));
+    private final BooleanSetting headFill = add(new BooleanSetting("HeadFill", false).setParent());
     private final BooleanSetting hObsidian = add(new BooleanSetting("HObsidian", false, headFill::isOpen));
     private final BooleanSetting henderChest = add(new BooleanSetting("HEnderChest", true, headFill::isOpen));
     private final BooleanSetting hnetheriteblock = add(new BooleanSetting("HNetheriteBlock", true, headFill::isOpen));
