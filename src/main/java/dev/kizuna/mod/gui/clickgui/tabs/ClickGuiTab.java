@@ -142,11 +142,7 @@ public class ClickGuiTab extends Tab {
 		MatrixStack matrixStack = drawContext.getMatrices();
 		currentHeight = animation.get(height);
 		if (drawBorder) {
-			if (ClickGui.INSTANCE.barEnd.booleanValue) {
-				Render2DUtil.drawRectVertical(matrixStack, x, y - 1, width, 15, ClickGui.INSTANCE.bar.getValue(), ClickGui.INSTANCE.barEnd.getValue());
-			} else {
 				Render2DUtil.drawRect(matrixStack, x, y - 1, width, 15, ClickGui.INSTANCE.bar.getValue());
-			}
 /*			Render2DUtil.drawRect(matrixStack, x, y - 1 + 15, width, 1, new Color(38, 38, 38));*/
 			if (popped) Render2DUtil.drawRect(matrixStack, x, y + 14, width, (int) currentHeight, ClickGui.INSTANCE.background.getValue());
 		}
@@ -156,6 +152,26 @@ public class ClickGuiTab extends Tab {
 				child.draw(i, drawContext, partialTicks, color, false);
 				i += child.getHeight();
 			}
+		}
+		if (popped) {
+			Color borderColor = ClickGui.INSTANCE.bar.getValue();
+			float borderWidth = 1.0f;
+			float borderLeft = x;
+			float borderRight = x + width - 1;
+			float borderTop = y + 14;
+			float borderBottom = borderTop + (int) currentHeight;
+			Render2DUtil.drawRect(matrixStack,
+					borderLeft, borderTop,
+					borderWidth, borderBottom - borderTop,
+					borderColor);
+			Render2DUtil.drawRect(matrixStack,
+					borderRight, borderTop,
+					borderWidth, borderBottom - borderTop,
+					borderColor);
+			Render2DUtil.drawRect(matrixStack,
+					borderLeft, borderBottom,
+					width, borderWidth,
+					borderColor);
 		}
 		//TextUtil.drawString(drawContext, this.title, x + width / 2d - TextUtil.getWidth(title) / 2, y + 3, new Color(255, 255, 255));
 		TextUtil.drawString(drawContext, this.title, x + 4, y + 3, new Color(255, 255, 255));

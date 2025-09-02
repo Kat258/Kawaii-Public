@@ -11,6 +11,7 @@ import dev.kizuna.api.utils.world.BlockPosX;
 import dev.kizuna.asm.accessors.IEntity;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
 import dev.kizuna.mod.modules.impl.client.ClientSetting;
+import dev.kizuna.mod.modules.impl.client.Colors;
 import dev.kizuna.mod.modules.impl.player.PacketMine;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
@@ -87,12 +88,12 @@ public class KawaiiAura extends Module {
     private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> rotate.isOpen() && yawStep.getValue()));
     //Place
     private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
-    private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent());
-    private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("dmg"));
-    private final SliderSetting minBaseRange = add(new SliderSetting("MinBaseRange", 5.0, 0.0, 6, () -> place.isOpen() && base.isOpen()).setSuffix("m"));
-    private final SliderSetting maxBaseRange = add(new SliderSetting("MaxBaseRange", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen()).setSuffix("m"));
-    private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen()).setSuffix("ms"));
-    private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen()));
+    private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent2());
+    private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen2()).setSuffix("dmg"));
+    private final SliderSetting minBaseRange = add(new SliderSetting("MinBaseRange", 5.0, 0.0, 6, () -> place.isOpen() && base.isOpen2()).setSuffix("m"));
+    private final SliderSetting maxBaseRange = add(new SliderSetting("MaxBaseRange", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen2()).setSuffix("m"));
+    private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen2()).setSuffix("ms"));
+    private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen2()));
     private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting maxSelf = add(new SliderSetting("Self", 12.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6, place::isOpen).setSuffix("m"));
@@ -118,11 +119,11 @@ public class KawaiiAura extends Module {
     private final SliderSetting startFadeTime = add(new SliderSetting("StartFade", 0.3d, 0d, 2d, 0.01, () -> render.isOpen() && render.getValue()).setSuffix("s"));
     private final SliderSetting fadeSpeed = add(new SliderSetting("FadeSpeed", 0.2d, 0.01d, 1d, 0.01, () -> render.isOpen() && render.getValue()));
     private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 1.5d, 0.01d, 3d, 0.01, () -> render.isOpen() && render.getValue()));
-    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false,render::isOpen).setParent());
-    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> render.isOpen() && rainbow.getValue()));
-    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> render.isOpen() && rainbow.getValue()));
-    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> render.isOpen() && rainbow.getValue()));
-    private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> render.isOpen() && rainbow.getValue()));
+    private final BooleanSetting rainbow = add(new BooleanSetting("Rainbow", false,render::isOpen).setParent2());
+    private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> render.isOpen2() && rainbow.getValue()));
+    private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> render.isOpen2() && rainbow.getValue()));
+    private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> render.isOpen2() && rainbow.getValue()));
+    private final SliderSetting rbalpha = add(new SliderSetting("Alpha",80, 0,255, () -> render.isOpen2() && rainbow.getValue()));
     private final ColorSetting text = add(new ColorSetting("Text", new Color(-1), render::isOpen).injectBoolean(true));
 
     private final EnumSetting<TargetESP> mode = add(new EnumSetting<>("TargetESP", TargetESP.Jello, render::isOpen));
@@ -140,20 +141,20 @@ public class KawaiiAura extends Module {
     //Misc
     private final BooleanSetting misc = add(new BooleanSetting("Misc", true).setParent());
     private final BooleanSetting ignoreMine = add(new BooleanSetting("IgnoreMine", true, misc::isOpen));
-    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> misc.isOpen() && ignoreMine.isOpen()).setSuffix("%"));
-    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent());
-    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen() && antiSurround.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent());
+    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> misc.isOpen() && ignoreMine.isOpen2()).setSuffix("%"));
+    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent2());
+    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen2() && antiSurround.isOpen2()).setSuffix("dmg"));
+    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent2());
     private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("ms"));
     private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent());
-    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen()).setSuffix("health"));
-    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, misc::isOpen).setParent());
-    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> misc.isOpen() && armorBreaker.isOpen()).setSuffix("%"));
-    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen()).setSuffix("dmg"));
+    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent2());
+    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("health"));
+    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("dmg"));
+    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, misc::isOpen).setParent2());
+    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("%"));
+    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("dmg"));
     private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, misc::isOpen));
-    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent());
+    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent2());
     public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen()));
     public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen()));
     //WebSync
@@ -914,17 +915,27 @@ public class KawaiiAura extends Module {
                 }
                 MatrixStack matrixStack = event.getMatrixStack();
 
-                if (fill.booleanValue) {
+                if (fill.booleanValue && Colors.INSTANCE.kawaiiAura.getValue()) {
                     Color fillColor = rainbow.getValue() ?
                             getColor(1) :
-                            ColorUtil.injectAlpha(fill.getValue(), (int) (fill.getValue().getAlpha() * currentFade * 2D));
+                            ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) (fill.getValue().getAlpha() * currentFade * 2D));
+                    Render3DUtil.drawFill(matrixStack, cbox, fillColor);
+                } else if (fill.booleanValue){
+                    Color fillColor = rainbow.getValue() ?
+                            getColor(1) :
+                            ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) (fill.getValue().getAlpha() * currentFade * 2D));
                     Render3DUtil.drawFill(matrixStack, cbox, fillColor);
                 }
 
-                if (box.booleanValue) {
+                if (box.booleanValue && Colors.INSTANCE.kawaiiAura.getValue()) {
                     Color boxColor = rainbow.getValue() ?
                             getColor(1) :
-                            ColorUtil.injectAlpha(box.getValue(), (int) (box.getValue().getAlpha() * currentFade * 2D));
+                            ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) (box.getValue().getAlpha() * currentFade * 2D));
+                    Render3DUtil.drawBox(matrixStack, cbox, boxColor, lineWidth.getValueFloat());
+                } else if (box.booleanValue) {
+                    Color boxColor = rainbow.getValue() ?
+                            getColor(1) :
+                            ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) (box.getValue().getAlpha() * currentFade * 2D));
                     Render3DUtil.drawBox(matrixStack, cbox, boxColor, lineWidth.getValueFloat());
                 }
             }

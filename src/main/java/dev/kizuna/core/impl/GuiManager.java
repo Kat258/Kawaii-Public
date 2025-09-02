@@ -49,7 +49,7 @@ public class GuiManager implements Wrapper {
 	}
 	
 	public Color getColor() {
-		return ClickGui.INSTANCE.enableTextS.getValue();
+		return ClickGui.INSTANCE.bgEnable.getValue();
 	}
 	
 	public void onUpdate() {

@@ -239,7 +239,7 @@ public class FontRenderer implements Closeable {
         for (int i = 0; i < chars.length; i++) {
             char c = chars[i];
 
-            Color color = ClickGui.INSTANCE.enableTextS.getValue();
+            Color color = ClickGui.INSTANCE.disableText.getValue();
 
             a = color.getAlpha() / 255f;
 

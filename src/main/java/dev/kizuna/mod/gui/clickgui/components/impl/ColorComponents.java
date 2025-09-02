@@ -212,25 +212,21 @@ public class ColorComponents extends Component {
         int width = parent.getWidth();
         MatrixStack matrixStack = drawContext.getMatrices();
 
-        Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.settingHover.getValue() : ClickGui.INSTANCE.setting.getValue());
+        Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.settingHover.getValue() : ClickGui.INSTANCE.setting2.getValue());
 
         boolean unShift = !hover || !InputUtil.isKeyPressed(mc.getWindow().getHandle(), GLFW.GLFW_KEY_LEFT_SHIFT);
         if (colorSetting.injectBoolean) {
             currentWidth = animation.get(colorSetting.booleanValue ? (width - 2D) : 0D);
             switch (ClickGui.INSTANCE.uiType.getValue()) {
                 case Old -> {
-                    if (ClickGui.INSTANCE.mainEnd.booleanValue) {
-                        Render2DUtil.drawRectHorizontal(matrixStack, (float) x + 1, (float) y + 1, (float) currentWidth, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : color, ClickGui.INSTANCE.mainEnd.getValue());
-                    } else {
                         Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) currentWidth, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : color);
-                    }
                     if (unShift) {
                         TextUtil.drawString(drawContext, colorSetting.getName(), x + 4, y + getTextOffsetY(), -1);
                     }
                 }
                 case New -> {
                     if (unShift) {
-                        TextUtil.drawString(drawContext, colorSetting.getName(), x + 4, y + getTextOffsetY(), colorSetting.booleanValue ? ClickGui.INSTANCE.enableTextS.getValue() : ClickGui.INSTANCE.disableText.getValue());
+                        TextUtil.drawString(drawContext, colorSetting.getName(), x + 4, y + getTextOffsetY(), colorSetting.booleanValue ? ClickGui.INSTANCE.bgEnable.getValue() : ClickGui.INSTANCE.disableText.getValue());
                     }
                 }
             }

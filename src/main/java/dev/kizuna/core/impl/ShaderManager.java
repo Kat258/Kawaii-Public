@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.kizuna.api.interfaces.IShaderEffect;
 import dev.kizuna.api.utils.render.Render3DUtil;
+import dev.kizuna.mod.modules.impl.client.Colors;
 import ladysnake.satin.api.managed.ManagedShaderEffect;
 import ladysnake.satin.api.managed.ShaderEffectManager;
 import dev.kizuna.api.utils.Wrapper;
@@ -106,8 +107,7 @@ public class ShaderManager implements Wrapper {
     public void setupShader(Shader shader, ManagedShaderEffect effect) {
         dev.kizuna.mod.modules.impl.render.Shader shaderChams = dev.kizuna.mod.modules.impl.render.Shader.INSTANCE;
         if (shader == Shader.Rainbow) {
-            effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
-
+                effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
             effect.setUniformValue("quality", shaderChams.smoothness.getValueFloat());
             effect.setUniformValue("divider", shaderChams.divider.getValueFloat());
@@ -118,7 +118,7 @@ public class ShaderManager implements Wrapper {
             effect.render(mc.getTickDelta());
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Gradient) {
-            effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
+                effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
             effect.setUniformValue("oct", (int) shaderChams.octaves.getValue());
 
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
@@ -134,8 +134,7 @@ public class ShaderManager implements Wrapper {
             effect.render(mc.getTickDelta());
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Smoke) {
-            effect.setUniformValue("alpha1", (shaderChams.fill.getValue().getAlpha() / 255f));
-
+                effect.setUniformValue("alpha1", (shaderChams.fill.getValue().getAlpha() / 255f));
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
             effect.setUniformValue("quality", shaderChams.smoothness.getValueFloat());
             effect.setUniformValue("divider", shaderChams.divider.getValueFloat());
@@ -150,7 +149,7 @@ public class ShaderManager implements Wrapper {
             effect.render(mc.getTickDelta());
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Solid) {
-            effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
+                effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
             effect.setUniformValue("minAlpha", shaderChams.alpha.getValueFloat() / 255f);
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
             effect.setUniformValue("quality", shaderChams.smoothness.getValueFloat());

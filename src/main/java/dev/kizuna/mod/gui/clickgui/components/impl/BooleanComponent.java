@@ -51,6 +51,7 @@ public class BooleanComponent extends Component {
                 ClickGuiScreen.rightClicked = false;
                 sound();
                 setting.popped = !setting.popped;
+                setting.popped2 = !setting.popped2;
             }
         } else {
             hover = false;
@@ -67,26 +68,19 @@ public class BooleanComponent extends Component {
         int y = parent.getY() + offset - 2;
         int width = parent.getWidth();
         MatrixStack matrixStack = drawContext.getMatrices();
-
         Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) width - 2, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.settingHover.getValue() : ClickGui.INSTANCE.setting.getValue());
 
         currentWidth = animation.get(setting.getValue() ? (width - 2D) : 0D);
         switch (ClickGui.INSTANCE.uiType.getValue()) {
-            case New -> {
-                TextUtil.drawString(drawContext, setting.getName(), x + 4, y + getTextOffsetY(), setting.getValue() ? ClickGui.INSTANCE.enableTextS.getValue() : ClickGui.INSTANCE.disableText.getValue());
-            }
-            case Old -> {
-                if (ClickGui.INSTANCE.mainEnd.booleanValue) {
-                    Render2DUtil.drawRectHorizontal(matrixStack, (float) x + 1, (float) y + 1, (float) currentWidth, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : color, ClickGui.INSTANCE.mainEnd.getValue());
-                } else {
-                    Render2DUtil.drawRect(matrixStack, (float) x + 1, (float) y + 1, (float) currentWidth, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hover ? ClickGui.INSTANCE.mainHover.getValue() : color);
-                }
-                TextUtil.drawString(drawContext, setting.getName(), x + 4, y + getTextOffsetY(), new Color(-1).getRGB());
-            }
+            case New, Old -> TextUtil.drawString(drawContext, setting.getName(), x + 5, y + getTextOffsetY(), setting.getValue() ? ClickGui.INSTANCE.enableText.getValue() : ClickGui.INSTANCE.disableText.getValue());
         }
 
         if (setting.parent) {
             TextUtil.drawString(drawContext, setting.popped ? "-" : "+", x + width - 11,
+                    y + getTextOffsetY(), new Color(255, 255, 255).getRGB());
+        }
+        if (setting.parent2) {
+            TextUtil.drawString(drawContext, "...", x + width - 11,
                     y + getTextOffsetY(), new Color(255, 255, 255).getRGB());
         }
         return true;

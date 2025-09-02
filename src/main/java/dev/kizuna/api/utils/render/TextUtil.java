@@ -20,7 +20,7 @@ import java.awt.*;
 
 public class TextUtil implements Wrapper {
 	public static boolean isCustomFont() {
-		return ClickGui.INSTANCE.font.getValue() && FontRenderers.ui != null;
+		return ClickGui.INSTANCE.customFont.getValue() && FontRenderers.ui != null;
 	}
 	public static float getWidth(String s) {
 		return isCustomFont() ? FontRenderers.ui.getWidth(s) : mc.textRenderer.getWidth(s);

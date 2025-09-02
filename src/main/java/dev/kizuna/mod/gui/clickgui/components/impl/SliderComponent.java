@@ -97,18 +97,14 @@ public class SliderComponent extends Component {
 		renderSliderPosition = animation.get(Math.floor((parentWidth - 2) * currentSliderPosition));
 		float height = ClickGui.INSTANCE.uiType.getValue() == ClickGui.Type.New ? 1 : defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1);
 		float y = ClickGui.INSTANCE.uiType.getValue() == ClickGui.Type.New ? (float) (parentY + offset + defaultHeight - 3) : (float) (parentY + offset - 1);
-		if (ClickGui.INSTANCE.mainEnd.booleanValue) {
-			Render2DUtil.drawRectHorizontal(matrixStack, parentX + 1, y, (int) this.renderSliderPosition, height, hover ? ClickGui.INSTANCE.mainHover.getValue() : color, ClickGui.INSTANCE.mainEnd.getValue());
-		} else {
 			Render2DUtil.drawRect(matrixStack, parentX + 1, y, (int) this.renderSliderPosition, height, hover ? ClickGui.INSTANCE.mainHover.getValue() : color);
-		}
 		if (this.setting == null) return true;
 		if (setting.isListening()) {
 			if (timer.passed(1000)) {
 				b = !b;
 				timer.reset();
 			}
-			TextUtil.drawString(drawContext, setting.temp + (b ? "_" : ""), parentX + 4,
+			TextUtil.drawString(drawContext, setting.temp + (b ? "_" : ""), parentX + 5,
 					(float) (parentY + getTextOffsetY() + offset - 2), 0xFFFFFF);
 		} else {
 			String value;
@@ -118,7 +114,7 @@ public class SliderComponent extends Component {
 				value = String.valueOf(this.setting.getValueFloat());
 			}
 			value = value + setting.getSuffix();
-			TextUtil.drawString(drawContext, setting.getName(), (float) (parentX + 4),
+			TextUtil.drawString(drawContext, setting.getName(), (float) (parentX + 5),
 					(float) (parentY + getTextOffsetY() + offset - 2), 0xFFFFFF);
 			TextUtil.drawString(drawContext, value, parentX + parentWidth - TextUtil.getWidth(value) - 5,
 					(float) (parentY + getTextOffsetY() + offset - 2), 0xFFFFFF);

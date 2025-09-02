@@ -147,14 +147,14 @@ public class ModuleComponent extends Component {
 		}
 		currentWidth = animation.get(module.isOn() ? (parentWidth - 2D) : 0D);
 		if (ClickGui.INSTANCE.activeBox.getValue()) {
-			if (ClickGui.INSTANCE.mainEnd.booleanValue) {
-				Render2DUtil.drawRectHorizontal(matrixStack, parentX + 1, (int) (parentY + currentOffset), (float) currentWidth, defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hovered ? ClickGui.INSTANCE.mainHover.getValue() : ClickGui.INSTANCE.color.getValue(), ClickGui.INSTANCE.mainEnd.getValue());
-			} else {
 				Render2DUtil.drawRect(matrixStack, parentX + 1, (int) (parentY + currentOffset), (float) currentWidth, defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hovered ? ClickGui.INSTANCE.mainHover.getValue() : ClickGui.INSTANCE.color.getValue());
-			}
 		}
-		if (module.isOff() || !ClickGui.INSTANCE.activeBox.getValue())
+		if (module.isOff() || !ClickGui.INSTANCE.activeBox.getValue()) {
 			Render2DUtil.drawRect(matrixStack, parentX + 1, (int) (parentY + currentOffset), parentWidth - 2, defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hovered ? ClickGui.INSTANCE.moduleHover.getValue() : ClickGui.INSTANCE.module.getValue());
+		}
+		if (module.isOn()) {
+			Render2DUtil.drawRect(matrixStack, parentX + 1, (int) (parentY + currentOffset), parentWidth - 2, defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), hovered ? ClickGui.INSTANCE.moduleHover.getValue() : ClickGui.INSTANCE.module.getValue());
+		}
 		if (hovered && InputUtil.isKeyPressed(mc.getWindow().getHandle(), GLFW.GLFW_KEY_LEFT_SHIFT)) {
 			TextUtil.drawString(drawContext, "Drawn " + (module.drawnSetting.getValue() ? "§aOn" : "§cOff"), (float) (parentX + 4), (float) (parentY + getTextOffsetY() + currentOffset) - 1, -1);
 		} else {
@@ -162,7 +162,7 @@ public class ModuleComponent extends Component {
 				TextUtil.drawString(drawContext, text, parentX + parentWidth / 2f - TextUtil.getWidth(text) / 2, (float) (parentY + getTextOffsetY() + currentOffset) - 1,
 						module.isOn() ? ClickGui.INSTANCE.enableText.getValue().getRGB() : ClickGui.INSTANCE.disableText.getValue().getRGB());
             } else {
-				TextUtil.drawString(drawContext, text, (float) (parentX + 4), (float) (parentY + getTextOffsetY() + currentOffset) - 1,
+				TextUtil.drawString(drawContext, text, (float) (parentX + 3), (float) (parentY + getTextOffsetY() + currentOffset) - 1,
 						module.isOn() ? ClickGui.INSTANCE.enableText.getValue().getRGB() : ClickGui.INSTANCE.disableText.getValue().getRGB());
 			}
 		}
@@ -182,6 +182,7 @@ public class ModuleComponent extends Component {
 						parentY + getTextOffsetY() + currentOffset - 1, ClickGui.INSTANCE.gear.getValue().getRGB());
 			}
 		}
+
 		return true;
 	}
 

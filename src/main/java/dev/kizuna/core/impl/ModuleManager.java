@@ -54,6 +54,7 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoAnchor());
         addModule(new AutoArmor());
         addModule(new AutoCity());
+        addModule(new CrystalESP());
         addModule(new MoveUp());
         addModule(new AutoEat());
         addModule(new AutoEZ());

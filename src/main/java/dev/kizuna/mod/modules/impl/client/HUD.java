@@ -39,16 +39,12 @@ public class HUD extends Module {
     public static HUD INSTANCE;
 
     private final EnumSetting<HUD.Pages> page = add(new EnumSetting<>("Page", Pages.Module));
-    //other
-    public final BooleanSetting lowerCase = add(new BooleanSetting("LowerCase", false, () -> page.getValue() == Pages.Other));
     public final BooleanSetting up = add(new BooleanSetting("Up", false, () -> page.getValue() == Pages.Other));
-    public final BooleanSetting customFont = add(new BooleanSetting("CustomFont", true, () -> page.getValue() == Pages.Other));
     //color
     private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 5, 0.1, () -> page.getValue() == Pages.Color));
     private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50, () -> page.getValue() == Pages.Color));
-    public final BooleanSetting sync = add(new BooleanSetting("InfoColorSync", true, () -> page.getValue() == Pages.Color));
     public final ColorSetting color = add(new ColorSetting("Color", new Color(208, 0, 0), () -> page.getValue() == Pages.Color));
-    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(79, 0, 0), () -> page.getValue() == Pages.Color));
+    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(79, 0, 0), () -> page.getValue() == Pages.Color).injectBoolean(false));
     //module
     public final BooleanSetting fps = add(new BooleanSetting("FPS", true, () -> page.getValue() == Pages.Module));
     public final BooleanSetting ping = add(new BooleanSetting("Ping", true, () -> page.getValue() == Pages.Module));
@@ -161,7 +157,7 @@ public class HUD extends Module {
                 String s2 = getDuration(potionEffect);
                 String text = s + " " + s2;
                 int x = getWidth(text);
-                TextUtil.drawString(drawContext, text, windowWidth - x, y, potionEffect.getEffectType().getColor(), customFont.getValue());
+                TextUtil.drawString(drawContext, text, windowWidth - x, y, potionEffect.getEffectType().getColor(), ClickGui.INSTANCE.customFont.getValue());
                 y -= height;
             }
         }
@@ -282,14 +278,14 @@ public class HUD extends Module {
     }
 
     private int getWidth(String s) {
-        if (customFont.getValue()) {
+        if (ClickGui.INSTANCE.customFont.getValue()) {
             return (int) FontRenderers.ui.getWidth(s);
         }
         return mc.textRenderer.getWidth(s);
     }
 
     private int getHeight() {
-        if (customFont.getValue()) {
+        if (ClickGui.INSTANCE.customFont.getValue()) {
             return (int) FontRenderers.ui.getFontHeight();
         }
         return mc.textRenderer.fontHeight;
@@ -319,7 +315,7 @@ public class HUD extends Module {
             int playerY = (int) player.getY();
             int maxYawValue = maxYaw.getValueInt();
 
-            if (playerY > maxYawValue) continue; // 新增条件，只处理 Y 坐标不超过 maxYaw 值的玩家
+            if (playerY > maxYawValue) continue;
 
             int distanceInt = (int) mc.player.distanceTo(player);
             String distance = dfDistance.format(distanceInt);
@@ -363,16 +359,8 @@ public class HUD extends Module {
         return bd.floatValue();
     }
     private void drawText(DrawContext drawContext, String s, int x, int y) {
-        if (sync.getValue()) {
-            Arraylist.INSTANCE.counter--;
-            if (lowerCase.getValue()) {
-                s = s.toLowerCase();
-            }
-            TextUtil.drawString(drawContext, s, x, y, Arraylist.INSTANCE.getColor(Arraylist.INSTANCE.counter), shouldUseCustomFont(s));
-            return;
-        }
-        if (pulse.booleanValue) {
-            TextUtil.drawStringPulse(drawContext, s, x, y, color.getValue(), pulse.getValue(), pulseSpeed.getValue(), pulseCounter.getValueInt(), shouldUseCustomFont(s));
+        if (Colors.INSTANCE.hud.getValue()) {
+            TextUtil.drawString(drawContext, s, x, y, Colors.INSTANCE.clientColor.getValue().getRGB(), shouldUseCustomFont(s));
         } else {
             TextUtil.drawString(drawContext, s, x, y, color.getValue().getRGB(), shouldUseCustomFont(s));
         }
@@ -382,7 +370,7 @@ public class HUD extends Module {
         if (s.matches(".*[\\u4e00-\\u9fa5].*")) {
             return false;
         }
-        return customFont.getValue();
+        return ClickGui.INSTANCE.customFont.getValue();
     }
 
     public static String getDuration(StatusEffectInstance pe) {

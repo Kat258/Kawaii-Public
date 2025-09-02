@@ -5,6 +5,7 @@ import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.api.utils.Wrapper;
 import dev.kizuna.api.utils.math.MathUtil;
+import dev.kizuna.api.utils.render.CaptureMark;
 import dev.kizuna.api.utils.render.JelloUtil;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
 import dev.kizuna.mod.modules.impl.client.FontSetting;
@@ -87,6 +88,7 @@ public class ServerManager implements Wrapper {
 
     public void onUpdate() {
         JelloUtil.updateJello();
+        CaptureMark.update();
         if (worldNull && mc.world != null) {
             FontSetting.INSTANCE.enable();
             Kawaii.MODULE.onLogin();

@@ -24,7 +24,6 @@ public class Arraylist extends Module {
     }
 
     public static Arraylist INSTANCE;
-    private final BooleanSetting font = add(new BooleanSetting("Font", true));
     private final SliderSetting height = add(new SliderSetting("Height", 0, -2, 10));
     private final SliderSetting textOffset = add(new SliderSetting("TextOffset", 0, -5, 10));
     private final SliderSetting xOffset = add(new SliderSetting("XOffset", 0, 0, 500));
@@ -157,7 +156,7 @@ public class Arraylist extends Module {
                         getFontHeight() + height.getValueInt(),
                         bgSync.getValue() ? ColorUtil.injectAlpha(getColor(counter), (int) (bgColor.getValue().getAlpha() * modules.fade)) : ColorUtil.injectAlpha(bgColor.getValue().getRGB(), (int) (bgColor.getValue().getAlpha() * modules.fade)));
             }
-            if (font.getValue()) {
+            if (ClickGui.INSTANCE.customFont.getValue()) {
                 FontRenderers.ui.drawString(drawContext.getMatrices() ,getSuffix(modules.name), textX, (int) (modules.y + 1 + textOffset.getValueInt()), ColorUtil.injectAlpha(getColor(counter), (int) (255 * modules.fade)));
             } else {
                 drawContext.drawTextWithShadow(mc.textRenderer, getSuffix(modules.name), textX, (int) (modules.y + 1 + textOffset.getValueInt()), ColorUtil.injectAlpha(getColor(counter), (int) (255 * modules.fade)));
@@ -196,8 +195,11 @@ public class Arraylist extends Module {
     }
 
     public int getColor(int counter) {
-        if (colorMode.getValue() != ColorMode.Custom) {
+        if (colorMode.getValue() != ColorMode.Custom && !Colors.INSTANCE.arrayList.getValue()) {
             return rainbow(counter).getRGB();
+        }
+        if (Colors.INSTANCE.arrayList.getValue()) {
+            return Colors.INSTANCE.clientColor.getValue().getRGB();
         }
         return color.getValue().getRGB();
     }
@@ -214,14 +216,14 @@ public class Arraylist extends Module {
     }
 
     private int getStringWidth(String text) {
-        if (font.getValue()) {
+        if (ClickGui.INSTANCE.customFont.getValue()) {
             return (int) FontRenderers.ui.getWidth(text);
         }
         return mc.textRenderer.getWidth(text);
     }
 
     private int getFontHeight() {
-        if (font.getValue()) {
+        if (ClickGui.INSTANCE.customFont.getValue()) {
             return (int) FontRenderers.ui.getFontHeight();
         }
         return mc.textRenderer.fontHeight;

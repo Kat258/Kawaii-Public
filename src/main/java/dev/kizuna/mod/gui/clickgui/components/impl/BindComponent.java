@@ -52,8 +52,6 @@ public class BindComponent extends Component {
 	}
 
 	@Override
-	
-
 	public boolean draw(int offset, DrawContext drawContext, float partialTicks, Color color, boolean back) {
 		if (back) {
 			bind.setListening(false);
@@ -68,14 +66,20 @@ public class BindComponent extends Component {
 			text = "Hold " + (bind.isHoldEnable() ? "§aOn" : "§cOff");
 		} else {
 			if (bind.isListening()) {
-				text = bind.getName() + ": " + "Press Key..";
+				text = bind.getName() + " " + "Press Key..";
 			} else {
-				text = bind.getName() + ": " + bind.getBind();
+				String bindKey = bind.getBind();
+				if (bindKey.equals("None")) {
+					text = bind.getName() + " " + "NONE";
+				} else {
+					text = bind.getName() + " " + bindKey;
+				}
 			}
 		}
 		if (hover) Render2DUtil.drawRect(matrixStack, (float) parentX + 1, (float) y + 1, (float) width - 3, (float) defaultHeight - (ClickGui.INSTANCE.maxFill.getValue() ? 0 : 1), ClickGui.INSTANCE.settingHover.getValue());
-		TextUtil.drawString(drawContext, text, (float) (parentX + 4),
+		TextUtil.drawString(drawContext, text, (float) (parentX + 5),
 				(float) (parentY + getTextOffsetY() + offset) - 2, 0xFFFFFF);
 		return true;
 	}
+
 }

@@ -6,6 +6,7 @@ import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.api.utils.render.ColorUtil;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.mod.modules.impl.client.Colors;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
@@ -85,10 +86,14 @@ public class PlaceRender extends Module {
 			double alpha = (mode.getValue() == Mode.Fade || mode.getValue() == Mode.All) ? 1 - quads : 1;
 			double size = (mode.getValue() == Mode.Shrink || mode.getValue() == Mode.All) ? quads : 0;
 			Box aBox = new Box(pos).expand(-size * 0.5, -size * 0.5, -size * 0.5);
-			if (fill.booleanValue) {
+			if (fill.booleanValue && Colors.INSTANCE.placeRender.getValue()) {
+				Render3DUtil.drawFill(matrixStack, aBox, ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) ((double) fill.getValue().getAlpha() * alpha)));
+			} else if (fill.booleanValue) {
 				Render3DUtil.drawFill(matrixStack, aBox, ColorUtil.injectAlpha(fill.getValue(), (int) ((double) fill.getValue().getAlpha() * alpha)));
 			}
-			if (box.booleanValue) {
+			if (box.booleanValue && Colors.INSTANCE.placeRender.getValue()) {
+				Render3DUtil.drawBox(matrixStack, aBox, ColorUtil.injectAlpha(Colors.INSTANCE.clientColor.getValue(), (int) ((double) box.getValue().getAlpha() * alpha)));
+			} else if (box.booleanValue) {
 				Render3DUtil.drawBox(matrixStack, aBox, ColorUtil.injectAlpha(box.getValue(), (int) ((double) box.getValue().getAlpha() * alpha)));
 			}
 			return false;
