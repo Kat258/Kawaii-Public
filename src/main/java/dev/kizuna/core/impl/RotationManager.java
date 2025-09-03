@@ -32,6 +32,7 @@ public class RotationManager implements Wrapper {
     public static final Timer ROTATE_TIMER = new Timer();
     public static Vec3d directionVec = null;
     public static boolean lastGround;
+    private int rotationPriority;
 
     public void snapBack() {
         mc.getNetworkHandler().sendPacket(new PlayerMoveC2SPacket.Full(mc.player.getX(), mc.player.getY(), mc.player.getZ(), Kawaii.ROTATION.rotationYaw, Kawaii.ROTATION.rotationPitch, mc.player.isOnGround()));

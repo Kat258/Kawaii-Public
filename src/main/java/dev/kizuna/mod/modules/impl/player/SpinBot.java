@@ -36,7 +36,6 @@ public class SpinBot extends Module {
             if (event.getPacket() instanceof PlayerActionC2SPacket packet && packet.getAction() == PlayerActionC2SPacket.Action.RELEASE_USE_ITEM && mc.player.getActiveItem().getItem() instanceof BowItem) {
             EntityUtil.sendYawAndPitch(mc.player.getYaw(), mc.player.getPitch());
         }
-            if (PacketThrow.INSTANCE.throwing && PacketThrow.INSTANCE.isThrow() && PacketThrow.INSTANCE.isOn());
     }
 
 

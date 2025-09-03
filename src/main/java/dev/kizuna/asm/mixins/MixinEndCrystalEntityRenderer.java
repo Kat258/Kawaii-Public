@@ -1,8 +1,6 @@
 package dev.kizuna.asm.mixins;
 
-import dev.kizuna.core.impl.ModuleManager;
 import dev.kizuna.mod.modules.impl.render.CrystalChams;
-import dev.kizuna.mod.modules.impl.render.CrystalESP;
 import net.minecraft.client.model.ModelPart;
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;

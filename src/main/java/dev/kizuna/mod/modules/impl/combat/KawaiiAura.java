@@ -2,6 +2,7 @@ package dev.kizuna.mod.modules.impl.combat;
 
 import com.mojang.authlib.GameProfile;
 import dev.kizuna.Kawaii;
+import dev.kizuna.api.events.eventbus.EventListener;
 import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.api.events.impl.UpdateWalkingPlayerEvent;
 import dev.kizuna.api.utils.math.*;
@@ -31,6 +32,7 @@ import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.exploit.Blink;
 import dev.kizuna.mod.modules.settings.SwingSide;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Hand;
@@ -88,12 +90,6 @@ public class KawaiiAura extends Module {
     private final SliderSetting priority = add(new SliderSetting("Priority", 10,0 ,100, () -> rotate.isOpen() && yawStep.getValue()));
     //Place
     private final BooleanSetting place = add(new BooleanSetting("Place", true).setParent());
-    private final BooleanSetting base = add(new BooleanSetting("Base",false, place::isOpen).setParent2());
-    private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen2()).setSuffix("dmg"));
-    private final SliderSetting minBaseRange = add(new SliderSetting("MinBaseRange", 5.0, 0.0, 6, () -> place.isOpen() && base.isOpen2()).setSuffix("m"));
-    private final SliderSetting maxBaseRange = add(new SliderSetting("MaxBaseRange", 5.0, 0.0, 36.0, () -> place.isOpen() && base.isOpen2()).setSuffix("m"));
-    private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, () -> place.isOpen() && base.isOpen2()).setSuffix("ms"));
-    private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, () -> place.isOpen() && base.isOpen2()));
     private final SliderSetting minDamage = add(new SliderSetting("Min", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting maxSelf = add(new SliderSetting("Self", 12.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
     private final SliderSetting range = add(new SliderSetting("Range", 5.0, 0.0, 6, place::isOpen).setSuffix("m"));
@@ -103,12 +99,48 @@ public class KawaiiAura extends Module {
     private final EnumSetting<SwapMode> autoSwap = add(new EnumSetting<>("AutoSwap", SwapMode.Off, place::isOpen));
     private final BooleanSetting afterBreak = add(new BooleanSetting("AfterBreak", true, place::isOpen));
     private final SliderSetting autoMinDamage = add(new SliderSetting("PistonMin", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
+    //Base
+    private final BooleanSetting base = add(new BooleanSetting("Base",false).setParent());
+    private final SliderSetting minBaseDamage = add(new SliderSetting("BaseMin", 5.0, 0.0, 36.0, base::isOpen).setSuffix("dmg"));
+    private final SliderSetting minBaseRange = add(new SliderSetting("MinBaseRange", 5.0, 0.0, 6, base::isOpen).setSuffix("m"));
+    private final SliderSetting maxBaseRange = add(new SliderSetting("MaxBaseRange", 5.0, 0.0, 36.0, base::isOpen).setSuffix("m"));
+    private final SliderSetting placeBaseDelay = add(new SliderSetting("BaseDelay", 300, 0, 1000, base::isOpen).setSuffix("ms"));
+    private final BooleanSetting detectMining = add(new BooleanSetting("DetectMining", false, base::isOpen));
     //Break
     private final BooleanSetting breakSetting = add(new BooleanSetting("Break", true).setParent());
     private final SliderSetting breakDelay = add(new SliderSetting("BreakDelay", 300, 0, 1000, breakSetting::isOpen).setSuffix("ms"));
     private final SliderSetting minAge = add(new SliderSetting("MinAge", 0, 0, 20, breakSetting::isOpen).setSuffix("tick"));
     private final BooleanSetting breakRemove = add(new BooleanSetting("Remove", false, breakSetting::isOpen));
     private final BooleanSetting onlyTick = add(new BooleanSetting("OnlyTick", true, breakSetting::isOpen));
+    //Misc
+    private final BooleanSetting misc = add(new BooleanSetting("Misc", true).setParent());
+    private final BooleanSetting ignoreMine = add(new BooleanSetting("IgnoreMine", true, misc::isOpen));
+    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> misc.isOpen() && ignoreMine.isOpen2()).setSuffix("%"));
+    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent2());
+    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen2() && antiSurround.isOpen2()).setSuffix("dmg"));
+    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent2());
+    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("ms"));
+    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("dmg"));
+    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent2());
+    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("health"));
+    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("dmg"));
+    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, misc::isOpen).setParent2());
+    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("%"));
+    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("dmg"));
+    private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, misc::isOpen));
+    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent2());
+    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen()));
+    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen()));
+    private final BooleanSetting websync = add(new BooleanSetting("WebSync", true, misc::isOpen).setParent2());
+    private final SliderSetting hurtTime = add(new SliderSetting("HurtTime", 10, 0, 10, 1, websync::isOpen2).setSuffix("Tick"));
+    private final SliderSetting waitHurt = add(new SliderSetting("WaitHurt", 10, 0, 10, 1, websync::isOpen2).setSuffix("Tick"));
+    //Calc
+    private final BooleanSetting calc = add(new BooleanSetting("Calc", true).setParent());
+    private final BooleanSetting thread = add(new BooleanSetting("Thread", true, calc::isOpen));
+    private final BooleanSetting doCrystal = add(new BooleanSetting("ThreadInteract", false, calc::isOpen));
+    private final BooleanSetting lite = add(new BooleanSetting("LessCPU", false, calc::isOpen));
+    private final SliderSetting predictTicks = add(new SliderSetting("Predict", 4, 0, 10, calc::isOpen).setSuffix("ticks"));
+    private final BooleanSetting terrainIgnore = add(new BooleanSetting("TerrainIgnore", true, calc::isOpen));
     //Render
     private final BooleanSetting render = add(new BooleanSetting("Render", true).setParent());
     private final BooleanSetting sync = add(new BooleanSetting("Sync", true, () -> render.isOpen() && render.getValue()));
@@ -131,37 +163,6 @@ public class KawaiiAura extends Module {
     private final ColorSetting hitColor = add(new ColorSetting("HitColor", new Color(255, 255, 255, 150), render::isOpen));
     public final SliderSetting animationTime = add(new SliderSetting("AnimationTime", 200, 0, 2000, 1, () -> render.isOpen() && mode.is(TargetESP.Box)));
     public final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> render.isOpen() && mode.is(TargetESP.Box)));
-    //Calc
-    private final BooleanSetting calc = add(new BooleanSetting("Calc", true).setParent());
-    private final BooleanSetting thread = add(new BooleanSetting("Thread", true, calc::isOpen));
-    private final BooleanSetting doCrystal = add(new BooleanSetting("ThreadInteract", false, calc::isOpen));
-    private final BooleanSetting lite = add(new BooleanSetting("LessCPU", false, calc::isOpen));
-    private final SliderSetting predictTicks = add(new SliderSetting("Predict", 4, 0, 10, calc::isOpen).setSuffix("ticks"));
-    private final BooleanSetting terrainIgnore = add(new BooleanSetting("TerrainIgnore", true, calc::isOpen));
-    //Misc
-    private final BooleanSetting misc = add(new BooleanSetting("Misc", true).setParent());
-    private final BooleanSetting ignoreMine = add(new BooleanSetting("IgnoreMine", true, misc::isOpen));
-    private final SliderSetting constantProgress = add(new SliderSetting("Progress", 90.0, 0.0, 100.0, () -> misc.isOpen() && ignoreMine.isOpen2()).setSuffix("%"));
-    private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent2());
-    private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen2() && antiSurround.isOpen2()).setSuffix("dmg"));
-    private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent2());
-    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("ms"));
-    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("dmg"));
-    private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent2());
-    private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("health"));
-    private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("dmg"));
-    private final BooleanSetting armorBreaker = add(new BooleanSetting("ArmorBreaker", true, misc::isOpen).setParent2());
-    private final SliderSetting maxDurable = add(new SliderSetting("MaxDurable", 8, 0, 100, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("%"));
-    private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("dmg"));
-    private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, misc::isOpen));
-    private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent2());
-    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen()));
-    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen()));
-    //WebSync
-    private final BooleanSetting websync = add(new BooleanSetting("WebSync", true).setParent());
-    private final SliderSetting hurtTime = add(new SliderSetting("HurtTime", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
-    private final SliderSetting waitHurt = add(new SliderSetting("WaitHurt", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
-    private final SliderSetting synctick = add(new SliderSetting("Tick", 10, 0, 10, 1, websync::isOpen).setSuffix("Tick"));
 
     public PlayerEntity displayTarget;
     private final Animation animation = new Animation();
@@ -201,7 +202,7 @@ public class KawaiiAura extends Module {
                 + (Math.floor((double)this.lastBreakTimer.getPassedTimeMs()) == (double)this.lastBreakTimer.getPassedTimeMs() ? (int)this.lastBreakTimer.getPassedTimeMs() : String.format(String.valueOf(this.lastBreakTimer.getPassedTimeMs())))
                 + "ms"
                 + " , "
-                + (Math.floor((double)this.lastDamage) == (double)this.lastDamage ? (int)this.lastDamage : String.format("%.1f", this.lastDamage))
+                + (Math.floor(this.lastDamage) == (double)this.lastDamage ? (int)this.lastDamage : String.format("%.1f", this.lastDamage))
                 : null;
     }
 
@@ -322,7 +323,7 @@ public class KawaiiAura extends Module {
     }
 
     private boolean shouldReturn() {
-        if (eatingPause.getValue() && mc.player.isUsingItem() || Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue() || PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseModule.getValue() && PacketThrow.INSTANCE.throwing) {
+        if (eatingPause.getValue() && mc.player.isUsingItem() || Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue() || PacketThrow.INSTANCE.getBind().isPressed()) {
             lastBreakTimer.reset();
             return true;
         }
@@ -817,7 +818,6 @@ public class KawaiiAura extends Module {
     }
 
     private void placeCrystal(BlockPos pos) {
-        //PlaceRender.PlaceMap.put(pos, new PlaceRender.placePosition(pos));
         boolean offhand = mc.player.getOffHandStack().getItem() == Items.END_CRYSTAL;
         BlockPos obsPos = pos.down();
         Direction facing = BlockUtil.getClickSide(obsPos);
@@ -839,7 +839,12 @@ public class KawaiiAura extends Module {
 
 
     private enum SwapMode {
-        Off, Normal, Silent, Inventory
+        Off, Normal, Silent, SILENT_ALT, Inventory
+    }
+    public enum Sequential {
+        NORMAL,
+        STRICT,
+        NONE
     }
 
     private class PlayerAndPredict {

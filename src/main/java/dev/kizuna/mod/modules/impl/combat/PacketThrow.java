@@ -36,8 +36,6 @@ public class PacketThrow extends Module {
             add(new BooleanSetting("OnlyGround", true));
     private final BooleanSetting inventory =
             add(new BooleanSetting("InventorySwap", true));
-    public BooleanSetting pauseModule =
-            add(new BooleanSetting("PauseModule", true));
 
     private final Timer delayTimer = new Timer();
 
@@ -112,7 +110,6 @@ public class PacketThrow extends Module {
 
     public boolean checkThrow() {
         if (isOff()) return false;
-        /*        if (mc.currentScreen instanceof ChatScreen) return false;*/
         if (mc.currentScreen != null) return false;
         if (usingPause.getValue() && mc.player.isUsingItem()) {
             return false;
