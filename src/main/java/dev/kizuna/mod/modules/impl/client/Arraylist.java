@@ -40,13 +40,13 @@ public class Arraylist extends Module {
     private final BooleanSetting scissor = add(new BooleanSetting("Scissor", false));
     private final BooleanSetting onlyBind = add(new BooleanSetting("OnlyBind", false));
     private final EnumSetting<ColorMode> colorMode = add(new EnumSetting<>("ColorMode", ColorMode.Pulse));
-    private final ColorSetting color = add(new ColorSetting("Color", new Color(173, 0, 0, 255), () -> colorMode.getValue() != ColorMode.Rainbow));
+    private final ColorSetting color = add(new ColorSetting("Color", -16718081, () -> colorMode.getValue() != ColorMode.Rainbow));
     private final SliderSetting rainbowSpeed = add(new SliderSetting("RainbowSpeed", 4, 1, 10, 0.1, () -> colorMode.getValue() == ColorMode.Rainbow ));
     private final SliderSetting saturation = add(new SliderSetting("Saturation", 130.0f, 1.0f, 255.0f, () -> colorMode.getValue() == ColorMode.Rainbow ));
     private final SliderSetting rainbowDelay = add(new SliderSetting("Delay", 350, 0, 1000, () -> colorMode.getValue() == ColorMode.Rainbow));
     private final SliderSetting pulseSpeed = add(new SliderSetting("PulseSpeed", 1, 0, 5, 0.1, () -> colorMode.getValue() == ColorMode.Pulse ));
     private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50, () -> colorMode.getValue() == ColorMode.Pulse));
-    private final ColorSetting endColor = add(new ColorSetting("EndColor", new Color(255, 0, 0, 255), () -> colorMode.getValue() == ColorMode.Pulse));
+    private final ColorSetting endColor = add(new ColorSetting("EndColor", -11761671, () -> colorMode.getValue() == ColorMode.Pulse));
     private final BooleanSetting rect = add(new BooleanSetting("Rect", true));
     private final BooleanSetting backGround = add(new BooleanSetting("BackGround", true).setParent());
     private final BooleanSetting bgSync = add(new BooleanSetting("Sync", false, backGround::isOpen));

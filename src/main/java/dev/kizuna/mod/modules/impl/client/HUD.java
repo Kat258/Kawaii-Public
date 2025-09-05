@@ -43,7 +43,7 @@ public class HUD extends Module {
     //color
     private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 5, 0.1, () -> page.getValue() == Pages.Color));
     private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50, () -> page.getValue() == Pages.Color));
-    public final ColorSetting color = add(new ColorSetting("Color", new Color(208, 0, 0), () -> page.getValue() == Pages.Color));
+    public final ColorSetting color = add(new ColorSetting("Color", 9740793, () -> page.getValue() == Pages.Color));
     public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(79, 0, 0), () -> page.getValue() == Pages.Color).injectBoolean(false));
     //module
     public final BooleanSetting fps = add(new BooleanSetting("FPS", true, () -> page.getValue() == Pages.Module));
@@ -117,7 +117,7 @@ public class HUD extends Module {
             Kawaii.GUI.armorHud.draw(drawContext, tickDelta, null);
         }
         if (waterMark.getValue()) {
-            if (Kawaii.beta) {
+            if (Kawaii.nightly) {
                 drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "-nightly" + "§8 %time%".replaceAll("%time%", getTime()),
                         waterMarkoffset.getValueInt(),
                         waterMarkoffset.getValueInt());

@@ -30,7 +30,7 @@ public class ModuleManager implements Wrapper {
     public static Mod lastLoadMod;
 
     public ModuleManager() {
-        if (Kawaii.beta){
+        if (Kawaii.nightly){
             addModule(new ClickTP());
             addModule(new TargetTP());
         }
@@ -163,7 +163,6 @@ public class ModuleManager implements Wrapper {
         addModule(new AntiCrawl());
         addModule(new AutoRegear());
         addModule(new AntiRegear());
-        addModule(new TwoDESP());
         addModule(new AntiBowBomb());
         addModule(new SafeWalk());
         addModule(new NoJumpDelay());

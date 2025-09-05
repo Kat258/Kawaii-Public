@@ -1,7 +1,6 @@
 package dev.kizuna.mod.modules.impl.movement;
 
 import dev.kizuna.Kawaii;
-import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
@@ -66,7 +65,7 @@ public class VClip extends Module {
                         onGround));
             }
             case EscapeTrap -> {
-                if (Kawaii.beta) {
+                if (Kawaii.nightly) {
                     BlockPos playerPos = mc.player.getBlockPos();
                     BlockPos headPos = playerPos.up(2);
                     java.util.List<BlockPos> candidatePositions = new java.util.ArrayList<>();

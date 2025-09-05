@@ -40,7 +40,6 @@ public class PopChams extends Module {
         INSTANCE = this;
     }
 
-    private final EnumSetting<Mode> mode = add(new EnumSetting<>("Mode", Mode.Simple));
     private final BooleanSetting secondLayer = add(new BooleanSetting("SecondLayer", false));
     private final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFFFFF)));
     private final SliderSetting ySpeed = add(new SliderSetting("YSpeed", 0, -10, 10,0.1));
@@ -49,9 +48,6 @@ public class PopChams extends Module {
 
     private final CopyOnWriteArrayList<Person> popList = new CopyOnWriteArrayList<>();
 
-    private enum Mode {
-        Simple, Textured
-    }
 
     @Override
     public void onUpdate() {
@@ -62,8 +58,8 @@ public class PopChams extends Module {
     public void onRender3D(MatrixStack stack) {
         RenderSystem.enableBlend();
         RenderSystem.disableDepthTest();
-        if (mode.is(Mode.Simple)) RenderSystem.defaultBlendFunc();
-        else RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE);
+        RenderSystem.defaultBlendFunc();
+        RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE);
         popList.forEach(person -> renderEntity(stack, person.player, person.modelPlayer, person.getTexture(), person.getAlpha()));
         RenderSystem.enableDepthTest();
         RenderSystem.disableBlend();
@@ -119,14 +115,8 @@ public class PopChams extends Module {
         modelBase.setAngles((PlayerEntity) entity, entity.limbAnimator.getPos(), limbSpeed, entity.age, entity.headYaw - entity.bodyYaw, entity.getPitch());
 
         BufferBuilder buffer = Tessellator.getInstance().getBuffer();
-        if (mode.is(Mode.Textured)) {
-            RenderSystem.setShaderTexture(0, texture);
-            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-            buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
-        } else {
             RenderSystem.setShader(GameRenderer::getPositionProgram);
             buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
-        }
         RenderSystem.setShaderColor(
                 color.getValue().getRed() / 255.0f,
                 color.getValue().getGreen() / 255.0f,

@@ -241,6 +241,6 @@ public class AutoCity extends Module {
 		return mc.player.getEyePos().distanceTo(pos.toCenterPos()) <= range.getValue() && (getBlock(pos) == Blocks.OBSIDIAN || getBlock(pos) == Blocks.ENDER_CHEST || getBlock(pos) == Blocks.NETHERITE_BLOCK || getBlock(pos) == Blocks.RESPAWN_ANCHOR) && BlockUtil.getClickSideStrict(pos) != null;
 	}
 	private boolean canBreak(BlockPos pos) {
-		return isObsidian(pos) && (BlockUtil.getClickSideStrict(pos) != null || PacketMine.getBreakPos().equals(pos)) && (!pos.equals(PacketMine.secondPos) || !(mc.player.getMainHandStack().getItem() instanceof PickaxeItem));
+		return isObsidian(pos) && (BlockUtil.getClickSideStrict(pos) != null || PacketMine.getBreakPos().equals(pos)) && (!pos.equals(PacketMine.secondPos));
 	}
 }

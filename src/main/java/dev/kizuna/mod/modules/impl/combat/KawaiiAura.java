@@ -119,8 +119,8 @@ public class KawaiiAura extends Module {
     private final BooleanSetting antiSurround = add(new BooleanSetting("AntiSurround", false, misc::isOpen).setParent2());
     private final SliderSetting antiSurroundMax = add(new SliderSetting("WhenLower", 5.0, 0.0, 36.0, () -> misc.isOpen2() && antiSurround.isOpen2()).setSuffix("dmg"));
     private final BooleanSetting slowPlace = add(new BooleanSetting("Timeout", true, misc::isOpen).setParent2());
-    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("ms"));
-    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen()).setSuffix("dmg"));
+    private final SliderSetting slowDelay = add(new SliderSetting("TimeoutDelay", 600, 0, 2000, () -> misc.isOpen() && slowPlace.isOpen2()).setSuffix("ms"));
+    private final SliderSetting slowMinDamage = add(new SliderSetting("TimeoutMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && slowPlace.isOpen2()).setSuffix("dmg"));
     private final BooleanSetting forcePlace = add(new BooleanSetting("ForcePlace", true, misc::isOpen).setParent2());
     private final SliderSetting forceMaxHealth = add(new SliderSetting("LowerThan", 7, 0, 36, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("health"));
     private final SliderSetting forceMin = add(new SliderSetting("ForceMin", 1.5, 0.0, 36.0, () -> misc.isOpen() && forcePlace.isOpen2()).setSuffix("dmg"));
@@ -129,8 +129,8 @@ public class KawaiiAura extends Module {
     private final SliderSetting armorBreakerDamage = add(new SliderSetting("BreakerMin", 3.0, 0.0, 36.0, () -> misc.isOpen() && armorBreaker.isOpen2()).setSuffix("dmg"));
     private final SliderSetting syncTimeout = add(new SliderSetting("WaitTimeOut", 500, 0, 2000, 10, misc::isOpen));
     private final BooleanSetting forceWeb = add(new BooleanSetting("ForceWeb", true, misc::isOpen).setParent2());
-    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen()));
-    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen()));
+    public final BooleanSetting airPlace = add(new BooleanSetting("AirPlace", false, () -> misc.isOpen() && forceWeb.isOpen2()));
+    public final BooleanSetting replace = add(new BooleanSetting("Replace", false, () -> misc.isOpen() && forceWeb.isOpen2()));
     private final BooleanSetting websync = add(new BooleanSetting("WebSync", true, misc::isOpen).setParent2());
     private final SliderSetting hurtTime = add(new SliderSetting("HurtTime", 10, 0, 10, 1, websync::isOpen2).setSuffix("Tick"));
     private final SliderSetting waitHurt = add(new SliderSetting("WaitHurt", 10, 0, 10, 1, websync::isOpen2).setSuffix("Tick"));
@@ -221,8 +221,10 @@ public class KawaiiAura extends Module {
         crystalPos = null;
         tempPos = null;
         breakPos = null;
-        basePos = null;
-        baseTempPos = null;
+        if (base.getValue()) {
+            basePos = null;
+            baseTempPos = null;
+        }
         displayTarget = null;
         syncTimer.reset();
         lastBreakTimer.reset();
@@ -945,7 +947,7 @@ public class KawaiiAura extends Module {
                 }
             }
             if (text.booleanValue && lastDamage > 0) {
-                if (!noPosTimer.passedMs((long) (startFadeTime.getValue() * 1000))) Render3DUtil.drawTextIn3D(df.format(lastDamage), curVec3d, text.getValue());
+                if (!noPosTimer.passedMs((long) (startFadeTime.getValue() * 1000))) Render3DUtil.drawText3D(df.format(lastDamage), curVec3d, text.getValue());
             }
         }
     }

@@ -14,7 +14,7 @@ public class Colors extends Module {
         INSTANCE = this;
     }
 
-    public final ColorSetting clientColor = add(new ColorSetting("ClientColor", new Color(255, 0, 0)).injectBoolean(true));
+    public final ColorSetting clientColor = add(new ColorSetting("ThemesColor", new Color(123, 168, 255)).injectBoolean(true));
 
     private final BooleanSetting module = add(new BooleanSetting("Module",true).setParent2());
     public final BooleanSetting kawaiiAura = add(new BooleanSetting("KawaiiAura", false,module::isOpen2));
