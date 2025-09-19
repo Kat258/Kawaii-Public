@@ -184,6 +184,7 @@ public class ModuleManager implements Wrapper {
         addModule(new BedrockPhase());
         addModule(new DeathTP());
         addModule(new SelfWeb());
+        addModule(new EnderchestStealer());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
