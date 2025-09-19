@@ -18,6 +18,7 @@ import net.minecraft.screen.slot.SlotActionType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class EnderchestStealer extends Module {
     private final BooleanSetting autoDisable = add(new BooleanSetting("AutoDisable", true));
@@ -60,7 +61,7 @@ public class EnderchestStealer extends Module {
         BlockPos bestPos = null;
         for (BlockPos pos : BlockUtil.getSphere((float) range.getValue())) {
             if (!BlockUtil.isAir(pos.up())) continue;
-            if (preferOpen.getValue() && mc.world.getBlockState(pos).getBlock() == Blocks.ENDER_CHEST) return; // 这里确保了使用 Blocks.ENDER_CHEST
+            if (preferOpen.getValue() && mc.world.getBlockState(pos).getBlock() == Blocks.ENDER_CHEST) return;
             if (MathHelper.sqrt((float) mc.player.squaredDistanceTo(pos.toCenterPos())) < minRange.getValue()) continue;
             if (!BlockUtil.clientCanPlace(pos, false)
                     || !BlockUtil.isStrictDirection(pos.offset(Direction.DOWN), Direction.UP)
@@ -94,7 +95,19 @@ public class EnderchestStealer extends Module {
     }
 
     public int findEnderchest() {
-        return InventoryUtil.findClass(Blocks.ENDER_CHEST.getClass());
+        final AtomicInteger atomicInteger = new AtomicInteger(-1);
+        if (findClass(Blocks.ENDER_CHEST.getClass()) != -1) {
+            atomicInteger.set(findClass(Blocks.ENDER_CHEST.getClass()));
+        }
+        return atomicInteger.get();
+    }
+
+    public int findClass(Class clazz) {
+        if (inventory.getValue()) {
+            return InventoryUtil.findClassInventorySlot(clazz);
+        } else {
+            return InventoryUtil.findClass(clazz);
+        }
     }
 
     private void doSwap(int slot) {
@@ -151,7 +164,15 @@ public class EnderchestStealer extends Module {
                 Slot slot = mc.player.currentScreenHandler.slots.get(i);
                 if (slot.id < 27 && !slot.getStack().isEmpty() && takeCount < maxTakeCount.getValueInt()) {
                     mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, slot.id, 0, SlotActionType.QUICK_MOVE, mc.player);
+                    take = true;
                     takeCount++;
+                    if (autoDisable.getValue()) {
+                        disable2();
+                        break;
+                    }
+                    if (takeCount >= maxTakeCount.getValueInt()) {
+                        break;
+                    }
                 }
             }
         }
@@ -160,13 +181,11 @@ public class EnderchestStealer extends Module {
     }
 
     private void disable2() {
-        if (disableTimer.passedMs(disableTime.getValueInt())) {
-            if (close.getValue()) {
-                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
-                mc.player.closeHandledScreen();
-            }
-            disable();
+        if (close.getValue()) {
+            mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+            mc.player.closeHandledScreen();
         }
+        disable();
     }
 
     private void placeBlock(BlockPos pos) {
