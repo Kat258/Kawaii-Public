@@ -48,8 +48,9 @@ public class EnderchestStealer extends Module {
 
     @Override
     public void onEnable() {
-        placePos = null;
+        openPos = null;
         disableTimer.reset();
+        placePos = null;
         if (nullCheck()) {
             return;
         }
@@ -120,13 +121,14 @@ public class EnderchestStealer extends Module {
 
     @Override
     public void onDisable() {
+        opend = false;
         if (mine.getValue()) {
             if (placePos != null) {
                 PacketMine.INSTANCE.mine(placePos);
             }
         }
     }
-
+    
     BlockPos openPos;
     boolean opend = false;
 
@@ -136,14 +138,35 @@ public class EnderchestStealer extends Module {
             if (opend) {
                 opend = false;
                 if (autoDisable.getValue()) disable2();
+                if (mine.getValue()) {
+                    if (openPos != null) {
+                        if (mc.world.getBlockState(openPos).getBlock() == Blocks.ENDER_CHEST) {
+                            PacketMine.INSTANCE.mine(openPos);
+                        } else {
+                            openPos = null;
+                        }
+                    }
+                }
                 return;
             }
             if (open.getValue()) {
-                if (placePos != null && MathHelper.sqrt((float) mc.player.squaredDistanceTo(placePos.toCenterPos())) <= range.getValue()) {
+                if (placePos != null && MathHelper.sqrt((float) mc.player.squaredDistanceTo(placePos.toCenterPos())) <= range.getValue() && mc.world.isAir(placePos.up()) && (!timer.passedMs(500) || mc.world.getBlockState(placePos).getBlock() == Blocks.ENDER_CHEST)) {
                     if (mc.world.getBlockState(placePos).getBlock() == Blocks.ENDER_CHEST) {
                         openPos = placePos;
                         BlockUtil.clickBlock(placePos, BlockUtil.getClickSide(placePos), rotate.getValue());
                     }
+                } else {
+                    boolean found = false;
+                    for (BlockPos pos : BlockUtil.getSphere((float) range.getValue())) {
+                        if (!BlockUtil.isAir(pos.up())) continue;
+                        if (mc.world.getBlockState(pos).getBlock() == Blocks.ENDER_CHEST) {
+                            openPos = pos;
+                            BlockUtil.clickBlock(pos, BlockUtil.getClickSide(pos), rotate.getValue());
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found && autoDisable.getValue()) this.disable2();
                 }
             } else if (!this.take.getValue()) {
                 if (autoDisable.getValue()) this.disable2();
@@ -162,14 +185,11 @@ public class EnderchestStealer extends Module {
             int takeCount = 0;
             for (int i = mc.player.currentScreenHandler.slots.size() - 1; i >= 0; i--) {
                 Slot slot = mc.player.currentScreenHandler.slots.get(i);
-                if (slot.id < 27 && !slot.getStack().isEmpty() && takeCount < maxTakeCount.getValueInt()) {
+                if (slot.id < 27 && !slot.getStack().isEmpty() && takeCount < maxTakeCount.getValueInt() && InventoryUtil.getEmptySlotCount() > empty.getValue()) {
                     mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, slot.id, 0, SlotActionType.QUICK_MOVE, mc.player);
                     take = true;
                     takeCount++;
-                    if (autoDisable.getValue()) {
-                        disable2();
-                        break;
-                    }
+                     
                     if (takeCount >= maxTakeCount.getValueInt()) {
                         break;
                     }
@@ -181,11 +201,13 @@ public class EnderchestStealer extends Module {
     }
 
     private void disable2() {
-        if (close.getValue()) {
-            mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
-            mc.player.closeHandledScreen();
+        if (disableTimer.passedMs(disableTime.getValueInt())){
+            if(close.getValue() && mc.currentScreen instanceof HandledScreen){
+                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+                mc.player.closeHandledScreen();
+            }
+            disable();
         }
-        disable();
     }
 
     private void placeBlock(BlockPos pos) {
