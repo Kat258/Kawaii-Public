@@ -34,11 +34,12 @@ public class EnderchestStealer extends Module {
     private final SliderSetting minRange = add(new SliderSetting("MinRange", 1.0f, 0.0f, 3f));
     private final BooleanSetting mine = add(new BooleanSetting("Mine", true));
     private final BooleanSetting take = add(new BooleanSetting("Take", true));
-    private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, take::getValue));
     private final SliderSetting takeCount = add(new SliderSetting("TakeCount", 1, 1, 64, take::getValue));
+    private final SliderSetting takeDelay = add(new SliderSetting("TakeDelay", 100, 0, 1000, take::getValue));
 
-    private boolean hasTakenItems = false;
+    private int takenCount = 0;
     private long timeTakenItems = 0;
+    private long lastOpenTime = 0;
 
     public EnderchestStealer() {
         super("EnderchestStealer", "Auto place and steal from enderchests", Category.Player);
@@ -53,7 +54,7 @@ public class EnderchestStealer extends Module {
         openPos = null;
         disableTimer.reset();
         placePos = null;
-        hasTakenItems = false;
+        takenCount = 0;
         if (nullCheck()) {
             return;
         }
@@ -157,6 +158,7 @@ public class EnderchestStealer extends Module {
                     if (mc.world.getBlockState(placePos).getBlock() == Blocks.ENDER_CHEST) {
                         openPos = placePos;
                         BlockUtil.clickBlock(placePos, BlockUtil.getClickSide(placePos), rotate.getValue());
+                        lastOpenTime = System.currentTimeMillis();
                     }
                 } else {
                     boolean found = false;
@@ -166,6 +168,7 @@ public class EnderchestStealer extends Module {
                             openPos = pos;
                             BlockUtil.clickBlock(pos, BlockUtil.getClickSide(pos), rotate.getValue());
                             found = true;
+                            lastOpenTime = System.currentTimeMillis();
                             break;
                         }
                     }
@@ -183,14 +186,8 @@ public class EnderchestStealer extends Module {
             return;
         }
 
-        if (!hasTakenItems) {
+        if (System.currentTimeMillis() - lastOpenTime >= takeDelay.getValueInt()) {
             takeItems();
-        } else if (hasTakenItems && System.currentTimeMillis() - timeTakenItems >= disableTime.getValueInt()) {
-            if (autoDisable.getValue()) {
-                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
-                mc.player.closeHandledScreen();
-                disable();
-            }
         }
     }
 
@@ -198,7 +195,7 @@ public class EnderchestStealer extends Module {
         int takeCount = 0;
         int maxTakeCount = this.takeCount.getValueInt();
         boolean take = false;
-        
+
         if (mc.player.currentScreenHandler != null) {
             for (int i = mc.player.currentScreenHandler.slots.size() - 1; i >= 0; i--) {
                 Slot slot = mc.player.currentScreenHandler.slots.get(i);
@@ -215,8 +212,14 @@ public class EnderchestStealer extends Module {
         }
 
         if (take) {
-            hasTakenItems = true;
-            timeTakenItems = System.currentTimeMillis();
+            takenCount++;
+            if (takenCount >= maxTakeCount) {
+                if (autoDisable.getValue()) {
+                    mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+                    mc.player.closeHandledScreen();
+                    disable();
+                }
+            }
         }
     }
 
