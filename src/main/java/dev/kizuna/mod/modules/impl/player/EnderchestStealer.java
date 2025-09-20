@@ -38,6 +38,7 @@ public class EnderchestStealer extends Module {
     private final SliderSetting takeCount = add(new SliderSetting("TakeCount", 1, 1, 64, take::getValue));
 
     private boolean hasTakenItems = false;
+    private long timeTakenItems = 0;
 
     public EnderchestStealer() {
         super("EnderchestStealer", "Auto place and steal from enderchests", Category.Player);
@@ -184,6 +185,12 @@ public class EnderchestStealer extends Module {
 
         if (!hasTakenItems) {
             takeItems();
+        } else if (hasTakenItems && System.currentTimeMillis() - timeTakenItems >= disableTime.getValueInt()) {
+            if (autoDisable.getValue()) {
+                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+                mc.player.closeHandledScreen();
+                disable();
+            }
         }
     }
 
@@ -209,13 +216,7 @@ public class EnderchestStealer extends Module {
 
         if (take) {
             hasTakenItems = true;
-            if (autoDisable.getValue()) {
-                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
-                mc.player.closeHandledScreen();
-                disable();
-            }
-        } else if (autoDisable.getValue()) {
-            disable();
+            timeTakenItems = System.currentTimeMillis();
         }
     }
 
