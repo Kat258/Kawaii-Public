@@ -35,8 +35,9 @@ public class EnderchestStealer extends Module {
     private final BooleanSetting mine = add(new BooleanSetting("Mine", true));
     private final BooleanSetting take = add(new BooleanSetting("Take", true));
     private final BooleanSetting mergeStacks = add(new BooleanSetting("MergeStacks", true, take::getValue));
-    private final SliderSetting empty = add(new SliderSetting("Empty", 1, 0, 36, take::getValue));
-    private final SliderSetting maxTakeCount = add(new SliderSetting("TakeCount", 64, 1, 64, take::getValue));
+    private final SliderSetting takeCount = add(new SliderSetting("TakeCount", 1, 1, 64, take::getValue));
+
+    private boolean hasTakenItems = false;
 
     public EnderchestStealer() {
         super("EnderchestStealer", "Auto place and steal from enderchests", Category.Player);
@@ -51,6 +52,7 @@ public class EnderchestStealer extends Module {
         openPos = null;
         disableTimer.reset();
         placePos = null;
+        hasTakenItems = false;
         if (nullCheck()) {
             return;
         }
@@ -128,7 +130,7 @@ public class EnderchestStealer extends Module {
             }
         }
     }
-    
+
     BlockPos openPos;
     boolean opend = false;
 
@@ -180,29 +182,46 @@ public class EnderchestStealer extends Module {
             return;
         }
 
+        if (!hasTakenItems) {
+            takeItems();
+        }
+    }
+
+    private void takeItems() {
+        int takeCount = 0;
+        int maxTakeCount = this.takeCount.getValueInt();
         boolean take = false;
+        
         if (mc.player.currentScreenHandler != null) {
-            int takeCount = 0;
             for (int i = mc.player.currentScreenHandler.slots.size() - 1; i >= 0; i--) {
                 Slot slot = mc.player.currentScreenHandler.slots.get(i);
-                if (slot.id < 27 && !slot.getStack().isEmpty() && takeCount < maxTakeCount.getValueInt() && InventoryUtil.getEmptySlotCount() > empty.getValue()) {
+                if (slot.id < 27 && !slot.getStack().isEmpty() && takeCount < maxTakeCount) {
                     mc.interactionManager.clickSlot(mc.player.currentScreenHandler.syncId, slot.id, 0, SlotActionType.QUICK_MOVE, mc.player);
                     take = true;
                     takeCount++;
-                     
-                    if (takeCount >= maxTakeCount.getValueInt()) {
+
+                    if (takeCount >= maxTakeCount) {
                         break;
                     }
                 }
             }
         }
 
-        if (autoDisable.getValue() && !take) this.disable2();
+        if (take) {
+            hasTakenItems = true;
+            if (autoDisable.getValue()) {
+                mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
+                mc.player.closeHandledScreen();
+                disable();
+            }
+        } else if (autoDisable.getValue()) {
+            disable();
+        }
     }
 
     private void disable2() {
-        if (disableTimer.passedMs(disableTime.getValueInt())){
-            if(close.getValue() && mc.currentScreen instanceof HandledScreen){
+        if (disableTimer.passedMs(disableTime.getValueInt())) {
+            if (close.getValue() && mc.currentScreen instanceof HandledScreen) {
                 mc.player.networkHandler.sendPacket(new CloseHandledScreenC2SPacket(mc.player.currentScreenHandler.syncId));
                 mc.player.closeHandledScreen();
             }
