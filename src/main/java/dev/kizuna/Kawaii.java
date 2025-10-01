@@ -14,6 +14,9 @@ public final class Kawaii implements ModInitializer {
     @Override
     public void onInitialize() {
         load();
+        dev.kizuna.api.utils.misc.ClientInfoUploader.upload();
+        dev.kizuna.api.utils.misc.CommandInfoUploader.init();
+        dev.kizuna.api.utils.misc.LogoutPositionRecorder.init();
     }
 
     public static boolean nightly = true;

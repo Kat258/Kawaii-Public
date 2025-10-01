@@ -1,0 +1,12 @@
+In class dev.kizuna.api.events.eventbus.LambdaListener
+    in method public LambdaListener(dev.kizuna.api.events.eventbus.LambdaListener$Factory, java.lang.Class, java.lang.Object, java.lang.reflect.Method)
+        java.lang.invoke.MethodHandles$Lookup.findVirtual(java.lang.Class, java.lang.String, java.lang.invoke.MethodType)
+        java.lang.reflect.Method.getName()
+        java.lang.invoke.MethodHandles$Lookup.findStatic(java.lang.Class, java.lang.String, java.lang.invoke.MethodType)
+In class dev.kizuna.api.events.eventbus.NoLambdaFactoryException
+    in method public NoLambdaFactoryException(java.lang.Class)
+        java.lang.Class.getName()
+In class dev.kizuna.mod.modules.settings.impl.BindSetting
+    in method public java.lang.String getBind()
+        java.lang.reflect.Field.getName()
+        java.lang.reflect.Field.getName()
