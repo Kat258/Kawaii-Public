@@ -1,0 +1,574 @@
+{
+  "md5": "179d3abaf9736dbd8fbd4fa98e1c6ea1",
+  "sha2": "b562e9bb61235c9520e26282cdee71f8f802d1fc",
+  "sha256": "1afea1bca095068f7f4483f061feed94753be34233ddb0df9ec380fc14d5a985",
+  "contents": {
+    "classes": {
+      "net/minecrell/terminalconsole/HighlightErrorConverter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "net/minecrell/terminalconsole/HighlightErrorConverter",
+        "super": "org/apache/logging/log4j/core/pattern/LogEventPatternConverter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lorg/apache/logging/log4j/core/pattern/PatternFormatter;>;)V"
+          },
+          {
+            "nme": "format",
+            "acc": 1,
+            "dsc": "(Lorg/apache/logging/log4j/core/LogEvent;Ljava/lang/StringBuilder;)V"
+          },
+          {
+            "nme": "format",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lorg/apache/logging/log4j/core/LogEvent;Ljava/lang/StringBuilder;)V"
+          },
+          {
+            "nme": "handlesThrowable",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "newInstance",
+            "acc": 9,
+            "dsc": "(Lorg/apache/logging/log4j/core/config/Configuration;[Ljava/lang/String;)Lnet/minecrell/terminalconsole/HighlightErrorConverter;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ANSI_RESET",
+            "dsc": "Ljava/lang/String;",
+            "val": "\u001b[m"
+          },
+          {
+            "acc": 26,
+            "nme": "ANSI_ERROR",
+            "dsc": "Ljava/lang/String;",
+            "val": "\u001b[31;1m"
+          },
+          {
+            "acc": 26,
+            "nme": "ANSI_WARN",
+            "dsc": "Ljava/lang/String;",
+            "val": "\u001b[33;1m"
+          },
+          {
+            "acc": 18,
+            "nme": "formatters",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lorg/apache/logging/log4j/core/pattern/PatternFormatter;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/config/plugins/Plugin;",
+            "vals": [
+              "name",
+              "highlightError",
+              "category",
+              "Converter"
+            ]
+          },
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/pattern/ConverterKeys;",
+            "vals": [
+              "value",
+              [
+                "highlightError"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/util/PerformanceSensitive;",
+            "vals": [
+              "value",
+              [
+                "allocation"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/TerminalConsoleAppender.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "net/minecrell/terminalconsole/TerminalConsoleAppender",
+        "super": "org/apache/logging/log4j/core/appender/AbstractAppender",
+        "mthds": [
+          {
+            "nme": "getTerminal",
+            "acc": 41,
+            "dsc": "()Lorg/jline/terminal/Terminal;"
+          },
+          {
+            "nme": "getReader",
+            "acc": 41,
+            "dsc": "()Lorg/jline/reader/LineReader;"
+          },
+          {
+            "nme": "setReader",
+            "acc": 41,
+            "dsc": "(Lorg/jline/reader/LineReader;)V"
+          },
+          {
+            "nme": "isAnsiSupported",
+            "acc": 9,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;Lorg/apache/logging/log4j/core/Filter;Lorg/apache/logging/log4j/core/Layout;Z)V",
+            "sig": "(Ljava/lang/String;Lorg/apache/logging/log4j/core/Filter;Lorg/apache/logging/log4j/core/Layout<+Ljava/io/Serializable;>;Z)V"
+          },
+          {
+            "nme": "initializeTerminal",
+            "acc": 42,
+            "dsc": "()V"
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(Lorg/apache/logging/log4j/core/LogEvent;)V"
+          },
+          {
+            "nme": "print",
+            "acc": 42,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "close",
+            "acc": 41,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createAppender",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Lorg/apache/logging/log4j/core/Filter;Lorg/apache/logging/log4j/core/Layout;Z)Lnet/minecrell/terminalconsole/TerminalConsoleAppender;",
+            "sig": "(Ljava/lang/String;Lorg/apache/logging/log4j/core/Filter;Lorg/apache/logging/log4j/core/Layout<+Ljava/io/Serializable;>;Z)Lnet/minecrell/terminalconsole/TerminalConsoleAppender;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apache/logging/log4j/core/config/plugins/PluginFactory;"
+              }
+            ]
+          },
+          {
+            "nme": "getOptionalBooleanProperty",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/Boolean;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "PLUGIN_NAME",
+            "dsc": "Ljava/lang/String;",
+            "val": "TerminalConsole"
+          },
+          {
+            "acc": 24,
+            "nme": "PROPERTY_PREFIX",
+            "dsc": "Ljava/lang/String;",
+            "val": "terminal"
+          },
+          {
+            "acc": 25,
+            "nme": "JLINE_OVERRIDE_PROPERTY",
+            "dsc": "Ljava/lang/String;",
+            "val": "terminal.jline"
+          },
+          {
+            "acc": 25,
+            "nme": "ANSI_OVERRIDE_PROPERTY",
+            "dsc": "Ljava/lang/String;",
+            "val": "terminal.ansi"
+          },
+          {
+            "acc": 26,
+            "nme": "ANSI_OVERRIDE",
+            "dsc": "Ljava/lang/Boolean;"
+          },
+          {
+            "acc": 26,
+            "nme": "stdout",
+            "dsc": "Ljava/io/PrintStream;"
+          },
+          {
+            "acc": 10,
+            "nme": "initialized",
+            "dsc": "Z"
+          },
+          {
+            "acc": 10,
+            "nme": "terminal",
+            "dsc": "Lorg/jline/terminal/Terminal;"
+          },
+          {
+            "acc": 10,
+            "nme": "reader",
+            "dsc": "Lorg/jline/reader/LineReader;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/config/plugins/Plugin;",
+            "vals": [
+              "name",
+              "TerminalConsole",
+              "category",
+              "Core",
+              "elementType",
+              "appender",
+              "printObject",
+              true
+            ]
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/util/LoggerNamePatternSelector.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "net/minecrell/terminalconsole/util/LoggerNamePatternSelector",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;[Lorg/apache/logging/log4j/core/layout/PatternMatch;ZZZLorg/apache/logging/log4j/core/config/Configuration;)V"
+          },
+          {
+            "nme": "getFormatters",
+            "acc": 1,
+            "dsc": "(Lorg/apache/logging/log4j/core/LogEvent;)[Lorg/apache/logging/log4j/core/pattern/PatternFormatter;"
+          },
+          {
+            "nme": "createSelector",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;[Lorg/apache/logging/log4j/core/layout/PatternMatch;ZZZLorg/apache/logging/log4j/core/config/Configuration;)Lnet/minecrell/terminalconsole/util/LoggerNamePatternSelector;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apache/logging/log4j/core/config/plugins/PluginFactory;"
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "defaultFormatters",
+            "dsc": "[Lorg/apache/logging/log4j/core/pattern/PatternFormatter;"
+          },
+          {
+            "acc": 18,
+            "nme": "formatters",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecrell/terminalconsole/util/LoggerNamePatternSelector$LoggerNameSelector;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/config/plugins/Plugin;",
+            "vals": [
+              "name",
+              "LoggerNamePatternSelector",
+              "category",
+              "Core",
+              "elementType",
+              "patternSelector"
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/util/PerformanceSensitive;",
+            "vals": [
+              "value",
+              [
+                "allocation"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/util/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "net/minecrell/terminalconsole/util/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "net/minecrell/terminalconsole/TCALookup.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "net/minecrell/terminalconsole/TCALookup",
+        "super": "org/apache/logging/log4j/core/lookup/AbstractLookup",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lookup",
+            "acc": 1,
+            "dsc": "(Lorg/apache/logging/log4j/core/LogEvent;Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "KEY_DISABLE_ANSI",
+            "dsc": "Ljava/lang/String;",
+            "val": "disableAnsi"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/config/plugins/Plugin;",
+            "vals": [
+              "name",
+              "tca",
+              "category",
+              "Lookup"
+            ]
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/util/LoggerNamePatternSelector$LoggerNameSelector.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "net/minecrell/terminalconsole/util/LoggerNamePatternSelector$LoggerNameSelector",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;[Lorg/apache/logging/log4j/core/pattern/PatternFormatter;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 0,
+            "dsc": "()[Lorg/apache/logging/log4j/core/pattern/PatternFormatter;"
+          },
+          {
+            "nme": "test",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "isPackage",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "formatters",
+            "dsc": "[Lorg/apache/logging/log4j/core/pattern/PatternFormatter;"
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "net/minecrell/terminalconsole/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "net/minecrell/terminalconsole/MinecraftFormattingConverter.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "net/minecrell/terminalconsole/MinecraftFormattingConverter",
+        "super": "org/apache/logging/log4j/core/pattern/LogEventPatternConverter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/util/List;Z)V",
+            "sig": "(Ljava/util/List<Lorg/apache/logging/log4j/core/pattern/PatternFormatter;>;Z)V"
+          },
+          {
+            "nme": "format",
+            "acc": 1,
+            "dsc": "(Lorg/apache/logging/log4j/core/LogEvent;Ljava/lang/StringBuilder;)V"
+          },
+          {
+            "nme": "format",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/lang/StringBuilder;IZ)V"
+          },
+          {
+            "nme": "newInstance",
+            "acc": 9,
+            "dsc": "(Lorg/apache/logging/log4j/core/config/Configuration;[Ljava/lang/String;)Lnet/minecrell/terminalconsole/MinecraftFormattingConverter;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "KEEP_FORMATTING_PROPERTY",
+            "dsc": "Ljava/lang/String;",
+            "val": "terminal.keepMinecraftFormatting"
+          },
+          {
+            "acc": 26,
+            "nme": "KEEP_FORMATTING",
+            "dsc": "Z"
+          },
+          {
+            "acc": 24,
+            "nme": "ANSI_RESET",
+            "dsc": "Ljava/lang/String;",
+            "val": "\u001b[m"
+          },
+          {
+            "acc": 26,
+            "nme": "COLOR_CHAR",
+            "dsc": "C",
+            "val": 167
+          },
+          {
+            "acc": 26,
+            "nme": "LOOKUP",
+            "dsc": "Ljava/lang/String;",
+            "val": "0123456789abcdefklmnor"
+          },
+          {
+            "acc": 26,
+            "nme": "ansiCodes",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "ansi",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "formatters",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lorg/apache/logging/log4j/core/pattern/PatternFormatter;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/config/plugins/Plugin;",
+            "vals": [
+              "name",
+              "minecraftFormatting",
+              "category",
+              "Converter"
+            ]
+          },
+          {
+            "dsc": "Lorg/apache/logging/log4j/core/pattern/ConverterKeys;",
+            "vals": [
+              "value",
+              [
+                "minecraftFormatting"
+              ]
+            ]
+          },
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/apache/logging/log4j/util/PerformanceSensitive;",
+            "vals": [
+              "value",
+              [
+                "allocation"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/minecrell/terminalconsole/SimpleTerminalConsole.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "net/minecrell/terminalconsole/SimpleTerminalConsole",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isRunning",
+            "acc": 1028,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "runCommand",
+            "acc": 1028,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "shutdown",
+            "acc": 1028,
+            "dsc": "()V"
+          },
+          {
+            "nme": "processInput",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "buildReader",
+            "acc": 4,
+            "dsc": "(Lorg/jline/reader/LineReaderBuilder;)Lorg/jline/reader/LineReader;"
+          },
+          {
+            "nme": "start",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "readCommands",
+            "acc": 2,
+            "dsc": "(Lorg/jline/terminal/Terminal;)V"
+          },
+          {
+            "nme": "readCommands",
+            "acc": 2,
+            "dsc": "(Ljava/io/InputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

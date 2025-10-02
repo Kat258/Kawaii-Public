@@ -1,0 +1,342 @@
+{
+  "md5": "8d13af537070eae522fa27af287fe0de",
+  "sha2": "970247b00bdc5faa821b68fd68d11180d2a41e98",
+  "sha256": "4ef02cf5a6e54cf32ced063002a7a243b6086e2886905274faf2f0a80babf2c9",
+  "contents": {
+    "classes": {
+      "org/quiltmc/parsers/json/gson/GsonReader.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "org/quiltmc/parsers/json/gson/GsonReader",
+        "super": "com/google/gson/stream/JsonReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;)V"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "beginArray",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endArray",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginObject",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endObject",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "peek",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonToken;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextBoolean",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextNull",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextDouble",
+            "acc": 1,
+            "dsc": "()D",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipValue",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPreviousPath",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPath",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonReader;"
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/gson/GsonReader$1.class": {
+        "ver": 55,
+        "acc": 4128,
+        "nme": "org/quiltmc/parsers/json/gson/GsonReader$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$org$quiltmc$parsers$json$JsonToken",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/gson/GsonWriter.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "org/quiltmc/parsers/json/gson/GsonWriter",
+        "super": "com/google/gson/stream/JsonWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonWriter;)V"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;"
+          },
+          {
+            "nme": "beginArray",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endArray",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginObject",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endObject",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "name",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "jsonValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nullValue",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Z)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Boolean;)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(F)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(D)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(J)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonWriter;"
+          }
+        ]
+      }
+    }
+  }
+}

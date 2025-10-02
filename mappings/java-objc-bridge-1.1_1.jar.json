@@ -1,0 +1,3005 @@
+{
+  "md5": "da3ffe00911d732132a9197fd7e58602",
+  "sha2": "1227f9e0666314f9de41477e3ec277e542ed7f7b",
+  "sha256": "77e34a13bccffc6c8b1a0e3ed46ddb0ea7dd56f2104ecdfacaaec9e4054ac332",
+  "contents": {
+    "classes": {
+      "ca/weblite/objc/NSMessageInvocationException.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/NSMessageInvocationException",
+        "super": "java/lang/RuntimeException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/reflect/Method;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "getSelectorName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "()Ljava/lang/reflect/Method;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "serialVersionUID",
+            "dsc": "J",
+            "val": 1
+          },
+          {
+            "acc": 18,
+            "nme": "selectorName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "method",
+            "dsc": "Ljava/lang/reflect/Method;"
+          }
+        ]
+      },
+      "ca/weblite/objc/Runtime.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/Runtime",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "acceptNSRange",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_lookUpClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "class_getProperty",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getSuperclass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getVersion",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)I"
+          },
+          {
+            "nme": "class_getWeakIvarLayout",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "class_isMetaClass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Z"
+          },
+          {
+            "nme": "class_getInstanceSize",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)I"
+          },
+          {
+            "nme": "class_getInstanceVariable",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getInstanceMethod",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getClassMethod",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getIvarLayout",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "class_getMethodImplementation",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_getMethodImplementation_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_replaceMethod",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_respondsToSelector",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_setIvarLayout",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "class_setSuperclass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "class_setVersion",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;I)V"
+          },
+          {
+            "nme": "class_setWeakIvarLayout",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "ivar_getName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "ivar_getOffset",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)J"
+          },
+          {
+            "nme": "ivar_getTypeEncoding",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "method_copyArgumentType",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;I)Ljava/lang/String;"
+          },
+          {
+            "nme": "method_copyReturnType",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "method_exchangeImplementations",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "method_getArgumentType",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;ILcom/sun/jna/Pointer;J)V"
+          },
+          {
+            "nme": "method_getImplementation",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "method_getName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "method_getNumberOfArguments",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)I"
+          },
+          {
+            "nme": "method_getReturnType",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;J)V"
+          },
+          {
+            "nme": "method_getTypeEncoding",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "method_setImplementation",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_allocateClassPair",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;J)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_copyProtocolList",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)[Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getAssociatedObject",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getClassList",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;I)I"
+          },
+          {
+            "nme": "objc_getFutureClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getMetaClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getProtocol",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_getRequiredClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)J"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSendSuper",
+            "acc": 1153,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSendSuper_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)D"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "objc_msgSend_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "objc_msgSend_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "objc_msgSend_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "objc_msgSend_stret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "objc_registerClassPair",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "objc_removeAssociatedObjects",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "objc_setAssociatedObject",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "objc_setFutureClass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "object_copy",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;J)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_dispose",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_getClass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_getClassName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "object_getIndexedIvars",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_getInstanceVariable",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_getIvar",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_setClass",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_setInstanceVariable",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "object_setIvar",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "property_getAttributes",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "protocol_conformsToProtocol",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Z"
+          },
+          {
+            "nme": "protocol_copyMethodDescriptionList",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;ZZLcom/sun/jna/Pointer;)Lcom/sun/jna/Structure;"
+          },
+          {
+            "nme": "protocol_copyPropertyList",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "protocol_copyProtocolList",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "protocol_getMethodDescription",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;ZZ)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "protocol_getName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "protocol_getProperty",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;ZZ)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "protocol_isEqual",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Z"
+          },
+          {
+            "nme": "sel_getName",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "sel_getUid",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sel_isEqual",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)Z"
+          },
+          {
+            "nme": "sel_registerName",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/Runtime;"
+          }
+        ]
+      },
+      "ca/weblite/objc/TypeMapping.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/TypeMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "cToJ",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime101.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime101",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime101;"
+          }
+        ]
+      },
+      "ca/weblite/objc/Proxy.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/Proxy",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "retain",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "release",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "drainCache",
+            "acc": 9,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lca/weblite/objc/Client;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lca/weblite/objc/Client;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "load",
+            "acc": 9,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "sendString",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "sendString",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "sendInt",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "sendInt",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "sendDouble",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "sendDouble",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "sendBoolean",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "sendBoolean",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "([Lca/weblite/objc/Message;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "sendRaw",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "sendRaw",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "sendRaw",
+            "acc": 129,
+            "dsc": "([Lca/weblite/objc/Message;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "([Lca/weblite/objc/Message;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "getClient",
+            "acc": 1,
+            "dsc": "()Lca/weblite/objc/Client;"
+          },
+          {
+            "nme": "setClient",
+            "acc": 1,
+            "dsc": "(Lca/weblite/objc/Client;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "getPeer",
+            "acc": 1,
+            "dsc": "()Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "setPeer",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "getInt",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)I"
+          },
+          {
+            "nme": "getBoolean",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "getProxy",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "getDouble",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)D"
+          },
+          {
+            "nme": "getPointer",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "proxyCache",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lcom/sun/jna/Pointer;Lca/weblite/objc/Proxy;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "client",
+            "dsc": "Lca/weblite/objc/Client;"
+          },
+          {
+            "acc": 0,
+            "nme": "peer",
+            "dsc": "Lcom/sun/jna/Pointer;"
+          },
+          {
+            "acc": 2,
+            "nme": "retainCount",
+            "dsc": "I"
+          }
+        ]
+      },
+      "ca/weblite/objc/mappers/PointerMapping.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/mappers/PointerMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/mappers/PointerMapping;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeUtils.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/RuntimeUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cls",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "cls",
+            "acc": 9,
+            "dsc": "(Lca/weblite/objc/Peerable;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "clsName",
+            "acc": 9,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "clsName",
+            "acc": 9,
+            "dsc": "(Lca/weblite/objc/Peerable;)Ljava/lang/String;"
+          },
+          {
+            "nme": "sel",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sel",
+            "acc": 9,
+            "dsc": "(Lca/weblite/objc/Peerable;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "selName",
+            "acc": 9,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "selName",
+            "acc": 9,
+            "dsc": "(Lca/weblite/objc/Peerable;)Ljava/lang/String;"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "getArgsSuffix",
+            "acc": 138,
+            "dsc": "([Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getArgsParamTypes",
+            "acc": 138,
+            "dsc": "([Ljava/lang/Object;)[Ljava/lang/Class;",
+            "sig": "([Ljava/lang/Object;)[Ljava/lang/Class<*>;"
+          },
+          {
+            "nme": "merge",
+            "acc": 138,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)[Ljava/lang/Object;"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 138,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "msgPointer",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "msgPointer",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "msgPointer",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "msgPointer",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "msgInt",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "msgInt",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "msgInt",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "msgInt",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "msgBoolean",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "msgBoolean",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "msgBoolean",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "msgBoolean",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "msgString",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "msgString",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "msgString",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "msgString",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "msgDouble",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 138,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "msgDouble",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "msgDouble",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "msgDouble",
+            "acc": 137,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "sleep50",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "(ZZLcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "arraySize",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)I"
+          },
+          {
+            "nme": "addr",
+            "acc": 9,
+            "dsc": "(Lca/weblite/objc/Peerable;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "msg",
+            "acc": 137,
+            "dsc": "([Lca/weblite/objc/Message;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "str",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "str",
+            "acc": 9,
+            "dsc": "(Lcom/sun/jna/Pointer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getAsReference",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "getAsReferenceWrapper",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Lcom/sun/jna/ptr/ByReference;"
+          },
+          {
+            "nme": "init",
+            "acc": 266,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createProxy",
+            "acc": 265,
+            "dsc": "(Lca/weblite/objc/Recipient;)J"
+          },
+          {
+            "nme": "getJavaPeer",
+            "acc": 265,
+            "dsc": "(J)Lca/weblite/objc/Recipient;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "rt",
+            "dsc": "Lca/weblite/objc/Runtime;"
+          },
+          {
+            "acc": 10,
+            "nme": "isArm64",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime111.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime111",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime111;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntmeArm64Extensions.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntmeArm64Extensions",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;)D"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntmeArm64Extensions;"
+          }
+        ]
+      },
+      "ca/weblite/objc/util/CocoaUtils$1.class": {
+        "ver": 55,
+        "acc": 32,
+        "nme": "ca/weblite/objc/util/CocoaUtils$1",
+        "super": "ca/weblite/objc/NSObject",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Runnable;)V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()V",
+            "vanns": [
+              {
+                "dsc": "Lca/weblite/objc/annotations/Msg;",
+                "vals": [
+                  "selector",
+                  "run",
+                  "like",
+                  "NSObject.finalize"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$r",
+            "dsc": "Ljava/lang/Runnable;"
+          }
+        ]
+      },
+      "ca/weblite/objc/foundation/NSRange.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/foundation/NSRange",
+        "super": "com/sun/jna/Structure",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setLocation",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setLength",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getLocation",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getLength",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getFieldOrder",
+            "acc": 4,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "location",
+            "dsc": "J"
+          },
+          {
+            "acc": 1,
+            "nme": "length",
+            "dsc": "J"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0010.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0010",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0010;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0000.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0000",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0000;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "ca/weblite/objc/PeerableRecipient.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/PeerableRecipient",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "ca/weblite/objc/Client.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/Client",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(ZZ)V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lca/weblite/objc/Client;"
+          },
+          {
+            "nme": "getRawClient",
+            "acc": 9,
+            "dsc": "()Lca/weblite/objc/Client;"
+          },
+          {
+            "nme": "setCoerceInputs",
+            "acc": 131073,
+            "dsc": "(Z)Lca/weblite/objc/Client;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "setCoerceOutputs",
+            "acc": 131073,
+            "dsc": "(Z)Lca/weblite/objc/Client;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "getCoerceInputs",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getCoerceOutputs",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Lca/weblite/objc/Peerable;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "(Lca/weblite/objc/Peerable;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendPointer",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "sendProxy",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "newObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lca/weblite/objc/PeerableRecipient;",
+            "sig": "(Ljava/lang/Class<+Lca/weblite/objc/PeerableRecipient;>;)Lca/weblite/objc/PeerableRecipient;"
+          },
+          {
+            "nme": "send",
+            "acc": 129,
+            "dsc": "([Lca/weblite/objc/Message;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "buildMessageChain",
+            "acc": 129,
+            "dsc": "([Ljava/lang/Object;)[Lca/weblite/objc/Message;"
+          },
+          {
+            "nme": "lambda$buildMessageChain$0",
+            "acc": 4106,
+            "dsc": "(I)[Lca/weblite/objc/Message;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "instance",
+            "dsc": "Lca/weblite/objc/Client;"
+          },
+          {
+            "acc": 26,
+            "nme": "rawClient",
+            "dsc": "Lca/weblite/objc/Client;"
+          },
+          {
+            "acc": 16,
+            "nme": "coerceInputs",
+            "dsc": "Z"
+          },
+          {
+            "acc": 16,
+            "nme": "coerceOutputs",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1010.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1010",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1010;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0001.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0001",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0001;"
+          }
+        ]
+      },
+      "ca/weblite/objc/mappers/ScalarMapping.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/mappers/ScalarMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/mappers/ScalarMapping;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1100.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1100",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1100;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0111.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0111",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0111;"
+          }
+        ]
+      },
+      "ca/weblite/objc/util/CocoaUtils.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/util/CocoaUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "dispatch_async",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Runnable;)V"
+          },
+          {
+            "nme": "dispatch_sync",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Runnable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime00.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime00",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime00;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1111.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1111",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1111;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime11.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime11",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime11;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1;"
+          }
+        ]
+      },
+      "ca/weblite/objc/foundation/NSRange$ByReference.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/foundation/NSRange$ByReference",
+        "super": "ca/weblite/objc/foundation/NSRange",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/Recipient.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/Recipient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "methodSignatureForSelector",
+            "acc": 1025,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "forwardInvocation",
+            "acc": 1025,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "respondsToSelector",
+            "acc": 1025,
+            "dsc": "(J)Z"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime100.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime100",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime100;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime010.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime010",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime010;"
+          }
+        ]
+      },
+      "ca/weblite/objc/foundation/NSRange$ByValue.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/foundation/NSRange$ByValue",
+        "super": "ca/weblite/objc/foundation/NSRange",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/TypeMapper.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/TypeMapper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lca/weblite/objc/TypeMapper;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getMapping",
+            "acc": 10,
+            "dsc": "(C)Lca/weblite/objc/TypeMapping;"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/TypeMapper;"
+          }
+        ]
+      },
+      "ca/weblite/nativeutils/NativeUtils.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/nativeutils/NativeUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "loadLibraryFromJar",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "loadLibraryFromJar",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/Class<*>;)V",
+            "exs": [
+              "java/io/IOException",
+              "java/lang/UnsatisfiedLinkError"
+            ]
+          },
+          {
+            "nme": "extractFromJar",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;)Ljava/nio/file/Path;",
+            "sig": "(Ljava/lang/String;Ljava/lang/Class<*>;)Ljava/nio/file/Path;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0110.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0110",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0110;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0100.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0100",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0100;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime01.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime01",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime01;"
+          }
+        ]
+      },
+      "ca/weblite/objc/mappers/StringMapping.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/mappers/StringMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/mappers/StringMapping;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1001.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1001",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1001;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1011.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1011",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1011;"
+          }
+        ]
+      },
+      "ca/weblite/objc/util/CocoaUtils$2.class": {
+        "ver": 55,
+        "acc": 32,
+        "nme": "ca/weblite/objc/util/CocoaUtils$2",
+        "super": "ca/weblite/objc/NSObject",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Runnable;)V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()V",
+            "vanns": [
+              {
+                "dsc": "Lca/weblite/objc/annotations/Msg;",
+                "vals": [
+                  "selector",
+                  "run",
+                  "like",
+                  "NSObject.finalize"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$r",
+            "dsc": "Ljava/lang/Runnable;"
+          }
+        ]
+      },
+      "ca/weblite/objc/NSObject.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/NSObject",
+        "super": "ca/weblite/objc/Proxy",
+        "mthds": [
+          {
+            "nme": "getMethodMap",
+            "acc": 12,
+            "dsc": "(Ljava/lang/Class;)Ljava/util/Map;",
+            "sig": "(Ljava/lang/Class<*>;)Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Method;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lca/weblite/objc/Client;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lca/weblite/objc/Client;Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "init",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "init",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "methodForSelector",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/reflect/Method;"
+          },
+          {
+            "nme": "methodSignatureForSelector",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "methodSignatureForSelector",
+            "acc": 1,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "forwardInvocationToParent",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "forwardInvocationToParent",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "forwardInvocation",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          },
+          {
+            "nme": "forwardInvocation",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "respondsToSelector",
+            "acc": 1,
+            "dsc": "(Lcom/sun/jna/Pointer;)Z"
+          },
+          {
+            "nme": "respondsToSelector",
+            "acc": 1,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "chain",
+            "acc": 129,
+            "dsc": "([Lca/weblite/objc/Message;)Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "dealloc",
+            "acc": 1,
+            "dsc": "()Lca/weblite/objc/NSObject;"
+          },
+          {
+            "nme": "chain",
+            "acc": 4161,
+            "dsc": "([Lca/weblite/objc/Message;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "chain",
+            "acc": 4161,
+            "dsc": "(Lcom/sun/jna/Pointer;[Ljava/lang/Object;)Lca/weblite/objc/Proxy;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "parent",
+            "dsc": "Lcom/sun/jna/Pointer;"
+          },
+          {
+            "acc": 2,
+            "nme": "cls",
+            "dsc": "Lcom/sun/jna/Pointer;"
+          },
+          {
+            "acc": 26,
+            "nme": "methodMap",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Class<*>;Ljava/util/Map<Ljava/lang/String;Ljava/lang/reflect/Method;>;>;"
+          }
+        ]
+      },
+      "ca/weblite/objc/jna/PointerTool.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/jna/PointerTool",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getPeer",
+            "acc": 9,
+            "dsc": "(Lcom/sun/jna/Pointer;)J"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime001.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime001",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime001;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime011.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime011",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime011;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0;"
+          }
+        ]
+      },
+      "ca/weblite/objc/annotations/Msg.class": {
+        "ver": 55,
+        "acc": 9729,
+        "nme": "ca/weblite/objc/annotations/Msg",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "selector",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "signature",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "like",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/annotation/Retention;",
+            "vals": [
+              "value",
+              [
+                "Ljava/lang/annotation/RetentionPolicy;",
+                "RUNTIME"
+              ]
+            ]
+          },
+          {
+            "dsc": "Ljava/lang/annotation/Target;",
+            "vals": [
+              "value",
+              [
+                [
+                  "Ljava/lang/annotation/ElementType;",
+                  "METHOD"
+                ]
+              ]
+            ]
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime000.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime000",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime000;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0011.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0011",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0011;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1000.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1000",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1000;"
+          }
+        ]
+      },
+      "ca/weblite/objc/Peerable.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/Peerable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPeer",
+            "acc": 1025,
+            "dsc": "()Lcom/sun/jna/Pointer;"
+          },
+          {
+            "nme": "setPeer",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1110.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1110",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1110;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime10.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime10",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime10;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime0101.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime0101",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime0101;"
+          }
+        ]
+      },
+      "ca/weblite/objc/Message.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/Message",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "beforeRequest",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "afterResponse",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "STATUS_SKIPPED",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "STATUS_CANCELLED",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "STATUS_COMPLETED",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "STATUS_READY",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 1,
+            "nme": "receiver",
+            "dsc": "Lcom/sun/jna/Pointer;"
+          },
+          {
+            "acc": 1,
+            "nme": "selector",
+            "dsc": "Lcom/sun/jna/Pointer;"
+          },
+          {
+            "acc": 1,
+            "nme": "args",
+            "dsc": "Ljava/util/List;"
+          },
+          {
+            "acc": 1,
+            "nme": "result",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 1,
+            "nme": "error",
+            "dsc": "Ljava/lang/Exception;"
+          },
+          {
+            "acc": 1,
+            "nme": "status",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "coerceInput",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "coerceOutput",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "inputWasCoerced",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "outputWasCoerced",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "next",
+            "dsc": "Lca/weblite/objc/Message;"
+          },
+          {
+            "acc": 1,
+            "nme": "previous",
+            "dsc": "Lca/weblite/objc/Message;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime1101.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime1101",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;Lcom/sun/jna/Structure$ByValue;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime1101;"
+          }
+        ]
+      },
+      "ca/weblite/objc/mappers/StructureMapping.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/mappers/StructureMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/mappers/StructureMapping;"
+          }
+        ]
+      },
+      "ca/weblite/objc/RuntimeMappings$Runtime110.class": {
+        "ver": 55,
+        "acc": 1537,
+        "nme": "ca/weblite/objc/RuntimeMappings$Runtime110",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "objc_msgSend",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)J"
+          },
+          {
+            "nme": "objc_msgSend_fpret",
+            "acc": 1025,
+            "dsc": "(Lcom/sun/jna/Pointer;Lcom/sun/jna/Pointer;Lcom/sun/jna/Structure$ByValue;Lcom/sun/jna/Structure$ByValue;Ljava/lang/Object;)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/RuntimeMappings$Runtime110;"
+          }
+        ]
+      },
+      "ca/weblite/objc/mappers/NSObjectMapping.class": {
+        "ver": 55,
+        "acc": 33,
+        "nme": "ca/weblite/objc/mappers/NSObjectMapping",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cToJ",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "jToC",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Lca/weblite/objc/TypeMapping;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lca/weblite/objc/mappers/NSObjectMapping;"
+          }
+        ]
+      }
+    }
+  }
+}

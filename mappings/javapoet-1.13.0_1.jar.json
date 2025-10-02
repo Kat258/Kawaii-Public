@@ -1,0 +1,4389 @@
+{
+  "md5": "8d9a3cbeaa83e6700478b73c33a1b4fe",
+  "sha2": "d6562d385049f35eb50403fa86bb11cce76b866a",
+  "sha256": "4c7517e848a71b36d069d12bb3bf46a70fd4cda3105d822b0ed2e19c00b69291",
+  "contents": {
+    "classes": {
+      "com/squareup/javapoet/MethodSpec$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/MethodSpec$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "setName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotations",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 129,
+            "dsc": "([Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Ljavax/lang/model/element/Modifier;>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addTypeVariables",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addTypeVariable",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeVariableName;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "returns",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "returns",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addParameters",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/ParameterSpec;>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addParameter",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addParameter",
+            "acc": 129,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addParameter",
+            "acc": 129,
+            "dsc": "(Ljava/lang/reflect/Type;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "varargs",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "varargs",
+            "acc": 1,
+            "dsc": "(Z)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addExceptions",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<+Lcom/squareup/javapoet/TypeName;>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addException",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addException",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addCode",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addNamedCode",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/Map;)Lcom/squareup/javapoet/MethodSpec$Builder;",
+            "sig": "(Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;*>;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addCode",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addComment",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "defaultValue",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "defaultValue",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "beginControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "beginControlFlow",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "nextControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "nextControlFlow",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "endControlFlow",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "endControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "endControlFlow",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addStatement",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "addStatement",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/MethodSpec;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Z"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "access$500",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$600",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/MethodSpec$1;)V"
+          },
+          {
+            "nme": "access$402",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "access$202",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;Z)Z"
+          },
+          {
+            "nme": "access$602",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "returnType",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 18,
+            "nme": "exceptions",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "code",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "varargs",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "defaultValue",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeVariables",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "parameters",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/ParameterSpec;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/WildcardTypeName.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/WildcardTypeName",
+        "super": "com/squareup/javapoet/TypeName",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/util/List;Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/util/List;Ljava/util/List;Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/WildcardTypeName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/WildcardTypeName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "subtypeOf",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/WildcardTypeName;"
+          },
+          {
+            "nme": "subtypeOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/WildcardTypeName;"
+          },
+          {
+            "nme": "supertypeOf",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/WildcardTypeName;"
+          },
+          {
+            "nme": "supertypeOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/WildcardTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/type/WildcardType;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljavax/lang/model/type/WildcardType;Ljava/util/Map;)Lcom/squareup/javapoet/TypeName;",
+            "sig": "(Ljavax/lang/model/type/WildcardType;Ljava/util/Map<Ljavax/lang/model/element/TypeParameterElement;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/WildcardType;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljava/lang/reflect/WildcardType;Ljava/util/Map;)Lcom/squareup/javapoet/TypeName;",
+            "sig": "(Ljava/lang/reflect/WildcardType;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "upperBounds",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "lowerBounds",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ArrayTypeName.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/ArrayTypeName",
+        "super": "com/squareup/javapoet/TypeName",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/util/List;)V",
+            "sig": "(Lcom/squareup/javapoet/TypeName;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/ArrayTypeName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Z)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitLeafType",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitBrackets",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Z)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/type/ArrayType;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljavax/lang/model/type/ArrayType;Ljava/util/Map;)Lcom/squareup/javapoet/ArrayTypeName;",
+            "sig": "(Ljavax/lang/model/type/ArrayType;Ljava/util/Map<Ljavax/lang/model/element/TypeParameterElement;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/GenericArrayType;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljava/lang/reflect/GenericArrayType;Ljava/util/Map;)Lcom/squareup/javapoet/ArrayTypeName;",
+            "sig": "(Ljava/lang/reflect/GenericArrayType;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "componentType",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/AnnotationSpec.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/AnnotationSpec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec$Builder;)V"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitAnnotationValues",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/CodeBlock;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/annotation/Annotation;)Lcom/squareup/javapoet/AnnotationSpec;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/annotation/Annotation;Z)Lcom/squareup/javapoet/AnnotationSpec;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/AnnotationMirror;)Lcom/squareup/javapoet/AnnotationSpec;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/AnnotationSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec$Builder;Lcom/squareup/javapoet/AnnotationSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "members",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/CodeBlock;>;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeBlock.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/CodeBlock",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock$Builder;)V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "of",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "join",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Iterable;Ljava/lang/String;)Lcom/squareup/javapoet/CodeBlock;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/CodeBlock;>;Ljava/lang/String;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "joining",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/stream/Collector;",
+            "sig": "(Ljava/lang/String;)Ljava/util/stream/Collector<Lcom/squareup/javapoet/CodeBlock;*Lcom/squareup/javapoet/CodeBlock;>;"
+          },
+          {
+            "nme": "joining",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/stream/Collector;",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/stream/Collector<Lcom/squareup/javapoet/CodeBlock;*Lcom/squareup/javapoet/CodeBlock;>;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "lambda$joining$2",
+            "acc": 4106,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock$Builder;Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "lambda$joining$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock$Builder;)Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;"
+          },
+          {
+            "nme": "lambda$joining$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "()Ljava/util/regex/Pattern;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "()Ljava/util/regex/Pattern;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock$Builder;Lcom/squareup/javapoet/CodeBlock$1;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NAMED_ARGUMENT",
+            "dsc": "Ljava/util/regex/Pattern;"
+          },
+          {
+            "acc": 26,
+            "nme": "LOWERCASE",
+            "dsc": "Ljava/util/regex/Pattern;"
+          },
+          {
+            "acc": 16,
+            "nme": "formatParts",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 16,
+            "nme": "args",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/Object;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/LineWrapper$FlushType.class": {
+        "ver": 52,
+        "acc": 16432,
+        "nme": "com/squareup/javapoet/LineWrapper$FlushType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "WRAP",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "SPACE",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "EMPTY",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/JavaFile$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/squareup/javapoet/JavaFile$2",
+        "super": "javax/tools/SimpleJavaFileObject",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile;Ljava/net/URI;Ljavax/tools/JavaFileObject$Kind;)V"
+          },
+          {
+            "nme": "getCharContent",
+            "acc": 1,
+            "dsc": "(Z)Ljava/lang/String;"
+          },
+          {
+            "nme": "openInputStream",
+            "acc": 1,
+            "dsc": "()Ljava/io/InputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getLastModified",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "getCharContent",
+            "acc": 4161,
+            "dsc": "(Z)Ljava/lang/CharSequence;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "lastModified",
+            "dsc": "J"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/squareup/javapoet/JavaFile;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeBlock$CodeBlockJoiner.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/CodeBlock$CodeBlockJoiner",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock$Builder;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;"
+          },
+          {
+            "nme": "merge",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;)Lcom/squareup/javapoet/CodeBlock$CodeBlockJoiner;"
+          },
+          {
+            "nme": "join",
+            "acc": 0,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delimiter",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "builder",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "first",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ParameterizedTypeName.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/ParameterizedTypeName",
+        "super": "com/squareup/javapoet/TypeName",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/ParameterizedTypeName;Lcom/squareup/javapoet/ClassName;Ljava/util/List;)V",
+            "sig": "(Lcom/squareup/javapoet/ParameterizedTypeName;Lcom/squareup/javapoet/ClassName;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/ParameterizedTypeName;Lcom/squareup/javapoet/ClassName;Ljava/util/List;Ljava/util/List;)V",
+            "sig": "(Lcom/squareup/javapoet/ParameterizedTypeName;Lcom/squareup/javapoet/ClassName;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/ParameterizedTypeName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nestedClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "nestedClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;)Lcom/squareup/javapoet/ParameterizedTypeName;",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 137,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;[Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 137,
+            "dsc": "(Ljava/lang/Class;[Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/ParameterizedTypeName;",
+            "sig": "(Ljava/lang/Class<*>;[Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/ParameterizedType;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljava/lang/reflect/ParameterizedType;Ljava/util/Map;)Lcom/squareup/javapoet/ParameterizedTypeName;",
+            "sig": "(Ljava/lang/reflect/ParameterizedType;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "enclosingType",
+            "dsc": "Lcom/squareup/javapoet/ParameterizedTypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "rawType",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeArguments",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeBlock$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/CodeBlock$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/FieldSpec.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/FieldSpec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;)V"
+          },
+          {
+            "nme": "hasModifier",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Modifier;)Z"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Ljava/util/Set;)V",
+            "sig": "(Lcom/squareup/javapoet/CodeWriter;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "builder",
+            "acc": 137,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "builder",
+            "acc": 137,
+            "dsc": "(Ljava/lang/reflect/Type;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;Lcom/squareup/javapoet/FieldSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "initializer",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeSpec$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/TypeSpec$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock;)V"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotations",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 129,
+            "dsc": "([Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addTypeVariables",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addTypeVariable",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeVariableName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "superclass",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "superclass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "superclass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;Z)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "superclass",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "superclass",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Z)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addSuperinterfaces",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<+Lcom/squareup/javapoet/TypeName;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addSuperinterface",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addSuperinterface",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addSuperinterface",
+            "acc": 1,
+            "dsc": "(Ljava/lang/reflect/Type;Z)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "getRawType",
+            "acc": 2,
+            "dsc": "(Ljava/lang/reflect/Type;)Ljava/lang/Class;",
+            "sig": "(Ljava/lang/reflect/Type;)Ljava/lang/Class<*>;"
+          },
+          {
+            "nme": "addSuperinterface",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addSuperinterface",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Z)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addEnumConstant",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addEnumConstant",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addFields",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/FieldSpec;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addField",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addField",
+            "acc": 129,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addField",
+            "acc": 129,
+            "dsc": "(Ljava/lang/reflect/Type;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addStaticBlock",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addInitializerBlock",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addMethods",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/MethodSpec;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addMethod",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addTypes",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/TypeSpec;>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addType",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "addOriginatingElement",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Element;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "alwaysQualify",
+            "acc": 129,
+            "dsc": "([Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "avoidClashesWithNestedClasses",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/TypeElement;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "avoidClashesWithNestedClasses",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/TypeSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeSpec;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "access$500",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$600",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock;Lcom/squareup/javapoet/TypeSpec$1;)V"
+          },
+          {
+            "nme": "access$402",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeName;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "kind",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "anonymousTypeArguments",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 18,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "superclass",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 18,
+            "nme": "staticBlock",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 18,
+            "nme": "initializerBlock",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 17,
+            "nme": "enumConstants",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeVariables",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "superinterfaces",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "fieldSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/FieldSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "methodSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/MethodSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "originatingElements",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Element;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "alwaysQualifiedNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/AnnotationSpec$Visitor.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/squareup/javapoet/AnnotationSpec$Visitor",
+        "super": "javax/lang/model/util/SimpleAnnotationValueVisitor8",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec$Builder;)V"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "visitAnnotation",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/AnnotationMirror;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "visitEnumConstant",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/VariableElement;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "visitType",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "visitArray",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;",
+            "sig": "(Ljava/util/List<+Ljavax/lang/model/element/AnnotationValue;>;Ljava/lang/String;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "visitArray",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitAnnotation",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/AnnotationMirror;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitEnumConstant",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/VariableElement;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitType",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 4164,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "builder",
+            "dsc": "Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/LineWrapper.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/LineWrapper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Appendable;Ljava/lang/String;I)V"
+          },
+          {
+            "nme": "lastChar",
+            "acc": 0,
+            "dsc": "()C"
+          },
+          {
+            "nme": "append",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "wrappingSpace",
+            "acc": 0,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "zeroWidthSpace",
+            "acc": 0,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 0,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/LineWrapper$FlushType;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "out",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper$RecordingAppendable;"
+          },
+          {
+            "acc": 18,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "columnLimit",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "closed",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "buffer",
+            "dsc": "Ljava/lang/StringBuilder;"
+          },
+          {
+            "acc": 2,
+            "nme": "column",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "indentLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "nextFlush",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper$FlushType;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/Util.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/Util",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "immutableMultimap",
+            "acc": 8,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;Ljava/util/List<TV;>;>;)Ljava/util/Map<TK;Ljava/util/List<TV;>;>;"
+          },
+          {
+            "nme": "immutableMap",
+            "acc": 8,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "checkArgument",
+            "acc": 136,
+            "dsc": "(ZLjava/lang/String;[Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "checkNotNull",
+            "acc": 136,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(TT;Ljava/lang/String;[Ljava/lang/Object;)TT;"
+          },
+          {
+            "nme": "checkState",
+            "acc": 136,
+            "dsc": "(ZLjava/lang/String;[Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "immutableList",
+            "acc": 8,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/List;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;)Ljava/util/List<TT;>;"
+          },
+          {
+            "nme": "immutableSet",
+            "acc": 8,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/Set;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;)Ljava/util/Set<TT;>;"
+          },
+          {
+            "nme": "union",
+            "acc": 8,
+            "dsc": "(Ljava/util/Set;Ljava/util/Set;)Ljava/util/Set;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Set<TT;>;Ljava/util/Set<TT;>;)Ljava/util/Set<TT;>;"
+          },
+          {
+            "nme": "requireExactlyOneOf",
+            "acc": 136,
+            "dsc": "(Ljava/util/Set;[Ljavax/lang/model/element/Modifier;)V",
+            "sig": "(Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;[Ljavax/lang/model/element/Modifier;)V"
+          },
+          {
+            "nme": "characterLiteralWithoutSingleQuotes",
+            "acc": 8,
+            "dsc": "(C)Ljava/lang/String;"
+          },
+          {
+            "nme": "stringLiteralWithDoubleQuotes",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/squareup/javapoet/FieldSpec$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/FieldSpec$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/TypeSpec$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/TypeSpec$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/TypeSpec$Kind.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/squareup/javapoet/TypeSpec$Kind",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;ILjava/util/Set;Ljava/util/Set;Ljava/util/Set;Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V"
+          },
+          {
+            "nme": "access$800",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$900",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$1000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$1100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Kind;)Ljava/util/Set;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "CLASS",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 16409,
+            "nme": "INTERFACE",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 16409,
+            "nme": "ENUM",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 16409,
+            "nme": "ANNOTATION",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 18,
+            "nme": "implicitFieldModifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "implicitMethodModifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "implicitTypeModifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "asMemberModifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/squareup/javapoet/TypeSpec$Kind;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ParameterSpec$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/ParameterSpec$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotations",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/ParameterSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/ParameterSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 129,
+            "dsc": "([Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/ParameterSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Ljavax/lang/model/element/Modifier;>;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/ParameterSpec;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec$Builder;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;Lcom/squareup/javapoet/ParameterSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Modifier;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeBlock$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/CodeBlock$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "addNamed",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/Map;)Lcom/squareup/javapoet/CodeBlock$Builder;",
+            "sig": "(Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;*>;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "add",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "isNoArgPlaceholder",
+            "acc": 2,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "addArgument",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;CLjava/lang/Object;)V"
+          },
+          {
+            "nme": "argToName",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "argToLiteral",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "argToString",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "argToType",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "beginControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "nextControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "endControlFlow",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "endControlFlow",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "addStatement",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "addStatement",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "indent",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "unindent",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "formatParts",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 16,
+            "nme": "args",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/Object;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/NameAllocator.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/NameAllocator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/util/LinkedHashSet;Ljava/util/LinkedHashMap;)V",
+            "sig": "(Ljava/util/LinkedHashSet<Ljava/lang/String;>;Ljava/util/LinkedHashMap<Ljava/lang/Object;Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "newName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "newName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toJavaIdentifier",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "clone",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/NameAllocator;"
+          },
+          {
+            "nme": "clone",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "allocatedNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "tagToName",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeName$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/squareup/javapoet/TypeName$1",
+        "super": "javax/lang/model/util/SimpleTypeVisitor8",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/Map;)V"
+          },
+          {
+            "nme": "visitPrimitive",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/PrimitiveType;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitDeclared",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/DeclaredType;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitError",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/ErrorType;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitArray",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/ArrayType;Ljava/lang/Void;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "visitTypeVariable",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/TypeVariable;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitWildcard",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/WildcardType;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitNoType",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/type/NoType;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 4,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Ljava/lang/Void;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "visitNoType",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/NoType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitWildcard",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/WildcardType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitTypeVariable",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/TypeVariable;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitError",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/ErrorType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitDeclared",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/DeclaredType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitArray",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/ArrayType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitPrimitive",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/type/PrimitiveType;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 4164,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$typeVariables",
+            "dsc": "Ljava/util/Map;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/FieldSpec$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/FieldSpec$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addJavadoc",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotations",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Iterable;)Lcom/squareup/javapoet/FieldSpec$Builder;",
+            "sig": "(Ljava/lang/Iterable<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addAnnotation",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/FieldSpec$Builder;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "addModifiers",
+            "acc": 129,
+            "dsc": "([Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "initializer",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "initializer",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/FieldSpec$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/FieldSpec;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;)Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;Lcom/squareup/javapoet/FieldSpec$1;)V"
+          },
+          {
+            "nme": "access$302",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/FieldSpec$Builder;Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "initializer",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Modifier;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/JavaFile.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/JavaFile",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)V"
+          },
+          {
+            "nme": "fillAlwaysQualifiedNames",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec;Ljava/util/Set;)V",
+            "sig": "(Lcom/squareup/javapoet/TypeSpec;Ljava/util/Set<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Appendable;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeToPath",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;)Ljava/nio/file/Path;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeToPath",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;Ljava/nio/charset/Charset;)Ljava/nio/file/Path;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeToFile",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)Ljava/io/File;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljavax/annotation/processing/Filer;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toJavaFileObject",
+            "acc": 1,
+            "dsc": "()Ljavax/tools/JavaFileObject;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "$closeResource",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Throwable;Ljava/lang/AutoCloseable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;Lcom/squareup/javapoet/JavaFile$1;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NULL_APPENDABLE",
+            "dsc": "Ljava/lang/Appendable;"
+          },
+          {
+            "acc": 17,
+            "nme": "fileComment",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "packageName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeSpec",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec;"
+          },
+          {
+            "acc": 17,
+            "nme": "skipJavaLangImports",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "staticImports",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "alwaysQualify",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeWriter$Multiset.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/CodeWriter$Multiset",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "add",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "contains",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)Z",
+            "sig": "(TT;)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "map",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<TT;Ljava/lang/Integer;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeName.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/squareup/javapoet/TypeName",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 145,
+            "dsc": "([Lcom/squareup/javapoet/AnnotationSpec;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "concatAnnotations",
+            "acc": 20,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "nme": "isAnnotated",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isPrimitive",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isBoxedPrimitive",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "box",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "unbox",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitAnnotations",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljavax/lang/model/type/TypeMirror;Ljava/util/Map;)Lcom/squareup/javapoet/TypeName;",
+            "sig": "(Ljavax/lang/model/type/TypeMirror;Ljava/util/Map<Ljavax/lang/model/element/TypeParameterElement;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljava/lang/reflect/Type;Ljava/util/Map;)Lcom/squareup/javapoet/TypeName;",
+            "sig": "(Ljava/lang/reflect/Type;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "list",
+            "acc": 8,
+            "dsc": "([Ljava/lang/reflect/Type;)Ljava/util/List;",
+            "sig": "([Ljava/lang/reflect/Type;)Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "nme": "list",
+            "acc": 8,
+            "dsc": "([Ljava/lang/reflect/Type;Ljava/util/Map;)Ljava/util/List;",
+            "sig": "([Ljava/lang/reflect/Type;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "nme": "arrayComponent",
+            "acc": 8,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "asArray",
+            "acc": 8,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/ArrayTypeName;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "VOID",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "BOOLEAN",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "BYTE",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHORT",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "INT",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "LONG",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "CHAR",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "FLOAT",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "DOUBLE",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 25,
+            "nme": "OBJECT",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_VOID",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_BOOLEAN",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_BYTE",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_SHORT",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_INT",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_LONG",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_CHAR",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_FLOAT",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "BOXED_DOUBLE",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 18,
+            "nme": "keyword",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "cachedString",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/JavaFile$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/JavaFile$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;)V"
+          },
+          {
+            "nme": "addFileComment",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "addStaticImport",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Enum;)Lcom/squareup/javapoet/JavaFile$Builder;",
+            "sig": "(Ljava/lang/Enum<*>;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "addStaticImport",
+            "acc": 129,
+            "dsc": "(Ljava/lang/Class;[Ljava/lang/String;)Lcom/squareup/javapoet/JavaFile$Builder;",
+            "sig": "(Ljava/lang/Class<*>;[Ljava/lang/String;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "addStaticImport",
+            "acc": 129,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;[Ljava/lang/String;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "skipJavaLangImports",
+            "acc": 1,
+            "dsc": "(Z)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "indent",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/JavaFile$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/JavaFile;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)Lcom/squareup/javapoet/TypeSpec;"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)Z"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;Lcom/squareup/javapoet/JavaFile$1;)V"
+          },
+          {
+            "nme": "access$302",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;Z)Z"
+          },
+          {
+            "nme": "access$402",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/JavaFile$Builder;Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "packageName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "typeSpec",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec;"
+          },
+          {
+            "acc": 18,
+            "nme": "fileComment",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock$Builder;"
+          },
+          {
+            "acc": 2,
+            "nme": "skipJavaLangImports",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "staticImports",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ParameterSpec.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/ParameterSpec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec$Builder;)V"
+          },
+          {
+            "nme": "hasModifier",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Modifier;)Z"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/VariableElement;)Lcom/squareup/javapoet/ParameterSpec;"
+          },
+          {
+            "nme": "parametersOf",
+            "acc": 8,
+            "dsc": "(Ljavax/lang/model/element/ExecutableElement;)Ljava/util/List;",
+            "sig": "(Ljavax/lang/model/element/ExecutableElement;)Ljava/util/List<Lcom/squareup/javapoet/ParameterSpec;>;"
+          },
+          {
+            "nme": "isValidParameterName",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "builder",
+            "acc": 137,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "builder",
+            "acc": 137,
+            "dsc": "(Ljava/lang/reflect/Type;Ljava/lang/String;[Ljavax/lang/model/element/Modifier;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Ljava/lang/String;)Lcom/squareup/javapoet/ParameterSpec$Builder;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/ParameterSpec$Builder;Lcom/squareup/javapoet/ParameterSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeName$2.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/TypeName$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$javax$lang$model$type$TypeKind",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeVariableName.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/TypeVariableName",
+        "super": "com/squareup/javapoet/TypeName",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "withBounds",
+            "acc": 129,
+            "dsc": "([Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "withBounds",
+            "acc": 129,
+            "dsc": "([Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "withBounds",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljava/util/List<+Lcom/squareup/javapoet/TypeName;>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "of",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;[Lcom/squareup/javapoet/TypeName;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/reflect/Type;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/type/TypeVariable;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljavax/lang/model/type/TypeVariable;Ljava/util/Map;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljavax/lang/model/type/TypeVariable;Ljava/util/Map<Ljavax/lang/model/element/TypeParameterElement;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/TypeParameterElement;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/TypeVariable;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljava/lang/reflect/TypeVariable<*>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "(Ljava/lang/reflect/TypeVariable;Ljava/util/Map;)Lcom/squareup/javapoet/TypeVariableName;",
+            "sig": "(Ljava/lang/reflect/TypeVariable<*>;Ljava/util/Map<Ljava/lang/reflect/Type;Lcom/squareup/javapoet/TypeVariableName;>;)Lcom/squareup/javapoet/TypeVariableName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "bounds",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ClassName$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/squareup/javapoet/ClassName$1",
+        "super": "javax/lang/model/util/SimpleElementVisitor8",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljavax/lang/model/element/TypeElement;)V"
+          },
+          {
+            "nme": "visitPackage",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/PackageElement;Ljava/lang/Void;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "visitType",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/TypeElement;Ljava/lang/Void;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "visitUnknown",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Element;Ljava/lang/Void;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Element;Ljava/lang/Void;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "visitType",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/TypeElement;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitPackage",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/PackageElement;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "defaultAction",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/Element;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "visitUnknown",
+            "acc": 4161,
+            "dsc": "(Ljavax/lang/model/element/Element;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$simpleName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$element",
+            "dsc": "Ljavax/lang/model/element/TypeElement;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/JavaFile$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/squareup/javapoet/JavaFile$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;"
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;"
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(C)Ljava/lang/Appendable;"
+          }
+        ],
+        "flds": []
+      },
+      "com/squareup/javapoet/ClassName.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/ClassName",
+        "super": "com/squareup/javapoet/TypeName",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/ClassName;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/ClassName;Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Lcom/squareup/javapoet/ClassName;Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)V"
+          },
+          {
+            "nme": "annotated",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/ClassName;",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "isAnnotated",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "packageName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "enclosingClassName",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "topLevelClassName",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "reflectionName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "simpleNames",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "peerClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "nestedClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "simpleName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "canonicalName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Lcom/squareup/javapoet/ClassName;",
+            "sig": "(Ljava/lang/Class<*>;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "bestGuess",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "get",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/TypeElement;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)I"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "enclosingClasses",
+            "acc": 2,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lcom/squareup/javapoet/ClassName;>;"
+          },
+          {
+            "nme": "withoutAnnotations",
+            "acc": 4161,
+            "dsc": "()Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "annotated",
+            "acc": 4161,
+            "dsc": "(Ljava/util/List;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/ClassName;Ljava/lang/String;Lcom/squareup/javapoet/ClassName$1;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "OBJECT",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 26,
+            "nme": "NO_PACKAGE",
+            "dsc": "Ljava/lang/String;",
+            "val": ""
+          },
+          {
+            "acc": 16,
+            "nme": "packageName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "enclosingClassName",
+            "dsc": "Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "acc": 16,
+            "nme": "simpleName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "simpleNames",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 16,
+            "nme": "canonicalName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/TypeSpec.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/TypeSpec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec;)V"
+          },
+          {
+            "nme": "hasModifier",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Modifier;)Z"
+          },
+          {
+            "nme": "classBuilder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "classBuilder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "interfaceBuilder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "interfaceBuilder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "enumBuilder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "enumBuilder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "anonymousClassBuilder",
+            "acc": 137,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "anonymousClassBuilder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "annotationBuilder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "annotationBuilder",
+            "acc": 9,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/TypeSpec$Builder;"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/util/Set;)V",
+            "sig": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec$Builder;Lcom/squareup/javapoet/TypeSpec$1;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "kind",
+            "dsc": "Lcom/squareup/javapoet/TypeSpec$Kind;"
+          },
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "anonymousTypeArguments",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeVariables",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "superclass",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "superinterfaces",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "enumConstants",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/TypeSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "fieldSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/FieldSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "staticBlock",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "initializerBlock",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "methodSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/MethodSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeSpecs",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeSpec;>;"
+          },
+          {
+            "acc": 16,
+            "nme": "nestedTypesSimpleNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "originatingElements",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljavax/lang/model/element/Element;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "alwaysQualifiedNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/squareup/javapoet/ParameterSpec$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/ParameterSpec$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/CodeWriter.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/CodeWriter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Appendable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Appendable;Ljava/lang/String;Ljava/util/Set;Ljava/util/Set;)V",
+            "sig": "(Ljava/lang/Appendable;Ljava/lang/String;Ljava/util/Set<Ljava/lang/String;>;Ljava/util/Set<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Appendable;Ljava/lang/String;Ljava/util/Map;Ljava/util/Set;Ljava/util/Set;)V",
+            "sig": "(Ljava/lang/Appendable;Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/ClassName;>;Ljava/util/Set<Ljava/lang/String;>;Ljava/util/Set<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "importedTypes",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/ClassName;>;"
+          },
+          {
+            "nme": "indent",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "indent",
+            "acc": 1,
+            "dsc": "(I)Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "unindent",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "unindent",
+            "acc": 1,
+            "dsc": "(I)Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "pushPackage",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "popPackage",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "pushType",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/TypeSpec;)Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "popType",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeWriter;"
+          },
+          {
+            "nme": "emitComment",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitJavadoc",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitAnnotations",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;Z)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitModifiers",
+            "acc": 1,
+            "dsc": "(Ljava/util/Set;Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitModifiers",
+            "acc": 1,
+            "dsc": "(Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitTypeVariables",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "popTypeVariables",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emit",
+            "acc": 1,
+            "dsc": "(Lcom/squareup/javapoet/CodeBlock;Z)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitWrappingSpace",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "extractMemberName",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "emitStaticImportMember",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitLiteral",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "lookupName",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)Ljava/lang/String;"
+          },
+          {
+            "nme": "importableType",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/ClassName;)V"
+          },
+          {
+            "nme": "resolve",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "stackClassName",
+            "acc": 2,
+            "dsc": "(ILjava/lang/String;)Lcom/squareup/javapoet/ClassName;"
+          },
+          {
+            "nme": "emitAndIndent",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/CodeWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "emitIndentation",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "suggestedImports",
+            "acc": 0,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/ClassName;>;"
+          },
+          {
+            "nme": "lambda$popTypeVariables$1",
+            "acc": 4098,
+            "dsc": "(Lcom/squareup/javapoet/TypeVariableName;)V"
+          },
+          {
+            "nme": "lambda$emitTypeVariables$0",
+            "acc": 4098,
+            "dsc": "(Lcom/squareup/javapoet/TypeVariableName;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NO_PACKAGE",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "out",
+            "dsc": "Lcom/squareup/javapoet/LineWrapper;"
+          },
+          {
+            "acc": 2,
+            "nme": "indentLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "javadoc",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "comment",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "packageName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "typeSpecStack",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeSpec;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "staticImportClassNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "staticImports",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "alwaysQualify",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "importedTypes",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/ClassName;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "importableTypes",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lcom/squareup/javapoet/ClassName;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "referencedNames",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "currentTypeVariables",
+            "dsc": "Lcom/squareup/javapoet/CodeWriter$Multiset;",
+            "sig": "Lcom/squareup/javapoet/CodeWriter$Multiset<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "trailingNewline",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "statementLine",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/squareup/javapoet/MethodSpec$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/MethodSpec$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/LineWrapper$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/LineWrapper$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$com$squareup$javapoet$LineWrapper$FlushType",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/squareup/javapoet/AnnotationSpec$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/AnnotationSpec$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/AnnotationSpec$Builder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/AnnotationSpec$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;)V"
+          },
+          {
+            "nme": "addMember",
+            "acc": 129,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Object;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "addMember",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lcom/squareup/javapoet/CodeBlock;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "addMemberForValue",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Lcom/squareup/javapoet/AnnotationSpec$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/AnnotationSpec;"
+          },
+          {
+            "nme": "lambda$addMember$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;)Ljava/util/List;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/squareup/javapoet/AnnotationSpec$Builder;)Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/TypeName;Lcom/squareup/javapoet/AnnotationSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "members",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/squareup/javapoet/CodeBlock;>;>;"
+          }
+        ]
+      },
+      "com/squareup/javapoet/CodeWriter$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/squareup/javapoet/CodeWriter$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/squareup/javapoet/LineWrapper$RecordingAppendable.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/squareup/javapoet/LineWrapper$RecordingAppendable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Appendable;)V"
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(Ljava/lang/CharSequence;)Ljava/lang/Appendable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "append",
+            "acc": 1,
+            "dsc": "(C)Ljava/lang/Appendable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Ljava/lang/Appendable;"
+          },
+          {
+            "acc": 0,
+            "nme": "lastChar",
+            "dsc": "C"
+          }
+        ]
+      },
+      "com/squareup/javapoet/MethodSpec.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/squareup/javapoet/MethodSpec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;)V"
+          },
+          {
+            "nme": "lastParameterIsArray",
+            "acc": 2,
+            "dsc": "(Ljava/util/List;)Z",
+            "sig": "(Ljava/util/List<Lcom/squareup/javapoet/ParameterSpec;>;)Z"
+          },
+          {
+            "nme": "emit",
+            "acc": 0,
+            "dsc": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/util/Set;)V",
+            "sig": "(Lcom/squareup/javapoet/CodeWriter;Ljava/lang/String;Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "javadocWithParameters",
+            "acc": 2,
+            "dsc": "()Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "nme": "hasModifier",
+            "acc": 1,
+            "dsc": "(Ljavax/lang/model/element/Modifier;)Z"
+          },
+          {
+            "nme": "isConstructor",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "methodBuilder",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "constructorBuilder",
+            "acc": 9,
+            "dsc": "()Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "overriding",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/ExecutableElement;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "overriding",
+            "acc": 9,
+            "dsc": "(Ljavax/lang/model/element/ExecutableElement;Ljavax/lang/model/type/DeclaredType;Ljavax/lang/model/util/Types;)Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "toBuilder",
+            "acc": 1,
+            "dsc": "()Lcom/squareup/javapoet/MethodSpec$Builder;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/squareup/javapoet/MethodSpec$Builder;Lcom/squareup/javapoet/MethodSpec$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "CONSTRUCTOR",
+            "dsc": "Ljava/lang/String;",
+            "val": "<init>"
+          },
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 17,
+            "nme": "javadoc",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "annotations",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/AnnotationSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "modifiers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljavax/lang/model/element/Modifier;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "typeVariables",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeVariableName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "returnType",
+            "dsc": "Lcom/squareup/javapoet/TypeName;"
+          },
+          {
+            "acc": 17,
+            "nme": "parameters",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/ParameterSpec;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "varargs",
+            "dsc": "Z"
+          },
+          {
+            "acc": 17,
+            "nme": "exceptions",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/squareup/javapoet/TypeName;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "code",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          },
+          {
+            "acc": 17,
+            "nme": "defaultValue",
+            "dsc": "Lcom/squareup/javapoet/CodeBlock;"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,452 @@
+{
+  "md5": "71e1d5e01d546b2c4ddadfe9fcce165e",
+  "sha2": "96ca80b73ece9c2ebad695eb7e487a9142c1eb90",
+  "sha256": "8cdd020660a630977f991cd5726a05cb1068674730c794b6e75657e93cf1dc54",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/client/model/ModelAppender.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelAppender",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "appendAll",
+            "acc": 132097,
+            "dsc": "(Lnet/minecraft/class_3300;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_3300;Ljava/util/function/Consumer<Lnet/minecraft/class_1091;>;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ModelVariantProvider.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelVariantProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "loadModelVariant",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1091;Lnet/fabricmc/fabric/api/client/model/ModelProviderContext;)Lnet/minecraft/class_1100;",
+            "exs": [
+              "net/fabricmc/fabric/api/client/model/ModelProviderException"
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ModelLoadingRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelLoadingRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "registerModelProvider",
+            "acc": 1025,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ExtraModelProvider;)V"
+          },
+          {
+            "nme": "registerAppender",
+            "acc": 132097,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ModelAppender;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "registerResourceProvider",
+            "acc": 1025,
+            "dsc": "(Ljava/util/function/Function;)V",
+            "sig": "(Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelResourceProvider;>;)V"
+          },
+          {
+            "nme": "registerVariantProvider",
+            "acc": 1025,
+            "dsc": "(Ljava/util/function/Function;)V",
+            "sig": "(Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelVariantProvider;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/client/model/ModelLoadingRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/model/ModelLoadingRegistryImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/client/model/ModelLoadingRegistryImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onInitializeModelLoader",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/loading/v1/ModelLoadingPlugin$Context;)V"
+          },
+          {
+            "nme": "registerModelProvider",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ExtraModelProvider;)V"
+          },
+          {
+            "nme": "registerAppender",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ModelAppender;)V"
+          },
+          {
+            "nme": "registerResourceProvider",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/Function;)V",
+            "sig": "(Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelResourceProvider;>;)V"
+          },
+          {
+            "nme": "registerVariantProvider",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/Function;)V",
+            "sig": "(Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelVariantProvider;>;)V"
+          },
+          {
+            "nme": "lambda$onInitializeModelLoader$4",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ModelVariantProvider;Lnet/fabricmc/fabric/api/client/model/ModelProviderContext;Lnet/minecraft/class_1091;)Lnet/minecraft/class_1100;"
+          },
+          {
+            "nme": "lambda$onInitializeModelLoader$3",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/ModelResourceProvider;Lnet/fabricmc/fabric/api/client/model/ModelProviderContext;Lnet/fabricmc/fabric/api/client/model/loading/v1/ModelResolver$Context;)Lnet/minecraft/class_1100;"
+          },
+          {
+            "nme": "lambda$onInitializeModelLoader$2",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/loading/v1/ModelLoadingPlugin$Context;Lnet/minecraft/class_2960;)V"
+          },
+          {
+            "nme": "lambda$onInitializeModelLoader$1",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/model/loading/v1/ModelLoadingPlugin$Context;Lnet/minecraft/class_2960;)V"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_3300;Ljava/util/concurrent/Executor;)Ljava/util/concurrent/CompletableFuture;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "modelProviders",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/fabricmc/fabric/api/client/model/ExtraModelProvider;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "modelAppenders",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/fabricmc/fabric/api/client/model/ModelAppender;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "resourceProviderSuppliers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelResourceProvider;>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "variantProviderSuppliers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/util/function/Function<Lnet/minecraft/class_3300;Lnet/fabricmc/fabric/api/client/model/ModelVariantProvider;>;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/model/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/client/model/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ExtraModelProvider.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ExtraModelProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "provideExtraModels",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3300;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_3300;Ljava/util/function/Consumer<Lnet/minecraft/class_2960;>;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ModelProviderContext.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelProviderContext",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "loadModel",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;)Lnet/minecraft/class_1100;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ModelProviderException.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelProviderException",
+        "super": "java/lang/Exception",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/BakedModelManagerHelper.class": {
+        "ver": 61,
+        "acc": 131121,
+        "nme": "net/fabricmc/fabric/api/client/model/BakedModelManagerHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getModel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1092;Lnet/minecraft/class_2960;)Lnet/minecraft/class_1087;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/model/ModelResourceProvider.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/model/ModelResourceProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "loadModelResource",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/client/model/ModelProviderContext;)Lnet/minecraft/class_1100;",
+            "exs": [
+              "net/fabricmc/fabric/api/client/model/ModelProviderException"
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

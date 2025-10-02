@@ -1,0 +1,393 @@
+{
+  "md5": "97b54cf0aa7fa7bbeb758bd45493f76a",
+  "sha2": "2991ddd62a3eb44d3f430c56852ceb921be0c3fb",
+  "sha256": "98cec83f174fbee2e566b935ef04c608e635bd80d139e18a7eff0ed8113d00d9",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/mininglevel/v1/MiningLevelManager.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/mininglevel/v1/MiningLevelManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getRequiredMiningLevel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/block/BlockState;)I"
+          },
+          {
+            "nme": "getBlockTag",
+            "acc": 9,
+            "dsc": "(I)Lnet/minecraft/registry/tag/TagKey;",
+            "sig": "(I)Lnet/minecraft/registry/tag/TagKey<Lnet/minecraft/block/Block;>;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/mininglevel/MiningToolItemMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/mininglevel/MiningToolItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric$onIsSuitableFor",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;I)V",
+            "sig": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Boolean;>;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "isSuitableFor"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE_ASSIGN",
+                        "target",
+                        "Lnet/minecraft/item/ToolMaterial;getMiningLevel()I"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true,
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/MiningToolItem"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/mininglevel/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/mininglevel/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/mininglevel/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/mininglevel/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/mininglevel/ShearsItemMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/mininglevel/ShearsItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric$onIsSuitableFor",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Boolean;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "isSuitableFor"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric$onGetMiningSpeedMultiplier",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Float;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getMiningSpeedMultiplier"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/ShearsItem"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/mininglevel/v1/FabricMineableTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/mininglevel/v1/FabricMineableTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/registry/tag/TagKey;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/registry/tag/TagKey<Lnet/minecraft/block/Block;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SWORD_MINEABLE",
+            "dsc": "Lnet/minecraft/registry/tag/TagKey;",
+            "sig": "Lnet/minecraft/registry/tag/TagKey<Lnet/minecraft/block/Block;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHEARS_MINEABLE",
+            "dsc": "Lnet/minecraft/registry/tag/TagKey;",
+            "sig": "Lnet/minecraft/registry/tag/TagKey<Lnet/minecraft/block/Block;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/mininglevel/SwordItemMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/mininglevel/SwordItemMixin",
+        "super": "net/minecraft/item/ToolItem",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/ToolMaterial;Lnet/minecraft/item/Item$Settings;)V"
+          },
+          {
+            "nme": "fabric$onIsSuitableFor",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Boolean;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "isSuitableFor"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric$onGetMiningSpeedMultiplier",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Float;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getMiningSpeedMultiplier"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/SwordItem"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/mininglevel/MiningLevelManagerImpl.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/impl/mininglevel/MiningLevelManagerImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getRequiredMiningLevel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/block/BlockState;)I"
+          },
+          {
+            "nme": "lambda$getRequiredMiningLevel$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/block/BlockState;Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/registry/DynamicRegistryManager;Z)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 26,
+            "nme": "TOOL_TAG_NAMESPACE",
+            "dsc": "Ljava/lang/String;",
+            "val": "fabric"
+          },
+          {
+            "acc": 26,
+            "nme": "TOOL_TAG_PATTERN",
+            "dsc": "Ljava/util/regex/Pattern;"
+          },
+          {
+            "acc": 26,
+            "nme": "CACHE",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Lit/unimi/dsi/fastutil/objects/Reference2IntMap<Lnet/minecraft/block/BlockState;>;>;"
+          }
+        ]
+      }
+    }
+  }
+}

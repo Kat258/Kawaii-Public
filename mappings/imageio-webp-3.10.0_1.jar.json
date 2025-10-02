@@ -1,0 +1,3247 @@
+{
+  "md5": "94932d351e24a9cfe482c11432ee7d1b",
+  "sha2": "3141f8c0d8785f80be86710d3bbfccd724d2b465",
+  "sha256": "ead3735a33d90b33c43770b1cc216024649d8654ef7c44a419105d20f2288212",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;B)V"
+          },
+          {
+            "nme": "applyInverse",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          },
+          {
+            "nme": "colorTransform",
+            "acc": 10,
+            "dsc": "(IIILcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform$ColorTransformElement;[I)V"
+          },
+          {
+            "nme": "colorTransformDelta",
+            "acc": 10,
+            "dsc": "(BB)B"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(BB)B"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "data",
+            "dsc": "Ljava/awt/image/Raster;"
+          },
+          {
+            "acc": 18,
+            "nme": "bits",
+            "dsc": "B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "hashPix",
+            "acc": 10,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "lookup",
+            "acc": 0,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "set",
+            "acc": 0,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "insert",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "index",
+            "acc": 0,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "contains",
+            "acc": 0,
+            "dsc": "(I)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "colors",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "hashShift",
+            "dsc": "I"
+          },
+          {
+            "acc": 26,
+            "nme": "K_HASH_MUL",
+            "dsc": "J",
+            "val": 506832829
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/PredictorMode.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/PredictorMode",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "BLACK",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "L",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "T",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "TR",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "TL",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_L_TR_T",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_L_TL",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_L_T",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_TL_T",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_T_TR",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 25,
+            "nme": "AVG_L_TL_T_TR",
+            "dsc": "I",
+            "val": 10
+          },
+          {
+            "acc": 25,
+            "nme": "SELECT",
+            "dsc": "I",
+            "val": 11
+          },
+          {
+            "acc": 25,
+            "nme": "CLAMP_ADD_SUB_FULL",
+            "dsc": "I",
+            "val": 12
+          },
+          {
+            "acc": 25,
+            "nme": "CLAMP_ADD_SUB_HALF",
+            "dsc": "I",
+            "val": 13
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebPImageReaderSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebPImageReaderSpi",
+        "super": "com/twelvemonkeys/imageio/spi/ImageReaderSpiBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "canDecodeInput",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "canDecode",
+            "acc": 10,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createReaderInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljavax/imageio/ImageReader;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$com$twelvemonkeys$imageio$plugins$webp$vp8$SubBlock$Plane",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "U",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "acc": 16409,
+            "nme": "V",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Y1",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Y2",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/Transform.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/Transform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "applyInverse",
+            "acc": 1025,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebPImageMetadata.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebPImageMetadata",
+        "super": "com/twelvemonkeys/imageio/StandardImageMetadataSupport",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljavax/imageio/ImageTypeSpecifier;Lcom/twelvemonkeys/imageio/plugins/webp/VP8xChunk;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebPImageReader$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebPImageReader$1",
+        "super": "com/twelvemonkeys/imageio/util/ProgressListenerBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/WebPImageReader;)V"
+          },
+          {
+            "nme": "imageProgress",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;F)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/WebPImageReader;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "([SI)V"
+          },
+          {
+            "nme": "buildFromLengths",
+            "acc": 2,
+            "dsc": "([S)V"
+          },
+          {
+            "nme": "buildFromLengths",
+            "acc": 2,
+            "dsc": "([SI)V"
+          },
+          {
+            "nme": "nextCode",
+            "acc": 2,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "readCodeLengths",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;[SII)[S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSymbol",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;)S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LEVEL1_BITS",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 26,
+            "nme": "L_CODE_ORDER",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "level1",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "level2",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<[I>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/TransformType.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/TransformType",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "PREDICTOR_TRANSFORM",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_TRANSFORM",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "SUBTRACT_GREEN",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_INDEXING_TRANSFORM",
+            "dsc": "I",
+            "val": 3
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/SubtractGreenTransform.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/SubtractGreenTransform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "addGreenToBlueAndRed",
+            "acc": 10,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "applyInverse",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuant.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuant",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getQindex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getUvac_delta_q",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getUvdc_delta_q",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY1ac",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY1dc",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY2ac_delta_q",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY2dc",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setFilterStrength",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setQindex",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setUvac_delta_q",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setUvdc_delta_q",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setY1ac",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setY1dc",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setY2ac_delta_q",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setY2dc",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getFilterStrength",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "filterStrength",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "Qindex",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "uvac",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "uvdc",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "y1ac",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "y1dc",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "y2ac",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "y2dc",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebPProviderInfo.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebPProviderInfo",
+        "super": "com/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "initBoolDecoder",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBit",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBool",
+            "acc": 1,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLiteral",
+            "acc": 1,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readTree",
+            "acc": 0,
+            "dsc": "([I[II)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "bitCount",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "data",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 2,
+            "nme": "offset",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "range",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "value",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/AnimationFrame.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/AnimationFrame",
+        "super": "com/twelvemonkeys/imageio/plugins/webp/RIFFChunk",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(JJLjava/awt/Rectangle;II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "bounds",
+            "dsc": "Ljava/awt/Rectangle;"
+          },
+          {
+            "acc": 16,
+            "nme": "duration",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "blend",
+            "dsc": "Z"
+          },
+          {
+            "acc": 16,
+            "nme": "dispose",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/RIFFChunk.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/RIFFChunk",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(IJJ)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "fourCC",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "length",
+            "dsc": "J"
+          },
+          {
+            "acc": 16,
+            "nme": "offset",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform$ColorTransformElement.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform$ColorTransformElement",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "inverseTransform",
+            "acc": 2,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorTransform$ColorTransformElement;[B)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "green_to_red",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "green_to_blue",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "red_to_blue",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/GenericChunk.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/GenericChunk",
+        "super": "com/twelvemonkeys/imageio/plugins/webp/RIFFChunk",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(IIJ)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/DeltaQ.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/DeltaQ",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "update",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "v",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/VP8LDecoder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/VP8LDecoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;Z)V"
+          },
+          {
+            "nme": "readVP8Lossless",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;ZLjavax/imageio/ImageReadParam;II)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createDecodeRaster",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;Ljava/awt/Rectangle;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "copyIntoRasterWithParams",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;)V"
+          },
+          {
+            "nme": "decodeImage",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanInfo;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeCached",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache;[BIIS)V"
+          },
+          {
+            "nme": "decodeLiteral",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup;[BIIS)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeBwRef",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Lcom/twelvemonkeys/imageio/plugins/webp/lossless/ColorCache;ILcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup;[BSII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "lz77decode",
+            "acc": 2,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readTransform",
+            "acc": 2,
+            "dsc": "(IILjava/util/List;)I",
+            "sig": "(IILjava/util/List<Lcom/twelvemonkeys/imageio/plugins/webp/lossless/Transform;>;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readHuffmanCodes",
+            "acc": 2,
+            "dsc": "(IIIZ)Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanInfo;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "subSampleSize",
+            "acc": 10,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DISTANCES",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "imageInput",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "lsbBitReader",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(IIZ)V"
+          },
+          {
+            "nme": "decodeMacroBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeMacroBlockTokens",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodePlaneTokens",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;ILcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "dequantMacroBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;)V"
+          },
+          {
+            "nme": "drawDebug",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getDebugString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getFilterLevel",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getBottomSubBlock",
+            "acc": 1,
+            "dsc": "(ILcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getLeftSubBlock",
+            "acc": 1,
+            "dsc": "(ILcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getRightSubBlock",
+            "acc": 1,
+            "dsc": "(ILcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getSkipCoeff",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;II)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getSubblockX",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;)I"
+          },
+          {
+            "nme": "getSubblockY",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;)I"
+          },
+          {
+            "nme": "getUSubBlock",
+            "acc": 1,
+            "dsc": "(II)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getUVFilterLevel",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getUvMode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getVSubBlock",
+            "acc": 1,
+            "dsc": "(II)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getX",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY2SubBlock",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getYMode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getYSubBlock",
+            "acc": 1,
+            "dsc": "(II)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "isKeepDebugInfo",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isSkip_inner_lf",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "predictUV",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;)V"
+          },
+          {
+            "nme": "predictY",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;)V"
+          },
+          {
+            "nme": "recon_mb",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setFilterLevel",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setSegmentId",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setSkipCoeff",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setUVFilterLevel",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setUvMode",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setYMode",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getSegmentId",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "filterLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "keepDebugInfo",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "segmentId",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "skipCoeff",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "skipInnerLoopFilter",
+            "dsc": "Z"
+          },
+          {
+            "acc": 16,
+            "nme": "uSubBlocks",
+            "dsc": "[[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "acc": 2,
+            "nme": "uVFilterLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "uvMode",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "vSubBlocks",
+            "dsc": "[[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "acc": 18,
+            "nme": "x",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "y",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "y2SubBlock",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "acc": 2,
+            "nme": "yMode",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "ySubBlocks",
+            "dsc": "[[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuants.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuants",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get_delta_q",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;I)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/DeltaQ;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getqIndex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getSegQuants",
+            "acc": 1,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuant;"
+          },
+          {
+            "nme": "parse",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;ZZ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "qIndex",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "segQuants",
+            "dsc": "[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuant;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$com$twelvemonkeys$imageio$plugins$webp$vp8$SubBlock$Plane",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/LSBBitReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/LSBBitReader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V"
+          },
+          {
+            "nme": "readBits",
+            "acc": 1,
+            "dsc": "(I)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "peekBits",
+            "acc": 1,
+            "dsc": "(I)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBits",
+            "acc": 2,
+            "dsc": "(IZ)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "refillBuffer",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "resetBuffer",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBit",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "imageInput",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 2,
+            "nme": "bitOffset",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "streamPosition",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/AlphaFiltering.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/AlphaFiltering",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "NONE",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "HORIZONTAL",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "VERTICAL",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "GRADIENT",
+            "dsc": "I",
+            "val": 3
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/IDCT.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/IDCT",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "idct4x4llm",
+            "acc": 9,
+            "dsc": "([I)[[I"
+          },
+          {
+            "nme": "iwalsh4x4",
+            "acc": 9,
+            "dsc": "([I)[[I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "cospi8sqrt2minus1",
+            "dsc": "I",
+            "val": 20091
+          },
+          {
+            "acc": 26,
+            "nme": "sinpi8sqrt2",
+            "dsc": "I",
+            "val": 35468
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorIndexingTransform.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/ColorIndexingTransform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([BB)V"
+          },
+          {
+            "nme": "applyInverse",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "colorTable",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "bits",
+            "dsc": "B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)V"
+          },
+          {
+            "nme": "planeToType",
+            "acc": 9,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;Z)I"
+          },
+          {
+            "nme": "DCTextra",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;[I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;[[[[IIIZ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeToken",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "dequantSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;Ljava/lang/Integer;)V"
+          },
+          {
+            "nme": "drawDebug",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "drawDebugH",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "drawDebugV",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getAbove",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getDebugString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDest",
+            "acc": 1,
+            "dsc": "()[[I"
+          },
+          {
+            "nme": "getDiff",
+            "acc": 1,
+            "dsc": "()[[I"
+          },
+          {
+            "nme": "getLeft",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getMacroBlock",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;"
+          },
+          {
+            "nme": "getMacroBlockPredict",
+            "acc": 1,
+            "dsc": "(I)[[I"
+          },
+          {
+            "nme": "getMode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getPlane",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "nme": "getPredict",
+            "acc": 1,
+            "dsc": "()[[I"
+          },
+          {
+            "nme": "getPredict",
+            "acc": 1,
+            "dsc": "(IZ)[[I"
+          },
+          {
+            "nme": "getTokens",
+            "acc": 0,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "hasNoZeroToken",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isDest",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "predict",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame;)V"
+          },
+          {
+            "nme": "reconstruct",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setDest",
+            "acc": 1,
+            "dsc": "([[I)V"
+          },
+          {
+            "nme": "setDiff",
+            "acc": 1,
+            "dsc": "([[I)V"
+          },
+          {
+            "nme": "setMode",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setPixel",
+            "acc": 1,
+            "dsc": "(III)V"
+          },
+          {
+            "nme": "setPredict",
+            "acc": 1,
+            "dsc": "([[I)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "above",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "acc": 2,
+            "nme": "dest",
+            "dsc": "[[I"
+          },
+          {
+            "acc": 2,
+            "nme": "diff",
+            "dsc": "[[I"
+          },
+          {
+            "acc": 2,
+            "nme": "hasNoZeroToken",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "left",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "acc": 18,
+            "nme": "macroBlock",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;"
+          },
+          {
+            "acc": 2,
+            "nme": "mode",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "plane",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;"
+          },
+          {
+            "acc": 2,
+            "nme": "predict",
+            "dsc": "[[I"
+          },
+          {
+            "acc": 2,
+            "nme": "tokens",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "mainCode",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable;"
+          },
+          {
+            "acc": 17,
+            "nme": "redCode",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable;"
+          },
+          {
+            "acc": 17,
+            "nme": "blueCode",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable;"
+          },
+          {
+            "acc": 17,
+            "nme": "alphaCode",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable;"
+          },
+          {
+            "acc": 17,
+            "nme": "distanceCode",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanTable;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanInfo.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanInfo",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;I[Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "huffmanMetaCodes",
+            "dsc": "Ljava/awt/image/Raster;"
+          },
+          {
+            "acc": 17,
+            "nme": "metaCodeBits",
+            "dsc": "I"
+          },
+          {
+            "acc": 17,
+            "nme": "huffmanGroups",
+            "dsc": "[Lcom/twelvemonkeys/imageio/plugins/webp/lossless/HuffmanCodeGroup;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/Globals.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/Globals",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getModeAsString",
+            "acc": 8,
+            "dsc": "(I)Ljava/lang/String;"
+          },
+          {
+            "nme": "getSubBlockModeAsString",
+            "acc": 8,
+            "dsc": "(I)Ljava/lang/String;"
+          },
+          {
+            "nme": "getDefaultCoefProbs",
+            "acc": 8,
+            "dsc": "()[[[[I"
+          },
+          {
+            "nme": "toHex",
+            "acc": 8,
+            "dsc": "(I)Ljava/lang/String;"
+          },
+          {
+            "nme": "clamp",
+            "acc": 8,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DC_PRED",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 24,
+            "nme": "V_PRED",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "H_PRED",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 24,
+            "nme": "TM_PRED",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "B_PRED",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "B_DC_PRED",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 24,
+            "nme": "B_TM_PRED",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "B_VE_PRED",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 24,
+            "nme": "B_HE_PRED",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "B_LD_PRED",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "B_RD_PRED",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 24,
+            "nme": "B_VR_PRED",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 24,
+            "nme": "B_VL_PRED",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 24,
+            "nme": "B_HD_PRED",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 24,
+            "nme": "B_HU_PRED",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 24,
+            "nme": "MAX_MB_SEGMENTS",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "MB_LVL_MAX",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 8,
+            "nme": "vp8MacroBlockFeatureDataBits",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "MB_FEATURE_TREE_PROBS",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 8,
+            "nme": "macroBlockSegmentTree",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8KeyFrameYModeTree",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8SubBlockModeTree",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8KeyFrameYModeProb",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8UVModeTree",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8KeyFrameUVModeProb",
+            "dsc": "[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8KeyFrameSubBlockModeProb",
+            "dsc": "[[[I"
+          },
+          {
+            "acc": 8,
+            "nme": "vp8CoefUpdateProbs",
+            "dsc": "[[[[I"
+          },
+          {
+            "acc": 26,
+            "nme": "vp8DefaultCoefProbs",
+            "dsc": "[[[[I"
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_0",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_1",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_2",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_3",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_4",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat1",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat2",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat3",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat4",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat5",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 24,
+            "nme": "dct_cat6",
+            "dsc": "I",
+            "val": 10
+          },
+          {
+            "acc": 24,
+            "nme": "dct_eob",
+            "dsc": "I",
+            "val": 11
+          },
+          {
+            "acc": 24,
+            "nme": "vp8CoefTree",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8CoefTreeNoEOB",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat1",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat2",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat3",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat4",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat5",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "Pcat6",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8CoefBands",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8defaultZigZag1d",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8dxBitreaderNorm",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8DcQLookup",
+            "dsc": "[I"
+          },
+          {
+            "acc": 24,
+            "nme": "vp8AcQLookup",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/VP8Frame",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setProgressListener",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/event/IIOReadProgressListener;)V"
+          },
+          {
+            "nme": "createMacroBlocks",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeMacroBlockRow",
+            "acc": 2,
+            "dsc": "(ILjava/awt/image/WritableRaster;Ljava/awt/Rectangle;II)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fireProgressUpdate",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getAboveRightSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getAboveSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getBitAsInt",
+            "acc": 2,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "getCoefProbs",
+            "acc": 0,
+            "dsc": "()[[[[I"
+          },
+          {
+            "nme": "getDebugImageDiff",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImagePredict",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageUBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageUDiffBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageUPredBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageVBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageVDiffBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageVPredBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageYBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageYDiffBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getDebugImageYPredBuffer",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getFrameType",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getWidth",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getHeight",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getLeftSubBlock",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock$Plane;)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;"
+          },
+          {
+            "nme": "getMacroBlock",
+            "acc": 1,
+            "dsc": "(II)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;"
+          },
+          {
+            "nme": "getMacroBlockCols",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getMacroBlockDebugString",
+            "acc": 1,
+            "dsc": "(IIII)Ljava/lang/String;"
+          },
+          {
+            "nme": "getMacroBlockRows",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getQIndex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getSegmentQuants",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuants;"
+          },
+          {
+            "nme": "getSharpnessLevel",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getTokenBoolDecoder",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readModes",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readPartitionSize",
+            "acc": 2,
+            "dsc": "(J)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSubBlockMode",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;II)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUvMode",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readYMode",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setupTokenDecoder",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;IJ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "copyBlock",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Ljava/awt/image/WritableRaster;Ljava/awt/Rectangle;II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "BLOCK_TYPES",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "COEF_BANDS",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 26,
+            "nme": "MAX_ENTROPY_TOKENS",
+            "dsc": "I",
+            "val": 12
+          },
+          {
+            "acc": 26,
+            "nme": "MAX_MODE_LF_DELTAS",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "MAX_REF_LF_DELTAS",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "PREV_COEF_CONTEXTS",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 2,
+            "nme": "listener",
+            "dsc": "Ljavax/imageio/event/IIOReadProgressListener;"
+          },
+          {
+            "acc": 18,
+            "nme": "coefProbs",
+            "dsc": "[[[[I"
+          },
+          {
+            "acc": 2,
+            "nme": "filterLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "frame",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "debug",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "frameType",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlockCols",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlockNoCoeffSkip",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlockRows",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlocks",
+            "dsc": "[[Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlockSegementAbsoluteDelta",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "macroBlockSegmentTreeProbs",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "modeLoopFilterDeltas",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "modeRefLoopFilterDeltaEnabled",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "modeRefLoopFilterDeltaUpdate",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "multiTokenPartition",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "offset",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "refLoopFilterDeltas",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "refreshEntropyProbs",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "refreshLastFrame",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "segmentationIsEnabled",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "segmentQuants",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SegmentQuants;"
+          },
+          {
+            "acc": 2,
+            "nme": "sharpnessLevel",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "simpleFilter",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "tokenBoolDecoder",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;"
+          },
+          {
+            "acc": 18,
+            "nme": "tokenBoolDecoders",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/imageio/plugins/webp/vp8/BoolDecoder;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "updateMacroBlockSegmentationMap",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "updateMacroBlockSegmentatonData",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "yuv",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "rgb",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/LoopFilter.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/LoopFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "common_adjust",
+            "acc": 10,
+            "dsc": "(ZLcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;)I"
+          },
+          {
+            "nme": "filter_yes",
+            "acc": 10,
+            "dsc": "(IIIIIIIIII)Z"
+          },
+          {
+            "nme": "getSegH",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;I)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;"
+          },
+          {
+            "nme": "getSegV",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;I)Lcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;"
+          },
+          {
+            "nme": "hev",
+            "acc": 10,
+            "dsc": "(IIIII)Z"
+          },
+          {
+            "nme": "loopFilterBlock",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;IZI)V"
+          },
+          {
+            "nme": "loopFilterSimpleBlock",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;I)V"
+          },
+          {
+            "nme": "loopFilterUVBlock",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;II)V"
+          },
+          {
+            "nme": "loopFilterYBlock",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/MacroBlock;II)V"
+          },
+          {
+            "nme": "MBfilter",
+            "acc": 10,
+            "dsc": "(IIILcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;)V"
+          },
+          {
+            "nme": "s2u",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "setSegH",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;I)V"
+          },
+          {
+            "nme": "setSegV",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/SubBlock;Lcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;I)V"
+          },
+          {
+            "nme": "simple_segment",
+            "acc": 10,
+            "dsc": "(ILcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;)V"
+          },
+          {
+            "nme": "subblock_filter",
+            "acc": 10,
+            "dsc": "(IIILcom/twelvemonkeys/imageio/plugins/webp/vp8/Segment;)V"
+          },
+          {
+            "nme": "u2s",
+            "acc": 10,
+            "dsc": "(I)I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/VP8xChunk.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/VP8xChunk",
+        "super": "com/twelvemonkeys/imageio/plugins/webp/RIFFChunk",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(IJJ)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "isLossless",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "containsICCP",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "containsALPH",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "containsEXIF",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "containsXMP_",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "containsANIM",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebP.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebP",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "RIFF_MAGIC",
+            "dsc": "I",
+            "val": 1179011410
+          },
+          {
+            "acc": 25,
+            "nme": "WEBP_MAGIC",
+            "dsc": "I",
+            "val": 1346520407
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_VP8_",
+            "dsc": "I",
+            "val": 540561494
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_VP8L",
+            "dsc": "I",
+            "val": 1278758998
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_VP8X",
+            "dsc": "I",
+            "val": 1480085590
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_ALPH",
+            "dsc": "I",
+            "val": 1213221953
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_ANIM",
+            "dsc": "I",
+            "val": 1296649793
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_ANMF",
+            "dsc": "I",
+            "val": 1179471425
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_ICCP",
+            "dsc": "I",
+            "val": 1346585417
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_EXIF",
+            "dsc": "I",
+            "val": 1179211845
+          },
+          {
+            "acc": 25,
+            "nme": "CHUNK_XMP_",
+            "dsc": "I",
+            "val": 542133592
+          },
+          {
+            "acc": 25,
+            "nme": "LOSSLESSS_SIG",
+            "dsc": "B",
+            "val": 47
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/vp8/Segment.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/vp8/Segment",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "P0",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "P1",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "P2",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "P3",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "Q0",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "Q1",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "Q2",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "Q3",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/WebPImageReader.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/WebPImageReader",
+        "super": "com/twelvemonkeys/imageio/ImageReaderBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljavax/imageio/spi/ImageReaderSpi;)V"
+          },
+          {
+            "nme": "resetMembers",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setInput",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZZ)V"
+          },
+          {
+            "nme": "readHeader",
+            "acc": 2,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFrame",
+            "acc": 2,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readHeader",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fourCC",
+            "acc": 8,
+            "dsc": "(I)Ljava/lang/String;"
+          },
+          {
+            "nme": "getNumImages",
+            "acc": 1,
+            "dsc": "(Z)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readAllFrames",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getWidth",
+            "acc": 1,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getHeight",
+            "acc": 1,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getRawImageType",
+            "acc": 1,
+            "dsc": "(I)Ljavax/imageio/ImageTypeSpecifier;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getImageTypes",
+            "acc": 1,
+            "dsc": "(I)Ljava/util/Iterator;",
+            "sig": "(I)Ljava/util/Iterator<Ljavax/imageio/ImageTypeSpecifier;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(ILjavax/imageio/ImageReadParam;)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readVP8Extended",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljavax/imageio/ImageReadParam;J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readVP8Extended",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljavax/imageio/ImageReadParam;JII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readAlpha",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljavax/imageio/ImageReadParam;II)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "alphaFilter",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;I)V"
+          },
+          {
+            "nme": "getPredictorAlpha",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;III)I"
+          },
+          {
+            "nme": "applyICCProfileIfNeeded",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "opaqueAlpha",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          },
+          {
+            "nme": "readUncompressedAlpha",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readVP8Lossless",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readVP8Lossless",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;II)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readVP8",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/WritableRaster;Ljavax/imageio/ImageReadParam;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getImageMetadata",
+            "acc": 1,
+            "dsc": "(I)Ljavax/imageio/metadata/IIOMetadata;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readMeta",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/plugins/webp/WebPImageReader;F)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "lsbBitReader",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/LSBBitReader;"
+          },
+          {
+            "acc": 2,
+            "nme": "fileSize",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "header",
+            "dsc": "Lcom/twelvemonkeys/imageio/plugins/webp/VP8xChunk;"
+          },
+          {
+            "acc": 2,
+            "nme": "containedICCP",
+            "dsc": "Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "acc": 2,
+            "nme": "iccProfile",
+            "dsc": "Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "acc": 18,
+            "nme": "frames",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/imageio/plugins/webp/AnimationFrame;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/plugins/webp/lossless/PredictorTransform.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/plugins/webp/lossless/PredictorTransform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;B)V"
+          },
+          {
+            "nme": "applyInverse",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/WritableRaster;)V"
+          },
+          {
+            "nme": "select",
+            "acc": 10,
+            "dsc": "([B[B[B)[B"
+          },
+          {
+            "nme": "manhattanDistance",
+            "acc": 10,
+            "dsc": "([BIIII)I"
+          },
+          {
+            "nme": "average2",
+            "acc": 10,
+            "dsc": "([B[B)V"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "clampAddSubtractFull",
+            "acc": 10,
+            "dsc": "([B[B[B)V"
+          },
+          {
+            "nme": "clampAddSubtractHalf",
+            "acc": 10,
+            "dsc": "([B[B)V"
+          },
+          {
+            "nme": "addSubtractFull",
+            "acc": 10,
+            "dsc": "(BBB)I"
+          },
+          {
+            "nme": "addSubtractHalf",
+            "acc": 10,
+            "dsc": "(BB)I"
+          },
+          {
+            "nme": "addPixels",
+            "acc": 10,
+            "dsc": "([B[B)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "data",
+            "dsc": "Ljava/awt/image/Raster;"
+          },
+          {
+            "acc": 18,
+            "nme": "bits",
+            "dsc": "B"
+          }
+        ]
+      }
+    }
+  }
+}

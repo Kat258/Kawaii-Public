@@ -1,0 +1,16 @@
+{
+  "md5": "f2a2275c3cc4be48c28275d3e4f76995",
+  "sha2": "83cd34469d4e0bc335bf74c7f62206530a9480bf",
+  "sha256": "0275a42f91c6bc5f08bdc1f7c7e263058cc99dbed7c710a025e4ad175e9a0edd",
+  "contents": {
+    "classes": {
+      "META-INF/versions/9/module-info.class": {
+        "ver": 53,
+        "acc": 32768,
+        "nme": "module-info",
+        "mthds": [],
+        "flds": []
+      }
+    }
+  }
+}

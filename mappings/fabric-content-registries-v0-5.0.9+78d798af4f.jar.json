@@ -1,0 +1,1780 @@
+{
+  "md5": "ad965edf31fe7a261796c6fe5ea2a354",
+  "sha2": "32f967e3c193bf944edf8a02538c6d530984e07e",
+  "sha256": "1986968294712cc93297603441ba6f8dce36a8b8409c0b89cf20868a8868aaef",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/impl/content/registry/FuelRegistryImpl.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/impl/content/registry/FuelRegistryImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getFuelTimes",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)Ljava/lang/Integer;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;Ljava/lang/Integer;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Integer;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;Ljava/lang/Integer;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          },
+          {
+            "nme": "apply",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;)V"
+          },
+          {
+            "nme": "getTagName",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_6862;)Ljava/lang/String;",
+            "sig": "(Lnet/minecraft/class_6862<*>;)Ljava/lang/String;"
+          },
+          {
+            "nme": "resetCache",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_1935;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_1935;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_5455;Z)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 18,
+            "nme": "itemCookTimes",
+            "dsc": "Lit/unimi/dsi/fastutil/objects/Object2IntMap;",
+            "sig": "Lit/unimi/dsi/fastutil/objects/Object2IntMap<Lnet/minecraft/class_1935;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "tagCookTimes",
+            "dsc": "Lit/unimi/dsi/fastutil/objects/Object2IntMap;",
+            "sig": "Lit/unimi/dsi/fastutil/objects/Object2IntMap<Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;>;"
+          },
+          {
+            "acc": 66,
+            "nme": "fuelTimeCache",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/VillagerEntityAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/VillagerEntityAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_setItemFoodValues",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Mutable;"
+              },
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "ITEM_FOOD_VALUES"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric_setGatherableItems",
+            "acc": 9,
+            "dsc": "(Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Lnet/minecraft/class_1792;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Mutable;"
+              },
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "GATHERABLE_ITEMS"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric_getGatherableItems",
+            "acc": 9,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Lnet/minecraft/class_1792;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "GATHERABLE_ITEMS"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_1646"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/OxidizableBlocksRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/OxidizableBlocksRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerOxidizableBlockPair",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "registerWaxableBlockPair",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/VillagerInteractionRegistries.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/VillagerInteractionRegistries",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerCollectable",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "registerCompostable",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "registerFood",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1935;I)V"
+          },
+          {
+            "nme": "registerGiftLootTable",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3852;Lnet/minecraft/class_2960;)V"
+          },
+          {
+            "nme": "getCollectableRegistry",
+            "acc": 10,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "nme": "getCompostableRegistry",
+            "acc": 10,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "nme": "getFoodRegistry",
+            "acc": 10,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;"
+          },
+          {
+            "nme": "lambda$getFoodRegistry$0",
+            "acc": 4106,
+            "dsc": "()Ljava/util/Map;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/content/registry/CompostingChanceRegistryImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/content/registry/CompostingChanceRegistryImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)Ljava/lang/Float;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;Ljava/lang/Float;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Float;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;Ljava/lang/Float;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_1935;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_1935;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/content/registry/LandPathNodeMakerMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/LandPathNodeMakerMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getCommonNodeType",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lnet/minecraft/class_2680;)V",
+            "sig": "(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/class_7;>;Lnet/minecraft/class_2680;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getCommonNodeType"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE_ASSIGN",
+                        "target",
+                        "Lnet/minecraft/world/BlockView;getBlockState(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState;"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getNodeTypeFromNeighbors",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338$class_2339;Lnet/minecraft/class_7;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;IIIIIILnet/minecraft/class_2680;)V",
+            "sig": "(Lnet/minecraft/class_1922;Lnet/minecraft/class_2338$class_2339;Lnet/minecraft/class_7;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/class_7;>;IIIIIILnet/minecraft/class_2680;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getNodeTypeFromNeighbors"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE_ASSIGN",
+                        "target",
+                        "Lnet/minecraft/world/BlockView;getBlockState(Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState;"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_14"
+                }
+              ],
+              "priority",
+              999
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/StrippableBlockRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/StrippableBlockRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "requireNonNullAndAxisProperty",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getRegistry",
+            "acc": 10,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/content/registry/util/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/content/registry/util/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/FireBlockMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/FireBlockMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_10190",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2680;)I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "method_10191",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2680;)I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "afterConstruct",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_4970$class_2251;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "<init>"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getFabricBurnChance",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2680;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "getBurnChance"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getFabricSpreadChance",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2680;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "getSpreadChance"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric_getVanillaEntry",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2680;)Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "fabric_registry",
+            "dsc": "Lnet/fabricmc/fabric/impl/content/registry/FlammableBlockRegistryImpl;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2358"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/ShovelItemAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/ShovelItemAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPathStates",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/minecraft/class_2680;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "PATH_STATES"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_1821"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/minecraft/class_7;Lnet/minecraft/class_7;)V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$StaticPathNodeTypeProvider;)V"
+          },
+          {
+            "nme": "registerDynamic",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$DynamicPathNodeTypeProvider;)V"
+          },
+          {
+            "nme": "getPathNodeType",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2680;Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;Z)Lnet/minecraft/class_7;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getPathNodeTypeProvider",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$PathNodeTypeProvider;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "lambda$register$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_7;Lnet/minecraft/class_7;Lnet/minecraft/class_2680;Z)Lnet/minecraft/class_7;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 26,
+            "nme": "NODE_TYPES",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$PathNodeTypeProvider;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/HoeItemAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/HoeItemAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getTillingActions",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_2248;Lcom/mojang/datafixers/util/Pair<Ljava/util/function/Predicate<Lnet/minecraft/class_1838;>;Ljava/util/function/Consumer<Lnet/minecraft/class_1838;>;>;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "TILLING_ACTIONS"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_1794"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/content/registry/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/content/registry/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$StaticPathNodeTypeProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$StaticPathNodeTypeProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPathNodeType",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2680;Z)Lnet/minecraft/class_7;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/FarmerWorkTaskAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/FarmerWorkTaskAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_setCompostables",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_1792;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Mutable;"
+              },
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "COMPOSTABLES"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric_getCompostable",
+            "acc": 9,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_1792;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "COMPOSTABLES"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_4983"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/CompostingChanceRegistry.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/CompostingChanceRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/registry/CompostingChanceRegistry;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/AxeItemAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/AxeItemAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getStrippedBlocks",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "STRIPPED_BLOCKS"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setStrippedBlocks",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/minecraft/class_2248;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "STRIPPED_BLOCKS"
+                ]
+              },
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Mutable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_1743"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$DynamicPathNodeTypeProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$DynamicPathNodeTypeProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPathNodeType",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2680;Lnet/minecraft/class_1922;Lnet/minecraft/class_2338;Z)Lnet/minecraft/class_7;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/OxidizableMixin.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/OxidizableMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "createOxidationLevelIncreasesMap",
+            "acc": 10,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/google/common/collect/BiMap;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "method_34740"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Dynamic;",
+                "vals": [
+                  "value",
+                  "method_34740: Synthetic lambda body for Suppliers.memoize in initialization of OXIDATION_LEVEL_INCREASES"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_5955"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/FuelRegistry.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/FuelRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/registry/FuelRegistry;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/content/registry/util/ImmutableCollectionUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/content/registry/util/ImmutableCollectionUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getAsMutableSet",
+            "acc": 9,
+            "dsc": "(Ljava/util/function/Supplier;Ljava/util/function/Consumer;)Ljava/util/Set;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/function/Supplier<Ljava/util/Set<TT;>;>;Ljava/util/function/Consumer<Ljava/util/Set<TT;>;>;)Ljava/util/Set<TT;>;"
+          },
+          {
+            "nme": "getAsMutableList",
+            "acc": 9,
+            "dsc": "(Ljava/util/function/Supplier;Ljava/util/function/Consumer;)Ljava/util/List;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/function/Supplier<Ljava/util/List<TT;>;>;Ljava/util/function/Consumer<Ljava/util/List<TT;>;>;)Ljava/util/List<TT;>;"
+          },
+          {
+            "nme": "getAsMutableMap",
+            "acc": 9,
+            "dsc": "(Ljava/util/function/Supplier;Ljava/util/function/Consumer;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/function/Supplier<Ljava/util/Map<TK;TV;>;>;Ljava/util/function/Consumer<Ljava/util/Map<TK;TV;>;>;)Ljava/util/Map<TK;TV;>;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/FlammableBlockRegistry.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/FlammableBlockRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getDefaultInstance",
+            "acc": 9,
+            "dsc": "()Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry;"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;II)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;II)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;II)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/FlattenableBlockRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/FlattenableBlockRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/minecraft/class_2680;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/AbstractFurnaceBlockEntityMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/AbstractFurnaceBlockEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fuelTimeMapHook",
+            "acc": 10,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "createFuelTimeMap"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "canUseAsFuelRedirect",
+            "acc": 10,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "canUseAsFuel"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;createFuelTimeMap()Ljava/util/Map;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getFuelTimeRedirect",
+            "acc": 2,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_1792;Ljava/lang/Integer;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getFuelTime"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;createFuelTimeMap()Ljava/util/Map;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2609"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/content/registry/FireBlockHooks.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/content/registry/FireBlockHooks",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_getVanillaEntry",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2680;)Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/util/Item2ObjectMap.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/util/Item2ObjectMap",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1935;)Ljava/lang/Object;",
+            "sig": "(Lnet/minecraft/class_1935;)TV;"
+          },
+          {
+            "nme": "add",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1935;Ljava/lang/Object;)V",
+            "sig": "(Lnet/minecraft/class_1935;TV;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;TV;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$PathNodeTypeProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/registry/LandPathNodeTypesRegistry$PathNodeTypeProvider",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/TillableBlockRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/TillableBlockRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate<Lnet/minecraft/class_1838;>;Ljava/util/function/Consumer<Lnet/minecraft/class_1838;>;)V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate;Lnet/minecraft/class_2680;)V",
+            "sig": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate<Lnet/minecraft/class_1838;>;Lnet/minecraft/class_2680;)V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate;Lnet/minecraft/class_2680;Lnet/minecraft/class_1935;)V",
+            "sig": "(Lnet/minecraft/class_2248;Ljava/util/function/Predicate<Lnet/minecraft/class_1838;>;Lnet/minecraft/class_2680;Lnet/minecraft/class_1935;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "getBurnChance",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getSpreadChance",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "burn",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "spread",
+            "dsc": "I"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/GiveGiftsToHeroTaskAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/GiveGiftsToHeroTaskAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_getGifts",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_3852;Lnet/minecraft/class_2960;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "GIFTS"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_4243"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/FabricBrewingRecipeRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/FabricBrewingRecipeRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerItemRecipe",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1812;Lnet/minecraft/class_1856;Lnet/minecraft/class_1812;)V"
+          },
+          {
+            "nme": "registerPotionRecipe",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1842;Lnet/minecraft/class_1856;Lnet/minecraft/class_1842;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/content/registry/FlammableBlockRegistryImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/content/registry/FlammableBlockRegistryImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "getEntryMap",
+            "acc": 2,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;"
+          },
+          {
+            "nme": "getFabric",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;)V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/fabricmc/fabric/impl/content/registry/FlammableBlockRegistryImpl;"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_2248;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_5455;Z)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "REMOVED",
+            "dsc": "Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;"
+          },
+          {
+            "acc": 26,
+            "nme": "REGISTRIES",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/impl/content/registry/FlammableBlockRegistryImpl;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "registeredEntriesBlock",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "registeredEntriesTag",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;>;"
+          },
+          {
+            "acc": 66,
+            "nme": "computedEntries",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2248;Lnet/fabricmc/fabric/api/registry/FlammableBlockRegistry$Entry;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "key",
+            "dsc": "Lnet/minecraft/class_2248;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/content/registry/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/registry/SculkSensorFrequencyRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/registry/SculkSensorFrequencyRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_5712;I)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/util/Block2ObjectMap.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/util/Block2ObjectMap",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2248;)Ljava/lang/Object;",
+            "sig": "(Lnet/minecraft/class_2248;)TV;"
+          },
+          {
+            "nme": "add",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2248;Ljava/lang/Object;)V",
+            "sig": "(Lnet/minecraft/class_2248;TV;)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;TV;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_6862;)V",
+            "sig": "(Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/content/registry/HoneycombItemMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/content/registry/HoneycombItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createUnwaxedToWaxedMap",
+            "acc": 10,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/google/common/collect/BiMap;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "method_34723"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Dynamic;",
+                "vals": [
+                  "value",
+                  "method_34723: Synthetic lambda body for Suppliers.memoize in initialization of UNWAXED_TO_WAXED_BLOCKS"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_5953"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,1423 @@
+{
+  "md5": "a9ebf2592457f351243e94dffaeb7a27",
+  "sha2": "8abd81b8e6e29fad794204b10d512caa923a4f9f",
+  "sha256": "12c4eb19faa3f87ad34147272ca39a1656ddbc703544326000db107c7563ac6b",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/client/impl/gps/PlayerListSnapshotImpl.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/impl/gps/PlayerListSnapshotImpl",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Optional;Ljava/util/Optional;Ljava/util/List;)V",
+            "sig": "(Ljava/util/Optional<Lnet/minecraft/class_2561;>;Ljava/util/Optional<Lnet/minecraft/class_2561;>;Ljava/util/List<Lnet/minecraft/class_2561;>;)V"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/gps/PlayerListSnapshot$Dimensions;"
+          },
+          {
+            "nme": "nameWithPrefix",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefixStripped",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "nameAtPosition",
+            "acc": 1,
+            "dsc": "(II)Ljava/util/Optional;",
+            "sig": "(II)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "header",
+            "acc": 1,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "footer",
+            "acc": 1,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "names",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "lambda$nameWithPrefixStripped$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_2561;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$nameWithPrefix$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_2561;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "header",
+            "dsc": "Ljava/util/Optional;",
+            "sig": "Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "footer",
+            "dsc": "Ljava/util/Optional;",
+            "sig": "Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "names",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/Coordinate$Multiplayer.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/Coordinate$Multiplayer",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "userFriendlyName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "address",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "serverEntryName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "userFriendlyName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "address",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "serverEntryName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/ScoreboardUtils.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "red/jackf/jackfredlib/client/api/gps/ScoreboardUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getRows",
+            "acc": 9,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getPrefixed",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getRow",
+            "acc": 9,
+            "dsc": "(I)Ljava/util/Optional;",
+            "sig": "(I)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "lambda$getRow$3",
+            "acc": 4106,
+            "dsc": "(ILred/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$getRow$2",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/datafixers/util/Pair;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$getPrefixed$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lred/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot;)Ljava/util/Optional;"
+          },
+          {
+            "nme": "lambda$getRows$0",
+            "acc": 4106,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot;)Ljava/util/List;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;",
+            "vals": [
+              "since",
+              "1.0.5",
+              "forRemoval",
+              true
+            ]
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$ScheduledForRemoval;",
+            "vals": [
+              "inVersion",
+              "1.1"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/Coordinate$Lan.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/Coordinate$Lan",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "userFriendlyName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "userFriendlyName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/PlayerListUtils.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "red/jackf/jackfredlib/client/api/gps/PlayerListUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getHeader",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getFooter",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getAll",
+            "acc": 9,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getPrefixed",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getWidgetSize",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/gps/PlayerListUtils$Dimensions;"
+          },
+          {
+            "nme": "getFromPosition",
+            "acc": 9,
+            "dsc": "(II)Ljava/util/Optional;",
+            "sig": "(II)Ljava/util/Optional<Ljava/lang/String;>;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;",
+            "vals": [
+              "since",
+              "1.0.7",
+              "forRemoval",
+              true
+            ]
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$ScheduledForRemoval;",
+            "vals": [
+              "inVersion",
+              "1.1"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/Coordinate$Realms.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/Coordinate$Realms",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "userFriendlyName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "userFriendlyName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/mixins/gps/MinecraftServerAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/mixins/gps/MinecraftServerAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getStorageSource",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_32$class_5143;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/server/MinecraftServer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "take",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lred/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot;>;"
+          },
+          {
+            "nme": "title",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2561;"
+          },
+          {
+            "nme": "entries",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryFromTop",
+            "acc": 1025,
+            "dsc": "(I)Ljava/util/Optional;",
+            "sig": "(I)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryFromBottom",
+            "acc": 1025,
+            "dsc": "(I)Ljava/util/Optional;",
+            "sig": "(I)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryWithNamePrefix",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "names",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefix",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefixStripped",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "values",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.0.5"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/PlayerListUtils$Dimensions.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/PlayerListUtils$Dimensions",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "columns",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "rows",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "columns",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "rows",
+            "dsc": "I"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/gps/CoordinateGrabber.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/gps/CoordinateGrabber",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setLastRealm",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_4877;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lred/jackf/jackfredlib/client/api/gps/Coordinate;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 10,
+            "nme": "lastRealmId",
+            "dsc": "J"
+          },
+          {
+            "acc": 10,
+            "nme": "lastRealmName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/gps/ScoreboardSnapshotImpl.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "red/jackf/jackfredlib/client/impl/gps/ScoreboardSnapshotImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2561;Ljava/util/List;)V",
+            "sig": "(Lnet/minecraft/class_2561;Ljava/util/List<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;)V"
+          },
+          {
+            "nme": "title",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2561;"
+          },
+          {
+            "nme": "entries",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryFromTop",
+            "acc": 1,
+            "dsc": "(I)Ljava/util/Optional;",
+            "sig": "(I)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryFromBottom",
+            "acc": 1,
+            "dsc": "(I)Ljava/util/Optional;",
+            "sig": "(I)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "entryWithNamePrefix",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "nme": "names",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefix",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefixStripped",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "values",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$nameWithPrefixStripped$3",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_2561;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$entryWithNamePrefix$2",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lcom/mojang/datafixers/util/Pair;)Z"
+          },
+          {
+            "nme": "lambda$new$1",
+            "acc": 4106,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4106,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "title",
+            "dsc": "Lnet/minecraft/class_2561;"
+          },
+          {
+            "acc": 18,
+            "nme": "entries",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/mojang/datafixers/util/Pair<Lnet/minecraft/class_2561;Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "names",
+            "dsc": "Lred/jackf/jackfredlib/api/base/Memoizer;",
+            "sig": "Lred/jackf/jackfredlib/api/base/Memoizer<Ljava/util/List<Lnet/minecraft/class_2561;>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "values",
+            "dsc": "Lred/jackf/jackfredlib/api/base/Memoizer;",
+            "sig": "Lred/jackf/jackfredlib/api/base/Memoizer<Ljava/util/List<Lnet/minecraft/class_2561;>;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/mixins/gps/PlayerTabOverlayAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/mixins/gps/PlayerTabOverlayAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$getPlayerInfos",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_640;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "getPlayerInfos"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$getHeader",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2561;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "header"
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "jflib$getFooter",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2561;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "footer"
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_355"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/mixins/gps/RealmsConnectMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/mixins/gps/RealmsConnectMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getLastRealmsID",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_4877;Lnet/minecraft/class_639;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "connect"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_4902"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/mixins/gps/GuiAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/mixins/gps/GuiAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getScoreDisplayOrder",
+            "acc": 9,
+            "dsc": "()Ljava/util/Comparator;",
+            "sig": "()Ljava/util/Comparator<Lnet/minecraft/class_9011;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "SCORE_DISPLAY_ORDER"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_329"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/Coordinate.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/gps/Coordinate",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getCurrent",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lred/jackf/jackfredlib/client/api/gps/Coordinate;>;"
+          },
+          {
+            "nme": "id",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "userFriendlyName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/gps/Sanitizer.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/gps/Sanitizer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "sanitize",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "RESERVED_WINDOWS_FILENAMES",
+            "dsc": "Ljava/util/regex/Pattern;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/gps/GPSUtilImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/gps/GPSUtilImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getPlayerList",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/gps/PlayerListSnapshot;"
+          },
+          {
+            "nme": "getScoreboard",
+            "acc": 9,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lred/jackf/jackfredlib/client/api/gps/ScoreboardSnapshot;>;"
+          },
+          {
+            "nme": "getDisplayedScoreboardObjective",
+            "acc": 10,
+            "dsc": "()Lnet/minecraft/class_266;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "lambda$getScoreboard$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_269;Lnet/minecraft/class_9022;Lnet/minecraft/class_9011;)Lcom/mojang/datafixers/util/Pair;"
+          },
+          {
+            "nme": "lambda$getScoreboard$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_9011;)Z"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/PlayerListSnapshot.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/gps/PlayerListSnapshot",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "take",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/gps/PlayerListSnapshot;"
+          },
+          {
+            "nme": "header",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "footer",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/gps/PlayerListSnapshot$Dimensions;"
+          },
+          {
+            "nme": "names",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefix",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "nme": "nameWithPrefixStripped",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "nameAtPosition",
+            "acc": 1025,
+            "dsc": "(II)Ljava/util/Optional;",
+            "sig": "(II)Ljava/util/Optional<Lnet/minecraft/class_2561;>;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.0.7"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/PlayerListSnapshot$Dimensions.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/PlayerListSnapshot$Dimensions",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "columns",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "rows",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "columns",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "rows",
+            "dsc": "I"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/gps/Coordinate$Singleplayer.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/gps/Coordinate$Singleplayer",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "userFriendlyName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "worldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "userFriendlyName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "worldName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

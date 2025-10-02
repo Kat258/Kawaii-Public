@@ -58,3 +58,8 @@ publishing {
     repositories {
     }
 }
+
+task copyZkmLibs(type: Copy) {
+    into "$buildDir/zkmLibs"
+    from configurations.runtimeClasspath
+}

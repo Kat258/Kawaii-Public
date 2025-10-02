@@ -1,0 +1,5288 @@
+{
+  "md5": "cd0e269ad7a46cc5cba0d7a5f8607b00",
+  "sha2": "28c71789037373fb60668ffea885dd41976a02f6",
+  "sha256": "3a4132dd58c4b0c704ae1af7ea6cfbcad4370e4500d2826a8eb28441aef8607c",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi$FileInputFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi$FileInputFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/CIELabColorConverter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/CIELabColorConverter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;)V"
+          },
+          {
+            "nme": "clamp",
+            "acc": 2,
+            "dsc": "(F)F"
+          },
+          {
+            "nme": "toRGB",
+            "acc": 1,
+            "dsc": "(FFF[F)V"
+          },
+          {
+            "nme": "LABtoXYZ",
+            "acc": 2,
+            "dsc": "(FFF[F)[F"
+          },
+          {
+            "nme": "XYZtoRGB",
+            "acc": 2,
+            "dsc": "([F[F)[F"
+          },
+          {
+            "nme": "XYZtoRGB",
+            "acc": 2,
+            "dsc": "(FFF[F)[F"
+          },
+          {
+            "nme": "pow",
+            "acc": 8,
+            "dsc": "(DD)D"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "whitePoint",
+            "dsc": "[F"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ProfileDeferralActivator.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/ProfileDeferralActivator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "activateProfilesInternal",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "activateProfiles",
+            "acc": 8,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ProviderInfo;)V"
+          },
+          {
+            "nme": "onRegistration",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class;)V",
+            "sig": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "canUseCacheFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedImageInputStream.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fillBuffer",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setByteOrder",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteOrder;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readDirect",
+            "acc": 2,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBuffered",
+            "acc": 2,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "readShort",
+            "acc": 1,
+            "dsc": "()S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBit",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBits",
+            "acc": 1,
+            "dsc": "(I)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "finalize",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/lang/Throwable"
+            ]
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEFAULT_BUFFER_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 2,
+            "nme": "stream",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCache",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCacheArray",
+            "dsc": "[B"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/ReaderFileSuffixFilter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/util/ReaderFileSuffixFilter",
+        "super": "javax/swing/filechooser/FileFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)Z"
+          },
+          {
+            "nme": "hasReaderForSuffix",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "knownSuffixes",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Boolean;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/Int16ComponentColorModel.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/Int16ComponentColorModel",
+        "super": "java/awt/image/ComponentColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/color/ColorSpace;ZZ)V"
+          },
+          {
+            "nme": "remap",
+            "acc": 2,
+            "dsc": "([SI)V"
+          },
+          {
+            "nme": "getRed",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "getGreen",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "getBlue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Ljava/awt/image/ComponentColorModel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ProviderInfo;)V"
+          },
+          {
+            "nme": "onRegistration",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class;)V",
+            "sig": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "canUseCacheFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "PixelInterleaved",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PlaneInterleaved",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 16409,
+            "nme": "LineInterleaved",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 16409,
+            "nme": "TileInterleaved",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/CMYKColorSpace.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/CMYKColorSpace",
+        "super": "java/awt/color/ColorSpace",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Ljava/awt/color/ColorSpace;"
+          },
+          {
+            "nme": "toRGB",
+            "acc": 1,
+            "dsc": "([F)[F"
+          },
+          {
+            "nme": "fromRGB",
+            "acc": 1,
+            "dsc": "([F)[F"
+          },
+          {
+            "nme": "toCIEXYZ",
+            "acc": 1,
+            "dsc": "([F)[F"
+          },
+          {
+            "nme": "fromCIEXYZ",
+            "acc": 1,
+            "dsc": "([F)[F"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "INSTANCE",
+            "dsc": "Ljava/awt/color/ColorSpace;"
+          },
+          {
+            "acc": 16,
+            "nme": "sRGB",
+            "dsc": "Ljava/awt/color/ColorSpace;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport",
+        "super": "com/twelvemonkeys/imageio/AbstractMetadata",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)V"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/ImageTypeSpecifier;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "getStandardChromaNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "colorSpaceType",
+            "acc": 10,
+            "dsc": "(Ljava/awt/color/ColorSpace;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "nme": "getStandardCompressionNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "booleanString",
+            "acc": 12,
+            "dsc": "(Z)Ljava/lang/String;"
+          },
+          {
+            "nme": "getStandardDataNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "createListValue",
+            "acc": 138,
+            "dsc": "(I[I)Ljava/lang/String;"
+          },
+          {
+            "nme": "sampleFormat",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/SampleModel;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getStandardDimensionNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "getStandardDocumentNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "getStandardTextNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          },
+          {
+            "nme": "getStandardTransparencyNode",
+            "acc": 4,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadataNode;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "acc": 20,
+            "nme": "colorSpaceType",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 20,
+            "nme": "blackIsZero",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "palette",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "acc": 20,
+            "nme": "compressionName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "compressionLossless",
+            "dsc": "Z"
+          },
+          {
+            "acc": 20,
+            "nme": "planarConfiguration",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 18,
+            "nme": "bitsPerSample",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "significantBits",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "sampleMSB",
+            "dsc": "[I"
+          },
+          {
+            "acc": 20,
+            "nme": "pixelAspectRatio",
+            "dsc": "Ljava/lang/Double;"
+          },
+          {
+            "acc": 20,
+            "nme": "orientation",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 20,
+            "nme": "formatVersion",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "subimageInterpretation",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 18,
+            "nme": "documentCreationTime",
+            "dsc": "Ljava/util/Calendar;"
+          },
+          {
+            "acc": 18,
+            "nme": "textEntries",
+            "dsc": "Ljava/util/Collection;",
+            "sig": "Ljava/util/Collection<Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/SubImageInputStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/SubImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "finalize",
+            "acc": 4,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "stream",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "startPos",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "length",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/UInt32ColorModel.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/UInt32ColorModel",
+        "super": "java/awt/image/ComponentColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/color/ColorSpace;ZZ)V"
+          },
+          {
+            "nme": "getNormalizedComponents",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;[FI)[F"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/RasterUtils.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/util/RasterUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "asByteRaster",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/Raster;"
+          },
+          {
+            "nme": "asByteRaster",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "asByteRaster0",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/Raster;"
+          },
+          {
+            "nme": "createBandOffsets",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/SinglePixelPackedSampleModel;)[I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ExitIfNoWindowPresentHandler.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ExitIfNoWindowPresentHandler",
+        "super": "java/awt/event/WindowAdapter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "windowClosed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/WindowEvent;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction;Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;)V"
+          },
+          {
+            "nme": "paintIcon",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Component;Ljava/awt/Graphics;II)V"
+          },
+          {
+            "nme": "getIconWidth",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getIconHeight",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChooseBackgroundAction",
+        "super": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChangeBackgroundAction",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/lang/String;Ljava/awt/Color;)V"
+          },
+          {
+            "nme": "actionPerformed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/ActionEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/DirectImageInputStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/DirectImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;J)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "readBit",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBits",
+            "acc": 1,
+            "dsc": "(I)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "stream",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "length",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Normal",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Rotate90",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Rotate180",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Rotate270",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FlipH",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FlipV",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FlipHRotate90",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FlipVRotate90",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo",
+        "super": "com/twelvemonkeys/imageio/spi/ProviderInfo",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Class;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V",
+            "sig": "(Ljava/lang/Class<+Lcom/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo;>;[Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V"
+          },
+          {
+            "nme": "formatNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "suffixes",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "mimeTypes",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "readerClassName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "readerSpiClassNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "inputTypes",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/Class;"
+          },
+          {
+            "nme": "writerClassName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "writerSpiClassNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "outputTypes",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/Class;"
+          },
+          {
+            "nme": "supportsStandardStreamMetadataFormat",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nativeStreamMetadataFormatName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "nativeStreamMetadataFormatClassName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "extraStreamMetadataFormatNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "extraStreamMetadataFormatClassNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "supportsStandardImageMetadataFormat",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nativeImageMetadataFormatName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "nativeImageMetadataFormatClassName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "extraImageMetadataFormatNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "extraImageMetadataFormatClassNames",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "formatNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "suffixes",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "mimeTypes",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "readerClassName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "readerSpiClassNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "inputTypes",
+            "dsc": "[Ljava/lang/Class;",
+            "sig": "[Ljava/lang/Class<*>;"
+          },
+          {
+            "acc": 18,
+            "nme": "writerClassName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "writerSpiClassNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "outputTypes",
+            "dsc": "[Ljava/lang/Class;",
+            "sig": "[Ljava/lang/Class<*>;"
+          },
+          {
+            "acc": 18,
+            "nme": "supportsStandardStreamMetadata",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "nativeStreamMetadataFormatName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "nativeStreamMetadataFormatClassName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "extraStreamMetadataFormatNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "extraStreamMetadataFormatClassNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "supportsStandardImageMetadata",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "nativeImageMetadataFormatName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "nativeImageMetadataFormatClassName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "extraImageMetadataFormatNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "extraImageMetadataFormatClassNames",
+            "dsc": "[Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Standalone",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "SinglePage",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FullResolution",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "ReducedResolution",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PyramidLayer",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Preview",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "VolumeSlice",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "ObjectView",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Panorama",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "AnimationFrame",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "TransparencyMask",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "CompositingLayer",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "SpectralSlice",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Unknown",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/ProgressListenerBase.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/util/ProgressListenerBase",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "imageComplete",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;)V"
+          },
+          {
+            "nme": "imageProgress",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;F)V"
+          },
+          {
+            "nme": "imageStarted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;I)V"
+          },
+          {
+            "nme": "readAborted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;)V"
+          },
+          {
+            "nme": "sequenceComplete",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;)V"
+          },
+          {
+            "nme": "sequenceStarted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;I)V"
+          },
+          {
+            "nme": "thumbnailComplete",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;)V"
+          },
+          {
+            "nme": "thumbnailProgress",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;F)V"
+          },
+          {
+            "nme": "thumbnailStarted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageReader;II)V"
+          },
+          {
+            "nme": "imageComplete",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;)V"
+          },
+          {
+            "nme": "imageProgress",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;F)V"
+          },
+          {
+            "nme": "imageStarted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;I)V"
+          },
+          {
+            "nme": "thumbnailComplete",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;)V"
+          },
+          {
+            "nme": "thumbnailProgress",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;F)V"
+          },
+          {
+            "nme": "thumbnailStarted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;II)V"
+          },
+          {
+            "nme": "writeAborted",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriter;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$LINEAR_RGB.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$LINEAR_RGB",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "header",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$PYCC.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$PYCC",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "header",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/DiscreteAlphaIndexColorModel.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/DiscreteAlphaIndexColorModel",
+        "super": "java/awt/image/ColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;IZ)V"
+          },
+          {
+            "nme": "getNumComponents",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getRed",
+            "acc": 1,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getGreen",
+            "acc": 1,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getBlue",
+            "acc": 1,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getAlpha",
+            "acc": 1,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getSample",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;I)I"
+          },
+          {
+            "nme": "getRed",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "getGreen",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "getBlue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "getAlpha",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "createCompatibleSampleModel",
+            "acc": 1,
+            "dsc": "(II)Ljava/awt/image/SampleModel;"
+          },
+          {
+            "nme": "createOffsets",
+            "acc": 2,
+            "dsc": "(I)[I"
+          },
+          {
+            "nme": "isCompatibleSampleModel",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/SampleModel;)Z"
+          },
+          {
+            "nme": "createCompatibleWritableRaster",
+            "acc": 1,
+            "dsc": "(II)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "isCompatibleRaster",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Z"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "icm",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "acc": 18,
+            "nme": "extraSamples",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "samples",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi$RAFInputFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi$RAFInputFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/stream/SubImageOutputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/stream/SubImageOutputStream",
+        "super": "javax/imageio/stream/ImageOutputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "stream",
+            "dsc": "Ljavax/imageio/stream/ImageOutputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "startPos",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase",
+        "super": "javax/imageio/ImageReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljavax/imageio/spi/ImageReaderSpi;)V"
+          },
+          {
+            "nme": "setInput",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZZ)V"
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resetMembers",
+            "acc": 1028,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getImageMetadata",
+            "acc": 1,
+            "dsc": "(I)Ljavax/imageio/metadata/IIOMetadata;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getStreamMetadata",
+            "acc": 1,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadata;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getNumImages",
+            "acc": 1,
+            "dsc": "(Z)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "checkBounds",
+            "acc": 4,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertInput",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getDestination",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/ImageReadParam;Ljava/util/Iterator;II)Ljava/awt/image/BufferedImage;",
+            "sig": "(Ljavax/imageio/ImageReadParam;Ljava/util/Iterator<Ljavax/imageio/ImageTypeSpecifier;>;II)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "javax/imageio/IIOException"
+            ]
+          },
+          {
+            "nme": "fakeAOI",
+            "acc": 12,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljavax/imageio/ImageReadParam;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "fakeSubsampling",
+            "acc": 12,
+            "dsc": "(Ljava/awt/Image;Ljavax/imageio/ImageReadParam;)Ljava/awt/Image;"
+          },
+          {
+            "nme": "hasExplicitDestination",
+            "acc": 12,
+            "dsc": "(Ljavax/imageio/ImageReadParam;)Z"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "showIt",
+            "acc": 12,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ORIGIN",
+            "dsc": "Ljava/awt/Point;"
+          },
+          {
+            "acc": 4,
+            "nme": "imageInput",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/IndexedImageTypeSpecifier.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/util/IndexedImageTypeSpecifier",
+        "super": "javax/imageio/ImageTypeSpecifier",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/awt/image/ColorModel;)V"
+          },
+          {
+            "nme": "createBufferedImage",
+            "acc": 1,
+            "dsc": "(II)Ljava/awt/image/BufferedImage;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$1",
+        "super": "java/awt/event/MouseAdapter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;)V"
+          },
+          {
+            "nme": "mouseClicked",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/MouseEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/RasterUtils$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/util/RasterUtils$1",
+        "super": "java/awt/image/DataBuffer",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(IILjava/awt/image/DataBufferInt;)V"
+          },
+          {
+            "nme": "getElem",
+            "acc": 1,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "setElem",
+            "acc": 1,
+            "dsc": "(III)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "MASKS",
+            "dsc": "[I"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$buffer",
+            "dsc": "Ljava/awt/image/DataBufferInt;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ProfileDeferralActivator$Spi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/ProfileDeferralActivator$Spi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onRegistration",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class;)V",
+            "sig": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljavax/imageio/ImageTypeSpecifier;)V"
+          },
+          {
+            "nme": "withColorSpaceType",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withBlackIsZero",
+            "acc": 1,
+            "dsc": "(Z)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withPalette",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withCompressionTypeName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withCompressionLossless",
+            "acc": 1,
+            "dsc": "(Z)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withPlanarConfiguration",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withBitsPerSample",
+            "acc": 129,
+            "dsc": "([I)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withSignificantBitsPerSample",
+            "acc": 129,
+            "dsc": "([I)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withSampleMSB",
+            "acc": 129,
+            "dsc": "([I)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withPixelAspectRatio",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Double;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withOrientation",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withFormatVersion",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withSubimageInterpretation",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withDocumentCreationTime",
+            "acc": 1,
+            "dsc": "(Ljava/util/Calendar;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withTextEntries",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;",
+            "sig": "(Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "toTextEntries",
+            "acc": 2,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/Collection;",
+            "sig": "(Ljava/util/Collection<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;>;)Ljava/util/Collection<Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry;>;"
+          },
+          {
+            "nme": "withTextEntries",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;",
+            "sig": "(Ljava/util/Collection<Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry;>;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "withTextEntry",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Ljavax/imageio/metadata/IIOMetadata;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Z"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$500",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Z"
+          },
+          {
+            "nme": "access$600",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "nme": "access$700",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)[I"
+          },
+          {
+            "nme": "access$800",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)[I"
+          },
+          {
+            "nme": "access$900",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "nme": "access$1000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/lang/Double;"
+          },
+          {
+            "nme": "access$1100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/lang/String;"
+          },
+          {
+            "nme": "access$1200",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/util/Calendar;"
+          },
+          {
+            "nme": "access$1300",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "nme": "access$1400",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$Builder;)Ljava/util/Collection;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "acc": 2,
+            "nme": "colorSpaceType",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 2,
+            "nme": "blackIsZero",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "palette",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "acc": 2,
+            "nme": "compressionName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "compressionLossless",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "planarConfiguration",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$PlanarConfiguration;"
+          },
+          {
+            "acc": 1,
+            "nme": "bitsPerSample",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "significantBits",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "sampleMSB",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "pixelAspectRatio",
+            "dsc": "Ljava/lang/Double;"
+          },
+          {
+            "acc": 2,
+            "nme": "orientation",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ImageOrientation;"
+          },
+          {
+            "acc": 2,
+            "nme": "formatVersion",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "subimageInterpretation",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$SubimageInterpretation;"
+          },
+          {
+            "acc": 2,
+            "nme": "documentCreationTime",
+            "dsc": "Ljava/util/Calendar;"
+          },
+          {
+            "acc": 18,
+            "nme": "textEntries",
+            "dsc": "Ljava/util/Collection;",
+            "sig": "Ljava/util/Collection<Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/IIOUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/util/IIOUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createStreamAdapter",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Ljava/io/InputStream;"
+          },
+          {
+            "nme": "createStreamAdapter",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;J)Ljava/io/InputStream;"
+          },
+          {
+            "nme": "createStreamAdapter",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;)Ljava/io/OutputStream;"
+          },
+          {
+            "nme": "fakeSubsampling",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;Ljavax/imageio/IIOParam;)Ljava/awt/Image;"
+          },
+          {
+            "nme": "getSourceRegion",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/IIOParam;II)Ljava/awt/Rectangle;"
+          },
+          {
+            "nme": "fakeAOI",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/Rectangle;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "deregisterProvider",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljavax/imageio/spi/IIOServiceProvider;Ljava/lang/Class;)V",
+            "sig": "<T:Ljava/lang/Object;>(Ljavax/imageio/spi/ServiceRegistry;Ljavax/imageio/spi/IIOServiceProvider;Ljava/lang/Class<TT;>;)V"
+          },
+          {
+            "nme": "lookupProviderByName",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/String;Ljava/lang/Class<TT;>;)TT;"
+          },
+          {
+            "nme": "getNormalizedReaderFormatNames",
+            "acc": 9,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "getNormalizedWriterFormatNames",
+            "acc": 9,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "normalizeNames",
+            "acc": 10,
+            "dsc": "([Ljava/lang/String;)[Ljava/lang/String;"
+          },
+          {
+            "nme": "subsampleRow",
+            "acc": 9,
+            "dsc": "([BII[BIIII)V"
+          },
+          {
+            "nme": "subsampleRow",
+            "acc": 9,
+            "dsc": "([SII[SIIII)V"
+          },
+          {
+            "nme": "subsampleRow",
+            "acc": 9,
+            "dsc": "([III[IIIII)V"
+          },
+          {
+            "nme": "subsampleRow",
+            "acc": 9,
+            "dsc": "([FII[FIIII)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;II)V",
+            "sig": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;IILjava/lang/String;)V",
+            "sig": "(ILjava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "XYZ",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Lab",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Luv",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "YCbCr",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Yxy",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "YCCK",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PhotoYCC",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "RGB",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GRAY",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "HSV",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "HLS",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "CMYK",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "CMY",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_2CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_3CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_4CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_5CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_6CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_7CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_8CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_9CLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_ACLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_BCLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_CCLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_DCLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_ECLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "GENERIC_FCLR",
+            "dsc": "Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          },
+          {
+            "acc": 16,
+            "nme": "numChannels",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "nameOverride",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/StandardImageMetadataSupport$ColorSpaceType;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/StandardImageMetadataSupport$TextEntry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "COMPRESSIONS",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 16,
+            "nme": "keyword",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "value",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "language",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "encoding",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "compression",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I[F)V",
+            "sig": "([F)V"
+          },
+          {
+            "nme": "getWhitePoint",
+            "acc": 1,
+            "dsc": "()[F"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "D50",
+            "dsc": "Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;"
+          },
+          {
+            "acc": 16409,
+            "nme": "D65",
+            "dsc": "Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;"
+          },
+          {
+            "acc": 18,
+            "nme": "whitePoint",
+            "dsc": "[F"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/imageio/color/CIELabColorConverter$Illuminant;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/AbstractMetadata.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/AbstractMetadata",
+        "super": "javax/imageio/metadata/IIOMetadata",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(ZLjava/lang/String;Ljava/lang/String;[Ljava/lang/String;[Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isReadOnly",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getAsTree",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/w3c/dom/Node;"
+          },
+          {
+            "nme": "getNativeTree",
+            "acc": 4,
+            "dsc": "()Lorg/w3c/dom/Node;"
+          },
+          {
+            "nme": "mergeTree",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/w3c/dom/Node;)V",
+            "exs": [
+              "javax/imageio/metadata/IIOInvalidTreeException"
+            ]
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "assertMutable",
+            "acc": 20,
+            "dsc": "()V"
+          },
+          {
+            "nme": "validateFormatName",
+            "acc": 20,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toListString",
+            "acc": 12,
+            "dsc": "([S)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getProfileHeaderWithProfileId",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)[B"
+          },
+          {
+            "nme": "getProfileHeaderWithProfileId",
+            "acc": 8,
+            "dsc": "([B)[B"
+          },
+          {
+            "nme": "computeMD5",
+            "acc": 10,
+            "dsc": "([B[B)[B"
+          },
+          {
+            "nme": "isCS_sRGB",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Z"
+          },
+          {
+            "nme": "isCS_GRAY",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Z"
+          },
+          {
+            "nme": "isOffendingColorProfile",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Z"
+          },
+          {
+            "nme": "validateProfile",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "readProfileRaw",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;)Ljava/awt/color/ICC_Profile;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readProfile",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;)Ljava/awt/color/ICC_Profile;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createProfileRaw",
+            "acc": 9,
+            "dsc": "([B)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "createProfile",
+            "acc": 9,
+            "dsc": "([B)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "limit",
+            "acc": 10,
+            "dsc": "([BI)[B"
+          },
+          {
+            "nme": "validateAndGetSize",
+            "acc": 10,
+            "dsc": "([B)I"
+          },
+          {
+            "nme": "validateHeaderAndGetSize",
+            "acc": 10,
+            "dsc": "([B)I"
+          },
+          {
+            "nme": "getInternalProfile",
+            "acc": 10,
+            "dsc": "([B)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "intBigEndian",
+            "acc": 10,
+            "dsc": "([BI)I"
+          },
+          {
+            "nme": "getCsType",
+            "acc": 10,
+            "dsc": "([B)I"
+          },
+          {
+            "nme": "readProfileFromClasspathResource",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "readProfileFromPath",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;)Ljava/awt/color/ICC_Profile;"
+          },
+          {
+            "nme": "fixProfile",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)V"
+          },
+          {
+            "nme": "validationAltersProfileHeader",
+            "acc": 8,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "profileCleaner",
+            "dsc": "Lcom/twelvemonkeys/imageio/color/ICCProfileSanitizer;"
+          },
+          {
+            "acc": 24,
+            "nme": "ICC_PROFILE_MAGIC",
+            "dsc": "I",
+            "val": 1633907568
+          },
+          {
+            "acc": 24,
+            "nme": "ICC_PROFILE_HEADER_SIZE",
+            "dsc": "I",
+            "val": 128
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ImageTransferable.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ImageTransferable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "getTransferDataFlavors",
+            "acc": 1,
+            "dsc": "()[Ljava/awt/datatransfer/DataFlavor;"
+          },
+          {
+            "nme": "isDataFlavorSupported",
+            "acc": 1,
+            "dsc": "(Ljava/awt/datatransfer/DataFlavor;)Z"
+          },
+          {
+            "nme": "getTransferData",
+            "acc": 1,
+            "dsc": "(Ljava/awt/datatransfer/DataFlavor;)Ljava/lang/Object;",
+            "exs": [
+              "java/awt/datatransfer/UnsupportedFlavorException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "image",
+            "dsc": "Ljava/awt/image/BufferedImage;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/spi/ImageWriterSpiBase.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/spi/ImageWriterSpiBase",
+        "super": "javax/imageio/spi/ImageWriterSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/UInt32ImageTypeSpecifier.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/util/UInt32ImageTypeSpecifier",
+        "super": "javax/imageio/ImageTypeSpecifier",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/awt/color/ColorSpace;ZZLjava/awt/image/SampleModel;)V"
+          },
+          {
+            "nme": "createInterleaved",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ColorSpace;[IZZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createBanded",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ColorSpace;[I[IZZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/IIOInputStreamAdapter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/util/IIOInputStreamAdapter",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;J)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;JZ)V"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "markSupported",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "mark",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "findMaxLen",
+            "acc": 2,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "input",
+            "dsc": "Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "hasLength",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "left",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "markPosition",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/LCMSSanitizerStrategy.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/LCMSSanitizerStrategy",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fixProfile",
+            "acc": 1,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)V"
+          },
+          {
+            "nme": "validationAltersProfileHeader",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/spi/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/imageio/spi/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/YCbCrConverter$ITU_R_601.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/YCbCrConverter$ITU_R_601",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "buildYCCtoRGBtable",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$500",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$600",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$700",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$800",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "Cr_R_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cb_B_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cr_G_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cb_G_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Y_LUT",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStreamSpi$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ZoomToFitAction.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ZoomToFitAction",
+        "super": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ZoomAction",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "actionPerformed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/ActionEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/MemoryCache.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/stream/MemoryCache",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/nio/channels/ReadableByteChannel;)V"
+          },
+          {
+            "nme": "fetchBlock",
+            "acc": 0,
+            "dsc": "()[B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBlock",
+            "acc": 2,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isOpen",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteBuffer;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "(J)Ljava/nio/channels/SeekableByteChannel;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteBuffer;)I"
+          },
+          {
+            "nme": "truncate",
+            "acc": 1,
+            "dsc": "(J)Ljava/nio/channels/SeekableByteChannel;"
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "BLOCK_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 26,
+            "nme": "NULL_BLOCK",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "cache",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<[B>;"
+          },
+          {
+            "acc": 18,
+            "nme": "channel",
+            "dsc": "Ljava/nio/channels/ReadableByteChannel;"
+          },
+          {
+            "acc": 2,
+            "nme": "maxBlock",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "length",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "position",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "start",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedChannelImageInputStream$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedChannelImageInputStream$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/Int16ImageTypeSpecifier.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/util/Int16ImageTypeSpecifier",
+        "super": "javax/imageio/ImageTypeSpecifier",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/awt/color/ColorSpace;[IZZ)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$GRAY.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$GRAY",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "header",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ICCProfileSanitizer$Factory.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/color/ICCProfileSanitizer$Factory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "()Lcom/twelvemonkeys/imageio/color/ICCProfileSanitizer;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorSpaces.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/ColorSpaces",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createColorSpace",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Ljava/awt/color/ICC_ColorSpace;"
+          },
+          {
+            "nme": "getInternalCS",
+            "acc": 8,
+            "dsc": "(I[B)Ljava/awt/color/ICC_ColorSpace;"
+          },
+          {
+            "nme": "getCachedOrCreateCS",
+            "acc": 10,
+            "dsc": "(Ljava/awt/color/ICC_Profile;[B)Ljava/awt/color/ICC_ColorSpace;"
+          },
+          {
+            "nme": "getCachedCS",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/color/ColorSpaces$Key;)Ljava/awt/color/ICC_ColorSpace;"
+          },
+          {
+            "nme": "getCachedCS",
+            "acc": 8,
+            "dsc": "([B)Ljava/awt/color/ICC_ColorSpace;"
+          },
+          {
+            "nme": "validateColorSpace",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ICC_ColorSpace;)V"
+          },
+          {
+            "nme": "isCS_sRGB",
+            "acc": 131081,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Z",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "isCS_GRAY",
+            "acc": 131081,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Z",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "validateProfile",
+            "acc": 131081,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)Ljava/awt/color/ICC_Profile;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "getColorSpace",
+            "acc": 9,
+            "dsc": "(I)Ljava/awt/color/ColorSpace;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          },
+          {
+            "acc": 25,
+            "nme": "CS_ADOBE_RGB_1998",
+            "dsc": "I",
+            "val": 5000
+          },
+          {
+            "acc": 25,
+            "nme": "CS_GENERIC_CMYK",
+            "dsc": "I",
+            "val": 5001
+          },
+          {
+            "acc": 10,
+            "nme": "adobeRGB1998",
+            "dsc": "Ljava/lang/ref/WeakReference;",
+            "sig": "Ljava/lang/ref/WeakReference<Ljava/awt/color/ICC_Profile;>;"
+          },
+          {
+            "acc": 10,
+            "nme": "genericCMYK",
+            "dsc": "Ljava/lang/ref/WeakReference;",
+            "sig": "Ljava/lang/ref/WeakReference<Ljava/awt/color/ICC_Profile;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "cache",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lcom/twelvemonkeys/imageio/color/ColorSpaces$Key;Ljava/awt/color/ICC_ColorSpace;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/URLImageInputStreamSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/URLImageInputStreamSpi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ProviderInfo;)V"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "canUseCacheFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ICCProfileSanitizer.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/color/ICCProfileSanitizer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fixProfile",
+            "acc": 1025,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)V"
+          },
+          {
+            "nme": "validationAltersProfileHeader",
+            "acc": 1025,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/KCMSSanitizerStrategy.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/KCMSSanitizerStrategy",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fixProfile",
+            "acc": 1,
+            "dsc": "(Ljava/awt/color/ICC_Profile;)V"
+          },
+          {
+            "nme": "validationAltersProfileHeader",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "fixProfileXYZTag",
+            "acc": 10,
+            "dsc": "(Ljava/awt/color/ICC_Profile;I)Z"
+          },
+          {
+            "nme": "intFromBigEndian",
+            "acc": 10,
+            "dsc": "([BI)I"
+          },
+          {
+            "nme": "intToBigEndian",
+            "acc": 10,
+            "dsc": "(I[BI)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "CORBIS_RGB_ALTERNATE_XYZ",
+            "dsc": "I",
+            "val": 396690872
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedChannelImageInputStream.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedChannelImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/RandomAccessFile;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/FileInputStream;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/nio/channels/SeekableByteChannel;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/stream/Cache;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/nio/channels/SeekableByteChannel;Z)V"
+          },
+          {
+            "nme": "fillBuffer",
+            "acc": 2,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "bufferEmpty",
+            "acc": 2,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setByteOrder",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteOrder;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readDirect",
+            "acc": 2,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBuffered",
+            "acc": 2,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readShort",
+            "acc": 1,
+            "dsc": "()S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "CLOSEABLE_STUB",
+            "dsc": "Ljava/io/Closeable;"
+          },
+          {
+            "acc": 24,
+            "nme": "DEFAULT_BUFFER_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 2,
+            "nme": "byteBuffer",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "bufferPos",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "bufferLimit",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCache",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCacheArray",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "channel",
+            "dsc": "Ljava/nio/channels/SeekableByteChannel;"
+          },
+          {
+            "acc": 2,
+            "nme": "closeable",
+            "dsc": "Ljava/io/Closeable;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel",
+        "super": "javax/swing/JLabel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "setupActions",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "bindAction",
+            "acc": 130,
+            "dsc": "(Ljavax/swing/Action;Ljava/lang/String;[Ljavax/swing/KeyStroke;)V"
+          },
+          {
+            "nme": "createPopupMenu",
+            "acc": 2,
+            "dsc": "()Ljavax/swing/JPopupMenu;"
+          },
+          {
+            "nme": "addCheckBoxItem",
+            "acc": 2,
+            "dsc": "(Ljavax/swing/Action;Ljavax/swing/JMenu;Ljavax/swing/ButtonGroup;)V"
+          },
+          {
+            "nme": "getDefaultBackground",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/Color;"
+          },
+          {
+            "nme": "createTexture",
+            "acc": 10,
+            "dsc": "()Ljava/awt/Paint;"
+          },
+          {
+            "nme": "paintComponent",
+            "acc": 4,
+            "dsc": "(Ljava/awt/Graphics;)V"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "access$102",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "ZOOM_IN",
+            "dsc": "Ljava/lang/String;",
+            "val": "zoom-in"
+          },
+          {
+            "acc": 24,
+            "nme": "ZOOM_OUT",
+            "dsc": "Ljava/lang/String;",
+            "val": "zoom-out"
+          },
+          {
+            "acc": 24,
+            "nme": "ZOOM_ACTUAL",
+            "dsc": "Ljava/lang/String;",
+            "val": "zoom-actual"
+          },
+          {
+            "acc": 24,
+            "nme": "ZOOM_FIT",
+            "dsc": "Ljava/lang/String;",
+            "val": "zoom-fit"
+          },
+          {
+            "acc": 2,
+            "nme": "image",
+            "dsc": "Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "acc": 0,
+            "nme": "backgroundPaint",
+            "dsc": "Ljava/awt/Paint;"
+          },
+          {
+            "acc": 16,
+            "nme": "checkeredBG",
+            "dsc": "Ljava/awt/Paint;"
+          },
+          {
+            "acc": 16,
+            "nme": "defaultBG",
+            "dsc": "Ljava/awt/Color;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi$InputStreamFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi$InputStreamFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/stream/BufferedInputStreamImageInputStreamSpi$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/WriterFileSuffixFilter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/util/WriterFileSuffixFilter",
+        "super": "javax/swing/filechooser/FileFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)Z"
+          },
+          {
+            "nme": "hasWriterForSuffix",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "knownSuffixes",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Boolean;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageWriterBase.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/ImageWriterBase",
+        "super": "javax/imageio/ImageWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljavax/imageio/spi/ImageWriterSpi;)V"
+          },
+          {
+            "nme": "getFormatName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setOutput",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "assertOutput",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resetMembers",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getDefaultStreamMetadata",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/ImageWriteParam;)Ljavax/imageio/metadata/IIOMetadata;"
+          },
+          {
+            "nme": "convertStreamMetadata",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/metadata/IIOMetadata;Ljavax/imageio/ImageWriteParam;)Ljavax/imageio/metadata/IIOMetadata;"
+          },
+          {
+            "nme": "getSourceRegion",
+            "acc": 12,
+            "dsc": "(Ljavax/imageio/ImageWriteParam;II)Ljava/awt/Rectangle;"
+          },
+          {
+            "nme": "fakeAOI",
+            "acc": 12,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljavax/imageio/ImageWriteParam;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "fakeSubsampling",
+            "acc": 12,
+            "dsc": "(Ljava/awt/Image;Ljavax/imageio/ImageWriteParam;)Ljava/awt/Image;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "imageOutput",
+            "dsc": "Ljavax/imageio/stream/ImageOutputStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/imageio/stream/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$Profiles.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$Profiles",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "loadProfiles",
+            "acc": 10,
+            "dsc": "()Ljava/util/Properties;"
+          },
+          {
+            "nme": "getPath",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "PROFILES",
+            "dsc": "Ljava/util/Properties;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/Cache.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/imageio/stream/Cache",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "flushBefore",
+            "acc": 1025,
+            "dsc": "(J)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/RasterUtils$2.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/util/RasterUtils$2",
+        "super": "java/awt/image/WritableRaster",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/awt/image/SampleModel;Ljava/awt/image/DataBuffer;Ljava/awt/Point;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/spi/ProviderInfo.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/spi/ProviderInfo",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Package;)V"
+          },
+          {
+            "nme": "fakeVendor",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Package;)Ljava/lang/String;"
+          },
+          {
+            "nme": "fakeVersion",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Package;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getImplementationTitle",
+            "acc": 16,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getVendorName",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getVersion",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "title",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "vendorName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "version",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/StreamProviderInfo.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/stream/StreamProviderInfo",
+        "super": "com/twelvemonkeys/imageio/spi/ProviderInfo",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedRAFImageInputStreamSpi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ProviderInfo;)V"
+          },
+          {
+            "nme": "onRegistration",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class;)V",
+            "sig": "(Ljavax/imageio/spi/ServiceRegistry;Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "nme": "canUseCacheFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/color/ColorSpaces$Key.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/ColorSpaces$Key",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "data",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/FileCache.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/stream/FileCache",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/nio/channels/ReadableByteChannel;Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fetch",
+            "acc": 0,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isOpen",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteBuffer;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "(J)Ljava/nio/channels/SeekableByteChannel;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteBuffer;)I"
+          },
+          {
+            "nme": "truncate",
+            "acc": 1,
+            "dsc": "(J)Ljava/nio/channels/SeekableByteChannel;"
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1,
+            "dsc": "(J)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "BLOCK_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 18,
+            "nme": "cache",
+            "dsc": "Ljava/nio/channels/FileChannel;"
+          },
+          {
+            "acc": 18,
+            "nme": "channel",
+            "dsc": "Ljava/nio/channels/ReadableByteChannel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$2",
+        "super": "javax/swing/TransferHandler",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;)V"
+          },
+          {
+            "nme": "getSourceActions",
+            "acc": 1,
+            "dsc": "(Ljavax/swing/JComponent;)I"
+          },
+          {
+            "nme": "createTransferable",
+            "acc": 4,
+            "dsc": "(Ljavax/swing/JComponent;)Ljava/awt/datatransfer/Transferable;"
+          },
+          {
+            "nme": "importData",
+            "acc": 1,
+            "dsc": "(Ljavax/swing/JComponent;Ljava/awt/datatransfer/Transferable;)Z"
+          },
+          {
+            "nme": "canImport",
+            "acc": 1,
+            "dsc": "(Ljavax/swing/JComponent;[Ljava/awt/datatransfer/DataFlavor;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/YCbCrConverter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/color/YCbCrConverter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "convertYCbCr2RGB",
+            "acc": 9,
+            "dsc": "([B[B[D[DI)V"
+          },
+          {
+            "nme": "convertJPEGYCbCr2RGB",
+            "acc": 9,
+            "dsc": "([B[BI)V"
+          },
+          {
+            "nme": "convertRec601YCbCr2RGB",
+            "acc": 9,
+            "dsc": "([B[BI)V"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)B"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "SCALEBITS",
+            "dsc": "I",
+            "val": 16
+          },
+          {
+            "acc": 26,
+            "nme": "MAXJSAMPLE",
+            "dsc": "I",
+            "val": 255
+          },
+          {
+            "acc": 26,
+            "nme": "CENTERJSAMPLE",
+            "dsc": "I",
+            "val": 128
+          },
+          {
+            "acc": 26,
+            "nme": "ONE_HALF",
+            "dsc": "I",
+            "val": 32768
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStream.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "com/twelvemonkeys/imageio/stream/BufferedFileImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/RandomAccessFile;)V"
+          },
+          {
+            "nme": "fillBuffer",
+            "acc": 2,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "bufferEmpty",
+            "acc": 2,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setByteOrder",
+            "acc": 1,
+            "dsc": "(Ljava/nio/ByteOrder;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readDirect",
+            "acc": 2,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBuffered",
+            "acc": 2,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readShort",
+            "acc": 1,
+            "dsc": "()S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEFAULT_BUFFER_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "bufferPos",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "bufferLimit",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCache",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 18,
+            "nme": "integralCacheArray",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "raf",
+            "dsc": "Ljava/io/RandomAccessFile;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$CIEXYZ.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$CIEXYZ",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "header",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/YCbCrConverter$JPEG.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/color/YCbCrConverter$JPEG",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "buildYCCtoRGBtable",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "Cr_R_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cb_B_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cr_G_LUT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "Cb_G_LUT",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/ByteArrayImageInputStreamSpi.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/ByteArrayImageInputStreamSpi",
+        "super": "javax/imageio/spi/ImageInputStreamSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ProviderInfo;)V"
+          },
+          {
+            "nme": "createInputStreamInstance",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;ZLjava/io/File;)Ljavax/imageio/stream/ImageInputStream;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "(Ljava/util/Locale;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/spi/ImageReaderSpiBase.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/spi/ImageReaderSpiBase",
+        "super": "javax/imageio/spi/ImageReaderSpi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/imageio/spi/ReaderWriterProviderInfo;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/util/ImageTypeSpecifiers.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/util/ImageTypeSpecifiers",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createFromBufferedImageType",
+            "acc": 9,
+            "dsc": "(I)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createPacked",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ColorSpace;IIIIIZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "calculateRequiredBits",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "createPackedOddBits",
+            "acc": 8,
+            "dsc": "(Ljava/awt/color/ColorSpace;IIIIIIZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createInterleaved",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ColorSpace;[IIZZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createBanded",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ColorSpace;[I[IIZZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createGrayscale",
+            "acc": 9,
+            "dsc": "(II)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createGrayscale",
+            "acc": 9,
+            "dsc": "(IIZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createPackedGrayscale",
+            "acc": 9,
+            "dsc": "(Ljava/awt/color/ColorSpace;II)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "([B[B[B[BII)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "([IZIII)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createFromIndexColorModel",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createDiscreteAlphaIndexedFromIndexColorModel",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createDiscreteExtraSamplesIndexedFromIndexColorModel",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/IndexColorModel;IZ)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "createFromRenderedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/RenderedImage;)Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "TYPE_INT_RGB",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "acc": 26,
+            "nme": "TYPE_INT_BGR",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "acc": 26,
+            "nme": "TYPE_USHORT_565_RGB",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          },
+          {
+            "acc": 26,
+            "nme": "TYPE_USHORT_555_RGB",
+            "dsc": "Ljavax/imageio/ImageTypeSpecifier;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/color/ColorProfiles$sRGB.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/color/ColorProfiles$sRGB",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "header",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/IIOOutputStreamAdapter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/util/IIOOutputStreamAdapter",
+        "super": "java/io/OutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertOpen",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "output",
+            "dsc": "Ljavax/imageio/stream/ImageOutputStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$1$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$1$1",
+        "super": "javax/swing/AbstractAction",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$1;)V"
+          },
+          {
+            "nme": "actionPerformed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/ActionEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$1;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pTitle",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$pImage",
+            "dsc": "Ljava/awt/image/BufferedImage;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/stream/ByteArrayImageInputStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/stream/ByteArrayImageInputStream",
+        "super": "javax/imageio/stream/ImageInputStreamImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "isMax",
+            "acc": 10,
+            "dsc": "(IILjava/lang/String;)I"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "data",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "dataOffset",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "dataLength",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ZoomAction.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ZoomAction",
+        "super": "javax/swing/AbstractAction",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/lang/String;D)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "actionPerformed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/ActionEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "zoomFactor",
+            "dsc": "D"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/util/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/imageio/util/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChangeBackgroundAction.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/ImageReaderBase$ImageLabel$ChangeBackgroundAction",
+        "super": "javax/swing/AbstractAction",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;Ljava/lang/String;Ljava/awt/Paint;)V"
+          },
+          {
+            "nme": "actionPerformed",
+            "acc": 1,
+            "dsc": "(Ljava/awt/event/ActionEvent;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "paint",
+            "dsc": "Ljava/awt/Paint;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/ImageReaderBase$ImageLabel;"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,210 @@
+{
+  "md5": "a49292804363e695baf38a70296ed2cd",
+  "sha2": "2b335b1b1918af7a7d6ae5c739c708a99b3c1f9e",
+  "sha256": "590f8966d3136d92acbdcf6d1107dac789e5d6af219d766dfdc3b1c0fe3cee81",
+  "contents": {
+    "classes": {
+      "net/fabricmc/loom/nativeplatform/LoomNativePlatformException.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/loom/nativeplatform/LoomNativePlatformException",
+        "super": "java/lang/Exception",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/loom/nativeplatform/LoomNativePlatformUtils.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/loom/nativeplatform/LoomNativePlatformUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isReady",
+            "acc": 40,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "loadLibrary",
+            "acc": 10,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "OS_ID",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 26,
+            "nme": "NATIVE_LIBS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+          },
+          {
+            "acc": 10,
+            "nme": "initialized",
+            "dsc": "Z"
+          },
+          {
+            "acc": 10,
+            "nme": "isReady",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "net/fabricmc/loom/nativeplatform/OperatingSystem.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "net/fabricmc/loom/nativeplatform/OperatingSystem",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "getCurrent",
+            "acc": 10,
+            "dsc": "()Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "WINDOWS",
+            "dsc": "Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MACOS",
+            "dsc": "Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "LINUX",
+            "dsc": "Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "acc": 25,
+            "nme": "CURRENT",
+            "dsc": "Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lnet/fabricmc/loom/nativeplatform/OperatingSystem;"
+          }
+        ]
+      },
+      "net/fabricmc/loom/nativeplatform/LoomNativePlatformImpl.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/loom/nativeplatform/LoomNativePlatformImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getPidsHoldingFileHandles",
+            "acc": 265,
+            "dsc": "(Ljava/lang/String;)[J",
+            "exs": [
+              "net/fabricmc/loom/nativeplatform/LoomNativePlatformException"
+            ]
+          },
+          {
+            "nme": "getWindowTitlesForPid",
+            "acc": 265,
+            "dsc": "(J)[Ljava/lang/String;",
+            "exs": [
+              "net/fabricmc/loom/nativeplatform/LoomNativePlatformException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/loom/nativeplatform/LoomNativePlatform.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/loom/nativeplatform/LoomNativePlatform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getProcessesWithLockOn",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Ljava/util/List;",
+            "sig": "(Ljava/nio/file/Path;)Ljava/util/List<Ljava/lang/ProcessHandle;>;",
+            "exs": [
+              "net/fabricmc/loom/nativeplatform/LoomNativePlatformException"
+            ]
+          },
+          {
+            "nme": "getWindowTitlesForPid",
+            "acc": 9,
+            "dsc": "(J)Ljava/util/List;",
+            "sig": "(J)Ljava/util/List<Ljava/lang/String;>;",
+            "exs": [
+              "net/fabricmc/loom/nativeplatform/LoomNativePlatformException"
+            ]
+          },
+          {
+            "nme": "isSupported",
+            "acc": 9,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

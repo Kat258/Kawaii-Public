@@ -1,0 +1,272 @@
+{
+  "md5": "8d6142c9d405858eb2b0dacd60b4e6db",
+  "sha2": "dfc2e9ecd51e16b05487a8d289466c1e3a2a30f6",
+  "sha256": "af9bd73e0ecd6be405fdc24c49ea90cce54664fa71e7b0f65833393fb975400f",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onInvalidate",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback;)Lnet/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lnet/fabricmc/fabric/api/client/render/InvalidateRenderStateCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/rendering/v0/RenderingCallbackInvoker.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/client/rendering/v0/RenderingCallbackInvoker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onInitializeClient",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$onInitializeClient$0",
+            "acc": 4106,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/render/ColorProviderRegistry$2.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/api/client/render/ColorProviderRegistry$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 129,
+            "dsc": "(Lnet/minecraft/class_322;[Lnet/minecraft/class_2248;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2248;)Lnet/minecraft/class_322;"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "register",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;[Ljava/lang/Object;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/render/ColorProviderRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/render/ColorProviderRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 1153,
+            "dsc": "(Ljava/lang/Object;[Ljava/lang/Object;)V",
+            "sig": "(TProvider;[TT;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TT;)TProvider;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ITEM",
+            "dsc": "Lnet/fabricmc/fabric/api/client/render/ColorProviderRegistry;",
+            "sig": "Lnet/fabricmc/fabric/api/client/render/ColorProviderRegistry<Lnet/minecraft/class_1935;Lnet/minecraft/class_326;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLOCK",
+            "dsc": "Lnet/fabricmc/fabric/api/client/render/ColorProviderRegistry;",
+            "sig": "Lnet/fabricmc/fabric/api/client/render/ColorProviderRegistry<Lnet/minecraft/class_2248;Lnet/minecraft/class_322;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/render/ColorProviderRegistry$1.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/api/client/render/ColorProviderRegistry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 129,
+            "dsc": "(Lnet/minecraft/class_326;[Lnet/minecraft/class_1935;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1935;)Lnet/minecraft/class_326;"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "register",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;[Ljava/lang/Object;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/rendering/v0/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/client/rendering/v0/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      }
+    }
+  }
+}

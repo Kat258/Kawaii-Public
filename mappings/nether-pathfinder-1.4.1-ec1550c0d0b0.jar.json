@@ -1,0 +1,2407 @@
+{
+  "md5": "48ab0ec481e7cac16a1687947f02da63",
+  "sha2": "57a5333bede3c306b28aeec512e1e0ece9a5ac97",
+  "sha256": "9a1fbfff7bcd5083ef0bfbdba62a1e5f70b8f2e83a8a18abe2433cb791f2fbf9",
+  "contents": {
+    "classes": {
+      "dev/babbaj/pathfinder/xz/r.class": {
+        "ver": 51,
+        "acc": 32,
+        "nme": "dev/babbaj/pathfinder/xz/r",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 8,
+            "dsc": "()I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/bc;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/bc;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "c",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/IOException;"
+          },
+          {
+            "acc": 18,
+            "nme": "b",
+            "dsc": "[B"
+          },
+          {
+            "acc": 4106,
+            "nme": "b",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/y.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/y",
+        "super": "dev/babbaj/pathfinder/xz/aa",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()[B"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ljava/util/zip/CRC32;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/PathSegment.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/PathSegment",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Z[J)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "finished",
+            "dsc": "Z"
+          },
+          {
+            "acc": 17,
+            "nme": "packed",
+            "dsc": "[J"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ag.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/ag",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 1,
+            "nme": "b",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/k.class": {
+        "ver": 51,
+        "acc": 1536,
+        "nme": "dev/babbaj/pathfinder/xz/k",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "b",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "c",
+            "acc": 1025,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/au.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/au",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/NetherPathfinder.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/NetherPathfinder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "newContext",
+            "acc": 265,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "freeContext",
+            "acc": 265,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "insertChunkData",
+            "acc": 265,
+            "dsc": "(JII[Z)V"
+          },
+          {
+            "nme": "getOrCreateChunk",
+            "acc": 265,
+            "dsc": "(JII)J"
+          },
+          {
+            "nme": "getChunkPointer",
+            "acc": 265,
+            "dsc": "(JII)J"
+          },
+          {
+            "nme": "hasChunkFromJava",
+            "acc": 265,
+            "dsc": "(JII)Z"
+          },
+          {
+            "nme": "cullFarChunks",
+            "acc": 265,
+            "dsc": "(JIII)V"
+          },
+          {
+            "nme": "pathFind",
+            "acc": 265,
+            "dsc": "(JIIIIIIZZIZ)Ldev/babbaj/pathfinder/PathSegment;"
+          },
+          {
+            "nme": "raytrace0",
+            "acc": 266,
+            "dsc": "(JII[D[D[Z[D)V"
+          },
+          {
+            "nme": "raytrace",
+            "acc": 9,
+            "dsc": "(JII[D[D[Z[D)V"
+          },
+          {
+            "nme": "isVisibleMulti0",
+            "acc": 266,
+            "dsc": "(JII[D[DZ)I"
+          },
+          {
+            "nme": "isVisibleMulti",
+            "acc": 9,
+            "dsc": "(JII[D[DZ)I"
+          },
+          {
+            "nme": "isVisible",
+            "acc": 265,
+            "dsc": "(JIDDDDDD)Z"
+          },
+          {
+            "nme": "cancel",
+            "acc": 265,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "getX2Index",
+            "acc": 264,
+            "dsc": "()J"
+          },
+          {
+            "nme": "isThisSystemSupported",
+            "acc": 9,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getNativeLibName",
+            "acc": 10,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getNativeLib",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)[B"
+          },
+          {
+            "nme": "tryLoadLibrary",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 9,
+            "nme": "CACHE_MISS_GENERATE",
+            "dsc": "I"
+          },
+          {
+            "acc": 9,
+            "nme": "CACHE_MISS_AIR",
+            "dsc": "I"
+          },
+          {
+            "acc": 9,
+            "nme": "CACHE_MISS_SOLID",
+            "dsc": "I"
+          },
+          {
+            "acc": 26,
+            "nme": "IS_LOADED",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/a.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/a",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "()Ldev/babbaj/pathfinder/xz/a;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(I)[B"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 74,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/a;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/Octree.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/Octree",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "x16Index",
+            "acc": 9,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "x8Index",
+            "acc": 9,
+            "dsc": "(III)I"
+          },
+          {
+            "nme": "x4Index",
+            "acc": 9,
+            "dsc": "(III)I"
+          },
+          {
+            "nme": "x2Index",
+            "acc": 9,
+            "dsc": "(III)I"
+          },
+          {
+            "nme": "bitIndex",
+            "acc": 9,
+            "dsc": "(III)I"
+          },
+          {
+            "nme": "getX2Ptr",
+            "acc": 10,
+            "dsc": "(JIII)J"
+          },
+          {
+            "nme": "setBlock",
+            "acc": 9,
+            "dsc": "(JIIIZ)V"
+          },
+          {
+            "nme": "initBlock",
+            "acc": 9,
+            "dsc": "(JIIIZ)V"
+          },
+          {
+            "nme": "getBlock",
+            "acc": 9,
+            "dsc": "(JIII)Z"
+          },
+          {
+            "nme": "setIsFromJava",
+            "acc": 9,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "getIsFromJava",
+            "acc": 9,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "UNSAFE",
+            "dsc": "Lsun/misc/Unsafe;"
+          },
+          {
+            "acc": 26,
+            "nme": "X2_INDEX_PTR",
+            "dsc": "J"
+          },
+          {
+            "acc": 25,
+            "nme": "SIZEOF_X2",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "SIZEOF_X4",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 25,
+            "nme": "SIZEOF_X8",
+            "dsc": "I",
+            "val": 64
+          },
+          {
+            "acc": 25,
+            "nme": "SIZEOF_X16",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "SIZEOF_CHUNK",
+            "dsc": "I",
+            "val": 4096
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ad.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ad",
+        "super": "dev/babbaj/pathfinder/xz/af",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "([BIII)Z"
+          },
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "([B)Ldev/babbaj/pathfinder/xz/ae;"
+          },
+          {
+            "nme": "b",
+            "acc": 9,
+            "dsc": "([B)Ldev/babbaj/pathfinder/xz/ae;"
+          },
+          {
+            "nme": "a",
+            "acc": 10,
+            "dsc": "([BI)Ldev/babbaj/pathfinder/xz/ae;"
+          },
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;)J"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/bd.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/bd",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 10,
+            "dsc": "(B)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "a",
+            "dsc": "[Z"
+          },
+          {
+            "acc": 26,
+            "nme": "a",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/o.class": {
+        "ver": 51,
+        "acc": 48,
+        "nme": "dev/babbaj/pathfinder/xz/o",
+        "super": "dev/babbaj/pathfinder/xz/n",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)Ljava/io/InputStream;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/aq.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/aq",
+        "super": "dev/babbaj/pathfinder/xz/am",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ap;)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ap;B)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4098,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ap;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ak.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ak",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I[B)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "b",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "c",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "d",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "e",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "f",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "g",
+            "dsc": "I"
+          },
+          {
+            "acc": 4106,
+            "nme": "a",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/d.class": {
+        "ver": 51,
+        "acc": 32,
+        "nme": "dev/babbaj/pathfinder/xz/d",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/aa;ZILdev/babbaj/pathfinder/xz/a;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "a",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ljava/io/DataInputStream;"
+          },
+          {
+            "acc": 16,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/g;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 16,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aa;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "c",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "d",
+            "dsc": "J"
+          },
+          {
+            "acc": 16,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "a",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 4106,
+            "nme": "c",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/v.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/v",
+        "super": "dev/babbaj/pathfinder/xz/w",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/ax.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ax",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/an.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/an",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ap;II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 17,
+            "nme": "b",
+            "dsc": "I"
+          },
+          {
+            "acc": 4098,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/al;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/l.class": {
+        "ver": 51,
+        "acc": 1536,
+        "nme": "dev/babbaj/pathfinder/xz/l",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)Ljava/io/InputStream;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/aa.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/aa",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(I)Ldev/babbaj/pathfinder/xz/aa;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/g.class": {
+        "ver": 51,
+        "acc": 48,
+        "nme": "dev/babbaj/pathfinder/xz/g",
+        "super": "dev/babbaj/pathfinder/xz/e",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "a",
+            "dsc": "J"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/at.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/at",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/am.class": {
+        "ver": 51,
+        "acc": 1056,
+        "nme": "dev/babbaj/pathfinder/xz/am",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ap;)V"
+          },
+          {
+            "nme": "a",
+            "acc": 16,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "a",
+            "dsc": "[S"
+          },
+          {
+            "acc": 16,
+            "nme": "a",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 16,
+            "nme": "b",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 16,
+            "nme": "b",
+            "dsc": "[S"
+          },
+          {
+            "acc": 4098,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/al;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/j.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/j",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;I)V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "available",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ah;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/IOException;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/s.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/s",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;IZ[BLdev/babbaj/pathfinder/xz/a;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "available",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/a;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ae;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aa;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/d;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aj;"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/IOException;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ac.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ac",
+        "super": "dev/babbaj/pathfinder/xz/aa",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()[B"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ljava/security/MessageDigest;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/c.class": {
+        "ver": 51,
+        "acc": 32,
+        "nme": "dev/babbaj/pathfinder/xz/c",
+        "super": "dev/babbaj/pathfinder/xz/b",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(J[B)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)Ljava/io/InputStream;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 4106,
+            "nme": "a",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/p.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/p",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "b",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;I[BLdev/babbaj/pathfinder/xz/a;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "available",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/a;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/DataInputStream;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ak;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aw;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ap;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "c",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "d",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/IOException;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/z.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/z",
+        "super": "dev/babbaj/pathfinder/xz/aa",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "a",
+            "dsc": "[[J"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "J"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/aj.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/aj",
+        "super": "dev/babbaj/pathfinder/xz/ai",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(JJ)V"
+          },
+          {
+            "nme": "c",
+            "acc": 4177,
+            "dsc": "()J"
+          },
+          {
+            "nme": "b",
+            "acc": 4177,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aa;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/aw.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/aw",
+        "super": "dev/babbaj/pathfinder/xz/av",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 1,
+            "nme": "c",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/as.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/as",
+        "super": "dev/babbaj/pathfinder/xz/ao",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ar;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ar;B)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4113,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ar;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/az.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/az",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "a",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/f.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/f",
+        "super": "dev/babbaj/pathfinder/xz/w",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/m.class": {
+        "ver": 51,
+        "acc": 48,
+        "nme": "dev/babbaj/pathfinder/xz/m",
+        "super": "java/lang/Exception",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/bb.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/bb",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ab.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ab",
+        "super": "dev/babbaj/pathfinder/xz/aa",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()[B"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/w.class": {
+        "ver": 51,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/xz/w",
+        "super": "java/io/IOException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/al.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/al",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[I"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/at;"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[S"
+          },
+          {
+            "acc": 17,
+            "nme": "b",
+            "dsc": "[S"
+          },
+          {
+            "acc": 17,
+            "nme": "c",
+            "dsc": "[S"
+          },
+          {
+            "acc": 17,
+            "nme": "d",
+            "dsc": "[S"
+          },
+          {
+            "acc": 17,
+            "nme": "b",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 17,
+            "nme": "c",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 17,
+            "nme": "d",
+            "dsc": "[[S"
+          },
+          {
+            "acc": 17,
+            "nme": "e",
+            "dsc": "[S"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/i.class": {
+        "ver": 51,
+        "acc": 48,
+        "nme": "dev/babbaj/pathfinder/xz/i",
+        "super": "dev/babbaj/pathfinder/xz/h",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)Ljava/io/InputStream;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ap.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ap",
+        "super": "dev/babbaj/pathfinder/xz/al",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ak;Ldev/babbaj/pathfinder/xz/aw;III)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ak;"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/av;"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ar;"
+          },
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aq;"
+          },
+          {
+            "acc": 17,
+            "nme": "b",
+            "dsc": "Ldev/babbaj/pathfinder/xz/aq;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/b.class": {
+        "ver": 51,
+        "acc": 1056,
+        "nme": "dev/babbaj/pathfinder/xz/b",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "b",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "c",
+            "acc": 17,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/av.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/av",
+        "super": "dev/babbaj/pathfinder/xz/au",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([SI)I"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([S)I"
+          },
+          {
+            "nme": "b",
+            "acc": 17,
+            "dsc": "([S)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "b",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/t.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/t",
+        "super": "dev/babbaj/pathfinder/xz/w",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/q.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/q",
+        "super": "dev/babbaj/pathfinder/xz/w",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "b",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ai.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/ai",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/f;)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()J"
+          },
+          {
+            "nme": "b",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "c",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "a",
+            "acc": 0,
+            "dsc": "(JJ)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/w;"
+          },
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "J"
+          },
+          {
+            "acc": 1,
+            "nme": "b",
+            "dsc": "J"
+          },
+          {
+            "acc": 1,
+            "nme": "c",
+            "dsc": "J"
+          },
+          {
+            "acc": 1,
+            "nme": "d",
+            "dsc": "J"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/af.class": {
+        "ver": 51,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/xz/af",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 9,
+            "dsc": "(J)I"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/ba.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ba",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/x.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/x",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/InputStream;B)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/InputStream;C)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/InputStream;Ldev/babbaj/pathfinder/xz/a;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([BII)I"
+          },
+          {
+            "nme": "available",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/a;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/s;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "b",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "Ljava/io/IOException;"
+          },
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/n.class": {
+        "ver": 51,
+        "acc": 1056,
+        "nme": "dev/babbaj/pathfinder/xz/n",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "b",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "c",
+            "acc": 17,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/e.class": {
+        "ver": 51,
+        "acc": 33,
+        "nme": "dev/babbaj/pathfinder/xz/e",
+        "super": "java/io/FilterInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/ah.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ah",
+        "super": "dev/babbaj/pathfinder/xz/ag",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/bc.class": {
+        "ver": 51,
+        "acc": 1537,
+        "nme": "dev/babbaj/pathfinder/xz/bc",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/ay.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ay",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "([BII)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "a",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "a",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ar.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ar",
+        "super": "dev/babbaj/pathfinder/xz/an",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ap;II)V"
+          },
+          {
+            "nme": "a",
+            "acc": 16,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[Ldev/babbaj/pathfinder/xz/as;"
+          },
+          {
+            "acc": 4113,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/ap;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/ao.class": {
+        "ver": 51,
+        "acc": 1057,
+        "nme": "dev/babbaj/pathfinder/xz/ao",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ldev/babbaj/pathfinder/xz/ar;)V"
+          },
+          {
+            "nme": "a",
+            "acc": 16,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "a",
+            "dsc": "[S"
+          },
+          {
+            "acc": 4098,
+            "nme": "a",
+            "dsc": "Ldev/babbaj/pathfinder/xz/an;"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/h.class": {
+        "ver": 51,
+        "acc": 1056,
+        "nme": "dev/babbaj/pathfinder/xz/h",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "a",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "b",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "c",
+            "acc": 17,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "dev/babbaj/pathfinder/xz/ae.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/ae",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "a",
+            "dsc": "J"
+          }
+        ]
+      },
+      "dev/babbaj/pathfinder/xz/u.class": {
+        "ver": 51,
+        "acc": 49,
+        "nme": "dev/babbaj/pathfinder/xz/u",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "a",
+            "dsc": "[B"
+          },
+          {
+            "acc": 25,
+            "nme": "b",
+            "dsc": "[B"
+          }
+        ]
+      }
+    }
+  }
+}

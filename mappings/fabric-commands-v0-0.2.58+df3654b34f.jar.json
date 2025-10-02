@@ -1,0 +1,50 @@
+{
+  "md5": "cec1bd04d8f0891f6839dbfdb0704b7a",
+  "sha2": "b629fdec7d46e166e9b554ffcd68134d74f8aca3",
+  "sha256": "769f5b8094f456da4abdf68c786b4ae5c25a2f295d380fd69e9db71df3af4f35",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/registry/CommandRegistry.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "net/fabricmc/fabric/api/registry/CommandRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(ZLjava/util/function/Consumer;)V",
+            "sig": "(ZLjava/util/function/Consumer<Lcom/mojang/brigadier/CommandDispatcher<Lnet/minecraft/server/command/ServerCommandSource;>;>;)V"
+          },
+          {
+            "nme": "lambda$register$0",
+            "acc": 4106,
+            "dsc": "(ZLjava/util/function/Consumer;Lcom/mojang/brigadier/CommandDispatcher;Lnet/minecraft/command/CommandRegistryAccess;Lnet/minecraft/server/command/CommandManager$RegistrationEnvironment;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/registry/CommandRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      }
+    }
+  }
+}

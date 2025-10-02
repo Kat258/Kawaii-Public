@@ -1,0 +1,104 @@
+{
+  "md5": "4fbd9b7d654cd04d6c3729da1532d9c6",
+  "sha2": "43ec3445fcf2e951325a3641feb302e4a297c80b",
+  "sha256": "9d88cb1e46a9b77511954ad7f8a467a800fc7e7edacf6f2d9cc830be149e6b82",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/mixin/block/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/block/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/block/BlockStateMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/block/BlockStateMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2680"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/block/v1/FabricBlock.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/block/v1/FabricBlock",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getAppearance",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2680;Lnet/minecraft/class_1920;Lnet/minecraft/class_2338;Lnet/minecraft/class_2350;Lnet/minecraft/class_2680;Lnet/minecraft/class_2338;)Lnet/minecraft/class_2680;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/block/BlockMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/block/BlockMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2248"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/block/v1/FabricBlockState.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/block/v1/FabricBlockState",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getAppearance",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1920;Lnet/minecraft/class_2338;Lnet/minecraft/class_2350;Lnet/minecraft/class_2680;Lnet/minecraft/class_2338;)Lnet/minecraft/class_2680;"
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

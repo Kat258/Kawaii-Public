@@ -1,0 +1,2314 @@
+{
+  "md5": "88be418c10b4dd90d07d9fe1ec714db6",
+  "sha2": "5025aa95f382f9eeadc87eeb88dd2be0e08f17ec",
+  "sha256": "fb6ae164dc3d7d9c0e9d9d593168dd7faea7b19332ecd83d154a2f7979558d1b",
+  "contents": {
+    "classes": {
+      "org/cadixdev/bombe/type/reference/InnerClassReference.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/reference/InnerClassReference",
+        "super": "org/cadixdev/bombe/type/reference/ClassReference",
+        "mthds": [
+          {
+            "nme": "deriveParentClass",
+            "acc": 10,
+            "dsc": "(Lorg/cadixdev/bombe/type/ObjectType;)Lorg/cadixdev/bombe/type/reference/ClassReference;",
+            "exs": [
+              "java/lang/IllegalArgumentException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/ClassReference;Lorg/cadixdev/bombe/type/ObjectType;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/ObjectType;)V"
+          },
+          {
+            "nme": "getParentClass",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/reference/ClassReference;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "parentClass",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/ClassReference;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/QualifiedReference.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/type/reference/QualifiedReference",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;)V"
+          },
+          {
+            "nme": "getType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 28,
+            "nme": "JVMS_COMPONENT_JOINER",
+            "dsc": "C",
+            "val": 46
+          },
+          {
+            "acc": 20,
+            "nme": "type",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/LazyInheritanceClassInfo.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "org/cadixdev/bombe/analysis/LazyInheritanceClassInfo",
+        "super": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Abstract",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isInterface",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSuperName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getInterfaces",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getFieldsByName",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set;",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection;)V",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;)V"
+          },
+          {
+            "nme": "lazy",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "provider",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "superName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "interfaces",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "fields",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "fieldsByName",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "methods",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "parents",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/InheritanceCompletable.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceCompletable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "provideInheritance",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "isComplete",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "complete",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)V"
+          },
+          {
+            "nme": "complete",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "complete",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          },
+          {
+            "nme": "lambda$complete$0",
+            "acc": 4098,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/TypeReader.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/TypeReader",
+        "super": "org/cadixdev/bombe/util/AbstractReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "readType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/Type;"
+          },
+          {
+            "nme": "readFieldType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/FieldType;"
+          },
+          {
+            "nme": "readArrayType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/ArrayType;"
+          },
+          {
+            "nme": "readBaseType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "nme": "readObjectType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/ObjectType;"
+          },
+          {
+            "nme": "readPrimitiveType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/PrimitiveType;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/ArrayType.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/ArrayType",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(ILorg/cadixdev/bombe/type/FieldType;)V"
+          },
+          {
+            "nme": "getDimCount",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getDims",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getComponent",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/FieldType;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "dimCount",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "arrayDims",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "component",
+            "dsc": "Lorg/cadixdev/bombe/type/FieldType;"
+          },
+          {
+            "acc": 18,
+            "nme": "descriptor",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/FieldReference.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/reference/FieldReference",
+        "super": "org/cadixdev/bombe/type/reference/MemberReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/ClassReference;Lorg/cadixdev/bombe/type/signature/FieldSignature;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/InheritanceProvider.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "provide",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPackage",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isInterface",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSuperName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getInterfaces",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getFieldsByName",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set;",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection;)V",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;)V"
+          },
+          {
+            "nme": "hasParent",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Z"
+          },
+          {
+            "nme": "hasParent",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Z"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/FieldSignature;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "canInherit",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/type/signature/FieldSignature;)Z"
+          },
+          {
+            "nme": "canInherit",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/type/signature/MethodSignature;)Z"
+          },
+          {
+            "nme": "overrides",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)Z"
+          },
+          {
+            "nme": "lazy",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;"
+          },
+          {
+            "nme": "lambda$provideParents$1",
+            "acc": 4106,
+            "dsc": "(Ljava/util/Collection;Lorg/cadixdev/bombe/analysis/InheritanceProvider;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          },
+          {
+            "nme": "lambda$provideParents$0",
+            "acc": 4106,
+            "dsc": "(Ljava/util/Collection;Lorg/cadixdev/bombe/analysis/InheritanceProvider;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/jar/JarResourceEntry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/jar/JarResourceEntry",
+        "super": "org/cadixdev/bombe/jar/AbstractJarEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;J[B)V"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getContents",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "accept",
+            "acc": 17,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/JarResourceEntry;"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "contents",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "extension",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/signature/MethodSignature.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/signature/MethodSignature",
+        "super": "org/cadixdev/bombe/type/signature/MemberSignature",
+        "mthds": [
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lorg/cadixdev/bombe/type/signature/MethodSignature;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/signature/MethodSignature;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Method;)Lorg/cadixdev/bombe/type/signature/MethodSignature;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/MethodDescriptor;)V"
+          },
+          {
+            "nme": "getDescriptor",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/MethodDescriptor;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "descriptor",
+            "dsc": "Lorg/cadixdev/bombe/type/MethodDescriptor;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/ClassReference.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/type/reference/ClassReference",
+        "super": "org/cadixdev/bombe/type/reference/QualifiedReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;Lorg/cadixdev/bombe/type/ObjectType;)V"
+          },
+          {
+            "nme": "getClassType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/ObjectType;"
+          },
+          {
+            "nme": "getInnerClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/reference/InnerClassReference;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/FieldSignature;)Lorg/cadixdev/bombe/type/reference/FieldReference;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/FieldType;)Lorg/cadixdev/bombe/type/reference/FieldReference;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lorg/cadixdev/bombe/type/reference/FieldReference;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/reference/FieldReference;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;)Lorg/cadixdev/bombe/type/reference/MethodReference;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/MethodDescriptor;)Lorg/cadixdev/bombe/type/reference/MethodReference;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lorg/cadixdev/bombe/type/reference/MethodReference;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 28,
+            "nme": "INNER_CLASS_SEPARATOR_CHAR",
+            "dsc": "C",
+            "val": 36
+          },
+          {
+            "acc": 20,
+            "nme": "classType",
+            "dsc": "Lorg/cadixdev/bombe/type/ObjectType;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Impl.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Impl",
+        "super": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Abstract",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;ZLjava/lang/String;Ljava/util/List;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)V",
+            "sig": "(Ljava/lang/String;ZLjava/lang/String;Ljava/util/List<Ljava/lang/String;>;Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isInterface",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSuperName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getInterfaces",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getFieldsByName",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set;",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Ljava/util/Set<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection;)V",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;)V"
+          },
+          {
+            "nme": "lazy",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "isInterface",
+            "dsc": "Z"
+          },
+          {
+            "acc": 20,
+            "nme": "superName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "interfaces",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "fields",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "fieldsByName",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "methods",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "parents",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/Jars.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/cadixdev/bombe/jar/Jars",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "walk",
+            "acc": 9,
+            "dsc": "(Ljava/util/jar/JarFile;)Ljava/util/stream/Stream;",
+            "sig": "(Ljava/util/jar/JarFile;)Ljava/util/stream/Stream<Lorg/cadixdev/bombe/jar/AbstractJarEntry;>;"
+          },
+          {
+            "nme": "transform",
+            "acc": 137,
+            "dsc": "(Ljava/nio/file/Path;Ljava/nio/file/Path;[Lorg/cadixdev/bombe/jar/JarEntryTransformer;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "transform",
+            "acc": 137,
+            "dsc": "(Ljava/util/jar/JarFile;Ljava/util/jar/JarOutputStream;[Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Ljava/util/jar/JarOutputStream;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$transform$3",
+            "acc": 4106,
+            "dsc": "(Ljava/util/Set;Ljava/util/jar/JarOutputStream;Lorg/cadixdev/bombe/jar/AbstractJarEntry;)V"
+          },
+          {
+            "nme": "lambda$transform$2",
+            "acc": 4106,
+            "dsc": "([Lorg/cadixdev/bombe/jar/JarEntryTransformer;Lorg/cadixdev/bombe/jar/AbstractJarEntry;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          },
+          {
+            "nme": "lambda$walk$1",
+            "acc": 4106,
+            "dsc": "(Ljava/util/jar/JarFile;Ljava/util/jar/JarEntry;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          },
+          {
+            "nme": "lambda$walk$0",
+            "acc": 4106,
+            "dsc": "(Ljava/util/jar/JarEntry;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/util/ByteStreams.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/cadixdev/bombe/util/ByteStreams",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "createBuffer",
+            "acc": 10,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "BUFFER_SIZE",
+            "dsc": "I",
+            "val": 8192
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/ObjectType.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/ObjectType",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getClassName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isAssignableFrom",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/Type;Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "className",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "descriptor",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/InheritanceType.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "canInherit",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)Z"
+          },
+          {
+            "nme": "fromModifiers",
+            "acc": 9,
+            "dsc": "(I)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "NONE",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PACKAGE_PRIVATE",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PROTECTED",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PUBLIC",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/JarManifestEntry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/jar/JarManifestEntry",
+        "super": "org/cadixdev/bombe/jar/AbstractJarEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(JLjava/util/jar/Manifest;)V"
+          },
+          {
+            "nme": "getManifest",
+            "acc": 17,
+            "dsc": "()Ljava/util/jar/Manifest;"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getContents",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/JarManifestEntry;"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NAME",
+            "dsc": "Ljava/lang/String;",
+            "val": "META-INF/MANIFEST.MF"
+          },
+          {
+            "acc": 26,
+            "nme": "EXTENSION",
+            "dsc": "Ljava/lang/String;",
+            "val": "MF"
+          },
+          {
+            "acc": 18,
+            "nme": "manifest",
+            "dsc": "Ljava/util/jar/Manifest;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/MemberReference.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/type/reference/MemberReference",
+        "super": "org/cadixdev/bombe/type/reference/QualifiedReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;Lorg/cadixdev/bombe/type/reference/ClassReference;Lorg/cadixdev/bombe/type/signature/MemberSignature;)V",
+            "sig": "(Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;Lorg/cadixdev/bombe/type/reference/ClassReference;TS;)V"
+          },
+          {
+            "nme": "getOwningClass",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/reference/ClassReference;"
+          },
+          {
+            "nme": "getSignature",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/signature/MemberSignature;",
+            "sig": "()TS;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "owningClass",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/ClassReference;"
+          },
+          {
+            "acc": 20,
+            "nme": "signature",
+            "dsc": "Lorg/cadixdev/bombe/type/signature/MemberSignature;",
+            "sig": "TS;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/TopLevelClassReference.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/reference/TopLevelClassReference",
+        "super": "org/cadixdev/bombe/type/reference/ClassReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/ObjectType;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/BaseType.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/cadixdev/bombe/type/BaseType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;IC)V",
+            "sig": "(C)V"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()C"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isValidBase",
+            "acc": 9,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "getFromKey",
+            "acc": 9,
+            "dsc": "(C)Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "nme": "lambda$getFromKey$1",
+            "acc": 4106,
+            "dsc": "(CLorg/cadixdev/bombe/type/BaseType;)Z"
+          },
+          {
+            "nme": "lambda$isValidBase$0",
+            "acc": 4106,
+            "dsc": "(CLorg/cadixdev/bombe/type/BaseType;)Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "BYTE",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "CHAR",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "DOUBLE",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FLOAT",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "INT",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "LONG",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "SHORT",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "BOOLEAN",
+            "dsc": "Lorg/cadixdev/bombe/type/BaseType;"
+          },
+          {
+            "acc": 18,
+            "nme": "key",
+            "dsc": "C"
+          },
+          {
+            "acc": 18,
+            "nme": "descriptor",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/cadixdev/bombe/type/BaseType;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/signature/FieldSignature.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/signature/FieldSignature",
+        "super": "org/cadixdev/bombe/type/signature/MemberSignature",
+        "mthds": [
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lorg/cadixdev/bombe/type/signature/FieldSignature;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Field;)Lorg/cadixdev/bombe/type/signature/FieldSignature;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/FieldType;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getType",
+            "acc": 1,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<Lorg/cadixdev/bombe/type/FieldType;>;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "Lorg/cadixdev/bombe/type/FieldType;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/MethodDescriptorReader.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/MethodDescriptorReader",
+        "super": "org/cadixdev/bombe/type/TypeReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/MethodDescriptor;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/CascadingInheritanceProvider.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/analysis/CascadingInheritanceProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lorg/cadixdev/bombe/analysis/InheritanceProvider;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "install",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Lorg/cadixdev/bombe/analysis/CascadingInheritanceProvider;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "providers",
+            "dsc": "Ljava/util/ArrayList;",
+            "sig": "Ljava/util/ArrayList<Lorg/cadixdev/bombe/analysis/InheritanceProvider;>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Abstract.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Abstract",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/CachingInheritanceProvider.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/analysis/CachingInheritanceProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;)V"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "lambda$provide$0",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/util/Optional;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "provider",
+            "dsc": "Lorg/cadixdev/bombe/analysis/InheritanceProvider;"
+          },
+          {
+            "acc": 18,
+            "nme": "cache",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/AbstractJarEntry.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/jar/AbstractJarEntry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;J)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTime",
+            "acc": 17,
+            "dsc": "()J"
+          },
+          {
+            "nme": "getPackage",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getSimpleName",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getContents",
+            "acc": 1025,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "write",
+            "acc": 17,
+            "dsc": "(Ljava/util/jar/JarOutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "accept",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "time",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "packageName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "simpleName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/JarClassEntry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/jar/JarClassEntry",
+        "super": "org/cadixdev/bombe/jar/AbstractJarEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;J[B)V"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getContents",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "accept",
+            "acc": 17,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/JarClassEntry;"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "EXTENSION",
+            "dsc": "Ljava/lang/String;",
+            "val": "class"
+          },
+          {
+            "acc": 18,
+            "nme": "contents",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/PrimitiveType.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/type/PrimitiveType",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getKey",
+            "acc": 1025,
+            "dsc": "()C"
+          },
+          {
+            "nme": "getFromKey",
+            "acc": 9,
+            "dsc": "(C)Lorg/cadixdev/bombe/type/PrimitiveType;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/FieldType.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/type/FieldType",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/FieldType;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Lorg/cadixdev/bombe/type/FieldType;",
+            "sig": "(Ljava/lang/Class<*>;)Lorg/cadixdev/bombe/type/FieldType;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/ClassLoader;)V"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          },
+          {
+            "nme": "provide",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;",
+            "sig": "(Ljava/lang/Class<*>;)Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "classLoader",
+            "dsc": "Ljava/lang/ClassLoader;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/QualifiedReference$Type.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/cadixdev/bombe/type/reference/QualifiedReference$Type",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "TOP_LEVEL_CLASS",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "INNER_CLASS",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FIELD",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "METHOD",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "METHOD_PARAMETER",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/cadixdev/bombe/type/reference/QualifiedReference$Type;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/ServiceProviderConfiguration.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/jar/ServiceProviderConfiguration",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getService",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getProviders",
+            "acc": 17,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "addProvider",
+            "acc": 17,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "lambda$read$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "lambda$read$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "service",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "providers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/reference/MethodReference.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/reference/MethodReference",
+        "super": "org/cadixdev/bombe/type/reference/MemberReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/ClassReference;Lorg/cadixdev/bombe/type/signature/MethodSignature;)V"
+          },
+          {
+            "nme": "getParameter",
+            "acc": 1,
+            "dsc": "(I)Lorg/cadixdev/bombe/type/reference/MethodParameterReference;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/jar/JarEntryTransformer.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/jar/JarEntryTransformer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "transform",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarClassEntry;)Lorg/cadixdev/bombe/jar/JarClassEntry;"
+          },
+          {
+            "nme": "transform",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarResourceEntry;)Lorg/cadixdev/bombe/jar/JarResourceEntry;"
+          },
+          {
+            "nme": "transform",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarManifestEntry;)Lorg/cadixdev/bombe/jar/JarManifestEntry;"
+          },
+          {
+            "nme": "transform",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarServiceProviderConfigurationEntry;)Lorg/cadixdev/bombe/jar/JarServiceProviderConfigurationEntry;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/reference/MethodParameterReference.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/reference/MethodParameterReference",
+        "super": "org/cadixdev/bombe/type/reference/QualifiedReference",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/reference/MethodReference;I)V",
+            "exs": [
+              "java/lang/IllegalArgumentException"
+            ]
+          },
+          {
+            "nme": "getParentMethod",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/reference/MethodReference;"
+          },
+          {
+            "nme": "getParameterIndex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 1,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "parentMethod",
+            "dsc": "Lorg/cadixdev/bombe/type/reference/MethodReference;"
+          },
+          {
+            "acc": 18,
+            "nme": "index",
+            "dsc": "I"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/MethodDescriptor.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/cadixdev/bombe/type/MethodDescriptor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/MethodDescriptor;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/reflect/Method;)Lorg/cadixdev/bombe/type/MethodDescriptor;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;Lorg/cadixdev/bombe/type/Type;)V",
+            "sig": "(Ljava/util/List<Lorg/cadixdev/bombe/type/FieldType;>;Lorg/cadixdev/bombe/type/Type;)V"
+          },
+          {
+            "nme": "getParamTypes",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lorg/cadixdev/bombe/type/FieldType;>;"
+          },
+          {
+            "nme": "getReturnType",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/bombe/type/Type;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "lambda$toString$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/StringBuilder;Lorg/cadixdev/bombe/type/FieldType;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "paramTypes",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lorg/cadixdev/bombe/type/FieldType;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "returnType",
+            "dsc": "Lorg/cadixdev/bombe/type/Type;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/VoidType.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/type/VoidType",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()C"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lorg/cadixdev/bombe/type/VoidType;"
+          },
+          {
+            "acc": 26,
+            "nme": "KEY",
+            "dsc": "C",
+            "val": 86
+          },
+          {
+            "acc": 26,
+            "nme": "DESCRIPTOR",
+            "dsc": "Ljava/lang/String;",
+            "val": "V"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider$ReflectionClassInfo.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "org/cadixdev/bombe/analysis/ReflectionInheritanceProvider$ReflectionClassInfo",
+        "super": "org/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo$Abstract",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "getInternalName",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Class;)Ljava/lang/String;",
+            "sig": "(Ljava/lang/Class<*>;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isInterface",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSuperName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getInterfaces",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/FieldSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getFieldsByName",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/bombe/analysis/InheritanceType;>;"
+          },
+          {
+            "nme": "provideParent",
+            "acc": 2,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Class;Ljava/util/Collection;)V",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Class<*>;Ljava/util/Collection<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;)V"
+          },
+          {
+            "nme": "provideParents",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection;)V",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/util/Collection<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;)V"
+          },
+          {
+            "nme": "lambda$getMethods$2",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/reflect/Method;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "lambda$getFieldsByName$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/reflect/Field;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "lambda$getFields$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/reflect/Field;)Lorg/cadixdev/bombe/analysis/InheritanceType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Ljava/lang/Class;Lorg/cadixdev/bombe/analysis/ReflectionInheritanceProvider$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "clazz",
+            "dsc": "Ljava/lang/Class;",
+            "sig": "Ljava/lang/Class<*>;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/util/AbstractReader.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/util/AbstractReader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "peek",
+            "acc": 4,
+            "dsc": "()C"
+          },
+          {
+            "nme": "previous",
+            "acc": 4,
+            "dsc": "()C"
+          },
+          {
+            "nme": "advance",
+            "acc": 4,
+            "dsc": "()C"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "source",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "current",
+            "dsc": "I"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/jar/JarServiceProviderConfigurationEntry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/bombe/jar/JarServiceProviderConfigurationEntry",
+        "super": "org/cadixdev/bombe/jar/AbstractJarEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(JLorg/cadixdev/bombe/jar/ServiceProviderConfiguration;)V"
+          },
+          {
+            "nme": "getConfig",
+            "acc": 17,
+            "dsc": "()Lorg/cadixdev/bombe/jar/ServiceProviderConfiguration;"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getContents",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "accept",
+            "acc": 17,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/JarServiceProviderConfigurationEntry;"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Lorg/cadixdev/bombe/jar/JarEntryTransformer;)Lorg/cadixdev/bombe/jar/AbstractJarEntry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "config",
+            "dsc": "Lorg/cadixdev/bombe/jar/ServiceProviderConfiguration;"
+          },
+          {
+            "acc": 2,
+            "nme": "extension",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "org/cadixdev/bombe/type/Type.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/bombe/type/Type",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/bombe/type/Type;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Lorg/cadixdev/bombe/type/Type;",
+            "sig": "(Ljava/lang/Class<*>;)Lorg/cadixdev/bombe/type/Type;"
+          },
+          {
+            "nme": "isAssignableFrom",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/Type;Lorg/cadixdev/bombe/analysis/InheritanceProvider;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/bombe/type/signature/MemberSignature.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/bombe/type/signature/MemberSignature",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toJvmsIdentifier",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "buildToString",
+            "acc": 4,
+            "dsc": "()Ljava/util/StringJoiner;"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      }
+    }
+  }
+}

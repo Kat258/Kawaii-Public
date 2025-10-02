@@ -1,0 +1,3632 @@
+{
+  "md5": "665026e546d84eea8c672d0bc8c92f02",
+  "sha2": "5d0e07b4d51776c1ecc823e2830758205f3764ff",
+  "sha256": "36555e163480242fb3ee7f6e1aaea66a239ced51f11052c0926176712e1a7e1f",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/image/SubsamplingFilter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/SubsamplingFilter",
+        "super": "java/awt/image/ReplicateScaleFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "setDimensions",
+            "acc": 1,
+            "dsc": "(II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "xSub",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "ySub",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ConvolveWithEdgeOp.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/ConvolveWithEdgeOp",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Kernel;ILjava/awt/RenderingHints;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Kernel;)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "addBorder",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;II)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getEdgeCondition",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 1,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "getKernel",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/Kernel;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EDGE_ZERO_FILL",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_NO_OP",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_REFLECT",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_WRAP",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 18,
+            "nme": "kernel",
+            "dsc": "Ljava/awt/image/Kernel;"
+          },
+          {
+            "acc": 18,
+            "nme": "edgeCondition",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "convolve",
+            "dsc": "Ljava/awt/image/ConvolveOp;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ImageUtil$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/image/ImageUtil$1",
+        "super": "java/awt/Component",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/BufferedImageFactory$ProgressListener.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/image/BufferedImageFactory$ProgressListener",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "progress",
+            "acc": 1025,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;F)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/IndexImage.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/IndexImage",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getIndexColorModel",
+            "acc": 131081,
+            "dsc": "(Ljava/awt/Image;IZ)Ljava/awt/image/IndexColorModel;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "getIndexColorModel",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;II)Ljava/awt/image/IndexColorModel;",
+            "exs": [
+              "com/twelvemonkeys/image/ImageConversionException"
+            ]
+          },
+          {
+            "nme": "createIndexColorModel",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;II)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "isFast",
+            "acc": 10,
+            "dsc": "(I)Z"
+          },
+          {
+            "nme": "isTransparent",
+            "acc": 8,
+            "dsc": "(I)Z"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/Image;Ljava/awt/Color;I)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "com/twelvemonkeys/image/ImageConversionException"
+            ]
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;ILjava/awt/Color;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/IndexColorModel;Ljava/awt/Color;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;II)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/IndexColorModel;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getIndexedImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/Image;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createSolid",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/Color;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "applyAlpha",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 28,
+            "nme": "DITHER_MASK",
+            "dsc": "I",
+            "val": 255
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_NONE",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DIFFUSION",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DIFFUSION_ALTSCANS",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 28,
+            "nme": "COLOR_SELECTION_MASK",
+            "dsc": "I",
+            "val": 65280
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_FAST",
+            "dsc": "I",
+            "val": 256
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_QUALITY",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 28,
+            "nme": "TRANSPARENCY_MASK",
+            "dsc": "I",
+            "val": 16711680
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_OPAQUE",
+            "dsc": "I",
+            "val": 65536
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_BITMASK",
+            "dsc": "I",
+            "val": 131072
+          },
+          {
+            "acc": 28,
+            "nme": "TRANSPARENCY_TRANSLUCENT",
+            "dsc": "I",
+            "val": 196608
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$BoxFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$BoxFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(D)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mSupport",
+            "dsc": "D"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/MagickAccelerator.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/image/MagickAccelerator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "useMagick",
+            "acc": 10,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getNativeOpIndex",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Class;)I"
+          },
+          {
+            "nme": "filter",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImageOp;Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "resampleMagick",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          },
+          {
+            "acc": 26,
+            "nme": "USE_MAGICK",
+            "dsc": "Z"
+          },
+          {
+            "acc": 26,
+            "nme": "RESAMPLE_OP",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 10,
+            "nme": "nativeOp",
+            "dsc": "[Ljava/lang/Class;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/MonochromeColorModel.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/MonochromeColorModel",
+        "super": "java/awt/image/IndexColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "getDataElements",
+            "acc": 33,
+            "dsc": "(ILjava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "MONO_PALETTE",
+            "dsc": "[I"
+          },
+          {
+            "acc": 10,
+            "nme": "sInstance",
+            "dsc": "Lcom/twelvemonkeys/image/MonochromeColorModel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$MitchellFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$MitchellFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/CopyDither.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/CopyDither",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/IndexColorModel;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 17,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "toIntARGB",
+            "acc": 10,
+            "dsc": "([I)I"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getICM",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "getICM",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "createIndexColorModel",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;Ljava/awt/image/IndexColorModel;)Ljava/awt/image/WritableRaster;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "indexColorModel",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/ResampleOp",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(IILjava/awt/RenderingHints;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(III)V"
+          },
+          {
+            "nme": "validateFilterType",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getFilterType",
+            "acc": 10,
+            "dsc": "(Ljava/awt/RenderingHints;)I"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "fastResample",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getFilterType",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "createFilter",
+            "acc": 10,
+            "dsc": "(I)Lcom/twelvemonkeys/image/ResampleOp$InterpolationFilter;"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 1,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "sinc",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "j1",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "p1",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "q1",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "besselOrderOne",
+            "acc": 8,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "bessel",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "blackman",
+            "acc": 10,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "round",
+            "acc": 8,
+            "dsc": "(D)I"
+          },
+          {
+            "nme": "calcXContrib",
+            "acc": 2,
+            "dsc": "(DDILcom/twelvemonkeys/image/ResampleOp$InterpolationFilter;I)Lcom/twelvemonkeys/image/ResampleOp$ContributorList;"
+          },
+          {
+            "nme": "resample",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;Lcom/twelvemonkeys/image/ResampleOp$InterpolationFilter;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "FILTER_UNDEFINED",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_POINT",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_BOX",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_TRIANGLE",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_HERMITE",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_HANNING",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_HAMMING",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_BLACKMAN",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_GAUSSIAN",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_QUADRATIC",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_CUBIC",
+            "dsc": "I",
+            "val": 10
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_CATROM",
+            "dsc": "I",
+            "val": 11
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_MITCHELL",
+            "dsc": "I",
+            "val": 12
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_LANCZOS",
+            "dsc": "I",
+            "val": 13
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_BLACKMAN_BESSEL",
+            "dsc": "I",
+            "val": 14
+          },
+          {
+            "acc": 25,
+            "nme": "FILTER_BLACKMAN_SINC",
+            "dsc": "I",
+            "val": 15
+          },
+          {
+            "acc": 25,
+            "nme": "KEY_RESAMPLE_INTERPOLATION",
+            "dsc": "Ljava/awt/RenderingHints$Key;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_POINT",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_BOX",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_TRIANGLE",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_HERMITE",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_HANNING",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_HAMMING",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_BLACKMAN",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_GAUSSIAN",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_QUADRATIC",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_CUBIC",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_CATROM",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_MITCHELL",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_LANCZOS",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_BLACKMAN_BESSEL",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 25,
+            "nme": "VALUE_INTERPOLATION_BLACKMAN_SINC",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 0,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "filterType",
+            "dsc": "I"
+          },
+          {
+            "acc": 26,
+            "nme": "B",
+            "dsc": "D",
+            "val": 0.3333333333333333
+          },
+          {
+            "acc": 26,
+            "nme": "C",
+            "dsc": "D",
+            "val": 0.3333333333333333
+          },
+          {
+            "acc": 26,
+            "nme": "P0",
+            "dsc": "D",
+            "val": 0.8888888888888888
+          },
+          {
+            "acc": 26,
+            "nme": "P2",
+            "dsc": "D",
+            "val": -2.0
+          },
+          {
+            "acc": 26,
+            "nme": "P3",
+            "dsc": "D",
+            "val": 1.1666666666666667
+          },
+          {
+            "acc": 26,
+            "nme": "Q0",
+            "dsc": "D",
+            "val": 1.7777777777777777
+          },
+          {
+            "acc": 26,
+            "nme": "Q1",
+            "dsc": "D",
+            "val": -3.3333333333333335
+          },
+          {
+            "acc": 26,
+            "nme": "Q2",
+            "dsc": "D",
+            "val": 2.0
+          },
+          {
+            "acc": 26,
+            "nme": "Q3",
+            "dsc": "D",
+            "val": -0.3888888888888889
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/BufferedImageFactory.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/image/BufferedImageFactory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Image;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageProducer;)V"
+          },
+          {
+            "nme": "getBufferedImage",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "com/twelvemonkeys/image/ImageConversionException"
+            ]
+          },
+          {
+            "nme": "getColorModel",
+            "acc": 1,
+            "dsc": "()Ljava/awt/image/ColorModel;",
+            "exs": [
+              "com/twelvemonkeys/image/ImageConversionException"
+            ]
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "abort",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setSourceRegion",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Rectangle;)V"
+          },
+          {
+            "nme": "setSourceSubsampling",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "doFetch",
+            "acc": 34,
+            "dsc": "(Z)V",
+            "exs": [
+              "com/twelvemonkeys/image/ImageConversionException"
+            ]
+          },
+          {
+            "nme": "createColorModel",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createBuffered",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "freeResources",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "processProgress",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "addProgressListener",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory$ProgressListener;)V"
+          },
+          {
+            "nme": "removeProgressListener",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory$ProgressListener;)V"
+          },
+          {
+            "nme": "removeAllProgressListeners",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toShortPixels",
+            "acc": 10,
+            "dsc": "([I)[S"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "access$102",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$402",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;I)I"
+          },
+          {
+            "nme": "access$502",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;I)I"
+          },
+          {
+            "nme": "access$600",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$700",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$500",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)I"
+          },
+          {
+            "nme": "access$800",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;I)V"
+          },
+          {
+            "nme": "access$900",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)Ljava/awt/image/ColorModel;"
+          },
+          {
+            "nme": "access$902",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Ljava/awt/image/ColorModel;)Ljava/awt/image/ColorModel;"
+          },
+          {
+            "nme": "access$1000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)Z"
+          },
+          {
+            "nme": "access$1100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)Lcom/twelvemonkeys/image/BufferedImageFactory$Consumer;"
+          },
+          {
+            "nme": "access$1202",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Z)Z"
+          },
+          {
+            "nme": "access$1300",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)Ljava/awt/image/ImageProducer;"
+          },
+          {
+            "nme": "access$1402",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Lcom/twelvemonkeys/image/ImageConversionException;)Lcom/twelvemonkeys/image/ImageConversionException;"
+          },
+          {
+            "nme": "access$202",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;I)I"
+          },
+          {
+            "nme": "access$302",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;I)I"
+          },
+          {
+            "nme": "access$1500",
+            "acc": 4104,
+            "dsc": "([I)[S"
+          },
+          {
+            "nme": "access$1602",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Ljava/util/Hashtable;)Ljava/util/Hashtable;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "listeners",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/image/BufferedImageFactory$ProgressListener;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "percentageDone",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "producer",
+            "dsc": "Ljava/awt/image/ImageProducer;"
+          },
+          {
+            "acc": 2,
+            "nme": "consumerException",
+            "dsc": "Lcom/twelvemonkeys/image/ImageConversionException;"
+          },
+          {
+            "acc": 66,
+            "nme": "fetching",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "readColorModelOnly",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "x",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "y",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "xSub",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "ySub",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "offset",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "scanSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "sourceColorModel",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 2,
+            "nme": "sourceProperties",
+            "dsc": "Ljava/util/Hashtable;",
+            "sig": "Ljava/util/Hashtable<**>;"
+          },
+          {
+            "acc": 2,
+            "nme": "sourcePixels",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 2,
+            "nme": "buffered",
+            "dsc": "Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "acc": 2,
+            "nme": "colorModel",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 18,
+            "nme": "consumer",
+            "dsc": "Lcom/twelvemonkeys/image/BufferedImageFactory$Consumer;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$GaussianFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$GaussianFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ImageConversionException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/ImageConversionException",
+        "super": "com/twelvemonkeys/image/ImageFilterException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ImageFilterException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/ImageFilterException",
+        "super": "java/lang/IllegalArgumentException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$ContributorList.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$ContributorList",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/image/ResampleOp;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "n",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "p",
+            "dsc": "[Lcom/twelvemonkeys/image/ResampleOp$Contributor;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/image/ResampleOp;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$BlackmanBesselFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$BlackmanBesselFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$Contributor.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$Contributor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/image/ResampleOp;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "pixel",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "weight",
+            "dsc": "D"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/image/ResampleOp;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/GrayColorModel.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/GrayColorModel",
+        "super": "java/awt/image/IndexColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createGrayScale",
+            "acc": 10,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "sGrays",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/GrayFilter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/GrayFilter",
+        "super": "java/awt/image/RGBImageFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(FF)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "filterRGB",
+            "acc": 1,
+            "dsc": "(III)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "low",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "range",
+            "dsc": "F"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ImageUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/image/ImageUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getDefaultGraphicsConfiguration",
+            "acc": 10,
+            "dsc": "()Ljava/awt/GraphicsConfiguration;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/RenderedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/RenderedImage;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCopy",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createRaster",
+            "acc": 8,
+            "dsc": "(IILjava/lang/Object;Ljava/awt/image/ColorModel;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "isIndexedPacked",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)Z"
+          },
+          {
+            "nme": "createCompatibleWritableRaster",
+            "acc": 8,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;II)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 10,
+            "dsc": "(Ljava/awt/Image;ILjava/awt/image/IndexColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "drawOnto",
+            "acc": 8,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/Image;)V"
+          },
+          {
+            "nme": "createFlipped",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createRotated",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createRotated",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;D)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createRotated0",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;D)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createScaled",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "equals",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/ColorModel;Ljava/awt/image/ColorModel;)Z"
+          },
+          {
+            "nme": "createResampled",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createResampled",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/RenderedImage;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createResampled",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "convertAWTHints",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getIndexColorModel",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;II)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;ILjava/awt/Color;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;Ljava/awt/image/IndexColorModel;Ljava/awt/Color;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createIndexed",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;Ljava/awt/Image;Ljava/awt/Color;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "sharpen",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "sharpen",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;F)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "blur",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "blur",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;F)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "makeKernel",
+            "acc": 10,
+            "dsc": "(F)Ljava/awt/image/Kernel;"
+          },
+          {
+            "nme": "convolve",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/Kernel;I)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "addBorder",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "contrast",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Ljava/awt/Image;"
+          },
+          {
+            "nme": "contrast",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;F)Ljava/awt/Image;"
+          },
+          {
+            "nme": "brightness",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;F)Ljava/awt/Image;"
+          },
+          {
+            "nme": "grayscale",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Ljava/awt/Image;"
+          },
+          {
+            "nme": "filter",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;Ljava/awt/image/ImageFilter;)Ljava/awt/Image;"
+          },
+          {
+            "nme": "accelerate",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "accelerate",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;Ljava/awt/GraphicsConfiguration;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "accelerate",
+            "acc": 8,
+            "dsc": "(Ljava/awt/Image;Ljava/awt/Color;Ljava/awt/GraphicsConfiguration;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getTransparency",
+            "acc": 10,
+            "dsc": "(Ljava/awt/Image;)I"
+          },
+          {
+            "nme": "createTransparent",
+            "acc": 9,
+            "dsc": "(II)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createTransparent",
+            "acc": 9,
+            "dsc": "(III)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createClear",
+            "acc": 9,
+            "dsc": "(IILjava/awt/Color;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createClear",
+            "acc": 9,
+            "dsc": "(IIILjava/awt/Color;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createClear",
+            "acc": 8,
+            "dsc": "(IIIILjava/awt/Color;Ljava/awt/GraphicsConfiguration;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createBuffered",
+            "acc": 10,
+            "dsc": "(IIII)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createBuffered",
+            "acc": 8,
+            "dsc": "(IIIILjava/awt/GraphicsConfiguration;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getConfiguration",
+            "acc": 10,
+            "dsc": "(Ljava/awt/GraphicsConfiguration;)Ljava/awt/GraphicsConfiguration;"
+          },
+          {
+            "nme": "getImageType",
+            "acc": 10,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "supportsAcceleration",
+            "acc": 10,
+            "dsc": "(Ljava/awt/GraphicsEnvironment;)Z"
+          },
+          {
+            "nme": "getWidth",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)I"
+          },
+          {
+            "nme": "getHeight",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)I"
+          },
+          {
+            "nme": "waitForImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;)Z"
+          },
+          {
+            "nme": "waitForImage",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;J)Z"
+          },
+          {
+            "nme": "waitForImages",
+            "acc": 9,
+            "dsc": "([Ljava/awt/Image;)Z"
+          },
+          {
+            "nme": "waitForImages",
+            "acc": 9,
+            "dsc": "([Ljava/awt/Image;J)Z"
+          },
+          {
+            "nme": "hasTransparentPixels",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/RenderedImage;Z)Z"
+          },
+          {
+            "nme": "createTranslucent",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Color;I)Ljava/awt/Color;"
+          },
+          {
+            "nme": "blend",
+            "acc": 8,
+            "dsc": "(II)I"
+          },
+          {
+            "nme": "blend",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Color;Ljava/awt/Color;)Ljava/awt/Color;"
+          },
+          {
+            "nme": "blend",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Color;Ljava/awt/Color;F)Ljava/awt/Color;"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(F)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ROTATE_90_CCW",
+            "dsc": "I",
+            "val": -90
+          },
+          {
+            "acc": 25,
+            "nme": "ROTATE_90_CW",
+            "dsc": "I",
+            "val": 90
+          },
+          {
+            "acc": 25,
+            "nme": "ROTATE_180",
+            "dsc": "I",
+            "val": 180
+          },
+          {
+            "acc": 25,
+            "nme": "FLIP_VERTICAL",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 25,
+            "nme": "FLIP_HORIZONTAL",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_ZERO_FILL",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_NO_OP",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_REFLECT",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "EDGE_WRAP",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_NONE",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DIFFUSION",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "DITHER_DIFFUSION_ALTSCANS",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_FAST",
+            "dsc": "I",
+            "val": 256
+          },
+          {
+            "acc": 25,
+            "nme": "COLOR_SELECTION_QUALITY",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_DEFAULT",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_OPAQUE",
+            "dsc": "I",
+            "val": 65536
+          },
+          {
+            "acc": 25,
+            "nme": "TRANSPARENCY_BITMASK",
+            "dsc": "I",
+            "val": 131072
+          },
+          {
+            "acc": 28,
+            "nme": "TRANSPARENCY_TRANSLUCENT",
+            "dsc": "I",
+            "val": 196608
+          },
+          {
+            "acc": 26,
+            "nme": "BI_TYPE_ANY",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 10,
+            "nme": "VM_SUPPORTS_ACCELERATION",
+            "dsc": "Z"
+          },
+          {
+            "acc": 26,
+            "nme": "SHARPEN_MATRIX",
+            "dsc": "[F"
+          },
+          {
+            "acc": 26,
+            "nme": "SHARPEN_KERNEL",
+            "dsc": "Ljava/awt/image/Kernel;"
+          },
+          {
+            "acc": 26,
+            "nme": "NULL_COMPONENT",
+            "dsc": "Ljava/awt/Component;"
+          },
+          {
+            "acc": 10,
+            "nme": "sTracker",
+            "dsc": "Ljava/awt/MediaTracker;"
+          },
+          {
+            "acc": 28,
+            "nme": "IDENTITY_TRANSFORM",
+            "dsc": "Ljava/awt/geom/AffineTransform;"
+          },
+          {
+            "acc": 28,
+            "nme": "LOCATION_UPPER_LEFT",
+            "dsc": "Ljava/awt/Point;"
+          },
+          {
+            "acc": 26,
+            "nme": "DEFAULT_CONFIGURATION",
+            "dsc": "Ljava/awt/GraphicsConfiguration;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$Key.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$Key",
+        "super": "java/awt/RenderingHints$Key",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "isCompatibleValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 8,
+            "nme": "sIndex",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/DiffusionDither.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/DiffusionDither",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setAlternateScans",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/IndexColorModel;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 17,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 17,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "toRGBArray",
+            "acc": 10,
+            "dsc": "(I[I)[I"
+          },
+          {
+            "nme": "toIntARGB",
+            "acc": 10,
+            "dsc": "([I)I"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getICM",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "getICM",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "createIndexColorModel",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;Ljava/awt/image/IndexColorModel;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "FS_SCALE",
+            "dsc": "I",
+            "val": 256
+          },
+          {
+            "acc": 26,
+            "nme": "RANDOM",
+            "dsc": "Ljava/util/Random;"
+          },
+          {
+            "acc": 20,
+            "nme": "indexColorModel",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "acc": 2,
+            "nme": "alternateScans",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/AffineTransformOp.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/AffineTransformOp",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/AffineTransform;Ljava/awt/RenderingHints;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/AffineTransform;I)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 1,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "delegate",
+            "dsc": "Ljava/awt/image/AffineTransformOp;"
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_NEAREST_NEIGHBOR",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_BILINEAR",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_BICUBIC",
+            "dsc": "I",
+            "val": 3
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$BlacmanFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$BlacmanFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/BufferedImageIcon.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/BufferedImageIcon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;II)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;IIZ)V"
+          },
+          {
+            "nme": "getIconHeight",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getIconWidth",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "paintIcon",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Component;Ljava/awt/Graphics;II)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "image",
+            "dsc": "Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "acc": 18,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "fast",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$QuadraticFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$QuadraticFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$CatromFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$CatromFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/BufferedImageFactory$Consumer.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/BufferedImageFactory$Consumer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;)V"
+          },
+          {
+            "nme": "setPixelsImpl",
+            "acc": 2,
+            "dsc": "(IIIILjava/awt/image/ColorModel;Ljava/lang/Object;II)V"
+          },
+          {
+            "nme": "setPixels",
+            "acc": 1,
+            "dsc": "(IIIILjava/awt/image/ColorModel;[SII)V"
+          },
+          {
+            "nme": "setColorModelOnce",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/ColorModel;)V"
+          },
+          {
+            "nme": "imageComplete",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setColorModel",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ColorModel;)V"
+          },
+          {
+            "nme": "setDimensions",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "setHints",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setPixels",
+            "acc": 1,
+            "dsc": "(IIIILjava/awt/image/ColorModel;[BII)V"
+          },
+          {
+            "nme": "setPixels",
+            "acc": 1,
+            "dsc": "(IIIILjava/awt/image/ColorModel;[III)V"
+          },
+          {
+            "nme": "setProperties",
+            "acc": 1,
+            "dsc": "(Ljava/util/Hashtable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/image/BufferedImageFactory;Lcom/twelvemonkeys/image/BufferedImageFactory$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/image/BufferedImageFactory;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/BufferedImageFactory$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/image/BufferedImageFactory$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/BrightnessContrastFilter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/BrightnessContrastFilter",
+        "super": "java/awt/image/RGBImageFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(FF)V"
+          },
+          {
+            "nme": "createLUT",
+            "acc": 10,
+            "dsc": "(FF)[I"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "filterRGB",
+            "acc": 1,
+            "dsc": "(III)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "LUT",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/GraphicsUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/image/GraphicsUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "enableAA",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Graphics;)V"
+          },
+          {
+            "nme": "setAlpha",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Graphics;F)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/MagickUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/image/MagickUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toBuffered",
+            "acc": 9,
+            "dsc": "(Lmagick/MagickImage;)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "toMagick",
+            "acc": 9,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Lmagick/MagickImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "rgbToMagic",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Z)Lmagick/MagickImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "grayToMagick",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Z)Lmagick/MagickImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "indexedToMagick",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/IndexColorModel;Z)Lmagick/MagickImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "bilevelToBuffered",
+            "acc": 10,
+            "dsc": "(Lmagick/MagickImage;)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "grayToBuffered",
+            "acc": 10,
+            "dsc": "(Lmagick/MagickImage;Z)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "paletteToBuffered",
+            "acc": 10,
+            "dsc": "(Lmagick/MagickImage;Z)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "createIndexColorModel",
+            "acc": 9,
+            "dsc": "([Lmagick/PixelPacket;Z)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "rgbToBuffered",
+            "acc": 10,
+            "dsc": "(Lmagick/MagickImage;Z)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "cmykToBuffered",
+            "acc": 10,
+            "dsc": "(Lmagick/MagickImage;Z)Ljava/awt/image/BufferedImage;",
+            "exs": [
+              "magick/MagickException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "CM_MONOCHROME",
+            "dsc": "Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "acc": 26,
+            "nme": "CM_COLOR_ALPHA",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 26,
+            "nme": "CM_COLOR_OPAQUE",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 26,
+            "nme": "CM_GRAY_ALPHA",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 26,
+            "nme": "CM_GRAY_OPAQUE",
+            "dsc": "Ljava/awt/image/ColorModel;"
+          },
+          {
+            "acc": 26,
+            "nme": "BAND_OFF_TRANS",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "BAND_OFF_OPAQUE",
+            "dsc": "[I"
+          },
+          {
+            "acc": 26,
+            "nme": "LOCATION_UPPER_LEFT",
+            "dsc": "Ljava/awt/Point;"
+          },
+          {
+            "acc": 26,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$HanningFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$HanningFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/InverseColorMap.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/InverseColorMap",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([BI)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "([II)V"
+          },
+          {
+            "nme": "initIRGB",
+            "acc": 0,
+            "dsc": "([I)V"
+          },
+          {
+            "nme": "getIndexNearest",
+            "acc": 17,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getIndexNearest",
+            "acc": 17,
+            "dsc": "(III)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "QUANTBITS",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 24,
+            "nme": "TRUNCBITS",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "QUANTMASK_BLUE",
+            "dsc": "I",
+            "val": 31
+          },
+          {
+            "acc": 24,
+            "nme": "QUANTMASK_GREEN",
+            "dsc": "I",
+            "val": 992
+          },
+          {
+            "acc": 24,
+            "nme": "QUANTMASK_RED",
+            "dsc": "I",
+            "val": 31744
+          },
+          {
+            "acc": 24,
+            "nme": "MAXQUANTVAL",
+            "dsc": "I",
+            "val": 32
+          },
+          {
+            "acc": 0,
+            "nme": "rgbMapByte",
+            "dsc": "[B"
+          },
+          {
+            "acc": 0,
+            "nme": "rgbMapInt",
+            "dsc": "[I"
+          },
+          {
+            "acc": 0,
+            "nme": "numColors",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "maxColor",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "inverseRGB",
+            "dsc": "[B"
+          },
+          {
+            "acc": 0,
+            "nme": "transparentIndex",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/IndexImage$Cube.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/IndexImage$Cube",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([Ljava/util/List;I)V",
+            "sig": "([Ljava/util/List<Lcom/twelvemonkeys/image/IndexImage$Counter;>;I)V"
+          },
+          {
+            "nme": "isDone",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "split",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/image/IndexImage$Cube;"
+          },
+          {
+            "nme": "splitChannel",
+            "acc": 1,
+            "dsc": "(III)Lcom/twelvemonkeys/image/IndexImage$Cube;"
+          },
+          {
+            "nme": "averageColor",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "min",
+            "dsc": "[I"
+          },
+          {
+            "acc": 0,
+            "nme": "max",
+            "dsc": "[I"
+          },
+          {
+            "acc": 0,
+            "nme": "done",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "colors",
+            "dsc": "[Ljava/util/List;",
+            "sig": "[Ljava/util/List<Lcom/twelvemonkeys/image/IndexImage$Counter;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "count",
+            "dsc": "I"
+          },
+          {
+            "acc": 24,
+            "nme": "RED",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 24,
+            "nme": "GRN",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "BLU",
+            "dsc": "I",
+            "val": 2
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$InterpolationFilter.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/image/ResampleOp$InterpolationFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "filter",
+            "acc": 1025,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 1025,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/AreaAverageOp.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/AreaAverageOp",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "getSourceRegion",
+            "acc": 1,
+            "dsc": "()Ljava/awt/Rectangle;"
+          },
+          {
+            "nme": "setSourceRegion",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Rectangle;)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "resample",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;Ljava/awt/geom/AffineTransform;)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "filterImpl",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 1,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "sourceRegion",
+            "dsc": "Ljava/awt/Rectangle;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$Value.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/image/ResampleOp$Value",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/RenderingHints$Key;Ljava/lang/String;I)V"
+          },
+          {
+            "nme": "isCompatibleKey",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/image/ResampleOp$Key;)Z"
+          },
+          {
+            "nme": "getFilterType",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "key",
+            "dsc": "Ljava/awt/RenderingHints$Key;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/AbstractImageSource.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/image/AbstractImageSource",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "addConsumer",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          },
+          {
+            "nme": "removeConsumer",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          },
+          {
+            "nme": "requestTopDownLeftRightResend",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          },
+          {
+            "nme": "startProduction",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          },
+          {
+            "nme": "isConsumer",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)Z"
+          },
+          {
+            "nme": "initConsumer",
+            "acc": 1028,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          },
+          {
+            "nme": "sendPixels",
+            "acc": 1028,
+            "dsc": "(Ljava/awt/image/ImageConsumer;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "consumers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/awt/image/ImageConsumer;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "xOff",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "yOff",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$CubicFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$CubicFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/IndexImage$Counter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/IndexImage$Counter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(I)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "val",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "count",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/PixelizeOp.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/PixelizeOp",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "getSourceRegion",
+            "acc": 1,
+            "dsc": "()Ljava/awt/Rectangle;"
+          },
+          {
+            "nme": "setSourceRegion",
+            "acc": 1,
+            "dsc": "(Ljava/awt/Rectangle;)V"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/BufferedImage;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "filter",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "filterImpl",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/Raster;Ljava/awt/image/WritableRaster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "clamp",
+            "acc": 10,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "getRenderingHints",
+            "acc": 1,
+            "dsc": "()Ljava/awt/RenderingHints;"
+          },
+          {
+            "nme": "createCompatibleDestImage",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;Ljava/awt/image/ColorModel;)Ljava/awt/image/BufferedImage;"
+          },
+          {
+            "nme": "createCompatibleDestRaster",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/image/WritableRaster;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/Raster;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getBounds2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/BufferedImage;)Ljava/awt/geom/Rectangle2D;"
+          },
+          {
+            "nme": "getPoint2D",
+            "acc": 1,
+            "dsc": "(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Point2D;"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "pixelSizeX",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "pixelSizeY",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "sourceRegion",
+            "dsc": "Ljava/awt/Rectangle;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$PointFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$PointFilter",
+        "super": "com/twelvemonkeys/image/ResampleOp$BoxFilter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/Magick.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/image/Magick",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "useDebug",
+            "acc": 10,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$TriangleFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$TriangleFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/InverseColorMapIndexColorModel.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/image/InverseColorMapIndexColorModel",
+        "super": "java/awt/image/IndexColorModel",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/awt/image/IndexColorModel;[I)V"
+          },
+          {
+            "nme": "getRGBs",
+            "acc": 10,
+            "dsc": "(Ljava/awt/image/IndexColorModel;)[I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II[IIZII)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II[B[B[BI)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(II[B[B[B)V"
+          },
+          {
+            "nme": "getWhiteIndex",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Image;II)Ljava/awt/image/IndexColorModel;"
+          },
+          {
+            "nme": "getDataElements",
+            "acc": 1,
+            "dsc": "(ILjava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "installpixel",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;I)Ljava/lang/Object;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "rgbs",
+            "dsc": "[I"
+          },
+          {
+            "acc": 4,
+            "nme": "mapSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "inverseMap",
+            "dsc": "Lcom/twelvemonkeys/image/InverseColorMap;"
+          },
+          {
+            "acc": 26,
+            "nme": "ALPHA_THRESHOLD",
+            "dsc": "I",
+            "val": 128
+          },
+          {
+            "acc": 2,
+            "nme": "whiteIndex",
+            "dsc": "I"
+          },
+          {
+            "acc": 26,
+            "nme": "WHITE",
+            "dsc": "I",
+            "val": 16777215
+          },
+          {
+            "acc": 26,
+            "nme": "RGB_MASK",
+            "dsc": "I",
+            "val": 16777215
+          }
+        ]
+      },
+      "com/twelvemonkeys/image/ResampleOp$BlackmanSincFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$BlackmanSincFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/image/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$HermiteFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$HermiteFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$HammingFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$HammingFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/image/ResampleOp$LanczosFilter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/image/ResampleOp$LanczosFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "filter",
+            "acc": 17,
+            "dsc": "(D)D"
+          },
+          {
+            "nme": "support",
+            "acc": 17,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

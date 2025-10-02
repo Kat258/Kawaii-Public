@@ -1,0 +1,3062 @@
+{
+  "md5": "2cb908e388d0d675f72b6b01dc1f1555",
+  "sha2": "680c15942649944b20ba72fd56c43e728477213d",
+  "sha256": "2e522fe2e2c6572f16bf5cf9b83dc86d0b74989af46cd111dccc60eceabe61a8",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/mixins/lying/entity/ServerboundInteractPacketAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/ServerboundInteractPacketAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$getEntityId",
+            "acc": 1025,
+            "dsc": "()I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "entityId"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2824"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/mixins/lying/entityglow/ChunkMapTrackedEntityMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entityglow/ChunkMapTrackedEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "jackfredlib$modifyDataPacket",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_5629;Lnet/minecraft/class_2596;Lcom/llamalad7/mixinextras/injector/wrapoperation/Operation;)V",
+            "sig": "(Lnet/minecraft/class_5629;Lnet/minecraft/class_2596<*>;Lcom/llamalad7/mixinextras/injector/wrapoperation/Operation<Ljava/lang/Void;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lcom/llamalad7/mixinextras/injector/wrapoperation/WrapOperation;",
+                "vals": [
+                  "method",
+                  [
+                    "broadcast(Lnet/minecraft/network/protocol/Packet;)V"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/server/network/ServerPlayerConnection;send(Lnet/minecraft/network/protocol/Packet;)V"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "field_18247",
+            "dsc": "Lnet/minecraft/class_1297;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3898$class_3208"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/DebrisImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/DebrisImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "init",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "deinit",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "tick",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "schedule",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;J)V"
+          },
+          {
+            "nme": "cancel",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/impl/lying/DebrisImpl;"
+          },
+          {
+            "acc": 2,
+            "nme": "server",
+            "dsc": "Lnet/minecraft/server/MinecraftServer;"
+          },
+          {
+            "acc": 18,
+            "nme": "scheduled",
+            "dsc": "Lcom/google/common/collect/Multimap;",
+            "sig": "Lcom/google/common/collect/Multimap<Ljava/lang/Long;Lred/jackf/jackfredlib/api/lying/Lie;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "addLie",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(TL;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(Ljava/util/Collection<TL;>;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1,
+            "dsc": "(Ljava/util/stream/Stream;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(Ljava/util/stream/Stream<TL;>;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1,
+            "dsc": "([Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "([TL;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "setFocus",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_243;D)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(Lnet/minecraft/class_243;D)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "setBounds",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_238;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(Lnet/minecraft/class_238;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "setUpdateInterval",
+            "acc": 1,
+            "dsc": "(J)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(J)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "addPredicate",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/Predicate;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "(Ljava/util/function/Predicate<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "keepWhenEmpty",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl;",
+            "sig": "()Lred/jackf/jackfredlib/impl/lying/tracker/TrackerBuilderImpl<TL;>;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/Tracker;",
+            "sig": "(Z)Lred/jackf/jackfredlib/api/lying/Tracker<TL;>;"
+          },
+          {
+            "nme": "keepWhenEmpty",
+            "acc": 4161,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "addPredicate",
+            "acc": 4161,
+            "dsc": "(Ljava/util/function/Predicate;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "setUpdateInterval",
+            "acc": 4161,
+            "dsc": "(J)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "setBounds",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_238;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "setFocus",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_243;D)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 4161,
+            "dsc": "([Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 4161,
+            "dsc": "(Ljava/util/stream/Stream;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 4161,
+            "dsc": "(Ljava/util/Collection;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "addLie",
+            "acc": 4161,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_3222;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "level",
+            "dsc": "Lnet/minecraft/class_3218;"
+          },
+          {
+            "acc": 18,
+            "nme": "startLies",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<TL;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "positionPredicate",
+            "dsc": "Ljava/util/function/Predicate;",
+            "sig": "Ljava/util/function/Predicate<Lnet/minecraft/class_243;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "updateInterval",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "playerPredicate",
+            "dsc": "Ljava/util/function/Predicate;",
+            "sig": "Ljava/util/function/Predicate<Lnet/minecraft/class_3222;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "keepWhenEmpty",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/mixins/lying/entityglow/ServerEntityMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entityglow/ServerEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "jackfredlib$changeGlowingForLies",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2739;Lnet/minecraft/class_3222;)Lnet/minecraft/class_2739;",
+            "vanns": [
+              {
+                "dsc": "Lcom/llamalad7/mixinextras/injector/ModifyExpressionValue;",
+                "vals": [
+                  "method",
+                  [
+                    "sendPairingData"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "NEW",
+                        "args",
+                        [
+                          "class=net/minecraft/network/protocol/game/ClientboundSetEntityDataPacket"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "lambda$jackfredlib$changeGlowingForLies$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_2739;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)Lnet/minecraft/class_2739;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_14049",
+            "dsc": "Lnet/minecraft/class_1297;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3231"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/EntityBuilders.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/EntityBuilders",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "generic",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1299;Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder;",
+            "sig": "<E:Lnet/minecraft/class_1297;>(Lnet/minecraft/class_1299<TE;>;Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder<TE;>;"
+          },
+          {
+            "nme": "blockDisplay",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder;"
+          },
+          {
+            "nme": "itemDisplay",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder;"
+          },
+          {
+            "nme": "textDisplay",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "handleFakeEntities",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2824;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/class_3218;Lnet/minecraft/class_1297;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "handleInteract"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/server/level/ServerPlayer;setShiftKeyDown(Z)V",
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "field_14140",
+            "dsc": "Lnet/minecraft/class_3222;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3244"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onFade",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/Tracker.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/Tracker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "<L::Lred/jackf/jackfredlib/api/lying/Lie;>(Lnet/minecraft/class_3218;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "isRunning",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setRunning",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "getManagedLies",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TL;>;"
+          },
+          {
+            "nme": "addLie",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Z",
+            "sig": "(TL;)Z"
+          },
+          {
+            "nme": "removeLie",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Z",
+            "sig": "(TL;)Z"
+          },
+          {
+            "nme": "setFocus",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_243;D)V"
+          },
+          {
+            "nme": "setBounds",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_238;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "red/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lred/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "disconnect",
+            "acc": 1,
+            "dsc": "(Lcom/mojang/authlib/GameProfile;)V"
+          },
+          {
+            "nme": "addToColourTeam",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_1297;Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "removeFromColourTeam",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_1297;Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "hideOriginalTeam",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_1297;)V"
+          },
+          {
+            "nme": "restoreOriginalTeam",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_1297;)V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lred/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager;"
+          },
+          {
+            "acc": 26,
+            "nme": "CREATE_TEAM",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 26,
+            "nme": "ADD_ENTITY",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 26,
+            "nme": "REMOVE_ENTITY",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 18,
+            "nme": "visible",
+            "dsc": "Lcom/google/common/collect/Multimap;",
+            "sig": "Lcom/google/common/collect/Multimap<Lnet/minecraft/class_124;Lcom/mojang/authlib/GameProfile;>;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lred/jackf/jackfredlib/impl/lying/faketeams/FakeTeamManager;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onTick",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/BlockDisplayAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/BlockDisplayAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$setBlockState",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2680;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setBlockState"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_8113$class_8115"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/compat/imm_ptl/Compatibility.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/compat/imm_ptl/Compatibility",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "IMM_PTL",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/tracker/TrackerPredicates.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/impl/lying/tracker/TrackerPredicates",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "forFocus",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_243;D)Ljava/util/function/Predicate;",
+            "sig": "(Lnet/minecraft/class_243;D)Ljava/util/function/Predicate<Lnet/minecraft/class_243;>;"
+          },
+          {
+            "nme": "forBounds",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_238;)Ljava/util/function/Predicate;",
+            "sig": "(Lnet/minecraft/class_238;)Ljava/util/function/Predicate<Lnet/minecraft/class_243;>;"
+          },
+          {
+            "nme": "lambda$forFocus$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_243;DLnet/minecraft/class_243;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/TextDisplayAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/TextDisplayAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$setText",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2561;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setText"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setBackgroundColor",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setBackgroundColor"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setTextOpacity",
+            "acc": 1025,
+            "dsc": "(B)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setTextOpacity"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setLineWidth",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setLineWidth"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setFlags",
+            "acc": 1025,
+            "dsc": "(B)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setFlags"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$getFlags",
+            "acc": 1025,
+            "dsc": "()B",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "getFlags"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_8113$class_8123"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onRightClick",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie;ZLnet/minecraft/class_1268;Lnet/minecraft/class_243;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;ZLnet/minecraft/class_1268;Lnet/minecraft/class_243;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder",
+        "super": "red/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "stack",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1799;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder;"
+          },
+          {
+            "nme": "displayContext",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_811;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/ItemDisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder",
+        "super": "red/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "text",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "textAlign",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123$class_8124;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "lineWidth",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "textOpacity",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "backgroundColour",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "backgroundColour",
+            "acc": 1,
+            "dsc": "(IIII)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "backgroundColour",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "useDefaultBackground",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "seeThrough",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "hasShadow",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "withFlag",
+            "acc": 9,
+            "dsc": "(BBZ)B"
+          },
+          {
+            "nme": "self",
+            "acc": 4,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/TextDisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/tracker/TrackerRunner.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/tracker/TrackerRunner",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "tickAll",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "addTracker",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;Lred/jackf/jackfredlib/impl/lying/tracker/TrackerImpl;)V",
+            "sig": "(Lnet/minecraft/class_3218;Lred/jackf/jackfredlib/impl/lying/tracker/TrackerImpl<*>;)V"
+          },
+          {
+            "nme": "removeTracker",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;Lred/jackf/jackfredlib/impl/lying/tracker/TrackerImpl;)V",
+            "sig": "(Lnet/minecraft/class_3218;Lred/jackf/jackfredlib/impl/lying/tracker/TrackerImpl<*>;)V"
+          },
+          {
+            "nme": "loadLevel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "unloadLevel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "tickLevel",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "RUNNERS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_3218;Lred/jackf/jackfredlib/impl/lying/tracker/TrackerRunner;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "level",
+            "dsc": "Lnet/minecraft/class_3218;"
+          },
+          {
+            "acc": 18,
+            "nme": "trackers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lred/jackf/jackfredlib/impl/lying/tracker/TrackerImpl<*>;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder",
+        "super": "red/jackf/jackfredlib/api/lying/entity/builders/BuilderBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/class_1299;Lnet/minecraft/class_3218;)V",
+            "sig": "(Lnet/minecraft/class_1299<TE;>;Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "self",
+            "acc": 4,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder;",
+            "sig": "()Lred/jackf/jackfredlib/api/lying/entity/builders/GenericBuilder<TE;>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/DisplayAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/DisplayAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$setBillboardConstraints",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_8113$class_8114;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setBillboardConstraints"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setGlowColorOverride",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setGlowColorOverride"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$createTransformation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2945;)Lnet/minecraft/class_4590;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "createTransformation"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setTransformation",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_4590;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setTransformation"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setBrightnessOverride",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_8104;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setBrightnessOverride"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setViewRange",
+            "acc": 1025,
+            "dsc": "(F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setViewRange"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setShadowRadius",
+            "acc": 1025,
+            "dsc": "(F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setShadowRadius"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setShadowStrength",
+            "acc": 1025,
+            "dsc": "(F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setShadowStrength"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setTransformationInterpolationDelay",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setTransformationInterpolationDelay"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setTransformationInterpolationLength",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setTransformationInterpolationDuration"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setTeleportInterpolationLength",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setPosRotInterpolationDuration"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_8113"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_1297;)V",
+            "sig": "(TE;)V"
+          },
+          {
+            "nme": "colour",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_124;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder;",
+            "sig": "(Lnet/minecraft/class_124;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onTick",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onFade",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 129,
+            "dsc": "([Lnet/minecraft/class_3222;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie;",
+            "sig": "([Lnet/minecraft/class_3222;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie;",
+            "sig": "(Ljava/util/Collection<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 1,
+            "dsc": "(Ljava/util/stream/Stream;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie;",
+            "sig": "(Ljava/util/stream/Stream<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie<TE;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "entity",
+            "dsc": "Lnet/minecraft/class_1297;",
+            "sig": "TE;"
+          },
+          {
+            "acc": 2,
+            "nme": "initialColour",
+            "dsc": "Lnet/minecraft/class_124;"
+          },
+          {
+            "acc": 2,
+            "nme": "tickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback<TE;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "fadeCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback<TE;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/Lie.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/Lie",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fade",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasFaded",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getViewingPlayers",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Lnet/minecraft/class_3222;>;"
+          },
+          {
+            "nme": "addPlayer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "removePlayer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/LieImpl.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "red/jackf/jackfredlib/impl/lying/LieImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fade",
+            "acc": 17,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasFaded",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getViewingPlayers",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Lnet/minecraft/class_3222;>;"
+          },
+          {
+            "nme": "addPlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/MustBeInvokedByOverriders;"
+              }
+            ]
+          },
+          {
+            "nme": "removePlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/MustBeInvokedByOverriders;"
+              }
+            ]
+          },
+          {
+            "nme": "migratePlayerInstance",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_3222;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "players",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lnet/minecraft/class_3222;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "faded",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/faketeams/FakeTeamUtil.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/faketeams/FakeTeamUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "ensureValidColour",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_124;)Lnet/minecraft/class_124;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "value",
+                  "null -> null; !null -> !null"
+                ]
+              },
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "generateFakeParameters",
+            "acc": 10,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lnet/minecraft/class_124;Lnet/minecraft/class_5900$class_5902;>;"
+          },
+          {
+            "nme": "getName",
+            "acc": 8,
+            "dsc": "(Lnet/minecraft/class_124;)Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "COLOURS",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_124;>;"
+          },
+          {
+            "acc": 24,
+            "nme": "FAKE_PARAMETERS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_124;Lnet/minecraft/class_5900$class_5902;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/mixins/lying/ClientboundSetPlayerTeamInvoker.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/ClientboundSetPlayerTeamInvoker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "createManually",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;ILjava/util/Optional;Ljava/util/Collection;)Lnet/minecraft/class_5900;",
+            "sig": "(Ljava/lang/String;ILjava/util/Optional<Lnet/minecraft/class_5900$class_5902;>;Ljava/util/Collection<Ljava/lang/String;>;)Lnet/minecraft/class_5900;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "<init>"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_5900"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/BuilderBase.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/BuilderBase",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/class_1299;Lnet/minecraft/class_3218;)V",
+            "sig": "(Lnet/minecraft/class_1299<TE;>;Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_243;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_243;)TB;"
+          },
+          {
+            "nme": "position",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_2338;)TB;"
+          },
+          {
+            "nme": "positionCentered",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_243;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_243;)TB;"
+          },
+          {
+            "nme": "positionCentered",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_2338;)TB;"
+          },
+          {
+            "nme": "rotation",
+            "acc": 1,
+            "dsc": "(FF)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(FF)TB;"
+          },
+          {
+            "nme": "xRotation",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(F)TB;"
+          },
+          {
+            "nme": "yRotation",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(F)TB;"
+          },
+          {
+            "nme": "facing",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_243;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_243;)TB;"
+          },
+          {
+            "nme": "facing",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1297;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_1297;)TB;"
+          },
+          {
+            "nme": "glowing",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Z)TB;"
+          },
+          {
+            "nme": "customName",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Lnet/minecraft/class_2561;)TB;"
+          },
+          {
+            "nme": "alwaysRenderName",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "(Z)TB;"
+          },
+          {
+            "nme": "self",
+            "acc": 1028,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "sig": "()TB;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "entity",
+            "dsc": "Lnet/minecraft/class_1297;",
+            "sig": "TE;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder",
+        "super": "red/jackf/jackfredlib/api/lying/entity/builders/BuilderBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1299;Lnet/minecraft/class_3218;)V",
+            "sig": "(Lnet/minecraft/class_1299<TE;>;Lnet/minecraft/class_3218;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "glowing",
+            "acc": 1,
+            "dsc": "(ZI)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(ZI)TB;"
+          },
+          {
+            "nme": "glowing",
+            "acc": 1,
+            "dsc": "(ZLred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(ZLred/jackf/jackfredlib/api/colour/Colour;)TB;"
+          },
+          {
+            "nme": "billboard",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_8113$class_8114;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lnet/minecraft/class_8113$class_8114;)TB;"
+          },
+          {
+            "nme": "brightness",
+            "acc": 1,
+            "dsc": "(II)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(II)TB;"
+          },
+          {
+            "nme": "viewRangeModifier",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(F)TB;"
+          },
+          {
+            "nme": "shadowRadius",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(F)TB;"
+          },
+          {
+            "nme": "shadowStrength",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(F)TB;"
+          },
+          {
+            "nme": "transform",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)TB;"
+          },
+          {
+            "nme": "setTranslation",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector3f;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Vector3f;)TB;"
+          },
+          {
+            "nme": "addTranslation",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector3f;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Vector3f;)TB;"
+          },
+          {
+            "nme": "leftRotation",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Quaternionf;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Quaternionf;)TB;"
+          },
+          {
+            "nme": "scale",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector3f;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Vector3f;)TB;"
+          },
+          {
+            "nme": "rightRotation",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Quaternionf;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(Lorg/joml/Quaternionf;)TB;"
+          },
+          {
+            "nme": "transformInterpolationDuration",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(I)TB;"
+          },
+          {
+            "nme": "teleportInterpolationDuration",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "(I)TB;"
+          },
+          {
+            "nme": "self",
+            "acc": 1028,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "sig": "()TB;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setDisplayText",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123;Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "setDisplayTextAlign",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123;Lnet/minecraft/class_8113$class_8123$class_8124;)V"
+          },
+          {
+            "nme": "setDisplayTextDefaultBackground",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123;Z)V"
+          },
+          {
+            "nme": "setDisplayTextSeeThrough",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123;Z)V"
+          },
+          {
+            "nme": "setDisplayTextHasShadow",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8123;Z)V"
+          },
+          {
+            "nme": "setDisplayBlockState",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8115;Lnet/minecraft/class_2680;)V"
+          },
+          {
+            "nme": "setDisplayItem",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113$class_8122;Lnet/minecraft/class_1799;)V"
+          },
+          {
+            "nme": "setDisplayViewRange",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;F)V"
+          },
+          {
+            "nme": "setDisplayGlowOverride",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;I)V"
+          },
+          {
+            "nme": "setDisplayGlowOverride",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lred/jackf/jackfredlib/api/colour/Colour;)V"
+          },
+          {
+            "nme": "setDisplayBrightnessOverride",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lnet/minecraft/class_8104;)V"
+          },
+          {
+            "nme": "setDisplayBrightnessOverride",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;II)V"
+          },
+          {
+            "nme": "setDisplayShadowRadius",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;F)V"
+          },
+          {
+            "nme": "setDisplayShadowStrength",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;F)V"
+          },
+          {
+            "nme": "setDisplayTransform",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lnet/minecraft/class_4590;)V"
+          },
+          {
+            "nme": "setDisplayTranslation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lorg/joml/Vector3f;)V"
+          },
+          {
+            "nme": "getDisplayTransformation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;)Lnet/minecraft/class_4590;"
+          },
+          {
+            "nme": "setDisplayLeftRotation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lorg/joml/Quaternionf;)V"
+          },
+          {
+            "nme": "setDisplayScale",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lorg/joml/Vector3f;)V"
+          },
+          {
+            "nme": "setDisplayRightRotation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lorg/joml/Quaternionf;)V"
+          },
+          {
+            "nme": "updateDisplayTransformation",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)V"
+          },
+          {
+            "nme": "startInterpolationAt",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;J)V"
+          },
+          {
+            "nme": "startInterpolationIn",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_8113;I)V"
+          },
+          {
+            "nme": "face",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_1297;)V"
+          },
+          {
+            "nme": "face",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_243;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder",
+        "super": "red/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;)V",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "state",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2680;)Lred/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder;"
+          },
+          {
+            "nme": "scaleAndCenter",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder;"
+          },
+          {
+            "nme": "self",
+            "acc": 4,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/BlockDisplayBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/display/DisplayBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "self",
+            "acc": 4164,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/entity/builders/BuilderBase;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/ItemDisplayAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/ItemDisplayAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jflib$setItemStack",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1799;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setItemStack"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jflib$setItemTransform",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_811;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "setItemTransform"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_8113$class_8122"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onFade",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie<TE;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/glowing/FakeGlowPacketMeddling.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/glowing/FakeGlowPacketMeddling",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "modifyPacket",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2739;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)Lnet/minecraft/class_2739;",
+            "sig": "(Lnet/minecraft/class_2739;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<*>;)Lnet/minecraft/class_2739;"
+          },
+          {
+            "nme": "forceGlowing",
+            "acc": 12,
+            "dsc": "(B)B"
+          },
+          {
+            "nme": "forceNotGlowing",
+            "acc": 12,
+            "dsc": "(B)B"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/entity/TransformUtil.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/entity/TransformUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "update",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_4590;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;Lorg/joml/Vector3f;Lorg/joml/Quaternionf;)Lnet/minecraft/class_4590;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/Debris.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/Debris",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "schedule",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;J)V"
+          },
+          {
+            "nme": "cancel",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/Debris;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl",
+        "super": "red/jackf/jackfredlib/impl/lying/LieImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_124;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback;)V",
+            "sig": "(TE;Lnet/minecraft/class_124;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback<TE;>;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback<TE;>;)V"
+          },
+          {
+            "nme": "glowColour",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_124;"
+          },
+          {
+            "nme": "setGlowColour",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "entity",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "setEntity",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1297;)V",
+            "sig": "(TE;)V"
+          },
+          {
+            "nme": "sendFakeGlowingTagToPlayer",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "restoreOriginalGlowingTagToPlayer",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "addPlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "removePlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "tick",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DATA",
+            "dsc": "Lnet/minecraft/class_2940;",
+            "sig": "Lnet/minecraft/class_2940<Ljava/lang/Byte;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "entity",
+            "dsc": "Lnet/minecraft/class_1297;",
+            "sig": "TE;"
+          },
+          {
+            "acc": 2,
+            "nme": "colour",
+            "dsc": "Lnet/minecraft/class_124;"
+          },
+          {
+            "acc": 18,
+            "nme": "tickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback<TE;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "fadeCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$FadeCallback<TE;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/compat/imm_ptl/ImmersivePortalsCompat.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/compat/imm_ptl/ImmersivePortalsCompat",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "runWrapped",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;Ljava/lang/Runnable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onLeftClick",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie;ZLnet/minecraft/class_243;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;ZLnet/minecraft/class_243;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$TickCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onTick",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie<TE;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/ModuleEntrypoint.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/ModuleEntrypoint",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onInitialize",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onPlayerDisconnect",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_3244;Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$5",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$4",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$3",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_3222;Z)V"
+          },
+          {
+            "nme": "lambda$onInitialize$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_3218;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie$Builder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie$Builder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_1297;)V",
+            "sig": "(TE;)V"
+          },
+          {
+            "nme": "glowColour",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_124;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "(Lnet/minecraft/class_124;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onTick",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onFade",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onLeftClick",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          },
+          {
+            "nme": "onRightClick",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "(Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback<TE;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 129,
+            "dsc": "([Lnet/minecraft/class_3222;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie;",
+            "sig": "([Lnet/minecraft/class_3222;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie;",
+            "sig": "(Ljava/util/Collection<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;"
+          },
+          {
+            "nme": "createAndShow",
+            "acc": 1,
+            "dsc": "(Ljava/util/stream/Stream;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie;",
+            "sig": "(Ljava/util/stream/Stream<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie<TE;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "entity",
+            "dsc": "Lnet/minecraft/class_1297;",
+            "sig": "TE;"
+          },
+          {
+            "acc": 2,
+            "nme": "glowColour",
+            "dsc": "Lnet/minecraft/class_124;"
+          },
+          {
+            "acc": 2,
+            "nme": "tickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback<TE;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "fadeCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback<TE;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "leftClickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback<TE;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "rightClickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback<TE;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/LieManager.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/LieManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "tick",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "removeAll",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "migratePlayerInstance",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "_migratePlayerInstance",
+            "acc": 10,
+            "dsc": "(Lcom/google/common/collect/Multimap;Lnet/minecraft/class_3222;Lnet/minecraft/class_3222;)V",
+            "sig": "<L:Lred/jackf/jackfredlib/impl/lying/LieImpl;>(Lcom/google/common/collect/Multimap<Lnet/minecraft/class_3222;TL;>;Lnet/minecraft/class_3222;Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "migrateEntity",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1297;)V"
+          },
+          {
+            "nme": "doMigrateEntity",
+            "acc": 10,
+            "dsc": "(Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;Lnet/minecraft/class_1297;)V",
+            "sig": "<E:Lnet/minecraft/class_1297;>(Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<TE;>;Lnet/minecraft/class_1297;)V"
+          },
+          {
+            "nme": "addEntity",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl<*>;)V"
+          },
+          {
+            "nme": "removeEntity",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl<*>;)V"
+          },
+          {
+            "nme": "getEntityLieFromEntityUuid",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Ljava/util/UUID;)Ljava/util/Optional;",
+            "sig": "(Lnet/minecraft/class_3222;Ljava/util/UUID;)Ljava/util/Optional<Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl<*>;>;"
+          },
+          {
+            "nme": "getEntityLieFromId",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;I)Ljava/util/Optional;",
+            "sig": "(Lnet/minecraft/class_3222;I)Ljava/util/Optional<Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl<*>;>;"
+          },
+          {
+            "nme": "addEntityGlow",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<*>;)V"
+          },
+          {
+            "nme": "removeEntityGlow",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)V",
+            "sig": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<*>;)V"
+          },
+          {
+            "nme": "getEntityGlowLieFromEntityUuid",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;Ljava/util/UUID;)Ljava/util/Optional;",
+            "sig": "(Lnet/minecraft/class_3222;Ljava/util/UUID;)Ljava/util/Optional<Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<*>;>;"
+          },
+          {
+            "nme": "lambda$getEntityGlowLieFromEntityUuid$6",
+            "acc": 4106,
+            "dsc": "(Ljava/util/UUID;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)Z"
+          },
+          {
+            "nme": "lambda$getEntityLieFromId$5",
+            "acc": 4106,
+            "dsc": "(ILred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)Z"
+          },
+          {
+            "nme": "lambda$getEntityLieFromEntityUuid$4",
+            "acc": 4106,
+            "dsc": "(Ljava/util/UUID;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)Z"
+          },
+          {
+            "nme": "lambda$removeAll$3",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)V"
+          },
+          {
+            "nme": "lambda$removeAll$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl;)V"
+          },
+          {
+            "nme": "lambda$tick$1",
+            "acc": 4106,
+            "dsc": "(Ljava/util/Map$Entry;)V"
+          },
+          {
+            "nme": "lambda$tick$0",
+            "acc": 4106,
+            "dsc": "(Ljava/util/Map$Entry;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/impl/lying/LieManager;"
+          },
+          {
+            "acc": 18,
+            "nme": "entityGlowLies",
+            "dsc": "Lcom/google/common/collect/Multimap;",
+            "sig": "Lcom/google/common/collect/Multimap<Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/glowing/EntityGlowLieImpl<*>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "entityLies",
+            "dsc": "Lcom/google/common/collect/Multimap;",
+            "sig": "Lcom/google/common/collect/Multimap<Lnet/minecraft/class_3222;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl<*>;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "addLie",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(TL;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1025,
+            "dsc": "(Ljava/util/Collection;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(Ljava/util/Collection<TL;>;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1025,
+            "dsc": "(Ljava/util/stream/Stream;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(Ljava/util/stream/Stream<TL;>;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "addLies",
+            "acc": 1025,
+            "dsc": "([Lred/jackf/jackfredlib/api/lying/Lie;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "([TL;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "setFocus",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_243;D)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(Lnet/minecraft/class_243;D)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "setBounds",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_238;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(Lnet/minecraft/class_238;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "setUpdateInterval",
+            "acc": 1025,
+            "dsc": "(J)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(J)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "addPredicate",
+            "acc": 1025,
+            "dsc": "(Ljava/util/function/Predicate;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "(Ljava/util/function/Predicate<Lnet/minecraft/class_3222;>;)Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "keepWhenEmpty",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder;",
+            "sig": "()Lred/jackf/jackfredlib/api/lying/Tracker$TrackerBuilder<TL;>;"
+          },
+          {
+            "nme": "build",
+            "acc": 1025,
+            "dsc": "(Z)Lred/jackf/jackfredlib/api/lying/Tracker;",
+            "sig": "(Z)Lred/jackf/jackfredlib/api/lying/Tracker<TL;>;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/entity/EntityLie.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/EntityLie",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "glowColour",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_124;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setGlowColour",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "entity",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder;",
+            "sig": "<E:Lnet/minecraft/class_1297;>(TE;)Lred/jackf/jackfredlib/api/lying/entity/EntityLie$Builder<TE;>;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/lying/entity/EntityLieImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/entity/EntityLieImpl",
+        "super": "red/jackf/jackfredlib/impl/lying/LieImpl",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_124;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback;)V",
+            "sig": "(TE;Lnet/minecraft/class_124;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback<TE;>;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback<TE;>;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback<TE;>;Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback<TE;>;)V"
+          },
+          {
+            "nme": "glowColour",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_124;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setGlowColour",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "entity",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "addPlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "removePlayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "tick",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;)V"
+          },
+          {
+            "nme": "leftClick",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;ZLnet/minecraft/class_243;)V"
+          },
+          {
+            "nme": "rightClick",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3222;ZLnet/minecraft/class_1268;Lnet/minecraft/class_243;)V"
+          },
+          {
+            "nme": "lambda$new$1",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_2596;)V"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_2596;Lnet/minecraft/class_3222;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "entity",
+            "dsc": "Lnet/minecraft/class_1297;",
+            "sig": "TE;"
+          },
+          {
+            "acc": 18,
+            "nme": "serverEntity",
+            "dsc": "Lnet/minecraft/class_3231;"
+          },
+          {
+            "acc": 2,
+            "nme": "glowColour",
+            "dsc": "Lnet/minecraft/class_124;"
+          },
+          {
+            "acc": 18,
+            "nme": "tickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$TickCallback<TE;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "fadeCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$FadeCallback<TE;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "leftClickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$LeftClickCallback<TE;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "rightClickCallback",
+            "dsc": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback;",
+            "sig": "Lred/jackf/jackfredlib/api/lying/entity/EntityLie$RightClickCallback<TE;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/lying/tracker/TrackerImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/lying/tracker/TrackerImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;Ljava/util/function/Predicate;JLjava/util/function/Predicate;ZLjava/util/Collection;)V",
+            "sig": "(Lnet/minecraft/class_3218;Ljava/util/function/Predicate<Lnet/minecraft/class_243;>;JLjava/util/function/Predicate<Lnet/minecraft/class_3222;>;ZLjava/util/Collection<TL;>;)V"
+          },
+          {
+            "nme": "isRunning",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setRunning",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "tick",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getManagedLies",
+            "acc": 1,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TL;>;"
+          },
+          {
+            "nme": "addLie",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Z",
+            "sig": "(TL;)Z"
+          },
+          {
+            "nme": "removeLie",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/lying/Lie;)Z",
+            "sig": "(TL;)Z"
+          },
+          {
+            "nme": "setFocus",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_243;D)V"
+          },
+          {
+            "nme": "setBounds",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_238;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "level",
+            "dsc": "Lnet/minecraft/class_3218;"
+          },
+          {
+            "acc": 2,
+            "nme": "positionPredicate",
+            "dsc": "Ljava/util/function/Predicate;",
+            "sig": "Ljava/util/function/Predicate<Lnet/minecraft/class_243;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "updateInterval",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "playerPredicate",
+            "dsc": "Ljava/util/function/Predicate;",
+            "sig": "Ljava/util/function/Predicate<Lnet/minecraft/class_3222;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "keepWhenEmpty",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "lies",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<TL;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "startTick",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "running",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin$1.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "red/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lred/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin;ILnet/minecraft/class_2824;)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "method_34218",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_34219",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1268;)V"
+          },
+          {
+            "nme": "method_34220",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1268;Lnet/minecraft/class_243;)V"
+          },
+          {
+            "nme": "lambda$onInteraction$2",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_2824;Lnet/minecraft/class_1268;Lnet/minecraft/class_243;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)V"
+          },
+          {
+            "nme": "lambda$onAttack$1",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_2824;Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;)V"
+          },
+          {
+            "nme": "lambda$onAttack$0",
+            "acc": 4098,
+            "dsc": "(Lred/jackf/jackfredlib/impl/lying/entity/EntityLieImpl;Lnet/minecraft/class_2824;Lnet/minecraft/class_243;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$entityId",
+            "dsc": "I"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$packet",
+            "dsc": "Lnet/minecraft/class_2824;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lred/jackf/jackfredlib/mixins/lying/entity/ServerGamePacketListenerImplMixin;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/lying/entity/builders/EntityPresets.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/lying/entity/builders/EntityPresets",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "highlight",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_3218;Lnet/minecraft/class_2338;Lred/jackf/jackfredlib/api/colour/Colour;F)Lnet/minecraft/class_8113$class_8115;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/lying/glowing/EntityGlowLie",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "glowColour",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_124;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setGlowColour",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_124;)V"
+          },
+          {
+            "nme": "entity",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder;",
+            "sig": "<E:Lnet/minecraft/class_1297;>(TE;)Lred/jackf/jackfredlib/api/lying/glowing/EntityGlowLie$Builder<TE;>;"
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

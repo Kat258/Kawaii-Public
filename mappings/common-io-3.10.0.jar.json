@@ -1,0 +1,5222 @@
+{
+  "md5": "53a96e82fa29fcd7b584db545d78a140",
+  "sha2": "5ca6fcfc92f197cfb98671c1d4fffa982970d7a7",
+  "sha256": "4a2e91d7ef3f5356c1cc57aa6056c59192f4a39b2c7e309e9c84b1b87710d041",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/io/enc/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/io/enc/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/FileUtil$2.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/FileUtil$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/FileFilter;Lcom/twelvemonkeys/util/Visitor;)V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pFilter",
+            "dsc": "Ljava/io/FileFilter;"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$pVisitor",
+            "dsc": "Lcom/twelvemonkeys/util/Visitor;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/xml/XMLSerializer.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/xml/XMLSerializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "indentation",
+            "acc": 17,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/xml/XMLSerializer;"
+          },
+          {
+            "nme": "stripComments",
+            "acc": 17,
+            "dsc": "(Z)Lcom/twelvemonkeys/xml/XMLSerializer;"
+          },
+          {
+            "nme": "serialize",
+            "acc": 1,
+            "dsc": "(Lorg/w3c/dom/Document;)V"
+          },
+          {
+            "nme": "serialize",
+            "acc": 1,
+            "dsc": "(Lorg/w3c/dom/Node;Z)V"
+          },
+          {
+            "nme": "writeXMLDeclaration",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;)V"
+          },
+          {
+            "nme": "writeXML",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeNodeRecursive",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeProcessingInstruction",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/ProcessingInstruction;)V"
+          },
+          {
+            "nme": "writeText",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeCData",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;)V"
+          },
+          {
+            "nme": "updatePreserveSpace",
+            "acc": 10,
+            "dsc": "(Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "indentToLevel",
+            "acc": 10,
+            "dsc": "(Ljava/io/PrintWriter;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeComment",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "maybeEscapeElementValue",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "appendAndEscape",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;IILjava/lang/StringBuilder;Ljava/lang/String;)I"
+          },
+          {
+            "nme": "needsEscapeElement",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)I"
+          },
+          {
+            "nme": "maybeEscapeAttributeValue",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "needsEscapeAttribute",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)I"
+          },
+          {
+            "nme": "validateCDataValue",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "validateCommentValue",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "writeDocument",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Node;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeElement",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/Element;Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;)V"
+          },
+          {
+            "nme": "writeDoctype",
+            "acc": 2,
+            "dsc": "(Ljava/io/PrintWriter;Lorg/w3c/dom/DocumentType;)V"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException",
+              "org/xml/sax/SAXException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "output",
+            "dsc": "Ljava/io/OutputStream;"
+          },
+          {
+            "acc": 18,
+            "nme": "encoding",
+            "dsc": "Ljava/nio/charset/Charset;"
+          },
+          {
+            "acc": 18,
+            "nme": "context",
+            "dsc": "Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/LittleEndianDataInputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/LittleEndianDataInputStream",
+        "super": "java/io/FilterInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "readBoolean",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readByte",
+            "acc": 1,
+            "dsc": "()B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUnsignedByte",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readShort",
+            "acc": 1,
+            "dsc": "()S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUnsignedShort",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readChar",
+            "acc": 1,
+            "dsc": "()C",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUTF",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readDouble",
+            "acc": 17,
+            "dsc": "()D",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFloat",
+            "acc": 17,
+            "dsc": "()F",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipBytes",
+            "acc": 17,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFully",
+            "acc": 17,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFully",
+            "acc": 17,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLine",
+            "acc": 131073,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ],
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/ole2/CompoundDocument$SeekableLittleEndianDataInputStream.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/io/ole2/CompoundDocument$SeekableLittleEndianDataInputStream",
+        "super": "com/twelvemonkeys/io/LittleEndianDataInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/io/SeekableInputStream;)V"
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getStreamPosition",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "seekable",
+            "dsc": "Lcom/twelvemonkeys/io/SeekableInputStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/StringArrayReader.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/StringArrayReader",
+        "super": "java/io/StringReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "nextReader",
+            "acc": 20,
+            "dsc": "()Ljava/io/Reader;"
+          },
+          {
+            "nme": "ensureOpen",
+            "acc": 20,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "mark",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "markSupported",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([CII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "ready",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "current",
+            "dsc": "Ljava/io/StringReader;"
+          },
+          {
+            "acc": 2,
+            "nme": "strings",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "finalLock",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 2,
+            "nme": "currentSting",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "markedString",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "mark",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/UnixFileSystem.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/UnixFileSystem",
+        "super": "com/twelvemonkeys/io/FileSystem",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getFreeSpace",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getTotalSpace",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getNumber",
+            "acc": 2,
+            "dsc": "(Ljava/io/File;I)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getName",
+            "acc": 0,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/ole2/CompoundDocument$Stream.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/io/ole2/CompoundDocument$Stream",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/io/ole2/SIdChain;IILcom/twelvemonkeys/io/ole2/CompoundDocument;)V"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fillBuffer",
+            "acc": 2,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "chain",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/SIdChain;"
+          },
+          {
+            "acc": 18,
+            "nme": "document",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/CompoundDocument;"
+          },
+          {
+            "acc": 18,
+            "nme": "length",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "streamPos",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "nextSectorPos",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "bufferPos",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/WriterOutputStream$StringDecoder.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/WriterOutputStream$StringDecoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "decodeTo",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;[BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "mCharset",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/DecodeException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/enc/DecodeException",
+        "super": "java/io/IOException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/net/HTTPUtil.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/net/HTTPUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "update50YearWindowIfNeeded",
+            "acc": 10,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "formatHTTPDate",
+            "acc": 9,
+            "dsc": "(J)Ljava/lang/String;"
+          },
+          {
+            "nme": "formatHTTPDate",
+            "acc": 9,
+            "dsc": "(Ljava/util/Date;)Ljava/lang/String;"
+          },
+          {
+            "nme": "parseHTTPDate",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)J",
+            "exs": [
+              "java/lang/NumberFormatException"
+            ]
+          },
+          {
+            "nme": "parseHTTPDateImpl",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Date;",
+            "exs": [
+              "java/lang/NumberFormatException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "HTTP_RFC1123_FORMAT",
+            "dsc": "Ljava/text/SimpleDateFormat;"
+          },
+          {
+            "acc": 26,
+            "nme": "HTTP_RFC850_FORMAT",
+            "dsc": "Ljava/text/SimpleDateFormat;"
+          },
+          {
+            "acc": 26,
+            "nme": "HTTP_ASCTIME_FORMAT",
+            "dsc": "Ljava/text/SimpleDateFormat;"
+          },
+          {
+            "acc": 10,
+            "nme": "sNext50YearWindowChange",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/CompoundReader.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/CompoundReader",
+        "super": "java/io/Reader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Iterator;)V",
+            "sig": "(Ljava/util/Iterator<Ljava/io/Reader;>;)V"
+          },
+          {
+            "nme": "nextReader",
+            "acc": 20,
+            "dsc": "()Ljava/io/Reader;"
+          },
+          {
+            "nme": "ensureOpen",
+            "acc": 20,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "markSupported",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([CII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "ready",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "current",
+            "dsc": "Ljava/io/Reader;"
+          },
+          {
+            "acc": 2,
+            "nme": "readers",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/io/Reader;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "finalLock",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 20,
+            "nme": "markSupported",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "currentReader",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "markedReader",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "mark",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/WriterOutputStream$CharsetDecoder.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/WriterOutputStream$CharsetDecoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "decodeTo",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;[BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "mCharset",
+            "dsc": "Ljava/nio/charset/Charset;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/NullOutputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/NullOutputStream",
+        "super": "java/io/OutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/WriterOutputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/WriterOutputStream",
+        "super": "java/io/OutputStream",
+        "mthds": [
+          {
+            "nme": "isNIOAvailable",
+            "acc": 10,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;)V"
+          },
+          {
+            "nme": "getDecoder",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/io/WriterOutputStream$Decoder;"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 17,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 17,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 17,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "flushBuffer",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "writer",
+            "dsc": "Ljava/io/Writer;"
+          },
+          {
+            "acc": 20,
+            "nme": "decoder",
+            "dsc": "Lcom/twelvemonkeys/io/WriterOutputStream$Decoder;"
+          },
+          {
+            "acc": 16,
+            "nme": "bufferStream",
+            "dsc": "Ljava/io/ByteArrayOutputStream;"
+          },
+          {
+            "acc": 66,
+            "nme": "isFlushing",
+            "dsc": "Z"
+          },
+          {
+            "acc": 26,
+            "nme": "NIO_AVAILABLE",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 1024,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 0,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1024,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 0,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1024,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 0,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1024,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1024,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/MemoryCacheSeekableStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/MemoryCacheSeekableStream",
+        "super": "com/twelvemonkeys/io/AbstractCachedSeekableStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "read",
+            "acc": 4161,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 4161,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "available",
+            "acc": 4161,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/SeekableInputStream.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/io/SeekableInputStream",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 17,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 17,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "markSupported",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "seek",
+            "acc": 17,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 1028,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 17,
+            "dsc": "()V"
+          },
+          {
+            "nme": "reset",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 17,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 1028,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 17,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getStreamPosition",
+            "acc": 17,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "checkOpen",
+            "acc": 20,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 1028,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "finalize",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/lang/Throwable"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "position",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "flushedPosition",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "closed",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "markedPositions",
+            "dsc": "Ljava/util/Stack;",
+            "sig": "Ljava/util/Stack<Ljava/lang/Long;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/Base64Encoder.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/enc/Base64Encoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "encode",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Ljava/nio/ByteBuffer;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/NullInputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/NullInputStream",
+        "super": "java/io/InputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/ole2/SIdChain.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/ole2/SIdChain",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "addSID",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "ensureCapacity",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getChain",
+            "acc": 1,
+            "dsc": "()[I"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "chain",
+            "dsc": "[I"
+          },
+          {
+            "acc": 0,
+            "nme": "size",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "next",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileSystem$UnknownFileSystem.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/io/FileSystem$UnknownFileSystem",
+        "super": "com/twelvemonkeys/io/FileSystem",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getFreeSpace",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getTotalSpace",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getName",
+            "acc": 0,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "osName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/Encoder.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/io/enc/Encoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "encode",
+            "acc": 1025,
+            "dsc": "(Ljava/io/OutputStream;Ljava/nio/ByteBuffer;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/RandomAccessStream$InputStreamView.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/RandomAccessStream$InputStreamView",
+        "super": "com/twelvemonkeys/io/SeekableInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/io/RandomAccessStream;)V"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mStream",
+            "dsc": "Lcom/twelvemonkeys/io/RandomAccessStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/AbstractCachedSeekableStream.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/io/AbstractCachedSeekableStream",
+        "super": "com/twelvemonkeys/io/SeekableInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/io/InputStream;Lcom/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache;)V"
+          },
+          {
+            "nme": "getCache",
+            "acc": 20,
+            "dsc": "()Lcom/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache;"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "syncPosition",
+            "acc": 20,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isCached",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 4,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "stream",
+            "dsc": "Ljava/io/InputStream;"
+          },
+          {
+            "acc": 4,
+            "nme": "streamPosition",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "cache",
+            "dsc": "Lcom/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/Base64Decoder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/enc/Base64Decoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "readFully",
+            "acc": 12,
+            "dsc": "(Ljava/io/InputStream;[BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decodeAtom",
+            "acc": 4,
+            "dsc": "(Ljava/io/InputStream;Ljava/nio/ByteBuffer;I)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ljava/nio/ByteBuffer;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "PEM_ARRAY",
+            "dsc": "[B"
+          },
+          {
+            "acc": 24,
+            "nme": "PEM_CONVERT_ARRAY",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "decodeBuffer",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileCacheSeekableStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/FileCacheSeekableStream",
+        "super": "com/twelvemonkeys/io/AbstractCachedSeekableStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createTempFile",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/io/File;)Ljava/io/File;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/InputStream;Ljava/io/File;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readAhead",
+            "acc": 2,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "available",
+            "acc": 4161,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "buffer",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/LittleEndianDataOutputStream.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/LittleEndianDataOutputStream",
+        "super": "java/io/FilterOutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 33,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 33,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeBoolean",
+            "acc": 1,
+            "dsc": "(Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeByte",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeShort",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeChar",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeInt",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeLong",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeFloat",
+            "acc": 17,
+            "dsc": "(F)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeDouble",
+            "acc": 17,
+            "dsc": "(D)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeBytes",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeChars",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeUTF",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "bytesWritten",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/Win32Lnk.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/Win32Lnk",
+        "super": "java/io/File",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parse",
+            "acc": 8,
+            "dsc": "(Ljava/io/File;)Ljava/io/File;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getTarget",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;"
+          },
+          {
+            "nme": "isDirectory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "canRead",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "canWrite",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "exists",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getCanonicalFile",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getCanonicalPath",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isHidden",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "lastModified",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "list",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "list",
+            "acc": 1,
+            "dsc": "(Ljava/io/FilenameFilter;)[Ljava/lang/String;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "()[Ljava/io/File;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "(Ljava/io/FileFilter;)[Ljava/io/File;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "(Ljava/io/FilenameFilter;)[Ljava/io/File;"
+          },
+          {
+            "nme": "setLastModified",
+            "acc": 1,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "setReadOnly",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LNK_MAGIC",
+            "dsc": "[B"
+          },
+          {
+            "acc": 26,
+            "nme": "LNK_GUID",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "target",
+            "dsc": "Ljava/io/File;"
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_ITEM_ID_LIST",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_FILE_LOC_INFO",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_DESC_STRING",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_REL_PATH_STRING",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_WORKING_DIRECTORY",
+            "dsc": "I",
+            "val": 16
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_COMMAND_LINE_ARGS",
+            "dsc": "I",
+            "val": 32
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_ICON_FILENAME",
+            "dsc": "I",
+            "val": 64
+          },
+          {
+            "acc": 26,
+            "nme": "FLAG_ADDITIONAL_INFO",
+            "dsc": "I",
+            "val": 128
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileSystem.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/io/FileSystem",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getFreeSpace",
+            "acc": 1024,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getTotalSpace",
+            "acc": 1024,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getName",
+            "acc": 1024,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "exec",
+            "acc": 8,
+            "dsc": "([Ljava/lang/String;)Ljava/io/BufferedReader;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "get",
+            "acc": 8,
+            "dsc": "()Lcom/twelvemonkeys/io/FileSystem;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/EmptyReader.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/EmptyReader",
+        "super": "java/io/StringReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/FileUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/FileUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/io/File;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/io/File;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;)V"
+          },
+          {
+            "nme": "close",
+            "acc": 9,
+            "dsc": "(Ljava/io/OutputStream;)V"
+          },
+          {
+            "nme": "close",
+            "acc": 8,
+            "dsc": "(Ljava/io/Reader;)V"
+          },
+          {
+            "nme": "close",
+            "acc": 8,
+            "dsc": "(Ljava/io/Writer;)V"
+          },
+          {
+            "nme": "copyDir",
+            "acc": 10,
+            "dsc": "(Ljava/io/File;Ljava/io/File;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;Ljava/io/OutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getExtension",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getExtension0",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getBasename",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getBasename",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getBasename0",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getDirectoryname",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getDirectoryname",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;C)Ljava/lang/String;"
+          },
+          {
+            "nme": "getFilename",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getFilename",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;C)Ljava/lang/String;"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Z"
+          },
+          {
+            "nme": "getTempDirFile",
+            "acc": 9,
+            "dsc": "()Ljava/io/File;"
+          },
+          {
+            "nme": "getTempDir",
+            "acc": 9,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "read",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)[B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 9,
+            "dsc": "(Ljava/io/InputStream;)[B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 9,
+            "dsc": "(Ljava/io/OutputStream;[B)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;[B)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;[B)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "delete",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "deleteDir",
+            "acc": 10,
+            "dsc": "(Ljava/io/File;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "delete",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "delete",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "delete",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/io/File;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/io/File;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/lang/String;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "rename",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "list",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[Ljava/io/File;",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "list",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[Ljava/io/File;",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "toFile",
+            "acc": 9,
+            "dsc": "(Ljava/net/URL;)Ljava/io/File;"
+          },
+          {
+            "nme": "resolve",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/io/File;"
+          },
+          {
+            "nme": "resolve",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Ljava/io/File;"
+          },
+          {
+            "nme": "resolve",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;"
+          },
+          {
+            "nme": "resolve",
+            "acc": 9,
+            "dsc": "([Ljava/io/File;)[Ljava/io/File;"
+          },
+          {
+            "nme": "getFreeSpace",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getUsableSpace",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getTotalSpace",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getSpace16",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Ljava/io/File;)Ljava/lang/Long;"
+          },
+          {
+            "nme": "toHumanReadableSize",
+            "acc": 9,
+            "dsc": "(J)Ljava/lang/String;"
+          },
+          {
+            "nme": "getSizeFormat",
+            "acc": 10,
+            "dsc": "()Ljava/text/NumberFormat;"
+          },
+          {
+            "nme": "visitFiles",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;Ljava/io/FileFilter;Lcom/twelvemonkeys/util/Visitor;)V",
+            "sig": "(Ljava/io/File;Ljava/io/FileFilter;Lcom/twelvemonkeys/util/Visitor<Ljava/io/File;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "BUF_SIZE",
+            "dsc": "I",
+            "val": 1024
+          },
+          {
+            "acc": 10,
+            "nme": "TEMP_DIR",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 26,
+            "nme": "FS",
+            "dsc": "Lcom/twelvemonkeys/io/FileSystem;"
+          },
+          {
+            "acc": 10,
+            "nme": "sNumberFormat",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Ljava/text/NumberFormat;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/RandomAccessStream.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/io/RandomAccessStream",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 17,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "asInputStream",
+            "acc": 17,
+            "dsc": "()Lcom/twelvemonkeys/io/SeekableInputStream;"
+          },
+          {
+            "nme": "asOutputStream",
+            "acc": 17,
+            "dsc": "()Lcom/twelvemonkeys/io/SeekableOutputStream;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "inputView",
+            "dsc": "Lcom/twelvemonkeys/io/SeekableInputStream;"
+          },
+          {
+            "acc": 0,
+            "nme": "outputView",
+            "dsc": "Lcom/twelvemonkeys/io/SeekableOutputStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/Decoder.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/io/enc/Decoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "decode",
+            "acc": 1025,
+            "dsc": "(Ljava/io/InputStream;Ljava/nio/ByteBuffer;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/xml/DOMSerializer$Support.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/xml/DOMSerializer$Support",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getImplementation",
+            "acc": 8,
+            "dsc": "()Lorg/w3c/dom/ls/DOMImplementationLS;"
+          },
+          {
+            "nme": "createDOMRegistry",
+            "acc": 10,
+            "dsc": "()Lorg/w3c/dom/bootstrap/DOMImplementationRegistry;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DOM_REGISTRY",
+            "dsc": "Lorg/w3c/dom/bootstrap/DOMImplementationRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/xml/XMLSerializer$SerializationContext.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/xml/XMLSerializer$SerializationContext",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "copy",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;"
+          },
+          {
+            "nme": "push",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/xml/XMLSerializer$SerializationContext;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 0,
+            "nme": "level",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "preserveSpace",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "stripComments",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "defaultNamespace",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/ole2/package-info.class": {
+        "ver": 52,
+        "acc": 5632,
+        "nme": "com/twelvemonkeys/io/ole2/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/SeekableOutputStream.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/io/SeekableOutputStream",
+        "super": "java/io/OutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 17,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 17,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 1028,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 17,
+            "dsc": "()V"
+          },
+          {
+            "nme": "reset",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 17,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 1028,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 17,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getStreamPosition",
+            "acc": 17,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "checkOpen",
+            "acc": 20,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 17,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 1028,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "position",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "flushedPosition",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "closed",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "markedPositions",
+            "dsc": "Ljava/util/Stack;",
+            "sig": "Ljava/util/Stack<Ljava/lang/Long;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FastByteArrayOutputStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/FastByteArrayOutputStream",
+        "super": "java/io/ByteArrayOutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([B)V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "growIfNeeded",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "writeTo",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toByteArray",
+            "acc": 1,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "createInputStream",
+            "acc": 1,
+            "dsc": "()Ljava/io/ByteArrayInputStream;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/ole2/CompoundDocument.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/ole2/CompoundDocument",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/io/SeekableInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "canRead",
+            "acc": 9,
+            "dsc": "(Ljava/io/DataInput;)Z"
+          },
+          {
+            "nme": "canRead",
+            "acc": 10,
+            "dsc": "(Ljava/io/DataInput;Z)Z"
+          },
+          {
+            "nme": "readHeader",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipBytesFully",
+            "acc": 2,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSAT",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getSIdChain",
+            "acc": 2,
+            "dsc": "(IJ)Lcom/twelvemonkeys/io/ole2/SIdChain;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isShortStream",
+            "acc": 2,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "seekToSId",
+            "acc": 2,
+            "dsc": "(IJ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seekToDId",
+            "acc": 2,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getInputStreamForSId",
+            "acc": 0,
+            "dsc": "(II)Lcom/twelvemonkeys/io/SeekableInputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getDirectoryStreamForDId",
+            "acc": 2,
+            "dsc": "(I)Ljava/io/InputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getEntry",
+            "acc": 0,
+            "dsc": "(ILcom/twelvemonkeys/io/ole2/Entry;)Lcom/twelvemonkeys/io/ole2/Entry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getEntries",
+            "acc": 0,
+            "dsc": "(ILcom/twelvemonkeys/io/ole2/Entry;)Ljava/util/SortedSet;",
+            "sig": "(ILcom/twelvemonkeys/io/ole2/Entry;)Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getEntriesRecursive",
+            "acc": 2,
+            "dsc": "(ILcom/twelvemonkeys/io/ole2/Entry;Ljava/util/SortedSet;)Ljava/util/SortedSet;",
+            "sig": "(ILcom/twelvemonkeys/io/ole2/Entry;Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;)Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getEntry",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/io/ole2/Entry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getRootEntry",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/io/ole2/Entry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toJavaTimeInMillis",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/io/ole2/CompoundDocument;IJ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/io/ole2/CompoundDocument;)Ljava/io/DataInput;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "MAGIC",
+            "dsc": "[B"
+          },
+          {
+            "acc": 26,
+            "nme": "FREE_SID",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 26,
+            "nme": "END_OF_CHAIN_SID",
+            "dsc": "I",
+            "val": -2
+          },
+          {
+            "acc": 26,
+            "nme": "SAT_SECTOR_SID",
+            "dsc": "I",
+            "val": -3
+          },
+          {
+            "acc": 26,
+            "nme": "MSAT_SECTOR_SID",
+            "dsc": "I",
+            "val": -4
+          },
+          {
+            "acc": 25,
+            "nme": "HEADER_SIZE",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "EPOCH_OFFSET",
+            "dsc": "J",
+            "val": -11644477200000
+          },
+          {
+            "acc": 18,
+            "nme": "input",
+            "dsc": "Ljava/io/DataInput;"
+          },
+          {
+            "acc": 2,
+            "nme": "uUID",
+            "dsc": "Ljava/util/UUID;"
+          },
+          {
+            "acc": 2,
+            "nme": "sectorSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "shortSectorSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "directorySId",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "minStreamSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "shortSATSId",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "shortSATSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "masterSAT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "SAT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "shortSAT",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "rootEntry",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/Entry;"
+          },
+          {
+            "acc": 2,
+            "nme": "shortStreamSIdChain",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/SIdChain;"
+          },
+          {
+            "acc": 2,
+            "nme": "directorySIdChain",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/SIdChain;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/Win32File.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/Win32File",
+        "super": "java/io/File",
+        "mthds": [
+          {
+            "nme": "isWindows",
+            "acc": 10,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/File;)V"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 10,
+            "dsc": "(Ljava/io/File;IZ)V"
+          },
+          {
+            "nme": "wrap",
+            "acc": 9,
+            "dsc": "(Ljava/io/File;)Ljava/io/File;"
+          },
+          {
+            "nme": "wrap",
+            "acc": 9,
+            "dsc": "([Ljava/io/File;)[Ljava/io/File;"
+          },
+          {
+            "nme": "getAbsoluteFile",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;"
+          },
+          {
+            "nme": "getCanonicalFile",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getParentFile",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "()[Ljava/io/File;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "(Ljava/io/FileFilter;)[Ljava/io/File;"
+          },
+          {
+            "nme": "listFiles",
+            "acc": 1,
+            "dsc": "(Ljava/io/FilenameFilter;)[Ljava/io/File;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "IS_WINDOWS",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/RandomAccessStream$OutputStreamView.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/RandomAccessStream$OutputStreamView",
+        "super": "com/twelvemonkeys/io/SeekableOutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/io/RandomAccessStream;)V"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mStream",
+            "dsc": "Lcom/twelvemonkeys/io/RandomAccessStream;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/DecoderStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/enc/DecoderStream",
+        "super": "java/io/FilterInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Lcom/twelvemonkeys/io/enc/Decoder;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Lcom/twelvemonkeys/io/enc/Decoder;I)V"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fill",
+            "acc": 2,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "buffer",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          },
+          {
+            "acc": 18,
+            "nme": "decoder",
+            "dsc": "Lcom/twelvemonkeys/io/enc/Decoder;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/Seekable.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/io/Seekable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getStreamPosition",
+            "acc": 1025,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1025,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1025,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBefore",
+            "acc": 1025,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1025,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFlushedPosition",
+            "acc": 1025,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isCached",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "close",
+            "acc": 1025,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/net/MIMEUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/net/MIMEUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getMIMEType",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getMIMETypes",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/List;",
+            "sig": "(Ljava/lang/String;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getMIMETypeMappings",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "nme": "getExtension",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getExtensions",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/List;",
+            "sig": "(Ljava/lang/String;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getExtensionForWildcard",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Ljava/util/List;",
+            "sig": "(Ljava/lang/String;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getExtensionMappings",
+            "acc": 9,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "nme": "includes",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "bareMIME",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "maskNull",
+            "acc": 10,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;",
+            "sig": "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 10,
+            "nme": "sExtToMIME",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "acc": 10,
+            "nme": "sUnmodifiableExtToMIME",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "acc": 10,
+            "nme": "sMIMEToExt",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "acc": 10,
+            "nme": "sUnmodifiableMIMEToExt",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/PackBitsDecoder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/enc/PackBitsDecoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(IZ)V"
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;Ljava/nio/ByteBuffer;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readByte",
+            "acc": 8,
+            "dsc": "(Ljava/io/InputStream;)B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFully",
+            "acc": 8,
+            "dsc": "(Ljava/io/InputStream;Ljava/nio/ByteBuffer;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "disableNoOp",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "sample",
+            "dsc": "[B"
+          },
+          {
+            "acc": 2,
+            "nme": "reachedEOF",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/MemoryCacheSeekableStream$MemoryCache.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/MemoryCacheSeekableStream$MemoryCache",
+        "super": "com/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getBlock",
+            "acc": 2,
+            "dsc": "()[B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "close",
+            "acc": 0,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "BLOCK_SIZE",
+            "dsc": "I",
+            "val": 8192
+          },
+          {
+            "acc": 18,
+            "nme": "cache",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<[B>;"
+          },
+          {
+            "acc": 2,
+            "nme": "length",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "position",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "start",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/ole2/CorruptDocumentException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/ole2/CorruptDocumentException",
+        "super": "java/io/IOException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/FilenameMaskFilter.class": {
+        "ver": 52,
+        "acc": 131105,
+        "nme": "com/twelvemonkeys/io/FilenameMaskFilter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "setFilenameMasksForInclusion",
+            "acc": 1,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getFilenameMasksForInclusion",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "setFilenameMasksForExclusion",
+            "acc": 1,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getFilenameMasksForExclusion",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "filenameMasksForInclusion",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "filenameMasksForExclusion",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "inclusion",
+            "dsc": "Z"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileCacheSeekableStream$FileCache.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/FileCacheSeekableStream$FileCache",
+        "super": "com/twelvemonkeys/io/AbstractCachedSeekableStream$StreamCache",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 0,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "cacheFile",
+            "dsc": "Ljava/io/RandomAccessFile;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileUtil$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/FileUtil$1",
+        "super": "java/lang/ThreadLocal",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "initialValue",
+            "acc": 4,
+            "dsc": "()Ljava/text/NumberFormat;"
+          },
+          {
+            "nme": "initialValue",
+            "acc": 4164,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/xml/DOMSerializer.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/xml/DOMSerializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;)V"
+          },
+          {
+            "nme": "setPrettyPrint",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "getPrettyPrint",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setXMLDeclaration",
+            "acc": 2,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "serialize",
+            "acc": 1,
+            "dsc": "(Lorg/w3c/dom/Document;)V"
+          },
+          {
+            "nme": "serialize",
+            "acc": 1,
+            "dsc": "(Lorg/w3c/dom/Node;)V"
+          },
+          {
+            "nme": "serializeImpl",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Node;Z)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "PARAM_PRETTY_PRINT",
+            "dsc": "Ljava/lang/String;",
+            "val": "format-pretty-print"
+          },
+          {
+            "acc": 26,
+            "nme": "PARAM_XML_DECLARATION",
+            "dsc": "Ljava/lang/String;",
+            "val": "xml-declaration"
+          },
+          {
+            "acc": 18,
+            "nme": "serializer",
+            "dsc": "Lorg/w3c/dom/ls/LSSerializer;"
+          },
+          {
+            "acc": 18,
+            "nme": "output",
+            "dsc": "Lorg/w3c/dom/ls/LSOutput;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/EncoderStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/enc/EncoderStream",
+        "super": "java/io/FilterOutputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Lcom/twelvemonkeys/io/enc/Encoder;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Lcom/twelvemonkeys/io/enc/Encoder;Z)V"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "encodeBuffer",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "encoder",
+            "dsc": "Lcom/twelvemonkeys/io/enc/Encoder;"
+          },
+          {
+            "acc": 18,
+            "nme": "flushOnWrite",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "buffer",
+            "dsc": "Ljava/nio/ByteBuffer;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/ole2/Entry.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/ole2/Entry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "readEntry",
+            "acc": 8,
+            "dsc": "(Ljava/io/DataInput;)Lcom/twelvemonkeys/io/ole2/Entry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 2,
+            "dsc": "(Ljava/io/DataInput;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isRoot",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isDirectory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getInputStream",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/io/SeekableInputStream;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "created",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "lastModified",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "getParentEntry",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/io/ole2/Entry;"
+          },
+          {
+            "nme": "getChildEntry",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/io/ole2/Entry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getChildEntries",
+            "acc": 1,
+            "dsc": "()Ljava/util/SortedSet;",
+            "sig": "()Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/io/ole2/Entry;)I"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 0,
+            "nme": "type",
+            "dsc": "B"
+          },
+          {
+            "acc": 0,
+            "nme": "nodeColor",
+            "dsc": "B"
+          },
+          {
+            "acc": 0,
+            "nme": "prevDId",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "nextDId",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "rootNodeDId",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "createdTimestamp",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "modifiedTimestamp",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "startSId",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "streamSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "document",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/CompoundDocument;"
+          },
+          {
+            "acc": 0,
+            "nme": "parent",
+            "dsc": "Lcom/twelvemonkeys/io/ole2/Entry;"
+          },
+          {
+            "acc": 0,
+            "nme": "children",
+            "dsc": "Ljava/util/SortedSet;",
+            "sig": "Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LENGTH",
+            "dsc": "I",
+            "val": 128
+          },
+          {
+            "acc": 24,
+            "nme": "EMPTY",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 24,
+            "nme": "USER_STORAGE",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "USER_STREAM",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 24,
+            "nme": "LOCK_BYTES",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "PROPERTY",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "ROOT_STORAGE",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 26,
+            "nme": "NO_CHILDREN",
+            "dsc": "Ljava/util/SortedSet;",
+            "sig": "Ljava/util/SortedSet<Lcom/twelvemonkeys/io/ole2/Entry;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/FileSeekableStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/FileSeekableStream",
+        "super": "com/twelvemonkeys/io/SeekableInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/RandomAccessFile;)V"
+          },
+          {
+            "nme": "isCached",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedFile",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCachedMemory",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "closeImpl",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flushBeforeImpl",
+            "acc": 4,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "seekImpl",
+            "acc": 4,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "mRandomAccess",
+            "dsc": "Ljava/io/RandomAccessFile;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/Win32FileSystem.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/io/Win32FileSystem",
+        "super": "com/twelvemonkeys/io/FileSystem",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getFreeSpace",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getTotalSpace",
+            "acc": 0,
+            "dsc": "(Ljava/io/File;)J"
+          },
+          {
+            "nme": "getName",
+            "acc": 0,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/WriterOutputStream$Decoder.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/io/WriterOutputStream$Decoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "decodeTo",
+            "acc": 1025,
+            "dsc": "(Ljava/io/Writer;[BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/io/FileUtil$1DeleteFilesVisitor.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/io/FileUtil$1DeleteFilesVisitor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "visit",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V"
+          },
+          {
+            "nme": "succeeded",
+            "acc": 0,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "visit",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "failedCount",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "exception",
+            "dsc": "Ljava/io/IOException;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/SubStream.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/SubStream",
+        "super": "java/io/FilterInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;J)V"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "available",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mark",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skip",
+            "acc": 1,
+            "dsc": "(J)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "findMaxLen",
+            "acc": 2,
+            "dsc": "(J)J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "bytesLeft",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "markLimit",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/enc/PackBitsEncoder.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/io/enc/PackBitsEncoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "encode",
+            "acc": 1,
+            "dsc": "(Ljava/io/OutputStream;Ljava/nio/ByteBuffer;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "encode",
+            "acc": 2,
+            "dsc": "(Ljava/io/OutputStream;[BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "buffer",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/io/LittleEndianRandomAccessFile.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/io/LittleEndianRandomAccessFile",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;Ljava/lang/String;)V",
+            "exs": [
+              "java/io/FileNotFoundException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getChannel",
+            "acc": 1,
+            "dsc": "()Ljava/nio/channels/FileChannel;"
+          },
+          {
+            "nme": "getFD",
+            "acc": 1,
+            "dsc": "()Ljava/io/FileDescriptor;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getFilePointer",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([B)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "([BII)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFully",
+            "acc": 1,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFully",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLine",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readBoolean",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readByte",
+            "acc": 1,
+            "dsc": "()B",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUnsignedByte",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readShort",
+            "acc": 1,
+            "dsc": "()S",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUnsignedShort",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readChar",
+            "acc": 1,
+            "dsc": "()C",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readUTF",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readDouble",
+            "acc": 17,
+            "dsc": "()D",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readFloat",
+            "acc": 17,
+            "dsc": "()F",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "seek",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setLength",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipBytes",
+            "acc": 1,
+            "dsc": "(I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([B)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "([BII)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeBoolean",
+            "acc": 1,
+            "dsc": "(Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeByte",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeShort",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeChar",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeInt",
+            "acc": 1,
+            "dsc": "(I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeLong",
+            "acc": 1,
+            "dsc": "(J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeFloat",
+            "acc": 17,
+            "dsc": "(F)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeDouble",
+            "acc": 17,
+            "dsc": "(D)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeBytes",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeChars",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeUTF",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "file",
+            "dsc": "Ljava/io/RandomAccessFile;"
+          }
+        ]
+      }
+    }
+  }
+}

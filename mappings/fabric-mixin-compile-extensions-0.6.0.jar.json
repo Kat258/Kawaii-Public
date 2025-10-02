@@ -1,0 +1,232 @@
+{
+  "md5": "9c079343d3f52a36f4a8df7759dae088",
+  "sha2": "6fda0c85c419f0a259da017a1424f27507eb30f0",
+  "sha256": "23a8ffb25038ba5ddeee30182eb17144e89b9cc5a72c25a9486d0030f9aa4ca6",
+  "contents": {
+    "classes": {
+      "net/fabricmc/loom/mixin/MixinExtUtils.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "net/fabricmc/loom/mixin/MixinExtUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "capitalize",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/loom/mixin/ObfuscationServiceFabric.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "net/fabricmc/loom/mixin/ObfuscationServiceFabric",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "asSuffixed",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "createObfuscationType",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Lorg/spongepowered/tools/obfuscation/service/ObfuscationTypeDescriptor;"
+          },
+          {
+            "nme": "addSupportedOptions",
+            "acc": 2,
+            "dsc": "(Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;)V",
+            "sig": "(Ljava/util/Set<Ljava/lang/String;>;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getSupportedOptions",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getObfuscationTypes",
+            "acc": 1,
+            "dsc": "(Lorg/spongepowered/tools/obfuscation/interfaces/IMixinAnnotationProcessor;)Ljava/util/Collection;",
+            "sig": "(Lorg/spongepowered/tools/obfuscation/interfaces/IMixinAnnotationProcessor;)Ljava/util/Collection<Lorg/spongepowered/tools/obfuscation/service/ObfuscationTypeDescriptor;>;"
+          },
+          {
+            "nme": "getObfuscationTypes",
+            "acc": 1,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<Lorg/spongepowered/tools/obfuscation/service/ObfuscationTypeDescriptor;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "IN_MAP_FILE",
+            "dsc": "Ljava/lang/String;",
+            "val": "inMapFile"
+          },
+          {
+            "acc": 25,
+            "nme": "IN_MAP_EXTRA_FILES",
+            "dsc": "Ljava/lang/String;",
+            "val": "inMapExtraFiles"
+          },
+          {
+            "acc": 25,
+            "nme": "OUT_MAP_FILE",
+            "dsc": "Ljava/lang/String;",
+            "val": "outMapFile"
+          }
+        ]
+      },
+      "net/fabricmc/loom/mixin/MixinMappingWriterTiny.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "net/fabricmc/loom/mixin/MixinMappingWriterTiny",
+        "super": "org/spongepowered/tools/obfuscation/mapping/common/MappingWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/annotation/processing/Messager;Ljavax/annotation/processing/Filer;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/spongepowered/tools/obfuscation/ObfuscationType;Lorg/spongepowered/tools/obfuscation/mapping/IMappingConsumer$MappingSet;Lorg/spongepowered/tools/obfuscation/mapping/IMappingConsumer$MappingSet;)V",
+            "sig": "(Ljava/lang/String;Lorg/spongepowered/tools/obfuscation/ObfuscationType;Lorg/spongepowered/tools/obfuscation/mapping/IMappingConsumer$MappingSet<Lorg/spongepowered/asm/obfuscation/mapping/common/MappingField;>;Lorg/spongepowered/tools/obfuscation/mapping/IMappingConsumer$MappingSet<Lorg/spongepowered/asm/obfuscation/mapping/common/MappingMethod;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/loom/mixin/ObfuscationEnvironmentFabric.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "net/fabricmc/loom/mixin/ObfuscationEnvironmentFabric",
+        "super": "org/spongepowered/tools/obfuscation/ObfuscationEnvironment",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lorg/spongepowered/tools/obfuscation/ObfuscationType;)V"
+          },
+          {
+            "nme": "getMappingProvider",
+            "acc": 4,
+            "dsc": "(Ljavax/annotation/processing/Messager;Ljavax/annotation/processing/Filer;)Lorg/spongepowered/tools/obfuscation/mapping/IMappingProvider;"
+          },
+          {
+            "nme": "getMappingWriter",
+            "acc": 4,
+            "dsc": "(Ljavax/annotation/processing/Messager;Ljavax/annotation/processing/Filer;)Lorg/spongepowered/tools/obfuscation/mapping/IMappingWriter;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/loom/mixin/MixinMappingProviderTiny.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "net/fabricmc/loom/mixin/MixinMappingProviderTiny",
+        "super": "org/spongepowered/tools/obfuscation/mapping/common/MappingProvider",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljavax/annotation/processing/Messager;Ljavax/annotation/processing/Filer;Lorg/spongepowered/tools/obfuscation/interfaces/ITypeHandleProvider;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getMethodMapping",
+            "acc": 1,
+            "dsc": "(Lorg/spongepowered/asm/obfuscation/mapping/common/MappingMethod;)Lorg/spongepowered/asm/obfuscation/mapping/common/MappingMethod;"
+          },
+          {
+            "nme": "getFieldMapping",
+            "acc": 1,
+            "dsc": "(Lorg/spongepowered/asm/obfuscation/mapping/common/MappingField;)Lorg/spongepowered/asm/obfuscation/mapping/common/MappingField;"
+          },
+          {
+            "nme": "getMapping0",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/obfuscation/mapping/IMapping;Ljava/util/Map;)Lorg/spongepowered/asm/obfuscation/mapping/IMapping;",
+            "sig": "<T::Lorg/spongepowered/asm/obfuscation/mapping/IMapping<TT;>;>(TT;Ljava/util/Map<TT;TT;>;)TT;"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/io/File;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "loadClassOrNull",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Lorg/spongepowered/tools/obfuscation/mirror/TypeHandle;"
+          },
+          {
+            "nme": "getMap",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/lang/String;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "types",
+            "dsc": "Lorg/spongepowered/tools/obfuscation/interfaces/ITypeHandleProvider;"
+          },
+          {
+            "acc": 18,
+            "nme": "from",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "to",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "classMap",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "fieldMap",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/spongepowered/asm/obfuscation/mapping/common/MappingField;Lorg/spongepowered/asm/obfuscation/mapping/common/MappingField;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "methodMap",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/spongepowered/asm/obfuscation/mapping/common/MappingMethod;Lorg/spongepowered/asm/obfuscation/mapping/common/MappingMethod;>;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      }
+    }
+  }
+}

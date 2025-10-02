@@ -1,0 +1,1058 @@
+{
+  "md5": "76f4095103f07257ff56091b459753e5",
+  "sha2": "9f193ac7aa3739f2dee44fbbd095ad5df0f38232",
+  "sha256": "4f1b0d088f021f9306438d16620e6e25f987c5c345715f3bbeed6fe41893adf2",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/api/colour/Gradient$LinearMode.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "red/jackf/jackfredlib/api/colour/Gradient$LinearMode",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "RGB",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "acc": 16409,
+            "nme": "HSV_SHORT",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "acc": 16409,
+            "nme": "HSV_LONG",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/colour/ColourImpl.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "red/jackf/jackfredlib/impl/colour/ColourImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "toARGB",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "r",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "g",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "b",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "hue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "saturation",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "scaleBrightness",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "lerp",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;F)Lred/jackf/jackfredlib/api/colour/Colour;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "pure",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "closestDyeColour",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1767;"
+          },
+          {
+            "nme": "sample",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "slice",
+            "acc": 1,
+            "dsc": "(FF)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "reversed",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "squish",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "repeat",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "getPoints",
+            "acc": 1,
+            "dsc": "()Ljava/util/NavigableMap;",
+            "sig": "()Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "integer",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "h",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "s",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "v",
+            "dsc": "F"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/colour/GradientImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/colour/GradientImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/NavigableMap;)V",
+            "sig": "(Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;)V"
+          },
+          {
+            "nme": "sample",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "slice",
+            "acc": 1,
+            "dsc": "(FF)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "reversed",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "squish",
+            "acc": 1,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "repeat",
+            "acc": 1,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "getPoints",
+            "acc": 1,
+            "dsc": "()Ljava/util/NavigableMap;",
+            "sig": "()Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          },
+          {
+            "nme": "newPointMap",
+            "acc": 9,
+            "dsc": "()Ljava/util/NavigableMap;",
+            "sig": "()Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          },
+          {
+            "nme": "decode",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)Lcom/mojang/serialization/DataResult;",
+            "sig": "(Ljava/util/Map<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;)Lcom/mojang/serialization/DataResult<Lred/jackf/jackfredlib/api/colour/Gradient;>;"
+          },
+          {
+            "nme": "encode",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Gradient;)Ljava/util/Map;",
+            "sig": "(Lred/jackf/jackfredlib/api/colour/Gradient;)Ljava/util/Map<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "lambda$decode$0",
+            "acc": 4106,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "frames",
+            "dsc": "Ljava/util/NavigableMap;",
+            "sig": "Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/Colours.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/colour/Colours",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "RED",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "ORANGE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "YELLOW",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIME",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "GREEN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "DARK_GREEN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "AQUAMARINE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "CYAN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_BLUE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLUE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "PURPLE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "MAGENTA",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "PINK",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "HOT_PINK",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "WHITE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_GRAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "GRAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "DARK_GRAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLACK",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/Gradient.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/colour/Gradient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "sample",
+            "acc": 1025,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Colour;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "pure",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/api/colour/GradientBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "value",
+                  "-> new"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "of",
+            "acc": 137,
+            "dsc": "([Lred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "linear",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Gradient$LinearMode;)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "wrapPoint",
+            "acc": 9,
+            "dsc": "(F)F",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "pure",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "slice",
+            "acc": 1025,
+            "dsc": "(FF)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "reversed",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "squish",
+            "acc": 1025,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "repeat",
+            "acc": 1025,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "getPoints",
+            "acc": 1025,
+            "dsc": "()Ljava/util/NavigableMap;",
+            "sig": "()Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lred/jackf/jackfredlib/api/colour/Gradient;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/colour/GradientUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/api/colour/GradientUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "drawHorizontalGradient",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_332;IIIILred/jackf/jackfredlib/api/colour/Gradient;FF)V"
+          },
+          {
+            "nme": "drawVerticalGradient",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_332;IIIILred/jackf/jackfredlib/api/colour/Gradient;FF)V"
+          },
+          {
+            "nme": "generateRepeatedGradient",
+            "acc": 10,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Gradient;FF)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "drawVerticalGradient",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_4588;Lorg/joml/Matrix4f;FFFFLred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)V"
+          },
+          {
+            "nme": "drawHorizontalGradient",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_4588;Lorg/joml/Matrix4f;FFFFLred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/GradientBuilder.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/colour/GradientBuilder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(FLred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/colour/GradientBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "value",
+                  "_, _ -> this"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "addBlock",
+            "acc": 1,
+            "dsc": "(FFLred/jackf/jackfredlib/api/colour/Gradient;)Lred/jackf/jackfredlib/api/colour/GradientBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "value",
+                  "_, _, _ -> this"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "addCut",
+            "acc": 1,
+            "dsc": "(FLred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/colour/GradientBuilder;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Contract;",
+                "vals": [
+                  "value",
+                  "_, _, _ -> this"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "points",
+            "dsc": "Ljava/util/NavigableMap;",
+            "sig": "Ljava/util/NavigableMap<Ljava/lang/Float;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "START",
+            "dsc": "F",
+            "val": 0.0
+          },
+          {
+            "acc": 25,
+            "nme": "END",
+            "dsc": "F"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/Colours$TextColours.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/colour/Colours$TextColours",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "make",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/class_1767;)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "RED",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "ORANGE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "YELLOW",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIME",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "GREEN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "CYAN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_BLUE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLUE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "PURPLE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "MAGENTA",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "PINK",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "BROWN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "WHITE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_GRAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "GRAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLACK",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Colour;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/Gradients.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/colour/Gradients",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "RAINBOW",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "GAY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "LESBIAN",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "BISEXUAL",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "PANSEXUAL",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "INTERSEX_SHARP",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "INTERSEX_SMOOTH",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "NONBINARY",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "TRANS",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "ACE",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "acc": 25,
+            "nme": "ARO",
+            "dsc": "Lred/jackf/jackfredlib/api/colour/Gradient;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/colour/HSVUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/colour/HSVUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "doHSVShort",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "doHSVLong",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)Lred/jackf/jackfredlib/api/colour/Gradient;"
+          },
+          {
+            "nme": "getCheckpoints",
+            "acc": 10,
+            "dsc": "(FF)Ljava/util/List;",
+            "sig": "(FF)Ljava/util/List<Ljava/lang/Float;>;"
+          },
+          {
+            "nme": "lambda$getCheckpoints$1",
+            "acc": 4106,
+            "dsc": "(FFLjava/lang/Float;)Z"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(I)Ljava/lang/Float;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "HSV_CHECKPOINTS",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/Float;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/colour/Colour.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/colour/Colour",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fromARGB",
+            "acc": 9,
+            "dsc": "(IIII)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "fromRGB",
+            "acc": 9,
+            "dsc": "(III)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "fromAHSV",
+            "acc": 9,
+            "dsc": "(IFFF)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "fromHSV",
+            "acc": 9,
+            "dsc": "(FFF)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "fromInt",
+            "acc": 9,
+            "dsc": "(I)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "toARGB",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "a",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "r",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "g",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "b",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "hue",
+            "acc": 1025,
+            "dsc": "()F"
+          },
+          {
+            "nme": "saturation",
+            "acc": 1025,
+            "dsc": "()F"
+          },
+          {
+            "nme": "value",
+            "acc": 1025,
+            "dsc": "()F"
+          },
+          {
+            "nme": "scaleBrightness",
+            "acc": 1025,
+            "dsc": "(F)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "lerp",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;F)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "closestDyeColour",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1767;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+                "vals": [
+                  "value",
+                  "1.1.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/colour/ColourUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/colour/ColourUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "distance",
+            "acc": 10,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;Lred/jackf/jackfredlib/api/colour/Colour;)D"
+          },
+          {
+            "nme": "closestDyeTo",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/api/colour/Colour;)Lnet/minecraft/class_1767;"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_1767;)Lred/jackf/jackfredlib/api/colour/Colour;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_1767;)Lnet/minecraft/class_1767;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "COLOUR_MAP",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_1767;Lred/jackf/jackfredlib/api/colour/Colour;>;"
+          }
+        ]
+      }
+    }
+  }
+}

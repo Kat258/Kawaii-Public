@@ -1,0 +1,5555 @@
+{
+  "md5": "bbf282fe825271876105aa74f19eb122",
+  "sha2": "9c9cf52c37f87fdbb6b3a0f117dcb31f59c6e9a0",
+  "sha256": "9b81aeaa12a61b165bfbcb0fd7525aad49db710da5a33519866b243c6e85c103",
+  "contents": {
+    "classes": {
+      "ladysnake/satin/api/managed/ManagedShaderEffect.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/ManagedShaderEffect",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getShaderEffect",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/gl/PostEffectProcessor;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "initialize",
+            "acc": 1025,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ],
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isInitialized",
+            "acc": 1025,
+            "dsc": "()Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isErrored",
+            "acc": 1025,
+            "dsc": "()Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "release",
+            "acc": 1025,
+            "dsc": "()V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "render",
+            "acc": 1025,
+            "dsc": "(F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getTarget",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/ManagedFramebuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setupDynamicUniforms",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Runnable;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setupDynamicUniforms",
+            "acc": 1025,
+            "dsc": "(ILjava/lang/Runnable;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;II)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;III)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;IIII)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;FF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;FFF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;FFFF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lorg/joml/Matrix4f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/texture/AbstractTexture;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/gl/Framebuffer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findSampler",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniformV2;"
+          },
+          {
+            "nme": "findSampler",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniform;"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/ResettableManagedShaderEffect.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ResettableManagedShaderEffect",
+        "super": "ladysnake/satin/impl/ResettableManagedShaderBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedShaderEffect;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "INTERNAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getShaderEffect",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/client/gl/PostEffectProcessor;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "initialize",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parseShader",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)Lnet/minecraft/client/gl/PostEffectProcessor;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setup",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "render",
+            "acc": 1,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "getTarget",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/ManagedFramebuffer;"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;I)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;II)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;III)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;IIII)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;F)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;FF)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;FFF)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;FFFF)V"
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/joml/Matrix4f;)V"
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/texture/AbstractTexture;)V"
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/gl/Framebuffer;)V"
+          },
+          {
+            "nme": "setSamplerUniform",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;I)V"
+          },
+          {
+            "nme": "findSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniformV2;"
+          },
+          {
+            "nme": "setupDynamicUniforms",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Runnable;)V"
+          },
+          {
+            "nme": "setupDynamicUniforms",
+            "acc": 1,
+            "dsc": "(ILjava/lang/Runnable;)V"
+          },
+          {
+            "nme": "setupUniform",
+            "acc": 4,
+            "dsc": "(Lladysnake/satin/impl/ManagedUniformBase;Lnet/minecraft/client/gl/PostEffectProcessor;)Z"
+          },
+          {
+            "nme": "logInitError",
+            "acc": 4,
+            "dsc": "(Ljava/io/IOException;)V"
+          },
+          {
+            "nme": "getShaderOrLog",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/client/gl/PostEffectProcessor;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setupUniform",
+            "acc": 4164,
+            "dsc": "(Lladysnake/satin/impl/ManagedUniformBase;Ljava/lang/AutoCloseable;)Z"
+          },
+          {
+            "nme": "parseShader",
+            "acc": 4164,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)Ljava/lang/AutoCloseable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "findSampler",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniform;"
+          },
+          {
+            "nme": "lambda$getTarget$0",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/impl/FramebufferWrapper;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "initCallback",
+            "dsc": "Ljava/util/function/Consumer;",
+            "sig": "Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedShaderEffect;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "managedTargets",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lladysnake/satin/impl/FramebufferWrapper;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "managedSamplers",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lladysnake/satin/impl/ManagedSamplerUniformV2;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/blockrenderlayer/WorldRendererMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/blockrenderlayer/WorldRendererMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_3251",
+            "acc": 1028,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Lnet/minecraft/client/util/math/MatrixStack;DDDLorg/joml/Matrix4f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "renderCustom",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "render"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/client/render/WorldRenderer;renderLayer(Lnet/minecraft/client/render/RenderLayer;Lnet/minecraft/client/util/math/MatrixStack;DDDLorg/joml/Matrix4f;)V",
+                        "ordinal",
+                        2,
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "slice",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/Slice;",
+                      "values": [
+                        "from",
+                        {
+                          "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                          "values": [
+                            "value",
+                            "INVOKE_STRING",
+                            "target",
+                            "Lnet/minecraft/util/profiler/Profiler;swap(Ljava/lang/String;)V",
+                            "args",
+                            [
+                              "ldc=terrain"
+                            ]
+                          ],
+                          "api": 589824
+                        },
+                        "to",
+                        {
+                          "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                          "values": [
+                            "value",
+                            "INVOKE",
+                            "target",
+                            "Lnet/minecraft/client/render/DimensionEffects;isDarkened()Z"
+                          ],
+                          "api": 589824
+                        }
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILSOFT"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/WorldRenderer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/event/ShaderEffectRenderCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/ShaderEffectRenderCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "renderShaderEffects",
+            "acc": 1025,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/ShaderEffectRenderCallback;)Lladysnake/satin/api/event/ShaderEffectRenderCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/ShaderEffectRenderCallback;F)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/ShaderEffectRenderCallback;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/RenderLayerMultiPhaseMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/render/RenderLayerMultiPhaseMixin",
+        "super": "net/minecraft/client/render/RenderLayer",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Lnet/minecraft/client/render/VertexFormat$DrawMode;IZZLjava/lang/Runnable;Ljava/lang/Runnable;)V"
+          },
+          {
+            "nme": "satin$copy",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer;",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "satin$copyPhaseParameters",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;",
+            "sig": "(Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_21403",
+            "dsc": "Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderLayer$MultiPhase"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/gl/CustomFormatFramebufferMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/gl/CustomFormatFramebufferMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "satin$setFormat",
+            "acc": 2,
+            "dsc": "(ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "<init>"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "TAIL"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "satin$modifyInternalFormat",
+            "acc": 2,
+            "dsc": "(I)I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyArg;",
+                "vals": [
+                  "method",
+                  [
+                    "initFbo"
+                  ],
+                  "slice",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/Slice;",
+                    "values": [
+                      "from",
+                      {
+                        "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                        "values": [
+                          "value",
+                          "INVOKE",
+                          "target",
+                          "Lnet/minecraft/client/gl/Framebuffer;setTexFilter(I)V"
+                        ],
+                        "api": 589824
+                      },
+                      "to",
+                      {
+                        "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                        "values": [
+                          "value",
+                          "INVOKE",
+                          "target",
+                          "Lcom/mojang/blaze3d/platform/GlStateManager;_glBindFramebuffer(II)V"
+                        ],
+                        "api": 589824
+                      }
+                    ],
+                    "api": 589824
+                  },
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lcom/mojang/blaze3d/platform/GlStateManager;_texImage2D(IIIIIIIILjava/nio/IntBuffer;)V"
+                    ],
+                    "api": 589824
+                  },
+                  "index",
+                  2
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "satin$format",
+            "dsc": "I"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/Framebuffer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/event/WorldRendererMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/event/WorldRendererMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "captureFrustum",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/render/Frustum;)Lnet/minecraft/client/render/Frustum;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyVariable;",
+                "vals": [
+                  "method",
+                  [
+                    "render"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "CONSTANT",
+                      "args",
+                      [
+                        "stringValue=entities"
+                      ],
+                      "ordinal",
+                      0,
+                      "shift",
+                      [
+                        "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                        "BEFORE"
+                      ]
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "firePreRenderEntities",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "render"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "CONSTANT",
+                        "args",
+                        [
+                          "stringValue=entities"
+                        ],
+                        "ordinal",
+                        0
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "firePostRenderEntities",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "render"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "CONSTANT",
+                        "args",
+                        [
+                          "stringValue=blockentities"
+                        ],
+                        "ordinal",
+                        0
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hookPostWorldRender",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/util/math/MatrixStack;FJZLnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/GameRenderer;Lnet/minecraft/client/render/LightmapTextureManager;Lorg/joml/Matrix4f;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "render"
+                  ],
+                  "slice",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/Slice;",
+                      "values": [
+                        "from",
+                        {
+                          "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                          "values": [
+                            "value",
+                            "FIELD:LAST",
+                            "opcode",
+                            180,
+                            "target",
+                            "Lnet/minecraft/client/render/WorldRenderer;transparencyPostProcessor:Lnet/minecraft/client/gl/PostEffectProcessor;"
+                          ],
+                          "api": 589824
+                        }
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/client/gl/PostEffectProcessor;render(F)V"
+                      ],
+                      "api": 589824
+                    },
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lcom/mojang/blaze3d/systems/RenderSystem;depthMask(Z)V",
+                        "ordinal",
+                        1,
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "frustum",
+            "dsc": "Lnet/minecraft/client/render/Frustum;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/WorldRenderer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/RenderLayerMixin$MultiPhaseParametersAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/mixin/client/render/RenderLayerMixin$MultiPhaseParametersAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getTexture",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$TextureBase;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getProgram",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$ShaderProgram;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getTransparency",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Transparency;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getDepthTest",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$DepthTest;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getCull",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Cull;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getLightmap",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Lightmap;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getOverlay",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Overlay;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getLayering",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Layering;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getTarget",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Target;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getTexturing",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$Texturing;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getWriteMaskState",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$WriteMaskState;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getLineWidth",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderPhase$LineWidth;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "getOutlineMode",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/render/RenderLayer$OutlineMode;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderLayer$MultiPhaseParameters"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/ResettableManagedShaderBase.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/impl/ResettableManagedShaderBase",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;)V"
+          },
+          {
+            "nme": "initializeOrLog",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "INTERNAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "logInitError",
+            "acc": 1028,
+            "dsc": "(Ljava/io/IOException;)V"
+          },
+          {
+            "nme": "initialize",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parseShader",
+            "acc": 1028,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)Ljava/lang/AutoCloseable;",
+            "sig": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)TS;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "release",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getManagedUniforms",
+            "acc": 4,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<Lladysnake/satin/impl/ManagedUniformBase;>;"
+          },
+          {
+            "nme": "setupUniform",
+            "acc": 1028,
+            "dsc": "(Lladysnake/satin/impl/ManagedUniformBase;Ljava/lang/AutoCloseable;)Z",
+            "sig": "(Lladysnake/satin/impl/ManagedUniformBase;TS;)Z"
+          },
+          {
+            "nme": "isInitialized",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isErrored",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getLocation",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "nme": "manageUniform",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map;Ljava/util/function/Function;Ljava/lang/String;Ljava/lang/String;)Lladysnake/satin/impl/ManagedUniformBase;",
+            "sig": "<U:Lladysnake/satin/impl/ManagedUniformBase;>(Ljava/util/Map<Ljava/lang/String;TU;>;Ljava/util/function/Function<Ljava/lang/String;TU;>;Ljava/lang/String;Ljava/lang/String;)TU;"
+          },
+          {
+            "nme": "findUniform1i",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform1i;"
+          },
+          {
+            "nme": "findUniform2i",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform2i;"
+          },
+          {
+            "nme": "findUniform3i",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform3i;"
+          },
+          {
+            "nme": "findUniform4i",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform4i;"
+          },
+          {
+            "nme": "findUniform1f",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform1f;"
+          },
+          {
+            "nme": "findUniform2f",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform2f;"
+          },
+          {
+            "nme": "findUniform3f",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform3f;"
+          },
+          {
+            "nme": "findUniform4f",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform4f;"
+          },
+          {
+            "nme": "findUniformMat4",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/UniformMat4;"
+          },
+          {
+            "nme": "setup",
+            "acc": 1025,
+            "dsc": "(II)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "INTERNAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "location",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 18,
+            "nme": "managedUniforms",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lladysnake/satin/impl/ManagedUniform;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "allUniforms",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lladysnake/satin/impl/ManagedUniformBase;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "errored",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "shader",
+            "dsc": "Ljava/lang/AutoCloseable;",
+            "sig": "TS;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/api/managed/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/FramebufferWrapper.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/FramebufferWrapper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "findTarget",
+            "acc": 0,
+            "dsc": "(Lnet/minecraft/client/gl/PostEffectProcessor;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getFramebuffer",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/client/gl/Framebuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "copyDepthFrom",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/gl/Framebuffer;)V"
+          },
+          {
+            "nme": "beginWrite",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "draw",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "draw",
+            "acc": 1,
+            "dsc": "(IIZ)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "getRenderLayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "lambda$new$1",
+            "acc": 4106,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4098,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "renderLayerSupplier",
+            "dsc": "Lladysnake/satin/impl/RenderLayerSupplier;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "wrapped",
+            "dsc": "Lnet/minecraft/client/gl/Framebuffer;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/util/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/api/util/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/RenderLayerSupplier.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "ladysnake/satin/impl/RenderLayerSupplier",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "framebuffer",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)Lladysnake/satin/impl/RenderLayerSupplier;"
+          },
+          {
+            "nme": "shader",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Supplier;)Lladysnake/satin/impl/RenderLayerSupplier;",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Supplier<Lnet/minecraft/client/gl/ShaderProgram;>;)Lladysnake/satin/impl/RenderLayerSupplier;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/function/Consumer;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)V",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)V"
+          },
+          {
+            "nme": "getRenderLayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "lambda$shader$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/client/render/RenderPhase;Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;)V"
+          },
+          {
+            "nme": "lambda$framebuffer$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/client/render/RenderPhase$Target;Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "transform",
+            "dsc": "Ljava/util/function/Consumer;",
+            "sig": "Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "renderLayerCache",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/client/render/RenderLayer;Lnet/minecraft/client/render/RenderLayer;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "uniqueName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "vertexFormat",
+            "dsc": "Lnet/minecraft/client/render/VertexFormat;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/gl/DepthGlFramebufferMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/gl/DepthGlFramebufferMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_1235",
+            "acc": 1025,
+            "dsc": "(Z)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "initFbo",
+            "acc": 2,
+            "dsc": "(IIZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "initFbo"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "FIELD",
+                        "opcode",
+                        181,
+                        "target",
+                        "Lnet/minecraft/client/gl/Framebuffer;depthAttachment:I",
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "satin$setupDepthTexture",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "delete",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "delete"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "FIELD",
+                        "opcode",
+                        180,
+                        "target",
+                        "Lnet/minecraft/client/gl/Framebuffer;depthAttachment:I"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getStillDepthMap",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "freezeDepthMap",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 1,
+            "nme": "field_1478",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "field_1482",
+            "dsc": "I"
+          },
+          {
+            "acc": 1,
+            "nme": "field_1481",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "satin$stillDepthTexture",
+            "dsc": "I"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/Framebuffer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/experimental/ReadableDepthFramebuffer.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/experimental/ReadableDepthFramebuffer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getStillDepthMap",
+            "acc": 1025,
+            "dsc": "()I",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "freezeDepthMap",
+            "acc": 1025,
+            "dsc": "()V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lorg/apiguardian/api/API;",
+            "vals": [
+              "status",
+              [
+                "Lorg/apiguardian/api/API$Status;",
+                "EXPERIMENTAL"
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/ManagedCoreShader.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/ManagedCoreShader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getProgram",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/gl/ShaderProgram;"
+          },
+          {
+            "nme": "release",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getRenderLayer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/RenderLayer;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lorg/apiguardian/api/API;",
+            "vals": [
+              "status",
+              [
+                "Lorg/apiguardian/api/API$Status;",
+                "EXPERIMENTAL"
+              ],
+              "since",
+              "1.6.0"
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/impl/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/blockrenderlayer/RenderLayerMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/blockrenderlayer/RenderLayerMixin",
+        "super": "net/minecraft/client/render/RenderPhase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getBlockLayers",
+            "acc": 10,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/google/common/collect/ImmutableList<Ljava/lang/Object;>;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getBlockLayers"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderLayer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/RenderLayerDuplicator$SatinRenderLayer.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/impl/RenderLayerDuplicator$SatinRenderLayer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "satin$copy",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer;",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "satin$copyPhaseParameters",
+            "acc": 1025,
+            "dsc": "(Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;",
+            "sig": "(Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/event/PostWorldRenderCallbackV2.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/PostWorldRenderCallbackV2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onWorldRendered",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/Camera;FJ)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PostWorldRenderCallbackV2;)Lladysnake/satin/api/event/PostWorldRenderCallbackV2;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PostWorldRenderCallbackV2;Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/Camera;FJ)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/PostWorldRenderCallbackV2;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/util/ShaderLoader.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/util/ShaderLoader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lladysnake/satin/api/util/ShaderLoader;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "loadShader",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;)I",
+            "exs": [
+              "java/io/IOException"
+            ],
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/ReloadableShaderEffectManager.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ReloadableShaderEffectManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "manage",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lladysnake/satin/api/managed/ManagedShaderEffect;"
+          },
+          {
+            "nme": "manage",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer;)Lladysnake/satin/api/managed/ManagedShaderEffect;",
+            "sig": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedShaderEffect;>;)Lladysnake/satin/api/managed/ManagedShaderEffect;"
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lladysnake/satin/api/managed/ManagedCoreShader;"
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;)Lladysnake/satin/api/managed/ManagedCoreShader;"
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "sig": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedCoreShader;>;)Lladysnake/satin/api/managed/ManagedCoreShader;"
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedShaderEffect;)V"
+          },
+          {
+            "nme": "dispose",
+            "acc": 1,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedCoreShader;)V"
+          },
+          {
+            "nme": "reload",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;)V"
+          },
+          {
+            "nme": "onResolutionChanged",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "lambda$manageCoreShader$1",
+            "acc": 4106,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedCoreShader;)V"
+          },
+          {
+            "nme": "lambda$manage$0",
+            "acc": 4106,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedShaderEffect;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lladysnake/satin/impl/ReloadableShaderEffectManager;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHADER_RESOURCE_KEY",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 18,
+            "nme": "managedShaders",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lladysnake/satin/impl/ResettableManagedShaderBase<*>;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/util/ShaderPrograms.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/api/util/ShaderPrograms",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "useShader",
+            "acc": 9,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setAttribValue",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;Ljava/util/function/IntConsumer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniformValue",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;Ljava/util/function/IntConsumer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniform",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniform",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setUniform",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;Ljava/nio/FloatBuffer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getUniformLocation",
+            "acc": 9,
+            "dsc": "(ILjava/lang/String;)I",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "bindAdditionalTextures",
+            "acc": 137,
+            "dsc": "(I[Lnet/minecraft/util/Identifier;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "uniformsCache",
+            "dsc": "Lit/unimi/dsi/fastutil/ints/Int2ObjectMap;",
+            "sig": "Lit/unimi/dsi/fastutil/ints/Int2ObjectMap<Lit/unimi/dsi/fastutil/objects/Object2IntMap<Ljava/lang/String;>;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/event/PostWorldRenderCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/PostWorldRenderCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onWorldRendered",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/Camera;FJ)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PostWorldRenderCallback;)Lladysnake/satin/api/event/PostWorldRenderCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PostWorldRenderCallback;Lnet/minecraft/client/render/Camera;FJ)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/PostWorldRenderCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/RenderLayerMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/render/RenderLayerMixin",
+        "super": "net/minecraft/client/render/RenderPhase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderLayer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/gl/GlUniformMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/gl/GlUniformMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fixUploadEarlyReturn",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "upload"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "JUMP",
+                        "opcode",
+                        154,
+                        "ordinal",
+                        0,
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/GlUniform"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/RenderLayerSupplier$Helper.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "ladysnake/satin/impl/RenderLayerSupplier$Helper",
+        "super": "net/minecraft/client/render/RenderPhase",
+        "mthds": [
+          {
+            "nme": "makeShader",
+            "acc": 9,
+            "dsc": "(Ljava/util/function/Supplier;)Lnet/minecraft/client/render/RenderPhase;",
+            "sig": "(Ljava/util/function/Supplier<Lnet/minecraft/client/gl/ShaderProgram;>;)Lnet/minecraft/client/render/RenderPhase;"
+          },
+          {
+            "nme": "applyShader",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;Lnet/minecraft/client/render/RenderPhase;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Runnable;Ljava/lang/Runnable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/RenderLayerDuplicator.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/RenderLayerDuplicator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer;",
+            "sig": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer;",
+            "sig": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "copyPhaseParameters",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;",
+            "sig": "(Lnet/minecraft/client/render/RenderLayer;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;"
+          },
+          {
+            "nme": "checkDefaultImpl",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/mixin/SatinMixinPlugin.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/mixin/SatinMixinPlugin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onLoad",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getRefMapperConfig",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "shouldApplyMixin",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "acceptTargets",
+            "acc": 1,
+            "dsc": "(Ljava/util/Set;Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Ljava/lang/String;>;Ljava/util/Set<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "getMixins",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "preApply",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/objectweb/asm/tree/ClassNode;Ljava/lang/String;Lorg/spongepowered/asm/mixin/extensibility/IMixinInfo;)V"
+          },
+          {
+            "nme": "postApply",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/objectweb/asm/tree/ClassNode;Ljava/lang/String;Lorg/spongepowered/asm/mixin/extensibility/IMixinInfo;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/apache/logging/log4j/Logger;"
+          },
+          {
+            "acc": 26,
+            "nme": "ALLOW_RENDER_LAYER_MIXINS",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ladysnake/satin/api/util/RenderLayerHelper.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/api/util/RenderLayerHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getName",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderPhase;)Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.5.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer;",
+            "sig": "(Lnet/minecraft/client/render/RenderLayer;Ljava/lang/String;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "copyPhaseParameters",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;Ljava/util/function/Consumer;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;",
+            "sig": "(Lnet/minecraft/client/render/RenderLayer;Ljava/util/function/Consumer<Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters$Builder;>;)Lnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "registerBlockRenderLayer",
+            "acc": 131081,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.5.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lorg/apiguardian/api/API;",
+            "vals": [
+              "status",
+              [
+                "Lorg/apiguardian/api/API$Status;",
+                "EXPERIMENTAL"
+              ],
+              "since",
+              "1.4.0"
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/gl/CoreShaderMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/gl/CoreShaderMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "satin$removeSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "satin$hasSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "satin$getSamplerNames",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "samplerNames"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "satin$getSamplerShaderLocs",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/Integer;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "loadedSamplerIds"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_29487",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/ShaderProgram"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/UniformFinder.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/UniformFinder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "findUniform1i",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform1i;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform2i",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform2i;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform3i",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform3i;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform4i",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform4i;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform1f",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform1f;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform2f",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform2f;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform3f",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform3f;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniform4f",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/Uniform4f;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findUniformMat4",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/UniformMat4;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "findSampler",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniform;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/ResettableManagedCoreShader.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ResettableManagedCoreShader",
+        "super": "ladysnake/satin/impl/ResettableManagedShaderBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedCoreShader;>;)V"
+          },
+          {
+            "nme": "parseShader",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)Lnet/minecraft/client/gl/ShaderProgram;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "setup",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "getProgram",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/client/gl/ShaderProgram;"
+          },
+          {
+            "nme": "getRenderLayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/RenderLayer;"
+          },
+          {
+            "nme": "setupUniform",
+            "acc": 4,
+            "dsc": "(Lladysnake/satin/impl/ManagedUniformBase;Lnet/minecraft/client/gl/ShaderProgram;)Z"
+          },
+          {
+            "nme": "findSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/api/managed/uniform/SamplerUniform;"
+          },
+          {
+            "nme": "logInitError",
+            "acc": 4,
+            "dsc": "(Ljava/io/IOException;)V"
+          },
+          {
+            "nme": "setupUniform",
+            "acc": 4164,
+            "dsc": "(Lladysnake/satin/impl/ManagedUniformBase;Ljava/lang/AutoCloseable;)Z"
+          },
+          {
+            "nme": "parseShader",
+            "acc": 4164,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/util/Identifier;)Ljava/lang/AutoCloseable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "initCallback",
+            "dsc": "Ljava/util/function/Consumer;",
+            "sig": "Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedCoreShader;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "renderLayerSupplier",
+            "dsc": "Lladysnake/satin/impl/RenderLayerSupplier;"
+          },
+          {
+            "acc": 18,
+            "nme": "vertexFormat",
+            "dsc": "Lnet/minecraft/client/render/VertexFormat;"
+          },
+          {
+            "acc": 18,
+            "nme": "managedSamplers",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lladysnake/satin/impl/ManagedSamplerUniformV1;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/ManagedSamplerUniformV2.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ManagedSamplerUniformV2",
+        "super": "ladysnake/satin/impl/ManagedSamplerUniformBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/texture/AbstractTexture;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/gl/Framebuffer;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "set",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/IntSupplier;)V"
+          },
+          {
+            "nme": "lambda$set$0",
+            "acc": 4106,
+            "dsc": "(I)I"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/CustomFormatFramebuffers.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "ladysnake/satin/impl/CustomFormatFramebuffers",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(IIZZLladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;)Lnet/minecraft/client/gl/Framebuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "prepareCustomFormat",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getCustomFormat",
+            "acc": 9,
+            "dsc": "()Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "clearCustomFormat",
+            "acc": 9,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "FORMAT_KEY",
+            "dsc": "Ljava/lang/String;",
+            "val": "satin:format"
+          },
+          {
+            "acc": 26,
+            "nme": "FORMAT",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;>;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/util/GlMatrices.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/api/util/GlMatrices",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getTmpBuffer",
+            "acc": 9,
+            "dsc": "()Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getProjectionMatrix",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getProjectionMatrixInverse",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getModelViewMatrix",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getModelViewMatrixInverse",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;)Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getInverseTransformMatrix",
+            "acc": 9,
+            "dsc": "(Lorg/joml/Matrix4f;)Lorg/joml/Matrix4f;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getProjectionMatrix",
+            "acc": 131081,
+            "dsc": "()Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "DEPRECATED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getProjectionMatrixInverse",
+            "acc": 131081,
+            "dsc": "()Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "DEPRECATED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getModelViewMatrix",
+            "acc": 131081,
+            "dsc": "()Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "DEPRECATED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getModelViewMatrixInverse",
+            "acc": 131081,
+            "dsc": "()Ljava/nio/FloatBuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              },
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "DEPRECATED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "invertMat4",
+            "acc": 9,
+            "dsc": "([F[F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "invertMat4FB",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "invertMat4FBFA",
+            "acc": 10,
+            "dsc": "(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;[F[F)V"
+          },
+          {
+            "nme": "multiplyMat4",
+            "acc": 9,
+            "dsc": "([F[F[F)[F",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "multiplyMat4FB",
+            "acc": 9,
+            "dsc": "(Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;Ljava/nio/FloatBuffer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "buffer",
+            "dsc": "Ljava/nio/FloatBuffer;"
+          },
+          {
+            "acc": 26,
+            "nme": "inArray",
+            "dsc": "[F"
+          },
+          {
+            "acc": 26,
+            "nme": "outArray",
+            "dsc": "[F"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "ladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "nme": "decode",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;II)V",
+            "sig": "(I)V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "RGBA8",
+            "dsc": "Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "acc": 16409,
+            "nme": "RGBA16",
+            "dsc": "Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "acc": 16409,
+            "nme": "RGBA16F",
+            "dsc": "Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "acc": 16409,
+            "nme": "RGBA32F",
+            "dsc": "Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          },
+          {
+            "acc": 17,
+            "nme": "value",
+            "dsc": "I"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lladysnake/satin/impl/CustomFormatFramebuffers$TextureFormat;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/gl/JsonEffectGlShaderMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/gl/JsonEffectGlShaderMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "satin$removeSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "satin$hasSampler",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "satin$getSamplerNames",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "samplerNames"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "satin$getSamplerShaderLocs",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/Integer;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;",
+                "vals": [
+                  "value",
+                  "samplerLocations"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "constructProgramIdentifier",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/resource/ResourceManager;Ljava/lang/String;)Lnet/minecraft/util/Identifier;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "NEW",
+                      "target",
+                      "net/minecraft/util/Identifier",
+                      "ordinal",
+                      0
+                    ],
+                    "api": 589824
+                  },
+                  "method",
+                  [
+                    "<init>"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "constructProgramIdentifier",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/client/gl/ShaderStage$Type;Ljava/lang/String;)Lnet/minecraft/util/Identifier;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "NEW",
+                      "target",
+                      "net/minecraft/util/Identifier",
+                      "ordinal",
+                      0
+                    ],
+                    "api": 589824
+                  },
+                  "method",
+                  [
+                    "loadEffect"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_1516",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/function/IntSupplier;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/JsonEffectShaderProgram"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/RenderPhaseAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/mixin/client/render/RenderPhaseAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderPhase"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/AccessiblePassesShaderEffect.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/mixin/client/AccessiblePassesShaderEffect",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPasses",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/client/gl/PostEffectPass;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/PostEffectProcessor"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/SamplerUniform.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/SamplerUniform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "setDirect",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/texture/AbstractTexture;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/gl/Framebuffer;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lorg/apiguardian/api/API;",
+            "vals": [
+              "status",
+              [
+                "Lorg/apiguardian/api/API$Status;",
+                "MAINTAINED"
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform1f.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform1f",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(F)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/event/EntitiesPostRenderCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/EntitiesPostRenderCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onEntitiesRendered",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/Frustum;F)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/EntitiesPostRenderCallback;)Lladysnake/satin/api/event/EntitiesPostRenderCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/EntitiesPostRenderCallback;Lnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/Frustum;F)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/EntitiesPostRenderCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform2f.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform2f",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(FF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lorg/joml/Vector2f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.11.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform4f.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform4f",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(FFFF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lorg/joml/Vector4f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.12.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform3f.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform3f",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(FFF)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lorg/joml/Vector3f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.12.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/BlockRenderLayerRegistry.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/BlockRenderLayerRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerRenderLayer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)V"
+          },
+          {
+            "nme": "getLayers",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Lnet/minecraft/client/render/RenderLayer;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lladysnake/satin/impl/BlockRenderLayerRegistry;"
+          },
+          {
+            "acc": 18,
+            "nme": "renderLayers",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lnet/minecraft/client/render/RenderLayer;>;"
+          },
+          {
+            "acc": 66,
+            "nme": "registryLocked",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ladysnake/satin/api/event/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/api/event/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/ManagedSamplerUniformBase.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/impl/ManagedSamplerUniformBase",
+        "super": "ladysnake/satin/impl/ManagedUniformBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "findUniformTargets",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Z",
+            "sig": "(Ljava/util/List<Lnet/minecraft/client/gl/PostEffectPass;>;)Z"
+          },
+          {
+            "nme": "getSamplerLoc",
+            "acc": 2,
+            "dsc": "(Lladysnake/satin/impl/SamplerAccess;)I"
+          },
+          {
+            "nme": "findUniformTarget",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/gl/ShaderProgram;)Z"
+          },
+          {
+            "nme": "findUniformTarget",
+            "acc": 2,
+            "dsc": "(Lladysnake/satin/impl/SamplerAccess;)Z"
+          },
+          {
+            "nme": "syncCurrentValues",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "set",
+            "acc": 1028,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "setDirect",
+            "acc": 1,
+            "dsc": "(I)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "targets",
+            "dsc": "[Lladysnake/satin/impl/SamplerAccess;"
+          },
+          {
+            "acc": 4,
+            "nme": "locations",
+            "dsc": "[I"
+          },
+          {
+            "acc": 4,
+            "nme": "cachedValue",
+            "dsc": "Ljava/lang/Object;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform1i.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform1i",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/Satin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "ladysnake/satin/Satin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "areShadersDisabled",
+            "acc": 9,
+            "dsc": "()Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "onInitializeClient",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "MOD_ID",
+            "dsc": "Ljava/lang/String;",
+            "val": "satin"
+          },
+          {
+            "acc": 25,
+            "nme": "LOGGER",
+            "dsc": "Lorg/apache/logging/log4j/Logger;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/SamplerUniformV2.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/SamplerUniformV2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Ljava/util/function/IntSupplier;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform2i.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform2i",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(II)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/util/ShaderLinkException.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "ladysnake/satin/api/util/ShaderLinkException",
+        "super": "java/lang/RuntimeException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/mixin/client/event/MinecraftClientMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/event/MinecraftClientMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hookResolutionChanged",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "onResolutionChanged"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_1704",
+            "dsc": "Lnet/minecraft/client/util/Window;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/MinecraftClient"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform4i.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform4i",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(IIII)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/managed/uniform/Uniform3i.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/Uniform3i",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(III)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/mixin/client/gl/CustomFormatPostEffectProcessorMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "ladysnake/satin/mixin/client/gl/CustomFormatPostEffectProcessorMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "satin$parseCustomTargetFormat",
+            "acc": 2,
+            "dsc": "(Lcom/google/gson/JsonElement;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lcom/google/gson/JsonObject;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "parseTarget"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/client/gl/PostEffectProcessor;addTarget(Ljava/lang/String;II)V",
+                        "ordinal",
+                        1
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILSOFT"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "satin$cleanupCustomTargetFormat",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/client/texture/TextureManager;Lnet/minecraft/util/Identifier;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "parseEffect"
+                  ],
+                  "slice",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/Slice;",
+                      "values": [
+                        "from",
+                        {
+                          "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                          "values": [
+                            "value",
+                            "CONSTANT:FIRST",
+                            "args",
+                            [
+                              "stringValue=targets"
+                            ]
+                          ],
+                          "api": 589824
+                        },
+                        "to",
+                        {
+                          "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                          "values": [
+                            "value",
+                            "CONSTANT:FIRST",
+                            "args",
+                            [
+                              "stringValue=passes"
+                            ]
+                          ],
+                          "api": 589824
+                        }
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/util/InvalidHierarchicalFileException;wrap(Ljava/lang/Exception;)Lnet/minecraft/util/InvalidHierarchicalFileException;"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "allow",
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/gl/PostEffectProcessor"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/RenderLayerAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/mixin/client/render/RenderLayerAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "isTranslucent",
+            "acc": 1025,
+            "dsc": "()Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "satin$of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/client/render/VertexFormat;Lnet/minecraft/client/render/VertexFormat$DrawMode;IZZLnet/minecraft/client/render/RenderLayer$MultiPhaseParameters;)Lnet/minecraft/client/render/RenderLayer$MultiPhase;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;",
+                "vals": [
+                  "value",
+                  "of"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/RenderLayer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/api/event/ResolutionChangeCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/ResolutionChangeCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onResolutionChanged",
+            "acc": 1025,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/ResolutionChangeCallback;)Lladysnake/satin/api/event/ResolutionChangeCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/ResolutionChangeCallback;II)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/ResolutionChangeCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/ShaderEffectManager.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/ShaderEffectManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lladysnake/satin/api/managed/ShaderEffectManager;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "manage",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lladysnake/satin/api/managed/ManagedShaderEffect;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "manage",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer;)Lladysnake/satin/api/managed/ManagedShaderEffect;",
+            "sig": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedShaderEffect;>;)Lladysnake/satin/api/managed/ManagedShaderEffect;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "manageProgram",
+            "acc": 131073,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;",
+                "vals": [
+                  "since",
+                  "1.6.0",
+                  "forRemoval",
+                  true
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$ScheduledForRemoval;"
+              }
+            ]
+          },
+          {
+            "nme": "manageProgram",
+            "acc": 131073,
+            "dsc": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "sig": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedCoreShader;>;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;",
+                "vals": [
+                  "since",
+                  "1.6.0",
+                  "forRemoval",
+                  true
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$ScheduledForRemoval;"
+              }
+            ]
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.6.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.6.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "manageCoreShader",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "sig": "(Lnet/minecraft/util/Identifier;Lnet/minecraft/client/render/VertexFormat;Ljava/util/function/Consumer<Lladysnake/satin/api/managed/ManagedCoreShader;>;)Lladysnake/satin/api/managed/ManagedCoreShader;",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.6.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "dispose",
+            "acc": 1025,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedShaderEffect;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "STABLE"
+                  ],
+                  "since",
+                  "1.0.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "dispose",
+            "acc": 1025,
+            "dsc": "(Lladysnake/satin/api/managed/ManagedCoreShader;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "EXPERIMENTAL"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/ManagedSamplerUniformV1.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ManagedSamplerUniformV1",
+        "super": "ladysnake/satin/impl/ManagedSamplerUniformBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/texture/AbstractTexture;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/gl/Framebuffer;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "set",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;)V"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/impl/ManagedUniformBase.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/impl/ManagedUniformBase",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "findUniformTargets",
+            "acc": 1025,
+            "dsc": "(Ljava/util/List;)Z",
+            "sig": "(Ljava/util/List<Lnet/minecraft/client/gl/PostEffectPass;>;)Z"
+          },
+          {
+            "nme": "findUniformTarget",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/gl/ShaderProgram;)Z"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/ManagedFramebuffer.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/ManagedFramebuffer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getFramebuffer",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/gl/Framebuffer;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "beginWrite",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "copyDepthFrom",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/gl/Framebuffer;)V"
+          },
+          {
+            "nme": "draw",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "draw",
+            "acc": 1025,
+            "dsc": "(IIZ)V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "clear",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "getRenderLayer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/RenderLayer;)Lnet/minecraft/client/render/RenderLayer;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lorg/apiguardian/api/API;",
+            "vals": [
+              "status",
+              [
+                "Lorg/apiguardian/api/API$Status;",
+                "EXPERIMENTAL"
+              ],
+              "since",
+              "1.4.0"
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/ValidatingShaderLoader.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ValidatingShaderLoader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "loadShader",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/Identifier;Lnet/minecraft/util/Identifier;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "fromFile",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/resource/ResourceManager;Lnet/minecraft/util/Identifier;)Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lladysnake/satin/api/util/ShaderLoader;"
+          }
+        ]
+      },
+      "ladysnake/satin/api/event/EntitiesPreRenderCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/EntitiesPreRenderCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "beforeEntitiesRender",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/Frustum;F)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/EntitiesPreRenderCallback;)Lladysnake/satin/api/event/EntitiesPreRenderCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/EntitiesPreRenderCallback;Lnet/minecraft/client/render/Camera;Lnet/minecraft/client/render/Frustum;F)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/EntitiesPreRenderCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "ladysnake/satin/impl/SamplerAccess.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/impl/SamplerAccess",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "satin$removeSampler",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "satin$hasSampler",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "satin$getSamplerNames",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "satin$getSamplerShaderLocs",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/Integer;>;"
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/mixin/client/gl/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/mixin/client/gl/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/render/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "ladysnake/satin/mixin/client/render/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "ladysnake/satin/mixin/client/event/GameRendererMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "ladysnake/satin/mixin/client/event/GameRendererMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_3168",
+            "acc": 1024,
+            "dsc": "(Lnet/minecraft/util/Identifier;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "hookShaderRender",
+            "acc": 2,
+            "dsc": "(FJZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/client/render/WorldRenderer;drawEntityOutlinesFramebuffer()V",
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "render"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "useCustomEntityShader",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/entity/Entity;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "onCameraEntitySet"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "require",
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "loadSatinPrograms",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/resource/ResourceFactory;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "loadPrograms"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "lambda$useCustomEntityShader$1",
+            "acc": 4098,
+            "dsc": "()Lnet/minecraft/client/gl/PostEffectProcessor;"
+          },
+          {
+            "nme": "lambda$useCustomEntityShader$0",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/util/Identifier;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "field_4024",
+            "dsc": "Lnet/minecraft/client/gl/PostEffectProcessor;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/GameRenderer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "ladysnake/satin/impl/ManagedUniform.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "ladysnake/satin/impl/ManagedUniform",
+        "super": "ladysnake/satin/impl/ManagedUniformBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "findUniformTargets",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Z",
+            "sig": "(Ljava/util/List<Lnet/minecraft/client/gl/PostEffectPass;>;)Z"
+          },
+          {
+            "nme": "findUniformTarget",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/client/gl/ShaderProgram;)Z"
+          },
+          {
+            "nme": "syncCurrentValues",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(III)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(IIII)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(FF)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector2f;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(FFF)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector3f;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(FFFF)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Vector4f;)V"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Lorg/joml/Matrix4f;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NO_TARGETS",
+            "dsc": "[Lnet/minecraft/client/gl/GlUniform;"
+          },
+          {
+            "acc": 2,
+            "nme": "targets",
+            "dsc": "[Lnet/minecraft/client/gl/GlUniform;"
+          },
+          {
+            "acc": 2,
+            "nme": "i0",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "i1",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "i2",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "i3",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "f0",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "f1",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "f2",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "f3",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "firstUpload",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "ladysnake/satin/api/managed/uniform/UniformMat4.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/managed/uniform/UniformMat4",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Lorg/joml/Matrix4f;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/apiguardian/api/API;",
+                "vals": [
+                  "status",
+                  [
+                    "Lorg/apiguardian/api/API$Status;",
+                    "MAINTAINED"
+                  ],
+                  "since",
+                  "1.4.0"
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "ladysnake/satin/api/event/PickEntityShaderCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "ladysnake/satin/api/event/PickEntityShaderCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "pickEntityShader",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/entity/Entity;Ljava/util/function/Consumer;Ljava/util/function/Supplier;)V",
+            "sig": "(Lnet/minecraft/entity/Entity;Ljava/util/function/Consumer<Lnet/minecraft/util/Identifier;>;Ljava/util/function/Supplier<Lnet/minecraft/client/gl/PostEffectProcessor;>;)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PickEntityShaderCallback;)Lladysnake/satin/api/event/PickEntityShaderCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lladysnake/satin/api/event/PickEntityShaderCallback;Lnet/minecraft/entity/Entity;Ljava/util/function/Consumer;Ljava/util/function/Supplier;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lladysnake/satin/api/event/PickEntityShaderCallback;>;"
+          }
+        ]
+      }
+    }
+  }
+}

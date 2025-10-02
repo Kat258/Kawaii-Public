@@ -1,0 +1,1257 @@
+{
+  "md5": "f0d5935e405148e3c7d85dfc192a7cd7",
+  "sha2": "f3c90a69ea174baad05ccd9903534988e8f376c1",
+  "sha256": "fe843b71013d298e6c0e801cac1ce6f7eefcfccaab3c68a222b2bfcf5e837dec",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalEntityTypeTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalEntityTypeTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_1299<*>;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "BOSSES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1299<*>;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MINECARTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1299<*>;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BOATS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1299<*>;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalEnchantmentTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalEnchantmentTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INCREASES_BLOCK_DROPS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "INCREASES_ENTITY_DROPS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WEAPON_DAMAGE_ENHANCEMENT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENTITY_MOVEMENT_ENHANCEMENT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENTITY_DEFENSE_ENHANCEMENT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1887;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalBlockTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalBlockTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "QUARTZ_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BOOKSHELVES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CHESTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GLASS_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GLASS_PANES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHULKER_BOXES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WOODEN_BARRELS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BUDDING_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BUDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLUSTERS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "VILLAGER_JOB_SITES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MOVEMENT_RESTRICTED",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_2248;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/tag/convention/TagRegistration.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/tag/convention/TagRegistration",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_5321;)V",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_2378<TT;>;>;)V"
+          },
+          {
+            "nme": "registerFabric",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<TT;>;"
+          },
+          {
+            "nme": "registerCommon",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<TT;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ITEM_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLOCK_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_2248;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BIOME_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "FLUID_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_3611;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENTITY_TYPE_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_1299<*>;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENCHANTMENT_TAG_REGISTRATION",
+            "dsc": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration;",
+            "sig": "Lnet/fabricmc/fabric/impl/tag/convention/TagRegistration<Lnet/minecraft/class_1887;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "registryKey",
+            "dsc": "Lnet/minecraft/class_5321;",
+            "sig": "Lnet/minecraft/class_5321<Lnet/minecraft/class_2378<TT;>;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/tag/convention/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/tag/convention/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalBiomeTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalBiomeTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "IN_OVERWORLD",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "IN_THE_END",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "IN_NETHER",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "TAIGA",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "EXTREME_HILLS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WINDSWEPT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "JUNGLE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MESA",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "PLAINS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SAVANNA",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ICY",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "AQUATIC_ICY",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BEACH",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "FOREST",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BIRCH_FOREST",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "OCEAN",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DESERT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RIVER",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SWAMP",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MUSHROOM",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNDERGROUND",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MOUNTAIN",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLIMATE_HOT",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLIMATE_TEMPERATE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLIMATE_COLD",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLIMATE_WET",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLIMATE_DRY",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "VEGETATION_SPARSE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "VEGETATION_DENSE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "TREE_CONIFEROUS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "TREE_SAVANNA",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "TREE_JUNGLE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "TREE_DECIDUOUS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "VOID",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MOUNTAIN_PEAK",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MOUNTAIN_SLOPE",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "AQUATIC",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WASTELAND",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DEAD",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "FLORAL",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SNOWY",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BADLANDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CAVES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "END_ISLANDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "NETHER_FORESTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SNOWY_PLAINS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "STONY_SHORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "FLOWER_FORESTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DEEP_OCEAN",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHALLOW_OCEAN",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1959;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalFluidTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalFluidTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_3611;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "LAVA",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_3611;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WATER",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_3611;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MILK",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_3611;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "HONEY",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_3611;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/ConventionalItemTags.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/ConventionalItemTags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_6862;",
+            "sig": "(Ljava/lang/String;)Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SHEARS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SPEARS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BOWS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHIELDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DUSTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GEMS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "INGOTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "NUGGETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "IRON_INGOTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_IRON_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_IRON_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_GOLD_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_GOLD_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GOLD_INGOTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "REDSTONE_DUSTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "COPPER_INGOTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_COPPER_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RAW_COPPER_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "NETHERITE_INGOTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "QUARTZ_ORES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "QUARTZ",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LAPIS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DIAMONDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "EMERALDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "COAL",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "FOODS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "POTIONS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WATER_BUCKETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENTITY_WATER_BUCKETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LAVA_BUCKETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MILK_BUCKETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "EMPTY_BUCKETS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BOOKSHELVES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CHESTS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GLASS_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GLASS_PANES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SHULKER_BOXES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WOODEN_BARRELS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BUDDING_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BUDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CLUSTERS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "VILLAGER_JOB_SITES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_BLOCKS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_SLABS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "UNCOLORED_SANDSTONE_STAIRS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLACK_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLUE_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "BROWN_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CYAN_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GRAY_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "GREEN_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_BLUE_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIGHT_GRAY_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "LIME_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MAGENTA_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ORANGE_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "PINK_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "PURPLE_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "RED_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WHITE_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "YELLOW_DYES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "WATER_BUCKET",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "LAVA_BUCKET",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "MILK_BUCKET",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "EMPTY_BUCKET",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "PICKAXES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "SHOVELS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "HOES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "AXES",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          },
+          {
+            "acc": 131097,
+            "nme": "SWORDS",
+            "dsc": "Lnet/minecraft/class_6862;",
+            "sig": "Lnet/minecraft/class_6862<Lnet/minecraft/class_1792;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/tag/convention/v1/TagUtil.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/tag/convention/v1/TagUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isIn",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_6862;Ljava/lang/Object;)Z",
+            "sig": "<T:Ljava/lang/Object;>(Lnet/minecraft/class_6862<TT;>;TT;)Z"
+          },
+          {
+            "nme": "isIn",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_5455;Lnet/minecraft/class_6862;Ljava/lang/Object;)Z",
+            "sig": "<T:Ljava/lang/Object;>(Lnet/minecraft/class_5455;Lnet/minecraft/class_6862<TT;>;TT;)Z"
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

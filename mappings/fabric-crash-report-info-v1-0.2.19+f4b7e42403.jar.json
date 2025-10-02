@@ -1,0 +1,103 @@
+{
+  "md5": "b73e9571d291533f84aeb5b5064aa880",
+  "sha2": "4fa1086a612eadaa444285ea28a63d842d8574b3",
+  "sha256": "7b85d91723ecb812996b076de6cc5325583d5b6cb634aa79abc5ddaa9aed4245",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/mixin/crash/report/info/SystemDetailsMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "net/fabricmc/fabric/mixin/crash/report/info/SystemDetailsMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_37123",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/util/function/Supplier;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/function/Supplier<Ljava/lang/String;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "fillSystemDetails",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "<init>"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "appendMods",
+            "acc": 10,
+            "dsc": "(Ljava/lang/StringBuilder;ILjava/util/ArrayList;)V",
+            "sig": "(Ljava/lang/StringBuilder;ILjava/util/ArrayList<Lnet/fabricmc/loader/api/ModContainer;>;)V"
+          },
+          {
+            "nme": "lambda$appendMods$1",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/loader/api/ModContainer;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$fillSystemDetails$0",
+            "acc": 4106,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_6396"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/crash/report/info/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/crash/report/info/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      }
+    }
+  }
+}

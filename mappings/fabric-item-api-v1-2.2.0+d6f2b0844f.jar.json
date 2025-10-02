@@ -1,0 +1,2314 @@
+{
+  "md5": "3bb832a479465300c10f0caec49fc1b8",
+  "sha2": "dceedee2d918ae32246bc299d07edee4f91dc22d",
+  "sha256": "6c6508ffe905b3db97e36fed5c6f05ba6b69709a6d617ad5fb02385884843c15",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/item/v1/CustomDamageHandler.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/item/v1/CustomDamageHandler",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "damage",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/item/ItemStack;ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)I",
+            "sig": "(Lnet/minecraft/item/ItemStack;ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer<Lnet/minecraft/entity/LivingEntity;>;)I"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/ItemMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/item/ItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onConstruct",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item$Settings;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "<init>"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric_getEquipmentSlotProvider",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "fabric_setEquipmentSlotProvider",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;)V"
+          },
+          {
+            "nme": "fabric_getCustomDamageHandler",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "fabric_setCustomDamageHandler",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;)V"
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "use"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getMaxUseTime"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getMaxUseTime",
+                    "getUseAction"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "use"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "finishUsing"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "equipmentSlotProvider",
+            "dsc": "Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;"
+          },
+          {
+            "acc": 2,
+            "nme": "customDamageHandler",
+            "dsc": "Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/Item"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/ArmorItemMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/item/ArmorItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric_knockbackResistance",
+            "acc": 2,
+            "dsc": "(Lcom/google/common/collect/ImmutableMultimap$Builder;Lnet/minecraft/item/ArmorMaterial;Lnet/minecraft/item/ArmorItem$Type;)Lcom/google/common/collect/ImmutableMultimap$Builder;",
+            "sig": "(Lcom/google/common/collect/ImmutableMultimap$Builder<Lnet/minecraft/entity/attribute/EntityAttribute;Lnet/minecraft/entity/attribute/EntityAttributeModifier;>;Lnet/minecraft/item/ArmorMaterial;Lnet/minecraft/item/ArmorItem$Type;)Lcom/google/common/collect/ImmutableMultimap$Builder<Lnet/minecraft/entity/attribute/EntityAttribute;Lnet/minecraft/entity/attribute/EntityAttributeModifier;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyVariable;",
+                "vals": [
+                  "method",
+                  [
+                    "<init>"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lcom/google/common/collect/ImmutableMultimap$Builder;build()Lcom/google/common/collect/ImmutableMultimap;",
+                      "remap",
+                      false
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 10,
+            "nme": "field_7876",
+            "dsc": "Ljava/util/EnumMap;",
+            "sig": "Ljava/util/EnumMap<Lnet/minecraft/item/ArmorItem$Type;Ljava/util/UUID;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "field_21976",
+            "dsc": "F"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/ArmorItem"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/item/FabricItemInternals.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/impl/item/FabricItemInternals",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "computeExtraData",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/item/Item$Settings;)Lnet/fabricmc/fabric/impl/item/FabricItemInternals$ExtraData;"
+          },
+          {
+            "nme": "onBuild",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/item/Item$Settings;Lnet/minecraft/item/Item;)V"
+          },
+          {
+            "nme": "lambda$computeExtraData$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/item/Item$Settings;)Lnet/fabricmc/fabric/impl/item/FabricItemInternals$ExtraData;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "extraData",
+            "dsc": "Ljava/util/WeakHashMap;",
+            "sig": "Ljava/util/WeakHashMap<Lnet/minecraft/item/Item$Settings;Lnet/fabricmc/fabric/impl/item/FabricItemInternals$ExtraData;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/LivingEntityMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/item/LivingEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onGetPreferredEquipmentSlot",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/entity/EquipmentSlot;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getPreferredEquipmentSlot"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "shouldSpawnConsumptionEffects"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "applyFoodEffects"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/World;Lnet/minecraft/entity/LivingEntity;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "applyFoodEffects"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "field_6277",
+            "dsc": "Lnet/minecraft/item/ItemStack;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/entity/LivingEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/FoxEntityMixin.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/mixin/item/FoxEntityMixin",
+        "super": "net/minecraft/entity/passive/AnimalEntity",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lnet/minecraft/entity/EntityType;Lnet/minecraft/world/World;)V",
+            "sig": "(Lnet/minecraft/entity/EntityType<+Lnet/minecraft/entity/passive/AnimalEntity;>;Lnet/minecraft/world/World;)V"
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "canEat",
+                    "canPickupItem"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z",
+                      "ordinal",
+                      0
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isEquippedStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "canPickupItem"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z",
+                      "ordinal",
+                      1
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/entity/passive/FoxEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getTooltip",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/item/TooltipContext;Ljava/util/List;)V",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/item/TooltipContext;Ljava/util/List<Lnet/minecraft/text/Text;>;)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback;)Lnet/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback;Lnet/minecraft/item/ItemStack;Lnet/minecraft/client/item/TooltipContext;Ljava/util/List;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lnet/fabricmc/fabric/api/client/item/v1/ItemTooltipCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/client/ClientPlayerInteractionManagerMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/item/client/ClientPlayerInteractionManagerMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabricItemContinueBlockBreakingInject",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/ItemStack;canCombine(Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z"
+                    ],
+                    "api": 589824
+                  },
+                  "method",
+                  [
+                    "isCurrentlyBreaking"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_3712",
+            "dsc": "Lnet/minecraft/client/MinecraftClient;"
+          },
+          {
+            "acc": 2,
+            "nme": "field_3714",
+            "dsc": "Lnet/minecraft/util/math/BlockPos;"
+          },
+          {
+            "acc": 2,
+            "nme": "field_3718",
+            "dsc": "Lnet/minecraft/item/ItemStack;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/network/ClientPlayerInteractionManager"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/item/RecipeRemainderHandler.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/item/RecipeRemainderHandler",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "REMAINDER_STACK",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Lnet/minecraft/item/ItemStack;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/item/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/item/v1/FabricItemSettings.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/api/item/v1/FabricItemSettings",
+        "super": "net/minecraft/item/Item$Settings",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "equipmentSlot",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "customDamage",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "food",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/FoodComponent;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "maxCount",
+            "acc": 1,
+            "dsc": "(I)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "maxDamageIfAbsent",
+            "acc": 1,
+            "dsc": "(I)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "maxDamage",
+            "acc": 1,
+            "dsc": "(I)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "recipeRemainder",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/Item;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "rarity",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/util/Rarity;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "fireproof",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "requires",
+            "acc": 129,
+            "dsc": "([Lnet/minecraft/resource/featuretoggle/FeatureFlag;)Lnet/fabricmc/fabric/api/item/v1/FabricItemSettings;"
+          },
+          {
+            "nme": "requires",
+            "acc": 4161,
+            "dsc": "([Lnet/minecraft/resource/featuretoggle/FeatureFlag;)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "fireproof",
+            "acc": 4161,
+            "dsc": "()Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "rarity",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/util/Rarity;)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "recipeRemainder",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "maxDamage",
+            "acc": 4161,
+            "dsc": "(I)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "maxDamageIfAbsent",
+            "acc": 4161,
+            "dsc": "(I)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "maxCount",
+            "acc": 4161,
+            "dsc": "(I)Lnet/minecraft/item/Item$Settings;"
+          },
+          {
+            "nme": "food",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/item/FoodComponent;)Lnet/minecraft/item/Item$Settings;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/item/AbstractFurnaceBlockEntityMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "net/fabricmc/fabric/mixin/item/AbstractFurnaceBlockEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getStackRemainder",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;ZZLnet/minecraft/item/ItemStack;ZZLnet/minecraft/recipe/RecipeEntry;I)V",
+            "sig": "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;Lnet/minecraft/block/entity/AbstractFurnaceBlockEntity;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;ZZLnet/minecraft/item/ItemStack;ZZLnet/minecraft/recipe/RecipeEntry<*>;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "tick"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/item/ItemStack;getItem()Lnet/minecraft/item/Item;"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ],
+                  "allow",
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "setStackRemainder",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "<E:Ljava/lang/Object;>(TE;)TE;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyArg;",
+                "vals": [
+                  "method",
+                  [
+                    "tick"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/util/collection/DefaultedList;set(ILjava/lang/Object;)Ljava/lang/Object;"
+                    ],
+                    "api": 589824
+                  },
+                  "index",
+                  1,
+                  "allow",
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "REMAINDER_STACK",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Lnet/minecraft/item/ItemStack;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/block/entity/AbstractFurnaceBlockEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/ItemStackMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "net/fabricmc/fabric/mixin/item/ItemStackMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_7909",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/item/Item;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "saveDamager",
+            "acc": 2,
+            "dsc": "(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "sig": "(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer<Lnet/minecraft/entity/LivingEntity;>;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "damage(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)V"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hookDamage",
+            "acc": 2,
+            "dsc": "(I)I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyArg;",
+                "vals": [
+                  "method",
+                  [
+                    "damage(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)V"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/ItemStack;damage(ILnet/minecraft/util/math/random/Random;Lnet/minecraft/server/network/ServerPlayerEntity;)Z"
+                    ],
+                    "api": 589824
+                  },
+                  "index",
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "clearDamage",
+            "acc": 2,
+            "dsc": "(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "sig": "<T:Lnet/minecraft/entity/LivingEntity;>(ITT;Ljava/util/function/Consumer<TT;>;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "damage(ILnet/minecraft/entity/LivingEntity;Ljava/util/function/Consumer;)V"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hookGetAttributeModifiers",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;",
+            "sig": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap<Lnet/minecraft/entity/attribute/EntityAttribute;Lnet/minecraft/entity/attribute/EntityAttributeModifier;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getAttributeModifiers"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getAttributeModifiers(Lnet/minecraft/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hookIsSuitableFor",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/block/BlockState;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "isSuitableFor"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isSuitableFor(Lnet/minecraft/block/BlockState;)Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 1,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Boolean;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "isFood"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "fabric_damagingEntity",
+            "dsc": "Lnet/minecraft/entity/LivingEntity;"
+          },
+          {
+            "acc": 2,
+            "nme": "fabric_breakCallback",
+            "dsc": "Ljava/util/function/Consumer;",
+            "sig": "Ljava/util/function/Consumer<Lnet/minecraft/entity/LivingEntity;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/ItemStack"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "modifyAttributeModifiers",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lcom/google/common/collect/Multimap;)V",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lcom/google/common/collect/Multimap<Lnet/minecraft/entity/attribute/EntityAttribute;Lnet/minecraft/entity/attribute/EntityAttributeModifier;>;)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback;)Lnet/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback;Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;Lcom/google/common/collect/Multimap;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lnet/fabricmc/fabric/api/item/v1/ModifyItemAttributeModifiersCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/BrewingStandBlockEntityMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/item/BrewingStandBlockEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "captureItemStack",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/collection/DefaultedList;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/item/ItemStack;)V",
+            "sig": "(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/item/ItemStack;>;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;Lnet/minecraft/item/ItemStack;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "craft"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/item/ItemStack;decrement(I)V",
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ]
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hasStackRecipeRemainder",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/item/Item;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "craft"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;hasRecipeRemainder()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "createStackRecipeRemainder",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyVariable;",
+                "vals": [
+                  "method",
+                  [
+                    "craft"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "STORE"
+                    ],
+                    "api": 589824
+                  },
+                  "index",
+                  4
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "REMAINDER_STACK",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Lnet/minecraft/item/ItemStack;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/block/entity/BrewingStandBlockEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/WolfEntityMixin.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/mixin/item/WolfEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "storeCopy",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lcom/llamalad7/mixinextras/sugar/ref/LocalRef;)V",
+            "sig": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/util/ActionResult;>;Lcom/llamalad7/mixinextras/sugar/ref/LocalRef<Lnet/minecraft/item/ItemStack;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "interactMob"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lcom/llamalad7/mixinextras/sugar/ref/LocalRef;)Lnet/minecraft/item/FoodComponent;",
+            "sig": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lcom/llamalad7/mixinextras/sugar/ref/LocalRef<Lnet/minecraft/item/ItemStack;>;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "interactMob"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "isBreedingItem"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "isBreedingItem"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z",
+                      "ordinal",
+                      0
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/entity/passive/WolfEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/client/ItemStackMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "net/fabricmc/fabric/mixin/item/client/ItemStackMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getTooltip",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/client/item/TooltipContext;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/util/List<Lnet/minecraft/text/Text;>;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getTooltip"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/ItemStack"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/item/v1/EquipmentSlotProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/item/v1/EquipmentSlotProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getPreferredEquipmentSlot",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/entity/EquipmentSlot;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/CatEntityMixin.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/mixin/item/CatEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "interactMob"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "interactMob"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/entity/passive/CatEntity"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/CookingRecipeJsonBuilderMixin.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/mixin/item/CookingRecipeJsonBuilderMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/item/Item;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getSmeltingRecipeCategory"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/data/server/recipe/CookingRecipeJsonBuilder"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/client/HeldItemRendererMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/item/client/HeldItemRendererMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "modifyProgressAnimation",
+            "acc": 2,
+            "dsc": "(Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "updateHeldItems"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_4047",
+            "dsc": "Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "acc": 2,
+            "nme": "field_4048",
+            "dsc": "Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "acc": 2,
+            "nme": "field_4050",
+            "dsc": "Lnet/minecraft/client/MinecraftClient;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/client/render/item/HeldItemRenderer"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/item/v1/FabricItemStack.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/item/v1/FabricItemStack",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getRecipeRemainder",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "nme": "getFoodComponent",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/item/FoodComponent;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/item/FabricItemInternals$ExtraData.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/impl/item/FabricItemInternals$ExtraData",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "equipmentSlot",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;)V"
+          },
+          {
+            "nme": "customDamage",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "equipmentSlotProvider",
+            "dsc": "Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;"
+          },
+          {
+            "acc": 2,
+            "nme": "customDamageHandler",
+            "dsc": "Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/item/ItemExtensions.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/item/ItemExtensions",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_getEquipmentSlotProvider",
+            "acc": 1025,
+            "dsc": "()Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "fabric_setEquipmentSlotProvider",
+            "acc": 1025,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/EquipmentSlotProvider;)V"
+          },
+          {
+            "nme": "fabric_getCustomDamageHandler",
+            "acc": 1025,
+            "dsc": "()Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "fabric_setCustomDamageHandler",
+            "acc": 1025,
+            "dsc": "(Lnet/fabricmc/fabric/api/item/v1/CustomDamageHandler;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/item/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/item/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/RecipeMixin.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/item/RecipeMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "captureStack",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/inventory/Inventory;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;Lnet/minecraft/util/collection/DefaultedList;I)V",
+            "sig": "(TC;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/item/ItemStack;>;>;Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/item/ItemStack;>;I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getRemainder"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "Lnet/minecraft/inventory/Inventory;getStack(I)Lnet/minecraft/item/ItemStack;"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "locals",
+                  [
+                    "Lorg/spongepowered/asm/mixin/injection/callback/LocalCapture;",
+                    "CAPTURE_FAILHARD"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "hasStackRemainder",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getRemainder"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;hasRecipeRemainder()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "replaceGetRecipeRemainder",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;)Lnet/minecraft/item/Item;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getRemainder"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getRecipeRemainder()Lnet/minecraft/item/Item;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getStackRemainder",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/util/collection/DefaultedList;ILjava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/item/ItemStack;>;ILjava/lang/Object;)Ljava/lang/Object;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "getRemainder"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/util/collection/DefaultedList;set(ILjava/lang/Object;)Ljava/lang/Object;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/recipe/Recipe"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/HungerManagerMixin.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/mixin/item/HungerManagerMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getStackAwareFoodComponent",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/FoodComponent;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "eat"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;getFoodComponent()Lnet/minecraft/item/FoodComponent;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ],
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/Item;Lnet/minecraft/item/Item;Lnet/minecraft/item/ItemStack;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "eat"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/Item;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/entity/player/HungerManager"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/item/client/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/item/client/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/item/v1/FabricItem.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/item/v1/FabricItem",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "allowNbtUpdateAnimation",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "allowContinuingBlockBreaking",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/item/ItemStack;Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getAttributeModifiers",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap;",
+            "sig": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/entity/EquipmentSlot;)Lcom/google/common/collect/Multimap<Lnet/minecraft/entity/attribute/EntityAttribute;Lnet/minecraft/entity/attribute/EntityAttributeModifier;>;"
+          },
+          {
+            "nme": "isSuitableFor",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Lnet/minecraft/block/BlockState;)Z"
+          },
+          {
+            "nme": "getRecipeRemainder",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "nme": "getFoodComponent",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/FoodComponent;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/item/BlockItemMixin.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/mixin/item/BlockItemMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isStackAwareFood",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/item/BlockItem;Lnet/minecraft/item/ItemUsageContext;)Z",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "useOnBlock"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lnet/minecraft/item/BlockItem;isFood()Z"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/item/BlockItem"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,638 @@
+{
+  "md5": "2b80b6813849b346aa46b903dcd81375",
+  "sha2": "6c192e0fcd54ce5bf51095e270a9718ab53097db",
+  "sha256": "3e965c9ee5c5c2d0728da1898cec0371ba0888c4ec991b3f7c7ea49d7e668e2b",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/api/base/codecs/JFLCodecs.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/base/codecs/JFLCodecs",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "firstInList",
+            "acc": 137,
+            "dsc": "([Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;>([Lcom/mojang/serialization/Codec<TT;>;)Lcom/mojang/serialization/Codec<TT;>;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/SafeVarargs;"
+              }
+            ]
+          },
+          {
+            "nme": "forEnum",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Lcom/mojang/serialization/Codec;",
+            "sig": "<E:Ljava/lang/Enum<TE;>;>(Ljava/lang/Class<TE;>;)Lcom/mojang/serialization/Codec<TE;>;"
+          },
+          {
+            "nme": "filtering",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/serialization/Codec;Ljava/util/function/Predicate;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<TT;>;Ljava/util/function/Predicate<TT;>;)Lcom/mojang/serialization/Codec<TT;>;"
+          },
+          {
+            "nme": "oneOf",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/serialization/Codec;Ljava/util/Collection;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<TT;>;Ljava/util/Collection<TT;>;)Lcom/mojang/serialization/Codec<TT;>;"
+          },
+          {
+            "nme": "mutableList",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<Ljava/util/List<TT;>;>;)Lcom/mojang/serialization/Codec<Ljava/util/List<TT;>;>;"
+          },
+          {
+            "nme": "mutableSet",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<Ljava/util/Set<TT;>;>;)Lcom/mojang/serialization/Codec<Ljava/util/Set<TT;>;>;"
+          },
+          {
+            "nme": "mutableMap",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "<T:Ljava/lang/Object;U:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<Ljava/util/Map<TT;TU;>;>;)Lcom/mojang/serialization/Codec<Ljava/util/Map<TT;TU;>;>;"
+          },
+          {
+            "nme": "lambda$filtering$3",
+            "acc": 4106,
+            "dsc": "(Ljava/util/function/Predicate;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$filtering$2",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$forEnum$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/String;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$forEnum$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.3.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/base/LogUtil.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/base/LogUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getLogger",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/slf4j/Logger;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/base/codecs/FirstInListCodec.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "red/jackf/jackfredlib/api/base/codecs/FirstInListCodec",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "noCodecsError",
+            "acc": 10,
+            "dsc": "()Lcom/mojang/serialization/DataResult;",
+            "sig": "<X:Ljava/lang/Object;>()Lcom/mojang/serialization/DataResult<TX;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 132,
+            "dsc": "([Lcom/mojang/serialization/Codec;)V",
+            "sig": "([Lcom/mojang/serialization/Codec<TT;>;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/SafeVarargs;"
+              }
+            ]
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;",
+            "sig": "<A:Ljava/lang/Object;>(Lcom/mojang/serialization/DynamicOps<TA;>;TA;)Lcom/mojang/serialization/DataResult<Lcom/mojang/datafixers/util/Pair<TT;TA;>;>;"
+          },
+          {
+            "nme": "encode",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;",
+            "sig": "<A:Ljava/lang/Object;>(TT;Lcom/mojang/serialization/DynamicOps<TA;>;TA;)Lcom/mojang/serialization/DataResult<TA;>;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "NO_CODECS",
+            "dsc": "Lcom/mojang/serialization/DataResult;",
+            "sig": "Lcom/mojang/serialization/DataResult<*>;"
+          },
+          {
+            "acc": 18,
+            "nme": "codecs",
+            "dsc": "[Lcom/mojang/serialization/Codec;",
+            "sig": "[Lcom/mojang/serialization/Codec<TT;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/Ephemeral2.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/base/Ephemeral2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "push",
+            "acc": 33,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "push",
+            "acc": 33,
+            "dsc": "(Ljava/lang/Object;I)V",
+            "sig": "(TT;I)V"
+          },
+          {
+            "nme": "hasValue",
+            "acc": 33,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "pop",
+            "acc": 33,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "popNullable",
+            "acc": 33,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "value",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<TT;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "count",
+            "dsc": "I"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.3.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/base/ServerTrackerImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/base/ServerTrackerImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setup",
+            "acc": 9,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getServer",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/server/MinecraftServer;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "lambda$setup$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "lambda$setup$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/impl/base/ServerTrackerImpl;"
+          },
+          {
+            "acc": 2,
+            "nme": "server",
+            "dsc": "Lnet/minecraft/server/MinecraftServer;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.3.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/ServerTracker.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/base/ServerTracker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getServer",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/server/MinecraftServer;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ServerTracker;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.3.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/ResultHolder$State.class": {
+        "ver": 61,
+        "acc": 16432,
+        "nme": "red/jackf/jackfredlib/api/base/ResultHolder$State",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "VALUE",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "acc": 16409,
+            "nme": "EMPTY",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PASS",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/ResultHolder.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "red/jackf/jackfredlib/api/base/ResultHolder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lred/jackf/jackfredlib/api/base/ResultHolder$State;Ljava/lang/Object;)V",
+            "sig": "(Lred/jackf/jackfredlib/api/base/ResultHolder$State;TT;)V"
+          },
+          {
+            "nme": "value",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Lred/jackf/jackfredlib/api/base/ResultHolder;",
+            "sig": "<T:Ljava/lang/Object;>(TT;)Lred/jackf/jackfredlib/api/base/ResultHolder<TT;>;"
+          },
+          {
+            "nme": "empty",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/api/base/ResultHolder;",
+            "sig": "<T:Ljava/lang/Object;>()Lred/jackf/jackfredlib/api/base/ResultHolder<TT;>;"
+          },
+          {
+            "nme": "pass",
+            "acc": 9,
+            "dsc": "()Lred/jackf/jackfredlib/api/base/ResultHolder;",
+            "sig": "<T:Ljava/lang/Object;>()Lred/jackf/jackfredlib/api/base/ResultHolder<TT;>;"
+          },
+          {
+            "nme": "hasValue",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "shouldTerminate",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/NotNull;"
+              }
+            ]
+          },
+          {
+            "nme": "asOptional",
+            "acc": 1,
+            "dsc": "()Ljava/util/Optional;",
+            "sig": "()Ljava/util/Optional<TT;>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+                "vals": [
+                  "value",
+                  "1.4.0"
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "getNullable",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "EMPTY",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder;",
+            "sig": "Lred/jackf/jackfredlib/api/base/ResultHolder<*>;"
+          },
+          {
+            "acc": 26,
+            "nme": "PASS",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder;",
+            "sig": "Lred/jackf/jackfredlib/api/base/ResultHolder<*>;"
+          },
+          {
+            "acc": 18,
+            "nme": "state",
+            "dsc": "Lred/jackf/jackfredlib/api/base/ResultHolder$State;"
+          },
+          {
+            "acc": 18,
+            "nme": "value",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TT;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "0.1.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/Ephemeral.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "red/jackf/jackfredlib/api/base/Ephemeral",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "push",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "pop",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "value",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TT;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;",
+            "vals": [
+              "forRemoval",
+              true,
+              "since",
+              "1.4.1"
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$AvailableSince;",
+            "vals": [
+              "value",
+              "1.2.0"
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/base/Memoizer.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/base/Memoizer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/util/function/Supplier;)V",
+            "sig": "(Ljava/util/function/Supplier<TT;>;)V"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/util/function/Supplier;)Lred/jackf/jackfredlib/api/base/Memoizer;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/function/Supplier<TT;>;)Lred/jackf/jackfredlib/api/base/Memoizer<TT;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "value",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TT;"
+          },
+          {
+            "acc": 18,
+            "nme": "factory",
+            "dsc": "Ljava/util/function/Supplier;",
+            "sig": "Ljava/util/function/Supplier<TT;>;"
+          }
+        ]
+      }
+    }
+  }
+}

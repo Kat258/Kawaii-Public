@@ -1,0 +1,317 @@
+{
+  "md5": "bf3946e6312d4986f441b59ec6aedcbf",
+  "sha2": "54f40abb210482cb96a51dfca6c019da79d77dc9",
+  "sha256": "08bdd463ed3a9c7c2c6eac79ea095cb2697e30abacae43cb11092361b94cf602",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityRendererRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityRendererRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/entity/EntityType;Lnet/minecraft/client/render/entity/EntityRendererFactory;)V",
+            "sig": "<E:Lnet/minecraft/entity/Entity;>(Lnet/minecraft/entity/EntityType<+TE;>;Lnet/minecraft/client/render/entity/EntityRendererFactory<TE;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/client/rendereregistry/v1/EntityRendererRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityRendererRegistry$1.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityRendererRegistry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/entity/EntityType;Lnet/minecraft/client/render/entity/EntityRendererFactory;)V",
+            "sig": "<T:Lnet/minecraft/entity/Entity;>(Lnet/minecraft/entity/EntityType<+TT;>;Lnet/minecraft/client/render/entity/EntityRendererFactory<TT;>;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/BlockEntityRendererRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/BlockEntityRendererRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/block/entity/BlockEntityType;Lnet/minecraft/client/render/block/entity/BlockEntityRendererFactory;)V",
+            "sig": "<E:Lnet/minecraft/block/entity/BlockEntity;>(Lnet/minecraft/block/entity/BlockEntityType<TE;>;Lnet/minecraft/client/render/block/entity/BlockEntityRendererFactory<-TE;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/client/rendereregistry/v1/BlockEntityRendererRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityModelLayerRegistry$TexturedModelDataProvider.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityModelLayerRegistry$TexturedModelDataProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "createModelData",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/client/model/TexturedModelData;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/BlockEntityRendererRegistry$1.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/BlockEntityRendererRegistry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/block/entity/BlockEntityType;Lnet/minecraft/client/render/block/entity/BlockEntityRendererFactory;)V",
+            "sig": "<E:Lnet/minecraft/block/entity/BlockEntity;>(Lnet/minecraft/block/entity/BlockEntityType<TE;>;Lnet/minecraft/client/render/block/entity/BlockEntityRendererFactory<-TE;>;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/client/render/entity/feature/FeatureRenderer;)V",
+            "sig": "<T:Lnet/minecraft/entity/LivingEntity;>(Lnet/minecraft/client/render/entity/feature/FeatureRenderer<TT;+Lnet/minecraft/client/render/entity/model/EntityModel<TT;>;>;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "registerRenderers",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/entity/EntityType;Lnet/minecraft/client/render/entity/LivingEntityRenderer;Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper;Lnet/minecraft/client/render/entity/EntityRendererFactory$Context;)V",
+            "sig": "(Lnet/minecraft/entity/EntityType<+Lnet/minecraft/entity/LivingEntity;>;Lnet/minecraft/client/render/entity/LivingEntityRenderer<**>;Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper;Lnet/minecraft/client/render/entity/EntityRendererFactory$Context;)V"
+          },
+          {
+            "nme": "createEvent",
+            "acc": 10,
+            "dsc": "()Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "()Lnet/fabricmc/fabric/api/event/Event<Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback;>;"
+          },
+          {
+            "nme": "lambda$createEvent$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/entity/EntityType;Lnet/minecraft/client/render/entity/LivingEntityRenderer;Lnet/fabricmc/fabric/api/client/rendering/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper;Lnet/minecraft/client/render/entity/EntityRendererFactory$Context;)V"
+          },
+          {
+            "nme": "lambda$createEvent$1",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback;)Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback;"
+          },
+          {
+            "nme": "lambda$createEvent$0",
+            "acc": 4106,
+            "dsc": "([Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback;Lnet/minecraft/entity/EntityType;Lnet/minecraft/client/render/entity/LivingEntityRenderer;Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback$RegistrationHelper;Lnet/minecraft/client/render/entity/EntityRendererFactory$Context;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Lnet/fabricmc/fabric/api/client/rendereregistry/v1/LivingEntityFeatureRendererRegistrationCallback;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityModelLayerRegistry.class": {
+        "ver": 61,
+        "acc": 131121,
+        "nme": "net/fabricmc/fabric/api/client/rendereregistry/v1/EntityModelLayerRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "registerModelLayer",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/client/render/entity/model/EntityModelLayer;Lnet/fabricmc/fabric/api/client/rendereregistry/v1/EntityModelLayerRegistry$TexturedModelDataProvider;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

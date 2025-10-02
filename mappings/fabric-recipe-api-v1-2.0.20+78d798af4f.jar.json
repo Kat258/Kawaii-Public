@@ -1,0 +1,1488 @@
+{
+  "md5": "38d4bb7088071cca6d8c42f5ff1ff5ce",
+  "sha2": "0cb26b21383e479cd32372b23084f5eeeb8bbcde",
+  "sha256": "3acec01c072c26166f48e933540bb4b175726af8f77b15bfb7c22654eda1604f",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient.class": {
+        "ver": 61,
+        "acc": 1056,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;)V"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getIngredients",
+            "acc": 0,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "ingredients",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient$Serializer.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient$Serializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Function;Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;)V",
+            "sig": "(Lnet/minecraft/util/Identifier;Ljava/util/function/Function<Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;TI;>;Lcom/mojang/serialization/Codec<TI;>;Lcom/mojang/serialization/Codec<TI;>;)V"
+          },
+          {
+            "nme": "getIdentifier",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "nme": "getCodec",
+            "acc": 1,
+            "dsc": "(Z)Lcom/mojang/serialization/Codec;",
+            "sig": "(Z)Lcom/mojang/serialization/Codec<TI;>;"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient;",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;)TI;"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient;)V",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;TI;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "identifier",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 18,
+            "nme": "factory",
+            "dsc": "Ljava/util/function/Function;",
+            "sig": "Ljava/util/function/Function<Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;TI;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "allowEmptyCodec",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<TI;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "disallowEmptyCodec",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<TI;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/recipe/ingredient/PacketEncoderMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/recipe/ingredient/PacketEncoderMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric_setSupportedCustomIngredients",
+            "acc": 1,
+            "dsc": "(Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Lnet/minecraft/util/Identifier;>;)V"
+          },
+          {
+            "nme": "capturePacketEncoder",
+            "acc": 2,
+            "dsc": "(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet;Lio/netty/buffer/ByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "sig": "(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet<*>;Lio/netty/buffer/ByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "net/minecraft/network/packet/Packet.write(Lnet/minecraft/network/PacketByteBuf;)V"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "encode(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet;Lio/netty/buffer/ByteBuf;)V"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "releasePacketEncoder",
+            "acc": 2,
+            "dsc": "(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet;Lio/netty/buffer/ByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "sig": "(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet<*>;Lio/netty/buffer/ByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "net/minecraft/network/packet/Packet.write(Lnet/minecraft/network/PacketByteBuf;)V",
+                        "shift",
+                        [
+                          "Lorg/spongepowered/asm/mixin/injection/At$Shift;",
+                          "AFTER"
+                        ],
+                        "by",
+                        1
+                      ],
+                      "api": 589824
+                    },
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "INVOKE",
+                        "target",
+                        "net/minecraft/network/packet/Packet.isWritingErrorSkippable()Z"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "encode(Lio/netty/channel/ChannelHandlerContext;Lnet/minecraft/network/packet/Packet;Lio/netty/buffer/ByteBuf;)V"
+                  ]
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "fabric_supportedCustomIngredients",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Lnet/minecraft/util/Identifier;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/network/handler/PacketEncoder"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient$Serializer.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient$Serializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createCodec",
+            "acc": 10,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "(Lcom/mojang/serialization/Codec<Lnet/minecraft/recipe/Ingredient;>;)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;>;"
+          },
+          {
+            "nme": "getIdentifier",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "nme": "getCodec",
+            "acc": 1,
+            "dsc": "(Z)Lcom/mojang/serialization/Codec;",
+            "sig": "(Z)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;>;"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;"
+          },
+          {
+            "nme": "lambda$createCodec$3",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;"
+          },
+          {
+            "nme": "lambda$static$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/nbt/NbtCompound;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/datafixers/util/Either;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ID",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 26,
+            "nme": "NBT_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/minecraft/nbt/NbtCompound;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "ALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "DISALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/client/CustomIngredientSyncClient.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/client/CustomIngredientSyncClient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onInitializeClient",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$onInitializeClient$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/network/ClientConfigurationNetworkHandler;Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/networking/v1/PacketSender;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientImpl",
+        "super": "net/minecraft/recipe/Ingredient",
+        "mthds": [
+          {
+            "nme": "registerSerializer",
+            "acc": 9,
+            "dsc": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;)V",
+            "sig": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;)V"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "(Lnet/minecraft/util/Identifier;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;)V"
+          },
+          {
+            "nme": "getCustomIngredient",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1,
+            "dsc": "()[Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "nme": "test",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "coerceIngredient",
+            "acc": 2,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>()TT;"
+          },
+          {
+            "nme": "test",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "lambda$getMatchingStacks$4",
+            "acc": 4106,
+            "dsc": "(I)[Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "nme": "lambda$static$3",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$static$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "TYPE_KEY",
+            "dsc": "Ljava/lang/String;",
+            "val": "fabric:type"
+          },
+          {
+            "acc": 25,
+            "nme": "PACKET_MARKER",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 24,
+            "nme": "REGISTERED_SERIALIZERS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/util/Identifier;Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "customIngredient",
+            "dsc": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 9,
+            "dsc": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;)V",
+            "sig": "(Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "(Lnet/minecraft/util/Identifier;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getIdentifier",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "nme": "getCodec",
+            "acc": 1025,
+            "dsc": "(Z)Lcom/mojang/serialization/Codec;",
+            "sig": "(Z)Lcom/mojang/serialization/Codec<TT;>;"
+          },
+          {
+            "nme": "read",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;)TT;"
+          },
+          {
+            "nme": "write",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;)V",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;TT;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientSync$IngredientSyncTask.class": {
+        "ver": 61,
+        "acc": 65584,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientSync$IngredientSyncTask",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "sendPacket",
+            "acc": 1,
+            "dsc": "(Ljava/util/function/Consumer;)V",
+            "sig": "(Ljava/util/function/Consumer<Lnet/minecraft/network/packet/Packet<*>;>;)V"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/server/network/ServerPlayerConfigurationTask$Key;"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "KEY",
+            "dsc": "Lnet/minecraft/server/network/ServerPlayerConfigurationTask$Key;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;Lnet/minecraft/nbt/NbtCompound;Z)V"
+          },
+          {
+            "nme": "test",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/item/ItemStack;>;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;"
+          },
+          {
+            "nme": "getBase",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "getNbt",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/nbt/NbtCompound;"
+          },
+          {
+            "nme": "isStrict",
+            "acc": 2,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "lambda$getMatchingStacks$1",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "lambda$getMatchingStacks$0",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Lnet/minecraft/item/ItemStack;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SERIALIZER",
+            "dsc": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/NbtIngredient;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "base",
+            "dsc": "Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "acc": 18,
+            "nme": "nbt",
+            "dsc": "Lnet/minecraft/nbt/NbtCompound;"
+          },
+          {
+            "acc": 18,
+            "nme": "strict",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient$Serializer.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient$Serializer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createCodec",
+            "acc": 10,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "(Lcom/mojang/serialization/Codec<Lnet/minecraft/recipe/Ingredient;>;)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;>;"
+          },
+          {
+            "nme": "getIdentifier",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "nme": "getCodec",
+            "acc": 1,
+            "dsc": "(Z)Lcom/mojang/serialization/Codec;",
+            "sig": "(Z)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;>;"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;)V"
+          },
+          {
+            "nme": "read",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;"
+          },
+          {
+            "nme": "lambda$createCodec$0",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/codecs/RecordCodecBuilder$Instance;)Lcom/mojang/datafixers/kinds/App;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ID",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 26,
+            "nme": "ALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "DISALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/client/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/client/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientSync.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientSync",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createResponsePacket",
+            "acc": 9,
+            "dsc": "(I)Lnet/minecraft/network/PacketByteBuf;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "decodeResponsePacket",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;)Ljava/util/Set;",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;)Ljava/util/Set<Lnet/minecraft/util/Identifier;>;"
+          },
+          {
+            "nme": "onInitialize",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$onInitialize$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/MinecraftServer;Lnet/minecraft/server/network/ServerConfigurationNetworkHandler;Lnet/minecraft/network/PacketByteBuf;Lnet/fabricmc/fabric/api/networking/v1/PacketSender;)V"
+          },
+          {
+            "nme": "lambda$onInitialize$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/server/network/ServerConfigurationNetworkHandler;Lnet/minecraft/server/MinecraftServer;)V"
+          },
+          {
+            "nme": "lambda$decodeResponsePacket$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/util/Identifier;)Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "PACKET_ID",
+            "dsc": "Lnet/minecraft/util/Identifier;"
+          },
+          {
+            "acc": 25,
+            "nme": "PROTOCOL_VERSION_1",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "CURRENT_SUPPORTED_INGREDIENTS",
+            "dsc": "Ljava/lang/ThreadLocal;",
+            "sig": "Ljava/lang/ThreadLocal<Ljava/util/Set<Lnet/minecraft/util/Identifier;>;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/recipe/v1/ingredient/DefaultCustomIngredients.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/recipe/v1/ingredient/DefaultCustomIngredients",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "all",
+            "acc": 137,
+            "dsc": "([Lnet/minecraft/recipe/Ingredient;)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "any",
+            "acc": 137,
+            "dsc": "([Lnet/minecraft/recipe/Ingredient;)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "difference",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;Lnet/minecraft/recipe/Ingredient;)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "nbt",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;Lnet/minecraft/nbt/NbtCompound;Z)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "nbt",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/item/ItemStack;Z)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/SupportedIngredientsPacketEncoder.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/SupportedIngredientsPacketEncoder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_setSupportedCustomIngredients",
+            "acc": 1025,
+            "dsc": "(Ljava/util/Set;)V",
+            "sig": "(Ljava/util/Set<Lnet/minecraft/util/Identifier;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient",
+        "super": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient",
+        "mthds": [
+          {
+            "nme": "createCodec",
+            "acc": 10,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "(Lcom/mojang/serialization/Codec<Lnet/minecraft/recipe/Ingredient;>;)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;)V"
+          },
+          {
+            "nme": "test",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/item/ItemStack;>;"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 4161,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "DISALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SERIALIZER",
+            "dsc": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AnyIngredient;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientInit.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/CustomIngredientInit",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onInitialize",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "test",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/item/ItemStack;>;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 1025,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;"
+          },
+          {
+            "nme": "toVanilla",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/recipe/Ingredient;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/ApiStatus$NonExtendable;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/recipe/ingredient/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/recipe/ingredient/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/ShapelessMatch.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/ShapelessMatch",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "augment",
+            "acc": 2,
+            "dsc": "(I)Z"
+          },
+          {
+            "nme": "isMatch",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;Ljava/util/List;)Z",
+            "sig": "(Ljava/util/List<Lnet/minecraft/item/ItemStack;>;Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "match",
+            "dsc": "[I"
+          },
+          {
+            "acc": 18,
+            "nme": "bitSet",
+            "dsc": "Ljava/util/BitSet;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/recipe/ingredient/ShapelessRecipeMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/recipe/ingredient/ShapelessRecipeMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "cacheRequiresTesting",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/recipe/book/CraftingRecipeCategory;Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/collection/DefaultedList;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/recipe/book/CraftingRecipeCategory;Lnet/minecraft/item/ItemStack;Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/recipe/Ingredient;>;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfo;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "<init>"
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "customIngredientMatch",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/inventory/RecipeInputInventory;Lnet/minecraft/world/World;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/inventory/RecipeInputInventory;Lnet/minecraft/world/World;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Ljava/lang/Boolean;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "matches"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "field_9047",
+            "dsc": "Lnet/minecraft/util/collection/DefaultedList;",
+            "sig": "Lnet/minecraft/util/collection/DefaultedList<Lnet/minecraft/recipe/Ingredient;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "fabric_requiresTesting",
+            "dsc": "Z"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/recipe/ShapelessRecipe"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient",
+        "super": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/CombinedIngredient",
+        "mthds": [
+          {
+            "nme": "createCodec",
+            "acc": 10,
+            "dsc": "(Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "(Lcom/mojang/serialization/Codec<Lnet/minecraft/recipe/Ingredient;>;)Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/recipe/Ingredient;>;)V"
+          },
+          {
+            "nme": "test",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/item/ItemStack;>;"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 4161,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "lambda$getMatchingStacks$0",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "DISALLOW_EMPTY_CODEC",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "SERIALIZER",
+            "dsc": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/AllIngredient;>;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/recipe/v1/ingredient/FabricIngredient.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/api/recipe/v1/ingredient/FabricIngredient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getCustomIngredient",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredient;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;Lnet/minecraft/recipe/Ingredient;)V"
+          },
+          {
+            "nme": "test",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/item/ItemStack;)Z"
+          },
+          {
+            "nme": "getMatchingStacks",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/item/ItemStack;>;"
+          },
+          {
+            "nme": "requiresTesting",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getSerializer",
+            "acc": 1,
+            "dsc": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "()Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<*>;"
+          },
+          {
+            "nme": "getBase",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "getSubtracted",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SERIALIZER",
+            "dsc": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;",
+            "sig": "Lnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer<Lnet/fabricmc/fabric/impl/recipe/ingredient/builtin/DifferenceIngredient;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "base",
+            "dsc": "Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "acc": 18,
+            "nme": "subtracted",
+            "dsc": "Lnet/minecraft/recipe/Ingredient;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/recipe/ingredient/IngredientMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/recipe/ingredient/IngredientMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "injectCodec",
+            "acc": 10,
+            "dsc": "(ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(ZLorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/mojang/serialization/Codec<Lnet/minecraft/recipe/Ingredient;>;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "createCodec"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "injectFromPacket",
+            "acc": 10,
+            "dsc": "(Lnet/minecraft/network/PacketByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/network/PacketByteBuf;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/recipe/Ingredient;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "method",
+                  [
+                    "fromPacket"
+                  ],
+                  "cancellable",
+                  true
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "lambda$injectCodec$3",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;)Lcom/mojang/datafixers/util/Either;"
+          },
+          {
+            "nme": "lambda$injectCodec$2",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/datafixers/util/Either;)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "lambda$injectCodec$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/recipe/Ingredient;)Lnet/minecraft/recipe/Ingredient;"
+          },
+          {
+            "nme": "lambda$injectCodec$0",
+            "acc": 4106,
+            "dsc": "(ZLnet/fabricmc/fabric/api/recipe/v1/ingredient/CustomIngredientSerializer;)Lcom/mojang/serialization/Codec;"
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/recipe/Ingredient"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

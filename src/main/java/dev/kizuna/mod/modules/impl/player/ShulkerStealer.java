@@ -71,7 +71,8 @@ public class ShulkerStealer extends Module {
     private final SliderSetting obsidian = add(new SliderSetting("Obsidian", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting slowfalling = add(new SliderSetting("slowfalling", 6, 0, 36, () -> take.getValue() && smart.isOpen()));
     private final SliderSetting cryobsidian = add(new SliderSetting("CryObsidian", 64, 0, 512, () -> take.getValue() && smart.isOpen()));
-    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+    private final SliderSetting slowfallingarrow = add(new SliderSetting("slowfallingarrow", 32, 0, 512, () -> take.getValue() && smart.isOpen()));
+    final int[] stealCountList = new int[]{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
     public ShulkerStealer() {
         super("ShulkerStealer", "Auto place shulker and replenish", Category.Player);
@@ -177,6 +178,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[20] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
         this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount(StatusEffects.SLOW_FALLING));
         this.stealCountList[22] = (int) (this.cryobsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.CRYING_OBSIDIAN)));
+        this.stealCountList[23] = (int) (this.slowfallingarrow.getValue() - InventoryUtil.getItemCount(Items.TIPPED_ARROW));
     }
 
     @Override
@@ -398,6 +400,10 @@ public class ShulkerStealer extends Module {
         }
         if (i.getItem().equals(Item.fromBlock(Blocks.CRYING_OBSIDIAN)) && this.stealCountList[22] > 0) {
             stealCountList[22] = stealCountList[22] - i.getCount();
+            return true;
+        }
+        if (i.getItem().equals(Items.TIPPED_ARROW) && this.stealCountList[23] > 0) {
+            stealCountList[23] = stealCountList[23] - i.getCount();
             return true;
         }
         return false;

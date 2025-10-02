@@ -1,0 +1,1041 @@
+{
+  "md5": "33599ce84b9355ced27189eab04af851",
+  "sha2": "a92cc1a634f3c3bb9d5b4612105e665578e6139a",
+  "sha256": "1aaff807ae6ccf9fe9eaf5b866f4c5fa56e0eef225356edfbf03b973ad320864",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/client/impl/toasts/icon/ItemStackIcon.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/icon/ItemStackIcon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;I)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_1799;>;I)V"
+          },
+          {
+            "nme": "render",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;Lnet/minecraft/class_374;Lnet/minecraft/class_332;II)V"
+          },
+          {
+            "nme": "width",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "height",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSET",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 18,
+            "nme": "items",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_1799;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "sizeInSlots",
+            "dsc": "I"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/ToastIcon.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/ToastIcon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "image",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2960;II)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "image",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2960;III)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "image",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2960;IIII)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "image",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2960;IIIIIIII)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "item",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1799;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "item",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1799;I)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "items",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_1799;>;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "items",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;I)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_1799;>;I)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "nme": "modIcon",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "slotsToHeight",
+            "acc": 9,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "render",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;Lnet/minecraft/class_374;Lnet/minecraft/class_332;II)V"
+          },
+          {
+            "nme": "width",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "height",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "DEFAULT_SIZE",
+            "dsc": "I",
+            "val": 20
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/ToastFormat.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/ToastFormat",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;III)V"
+          },
+          {
+            "nme": "tex",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_2960;"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "texture",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2960;"
+          },
+          {
+            "nme": "titleColour",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "messageColour",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "progressBarColour",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "texture",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 18,
+            "nme": "titleColour",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "messageColour",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "progressBarColour",
+            "dsc": "I"
+          },
+          {
+            "acc": 25,
+            "nme": "DARK",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          },
+          {
+            "acc": 25,
+            "nme": "WHITE",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          },
+          {
+            "acc": 25,
+            "nme": "BLUE_ALERT",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          },
+          {
+            "acc": 25,
+            "nme": "WHITE_SHARP",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/toasts/CustomToastImpl$VisibilityChecker.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/CustomToastImpl$VisibilityChecker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "check",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl;)Lnet/minecraft/class_368$class_369;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/toasts/ModUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/ModUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getModTitle",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_2561;"
+          },
+          {
+            "nme": "iconFromModId",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "devOnlyWarn",
+            "acc": 138,
+            "dsc": "(Ljava/lang/String;[Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "_specFromModId",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "lambda$getModTitle$0",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/loader/api/ModContainer;)Lnet/minecraft/class_5250;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ICON_CACHE",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "addMessage",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "withIcon",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "expiresAfter",
+            "acc": 1,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "expiresWhenProgressComplete",
+            "acc": 1,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "progressPuller",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;)Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "progressShowsVisibleTime",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "rainbowProgressBar",
+            "acc": 1,
+            "dsc": "(Z)Lred/jackf/jackfredlib/client/impl/toasts/CustomToastBuilderImpl;"
+          },
+          {
+            "nme": "build",
+            "acc": 1,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/toasts/CustomToast;"
+          },
+          {
+            "nme": "rainbowProgressBar",
+            "acc": 4161,
+            "dsc": "(Z)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "progressShowsVisibleTime",
+            "acc": 4161,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "progressPuller",
+            "acc": 4161,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "expiresWhenProgressComplete",
+            "acc": 4161,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "expiresAfter",
+            "acc": 4161,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "addMessage",
+            "acc": 4161,
+            "dsc": "(Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "lambda$build$3",
+            "acc": 4106,
+            "dsc": "(JLred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl;)Lnet/minecraft/class_368$class_369;"
+          },
+          {
+            "nme": "lambda$build$2",
+            "acc": 4106,
+            "dsc": "(JLred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl;)Lnet/minecraft/class_368$class_369;"
+          },
+          {
+            "nme": "lambda$progressShowsVisibleTime$1",
+            "acc": 4098,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;)Ljava/util/Optional;"
+          },
+          {
+            "nme": "lambda$new$0",
+            "acc": 4106,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;)Ljava/util/Optional;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "title",
+            "dsc": "Lnet/minecraft/class_2561;"
+          },
+          {
+            "acc": 18,
+            "nme": "messages",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_2561;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "format",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          },
+          {
+            "acc": 2,
+            "nme": "icon",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "acc": 2,
+            "nme": "lifetime",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "progressCompleteExpiryTime",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "rainbowProgress",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "expiresOnFullProgress",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "progressPuller",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/CustomToast.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/CustomToast",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "refresh",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setImage",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;)V"
+          },
+          {
+            "nme": "setTitle",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "setMessage",
+            "acc": 1025,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2561;>;)V"
+          },
+          {
+            "nme": "setProgress",
+            "acc": 1025,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "getProgress",
+            "acc": 1025,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getTimeSinceProgressComplete",
+            "acc": 1025,
+            "dsc": "()J"
+          },
+          {
+            "nme": "getTimeVisible",
+            "acc": 1025,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "MAX_WIDTH",
+            "dsc": "I",
+            "val": 200
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$NonExtendable;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "pull",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;)Ljava/util/Optional;",
+            "sig": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;)Ljava/util/Optional<Ljava/lang/Float;>;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/toasts/CustomToastImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/CustomToastImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;Lnet/minecraft/class_2561;Ljava/util/List;Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;Lred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl$VisibilityChecker;Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;Z)V",
+            "sig": "(Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;Lnet/minecraft/class_2561;Ljava/util/List<Lnet/minecraft/class_2561;>;Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;Lred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl$VisibilityChecker;Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;Z)V"
+          },
+          {
+            "nme": "setTitle",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "setImage",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;)V"
+          },
+          {
+            "nme": "setMessage",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2561;>;)V"
+          },
+          {
+            "nme": "leftWidth",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "method_29049",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "method_29050",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getMaxTextAreaWidth",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "method_1986",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_332;Lnet/minecraft/class_374;J)Lnet/minecraft/class_368$class_369;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/NotNull;"
+              }
+            ]
+          },
+          {
+            "nme": "method_1987",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/NotNull;"
+              }
+            ]
+          },
+          {
+            "nme": "refresh",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getProgress",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setProgress",
+            "acc": 1,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "getTimeSinceProgressComplete",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "getTimeVisible",
+            "acc": 1,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DEFAULT_PADDING",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 25,
+            "nme": "IMAGE_SIZE",
+            "dsc": "I",
+            "val": 20
+          },
+          {
+            "acc": 18,
+            "nme": "token",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 18,
+            "nme": "format",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;"
+          },
+          {
+            "acc": 2,
+            "nme": "title",
+            "dsc": "Lnet/minecraft/class_2561;"
+          },
+          {
+            "acc": 18,
+            "nme": "messageLines",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_5481;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "icon",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;"
+          },
+          {
+            "acc": 18,
+            "nme": "visibiltyFunction",
+            "dsc": "Lred/jackf/jackfredlib/client/impl/toasts/CustomToastImpl$VisibilityChecker;"
+          },
+          {
+            "acc": 18,
+            "nme": "progressPuller",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;"
+          },
+          {
+            "acc": 18,
+            "nme": "rainbowProgress",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "visibleTimeStart",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "visibleTime",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "progressCompleteTime",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "progress",
+            "dsc": "F"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/Toasts.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/Toasts",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "send",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;)V"
+          },
+          {
+            "nme": "sendFromMod",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lred/jackf/jackfredlib/client/api/toasts/Toasts;"
+          },
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 18,
+            "nme": "toasts",
+            "dsc": "Lnet/minecraft/class_374;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/api/toasts/ToastBuilder.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/client/api/toasts/ToastBuilder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "builder",
+            "acc": 9,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastFormat;Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "addMessage",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2561;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "withIcon",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastIcon;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "expiresAfter",
+            "acc": 1025,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "expiresWhenProgressComplete",
+            "acc": 1025,
+            "dsc": "(J)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "progressPuller",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder$ProgressPuller;)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "progressShowsVisibleTime",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "rainbowProgressBar",
+            "acc": 1025,
+            "dsc": "(Z)Lred/jackf/jackfredlib/client/api/toasts/ToastBuilder;"
+          },
+          {
+            "nme": "build",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/client/api/toasts/CustomToast;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/client/impl/toasts/icon/ImageIcon.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/client/impl/toasts/icon/ImageIcon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;IIIIIIII)V"
+          },
+          {
+            "nme": "render",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/client/api/toasts/CustomToast;Lnet/minecraft/class_374;Lnet/minecraft/class_332;II)V"
+          },
+          {
+            "nme": "width",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "height",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "location",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 18,
+            "nme": "width",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "height",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "uOffset",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "vOffset",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "uWidth",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "vHeight",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "textureWidth",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "textureHeight",
+            "dsc": "I"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

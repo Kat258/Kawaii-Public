@@ -1,0 +1,460 @@
+{
+  "md5": "e824e5a79023f7c5c161a0e39381bb07",
+  "sha2": "a90ebde434930dea77cd6251bc599277ac83cfcd",
+  "sha256": "e22e00a6cead13f79772620b671c0d4f6071ddb3f5915d07766f0d58d23fc37c",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/impl/container/ContainerProviderImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/container/ContainerProviderImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerFactory",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_1703;>;)V"
+          },
+          {
+            "nme": "openContainer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_1657;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_1657;Ljava/util/function/Consumer<Lnet/minecraft/class_2540;>;)V"
+          },
+          {
+            "nme": "openContainer",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_3222;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_3222;Ljava/util/function/Consumer<Lnet/minecraft/class_2540;>;)V"
+          },
+          {
+            "nme": "createContainer",
+            "acc": 1,
+            "dsc": "(ILnet/minecraft/class_2960;Lnet/minecraft/class_1657;Lnet/minecraft/class_2540;)Lnet/minecraft/class_1703;",
+            "sig": "<C:Lnet/minecraft/class_1703;>(ILnet/minecraft/class_2960;Lnet/minecraft/class_1657;Lnet/minecraft/class_2540;)TC;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "OPEN_CONTAINER",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 26,
+            "nme": "FACTORIES",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_1703;>;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "emittedNoSyncHookWarning",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/container/ServerPlayerEntityAccessor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/mixin/container/ServerPlayerEntityAccessor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getScreenHandlerSyncId",
+            "acc": 1025,
+            "dsc": "()I",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "setScreenHandlerSyncId",
+            "acc": 1025,
+            "dsc": "(I)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Accessor;"
+              }
+            ]
+          },
+          {
+            "nme": "callOnScreenHandlerOpened",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1703;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/gen/Invoker;"
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3222"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/container/ServerPlayerEntityMixin.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "net/fabricmc/fabric/mixin/container/ServerPlayerEntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "method_14237",
+            "acc": 1028,
+            "dsc": "()V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/Shadow;"
+              }
+            ]
+          },
+          {
+            "nme": "fabric_incrementSyncId",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "field_13986",
+            "dsc": "I"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3222"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/container/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/container/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/container/ScreenProviderRegistryImpl.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/impl/client/container/ScreenProviderRegistryImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerFactory",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_465;>;)V"
+          },
+          {
+            "nme": "registerFactory",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/client/screen/ContainerScreenFactory;)V",
+            "sig": "<C:Lnet/minecraft/class_1703;>(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/client/screen/ContainerScreenFactory<TC;>;)V"
+          },
+          {
+            "nme": "init",
+            "acc": 9,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$init$2",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_310;Lnet/minecraft/class_634;Lnet/minecraft/class_2540;Lnet/fabricmc/fabric/api/networking/v1/PacketSender;)V"
+          },
+          {
+            "nme": "lambda$init$1",
+            "acc": 4106,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_310;ILnet/minecraft/class_2540;)V"
+          },
+          {
+            "nme": "lambda$registerFactory$0",
+            "acc": 4106,
+            "dsc": "(Lnet/fabricmc/fabric/api/client/screen/ContainerScreenFactory;ILnet/minecraft/class_2960;Lnet/minecraft/class_1657;Lnet/minecraft/class_2540;)Lnet/minecraft/class_465;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 26,
+            "nme": "FACTORIES",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_465;>;>;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/container/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/container/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/client/container/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/client/container/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/screen/ContainerScreenFactory.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/screen/ContainerScreenFactory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "create",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_1703;)Lnet/minecraft/class_465;",
+            "sig": "(TC;)Lnet/minecraft/class_465;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/client/screen/ScreenProviderRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/client/screen/ScreenProviderRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "registerFactory",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/client/screen/ContainerScreenFactory;)V",
+            "sig": "<C:Lnet/minecraft/class_1703;>(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/client/screen/ContainerScreenFactory<TC;>;)V"
+          },
+          {
+            "nme": "registerFactory",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_465;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/client/screen/ScreenProviderRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Lnet/fabricmc/api/Environment;",
+            "vals": [
+              "value",
+              [
+                "Lnet/fabricmc/api/EnvType;",
+                "CLIENT"
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/container/ContainerFactory.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/container/ContainerFactory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "create",
+            "acc": 1025,
+            "dsc": "(ILnet/minecraft/class_2960;Lnet/minecraft/class_1657;Lnet/minecraft/class_2540;)Ljava/lang/Object;",
+            "sig": "(ILnet/minecraft/class_2960;Lnet/minecraft/class_1657;Lnet/minecraft/class_2540;)TT;"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/container/ServerPlayerEntitySyncHook.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/container/ServerPlayerEntitySyncHook",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_incrementSyncId",
+            "acc": 1025,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/api/container/ContainerProviderRegistry.class": {
+        "ver": 61,
+        "acc": 132609,
+        "nme": "net/fabricmc/fabric/api/container/ContainerProviderRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "registerFactory",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/fabricmc/fabric/api/container/ContainerFactory<Lnet/minecraft/class_1703;>;)V"
+          },
+          {
+            "nme": "openContainer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_3222;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_3222;Ljava/util/function/Consumer<Lnet/minecraft/class_2540;>;)V"
+          },
+          {
+            "nme": "openContainer",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_1657;Ljava/util/function/Consumer;)V",
+            "sig": "(Lnet/minecraft/class_2960;Lnet/minecraft/class_1657;Ljava/util/function/Consumer<Lnet/minecraft/class_2540;>;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Lnet/fabricmc/fabric/api/container/ContainerProviderRegistry;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      }
+    }
+  }
+}

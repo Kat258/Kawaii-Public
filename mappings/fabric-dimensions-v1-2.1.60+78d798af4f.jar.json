@@ -1,0 +1,611 @@
+{
+  "md5": "90b992722b414b34d7d23a71e3b6eda9",
+  "sha2": "ecd196ded7b7fe4567787d580e3e8a39d6c9b14c",
+  "sha256": "ee835b32f08ea096be539eb9da8fa01791c226cf416302ffc456130f7c27a3a9",
+  "contents": {
+    "classes": {
+      "net/fabricmc/fabric/impl/dimension/Teleportable.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/dimension/Teleportable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric_setCustomTeleportTarget",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5454;)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/dimension/Schema2832Mixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/dimension/Schema2832Mixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "redirectTaggedChoiceLazy",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Lcom/mojang/datafixers/types/Type;Ljava/util/Map;)Lcom/mojang/datafixers/types/templates/TaggedChoice;",
+            "sig": "<K:Ljava/lang/Object;>(Ljava/lang/String;Lcom/mojang/datafixers/types/Type<TK;>;Ljava/util/Map<TK;Ljava/util/function/Supplier<Lcom/mojang/datafixers/types/templates/TypeTemplate;>;>;)Lcom/mojang/datafixers/types/templates/TaggedChoice<TK;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "method_38837",
+                    "method_38838"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE",
+                      "target",
+                      "Lcom/mojang/datafixers/DSL;taggedChoiceLazy(Ljava/lang/String;Lcom/mojang/datafixers/types/Type;Ljava/util/Map;)Lcom/mojang/datafixers/types/templates/TaggedChoice;",
+                      "remap",
+                      false
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_6640"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/dimension/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/mixin/dimension/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/dimension/FabricDimensionInternals.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/impl/dimension/FabricDimensionInternals",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "changeDimension",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_3218;Lnet/minecraft/class_5454;)Lnet/minecraft/class_1297;",
+            "sig": "<E:Lnet/minecraft/class_1297;>(TE;Lnet/minecraft/class_3218;Lnet/minecraft/class_5454;)TE;"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/dimension/FailSoftMapCodec.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "net/fabricmc/fabric/impl/dimension/FailSoftMapCodec",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;)V",
+            "sig": "(Lcom/mojang/serialization/Codec<TK;>;Lcom/mojang/serialization/Codec<TV;>;)V"
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/DynamicOps<TT;>;TT;)Lcom/mojang/serialization/DataResult<Lcom/mojang/datafixers/util/Pair<Ljava/util/Map<TK;TV;>;TT;>;>;"
+          },
+          {
+            "nme": "encode",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;Lcom/mojang/serialization/DynamicOps<TT;>;TT;)Lcom/mojang/serialization/DataResult<TT;>;"
+          },
+          {
+            "nme": "decode",
+            "acc": 1,
+            "dsc": "(Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/MapLike;)Lcom/mojang/serialization/DataResult;",
+            "sig": "<T:Ljava/lang/Object;>(Lcom/mojang/serialization/DynamicOps<TT;>;Lcom/mojang/serialization/MapLike<TT;>;)Lcom/mojang/serialization/DataResult<Ljava/util/Map<TK;TV;>;>;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "keyCodec",
+            "acc": 1,
+            "dsc": "()Lcom/mojang/serialization/Codec;",
+            "sig": "()Lcom/mojang/serialization/Codec<TK;>;"
+          },
+          {
+            "nme": "elementCodec",
+            "acc": 1,
+            "dsc": "()Lcom/mojang/serialization/Codec;",
+            "sig": "()Lcom/mojang/serialization/Codec<TV;>;"
+          },
+          {
+            "nme": "encode",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;Lcom/mojang/serialization/DynamicOps;Ljava/lang/Object;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "lambda$decode$4",
+            "acc": 4098,
+            "dsc": "(Lcom/mojang/serialization/DynamicOps;Lcom/google/common/collect/ImmutableMap$Builder;Lcom/mojang/datafixers/util/Pair;)V"
+          },
+          {
+            "nme": "lambda$decode$3",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/serialization/DataResult;Lcom/mojang/datafixers/util/Pair;Lcom/mojang/serialization/DataResult$PartialResult;)V"
+          },
+          {
+            "nme": "lambda$decode$2",
+            "acc": 4106,
+            "dsc": "(Lcom/mojang/serialization/DataResult;Lcom/mojang/datafixers/util/Pair;Lcom/mojang/serialization/DataResult$PartialResult;)V"
+          },
+          {
+            "nme": "lambda$decode$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Object;Ljava/util/Map;)Lcom/mojang/datafixers/util/Pair;"
+          },
+          {
+            "nme": "lambda$decode$0",
+            "acc": 4098,
+            "dsc": "(Lcom/mojang/serialization/DynamicOps;Lcom/mojang/serialization/MapLike;)Lcom/mojang/serialization/DataResult;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "keyCodec",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<TK;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "elementCodec",
+            "dsc": "Lcom/mojang/serialization/Codec;",
+            "sig": "Lcom/mojang/serialization/Codec<TV;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/dimension/TaggedChoiceTypeExtension.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/dimension/TaggedChoiceTypeExtension",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric$setFailSoft",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/mixin/dimension/EntityMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/dimension/EntityMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric_setCustomTeleportTarget",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_5454;)V"
+          },
+          {
+            "nme": "getTeleportTarget",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_3218;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lnet/minecraft/class_3218;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lnet/minecraft/class_5454;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getTeleportTarget"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true,
+                  "allow",
+                  1
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "stopEndSpecificBehavior",
+            "acc": 2,
+            "dsc": "()Lnet/minecraft/class_5321;",
+            "sig": "()Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Redirect;",
+                "vals": [
+                  "method",
+                  [
+                    "moveToWorld"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "FIELD",
+                      "target",
+                      "Lnet/minecraft/world/World;END:Lnet/minecraft/registry/RegistryKey;"
+                    ],
+                    "api": 589824
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "customTeleportTarget",
+            "dsc": "Lnet/minecraft/class_5454;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_3222"
+                },
+                {
+                  "itrlNme": "net/minecraft/class_1297"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/dimension/RegistryCodecsMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/dimension/RegistryCodecsMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "modifyCodecLocalVariable",
+            "acc": 10,
+            "dsc": "(Lcom/mojang/serialization/Codec;Lnet/minecraft/class_5321;Lcom/mojang/serialization/Lifecycle;Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/Codec;",
+            "sig": "<E:Ljava/lang/Object;>(Lcom/mojang/serialization/Codec<Ljava/util/Map<Lnet/minecraft/class_5321<TE;>;TE;>;>;Lnet/minecraft/class_5321<+Lnet/minecraft/class_2378<TE;>;>;Lcom/mojang/serialization/Lifecycle;Lcom/mojang/serialization/Codec<TE;>;)Lcom/mojang/serialization/Codec<Ljava/util/Map<Lnet/minecraft/class_5321<TE;>;TE;>;>;",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/ModifyVariable;",
+                "vals": [
+                  "method",
+                  [
+                    "createKeyedRegistryCodec"
+                  ],
+                  "at",
+                  {
+                    "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                    "values": [
+                      "value",
+                      "INVOKE_ASSIGN",
+                      "target",
+                      "Lcom/mojang/serialization/Codec;unboundedMap(Lcom/mojang/serialization/Codec;Lcom/mojang/serialization/Codec;)Lcom/mojang/serialization/codecs/UnboundedMapCodec;",
+                      "remap",
+                      false
+                    ],
+                    "api": 589824
+                  },
+                  "ordinal",
+                  1
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_6895"
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/impl/dimension/TaggedChoiceExtension.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "net/fabricmc/fabric/impl/dimension/TaggedChoiceExtension",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "fabric$setFailSoft",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": []
+      },
+      "net/fabricmc/fabric/impl/dimension/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "net/fabricmc/fabric/impl/dimension/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "invanns": [
+          {
+            "dsc": "Lorg/jetbrains/annotations/ApiStatus$Internal;"
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/dimension/TaggedChoiceMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/dimension/TaggedChoiceMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "fabric$setFailSoft",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "onApply",
+            "acc": 2,
+            "dsc": "(Lcom/mojang/datafixers/util/Pair;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(Lcom/mojang/datafixers/util/Pair;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/mojang/datafixers/types/Type;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "lambda$apply$0"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "remap",
+                  false
+                ]
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "failSoft",
+            "dsc": "Z"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "com/mojang/datafixers/types/templates/TaggedChoice"
+                }
+              ],
+              "remap",
+              false
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/mixin/dimension/TaggedChoiceTypeMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "net/fabricmc/fabric/mixin/dimension/TaggedChoiceTypeMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onGetCodec",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable;)V",
+            "sig": "(TK;Lorg/spongepowered/asm/mixin/injection/callback/CallbackInfoReturnable<Lcom/mojang/serialization/DataResult<+Lcom/mojang/serialization/Codec<*>;>;>;)V",
+            "vanns": [
+              {
+                "dsc": "Lorg/spongepowered/asm/mixin/injection/Inject;",
+                "vals": [
+                  "method",
+                  [
+                    "getCodec"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "HEAD"
+                      ],
+                      "api": 589824
+                    }
+                  ],
+                  "cancellable",
+                  true,
+                  "remap",
+                  false
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "fabric$setFailSoft",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "LOGGER",
+            "dsc": "Lorg/slf4j/Logger;"
+          },
+          {
+            "acc": 4,
+            "nme": "types",
+            "dsc": "Lit/unimi/dsi/fastutil/objects/Object2ObjectMap;",
+            "sig": "Lit/unimi/dsi/fastutil/objects/Object2ObjectMap<TK;Lcom/mojang/datafixers/types/Type<*>;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "failSoft",
+            "dsc": "Z"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "com/mojang/datafixers/types/templates/TaggedChoice$TaggedChoiceType"
+                }
+              ],
+              "remap",
+              false
+            ]
+          }
+        ]
+      },
+      "net/fabricmc/fabric/api/dimension/v1/FabricDimensions.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "net/fabricmc/fabric/api/dimension/v1/FabricDimensions",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "teleport",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_1297;Lnet/minecraft/class_3218;Lnet/minecraft/class_5454;)Lnet/minecraft/class_1297;",
+            "sig": "<E:Lnet/minecraft/class_1297;>(TE;Lnet/minecraft/class_3218;Lnet/minecraft/class_5454;)TE;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      }
+    }
+  }
+}

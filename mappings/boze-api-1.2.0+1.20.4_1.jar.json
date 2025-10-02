@@ -1,0 +1,2096 @@
+{
+  "md5": "6150374152ef1827e91e668ca3a48fe8",
+  "sha2": "be2221a85ecf1b64b13c86b99d94bb6a372a51cf",
+  "sha256": "12effa52ec206d11b2f8285f7b5a353928ac71cc813da85c3c37c7b47250128c",
+  "contents": {
+    "classes": {
+      "dev/boze/api/interaction/PlaceInteraction.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/interaction/PlaceInteraction",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Runnable;Ldev/boze/api/interaction/Rotation;Lnet/minecraft/class_2338;Lnet/minecraft/class_2350;Lnet/minecraft/class_1268;ZI)V"
+          },
+          {
+            "nme": "execute",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getRotation",
+            "acc": 1,
+            "dsc": "()Ldev/boze/api/interaction/Rotation;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "callback",
+            "dsc": "Ljava/lang/Runnable;"
+          },
+          {
+            "acc": 18,
+            "nme": "rotation",
+            "dsc": "Ldev/boze/api/interaction/Rotation;"
+          },
+          {
+            "acc": 17,
+            "nme": "pos",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 17,
+            "nme": "direction",
+            "dsc": "Lnet/minecraft/class_2350;"
+          },
+          {
+            "acc": 17,
+            "nme": "hand",
+            "dsc": "Lnet/minecraft/class_1268;"
+          },
+          {
+            "acc": 17,
+            "nme": "swing",
+            "dsc": "Z"
+          },
+          {
+            "acc": 17,
+            "nme": "slot",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/boze/api/client/cape/CapeSource.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "dev/boze/api/client/cape/CapeSource",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getUrl",
+            "acc": 1025,
+            "dsc": "(Lcom/mojang/authlib/GameProfile;)Ljava/net/URL;"
+          },
+          {
+            "nme": "callback",
+            "acc": 1025,
+            "dsc": "(Lcom/mojang/authlib/GameProfile;Ldev/boze/api/client/cape/CapeLoadResult;Lnet/minecraft/class_2960;)V"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "dev/boze/api/addon/gui/AddonToggle.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/gui/AddonToggle",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getValue",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/module/ModuleInfo.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/module/ModuleInfo",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTitle",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getState",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setState",
+            "acc": 1025,
+            "dsc": "(Z)Z"
+          },
+          {
+            "nme": "getBind",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/input/Bind;"
+          },
+          {
+            "nme": "setBind",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/input/Bind;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/setting/SettingToggle.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/setting/SettingToggle",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "toJson",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ldev/boze/api/setting/SettingToggle;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 4161,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "value",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/boze/api/event/EventTick$Post.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventTick$Post",
+        "super": "dev/boze/api/event/EventTick",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/event/EventTick$Post;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventTick$Post;"
+          }
+        ]
+      },
+      "dev/boze/api/event/EventGrim$Interact.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "dev/boze/api/event/EventGrim$Interact",
+        "super": "dev/boze/api/event/EventGrim",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Z)Ldev/boze/api/event/EventGrim$Interact;"
+          },
+          {
+            "nme": "place",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/interaction/PlaceInteraction;)V"
+          },
+          {
+            "nme": "isDirty",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 10,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventGrim$Interact;"
+          },
+          {
+            "acc": 2,
+            "nme": "dirty",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/boze/api/client/FriendManager.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/client/FriendManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "isFriend",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "addFriend",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "delFriend",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/input/Bind.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/input/Bind",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getBind",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isButton",
+            "acc": 1025,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/gui/AddonColorPicker.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/addon/gui/AddonColorPicker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ldev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getColor",
+            "acc": 1,
+            "dsc": "()Ldev/boze/api/render/LinkedColor;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "color",
+            "dsc": "Ldev/boze/api/render/LinkedColor;"
+          }
+        ]
+      },
+      "dev/boze/api/interaction/Interaction.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/interaction/Interaction",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "execute",
+            "acc": 1025,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/command/AddonDispatcher.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/command/AddonDispatcher",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getDispatcher",
+            "acc": 1025,
+            "dsc": "()Lcom/mojang/brigadier/CommandDispatcher;",
+            "sig": "()Lcom/mojang/brigadier/CommandDispatcher<Lnet/minecraft/class_2172;>;"
+          },
+          {
+            "nme": "getPrefix",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/interaction/RotationHelper.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/interaction/RotationHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "calculateAngle",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_243;)Ldev/boze/api/interaction/Rotation;"
+          },
+          {
+            "nme": "calculateAngle",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_243;Lnet/minecraft/class_243;)Ldev/boze/api/interaction/Rotation;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/render/LinkedColor.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/render/LinkedColor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "setRGBA",
+            "acc": 1025,
+            "dsc": "(IIII)V"
+          },
+          {
+            "nme": "getR",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getG",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getB",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getA",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setR",
+            "acc": 1025,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setG",
+            "acc": 1025,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setB",
+            "acc": 1025,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setA",
+            "acc": 1025,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "clone",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/render/LinkedColor;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/AddonVersion.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "dev/boze/api/addon/AddonVersion",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(III)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "major",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "minor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "patch",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "major",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "minor",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "patch",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/boze/api/addon/module/ToggleableModule.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/addon/module/ToggleableModule",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getInfo",
+            "acc": 1,
+            "dsc": "()Ldev/boze/api/module/ModuleInfo;"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTitle",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setTitle",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getState",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setState",
+            "acc": 1,
+            "dsc": "(Z)Z"
+          },
+          {
+            "nme": "onEnable",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "onDisable",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getBind",
+            "acc": 1,
+            "dsc": "()Ldev/boze/api/input/Bind;"
+          },
+          {
+            "nme": "setBind",
+            "acc": 1,
+            "dsc": "(Ldev/boze/api/input/Bind;)V"
+          },
+          {
+            "nme": "getElements",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ldev/boze/api/addon/gui/AddonElement;>;"
+          },
+          {
+            "nme": "toJson",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ldev/boze/api/addon/module/ToggleableModule;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 4161,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "title",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "state",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "bind",
+            "dsc": "Ldev/boze/api/setting/SettingBind;"
+          },
+          {
+            "acc": 20,
+            "nme": "elements",
+            "dsc": "Ljava/util/ArrayList;",
+            "sig": "Ljava/util/ArrayList<Ldev/boze/api/addon/gui/AddonElement;>;"
+          }
+        ]
+      },
+      "dev/boze/api/event/EventTick.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventTick",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/AddonMetadata.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "dev/boze/api/addon/AddonMetadata",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldev/boze/api/addon/AddonVersion;)V"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "name",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "description",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "version",
+            "acc": 1,
+            "dsc": "()Ldev/boze/api/addon/AddonVersion;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "version",
+            "dsc": "Ldev/boze/api/addon/AddonVersion;"
+          }
+        ]
+      },
+      "dev/boze/api/interaction/Rotation.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/interaction/Rotation",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getYaw",
+            "acc": 1025,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getPitch",
+            "acc": 1025,
+            "dsc": "()F"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/command/DefaultDispatcher.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/addon/command/DefaultDispatcher",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getDispatcher",
+            "acc": 1,
+            "dsc": "()Lcom/mojang/brigadier/CommandDispatcher;",
+            "sig": "()Lcom/mojang/brigadier/CommandDispatcher<Lnet/minecraft/class_2172;>;"
+          },
+          {
+            "nme": "getPrefix",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "dispatcher",
+            "dsc": "Lcom/mojang/brigadier/CommandDispatcher;",
+            "sig": "Lcom/mojang/brigadier/CommandDispatcher<Lnet/minecraft/class_2172;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "prefix",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "dev/boze/api/event/EventGrim.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventGrim",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/BozeInstance.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "dev/boze/api/BozeInstance",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerAddon",
+            "acc": 1,
+            "dsc": "(Ldev/boze/api/addon/Addon;)V",
+            "exs": [
+              "dev/boze/api/exception/AddonInitializationException"
+            ]
+          },
+          {
+            "nme": "getAddons",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ldev/boze/api/addon/AddonMetadata;Ldev/boze/api/addon/Addon;>;"
+          },
+          {
+            "nme": "getModules",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ldev/boze/api/addon/module/AddonModule;>;"
+          },
+          {
+            "nme": "getDispatchers",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ldev/boze/api/addon/command/AddonDispatcher;>;"
+          },
+          {
+            "nme": "registerPackage",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "subscribe",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "subscribe",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "unsubscribe",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "unsubscribe",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "post",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "lambda$registerPackage$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/reflect/Method;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandles$Lookup;",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException",
+              "java/lang/IllegalAccessException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/BozeInstance;"
+          },
+          {
+            "acc": 18,
+            "nme": "addons",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ldev/boze/api/addon/AddonMetadata;Ldev/boze/api/addon/Addon;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "EVENT_BUS",
+            "dsc": "Lmeteordevelopment/orbit/IEventBus;"
+          },
+          {
+            "acc": 4120,
+            "nme": "$assertionsDisabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/boze/api/event/EventInput.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventInput",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(FFZZ)Ldev/boze/api/event/EventInput;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventInput;"
+          },
+          {
+            "acc": 1,
+            "nme": "movementSideways",
+            "dsc": "F"
+          },
+          {
+            "acc": 1,
+            "nme": "movementForward",
+            "dsc": "F"
+          },
+          {
+            "acc": 1,
+            "nme": "jumping",
+            "dsc": "Z"
+          },
+          {
+            "acc": 1,
+            "nme": "sneaking",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/boze/api/exception/AddonInitializationException.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/exception/AddonInitializationException",
+        "super": "java/lang/Exception",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/event/EventWorldRender.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventWorldRender",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Ldev/boze/api/render/Drawer3D;Lnet/minecraft/class_4587;Lnet/minecraft/class_4184;F)Ldev/boze/api/event/EventWorldRender;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventWorldRender;"
+          },
+          {
+            "acc": 1,
+            "nme": "drawer",
+            "dsc": "Ldev/boze/api/render/Drawer3D;"
+          },
+          {
+            "acc": 1,
+            "nme": "matrices",
+            "dsc": "Lnet/minecraft/class_4587;"
+          },
+          {
+            "acc": 1,
+            "nme": "camera",
+            "dsc": "Lnet/minecraft/class_4184;"
+          },
+          {
+            "acc": 1,
+            "nme": "tickDelta",
+            "dsc": "F"
+          }
+        ]
+      },
+      "dev/boze/api/setting/SettingBind.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/setting/SettingBind",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(IZ)V"
+          },
+          {
+            "nme": "getBind",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isButton",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setBind",
+            "acc": 1,
+            "dsc": "(Ldev/boze/api/input/Bind;)V"
+          },
+          {
+            "nme": "toJson",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ldev/boze/api/setting/SettingBind;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 4161,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "bind",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "isButton",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "dev/boze/api/addon/Addon.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/Addon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getMetadata",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/addon/AddonMetadata;"
+          },
+          {
+            "nme": "initialize",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "shutdown",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getModules",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ldev/boze/api/addon/module/AddonModule;>;"
+          },
+          {
+            "nme": "getDispatcher",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/addon/command/AddonDispatcher;"
+          },
+          {
+            "nme": "getDir",
+            "acc": 1,
+            "dsc": "()Ljava/io/File;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/event/EventGrim$Rotate.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventGrim$Rotate",
+        "super": "dev/boze/api/event/EventGrim",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(FFZ)Ldev/boze/api/event/EventGrim$Rotate;"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(FF)V"
+          },
+          {
+            "nme": "isSet",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getYaw",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getPitch",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventGrim$Rotate;"
+          },
+          {
+            "acc": 2,
+            "nme": "set",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "yaw",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "pitch",
+            "dsc": "F"
+          }
+        ]
+      },
+      "dev/boze/api/config/Serializable.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/config/Serializable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "toJson",
+            "acc": 1025,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1025,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;",
+            "sig": "(Lcom/google/gson/JsonObject;)TT;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/gui/AddonElement.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/gui/AddonElement",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/render/Drawer2D.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/render/Drawer2D",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "startDrawing",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "stopDrawing",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_332;)V"
+          },
+          {
+            "nme": "stopDrawing",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "quad",
+            "acc": 1025,
+            "dsc": "(DDDDLdev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "quad",
+            "acc": 1,
+            "dsc": "(DDDDLdev/boze/api/render/LinkedColor;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/input/InputNameProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/input/InputNameProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getBindName",
+            "acc": 1,
+            "dsc": "(Ldev/boze/api/input/Bind;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getKeyName",
+            "acc": 1025,
+            "dsc": "(I)Ljava/lang/String;"
+          },
+          {
+            "nme": "getButtonName",
+            "acc": 1025,
+            "dsc": "(I)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/addon/gui/AddonModePicker.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/gui/AddonModePicker",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getModes",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getMode",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMode",
+            "acc": 1025,
+            "dsc": "(I)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/Globals.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/Globals",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getAddonDir",
+            "acc": 9,
+            "dsc": "()Ljava/io/File;"
+          },
+          {
+            "nme": "getChatHelper",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/client/ChatHelper;"
+          },
+          {
+            "nme": "getRotationHelper",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/interaction/RotationHelper;"
+          },
+          {
+            "nme": "getSlotHelper",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/interaction/SlotHelper;"
+          },
+          {
+            "nme": "getModuleInfoProvider",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/module/ModuleInfoProvider;"
+          },
+          {
+            "nme": "getInputNameProvider",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/input/InputNameProvider;"
+          },
+          {
+            "nme": "getLinkedColorProvider",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/render/LinkedColorProvider;"
+          },
+          {
+            "nme": "getCapesManager",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/client/cape/CapesManager;"
+          },
+          {
+            "nme": "getFriendManager",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/client/FriendManager;"
+          },
+          {
+            "nme": "getJsonTools",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/config/JsonTools;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 10,
+            "nme": "addonDir",
+            "dsc": "Ljava/io/File;"
+          },
+          {
+            "acc": 10,
+            "nme": "chatHelper",
+            "dsc": "Ldev/boze/api/client/ChatHelper;"
+          },
+          {
+            "acc": 10,
+            "nme": "rotationHelper",
+            "dsc": "Ldev/boze/api/interaction/RotationHelper;"
+          },
+          {
+            "acc": 10,
+            "nme": "slotHelper",
+            "dsc": "Ldev/boze/api/interaction/SlotHelper;"
+          },
+          {
+            "acc": 10,
+            "nme": "moduleInfoProvider",
+            "dsc": "Ldev/boze/api/module/ModuleInfoProvider;"
+          },
+          {
+            "acc": 10,
+            "nme": "inputNameProvider",
+            "dsc": "Ldev/boze/api/input/InputNameProvider;"
+          },
+          {
+            "acc": 10,
+            "nme": "linkedColorProvider",
+            "dsc": "Ldev/boze/api/render/LinkedColorProvider;"
+          },
+          {
+            "acc": 10,
+            "nme": "capesManager",
+            "dsc": "Ldev/boze/api/client/cape/CapesManager;"
+          },
+          {
+            "acc": 10,
+            "nme": "friendManager",
+            "dsc": "Ldev/boze/api/client/FriendManager;"
+          },
+          {
+            "acc": 10,
+            "nme": "jsonTools",
+            "dsc": "Ldev/boze/api/config/JsonTools;"
+          }
+        ]
+      },
+      "dev/boze/api/addon/module/AddonModule.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/module/AddonModule",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getInfo",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/module/ModuleInfo;"
+          },
+          {
+            "nme": "getElements",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ldev/boze/api/addon/gui/AddonElement;>;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/render/Drawer3D.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/render/Drawer3D",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "startDrawing",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "stopDrawing",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_4587;)V"
+          },
+          {
+            "nme": "stopDrawing",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "line",
+            "acc": 1025,
+            "dsc": "(DDDDDDLdev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "line",
+            "acc": 1,
+            "dsc": "(DDDDDDLdev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "quad",
+            "acc": 1025,
+            "dsc": "(DDDDDDDDDDDDLdev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "quad",
+            "acc": 1,
+            "dsc": "(DDDDDDDDDDDDLdev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "box",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_238;Ldev/boze/api/render/LinkedColor;)V"
+          },
+          {
+            "nme": "outlinedBox",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_238;Ldev/boze/api/render/LinkedColor;Ldev/boze/api/render/LinkedColor;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/interaction/SlotHelper.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/interaction/SlotHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "sync",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "currentSlot",
+            "acc": 1025,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/render/LinkedColorProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/render/LinkedColorProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "newColor",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/render/LinkedColor;"
+          },
+          {
+            "nme": "newColor",
+            "acc": 1025,
+            "dsc": "(I)Ldev/boze/api/render/LinkedColor;"
+          },
+          {
+            "nme": "newColor",
+            "acc": 1025,
+            "dsc": "(IIII)Ldev/boze/api/render/LinkedColor;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/config/JsonTools.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/config/JsonTools",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "saveObject",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/addon/Addon;Ljava/lang/String;Ldev/boze/api/config/Serializable;)Z",
+            "sig": "(Ldev/boze/api/addon/Addon;Ljava/lang/String;Ldev/boze/api/config/Serializable<*>;)Z"
+          },
+          {
+            "nme": "loadObject",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/addon/Addon;Ljava/lang/String;Ldev/boze/api/config/Serializable;)Ldev/boze/api/config/Serializable;",
+            "sig": "<T::Ldev/boze/api/config/Serializable<TT;>;>(Ldev/boze/api/addon/Addon;Ljava/lang/String;Ldev/boze/api/config/Serializable<TT;>;)TT;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/event/EventHudRender.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventHudRender",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_332;Ldev/boze/api/render/Drawer2D;F)Ldev/boze/api/event/EventHudRender;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventHudRender;"
+          },
+          {
+            "acc": 1,
+            "nme": "context",
+            "dsc": "Lnet/minecraft/class_332;"
+          },
+          {
+            "acc": 1,
+            "nme": "drawer",
+            "dsc": "Ldev/boze/api/render/Drawer2D;"
+          },
+          {
+            "acc": 1,
+            "nme": "tickDelta",
+            "dsc": "F"
+          }
+        ]
+      },
+      "dev/boze/api/addon/gui/AddonSlider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/addon/gui/AddonSlider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getValue",
+            "acc": 1025,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1025,
+            "dsc": "(D)V"
+          },
+          {
+            "nme": "getMin",
+            "acc": 1025,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMax",
+            "acc": 1025,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getStep",
+            "acc": 1025,
+            "dsc": "()D"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/client/cape/CapeLoadResult.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "dev/boze/api/client/cape/CapeLoadResult",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Success",
+            "dsc": "Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "acc": 16409,
+            "nme": "InvalidResponse",
+            "dsc": "Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Error",
+            "dsc": "Ldev/boze/api/client/cape/CapeLoadResult;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ldev/boze/api/client/cape/CapeLoadResult;"
+          }
+        ]
+      },
+      "dev/boze/api/interaction/RotateInteraction.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/interaction/RotateInteraction",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getRotation",
+            "acc": 1025,
+            "dsc": "()Ldev/boze/api/interaction/Rotation;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/setting/SettingSlider.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/setting/SettingSlider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;DDDD)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(D)V"
+          },
+          {
+            "nme": "getMin",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMax",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getStep",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "toJson",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ldev/boze/api/setting/SettingSlider;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 4161,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "value",
+            "dsc": "D"
+          },
+          {
+            "acc": 18,
+            "nme": "min",
+            "dsc": "D"
+          },
+          {
+            "acc": 18,
+            "nme": "max",
+            "dsc": "D"
+          },
+          {
+            "acc": 18,
+            "nme": "step",
+            "dsc": "D"
+          }
+        ]
+      },
+      "dev/boze/api/setting/SettingMode.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/setting/SettingMode",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;I)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Ljava/util/List<Ljava/lang/String;>;I)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDescription",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getModes",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "getMode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMode",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "toJson",
+            "acc": 1,
+            "dsc": "()Lcom/google/gson/JsonObject;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 1,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ldev/boze/api/setting/SettingMode;"
+          },
+          {
+            "nme": "fromJson",
+            "acc": 4161,
+            "dsc": "(Lcom/google/gson/JsonObject;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "description",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "modes",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "mode",
+            "dsc": "I"
+          }
+        ]
+      },
+      "dev/boze/api/client/ChatHelper.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/client/ChatHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "sendMsg",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "sendMsg",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "sendWarning",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "sendWarning",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "sendError",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "sendError",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/event/EventPlayerUpdate.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventPlayerUpdate",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isBozeInteracting",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "(Z)Ldev/boze/api/event/EventPlayerUpdate;"
+          },
+          {
+            "nme": "addInteraction",
+            "acc": 1,
+            "dsc": "(Ldev/boze/api/interaction/Interaction;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventPlayerUpdate;"
+          },
+          {
+            "acc": 2,
+            "nme": "bozeInteracting",
+            "dsc": "Z"
+          },
+          {
+            "acc": 17,
+            "nme": "interactions",
+            "dsc": "Ljava/util/LinkedList;",
+            "sig": "Ljava/util/LinkedList<Ldev/boze/api/interaction/Interaction;>;"
+          }
+        ]
+      },
+      "dev/boze/api/module/ModuleInfoProvider.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/module/ModuleInfoProvider",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getInfo",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ldev/boze/api/module/ModuleInfo;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/client/cape/CapesManager.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "dev/boze/api/client/cape/CapesManager",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "addSource",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/client/cape/CapeSource;)V"
+          },
+          {
+            "nme": "removeSource",
+            "acc": 1025,
+            "dsc": "(Ldev/boze/api/client/cape/CapeSource;)V"
+          },
+          {
+            "nme": "getSources",
+            "acc": 1025,
+            "dsc": "()[Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "dev/boze/api/event/EventTick$Pre.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "dev/boze/api/event/EventTick$Pre",
+        "super": "dev/boze/api/event/EventTick",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "()Ldev/boze/api/event/EventTick$Pre;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Ldev/boze/api/event/EventTick$Pre;"
+          }
+        ]
+      }
+    }
+  }
+}

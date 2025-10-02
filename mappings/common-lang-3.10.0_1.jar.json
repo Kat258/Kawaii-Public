@@ -1,0 +1,5665 @@
+{
+  "md5": "ed46a2b30b7b471eab4c25106f796614",
+  "sha2": "a0d121664fcbc8205a17af1b4ae9b6102fe2d084",
+  "sha256": "2af9e5a81d56f52723ca39265789956a78a68287f48cf56e50b8af98c6b4aec3",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/util/TimeoutMap$KeyIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$KeyIterator",
+        "super": "com/twelvemonkeys/util/TimeoutMap$TimeoutMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TK;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;Lcom/twelvemonkeys/util/TimeoutMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/TimeoutMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/LinkedMap$KeyIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/LinkedMap$KeyIterator",
+        "super": "com/twelvemonkeys/util/LinkedMap$LinkedMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TK;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;Lcom/twelvemonkeys/util/LinkedMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/SystemUtil$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/lang/SystemUtil$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/convert/TimeConverter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/TimeConverter",
+        "super": "com/twelvemonkeys/util/convert/NumberConverter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "getTimeFormat",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/util/TimeFormat;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/CollectionUtil$4.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$4",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/Enumeration;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pEnum",
+            "dsc": "Ljava/util/Enumeration;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/AbstractTokenIterator.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/util/AbstractTokenIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasMoreTokens",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nextToken",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hasMoreElements",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nextElement",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "nextElement",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/BeanMap$Wrapped.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "com/twelvemonkeys/util/BeanMap$Wrapped",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "run",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/IllegalAccessException",
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$1Two.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$1Two",
+        "super": "com/twelvemonkeys/util/service/ServiceRegistry$1Spi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/LinkedMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/LinkedMap",
+        "super": "com/twelvemonkeys/util/AbstractDecoratedMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Z)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;Z)V",
+            "sig": "(Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;Ljava/util/Map<+TK;+TV;>;Z)V"
+          },
+          {
+            "nme": "init",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "newKeyIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TK;>;"
+          },
+          {
+            "nme": "newValueIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "newEntryIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "put",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TK;TV;)TV;"
+          },
+          {
+            "nme": "createEntry",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "(TK;TV;)Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "nme": "clone",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          },
+          {
+            "nme": "removeEldestEntry",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map$Entry;)Z",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)Z"
+          },
+          {
+            "nme": "createEntry",
+            "acc": 4160,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;"
+          },
+          {
+            "nme": "keySet",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Set;"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Set;"
+          },
+          {
+            "nme": "values",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Collection;"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 4161,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "clear",
+            "acc": 4161,
+            "dsc": "()V"
+          },
+          {
+            "nme": "size",
+            "acc": 4161,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 128,
+            "nme": "head",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "accessOrder",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/NullMap.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/util/NullMap",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "size",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "clear",
+            "acc": 17,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "values",
+            "acc": 17,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TV;>;"
+          },
+          {
+            "nme": "putAll",
+            "acc": 17,
+            "dsc": "(Ljava/util/Map;)V"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 17,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "keySet",
+            "acc": 17,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<TK;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "put",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/BeanMap$BeanSet.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/BeanMap$BeanSet",
+        "super": "java/util/AbstractSet",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;Lcom/twelvemonkeys/util/BeanMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/BeanMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/BeanMap$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/util/BeanMap$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$3.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$3",
+        "super": "com/twelvemonkeys/util/FilterIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/util/Iterator;Lcom/twelvemonkeys/util/FilterIterator$Filter;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Class;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "current",
+            "dsc": "Ljava/lang/Class;",
+            "sig": "Ljava/lang/Class<*>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$pProvider",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/service/ServiceRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/Converter.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/util/convert/Converter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lcom/twelvemonkeys/util/convert/Converter;"
+          },
+          {
+            "nme": "registerConverter",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;Lcom/twelvemonkeys/util/convert/PropertyConverter;)V",
+            "sig": "(Ljava/lang/Class<*>;Lcom/twelvemonkeys/util/convert/PropertyConverter;)V"
+          },
+          {
+            "nme": "unregisterConverter",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<*>;)V"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toObject",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 28,
+            "nme": "sInstance",
+            "dsc": "Lcom/twelvemonkeys/util/convert/Converter;"
+          },
+          {
+            "acc": 20,
+            "nme": "converters",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Class;Lcom/twelvemonkeys/util/convert/PropertyConverter;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/MissingTypeException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/MissingTypeException",
+        "super": "com/twelvemonkeys/util/convert/ConversionException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/LinkedMap$LinkedEntry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/LinkedMap$LinkedEntry",
+        "super": "com/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;)V",
+            "sig": "(TK;TV;Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;)V"
+          },
+          {
+            "nme": "addBefore",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;)V",
+            "sig": "(Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "recordAccess",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;TV;>;)V"
+          },
+          {
+            "nme": "recordRemoval",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;TV;>;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "previous",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "next",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeFormat.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/TimeFormat",
+        "super": "java/text/Format",
+        "mthds": [
+          {
+            "nme": "main",
+            "acc": 8,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getInstance",
+            "acc": 9,
+            "dsc": "()Lcom/twelvemonkeys/util/TimeFormat;"
+          },
+          {
+            "nme": "getFormatString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "format",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/StringBuffer;Ljava/text/FieldPosition;)Ljava/lang/StringBuffer;"
+          },
+          {
+            "nme": "format",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/util/Time;)Ljava/lang/String;"
+          },
+          {
+            "nme": "parseObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "parse",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/util/Time;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "MINUTE",
+            "dsc": "Ljava/lang/String;",
+            "val": "m"
+          },
+          {
+            "acc": 24,
+            "nme": "SECOND",
+            "dsc": "Ljava/lang/String;",
+            "val": "s"
+          },
+          {
+            "acc": 24,
+            "nme": "TIME",
+            "dsc": "Ljava/lang/String;",
+            "val": "S"
+          },
+          {
+            "acc": 24,
+            "nme": "ESCAPE",
+            "dsc": "Ljava/lang/String;",
+            "val": "\\"
+          },
+          {
+            "acc": 26,
+            "nme": "DEFAULT_FORMAT",
+            "dsc": "Lcom/twelvemonkeys/util/TimeFormat;"
+          },
+          {
+            "acc": 4,
+            "nme": "formatString",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "formatter",
+            "dsc": "[Lcom/twelvemonkeys/util/TimeFormatter;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/NoAvailableConverterException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/NoAvailableConverterException",
+        "super": "com/twelvemonkeys/util/convert/ConversionException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/WeakWeakMap$1$1$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap$1$1$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap$1$1;)V"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TK;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TV;)TV;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "entry",
+            "dsc": "Ljava/util/Map$Entry;",
+            "sig": "Ljava/util/Map$Entry<TK;Ljava/lang/ref/WeakReference<TV;>;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$2",
+            "dsc": "Lcom/twelvemonkeys/util/WeakWeakMap$1$1;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/CollectionUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/util/CollectionUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "mergeArrays",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "mergeArrays",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;IILjava/lang/Object;II)Ljava/lang/Object;"
+          },
+          {
+            "nme": "subArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;I)Ljava/lang/Object;"
+          },
+          {
+            "nme": "subArray",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;I)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;I)[TT;"
+          },
+          {
+            "nme": "subArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;II)Ljava/lang/Object;"
+          },
+          {
+            "nme": "subArray",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;II)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;II)[TT;"
+          },
+          {
+            "nme": "iterator",
+            "acc": 9,
+            "dsc": "(Ljava/util/Enumeration;)Ljava/util/Iterator;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Enumeration<TT;>;)Ljava/util/Iterator<TT;>;"
+          },
+          {
+            "nme": "addAll",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;Ljava/util/Iterator;)V",
+            "sig": "<E:Ljava/lang/Object;>(Ljava/util/Collection<TE;>;Ljava/util/Iterator<+TE;>;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;)Ljava/util/ListIterator;",
+            "sig": "<E:Ljava/lang/Object;>([TE;)Ljava/util/ListIterator<TE;>;"
+          },
+          {
+            "nme": "iterator",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;II)Ljava/util/ListIterator;",
+            "sig": "<E:Ljava/lang/Object;>([TE;II)Ljava/util/ListIterator<TE;>;"
+          },
+          {
+            "nme": "invert",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;)Ljava/util/Map<TV;TK;>;"
+          },
+          {
+            "nme": "invert",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;Lcom/twelvemonkeys/util/DuplicateHandler;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;Ljava/util/Map<TV;TK;>;Lcom/twelvemonkeys/util/DuplicateHandler<TK;>;)Ljava/util/Map<TV;TK;>;"
+          },
+          {
+            "nme": "reverseOrder",
+            "acc": 9,
+            "dsc": "(Ljava/util/Comparator;)Ljava/util/Comparator;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Comparator<TT;>;)Ljava/util/Comparator<TT;>;"
+          },
+          {
+            "nme": "generify",
+            "acc": 8,
+            "dsc": "(Ljava/util/Iterator;Ljava/lang/Class;)Ljava/util/Iterator;",
+            "sig": "<T::Ljava/util/Iterator<-TE;>;E:Ljava/lang/Object;>(Ljava/util/Iterator<*>;Ljava/lang/Class<TE;>;)TT;"
+          },
+          {
+            "nme": "generify",
+            "acc": 8,
+            "dsc": "(Ljava/util/Collection;Ljava/lang/Class;)Ljava/util/Collection;",
+            "sig": "<T::Ljava/util/Collection<-TE;>;E:Ljava/lang/Object;>(Ljava/util/Collection<*>;Ljava/lang/Class<TE;>;)TT;"
+          },
+          {
+            "nme": "generify",
+            "acc": 8,
+            "dsc": "(Ljava/util/Map;Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/Map;",
+            "sig": "<T::Ljava/util/Map<-TK;-TV;>;K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<**>;Ljava/lang/Class<TK;>;Ljava/lang/Class<TV;>;)TT;"
+          },
+          {
+            "nme": "generify2",
+            "acc": 8,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/Collection;",
+            "sig": "<T::Ljava/util/Collection<-TE;>;E:Ljava/lang/Object;>(Ljava/util/Collection<*>;)TT;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/convert/ConverterImpl.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/convert/ConverterImpl",
+        "super": "com/twelvemonkeys/util/convert/Converter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getConverterForType",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Class;)Lcom/twelvemonkeys/util/convert/PropertyConverter;"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/CollectionUtil$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/Platform.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/Platform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/Properties;)V"
+          },
+          {
+            "nme": "normalizeOperatingSystem",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "nme": "normalizeArchitecture",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/lang/Platform$OperatingSystem;Ljava/lang/String;)Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "nme": "get",
+            "acc": 9,
+            "dsc": "()Lcom/twelvemonkeys/lang/Platform;"
+          },
+          {
+            "nme": "getOS",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "nme": "getVersion",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getArchitecture",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "nme": "os",
+            "acc": 9,
+            "dsc": "()Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "nme": "version",
+            "acc": 9,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "arch",
+            "acc": 9,
+            "dsc": "()Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "os",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16,
+            "nme": "version",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "architecture",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 26,
+            "nme": "INSTANCE",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<TT;>;)V"
+          },
+          {
+            "nme": "checkCategory",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z",
+            "sig": "(TT;)Z"
+          },
+          {
+            "nme": "processRegistration",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "deregister",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "processDeregistration",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "contains",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "providers",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TT;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "category",
+            "dsc": "Ljava/lang/Class;",
+            "sig": "Ljava/lang/Class<TT;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "providers",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Class;TT;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/service/ServiceRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/AbstractDecoratedMap$EntrySet.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/AbstractDecoratedMap$EntrySet",
+        "super": "java/util/AbstractSet",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/util/AbstractDecoratedMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "contains",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/AbstractDecoratedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/BeanMap$BeanEntry$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/BeanMap$BeanEntry$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap$BeanEntry;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/IllegalAccessException",
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pValue",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/util/BeanMap$BeanEntry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/DateUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/DateUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "delta",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "delta",
+            "acc": 9,
+            "dsc": "(Ljava/util/Date;)J"
+          },
+          {
+            "nme": "currentTimeSecond",
+            "acc": 9,
+            "dsc": "()J"
+          },
+          {
+            "nme": "currentTimeMinute",
+            "acc": 9,
+            "dsc": "()J"
+          },
+          {
+            "nme": "currentTimeHour",
+            "acc": 9,
+            "dsc": "()J"
+          },
+          {
+            "nme": "currentTimeDay",
+            "acc": 9,
+            "dsc": "()J"
+          },
+          {
+            "nme": "roundToSecond",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "roundToMinute",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "roundToHour",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "roundToHour",
+            "acc": 9,
+            "dsc": "(JLjava/util/TimeZone;)J"
+          },
+          {
+            "nme": "roundToDay",
+            "acc": 9,
+            "dsc": "(J)J"
+          },
+          {
+            "nme": "roundToDay",
+            "acc": 9,
+            "dsc": "(JLjava/util/TimeZone;)J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SECOND",
+            "dsc": "J",
+            "val": 1000
+          },
+          {
+            "acc": 25,
+            "nme": "MINUTE",
+            "dsc": "J",
+            "val": 60000
+          },
+          {
+            "acc": 25,
+            "nme": "HOUR",
+            "dsc": "J",
+            "val": 3600000
+          },
+          {
+            "acc": 25,
+            "nme": "DAY",
+            "dsc": "J",
+            "val": 86400000
+          },
+          {
+            "acc": 25,
+            "nme": "CALENDAR_YEAR",
+            "dsc": "J",
+            "val": 31556952000
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/CollectionUtil$2.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/IgnoreCaseMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/IgnoreCaseMap",
+        "super": "com/twelvemonkeys/util/AbstractDecoratedMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Ljava/lang/String;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map;Ljava/util/Map<Ljava/lang/String;+TV;>;)V"
+          },
+          {
+            "nme": "put",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/String;TV;)TV;"
+          },
+          {
+            "nme": "unwrap",
+            "acc": 2,
+            "dsc": "(Ljava/util/Map$Entry;)Ljava/lang/Object;",
+            "sig": "(Ljava/util/Map$Entry<Ljava/lang/String;TV;>;)TV;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toUpper",
+            "acc": 12,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "newEntryIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<Ljava/lang/String;TV;>;>;"
+          },
+          {
+            "nme": "newKeyIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "newValueIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "put",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "keySet",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Set;"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Set;"
+          },
+          {
+            "nme": "values",
+            "acc": 4161,
+            "dsc": "()Ljava/util/Collection;"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 4161,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "clear",
+            "acc": 4161,
+            "dsc": "()V"
+          },
+          {
+            "nme": "size",
+            "acc": 4161,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/BeanMap$BeanIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/BeanMap$BeanIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;Ljava/util/Iterator;)V",
+            "sig": "(Ljava/util/Iterator<Ljava/beans/PropertyDescriptor;>;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/util/BeanMap$BeanEntry;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mIterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Ljava/beans/PropertyDescriptor;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/BeanMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeoutMap$EntryIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$EntryIterator",
+        "super": "com/twelvemonkeys/util/TimeoutMap$TimeoutMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map$Entry;",
+            "sig": "()Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;Lcom/twelvemonkeys/util/TimeoutMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/TimeoutMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/WeakWeakMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap",
+        "super": "java/util/WeakHashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(IF)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "put",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TK;TV;)TV;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "putAll",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "values",
+            "acc": 1,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TV;>;"
+          },
+          {
+            "nme": "access$001",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$101",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap;)Ljava/util/Collection;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/AbstractDecoratedMap$Values.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/AbstractDecoratedMap$Values",
+        "super": "java/util/AbstractCollection",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/util/AbstractDecoratedMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "contains",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/AbstractDecoratedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/LinkedSet.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/LinkedSet",
+        "super": "java/util/AbstractSet",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<TE;>;)V"
+          },
+          {
+            "nme": "addAll",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)Z",
+            "sig": "(Ljava/util/Collection<+TE;>;)Z"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z",
+            "sig": "(TE;)Z"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TE;>;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "DUMMY",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 18,
+            "nme": "map",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<TE;Ljava/lang/Object;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$1Spi.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$1Spi",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/DuplicateHandler$2.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/DuplicateHandler$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resolve",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/CollectionUtil$3.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$3",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Z",
+            "sig": "(Ljava/lang/Class<*>;)Z"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pProvider",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/service/ServiceRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/WeakWeakMap$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap$2",
+        "super": "java/util/AbstractCollection",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/WeakWeakMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/SystemUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/SystemUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getResourceAsStream",
+            "acc": 10,
+            "dsc": "(Ljava/lang/ClassLoader;Ljava/lang/String;Z)Ljava/io/InputStream;"
+          },
+          {
+            "nme": "getFileAsStream",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Z)Ljava/io/InputStream;"
+          },
+          {
+            "nme": "loadProperties",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/Properties;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "loadProperties",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Ljava/util/Properties;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "loadProperties",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Properties;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "loadProperties",
+            "acc": 10,
+            "dsc": "(Ljava/io/InputStream;)Ljava/util/Properties;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "clone",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Cloneable;)Ljava/lang/Object;",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          },
+          {
+            "nme": "isClassAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "isClassAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;)Z"
+          },
+          {
+            "nme": "isClassAvailable",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Ljava/lang/ClassLoader;)Z"
+          },
+          {
+            "nme": "isFieldAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "isFieldAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Class;)Z"
+          },
+          {
+            "nme": "isFieldAvailable",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/ClassLoader;)Z"
+          },
+          {
+            "nme": "isMethodAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "isMethodAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Class;)Z"
+          },
+          {
+            "nme": "isMethodAvailable",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Class;Ljava/lang/Class;)Z"
+          },
+          {
+            "nme": "isMethodAvailable",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/Class;Ljava/lang/ClassLoader;)Z"
+          },
+          {
+            "nme": "getClass",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;",
+            "exs": [
+              "java/lang/ClassNotFoundException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 9,
+            "nme": "XML_PROPERTIES",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 9,
+            "nme": "STD_PROPERTIES",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/ServiceConfigurationError.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/service/ServiceConfigurationError",
+        "super": "java/lang/Error",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/LRUHashMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/LRUHashMap",
+        "super": "java/util/LinkedHashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;I)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;I)V"
+          },
+          {
+            "nme": "getMaxSize",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMaxSize",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getTrimFactor",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setTrimFactor",
+            "acc": 1,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "removeEldestEntry",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map$Entry;)Z",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)Z"
+          },
+          {
+            "nme": "processRemoved",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map$Entry;)V",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)V"
+          },
+          {
+            "nme": "removeLRU",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "maxSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "trimFactor",
+            "dsc": "F"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/SystemUtil$2.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/lang/SystemUtil$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Void;"
+          },
+          {
+            "nme": "run",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$1One.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$1One",
+        "super": "com/twelvemonkeys/util/service/ServiceRegistry$1Spi",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/BeanUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/BeanUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getPropertyValue",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "setPropertyValue",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;)V",
+            "exs": [
+              "java/lang/NoSuchMethodException",
+              "java/lang/reflect/InvocationTargetException",
+              "java/lang/IllegalAccessException"
+            ]
+          },
+          {
+            "nme": "getMethodMayModifyParams",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/reflect/Method;",
+            "exs": [
+              "java/lang/NoSuchMethodException"
+            ]
+          },
+          {
+            "nme": "convertValueToType",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;Ljava/lang/Class<*>;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "createInstance",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;Ljava/lang/Object;)TT;",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          },
+          {
+            "nme": "createInstance",
+            "acc": 137,
+            "dsc": "(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;[Ljava/lang/Object;)TT;",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          },
+          {
+            "nme": "invokeStaticMethod",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Class<*>;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          },
+          {
+            "nme": "invokeStaticMethod",
+            "acc": 137,
+            "dsc": "(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Class<*>;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/Object;",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          },
+          {
+            "nme": "configure",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/util/Map;)V",
+            "sig": "(Ljava/lang/Object;Ljava/util/Map<Ljava/lang/String;*>;)V",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          },
+          {
+            "nme": "configure",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/util/Map;Z)V",
+            "sig": "(Ljava/lang/Object;Ljava/util/Map<Ljava/lang/String;*>;Z)V",
+            "exs": [
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/TimeoutMap$ValueIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$ValueIterator",
+        "super": "com/twelvemonkeys/util/TimeoutMap$TimeoutMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;Lcom/twelvemonkeys/util/TimeoutMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/TimeoutMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)V",
+            "sig": "(TK;TV;)V"
+          },
+          {
+            "nme": "recordAccess",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;TV;>;)V"
+          },
+          {
+            "nme": "recordRemoval",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;TV;>;)V"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TV;)TV;"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TK;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "mKey",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TK;"
+          },
+          {
+            "acc": 0,
+            "nme": "mValue",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TV;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/StringTokenIterator.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/StringTokenIterator",
+        "super": "com/twelvemonkeys/util/AbstractTokenIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;IZZ)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;[CIZZ)V"
+          },
+          {
+            "nme": "toCharArray",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)[C"
+          },
+          {
+            "nme": "initMaxDelimiter",
+            "acc": 10,
+            "dsc": "([C)C"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "fetchNext",
+            "acc": 2,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "fetchReverse",
+            "acc": 2,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "fetchForward",
+            "acc": 2,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "scanForNext",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "scanForPrev",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "string",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "delimiters",
+            "dsc": "[C"
+          },
+          {
+            "acc": 2,
+            "nme": "position",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "maxPosition",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "nextDelimiter",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "includeDelimiters",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "includeEmpty",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "reverse",
+            "dsc": "Z"
+          },
+          {
+            "acc": 25,
+            "nme": "FORWARD",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "REVERSE",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 18,
+            "nme": "maxDelimiter",
+            "dsc": "C"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/AbstractDecoratedMap$KeySet.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/AbstractDecoratedMap$KeySet",
+        "super": "java/util/AbstractSet",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Lcom/twelvemonkeys/util/AbstractDecoratedMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TK;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "contains",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/AbstractDecoratedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/DuplicateHandler$3.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/DuplicateHandler$3",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resolve",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/LinkedMap$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/LinkedMap$1",
+        "super": "com/twelvemonkeys/util/LinkedMap$LinkedEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;Ljava/lang/Object;Ljava/lang/Object;Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;)V"
+          },
+          {
+            "nme": "addBefore",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "recordAccess",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V"
+          },
+          {
+            "nme": "recordRemoval",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V"
+          },
+          {
+            "nme": "recordRemoval",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TV;)TV;"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TK;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/LinkedMap$LinkedMapIterator.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/util/LinkedMap$LinkedMapIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "nextEntry",
+            "acc": 0,
+            "dsc": "()Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "()Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;Lcom/twelvemonkeys/util/LinkedMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "mNextEntry",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "mLastReturned",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry;",
+            "sig": "Lcom/twelvemonkeys/util/LinkedMap$LinkedEntry<TK;TV;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "mExpectedModCount",
+            "dsc": "I"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/util/regex/WildcardStringParser;C)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "automatonStateNumber",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "character",
+            "dsc": "C"
+          },
+          {
+            "acc": 0,
+            "nme": "previousState",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;"
+          },
+          {
+            "acc": 0,
+            "nme": "nextState",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;"
+          },
+          {
+            "acc": 0,
+            "nme": "lastFreeRangeState",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/TypeMismathException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/TypeMismathException",
+        "super": "com/twelvemonkeys/util/convert/ConversionException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/WeakWeakMap$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap$1",
+        "super": "java/util/AbstractSet",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/WeakWeakMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/DuplicateHandler$4.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/DuplicateHandler$4",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resolve",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "resolve",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;Ljava/util/Iterator;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "current",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TT;"
+          },
+          {
+            "acc": 4112,
+            "nme": "val$iterator",
+            "dsc": "Ljava/util/Iterator;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/FilterIterator$Filter.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/FilterIterator$Filter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "accept",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Z",
+            "sig": "(TE;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/regex/WildcardStringParser.class": {
+        "ver": 52,
+        "acc": 131105,
+        "nme": "com/twelvemonkeys/util/regex/WildcardStringParser",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;ZLjava/io/PrintStream;)V"
+          },
+          {
+            "nme": "checkIfStateInWildcardRange",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;)Z"
+          },
+          {
+            "nme": "checkIfLastFreeRangeState",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;)Z"
+          },
+          {
+            "nme": "isTrivialAutomaton",
+            "acc": 2,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "buildAutomaton",
+            "acc": 2,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isInAlphabet",
+            "acc": 9,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "isFreeRangeCharacter",
+            "acc": 9,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "isFreePassCharacter",
+            "acc": 9,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "isWildcardCharacter",
+            "acc": 9,
+            "dsc": "(C)Z"
+          },
+          {
+            "nme": "getStringMask",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "parseString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "clone",
+            "acc": 4,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          },
+          {
+            "nme": "finalize",
+            "acc": 4,
+            "dsc": "()V",
+            "exs": [
+              "java/lang/Throwable"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ALPHABET",
+            "dsc": "[C"
+          },
+          {
+            "acc": 25,
+            "nme": "FREE_RANGE_CHARACTER",
+            "dsc": "C",
+            "val": 42
+          },
+          {
+            "acc": 25,
+            "nme": "FREE_PASS_CHARACTER",
+            "dsc": "C",
+            "val": 63
+          },
+          {
+            "acc": 0,
+            "nme": "initialized",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "stringMask",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 0,
+            "nme": "initialState",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser$WildcardStringParserState;"
+          },
+          {
+            "acc": 0,
+            "nme": "totalNumberOfStringsParsed",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "debugging",
+            "dsc": "Z"
+          },
+          {
+            "acc": 0,
+            "nme": "out",
+            "dsc": "Ljava/io/PrintStream;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/FilterIterator.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/FilterIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Iterator;Lcom/twelvemonkeys/util/FilterIterator$Filter;)V",
+            "sig": "(Ljava/util/Iterator<TE;>;Lcom/twelvemonkeys/util/FilterIterator$Filter<TE;>;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "filter",
+            "dsc": "Lcom/twelvemonkeys/util/FilterIterator$Filter;",
+            "sig": "Lcom/twelvemonkeys/util/FilterIterator$Filter<TE;>;"
+          },
+          {
+            "acc": 20,
+            "nme": "iterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<TE;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TE;"
+          },
+          {
+            "acc": 2,
+            "nme": "current",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TE;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Iterator;)V",
+            "sig": "(Ljava/util/Iterator<+Ljava/lang/Class<*>;>;)V"
+          },
+          {
+            "nme": "putCategory",
+            "acc": 2,
+            "dsc": "(Ljava/util/Map;Ljava/lang/Class;)V",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Map<Ljava/lang/Class<*>;Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;>;Ljava/lang/Class<TT;>;)V"
+          },
+          {
+            "nme": "registerApplicationClasspathSPIs",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "registerSPIs",
+            "acc": 0,
+            "dsc": "(Ljava/net/URL;Ljava/lang/Class;Ljava/lang/ClassLoader;)V",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/net/URL;Ljava/lang/Class<TT;>;Ljava/lang/ClassLoader;)V"
+          },
+          {
+            "nme": "providers",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Class;)Ljava/util/Iterator;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Ljava/util/Iterator<TT;>;"
+          },
+          {
+            "nme": "categories",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/lang/Class<*>;>;"
+          },
+          {
+            "nme": "compatibleCategories",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/Iterator;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/Iterator<Ljava/lang/Class<*>;>;"
+          },
+          {
+            "nme": "containingCategories",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/Iterator;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/Iterator<Ljava/lang/Class<*>;>;"
+          },
+          {
+            "nme": "getRegistry",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Class;)Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/lang/Class<TT;>;)Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry<TT;>;"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "registerImpl",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Class;)Z",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/lang/Object;Ljava/lang/Class<TT;>;)Z"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Class;)Z",
+            "sig": "<T:Ljava/lang/Object;>(TT;Ljava/lang/Class<-TT;>;)Z"
+          },
+          {
+            "nme": "deregister",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "deregister",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Class;)Z",
+            "sig": "(Ljava/lang/Object;Ljava/lang/Class<*>;)Z"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Class;)Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SERVICES",
+            "dsc": "Ljava/lang/String;",
+            "val": "META-INF/services/"
+          },
+          {
+            "acc": 18,
+            "nme": "categoryMap",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Class<*>;Lcom/twelvemonkeys/util/service/ServiceRegistry$CategoryRegistry;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/NumberConverter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/NumberConverter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "getNumberFormat",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Ljava/text/NumberFormat;"
+          },
+          {
+            "nme": "getFormat",
+            "acc": 148,
+            "dsc": "(Ljava/lang/Class;[Ljava/lang/Object;)Ljava/text/Format;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "SYMBOLS",
+            "dsc": "Ljava/text/DecimalFormatSymbols;"
+          },
+          {
+            "acc": 26,
+            "nme": "sDefaultFormat",
+            "dsc": "Ljava/text/NumberFormat;"
+          },
+          {
+            "acc": 26,
+            "nme": "sFormats",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/text/Format;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/Visitor.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/Visitor",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "visit",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/LinkedMap$EntryIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/LinkedMap$EntryIterator",
+        "super": "com/twelvemonkeys/util/LinkedMap$LinkedMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map$Entry;",
+            "sig": "()Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;Lcom/twelvemonkeys/util/LinkedMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/DuplicateHandler$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/util/DuplicateHandler$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "resolve",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/Platform$OperatingSystem.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/lang/Platform$OperatingSystem",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Windows",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Linux",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Solaris",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MacOS",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Unknown",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          },
+          {
+            "acc": 16,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/lang/Platform$OperatingSystem;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TextFormatter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/TextFormatter",
+        "super": "com/twelvemonkeys/util/TimeFormatter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "format",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/Time;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "text",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeoutMap$TimedEntry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$TimedEntry",
+        "super": "com/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;Ljava/lang/Object;Ljava/lang/Object;)V",
+            "sig": "(TK;TV;)V"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TV;)TV;"
+          },
+          {
+            "nme": "updateTimestamp",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isExpired",
+            "acc": 16,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isExpiredBy",
+            "acc": 16,
+            "dsc": "(J)Z"
+          },
+          {
+            "nme": "expires",
+            "acc": 16,
+            "dsc": "()J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "mTimestamp",
+            "dsc": "J"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/TimeoutMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/DefaultConverter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/util/convert/DefaultConverter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toArray",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "arrayToString",
+            "acc": 2,
+            "dsc": "([Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toObjectArray",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)[Ljava/lang/Object;"
+          },
+          {
+            "nme": "unBoxType",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Class;)Ljava/lang/Class;",
+            "sig": "(Ljava/lang/Class<*>;)Ljava/lang/Class<*>;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/DuplicateHandler.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/DuplicateHandler",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "resolve",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TT;TT;)TT;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "USE_FIRST_VALUE",
+            "dsc": "Lcom/twelvemonkeys/util/DuplicateHandler;",
+            "sig": "Lcom/twelvemonkeys/util/DuplicateHandler<*>;"
+          },
+          {
+            "acc": 25,
+            "nme": "USE_LAST_VALUE",
+            "dsc": "Lcom/twelvemonkeys/util/DuplicateHandler;",
+            "sig": "Lcom/twelvemonkeys/util/DuplicateHandler<*>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DUPLICATES_AS_ARRAY",
+            "dsc": "Lcom/twelvemonkeys/util/DuplicateHandler;",
+            "sig": "Lcom/twelvemonkeys/util/DuplicateHandler<*>;"
+          },
+          {
+            "acc": 25,
+            "nme": "DUPLICATES_AS_CSV",
+            "dsc": "Lcom/twelvemonkeys/util/DuplicateHandler;",
+            "sig": "Lcom/twelvemonkeys/util/DuplicateHandler<Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/WeakWeakMap$1$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap$1$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap$1;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map$Entry;",
+            "sig": "()Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "iterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;Ljava/lang/ref/WeakReference<TV;>;>;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/util/WeakWeakMap$1;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/ServiceRegistry$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/service/ServiceRegistry$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Class;)Z",
+            "sig": "(Ljava/lang/Class<*>;)Z"
+          },
+          {
+            "nme": "accept",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pProvider",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/service/ServiceRegistry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/BeanMap$BeanEntry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/BeanMap$BeanEntry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;Ljava/beans/PropertyDescriptor;)V"
+          },
+          {
+            "nme": "getKey",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "setValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getKey",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "access$200",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap$BeanEntry;)Ljava/beans/PropertyDescriptor;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mDescriptor",
+            "dsc": "Ljava/beans/PropertyDescriptor;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/BeanMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/DateConverter.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/DateConverter",
+        "super": "com/twelvemonkeys/util/convert/NumberConverter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toObject",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "getDateFormat",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Ljava/text/DateFormat;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/Validate.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/Validate",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "notNull",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(TT;)TT;"
+          },
+          {
+            "nme": "notNull",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(TT;Ljava/lang/String;)TT;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;",
+            "sig": "<T::Ljava/lang/CharSequence;>(TT;)TT;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/lang/CharSequence;Ljava/lang/String;)Ljava/lang/CharSequence;",
+            "sig": "<T::Ljava/lang/CharSequence;>(TT;Ljava/lang/String;)TT;"
+          },
+          {
+            "nme": "isOnlyWhiteSpace",
+            "acc": 10,
+            "dsc": "(Ljava/lang/CharSequence;)Z",
+            "sig": "<T::Ljava/lang/CharSequence;>(TT;)Z"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;)[TT;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;Ljava/lang/String;)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;Ljava/lang/String;)[TT;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/Collection;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;)Ljava/util/Collection<TT;>;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;Ljava/lang/String;)Ljava/util/Collection;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;Ljava/lang/String;)Ljava/util/Collection<TT;>;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "notEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;Ljava/lang/String;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "noNullElements",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;)[TT;"
+          },
+          {
+            "nme": "noNullElements",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;Ljava/lang/String;)[Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>([TT;Ljava/lang/String;)[TT;"
+          },
+          {
+            "nme": "noNullElements",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;)Ljava/util/Collection;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;)Ljava/util/Collection<TT;>;"
+          },
+          {
+            "nme": "noNullElements",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;Ljava/lang/String;)Ljava/util/Collection;",
+            "sig": "<T:Ljava/lang/Object;>(Ljava/util/Collection<TT;>;Ljava/lang/String;)Ljava/util/Collection<TT;>;"
+          },
+          {
+            "nme": "noNullValues",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "noNullValues",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;Ljava/lang/String;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "noNullKeys",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "noNullKeys",
+            "acc": 9,
+            "dsc": "(Ljava/util/Map;Ljava/lang/String;)Ljava/util/Map;",
+            "sig": "<K:Ljava/lang/Object;V:Ljava/lang/Object;>(Ljava/util/Map<TK;TV;>;Ljava/lang/String;)Ljava/util/Map<TK;TV;>;"
+          },
+          {
+            "nme": "isTrue",
+            "acc": 9,
+            "dsc": "(ZLjava/lang/String;)Z"
+          },
+          {
+            "nme": "isTrue",
+            "acc": 9,
+            "dsc": "(ZLjava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;",
+            "sig": "<T:Ljava/lang/Object;>(ZTT;Ljava/lang/String;)TT;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "UNSPECIFIED_PARAM_NAME",
+            "dsc": "Ljava/lang/String;",
+            "val": "method parameter"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeoutMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/TimeoutMap",
+        "super": "com/twelvemonkeys/util/AbstractDecoratedMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;J)V",
+            "sig": "(Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;Ljava/util/Map<+TK;+TV;>;J)V"
+          },
+          {
+            "nme": "getExpiryTime",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "setExpiryTime",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "put",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TK;TV;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createEntry",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Lcom/twelvemonkeys/util/TimeoutMap$TimedEntry;",
+            "sig": "(TK;TV;)Lcom/twelvemonkeys/util/TimeoutMap<TK;TV;>.TimedEntry;"
+          },
+          {
+            "nme": "removeExpiredEntries",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "removeExpiredEntriesSynced",
+            "acc": 34,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "values",
+            "acc": 1,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TV;>;"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "keySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<TK;>;"
+          },
+          {
+            "nme": "newKeyIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TK;>;"
+          },
+          {
+            "nme": "newValueIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "newEntryIterator",
+            "acc": 4,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "processRemoved",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map$Entry;)V"
+          },
+          {
+            "nme": "createEntry",
+            "acc": 4160,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;)J"
+          },
+          {
+            "nme": "access$402",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;J)J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "expiryTime",
+            "dsc": "J"
+          },
+          {
+            "acc": 66,
+            "nme": "nextExpiryTime",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/convert/ConversionException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/convert/ConversionException",
+        "super": "java/lang/IllegalArgumentException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/ReflectUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/ReflectUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "unwrapType",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Ljava/lang/Class;"
+          },
+          {
+            "nme": "wrapType",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Ljava/lang/Class;"
+          },
+          {
+            "nme": "isPrimitiveWrapper",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/regex/WildcardStringParser$ParsableString.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/regex/WildcardStringParser$ParsableString",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/regex/WildcardStringParser;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "reachedEndOfString",
+            "acc": 0,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "length",
+            "acc": 0,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getActiveChar",
+            "acc": 0,
+            "dsc": "()C"
+          },
+          {
+            "nme": "getSubsequentChar",
+            "acc": 0,
+            "dsc": "()C"
+          },
+          {
+            "nme": "checkString",
+            "acc": 0,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 0,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "charArray",
+            "dsc": "[C"
+          },
+          {
+            "acc": 0,
+            "nme": "index",
+            "dsc": "I"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/regex/WildcardStringParser;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/Time.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/Time",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setTime",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getTime",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getTimeInMillis",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "setSeconds",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getSeconds",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMinutes",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getMinutes",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 131073,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "parseTime",
+            "acc": 131081,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/util/Time;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "time",
+            "dsc": "I"
+          },
+          {
+            "acc": 25,
+            "nme": "SECONDS_IN_MINUTE",
+            "dsc": "I",
+            "val": 60
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/LinkedMap$ValueIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/LinkedMap$ValueIterator",
+        "super": "com/twelvemonkeys/util/LinkedMap$LinkedMapIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;)V"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/LinkedMap;Lcom/twelvemonkeys/util/LinkedMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/LinkedMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/SystemUtil$XMLPropertiesInputStream.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/lang/SystemUtil$XMLPropertiesInputStream",
+        "super": "java/io/FilterInputStream",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/io/InputStream;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/CollectionUtil$ArrayIterator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$ArrayIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "([Ljava/lang/Object;II)V",
+            "sig": "([TE;II)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TE;)V"
+          },
+          {
+            "nme": "hasPrevious",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nextIndex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "previous",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TE;"
+          },
+          {
+            "nme": "previousIndex",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TE;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "start",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "length",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "array",
+            "dsc": "[Ljava/lang/Object;",
+            "sig": "[TE;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/BeanMap$BeanEntry$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/BeanMap$BeanEntry$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap$BeanEntry;)V"
+          },
+          {
+            "nme": "run",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/IllegalAccessException",
+              "java/lang/reflect/InvocationTargetException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/util/BeanMap$BeanEntry;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/lang/StringUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/lang/StringUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "decode",
+            "acc": 9,
+            "dsc": "([BIILjava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toUpperCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toLowerCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "contains",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "containsIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "contains",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;I)Z"
+          },
+          {
+            "nme": "containsIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;I)Z"
+          },
+          {
+            "nme": "indexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)I"
+          },
+          {
+            "nme": "indexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)I"
+          },
+          {
+            "nme": "lastIndexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)I"
+          },
+          {
+            "nme": "lastIndexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)I"
+          },
+          {
+            "nme": "indexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;I)I"
+          },
+          {
+            "nme": "indexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;II)I"
+          },
+          {
+            "nme": "lastIndexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;I)I"
+          },
+          {
+            "nme": "lastIndexOfIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;II)I"
+          },
+          {
+            "nme": "ltrim",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "rtrim",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "replace",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "replaceIgnoreCase",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "cut",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;ILjava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "capitalize",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;I)Ljava/lang/String;"
+          },
+          {
+            "nme": "capitalize",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "formatNumber",
+            "acc": 131080,
+            "dsc": "(JI)Ljava/lang/String;",
+            "exs": [
+              "java/lang/IllegalArgumentException"
+            ],
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "pad",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;ILjava/lang/String;Z)Ljava/lang/String;"
+          },
+          {
+            "nme": "toDate",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Date;"
+          },
+          {
+            "nme": "toDate",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljava/util/Date;"
+          },
+          {
+            "nme": "toDate",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/text/DateFormat;)Ljava/util/Date;"
+          },
+          {
+            "nme": "toTimestamp",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/sql/Timestamp;"
+          },
+          {
+            "nme": "toStringArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;"
+          },
+          {
+            "nme": "toStringArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[Ljava/lang/String;"
+          },
+          {
+            "nme": "toIntArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)[I"
+          },
+          {
+            "nme": "toIntArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[I"
+          },
+          {
+            "nme": "toIntArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[I"
+          },
+          {
+            "nme": "toLongArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[J"
+          },
+          {
+            "nme": "toLongArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[J"
+          },
+          {
+            "nme": "toDoubleArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[D"
+          },
+          {
+            "nme": "toDoubleArray",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)[D"
+          },
+          {
+            "nme": "toColor",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/awt/Color;"
+          },
+          {
+            "nme": "toColorString",
+            "acc": 9,
+            "dsc": "(Ljava/awt/Color;)Ljava/lang/String;"
+          },
+          {
+            "nme": "isNumber",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "ensureIncludesAt",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;"
+          },
+          {
+            "nme": "ensureExcludesAt",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;"
+          },
+          {
+            "nme": "substring",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;"
+          },
+          {
+            "nme": "removeSubstring",
+            "acc": 131080,
+            "dsc": "(Ljava/lang/String;CCI)Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "removeSubstrings",
+            "acc": 8,
+            "dsc": "(Ljava/lang/String;CC)Ljava/lang/String;"
+          },
+          {
+            "nme": "getFirstElement",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getLastElement",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toCSVString",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "toCSVString",
+            "acc": 9,
+            "dsc": "([Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "deepToString",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "deepToString",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;ZI)Ljava/lang/String;"
+          },
+          {
+            "nme": "isIdentityToString",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "identityToString",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "matches",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Z",
+            "exs": [
+              "java/util/regex/PatternSyntaxException"
+            ]
+          },
+          {
+            "nme": "replaceFirst",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "replaceAll",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "split",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;I)[Ljava/lang/String;"
+          },
+          {
+            "nme": "split",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)[Ljava/lang/String;"
+          },
+          {
+            "nme": "camelToLisp",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lispToCamel",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          },
+          {
+            "nme": "lispToCamel",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Z)Ljava/lang/String;"
+          },
+          {
+            "nme": "reverse",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "DELIMITER_STRING",
+            "dsc": "Ljava/lang/String;",
+            "val": ", \t\n\r\f"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/LRUMap.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/LRUMap",
+        "super": "com/twelvemonkeys/util/LinkedMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;I)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;I)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;I)V",
+            "sig": "(Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;Ljava/util/Map<+TK;+TV;>;I)V"
+          },
+          {
+            "nme": "getMaxSize",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMaxSize",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "getTrimFactor",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setTrimFactor",
+            "acc": 1,
+            "dsc": "(F)V"
+          },
+          {
+            "nme": "removeEldestEntry",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map$Entry;)Z"
+          },
+          {
+            "nme": "removeEntry",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "processRemoved",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map$Entry;)V",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)V"
+          },
+          {
+            "nme": "removeLRU",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "maxSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "trimFactor",
+            "dsc": "F"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/regex/RegExTokenIterator.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/util/regex/RegExTokenIterator",
+        "super": "com/twelvemonkeys/util/AbstractTokenIterator",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "reset",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "matcher",
+            "dsc": "Ljava/util/regex/Matcher;"
+          },
+          {
+            "acc": 2,
+            "nme": "next",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TokenIterator.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/TokenIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "hasMoreTokens",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nextToken",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "reset",
+            "acc": 1025,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/TimeFormatter.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/util/TimeFormatter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "format",
+            "acc": 1024,
+            "dsc": "(Lcom/twelvemonkeys/util/Time;)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "digits",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeoutMap$TimeoutMapIterator.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$TimeoutMapIterator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;)V"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "nextEntry",
+            "acc": 0,
+            "dsc": "()Lcom/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry;",
+            "sig": "()Lcom/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry<TK;TV;>;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/util/TimeoutMap;Lcom/twelvemonkeys/util/TimeoutMap$1;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "mIterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Ljava/util/Map$Entry<TK;Ljava/util/Map$Entry<TK;TV;>;>;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "mNext",
+            "dsc": "Lcom/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry;",
+            "sig": "Lcom/twelvemonkeys/util/AbstractDecoratedMap$BasicEntry<TK;TV;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "mNow",
+            "dsc": "J"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/util/TimeoutMap;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/service/RegisterableService.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/service/RegisterableService",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onRegistration",
+            "acc": 1025,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Class;)V"
+          },
+          {
+            "nme": "onDeregistration",
+            "acc": 1025,
+            "dsc": "(Lcom/twelvemonkeys/util/service/ServiceRegistry;Ljava/lang/Class;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/AbstractDecoratedMap.class": {
+        "ver": 52,
+        "acc": 1056,
+        "nme": "com/twelvemonkeys/util/AbstractDecoratedMap",
+        "super": "java/util/AbstractMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;Ljava/util/Map<+TK;+TV;>;)V"
+          },
+          {
+            "nme": "init",
+            "acc": 4,
+            "dsc": "()V"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "clear",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "containsValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "values",
+            "acc": 1,
+            "dsc": "()Ljava/util/Collection;",
+            "sig": "()Ljava/util/Collection<TV;>;"
+          },
+          {
+            "nme": "entrySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "keySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<TK;>;"
+          },
+          {
+            "nme": "clone",
+            "acc": 4,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/lang/CloneNotSupportedException"
+            ]
+          },
+          {
+            "nme": "newKeyIterator",
+            "acc": 1028,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TK;>;"
+          },
+          {
+            "nme": "newValueIterator",
+            "acc": 1028,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<TV;>;"
+          },
+          {
+            "nme": "newEntryIterator",
+            "acc": 1028,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(Ljava/lang/Object;)TV;"
+          },
+          {
+            "nme": "put",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+            "sig": "(TK;TV;)TV;"
+          },
+          {
+            "nme": "createEntry",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map$Entry;",
+            "sig": "(TK;TV;)Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "getEntry",
+            "acc": 0,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/Map$Entry;",
+            "sig": "(TK;)Ljava/util/Map$Entry<TK;TV;>;"
+          },
+          {
+            "nme": "removeEntry",
+            "acc": 4,
+            "dsc": "(Ljava/util/Map$Entry;)Ljava/util/Map$Entry;",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)Ljava/util/Map$Entry<TK;TV;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "entries",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<TK;Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "acc": 196,
+            "nme": "modCount",
+            "dsc": "I"
+          },
+          {
+            "acc": 194,
+            "nme": "entrySet",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/util/Map$Entry<TK;TV;>;>;"
+          },
+          {
+            "acc": 194,
+            "nme": "keySet",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<TK;>;"
+          },
+          {
+            "acc": 194,
+            "nme": "values",
+            "dsc": "Ljava/util/Collection;",
+            "sig": "Ljava/util/Collection<TV;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/MinutesFormatter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/MinutesFormatter",
+        "super": "com/twelvemonkeys/util/TimeFormatter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "format",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/Time;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/BeanMap.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/util/BeanMap",
+        "super": "java/util/AbstractMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V",
+            "exs": [
+              "java/beans/IntrospectionException"
+            ]
+          },
+          {
+            "nme": "initDescriptors",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/Set;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/Set<Ljava/beans/PropertyDescriptor;>;",
+            "exs": [
+              "java/beans/IntrospectionException"
+            ]
+          },
+          {
+            "nme": "entrySet",
+            "acc": 1,
+            "dsc": "()Ljava/util/Set;",
+            "sig": "()Ljava/util/Set<Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "put",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "checkKey",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "readResolve",
+            "acc": 2,
+            "dsc": "()Ljava/lang/Object;",
+            "exs": [
+              "java/beans/IntrospectionException"
+            ]
+          },
+          {
+            "nme": "unwrap",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap$Wrapped;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "put",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "access$100",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;)Ljava/util/Set;"
+          },
+          {
+            "nme": "access$300",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "access$400",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/util/BeanMap$Wrapped;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "bean",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 130,
+            "nme": "descriptors",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/beans/PropertyDescriptor;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/ExpiringMap.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/ExpiringMap",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "processRemoved",
+            "acc": 1025,
+            "dsc": "(Ljava/util/Map$Entry;)V",
+            "sig": "(Ljava/util/Map$Entry<TK;TV;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/CollectionUtil$ReverseComparator.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/CollectionUtil$ReverseComparator",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Comparator;)V",
+            "sig": "(Ljava/util/Comparator<TT;>;)V"
+          },
+          {
+            "nme": "compare",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)I",
+            "sig": "(TT;TT;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "comparator",
+            "dsc": "Ljava/util/Comparator;",
+            "sig": "Ljava/util/Comparator<TT;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/TimeoutMap$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/util/TimeoutMap$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/convert/PropertyConverter.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/util/convert/PropertyConverter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "toObject",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Object;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/String;",
+            "exs": [
+              "com/twelvemonkeys/util/convert/ConversionException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/lang/Platform$Architecture.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "com/twelvemonkeys/lang/Platform$Architecture",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;ILjava/lang/String;)V",
+            "sig": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "X86",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16409,
+            "nme": "I386",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16409,
+            "nme": "I686",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PPC",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16409,
+            "nme": "SPARC",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Unknown",
+            "dsc": "Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          },
+          {
+            "acc": 16,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lcom/twelvemonkeys/lang/Platform$Architecture;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/util/SecondsFormatter.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/SecondsFormatter",
+        "super": "com/twelvemonkeys/util/TimeFormatter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "format",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/Time;)Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/util/WeakWeakMap$2$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/util/WeakWeakMap$2$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/util/WeakWeakMap$2;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TV;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "iterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Ljava/lang/ref/WeakReference<TV;>;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/util/WeakWeakMap$2;"
+          }
+        ]
+      }
+    }
+  }
+}

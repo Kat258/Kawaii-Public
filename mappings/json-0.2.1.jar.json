@@ -1,0 +1,1447 @@
+{
+  "md5": "0597ab5fbef7fac5ea6df34d34e81f38",
+  "sha2": "46ddbb2d151f1679139bc27550c1664092881be2",
+  "sha256": "5a9c7d005c7c4b07474b8e07e25f33116a923f7db19c92673f1ac47461f8a57d",
+  "contents": {
+    "classes": {
+      "org/quiltmc/parsers/json/JsonScope.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "org/quiltmc/parsers/json/JsonScope",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "EMPTY_ARRAY",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 24,
+            "nme": "NONEMPTY_ARRAY",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 24,
+            "nme": "EMPTY_OBJECT",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 24,
+            "nme": "DANGLING_NAME",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "NONEMPTY_OBJECT",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 24,
+            "nme": "EMPTY_DOCUMENT",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 24,
+            "nme": "NONEMPTY_DOCUMENT",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 24,
+            "nme": "CLOSED",
+            "dsc": "I",
+            "val": 8
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/MalformedSyntaxException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/quiltmc/parsers/json/MalformedSyntaxException",
+        "super": "org/quiltmc/parsers/json/ParseException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/quiltmc/parsers/json/ParseException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/quiltmc/parsers/json/ParseException",
+        "super": "java/lang/RuntimeException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/quiltmc/parsers/json/JsonWriter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/quiltmc/parsers/json/JsonWriter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "json5",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "json5",
+            "acc": 9,
+            "dsc": "(Ljava/io/Writer;)Lorg/quiltmc/parsers/json/JsonWriter;"
+          },
+          {
+            "nme": "json",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "json",
+            "acc": 9,
+            "dsc": "(Ljava/io/Writer;)Lorg/quiltmc/parsers/json/JsonWriter;"
+          },
+          {
+            "nme": "jsonc",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "jsonc",
+            "acc": 9,
+            "dsc": "(Ljava/io/Writer;)Lorg/quiltmc/parsers/json/JsonWriter;"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;Lorg/quiltmc/parsers/json/JsonFormat;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/io/Writer;Lorg/quiltmc/parsers/json/JsonFormat;)Lorg/quiltmc/parsers/json/JsonWriter;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/Writer;Lorg/quiltmc/parsers/json/JsonFormat;)V"
+          },
+          {
+            "nme": "setIndent",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "setCompact",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isCompact",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setHtmlSafe",
+            "acc": 17,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "isHtmlSafe",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setSerializeNulls",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "getSerializeNulls",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "name",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginObject",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endObject",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginArray",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endArray",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Z)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Boolean;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Number;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(D)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "value",
+            "acc": 1,
+            "dsc": "(J)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nullValue",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "jsonValue",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "comment",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "blockComment",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "flush",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "open",
+            "acc": 2,
+            "dsc": "(IC)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "close",
+            "acc": 2,
+            "dsc": "(IIC)Lorg/quiltmc/parsers/json/JsonWriter;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "push",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "peek",
+            "acc": 2,
+            "dsc": "()I"
+          },
+          {
+            "nme": "replaceTop",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "writeDeferredName",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeDeferredComment",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "string",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;ZZ)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "commentAndNewline",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beforeName",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beforeValue",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "REPLACEMENT_CHARS",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 26,
+            "nme": "HTML_SAFE_REPLACEMENT_CHARS",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "out",
+            "dsc": "Ljava/io/Writer;"
+          },
+          {
+            "acc": 18,
+            "nme": "format",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "acc": 2,
+            "nme": "stack",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "stackSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "indent",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "separator",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "htmlSafe",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "deferredName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "deferredComment",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 0,
+            "nme": "inlineWaited",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "compact",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "serializeNulls",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/JsonToken.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/quiltmc/parsers/json/JsonToken",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "BEGIN_ARRAY",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "END_ARRAY",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "BEGIN_OBJECT",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "END_OBJECT",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "NAME",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "STRING",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "NUMBER",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "BOOLEAN",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "NULL",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 16409,
+            "nme": "END_DOCUMENT",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonToken;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/quiltmc/parsers/json/JsonToken;"
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/FormatViolationException.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/quiltmc/parsers/json/FormatViolationException",
+        "super": "org/quiltmc/parsers/json/ParseException",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/Throwable;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lorg/quiltmc/parsers/json/JsonReader;Ljava/lang/String;Ljava/lang/Throwable;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/quiltmc/parsers/json/JsonFormat.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/quiltmc/parsers/json/JsonFormat",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "JSON",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "acc": 16409,
+            "nme": "JSONC",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "acc": 16409,
+            "nme": "JSON5",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/quiltmc/parsers/json/JsonFormat;"
+          }
+        ]
+      },
+      "org/quiltmc/parsers/json/JsonReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/quiltmc/parsers/json/JsonReader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "json5",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/quiltmc/parsers/json/JsonReader;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "json5",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "json5",
+            "acc": 9,
+            "dsc": "(Ljava/io/Reader;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "json",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/quiltmc/parsers/json/JsonReader;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "json",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "json",
+            "acc": 9,
+            "dsc": "(Ljava/io/Reader;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/nio/file/Path;Lorg/quiltmc/parsers/json/JsonFormat;)Lorg/quiltmc/parsers/json/JsonReader;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;Lorg/quiltmc/parsers/json/JsonFormat;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "(Ljava/io/Reader;Lorg/quiltmc/parsers/json/JsonFormat;)Lorg/quiltmc/parsers/json/JsonReader;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lorg/quiltmc/parsers/json/JsonFormat;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/nio/file/Path;Lorg/quiltmc/parsers/json/JsonFormat;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/io/Reader;Lorg/quiltmc/parsers/json/JsonFormat;)V"
+          },
+          {
+            "nme": "allowNonExecutePrefix",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "allowsNonExecutePrefix",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getFormat",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "peek",
+            "acc": 1,
+            "dsc": "()Lorg/quiltmc/parsers/json/JsonToken;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginObject",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endObject",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "beginArray",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "endArray",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextBoolean",
+            "acc": 1,
+            "dsc": "()Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextNumber",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Number;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextDouble",
+            "acc": 1,
+            "dsc": "()D",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextLong",
+            "acc": 1,
+            "dsc": "()J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextInt",
+            "acc": 1,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextNull",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipValue",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "path",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "close",
+            "acc": 1,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "doPeek",
+            "acc": 0,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "peekKeyword",
+            "acc": 2,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "peekNumber",
+            "acc": 2,
+            "dsc": "()I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "literal",
+            "acc": 2,
+            "dsc": "([CILjava/lang/String;Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isLiteral",
+            "acc": 2,
+            "dsc": "(C)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextQuotedValue",
+            "acc": 2,
+            "dsc": "(C)Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextUnquotedValue",
+            "acc": 2,
+            "dsc": "()Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipQuotedValue",
+            "acc": 2,
+            "dsc": "(C)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipUnquotedValue",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "push",
+            "acc": 2,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "fillBuffer",
+            "acc": 2,
+            "dsc": "(I)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "nextNonWhitespace",
+            "acc": 2,
+            "dsc": "(Z)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertJsonc",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertJsonc",
+            "acc": 2,
+            "dsc": "(Z)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertJson5",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isJson5",
+            "acc": 2,
+            "dsc": "(Z)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "checkLenient",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipToEndOfLine",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "skipTo",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "locationString",
+            "acc": 0,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "readEscapeCharacter",
+            "acc": 2,
+            "dsc": "()C",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getPath",
+            "acc": 2,
+            "dsc": "(Z)Ljava/lang/String;"
+          },
+          {
+            "nme": "getPreviousPath",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPath",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "syntaxError",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Ljava/io/IOException;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "consumeNonExecutePrefix",
+            "acc": 2,
+            "dsc": "()V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "PEEKED_NONE",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_BEGIN_OBJECT",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_END_OBJECT",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_BEGIN_ARRAY",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_END_ARRAY",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_TRUE",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_FALSE",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_NULL",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_SINGLE_QUOTED",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_DOUBLE_QUOTED",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_UNQUOTED",
+            "dsc": "I",
+            "val": 10
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_BUFFERED",
+            "dsc": "I",
+            "val": 11
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_SINGLE_QUOTED_NAME",
+            "dsc": "I",
+            "val": 12
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_DOUBLE_QUOTED_NAME",
+            "dsc": "I",
+            "val": 13
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_UNQUOTED_NAME",
+            "dsc": "I",
+            "val": 14
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_NUMBER",
+            "dsc": "I",
+            "val": 15
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_HEXADECIMAL",
+            "dsc": "I",
+            "val": 16
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_NaN",
+            "dsc": "I",
+            "val": 17
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_INF",
+            "dsc": "I",
+            "val": 18
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_NEGATIVE_INF",
+            "dsc": "I",
+            "val": 19
+          },
+          {
+            "acc": 26,
+            "nme": "PEEKED_EOF",
+            "dsc": "I",
+            "val": 20
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_NONE",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_SIGN",
+            "dsc": "I",
+            "val": 1
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_DIGIT",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_DECIMAL",
+            "dsc": "I",
+            "val": 3
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_FRACTION_DIGIT",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_EXP_E",
+            "dsc": "I",
+            "val": 5
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_EXP_SIGN",
+            "dsc": "I",
+            "val": 6
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_EXP_DIGIT",
+            "dsc": "I",
+            "val": 7
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_ZERO",
+            "dsc": "I",
+            "val": 8
+          },
+          {
+            "acc": 26,
+            "nme": "NUMBER_CHAR_HEXADECIMAL",
+            "dsc": "I",
+            "val": 9
+          },
+          {
+            "acc": 18,
+            "nme": "in",
+            "dsc": "Ljava/io/Reader;"
+          },
+          {
+            "acc": 18,
+            "nme": "format",
+            "dsc": "Lorg/quiltmc/parsers/json/JsonFormat;"
+          },
+          {
+            "acc": 2,
+            "nme": "allowNonExecutePrefix",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "buffer",
+            "dsc": "[C"
+          },
+          {
+            "acc": 2,
+            "nme": "pos",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "limit",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "lineNumber",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "lineStart",
+            "dsc": "I"
+          },
+          {
+            "acc": 0,
+            "nme": "peeked",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "peekedNumberLength",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "peekedString",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "stack",
+            "dsc": "[I"
+          },
+          {
+            "acc": 2,
+            "nme": "stackSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "pathNames",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "pathIndices",
+            "dsc": "[I"
+          }
+        ]
+      }
+    }
+  }
+}

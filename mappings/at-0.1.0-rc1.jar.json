@@ -1,0 +1,1121 @@
+{
+  "md5": "6f9455c045d1cf44b27ff2325e37f07c",
+  "sha2": "5265fad46414922d093c124dc3a6d247c1314ec3",
+  "sha256": "2a98a0deaa235ceea135ec65754dfab3813e658d5ea97d2888a5d751005bcd5e",
+  "contents": {
+    "classes": {
+      "org/cadixdev/at/io/AbstractAccessTransformFormat.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "org/cadixdev/at/io/AbstractAccessTransformFormat",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1028,
+            "dsc": "(Ljava/io/BufferedReader;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/io/Reader;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1028,
+            "dsc": "(Ljava/io/BufferedWriter;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/io/Writer;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/AccessTransform.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/cadixdev/at/AccessTransform",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lorg/cadixdev/at/AccessChange;Lorg/cadixdev/at/ModifierChange;)V"
+          },
+          {
+            "nme": "isEmpty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getAccess",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "nme": "getFinal",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Lorg/cadixdev/at/AccessChange;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Lorg/cadixdev/at/ModifierChange;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Lorg/cadixdev/at/AccessChange;Lorg/cadixdev/at/ModifierChange;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "EMPTY",
+            "dsc": "Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "acc": 25,
+            "nme": "PUBLIC",
+            "dsc": "Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "acc": 18,
+            "nme": "accessChange",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 18,
+            "nme": "finalChange",
+            "dsc": "Lorg/cadixdev/at/ModifierChange;"
+          }
+        ]
+      },
+      "org/cadixdev/at/io/fml/FmlAccessTransformFormat.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/at/io/fml/FmlAccessTransformFormat",
+        "super": "org/cadixdev/at/io/AbstractAccessTransformFormat",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/io/BufferedReader;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/io/BufferedWriter;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/io/fml/FmlWriter.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "org/cadixdev/at/io/fml/FmlWriter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/io/BufferedWriter;)V"
+          },
+          {
+            "nme": "write",
+            "acc": 0,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getAccessModifier",
+            "acc": 10,
+            "dsc": "(Lorg/cadixdev/at/AccessChange;)Ljava/lang/String;"
+          },
+          {
+            "nme": "writeAccessTransform",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeClass",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeField",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeMethod",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "throwing",
+            "acc": 10,
+            "dsc": "(Lorg/cadixdev/at/io/fml/FmlWriter$ThrowingBiConsumer;)Ljava/util/function/BiConsumer;",
+            "sig": "<T:Ljava/lang/Object;U:Ljava/lang/Object;>(Lorg/cadixdev/at/io/fml/FmlWriter$ThrowingBiConsumer<TT;TU;>;)Ljava/util/function/BiConsumer<TT;TU;>;"
+          },
+          {
+            "nme": "lambda$write$2",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "lambda$null$1",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "lambda$null$0",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "WILDCARD",
+            "dsc": "C",
+            "val": 42
+          },
+          {
+            "acc": 26,
+            "nme": "METHOD_WILDCARD",
+            "dsc": "Ljava/lang/String;",
+            "val": "*()"
+          },
+          {
+            "acc": 18,
+            "nme": "writer",
+            "dsc": "Ljava/io/BufferedWriter;"
+          }
+        ]
+      },
+      "org/cadixdev/at/impl/AccessTransformSetMapper.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "org/cadixdev/at/impl/AccessTransformSetMapper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "remap",
+            "acc": 8,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet;Lorg/cadixdev/lorenz/MappingSet;)Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "nme": "remap",
+            "acc": 10,
+            "dsc": "(Ljava/util/Optional;Lorg/cadixdev/at/AccessTransformSet$Class;Lorg/cadixdev/at/AccessTransformSet$Class;)V",
+            "sig": "(Ljava/util/Optional<+Lorg/cadixdev/lorenz/model/ClassMapping<**>;>;Lorg/cadixdev/at/AccessTransformSet$Class;Lorg/cadixdev/at/AccessTransformSet$Class;)V"
+          },
+          {
+            "nme": "lambda$remap$4",
+            "acc": 4106,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet$Class;Ljava/util/Optional;Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)V"
+          },
+          {
+            "nme": "lambda$null$3",
+            "acc": 4106,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/lorenz/model/ClassMapping;)Ljava/util/Optional;"
+          },
+          {
+            "nme": "lambda$remap$2",
+            "acc": 4106,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet$Class;Ljava/util/Optional;Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)V"
+          },
+          {
+            "nme": "lambda$null$1",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/lorenz/model/ClassMapping;)Ljava/util/Optional;"
+          },
+          {
+            "nme": "lambda$remap$0",
+            "acc": 4106,
+            "dsc": "(Lorg/cadixdev/lorenz/MappingSet;Lorg/cadixdev/at/AccessTransformSet;Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;)V"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/ModifierChange$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "org/cadixdev/at/ModifierChange$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$org$cadixdev$at$ModifierChange",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "org/cadixdev/at/AccessTransformSet$Class.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/at/AccessTransformSet$Class",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getParent",
+            "acc": 1025,
+            "dsc": "()Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "nme": "getName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replace",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "allFields",
+            "acc": 1025,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeAllFields",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceAllFields",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "allMethods",
+            "acc": 1025,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeAllMethods",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceAllMethods",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeField",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceField",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeMethod",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceMethod",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet$Class;)V"
+          },
+          {
+            "nme": "provideInheritance",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Object;)Ljava/util/Optional;",
+            "sig": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Ljava/lang/Object;)Ljava/util/Optional<Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;>;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/io/fml/FmlReader.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "org/cadixdev/at/io/fml/FmlReader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "read",
+            "acc": 8,
+            "dsc": "(Ljava/io/BufferedReader;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parseAccessTransform",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "parseAccess",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "nme": "parseFinalModifier",
+            "acc": 10,
+            "dsc": "(C)Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "nme": "substringBefore",
+            "acc": 10,
+            "dsc": "(Ljava/lang/String;C)Ljava/lang/String;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "COMMENT_PREFIX",
+            "dsc": "C",
+            "val": 35
+          },
+          {
+            "acc": 26,
+            "nme": "WILDCARD",
+            "dsc": "C",
+            "val": 42
+          },
+          {
+            "acc": 26,
+            "nme": "SPACE_PATTERN",
+            "dsc": "Ljava/util/regex/Pattern;"
+          }
+        ]
+      },
+      "org/cadixdev/at/io/fml/FmlWriter$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "org/cadixdev/at/io/fml/FmlWriter$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$org$cadixdev$at$AccessChange",
+            "dsc": "[I"
+          },
+          {
+            "acc": 4120,
+            "nme": "$SwitchMap$org$cadixdev$at$ModifierChange",
+            "dsc": "[I"
+          }
+        ]
+      },
+      "org/cadixdev/at/impl/AccessTransformSetImpl.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "org/cadixdev/at/impl/AccessTransformSetImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getClasses",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "getClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "getOrCreateClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransformSet$Class;"
+          },
+          {
+            "nme": "removeClass",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "remap",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/lorenz/MappingSet;)Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet;)V"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$merge$1",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;)V"
+          },
+          {
+            "nme": "lambda$getOrCreateClass$0",
+            "acc": 4098,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransformSet$Class;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "classes",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          }
+        ]
+      },
+      "org/cadixdev/at/io/fml/FmlWriter$ThrowingBiConsumer.class": {
+        "ver": 52,
+        "acc": 1536,
+        "nme": "org/cadixdev/at/io/fml/FmlWriter$ThrowingBiConsumer",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "throwingAccept",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)V",
+            "sig": "(TT;TU;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "accept",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)V",
+            "sig": "(TT;TU;)V"
+          },
+          {
+            "nme": "rethrow",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Exception;)V",
+            "sig": "<E:Ljava/lang/Exception;>(Ljava/lang/Exception;)V^TE;",
+            "exs": [
+              "java/lang/Exception"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/ModifierChange.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/cadixdev/at/ModifierChange",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/ModifierChange;)Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "NONE",
+            "dsc": "Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "REMOVE",
+            "dsc": "Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "ADD",
+            "dsc": "Lorg/cadixdev/at/ModifierChange;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/cadixdev/at/ModifierChange;"
+          }
+        ]
+      },
+      "org/cadixdev/at/AccessTransformSet.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/at/AccessTransformSet",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getClasses",
+            "acc": 1025,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "getClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "getOrCreateClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransformSet$Class;"
+          },
+          {
+            "nme": "removeClass",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/Optional;",
+            "sig": "(Ljava/lang/String;)Ljava/util/Optional<Lorg/cadixdev/at/AccessTransformSet$Class;>;"
+          },
+          {
+            "nme": "remap",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/lorenz/MappingSet;)Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1025,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet;)V"
+          },
+          {
+            "nme": "create",
+            "acc": 9,
+            "dsc": "()Lorg/cadixdev/at/AccessTransformSet;"
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/AccessChange.class": {
+        "ver": 52,
+        "acc": 16433,
+        "nme": "org/cadixdev/at/AccessChange",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;II)V",
+            "sig": "(I)V"
+          },
+          {
+            "nme": "getModifier",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessChange;)Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "NONE",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PRIVATE",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PACKAGE_PRIVATE",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PROTECTED",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PUBLIC",
+            "dsc": "Lorg/cadixdev/at/AccessChange;"
+          },
+          {
+            "acc": 18,
+            "nme": "modifier",
+            "dsc": "I"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Lorg/cadixdev/at/AccessChange;"
+          }
+        ]
+      },
+      "org/cadixdev/at/io/AccessTransformFormat.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "org/cadixdev/at/io/AccessTransformFormat",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/io/Reader;)Lorg/cadixdev/at/AccessTransformSet;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1025,
+            "dsc": "(Ljava/io/Reader;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;)Lorg/cadixdev/at/AccessTransformSet;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1025,
+            "dsc": "(Ljava/io/Writer;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/nio/file/Path;Lorg/cadixdev/at/AccessTransformSet;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "org/cadixdev/at/impl/ClassAccessTransformSetImpl.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "org/cadixdev/at/impl/ClassAccessTransformSetImpl",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getParent",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "nme": "getName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replace",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "allFields",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeAllFields",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceAllFields",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "allMethods",
+            "acc": 1,
+            "dsc": "()Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeAllMethods",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceAllMethods",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "getFields",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "nme": "getField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceField",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "getMethods",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "nme": "getMethod",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "mergeMethod",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "replaceMethod",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "nme": "merge",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/at/AccessTransformSet$Class;)V"
+          },
+          {
+            "nme": "isComplete",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "complete",
+            "acc": 1,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;)V"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "lambda$complete$0",
+            "acc": 4098,
+            "dsc": "(Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/analysis/InheritanceProvider$ClassInfo;Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "parent",
+            "dsc": "Lorg/cadixdev/at/AccessTransformSet;"
+          },
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 2,
+            "nme": "classTransform",
+            "dsc": "Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "acc": 2,
+            "nme": "allFields",
+            "dsc": "Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "acc": 2,
+            "nme": "allMethods",
+            "dsc": "Lorg/cadixdev/at/AccessTransform;"
+          },
+          {
+            "acc": 18,
+            "nme": "fields",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "methods",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lorg/cadixdev/bombe/type/signature/MethodSignature;Lorg/cadixdev/at/AccessTransform;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "complete",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "org/cadixdev/at/io/AccessTransformFormats.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "org/cadixdev/at/io/AccessTransformFormats",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 9,
+            "nme": "FML",
+            "dsc": "Lorg/cadixdev/at/io/AccessTransformFormat;"
+          }
+        ]
+      }
+    }
+  }
+}

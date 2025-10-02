@@ -1,0 +1,5106 @@
+{
+  "md5": "6b88d0619496c95c77f326a4c4cb2230",
+  "sha2": "1488ea350ce7a54f005abe213ea89c0382daa926",
+  "sha256": "05437ba3c6d4371003134798d4576b3e303fd32e196f3cf86ba74fa44a9a3754",
+  "contents": {
+    "classes": {
+      "journeymap/client/api/IClientPlugin.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/IClientPlugin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "initialize",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/IClientAPI;)V"
+          },
+          {
+            "nme": "getModId",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "onEvent",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/ClientEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/WaypointEvent$Context.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/WaypointEvent$Context",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "CREATE",
+            "dsc": "Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "acc": 16409,
+            "nme": "UPDATE",
+            "dsc": "Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "acc": 16409,
+            "nme": "DELETED",
+            "dsc": "Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "acc": 16409,
+            "nme": "READ",
+            "dsc": "Ljourneymap/client/api/event/WaypointEvent$Context;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/WaypointEvent$Context;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/PolygonOverlay.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/display/PolygonOverlay",
+        "super": "journeymap/client/api/display/Overlay",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygon;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygon;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygonWithHoles;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygonWithHoles;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygon;Ljava/util/List;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/model/ShapeProperties;Ljourneymap/client/api/model/MapPolygon;Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;)V"
+          },
+          {
+            "nme": "getOuterArea",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "nme": "setOuterArea",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygon;)Ljourneymap/client/api/display/PolygonOverlay;"
+          },
+          {
+            "nme": "getHoles",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;"
+          },
+          {
+            "nme": "setHoles",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Ljourneymap/client/api/display/PolygonOverlay;",
+            "sig": "(Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;)Ljourneymap/client/api/display/PolygonOverlay;"
+          },
+          {
+            "nme": "setPolygonWithHoles",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygonWithHoles;)Ljourneymap/client/api/display/PolygonOverlay;"
+          },
+          {
+            "nme": "getShapeProperties",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "setShapeProperties",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/ShapeProperties;)Ljourneymap/client/api/display/PolygonOverlay;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "outerArea",
+            "dsc": "Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "acc": 2,
+            "nme": "holes",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "shapeProperties",
+            "dsc": "Ljourneymap/client/api/model/ShapeProperties;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/FloatOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/FloatOption",
+        "super": "journeymap/client/api/option/Option",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Float;FF)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Float;FFFI)V"
+          },
+          {
+            "nme": "getMinValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getMaxValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getIncrementValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "getPrecision",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "minValue",
+            "dsc": "F"
+          },
+          {
+            "acc": 18,
+            "nme": "maxValue",
+            "dsc": "F"
+          },
+          {
+            "acc": 18,
+            "nme": "incrementValue",
+            "dsc": "F"
+          },
+          {
+            "acc": 18,
+            "nme": "precision",
+            "dsc": "I"
+          }
+        ]
+      },
+      "journeymap/client/api/display/Waypoint$CachedDimPosition.class": {
+        "ver": 61,
+        "acc": 32,
+        "nme": "journeymap/client/api/display/Waypoint$CachedDimPosition",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;)V"
+          },
+          {
+            "nme": "reset",
+            "acc": 0,
+            "dsc": "()Ljourneymap/client/api/display/Waypoint$CachedDimPosition;"
+          },
+          {
+            "nme": "ensure",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Waypoint$CachedDimPosition;"
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getVec",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/joml/Vector3d;"
+          },
+          {
+            "nme": "getCenteredVec",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/joml/Vector3d;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "cachedDim",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 0,
+            "nme": "cachedPos",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 0,
+            "nme": "cachedVec",
+            "dsc": "Lorg/joml/Vector3d;"
+          },
+          {
+            "acc": 0,
+            "nme": "cachedCenteredVec",
+            "dsc": "Lorg/joml/Vector3d;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Ljourneymap/client/api/display/Waypoint;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/CustomIntegerOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/CustomIntegerOption",
+        "super": "journeymap/client/api/option/CustomOption",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Boolean;)V"
+          },
+          {
+            "nme": "getMinValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "getMaxValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "getAllowNeg",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Boolean;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "minValue",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 18,
+            "nme": "maxValue",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 18,
+            "nme": "allowNeg",
+            "dsc": "Ljava/lang/Boolean;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/IOverlayListener.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/IOverlayListener",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onActivate",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)V"
+          },
+          {
+            "nme": "onDeactivate",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)V"
+          },
+          {
+            "nme": "onMouseMove",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;Ljava/awt/geom/Point2D$Double;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "onMouseOut",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;Ljava/awt/geom/Point2D$Double;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "onMouseClick",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;Ljava/awt/geom/Point2D$Double;Lnet/minecraft/class_2338;IZ)Z"
+          },
+          {
+            "nme": "onOverlayMenuPopup",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/util/UIState;Ljava/awt/geom/Point2D$Double;Lnet/minecraft/class_2338;Ljourneymap/client/api/display/ModPopupMenu;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/Context$UI.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/display/Context$UI",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Any",
+            "dsc": "Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Fullscreen",
+            "dsc": "Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Minimap",
+            "dsc": "Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Webmap",
+            "dsc": "Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/display/Context$UI;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/IWaypointDisplay.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/IWaypointDisplay",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getColor",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "getBackgroundColor",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "getDisplayDimensions",
+            "acc": 1025,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "getIcon",
+            "acc": 1025,
+            "dsc": "()Ljourneymap/client/api/model/MapImage;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onUpdate",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$CustomToolbarEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/CustomTextOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/CustomTextOption",
+        "super": "journeymap/client/api/option/CustomOption",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent",
+        "super": "journeymap/client/api/event/RegistryEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent$InfoSlotRegistrar;)V"
+          },
+          {
+            "nme": "register",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;JLjava/util/function/Supplier;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;JLjava/util/function/Supplier<Ljava/lang/String;>;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "registrar",
+            "dsc": "Ljourneymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent$InfoSlotRegistrar;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onDisplay",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/PopupMenuEvent$WaypointPopupMenuEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/ImageOverlay.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/display/ImageOverlay",
+        "super": "journeymap/client/api/display/Overlay",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_2338;Lnet/minecraft/class_2338;Ljourneymap/client/api/model/MapImage;)V"
+          },
+          {
+            "nme": "getNorthWestPoint",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "setNorthWestPoint",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;)Ljourneymap/client/api/display/ImageOverlay;"
+          },
+          {
+            "nme": "getSouthEastPoint",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "setSouthEastPoint",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;)Ljourneymap/client/api/display/ImageOverlay;"
+          },
+          {
+            "nme": "getImage",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "setImage",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/MapImage;)Ljourneymap/client/api/display/ImageOverlay;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "northWestPoint",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 2,
+            "nme": "southEastPoint",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 2,
+            "nme": "image",
+            "dsc": "Ljourneymap/client/api/model/MapImage;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/WaypointGroup.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/display/WaypointGroup",
+        "super": "journeymap/client/api/model/WaypointBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "setDefaultDisplay",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/IWaypointDisplay;)Ljourneymap/client/api/display/WaypointGroup;"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 4,
+            "dsc": "()Ljourneymap/client/api/display/IWaypointDisplay;"
+          },
+          {
+            "nme": "hasDelegate",
+            "acc": 4,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDisplayOrder",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setDisplayOrder",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/display/WaypointGroup;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "VERSION",
+            "dsc": "D",
+            "val": 1.4
+          },
+          {
+            "acc": 20,
+            "nme": "version",
+            "dsc": "D",
+            "val": 1.4
+          },
+          {
+            "acc": 4,
+            "nme": "order",
+            "dsc": "I"
+          },
+          {
+            "acc": 132,
+            "nme": "defaultDisplay",
+            "dsc": "Ljourneymap/client/api/display/IWaypointDisplay;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/RegistryEvent$RegistryType.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/RegistryEvent$RegistryType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "OPTIONS",
+            "dsc": "Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "INFO_SLOT",
+            "dsc": "Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/ClientEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/ClientEvent",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/event/ClientEvent$Type;Lnet/minecraft/class_5321;)V",
+            "sig": "(Ljourneymap/client/api/event/ClientEvent$Type;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/event/ClientEvent$Type;)V"
+          },
+          {
+            "nme": "isCancelled",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "cancel",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isCancellable",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "type",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 17,
+            "nme": "dimension",
+            "dsc": "Lnet/minecraft/class_5321;",
+            "sig": "Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "timestamp",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "cancelled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "journeymap/client/api/util/PolygonHelper.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/util/PolygonHelper",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createChunkPolygonForWorldCoords",
+            "acc": 9,
+            "dsc": "(III)Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "nme": "createChunkPolygon",
+            "acc": 9,
+            "dsc": "(III)Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "nme": "createBlockRect",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_2338;)Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "nme": "createChunksArea",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;)Ljava/awt/geom/Area;",
+            "sig": "(Ljava/util/Collection<Lnet/minecraft/class_1923;>;)Ljava/awt/geom/Area;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "createChunksPolygon",
+            "acc": 9,
+            "dsc": "(Ljava/util/Collection;I)Ljava/util/List;",
+            "sig": "(Ljava/util/Collection<Lnet/minecraft/class_1923;>;I)Ljava/util/List<Ljourneymap/client/api/model/MapPolygonWithHoles;>;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "toArea",
+            "acc": 9,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygon;)Ljava/awt/geom/Area;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "createPolygonFromArea",
+            "acc": 9,
+            "dsc": "(Ljava/awt/geom/Area;I)Ljava/util/List;",
+            "sig": "(Ljava/awt/geom/Area;I)Ljava/util/List<Ljourneymap/client/api/model/MapPolygonWithHoles;>;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "classifyAndGroup",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;",
+            "sig": "(Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;)Ljava/util/List<Ljourneymap/client/api/model/MapPolygonWithHoles;>;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "simplify",
+            "acc": 10,
+            "dsc": "(Ljava/util/List;)Ljava/util/List;",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2338;>;)Ljava/util/List<Lnet/minecraft/class_2338;>;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nonnull;"
+              }
+            ]
+          },
+          {
+            "nme": "isHole",
+            "acc": 10,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygon;)Z"
+          },
+          {
+            "nme": "lambda$classifyAndGroup$0",
+            "acc": 4106,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygon;)Lnet/minecraft/class_3545;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/model/MapPolygonWithHoles.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/model/MapPolygonWithHoles",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/MapPolygon;Ljava/util/List;)V",
+            "sig": "(Ljourneymap/client/api/model/MapPolygon;Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "hull",
+            "dsc": "Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "acc": 17,
+            "nme": "holes",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljourneymap/client/api/model/MapPolygon;>;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onDisplay",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$AddonButtonDisplayEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/WaypointEvent$WaypointCreatedEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/WaypointEvent$WaypointCreatedEvent",
+        "super": "journeymap/client/api/event/WaypointEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/IClientAPI.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/IClientAPI",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getUIState",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/Context$UI;)Ljourneymap/client/api/util/UIState;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "subscribe",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/util/EnumSet;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/EnumSet<Ljourneymap/client/api/event/ClientEvent$Type;>;)V"
+          },
+          {
+            "nme": "show",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/Displayable;)V",
+            "exs": [
+              "java/lang/Exception"
+            ]
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/Displayable;)V"
+          },
+          {
+            "nme": "removeAll",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljourneymap/client/api/display/DisplayType;)V"
+          },
+          {
+            "nme": "removeAll",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "exists",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/Displayable;)Z"
+          },
+          {
+            "nme": "playerAccepts",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljourneymap/client/api/display/DisplayType;)Z"
+          },
+          {
+            "nme": "requestMapTile",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_5321;Ljourneymap/client/api/display/Context$MapType;Lnet/minecraft/class_1923;Lnet/minecraft/class_1923;Ljava/lang/Integer;IZLjava/util/function/Consumer;)V",
+            "sig": "(Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/display/Context$MapType;Lnet/minecraft/class_1923;Lnet/minecraft/class_1923;Ljava/lang/Integer;IZLjava/util/function/Consumer<Lnet/minecraft/class_1011;>;)V"
+          },
+          {
+            "nme": "toggleDisplay",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5321;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;Z)V",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;Z)V"
+          },
+          {
+            "nme": "toggleWaypoints",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5321;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;Z)V",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;Z)V"
+          },
+          {
+            "nme": "isDisplayEnabled",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5321;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;)Z",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;)Z"
+          },
+          {
+            "nme": "isWaypointsEnabled",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5321;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;)Z",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/display/Context$MapType;Ljourneymap/client/api/display/Context$UI;)Z"
+          },
+          {
+            "nme": "getDataPath",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/io/File;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getAllWaypoints",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Ljourneymap/client/api/display/Waypoint;>;"
+          },
+          {
+            "nme": "getAllWaypoints",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_5321;)Ljava/util/List;",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)Ljava/util/List<Ljourneymap/client/api/display/Waypoint;>;"
+          },
+          {
+            "nme": "getWaypoint",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)Ljourneymap/client/api/display/Waypoint;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getWaypoints",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljava/util/List;",
+            "sig": "(Ljava/lang/String;)Ljava/util/List<Ljourneymap/client/api/display/Waypoint;>;"
+          },
+          {
+            "nme": "setWorldId",
+            "acc": 132097,
+            "dsc": "(Ljava/lang/String;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "getWorldId",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "API_OWNER",
+            "dsc": "Ljava/lang/String;",
+            "val": "journeymap"
+          },
+          {
+            "acc": 25,
+            "nme": "API_VERSION",
+            "dsc": "Ljava/lang/String;",
+            "val": "1.9-SNAPSHOT"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/Config.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/option/Config",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "get",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "set",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Ljourneymap/client/api/option/Config;",
+            "sig": "(TT;)Ljourneymap/client/api/option/Config<TT;>;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "journeymap/client/api/display/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/PopupMenuEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/PopupMenuEvent",
+        "super": "journeymap/client/api/event/fabric/FabricEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/ModPopupMenu;Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;Ljourneymap/client/api/model/IFullscreen;)V"
+          },
+          {
+            "nme": "getPopupMenu",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/ModPopupMenu;"
+          },
+          {
+            "nme": "getLayer",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "nme": "getFullscreen",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/IFullscreen;"
+          },
+          {
+            "nme": "isCancelable",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "popupMenu",
+            "dsc": "Ljourneymap/client/api/display/ModPopupMenu;"
+          },
+          {
+            "acc": 18,
+            "nme": "layer",
+            "dsc": "Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "acc": 18,
+            "nme": "fullscreen",
+            "dsc": "Ljourneymap/client/api/model/IFullscreen;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/PopupMenuEvent$FullscreenPopupMenuEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/PopupMenuEvent$FullscreenPopupMenuEvent",
+        "super": "journeymap/client/api/event/fabric/PopupMenuEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/ModPopupMenu;Ljourneymap/client/api/model/IFullscreen;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onDisplay",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/PopupMenuEvent$FullscreenPopupMenuEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/RegistryEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/RegistryEvent",
+        "super": "journeymap/client/api/event/ClientEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljourneymap/client/api/event/RegistryEvent$RegistryType;)V"
+          },
+          {
+            "nme": "getRegistryType",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "registryType",
+            "dsc": "Ljourneymap/client/api/event/RegistryEvent$RegistryType;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/OptionsRegistry.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/OptionsRegistry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "register",
+            "acc": 131081,
+            "dsc": "(Ljava/lang/String;Ljourneymap/client/api/option/Option;)V",
+            "sig": "(Ljava/lang/String;Ljourneymap/client/api/option/Option<*>;)V",
+            "vanns": [
+              {
+                "dsc": "Ljava/lang/Deprecated;"
+              }
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "OPTION_REGISTRY",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/util/Map<Ljava/lang/String;Ljourneymap/client/api/option/Option<*>;>;>;"
+          }
+        ]
+      },
+      "journeymap/client/api/model/MapPolygon.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/model/MapPolygon",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 129,
+            "dsc": "([Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2338;>;)V"
+          },
+          {
+            "nme": "getPoints",
+            "acc": 1,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2338;>;"
+          },
+          {
+            "nme": "setPoints",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Ljourneymap/client/api/model/MapPolygon;",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2338;>;)Ljourneymap/client/api/model/MapPolygon;"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Lnet/minecraft/class_2338;>;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "points",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lnet/minecraft/class_2338;>;"
+          }
+        ]
+      },
+      "journeymap/client/api/model/ShapeProperties.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/model/ShapeProperties",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getStrokeColor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setStrokeColor",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getFillColor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setFillColor",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getStrokeOpacity",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setStrokeOpacity",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getFillOpacity",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setFillOpacity",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getStrokeWidth",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setStrokeWidth",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getImage",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1011;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setImage",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1011;)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getImageLocation",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2960;",
+            "invanns": [
+              {
+                "dsc": "Lorg/jetbrains/annotations/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setImageLocation",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getTexturePositionX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setTexturePositionX",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getTexturePositionY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setTexturePositionY",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getTextureScaleX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setTextureScaleX",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "getTextureScaleY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setTextureScaleY",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/ShapeProperties;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "strokeColor",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "fillColor",
+            "dsc": "I"
+          },
+          {
+            "acc": 2,
+            "nme": "strokeOpacity",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "fillOpacity",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "strokeWidth",
+            "dsc": "F"
+          },
+          {
+            "acc": 2,
+            "nme": "image",
+            "dsc": "Lnet/minecraft/class_1011;"
+          },
+          {
+            "acc": 2,
+            "nme": "imageLocation",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 2,
+            "nme": "texturePositionX",
+            "dsc": "D"
+          },
+          {
+            "acc": 2,
+            "nme": "texturePositionY",
+            "dsc": "D"
+          },
+          {
+            "acc": 2,
+            "nme": "textureScaleX",
+            "dsc": "D"
+          },
+          {
+            "acc": 2,
+            "nme": "textureScaleY",
+            "dsc": "D"
+          }
+        ]
+      },
+      "journeymap/client/api/event/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "journeymap/client/api/event/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/PopupMenuEvent$WaypointPopupMenuEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/PopupMenuEvent$WaypointPopupMenuEvent",
+        "super": "journeymap/client/api/event/fabric/PopupMenuEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/ModPopupMenu;Ljourneymap/client/api/model/IFullscreen;Ljourneymap/client/api/display/Waypoint;)V"
+          },
+          {
+            "nme": "getWaypoint",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/Waypoint;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "waypoint",
+            "dsc": "Ljourneymap/client/api/display/Waypoint;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/DisplayUpdateEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/DisplayUpdateEvent",
+        "super": "journeymap/client/api/event/ClientEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "uiState",
+            "dsc": "Ljourneymap/client/api/util/UIState;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FabricEvents.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "lambda$static$11",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate;)Ljourneymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate;"
+          },
+          {
+            "nme": "lambda$static$10",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate;Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent;)V"
+          },
+          {
+            "nme": "lambda$static$9",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay;)Ljourneymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay;"
+          },
+          {
+            "nme": "lambda$static$8",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay;Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$AddonButtonDisplayEvent;)V"
+          },
+          {
+            "nme": "lambda$static$7",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay;)Ljourneymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay;"
+          },
+          {
+            "nme": "lambda$static$6",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay;Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$MapTypeButtonDisplayEvent;)V"
+          },
+          {
+            "nme": "lambda$static$5",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate;)Ljourneymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate;"
+          },
+          {
+            "nme": "lambda$static$4",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate;Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$CustomToolbarEvent;)V"
+          },
+          {
+            "nme": "lambda$static$3",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu;)Ljourneymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu;"
+          },
+          {
+            "nme": "lambda$static$2",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu;Ljourneymap/client/api/event/fabric/PopupMenuEvent$WaypointPopupMenuEvent;)V"
+          },
+          {
+            "nme": "lambda$static$1",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu;)Ljourneymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu;"
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "([Ljourneymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu;Ljourneymap/client/api/event/fabric/PopupMenuEvent$FullscreenPopupMenuEvent;)V"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "FULLSCREEN_POPUP_MENU_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$FullscreenPopupMenu;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "WAYPOINT_POPUP_MENU_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$WaypointPopupMenu;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "CUSTOM_TOOLBAR_UPDATE_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$CustomToolbarUpdate;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "MAP_TYPE_BUTTON_DISPLAY_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ADDON_BUTTON_DISPLAY_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$AddonButtonDisplay;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ENTITY_RADAR_UPDATE_EVENT",
+            "dsc": "Lnet/fabricmc/fabric/api/event/Event;",
+            "sig": "Lnet/fabricmc/fabric/api/event/Event<Ljourneymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate;>;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/ClientEvent$Type.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/ClientEvent$Type",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;IZ)V",
+            "sig": "(Z)V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "DISPLAY_UPDATE",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "DEATH_WAYPOINT",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MAPPING_STARTED",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MAPPING_STOPPED",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MAP_CLICKED",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MAP_DRAGGED",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "MAP_MOUSE_MOVED",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "REGISTRY",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 16409,
+            "nme": "WAYPOINT",
+            "dsc": "Ljourneymap/client/api/event/ClientEvent$Type;"
+          },
+          {
+            "acc": 17,
+            "nme": "cancellable",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/ClientEvent$Type;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FullscreenDisplayEvent$AddonButtonDisplayEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/FullscreenDisplayEvent$AddonButtonDisplayEvent",
+        "super": "journeymap/client/api/event/fabric/FullscreenDisplayEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/IFullscreen;Ljourneymap/client/api/display/ThemeButtonDisplay;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent",
+        "super": "journeymap/client/api/event/FullscreenMapEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/event/FullscreenMapEvent$Stage;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Ljourneymap/client/api/event/FullscreenMapEvent$Stage;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          },
+          {
+            "nme": "getStage",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "nme": "getMouseX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMouseY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMousePosition",
+            "acc": 1,
+            "dsc": "()Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "nme": "getButton",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "button",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "mousePosition",
+            "dsc": "Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "acc": 18,
+            "nme": "stage",
+            "dsc": "Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          }
+        ]
+      },
+      "journeymap/client/api/model/WaypointBase.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/model/WaypointBase",
+        "super": "journeymap/client/api/display/Displayable",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 1028,
+            "dsc": "()Ljourneymap/client/api/display/IWaypointDisplay;"
+          },
+          {
+            "nme": "hasDelegate",
+            "acc": 1028,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getName",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setName",
+            "acc": 17,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "(Ljava/lang/String;)TT;"
+          },
+          {
+            "nme": "getColor",
+            "acc": 17,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "setColor",
+            "acc": 17,
+            "dsc": "(I)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "(I)TT;"
+          },
+          {
+            "nme": "clearColor",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "getBackgroundColor",
+            "acc": 17,
+            "dsc": "()Ljava/lang/Integer;"
+          },
+          {
+            "nme": "setBackgroundColor",
+            "acc": 17,
+            "dsc": "(I)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "(I)TT;"
+          },
+          {
+            "nme": "clearBackgroundColor",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "getDisplayDimensions",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "setDisplayDimensions",
+            "acc": 145,
+            "dsc": "([Ljava/lang/String;)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "([Ljava/lang/String;)TT;"
+          },
+          {
+            "nme": "clearDisplayDimensions",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "setDisplayed",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Z)V"
+          },
+          {
+            "nme": "isDisplayed",
+            "acc": 17,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "getIcon",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "setIcon",
+            "acc": 17,
+            "dsc": "(Ljourneymap/client/api/model/MapImage;)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "(Ljourneymap/client/api/model/MapImage;)TT;"
+          },
+          {
+            "nme": "clearIcon",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "isDirty",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setDirty",
+            "acc": 1,
+            "dsc": "(Z)Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "(Z)TT;"
+          },
+          {
+            "nme": "setDirty",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/WaypointBase;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "hasIcon",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "hasColor",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "hasBackgroundColor",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "hasDisplayDimensions",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "color",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 4,
+            "nme": "bgColor",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 4,
+            "nme": "icon",
+            "dsc": "Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "acc": 4,
+            "nme": "displayDims",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 132,
+            "nme": "dirty",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "journeymap/client/api/option/BooleanOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/BooleanOption",
+        "super": "journeymap/client/api/option/Option",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/Boolean;)V"
+          },
+          {
+            "nme": "isMaster",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Boolean;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "isMaster",
+            "dsc": "Ljava/lang/Boolean;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$ClickEvent$Pre.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$ClickEvent$Pre",
+        "super": "journeymap/client/api/event/FullscreenMapEvent$ClickEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/Waypoint.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/display/Waypoint",
+        "super": "journeymap/client/api/model/WaypointBase",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321;Lnet/minecraft/class_2338;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321;Lnet/minecraft/class_2338;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_2338;)V"
+          },
+          {
+            "nme": "getGroup",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/display/WaypointGroup;"
+          },
+          {
+            "nme": "setGroup",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/WaypointGroup;)Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "nme": "getDimension",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPosition",
+            "acc": 17,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getInternalPosition",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;)Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "isEnabled",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setEnabled",
+            "acc": 1,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "setPosition",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_2338;)Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "nme": "getVec",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/joml/Vector3d;"
+          },
+          {
+            "nme": "getCenteredVec",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lorg/joml/Vector3d;"
+          },
+          {
+            "nme": "isPersistent",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setPersistent",
+            "acc": 17,
+            "dsc": "(Z)Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "nme": "isEditable",
+            "acc": 17,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setEditable",
+            "acc": 17,
+            "dsc": "(Z)Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "nme": "isTeleportReady",
+            "acc": 17,
+            "dsc": "(Ljava/lang/String;)Z"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 4,
+            "dsc": "()Ljourneymap/client/api/display/WaypointGroup;"
+          },
+          {
+            "nme": "hasDelegate",
+            "acc": 4,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getDisplayDimensions",
+            "acc": 1,
+            "dsc": "()[Ljava/lang/String;"
+          },
+          {
+            "nme": "getDisplayOrder",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDelegate",
+            "acc": 4164,
+            "dsc": "()Ljourneymap/client/api/display/IWaypointDisplay;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "VERSION",
+            "dsc": "D",
+            "val": 1.5
+          },
+          {
+            "acc": 148,
+            "nme": "cachedDimPosition",
+            "dsc": "Ljourneymap/client/api/display/Waypoint$CachedDimPosition;"
+          },
+          {
+            "acc": 20,
+            "nme": "version",
+            "dsc": "D",
+            "val": 1.5
+          },
+          {
+            "acc": 4,
+            "nme": "dim",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "pos",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 4,
+            "nme": "group",
+            "dsc": "Ljourneymap/client/api/display/WaypointGroup;"
+          },
+          {
+            "acc": 4,
+            "nme": "persistent",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "editable",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "enabled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "journeymap/client/api/model/TextProperties.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/model/TextProperties",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getScale",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setScale",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getColor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setColor",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getBackgroundColor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setBackgroundColor",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getOpacity",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setOpacity",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getBackgroundOpacity",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setBackgroundOpacity",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "hasFontShadow",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setFontShadow",
+            "acc": 1,
+            "dsc": "(Z)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getActiveUIs",
+            "acc": 1,
+            "dsc": "()Ljava/util/EnumSet;",
+            "sig": "()Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;"
+          },
+          {
+            "nme": "setActiveUIs",
+            "acc": 1,
+            "dsc": "(Ljava/util/EnumSet;)Ljourneymap/client/api/model/TextProperties;",
+            "sig": "(Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getActiveMapTypes",
+            "acc": 1,
+            "dsc": "()Ljava/util/EnumSet;",
+            "sig": "()Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;"
+          },
+          {
+            "nme": "setActiveMapTypes",
+            "acc": 1,
+            "dsc": "(Ljava/util/EnumSet;)Ljourneymap/client/api/model/TextProperties;",
+            "sig": "(Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "isActiveIn",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)Z"
+          },
+          {
+            "nme": "getMinZoom",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMinZoom",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getMaxZoom",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMaxZoom",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getOffsetX",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setOffsetX",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "getOffsetY",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setOffsetY",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "activeUIs",
+            "dsc": "Ljava/util/EnumSet;",
+            "sig": "Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "activeMapTypes",
+            "dsc": "Ljava/util/EnumSet;",
+            "sig": "Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "scale",
+            "dsc": "F"
+          },
+          {
+            "acc": 4,
+            "nme": "color",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "backgroundColor",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "opacity",
+            "dsc": "F"
+          },
+          {
+            "acc": 4,
+            "nme": "backgroundOpacity",
+            "dsc": "F"
+          },
+          {
+            "acc": 4,
+            "nme": "fontShadow",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4,
+            "nme": "minZoom",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "maxZoom",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "offsetX",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "offsetY",
+            "dsc": "I"
+          }
+        ]
+      },
+      "journeymap/client/api/display/CustomToolBarBuilder.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/CustomToolBarBuilder",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getThemeToggleButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "getThemeButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "getThemeToggleButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "getThemeButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "getNewToolbar",
+            "acc": 1153,
+            "dsc": "([Ljourneymap/client/api/display/IThemeButton;)Ljourneymap/client/api/display/IThemeToolBar;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent$Pre.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent$Pre",
+        "super": "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/model/IFullscreen.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/model/IFullscreen",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "updateMapType",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/Context$MapType;Ljava/lang/Integer;Lnet/minecraft/class_5321;)V",
+            "sig": "(Ljourneymap/client/api/display/Context$MapType;Ljava/lang/Integer;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)V"
+          },
+          {
+            "nme": "toggleMapType",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "zoomIn",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "zoomOut",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "centerOn",
+            "acc": 1025,
+            "dsc": "(DD)V"
+          },
+          {
+            "nme": "close",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getUiState",
+            "acc": 1025,
+            "dsc": "()Ljourneymap/client/api/util/UIState;"
+          },
+          {
+            "nme": "getMinecraft",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_310;"
+          },
+          {
+            "nme": "getScreen",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_437;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent$InfoSlotRegistrar.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/RegistryEvent$InfoSlotRegistryEvent$InfoSlotRegistrar",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "register",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;JLjava/util/function/Supplier;)V",
+            "sig": "(Ljava/lang/String;Ljava/lang/String;JLjava/util/function/Supplier<Ljava/lang/String;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/option/Option.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/option/Option",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
+            "sig": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;TT;)V"
+          },
+          {
+            "nme": "getCategory",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/option/OptionCategory;"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getLabel",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setConfig",
+            "acc": 2,
+            "dsc": "(Ljourneymap/client/api/option/Config;)V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "set",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)V",
+            "sig": "(TT;)V"
+          },
+          {
+            "nme": "getDefaultValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;",
+            "sig": "()TT;"
+          },
+          {
+            "nme": "getSortOrder",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setSortOrder",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/option/Option;",
+            "sig": "(I)Ljourneymap/client/api/option/Option<TT;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "category",
+            "dsc": "Ljourneymap/client/api/option/OptionCategory;"
+          },
+          {
+            "acc": 18,
+            "nme": "label",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "fieldName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "defaultValue",
+            "dsc": "Ljava/lang/Object;",
+            "sig": "TT;"
+          },
+          {
+            "acc": 4,
+            "nme": "config",
+            "dsc": "Ljourneymap/client/api/option/Config;",
+            "sig": "Ljourneymap/client/api/option/Config<TT;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "sortOrder",
+            "dsc": "I"
+          }
+        ]
+      },
+      "journeymap/client/api/model/WrappedEntity.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/model/WrappedEntity",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getEntityLivingRef",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/ref/WeakReference;",
+            "sig": "()Ljava/lang/ref/WeakReference<Lnet/minecraft/class_1309;>;"
+          },
+          {
+            "nme": "getEntityId",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getEntityIconLocation",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2960;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getHostile",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Boolean;"
+          },
+          {
+            "nme": "getPosition",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_243;"
+          },
+          {
+            "nme": "getChunkPos",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getHeading",
+            "acc": 1025,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getCustomName",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2561;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getOwner",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1297;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getProfession",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getPlayerName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getBiome",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1959;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getDimension",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_5321;",
+            "sig": "()Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          },
+          {
+            "nme": "getUnderground",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Boolean;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "isInvisible",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isSneaking",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isPassiveAnimal",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isNpc",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getColor",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isDisabled",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getEntityToolTips",
+            "acc": 1025,
+            "dsc": "()Ljava/util/List;",
+            "sig": "()Ljava/util/List<Lnet/minecraft/class_2561;>;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "setEntityToolTips",
+            "acc": 1025,
+            "dsc": "(Ljava/util/List;)V",
+            "sig": "(Ljava/util/List<Lnet/minecraft/class_2561;>;)V"
+          },
+          {
+            "nme": "setEntityIconLocation",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2960;)V"
+          },
+          {
+            "nme": "setCustomName",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2561;)V"
+          },
+          {
+            "nme": "setCustomName",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "setColor",
+            "acc": 1025,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "setDisable",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$EntityRadarUpdate",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onUpdate",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/ThemeButtonDisplay.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/ThemeButtonDisplay",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "addThemeToggleButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "addThemeButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "addThemeToggleButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;ZLjourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          },
+          {
+            "nme": "addThemeButton",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/display/IThemeButton$Action;)Ljourneymap/client/api/display/IThemeButton;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$ClickEvent$Post.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$ClickEvent$Post",
+        "super": "journeymap/client/api/event/FullscreenMapEvent$ClickEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          },
+          {
+            "nme": "isCancellable",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/fabric/FullscreenDisplayEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/FullscreenDisplayEvent",
+        "super": "journeymap/client/api/event/fabric/FabricEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljourneymap/client/api/model/IFullscreen;Ljourneymap/client/api/display/ThemeButtonDisplay;)V"
+          },
+          {
+            "nme": "getFullscreen",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/IFullscreen;"
+          },
+          {
+            "nme": "getThemeButtonDisplay",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/ThemeButtonDisplay;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "fullscreen",
+            "dsc": "Ljourneymap/client/api/model/IFullscreen;"
+          },
+          {
+            "acc": 18,
+            "nme": "themeButtonDisplay",
+            "dsc": "Ljourneymap/client/api/display/ThemeButtonDisplay;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "MOB",
+            "dsc": "Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "PLAYER",
+            "dsc": "Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/WaypointEvent$WaypointDeletedEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/WaypointEvent$WaypointDeletedEvent",
+        "super": "journeymap/client/api/event/WaypointEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/IThemeToolBar.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/IThemeToolBar",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "setLayoutHorizontal",
+            "acc": 1025,
+            "dsc": "(IIIZ)V"
+          },
+          {
+            "nme": "setLayoutCenteredHorizontal",
+            "acc": 1025,
+            "dsc": "(IIIZ)V"
+          },
+          {
+            "nme": "setLayoutDistributedHorizontal",
+            "acc": 1025,
+            "dsc": "(IIIZ)V"
+          },
+          {
+            "nme": "setLayoutVertical",
+            "acc": 1025,
+            "dsc": "(IIIZ)V"
+          },
+          {
+            "nme": "setLayoutCenteredVertical",
+            "acc": 1025,
+            "dsc": "(IIIZ)V"
+          },
+          {
+            "nme": "setReverse",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getHeight",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getWidth",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getX",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getY",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getCenterX",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getMiddleY",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getBottomY",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getRightX",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setPosition",
+            "acc": 1025,
+            "dsc": "(II)V"
+          },
+          {
+            "nme": "isMouseOver",
+            "acc": 1025,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/ModPopupMenu.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/ModPopupMenu",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "addMenuItem",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljourneymap/client/api/display/ModPopupMenu$Action;)Ljourneymap/client/api/display/ModPopupMenu;"
+          },
+          {
+            "nme": "addMenuItemScreen",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Lnet/minecraft/class_437;)Ljourneymap/client/api/display/ModPopupMenu;"
+          },
+          {
+            "nme": "createSubItemList",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/ModPopupMenu;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/Context.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/Context",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "journeymap/client/api/display/MarkerOverlay.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/display/MarkerOverlay",
+        "super": "journeymap/client/api/display/Overlay",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Lnet/minecraft/class_2338;Ljourneymap/client/api/model/MapImage;)V"
+          },
+          {
+            "nme": "getPoint",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "setPoint",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;)Ljourneymap/client/api/display/MarkerOverlay;"
+          },
+          {
+            "nme": "getIcon",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "setIcon",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/MapImage;)Ljourneymap/client/api/display/MarkerOverlay;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "point",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 2,
+            "nme": "icon",
+            "dsc": "Ljourneymap/client/api/model/MapImage;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FabricEvent.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/event/fabric/FabricEvent",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isCancelable",
+            "acc": 4,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "isCanceled",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "setCanceled",
+            "acc": 1,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "canceled",
+            "dsc": "Z"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/PopupMenuEvent$Layer.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/fabric/PopupMenuEvent$Layer",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "WAYPOINT",
+            "dsc": "Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "acc": 16409,
+            "nme": "FULLSCREEN",
+            "dsc": "Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/fabric/PopupMenuEvent$Layer;"
+          }
+        ]
+      },
+      "journeymap/client/api/ClientPlugin.class": {
+        "ver": 61,
+        "acc": 140801,
+        "nme": "journeymap/client/api/ClientPlugin",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          },
+          {
+            "dsc": "Ljava/lang/annotation/Target;",
+            "vals": [
+              "value",
+              [
+                [
+                  "Ljava/lang/annotation/ElementType;",
+                  "TYPE"
+                ]
+              ]
+            ]
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/event/fabric/FabricEvents$MapTypeButtonDisplay",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "onDisplay",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/event/fabric/FullscreenDisplayEvent$MapTypeButtonDisplayEvent;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/FunctionalInterface;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/WaypointEvent$WaypointUpdateEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/WaypointEvent$WaypointUpdateEvent",
+        "super": "journeymap/client/api/event/WaypointEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$Stage.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$Stage",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "PRE",
+            "dsc": "Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "acc": 16409,
+            "nme": "POST",
+            "dsc": "Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/KeyedEnum.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/option/KeyedEnum",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getKey",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/WaypointEvent$WaypointReadEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/WaypointEvent$WaypointReadEvent",
+        "super": "journeymap/client/api/event/WaypointEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/model/MapImage.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/model/MapImage",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1011;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_1011;IIIIIF)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;II)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;IIIIIF)V"
+          },
+          {
+            "nme": "getColor",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setColor",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getOpacity",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "setOpacity",
+            "acc": 1,
+            "dsc": "(F)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getTextureX",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getTextureY",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getAnchorX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setAnchorX",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getAnchorY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setAnchorY",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "centerAnchors",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getTextureWidth",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getTextureHeight",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getImageLocation",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2960;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getImage",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_1011;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getRotation",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setRotation",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getDisplayWidth",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setDisplayWidth",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "getDisplayHeight",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "setDisplayHeight",
+            "acc": 1,
+            "dsc": "(D)Ljourneymap/client/api/model/MapImage;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 130,
+            "nme": "image",
+            "dsc": "Lnet/minecraft/class_1011;"
+          },
+          {
+            "acc": 2,
+            "nme": "imageLocation",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 2,
+            "nme": "color",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "opacity",
+            "dsc": "Ljava/lang/Float;"
+          },
+          {
+            "acc": 2,
+            "nme": "textureX",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "textureY",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "textureWidth",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "textureHeight",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "rotation",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 2,
+            "nme": "displayWidth",
+            "dsc": "Ljava/lang/Double;"
+          },
+          {
+            "acc": 2,
+            "nme": "displayHeight",
+            "dsc": "Ljava/lang/Double;"
+          },
+          {
+            "acc": 2,
+            "nme": "anchorX",
+            "dsc": "Ljava/lang/Double;"
+          },
+          {
+            "acc": 2,
+            "nme": "anchorY",
+            "dsc": "Ljava/lang/Double;"
+          }
+        ]
+      },
+      "journeymap/client/api/util/UIState.class": {
+        "ver": 61,
+        "acc": 49,
+        "nme": "journeymap/client/api/util/UIState",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Context$UI;ZLnet/minecraft/class_5321;ILjourneymap/client/api/display/Context$MapType;Lnet/minecraft/class_2338;Ljava/lang/Integer;Lnet/minecraft/class_238;Ljava/awt/geom/Rectangle2D$Double;)V",
+            "sig": "(Ljourneymap/client/api/display/Context$UI;ZLnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;ILjourneymap/client/api/display/Context$MapType;Lnet/minecraft/class_2338;Ljava/lang/Integer;Lnet/minecraft/class_238;Ljava/awt/geom/Rectangle2D$Double;)V"
+          },
+          {
+            "nme": "newInactive",
+            "acc": 9,
+            "dsc": "(Ljourneymap/client/api/display/Context$UI;Lnet/minecraft/class_310;)Ljourneymap/client/api/util/UIState;"
+          },
+          {
+            "nme": "newInactive",
+            "acc": 9,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)Ljourneymap/client/api/util/UIState;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "ui",
+            "dsc": "Ljourneymap/client/api/display/Context$UI;"
+          },
+          {
+            "acc": 17,
+            "nme": "active",
+            "dsc": "Z"
+          },
+          {
+            "acc": 17,
+            "nme": "dimension",
+            "dsc": "Lnet/minecraft/class_5321;",
+            "sig": "Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          },
+          {
+            "acc": 17,
+            "nme": "zoom",
+            "dsc": "I"
+          },
+          {
+            "acc": 17,
+            "nme": "mapType",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 17,
+            "nme": "mapCenter",
+            "dsc": "Lnet/minecraft/class_2338;"
+          },
+          {
+            "acc": 17,
+            "nme": "chunkY",
+            "dsc": "Ljava/lang/Integer;"
+          },
+          {
+            "acc": 17,
+            "nme": "blockBounds",
+            "dsc": "Lnet/minecraft/class_238;"
+          },
+          {
+            "acc": 17,
+            "nme": "displayBounds",
+            "dsc": "Ljava/awt/geom/Rectangle2D$Double;"
+          },
+          {
+            "acc": 17,
+            "nme": "blockSize",
+            "dsc": "D"
+          }
+        ]
+      },
+      "journeymap/client/api/model/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "journeymap/client/api/model/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/Context$MapType.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/display/Context$MapType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Any",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Day",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Night",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Underground",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Topo",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Biome",
+            "dsc": "Ljourneymap/client/api/display/Context$MapType;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/display/Context$MapType;"
+          }
+        ]
+      },
+      "journeymap/client/api/model/IBlockInfo.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/model/IBlockInfo",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getBlockPos",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getBlock",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2248;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getBlockState",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2680;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getBiome",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1959;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getChunk",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_2818;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getChunkPos",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_1923;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getRegionX",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Integer;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getRegionZ",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Integer;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "journeymap/client/api/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/util/PluginHelper.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/util/PluginHelper",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/util/PluginHelper;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/util/PluginHelper;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;I)V",
+            "sig": "()V"
+          },
+          {
+            "nme": "preInitPlugins",
+            "acc": 1,
+            "dsc": "(Ljava/util/List;)Ljava/util/Map;",
+            "sig": "(Ljava/util/List<Ljava/lang/String;>;)Ljava/util/Map<Ljava/lang/String;Ljourneymap/client/api/IClientPlugin;>;"
+          },
+          {
+            "nme": "initPlugins",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/IClientAPI;)Ljava/util/Map;",
+            "sig": "(Ljourneymap/client/api/IClientAPI;)Ljava/util/Map<Ljava/lang/String;Ljourneymap/client/api/IClientPlugin;>;"
+          },
+          {
+            "nme": "getPlugins",
+            "acc": 1,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/String;Ljourneymap/client/api/IClientPlugin;>;"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/util/PluginHelper;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "INSTANCE",
+            "dsc": "Ljourneymap/client/api/util/PluginHelper;"
+          },
+          {
+            "acc": 25,
+            "nme": "LOGGER",
+            "dsc": "Lorg/apache/logging/log4j/Logger;"
+          },
+          {
+            "acc": 25,
+            "nme": "PLUGIN_INTERFACE_NAME",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "plugins",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljourneymap/client/api/IClientPlugin;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "initialized",
+            "dsc": "Z"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/util/PluginHelper;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent$Post.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent$Post",
+        "super": "journeymap/client/api/event/FullscreenMapEvent$MouseDraggedEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          },
+          {
+            "nme": "isCancellable",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/option/EnumOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/EnumOption",
+        "super": "journeymap/client/api/option/Option",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljourneymap/client/api/option/KeyedEnum;)V",
+            "sig": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;TE;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/Overlay.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/display/Overlay",
+        "super": "journeymap/client/api/display/Displayable",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getDimension",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_5321;",
+            "sig": "()Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          },
+          {
+            "nme": "setDimension",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_5321;)Ljourneymap/client/api/display/Overlay;",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getOverlayGroupName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setOverlayGroupName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getTitle",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setTitle",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getLabel",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "setLabel",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getMinZoom",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMinZoom",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getMaxZoom",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setMaxZoom",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getDisplayOrder",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "setDisplayOrder",
+            "acc": 1,
+            "dsc": "(I)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getTextProperties",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "nme": "setTextProperties",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/TextProperties;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getActiveUIs",
+            "acc": 1,
+            "dsc": "()Ljava/util/EnumSet;",
+            "sig": "()Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;"
+          },
+          {
+            "nme": "setActiveUIs",
+            "acc": 1,
+            "dsc": "(Ljava/util/EnumSet;)Ljourneymap/client/api/display/Overlay;",
+            "sig": "(Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "getActiveMapTypes",
+            "acc": 1,
+            "dsc": "()Ljava/util/EnumSet;",
+            "sig": "()Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;"
+          },
+          {
+            "nme": "setActiveMapTypes",
+            "acc": 1,
+            "dsc": "(Ljava/util/EnumSet;)Ljourneymap/client/api/display/Overlay;",
+            "sig": "(Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "isActiveIn",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/util/UIState;)Z"
+          },
+          {
+            "nme": "getOverlayListener",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/IOverlayListener;"
+          },
+          {
+            "nme": "setOverlayListener",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/IOverlayListener;)Ljourneymap/client/api/display/Overlay;"
+          },
+          {
+            "nme": "flagForRerender",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "clearFlagForRerender",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getNeedsRerender",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "toStringHelper",
+            "acc": 20,
+            "dsc": "(Ljourneymap/client/api/display/Overlay;)Lcom/google/common/base/MoreObjects$ToStringHelper;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4,
+            "nme": "overlayGroupName",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "title",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "label",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 4,
+            "nme": "dimension",
+            "dsc": "Lnet/minecraft/class_5321;",
+            "sig": "Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "minZoom",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "maxZoom",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "displayOrder",
+            "dsc": "I"
+          },
+          {
+            "acc": 4,
+            "nme": "activeUIs",
+            "dsc": "Ljava/util/EnumSet;",
+            "sig": "Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$UI;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "activeMapTypes",
+            "dsc": "Ljava/util/EnumSet;",
+            "sig": "Ljava/util/EnumSet<Ljourneymap/client/api/display/Context$MapType;>;"
+          },
+          {
+            "acc": 4,
+            "nme": "textProperties",
+            "dsc": "Ljourneymap/client/api/model/TextProperties;"
+          },
+          {
+            "acc": 4,
+            "nme": "overlayListener",
+            "dsc": "Ljourneymap/client/api/display/IOverlayListener;"
+          },
+          {
+            "acc": 4,
+            "nme": "needsRerender",
+            "dsc": "Z"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/FullscreenMapEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent",
+        "super": "journeymap/client/api/event/ClientEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljourneymap/client/api/event/ClientEvent$Type;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;)V",
+            "sig": "(Ljourneymap/client/api/event/ClientEvent$Type;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)V"
+          },
+          {
+            "nme": "getLocation",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2338;"
+          },
+          {
+            "nme": "getLevel",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_5321;",
+            "sig": "()Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "location",
+            "dsc": "Lnet/minecraft/class_2338;"
+          }
+        ]
+      },
+      "journeymap/client/api/option/CustomOption.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/option/CustomOption",
+        "super": "journeymap/client/api/option/Option",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V",
+            "sig": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;TT;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/WaypointEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/WaypointEvent",
+        "super": "journeymap/client/api/event/ClientEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljourneymap/client/api/display/Waypoint;Ljourneymap/client/api/event/WaypointEvent$Context;)V"
+          },
+          {
+            "nme": "getWaypoint",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "nme": "getContext",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/WaypointEvent$Context;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "waypoint",
+            "dsc": "Ljourneymap/client/api/display/Waypoint;"
+          },
+          {
+            "acc": 17,
+            "nme": "context",
+            "dsc": "Ljourneymap/client/api/event/WaypointEvent$Context;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/Displayable.class": {
+        "ver": 61,
+        "acc": 1057,
+        "nme": "journeymap/client/api/display/Displayable",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "clampRGB",
+            "acc": 9,
+            "dsc": "(I)I"
+          },
+          {
+            "nme": "clampOpacity",
+            "acc": 9,
+            "dsc": "(F)F"
+          },
+          {
+            "nme": "getDisplayOrder",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getModId",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getId",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getDisplayType",
+            "acc": 17,
+            "dsc": "()Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "nme": "getGuid",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/display/Displayable;)I"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 20,
+            "nme": "modId",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 20,
+            "nme": "displayType",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/ModPopupMenu$Action.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/ModPopupMenu$Action",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "doAction",
+            "acc": 1025,
+            "dsc": "(Lnet/minecraft/class_2338;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/display/IThemeButton.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/IThemeButton",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "setToggled",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Boolean;)V"
+          },
+          {
+            "nme": "getToggled",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Boolean;"
+          },
+          {
+            "nme": "isActive",
+            "acc": 1025,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "toggle",
+            "acc": 1025,
+            "dsc": "()V"
+          },
+          {
+            "nme": "setLabels",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getButton",
+            "acc": 1025,
+            "dsc": "()Lnet/minecraft/class_4185;"
+          },
+          {
+            "nme": "setDrawButton",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "setStaysOn",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "setEnabled",
+            "acc": 1025,
+            "dsc": "(Z)V"
+          },
+          {
+            "nme": "setTooltip",
+            "acc": 1153,
+            "dsc": "([Ljava/lang/String;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/RegistryEvent$OptionsRegistryEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/RegistryEvent$OptionsRegistryEvent",
+        "super": "journeymap/client/api/event/RegistryEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/event/fabric/FullscreenDisplayEvent$CustomToolbarEvent.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "journeymap/client/api/event/fabric/FullscreenDisplayEvent$CustomToolbarEvent",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/IFullscreen;Ljourneymap/client/api/display/CustomToolBarBuilder;)V"
+          },
+          {
+            "nme": "getCustomToolBarBuilder",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/display/CustomToolBarBuilder;"
+          },
+          {
+            "nme": "getFullscreen",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/IFullscreen;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "customToolBarBuilder",
+            "dsc": "Ljourneymap/client/api/display/CustomToolBarBuilder;"
+          },
+          {
+            "acc": 18,
+            "nme": "fullscreen",
+            "dsc": "Ljourneymap/client/api/model/IFullscreen;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$MouseMoveEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$MouseMoveEvent",
+        "super": "journeymap/client/api/event/FullscreenMapEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_5321;Ljourneymap/client/api/model/IBlockInfo;Ljava/awt/geom/Point2D$Double;)V",
+            "sig": "(Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljourneymap/client/api/model/IBlockInfo;Ljava/awt/geom/Point2D$Double;)V"
+          },
+          {
+            "nme": "getMousePosition",
+            "acc": 1,
+            "dsc": "()Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "nme": "getMouseX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMouseY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getInfo",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/IBlockInfo;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "mousePosition",
+            "dsc": "Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "acc": 18,
+            "nme": "info",
+            "dsc": "Ljourneymap/client/api/model/IBlockInfo;"
+          }
+        ]
+      },
+      "journeymap/client/api/util/package-info.class": {
+        "ver": 61,
+        "acc": 5632,
+        "nme": "journeymap/client/api/util/package-info",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljavax/annotation/ParametersAreNonnullByDefault;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/FullscreenMapEvent$ClickEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/FullscreenMapEvent$ClickEvent",
+        "super": "journeymap/client/api/event/FullscreenMapEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/event/FullscreenMapEvent$Stage;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;Ljava/awt/geom/Point2D$Double;I)V",
+            "sig": "(Ljourneymap/client/api/event/FullscreenMapEvent$Stage;Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;Ljava/awt/geom/Point2D$Double;I)V"
+          },
+          {
+            "nme": "getStage",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          },
+          {
+            "nme": "getMouseX",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMouseY",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "getMousePosition",
+            "acc": 1,
+            "dsc": "()Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "nme": "getButton",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "button",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "mousePosition",
+            "dsc": "Ljava/awt/geom/Point2D$Double;"
+          },
+          {
+            "acc": 18,
+            "nme": "stage",
+            "dsc": "Ljourneymap/client/api/event/FullscreenMapEvent$Stage;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/IThemeButton$Action.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "journeymap/client/api/display/IThemeButton$Action",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "doAction",
+            "acc": 1025,
+            "dsc": "(Ljourneymap/client/api/display/IThemeButton;)V"
+          }
+        ],
+        "flds": []
+      },
+      "journeymap/client/api/option/IntegerOption.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/IntegerOption",
+        "super": "journeymap/client/api/option/Option",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/option/OptionCategory;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Integer;II)V"
+          },
+          {
+            "nme": "getMinValue",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getMaxValue",
+            "acc": 1,
+            "dsc": "()I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "minValue",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "maxValue",
+            "dsc": "I"
+          }
+        ]
+      },
+      "journeymap/client/api/option/OptionCategory.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/option/OptionCategory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getModId",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getToolTip",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getLabel",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "modId",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "toolTip",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 18,
+            "nme": "label",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/EntityRadarUpdateEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/fabric/EntityRadarUpdateEvent",
+        "super": "journeymap/client/api/event/fabric/FabricEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/util/UIState;Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;Ljourneymap/client/api/model/WrappedEntity;)V"
+          },
+          {
+            "nme": "isCancelable",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "getActiveUiState",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/util/UIState;",
+            "vanns": [
+              {
+                "dsc": "Ljavax/annotation/Nullable;"
+              }
+            ]
+          },
+          {
+            "nme": "getType",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "nme": "getWrappedEntity",
+            "acc": 1,
+            "dsc": "()Ljourneymap/client/api/model/WrappedEntity;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "activeUiState",
+            "dsc": "Ljourneymap/client/api/util/UIState;"
+          },
+          {
+            "acc": 18,
+            "nme": "entityType",
+            "dsc": "Ljourneymap/client/api/event/fabric/EntityRadarUpdateEvent$EntityType;"
+          },
+          {
+            "acc": 18,
+            "nme": "wrappedEntity",
+            "dsc": "Ljourneymap/client/api/model/WrappedEntity;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/fabric/FullscreenDisplayEvent$MapTypeButtonDisplayEvent.class": {
+        "ver": 61,
+        "acc": 131105,
+        "nme": "journeymap/client/api/event/fabric/FullscreenDisplayEvent$MapTypeButtonDisplayEvent",
+        "super": "journeymap/client/api/event/fabric/FullscreenDisplayEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljourneymap/client/api/model/IFullscreen;Ljourneymap/client/api/display/ThemeButtonDisplay;)V"
+          }
+        ],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "journeymap/client/api/display/DisplayType.class": {
+        "ver": 61,
+        "acc": 16433,
+        "nme": "journeymap/client/api/display/DisplayType",
+        "super": "java/lang/Enum",
+        "mthds": [
+          {
+            "nme": "values",
+            "acc": 9,
+            "dsc": "()[Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Ljava/lang/String;ILjava/lang/Class;)V",
+            "sig": "(Ljava/lang/Class<+Ljourneymap/client/api/display/Displayable;>;)V"
+          },
+          {
+            "nme": "of",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Class;)Ljourneymap/client/api/display/DisplayType;",
+            "sig": "(Ljava/lang/Class<+Ljourneymap/client/api/display/Displayable;>;)Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "nme": "getImplClass",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Class;",
+            "sig": "()Ljava/lang/Class<+Ljourneymap/client/api/display/Displayable;>;"
+          },
+          {
+            "nme": "$values",
+            "acc": 4106,
+            "dsc": "()[Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16409,
+            "nme": "Image",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Marker",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Polygon",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "Waypoint",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "acc": 16409,
+            "nme": "WaypointGroup",
+            "dsc": "Ljourneymap/client/api/display/DisplayType;"
+          },
+          {
+            "acc": 10,
+            "nme": "reverseLookup",
+            "dsc": "Ljava/util/HashMap;",
+            "sig": "Ljava/util/HashMap<Ljava/lang/Class<+Ljourneymap/client/api/display/Displayable;>;Ljourneymap/client/api/display/DisplayType;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "implClass",
+            "dsc": "Ljava/lang/Class;",
+            "sig": "Ljava/lang/Class<+Ljourneymap/client/api/display/Displayable;>;"
+          },
+          {
+            "acc": 4122,
+            "nme": "$VALUES",
+            "dsc": "[Ljourneymap/client/api/display/DisplayType;"
+          }
+        ]
+      },
+      "journeymap/client/api/event/DeathWaypointEvent.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "journeymap/client/api/event/DeathWaypointEvent",
+        "super": "journeymap/client/api/event/ClientEvent",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321;)V",
+            "sig": "(Lnet/minecraft/class_2338;Lnet/minecraft/class_5321<Lnet/minecraft/class_1937;>;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 17,
+            "nme": "location",
+            "dsc": "Lnet/minecraft/class_2338;"
+          }
+        ]
+      }
+    }
+  }
+}

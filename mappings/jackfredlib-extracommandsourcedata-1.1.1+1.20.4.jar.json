@@ -1,0 +1,294 @@
+{
+  "md5": "0390d311bcb8eeaa891d4c8f2ef5b9da",
+  "sha2": "219e502809923aafcff54cfc5f8427a47d61c07e",
+  "sha256": "1cf23a821c5dd14f0d789515c970be5802c41bc6738a4abd6edd0fba08d2530d",
+  "contents": {
+    "classes": {
+      "red/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "copy",
+            "acc": 1025,
+            "dsc": "()Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;",
+            "sig": "()TT;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/impl/extracommandsourcedata/ExtraCommandSourceStackDataDuck.class": {
+        "ver": 61,
+        "acc": 1537,
+        "nme": "red/jackf/jackfredlib/impl/extracommandsourcedata/ExtraCommandSourceStackDataDuck",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "jackfredlib$setData",
+            "acc": 1025,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Lnet/minecraft/class_2960;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<*>;>;)V"
+          },
+          {
+            "nme": "jackfredlib$getData",
+            "acc": 1025,
+            "dsc": "(Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;)Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;)TT;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          },
+          {
+            "nme": "lambda$static$0",
+            "acc": 4106,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Lcom/mojang/brigadier/Message;"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "INVALID_DATA_TYPE",
+            "dsc": "Lcom/mojang/brigadier/exceptions/Dynamic2CommandExceptionType;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition.class": {
+        "ver": 61,
+        "acc": 65585,
+        "nme": "red/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition",
+        "super": "java/lang/Record",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Lnet/minecraft/class_2960;Ljava/lang/Class;Ljava/util/function/Supplier;)V",
+            "sig": "(Lnet/minecraft/class_2960;Ljava/lang/Class<TT;>;Ljava/util/function/Supplier<TT;>;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 17,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 17,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "id",
+            "acc": 1,
+            "dsc": "()Lnet/minecraft/class_2960;"
+          },
+          {
+            "nme": "clazz",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Class;",
+            "sig": "()Ljava/lang/Class<TT;>;"
+          },
+          {
+            "nme": "factory",
+            "acc": 1,
+            "dsc": "()Ljava/util/function/Supplier;",
+            "sig": "()Ljava/util/function/Supplier<TT;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "id",
+            "dsc": "Lnet/minecraft/class_2960;"
+          },
+          {
+            "acc": 18,
+            "nme": "clazz",
+            "dsc": "Ljava/lang/Class;",
+            "sig": "Ljava/lang/Class<TT;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "factory",
+            "dsc": "Ljava/util/function/Supplier;",
+            "sig": "Ljava/util/function/Supplier<TT;>;"
+          }
+        ]
+      },
+      "red/jackf/jackfredlib/impl/extracommandsourcedata/CommandSourceStackUtils.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/impl/extracommandsourcedata/CommandSourceStackUtils",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "copy",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2168;)Lnet/minecraft/class_2168;"
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/api/extracommandsourcedata/ESD.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/api/extracommandsourcedata/ESD",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "withCustom",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2168;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;Ljava/util/function/Consumer;)Lnet/minecraft/class_2168;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lnet/minecraft/class_2168;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;Ljava/util/function/Consumer<TT;>;)Lnet/minecraft/class_2168;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          },
+          {
+            "nme": "withCustom",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/brigadier/context/CommandContext;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;Ljava/util/function/Consumer;)Lnet/minecraft/class_2168;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lcom/mojang/brigadier/context/CommandContext<Lnet/minecraft/class_2168;>;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;Ljava/util/function/Consumer<TT;>;)Lnet/minecraft/class_2168;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          },
+          {
+            "nme": "getCustom",
+            "acc": 9,
+            "dsc": "(Lnet/minecraft/class_2168;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;)Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lnet/minecraft/class_2168;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;)TT;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          },
+          {
+            "nme": "getCustom",
+            "acc": 9,
+            "dsc": "(Lcom/mojang/brigadier/context/CommandContext;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;)Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lcom/mojang/brigadier/context/CommandContext<Lnet/minecraft/class_2168;>;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;)TT;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "red/jackf/jackfredlib/mixins/extracommandsourcedata/CommandSourceStackMixin.class": {
+        "ver": 61,
+        "acc": 33,
+        "nme": "red/jackf/jackfredlib/mixins/extracommandsourcedata/CommandSourceStackMixin",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "jackfredlib$copyExtraData",
+            "acc": 2,
+            "dsc": "(Lnet/minecraft/class_2168;)Lnet/minecraft/class_2168;",
+            "vanns": [
+              {
+                "dsc": "Lcom/llamalad7/mixinextras/injector/ModifyReturnValue;",
+                "vals": [
+                  "method",
+                  [
+                    "withSource",
+                    "withEntity",
+                    "withPosition",
+                    "withRotation",
+                    "withCallback(Lnet/minecraft/commands/CommandResultCallback;)Lnet/minecraft/commands/CommandSourceStack;",
+                    "withSuppressedOutput",
+                    "withPermission",
+                    "withMaximumPermission",
+                    "withAnchor",
+                    "withLevel",
+                    "withSigningContext"
+                  ],
+                  "at",
+                  [
+                    {
+                      "desc": "Lorg/spongepowered/asm/mixin/injection/At;",
+                      "values": [
+                        "value",
+                        "RETURN"
+                      ],
+                      "api": 589824
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          {
+            "nme": "jackfredlib$setData",
+            "acc": 1,
+            "dsc": "(Ljava/util/Map;)V",
+            "sig": "(Ljava/util/Map<Lnet/minecraft/class_2960;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<*>;>;)V"
+          },
+          {
+            "nme": "jackfredlib$getData",
+            "acc": 1,
+            "dsc": "(Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;)Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;",
+            "sig": "<T::Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<TT;>;>(Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition<TT;>;)TT;",
+            "exs": [
+              "com/mojang/brigadier/exceptions/CommandSyntaxException"
+            ]
+          },
+          {
+            "nme": "lambda$jackfredlib$getData$1",
+            "acc": 4106,
+            "dsc": "(Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData$Definition;Lnet/minecraft/class_2960;)Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;"
+          },
+          {
+            "nme": "lambda$jackfredlib$setData$0",
+            "acc": 4098,
+            "dsc": "(Lnet/minecraft/class_2960;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData;)V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "jflibExtraData",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Lnet/minecraft/class_2960;Lred/jackf/jackfredlib/api/extracommandsourcedata/ExtraSourceData<*>;>;"
+          }
+        ],
+        "invanns": [
+          {
+            "dsc": "Lorg/spongepowered/asm/mixin/Mixin;",
+            "vals": [
+              "value",
+              [
+                {
+                  "itrlNme": "net/minecraft/class_2168"
+                }
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

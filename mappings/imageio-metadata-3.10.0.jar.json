@@ -1,0 +1,4352 @@
+{
+  "md5": "28892fc86f85d5937a3300d71c89ac45",
+  "sha2": "dcc31330b51212b200239a3bfcfc790287550c54",
+  "sha256": "885d9cff2e73add7fb81bc2af4bde3d22fc00b554cd67b9408a7d1f1f226834e",
+  "contents": {
+    "classes": {
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTCWriter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTCWriter",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeValue",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;Ljava/lang/Object;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$2.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$2",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader;Lorg/w3c/dom/NodeList;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Lorg/w3c/dom/Node;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pNodeList",
+            "dsc": "Lorg/w3c/dom/NodeList;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTCReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTCReader",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "mergeEntries",
+            "acc": 2,
+            "dsc": "(SLjava/lang/Object;Lcom/twelvemonkeys/imageio/metadata/Entry;)Lcom/twelvemonkeys/imageio/metadata/iptc/IPTCEntry;"
+          },
+          {
+            "nme": "readEntry",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;SIZLcom/twelvemonkeys/imageio/metadata/Entry;)Lcom/twelvemonkeys/imageio/metadata/iptc/IPTCEntry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parseEncoding",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "parseString",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;I)Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "ENCODING_UNKNOWN",
+            "dsc": "I",
+            "val": -1
+          },
+          {
+            "acc": 26,
+            "nme": "ENCODING_UNSPECIFIED",
+            "dsc": "I",
+            "val": 0
+          },
+          {
+            "acc": 26,
+            "nme": "ENCODING_UTF_8",
+            "dsc": "I",
+            "val": 1779015
+          },
+          {
+            "acc": 2,
+            "nme": "encoding",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTC.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTC",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ENVELOPE_RECORD",
+            "dsc": "I",
+            "val": 256
+          },
+          {
+            "acc": 25,
+            "nme": "APPLICATION_RECORD",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DESTINATION",
+            "dsc": "I",
+            "val": 261
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PRODUCT_ID",
+            "dsc": "I",
+            "val": 306
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CODED_CHARACTER_SET",
+            "dsc": "I",
+            "val": 346
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RECORD_VERSION",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OBJECT_TYPE_REFERENCE",
+            "dsc": "I",
+            "val": 515
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OBJECT_ATTRIBUTE_REFERENCE",
+            "dsc": "I",
+            "val": 516
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OBJECT_NAME",
+            "dsc": "I",
+            "val": 517
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EDIT_STATUS",
+            "dsc": "I",
+            "val": 519
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EDITORIAL_UPDATE",
+            "dsc": "I",
+            "val": 520
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_URGENCY",
+            "dsc": "I",
+            "val": 522
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBJECT_REFERENCE",
+            "dsc": "I",
+            "val": 524
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CATEGORY",
+            "dsc": "I",
+            "val": 527
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUPPLEMENTAL_CATEGORIES",
+            "dsc": "I",
+            "val": 532
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FIXTURE_IDENTIFIER",
+            "dsc": "I",
+            "val": 534
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_KEYWORDS",
+            "dsc": "I",
+            "val": 537
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CONTENT_LOCATION_CODE",
+            "dsc": "I",
+            "val": 538
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CONTENT_LOCATION_NAME",
+            "dsc": "I",
+            "val": 539
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RELEASE_DATE",
+            "dsc": "I",
+            "val": 542
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RELEASE_TIME",
+            "dsc": "I",
+            "val": 547
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPIRATION_DATE",
+            "dsc": "I",
+            "val": 549
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPIRATION_TIME",
+            "dsc": "I",
+            "val": 550
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SPECIAL_INSTRUCTIONS",
+            "dsc": "I",
+            "val": 552
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ACTION_ADVICED",
+            "dsc": "I",
+            "val": 554
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_REFERENCE_SERVICE",
+            "dsc": "I",
+            "val": 557
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_REFERENCE_DATE",
+            "dsc": "I",
+            "val": 559
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_REFERENCE_NUMBER",
+            "dsc": "I",
+            "val": 562
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DATE_CREATED",
+            "dsc": "I",
+            "val": 567
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TIME_CREATED",
+            "dsc": "I",
+            "val": 572
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DIGITAL_CREATION_DATE",
+            "dsc": "I",
+            "val": 574
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DIGITAL_CREATION_TIME",
+            "dsc": "I",
+            "val": 575
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ORIGINATING_PROGRAM",
+            "dsc": "I",
+            "val": 577
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PROGRAM_VERSION",
+            "dsc": "I",
+            "val": 582
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OBJECT_CYCLE",
+            "dsc": "I",
+            "val": 587
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_BY_LINE",
+            "dsc": "I",
+            "val": 592
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_BY_LINE_TITLE",
+            "dsc": "I",
+            "val": 597
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CITY",
+            "dsc": "I",
+            "val": 602
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUB_LOCATION",
+            "dsc": "I",
+            "val": 604
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PROVINCE_OR_STATE",
+            "dsc": "I",
+            "val": 607
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COUNTRY_OR_PRIMARY_LOCATION_CODE",
+            "dsc": "I",
+            "val": 612
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COUNTRY_OR_PRIMARY_LOCATION",
+            "dsc": "I",
+            "val": 613
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ORIGINAL_TRANSMISSION_REFERENCE",
+            "dsc": "I",
+            "val": 615
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_HEADLINE",
+            "dsc": "I",
+            "val": 617
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CREDIT",
+            "dsc": "I",
+            "val": 622
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SOURCE",
+            "dsc": "I",
+            "val": 627
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COPYRIGHT_NOTICE",
+            "dsc": "I",
+            "val": 628
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CONTACT",
+            "dsc": "I",
+            "val": 630
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CAPTION",
+            "dsc": "I",
+            "val": 632
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_WRITER",
+            "dsc": "I",
+            "val": 634
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RASTERIZED_CATPTION",
+            "dsc": "I",
+            "val": 637
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_TYPE",
+            "dsc": "I",
+            "val": 642
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_ORIENTATION",
+            "dsc": "I",
+            "val": 643
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_LANGUAGE_IDENTIFIER",
+            "dsc": "I",
+            "val": 647
+          },
+          {
+            "acc": 25,
+            "nme": "CUSTOM_TAG_JOBMINDER_ASSIGNMENT_DATA",
+            "dsc": "I",
+            "val": 711
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(I[BI)V"
+          },
+          {
+            "nme": "segmentLength",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "segmentData",
+            "acc": 1,
+            "dsc": "()Ljava/io/InputStream;"
+          },
+          {
+            "nme": "marker",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "identifier",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isAppSegmentMarker",
+            "acc": 8,
+            "dsc": "(I)Z"
+          },
+          {
+            "nme": "data",
+            "acc": 1,
+            "dsc": "()Ljava/io/InputStream;"
+          },
+          {
+            "nme": "length",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "offset",
+            "acc": 0,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "marker",
+            "dsc": "I"
+          },
+          {
+            "acc": 16,
+            "nme": "data",
+            "dsc": "[B"
+          },
+          {
+            "acc": 18,
+            "nme": "length",
+            "dsc": "I"
+          },
+          {
+            "acc": 130,
+            "nme": "id",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/exif/Rational.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "com/twelvemonkeys/imageio/metadata/exif/Rational",
+        "super": "java/lang/Number",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(JJ)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)V"
+          },
+          {
+            "nme": "numerator",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "denominator",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "byteValue",
+            "acc": 1,
+            "dsc": "()B"
+          },
+          {
+            "nme": "shortValue",
+            "acc": 1,
+            "dsc": "()S"
+          },
+          {
+            "nme": "intValue",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "longValue",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "floatValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "doubleValue",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/exif/Rational;)I"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTCDirectory.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTCDirectory",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "readSegments",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;ILjava/lang/String;)Ljava/util/List;",
+            "sig": "(Ljavax/imageio/stream/ImageInputStream;ILjava/lang/String;)Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSegments",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/Map;)Ljava/util/List;",
+            "sig": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;)Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;>;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isRequested",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;Ljava/util/Map;)Z",
+            "sig": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;)Z"
+          },
+          {
+            "nme": "containsSafe",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;Ljava/util/Map;)Z",
+            "sig": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;)Z"
+          },
+          {
+            "nme": "isImageDone",
+            "acc": 10,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;)Z"
+          },
+          {
+            "nme": "asNullTerminatedAsciiString",
+            "acc": 8,
+            "dsc": "([BI)Ljava/lang/String;"
+          },
+          {
+            "nme": "asAsciiString",
+            "acc": 8,
+            "dsc": "([BII)Ljava/lang/String;"
+          },
+          {
+            "nme": "readSOI",
+            "acc": 8,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSegment",
+            "acc": 8,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/Map;)Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;",
+            "sig": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;)Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isKnownJPEGMarker",
+            "acc": 9,
+            "dsc": "(I)Z"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "ALL_IDS",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ALL_SEGMENTS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "APP_SEGMENTS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Integer;Ljava/util/List<Ljava/lang/String;>;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/AbstractEntry.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/metadata/AbstractEntry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "getIdentifier",
+            "acc": 17,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "getNativeIdentifier",
+            "acc": 4,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "getValueAsString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "arrayToString",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/String;"
+          },
+          {
+            "nme": "getTypeName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "valueCount",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "valueEquals",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/AbstractEntry;)Z"
+          },
+          {
+            "nme": "arrayEquals",
+            "acc": 8,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "identifier",
+            "dsc": "Ljava/lang/Object;"
+          },
+          {
+            "acc": 18,
+            "nme": "value",
+            "dsc": "Ljava/lang/Object;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPScanner.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPScanner",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "scanForXMPPacket",
+            "acc": 9,
+            "dsc": "(Ljava/lang/Object;)Ljava/io/Reader;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "scanForSequence",
+            "acc": 10,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;[B)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "XMP_PACKET_BEGIN",
+            "dsc": "[B"
+          },
+          {
+            "acc": 26,
+            "nme": "XMP_PACKET_END",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEG.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEG",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SOI",
+            "dsc": "I",
+            "val": 65496
+          },
+          {
+            "acc": 25,
+            "nme": "EOI",
+            "dsc": "I",
+            "val": 65497
+          },
+          {
+            "acc": 25,
+            "nme": "SOS",
+            "dsc": "I",
+            "val": 65498
+          },
+          {
+            "acc": 25,
+            "nme": "DQT",
+            "dsc": "I",
+            "val": 65499
+          },
+          {
+            "acc": 25,
+            "nme": "DHT",
+            "dsc": "I",
+            "val": 65476
+          },
+          {
+            "acc": 25,
+            "nme": "COM",
+            "dsc": "I",
+            "val": 65534
+          },
+          {
+            "acc": 25,
+            "nme": "DNL",
+            "dsc": "I",
+            "val": 65500
+          },
+          {
+            "acc": 25,
+            "nme": "DRI",
+            "dsc": "I",
+            "val": 65501
+          },
+          {
+            "acc": 25,
+            "nme": "DHP",
+            "dsc": "I",
+            "val": 65502
+          },
+          {
+            "acc": 25,
+            "nme": "EXP",
+            "dsc": "I",
+            "val": 65503
+          },
+          {
+            "acc": 25,
+            "nme": "TEM",
+            "dsc": "I",
+            "val": 65281
+          },
+          {
+            "acc": 25,
+            "nme": "DAC",
+            "dsc": "I",
+            "val": 65484
+          },
+          {
+            "acc": 25,
+            "nme": "APP0",
+            "dsc": "I",
+            "val": 65504
+          },
+          {
+            "acc": 25,
+            "nme": "APP1",
+            "dsc": "I",
+            "val": 65505
+          },
+          {
+            "acc": 25,
+            "nme": "APP2",
+            "dsc": "I",
+            "val": 65506
+          },
+          {
+            "acc": 25,
+            "nme": "APP3",
+            "dsc": "I",
+            "val": 65507
+          },
+          {
+            "acc": 25,
+            "nme": "APP4",
+            "dsc": "I",
+            "val": 65508
+          },
+          {
+            "acc": 25,
+            "nme": "APP5",
+            "dsc": "I",
+            "val": 65509
+          },
+          {
+            "acc": 25,
+            "nme": "APP6",
+            "dsc": "I",
+            "val": 65510
+          },
+          {
+            "acc": 25,
+            "nme": "APP7",
+            "dsc": "I",
+            "val": 65511
+          },
+          {
+            "acc": 25,
+            "nme": "APP8",
+            "dsc": "I",
+            "val": 65512
+          },
+          {
+            "acc": 25,
+            "nme": "APP9",
+            "dsc": "I",
+            "val": 65513
+          },
+          {
+            "acc": 25,
+            "nme": "APP10",
+            "dsc": "I",
+            "val": 65514
+          },
+          {
+            "acc": 25,
+            "nme": "APP11",
+            "dsc": "I",
+            "val": 65515
+          },
+          {
+            "acc": 25,
+            "nme": "APP12",
+            "dsc": "I",
+            "val": 65516
+          },
+          {
+            "acc": 25,
+            "nme": "APP13",
+            "dsc": "I",
+            "val": 65517
+          },
+          {
+            "acc": 25,
+            "nme": "APP14",
+            "dsc": "I",
+            "val": 65518
+          },
+          {
+            "acc": 25,
+            "nme": "APP15",
+            "dsc": "I",
+            "val": 65519
+          },
+          {
+            "acc": 25,
+            "nme": "SOF0",
+            "dsc": "I",
+            "val": 65472
+          },
+          {
+            "acc": 25,
+            "nme": "SOF1",
+            "dsc": "I",
+            "val": 65473
+          },
+          {
+            "acc": 25,
+            "nme": "SOF2",
+            "dsc": "I",
+            "val": 65474
+          },
+          {
+            "acc": 25,
+            "nme": "SOF3",
+            "dsc": "I",
+            "val": 65475
+          },
+          {
+            "acc": 25,
+            "nme": "SOF5",
+            "dsc": "I",
+            "val": 65477
+          },
+          {
+            "acc": 25,
+            "nme": "SOF6",
+            "dsc": "I",
+            "val": 65478
+          },
+          {
+            "acc": 25,
+            "nme": "SOF7",
+            "dsc": "I",
+            "val": 65479
+          },
+          {
+            "acc": 25,
+            "nme": "SOF9",
+            "dsc": "I",
+            "val": 65481
+          },
+          {
+            "acc": 25,
+            "nme": "SOF10",
+            "dsc": "I",
+            "val": 65482
+          },
+          {
+            "acc": 25,
+            "nme": "SOF11",
+            "dsc": "I",
+            "val": 65483
+          },
+          {
+            "acc": 25,
+            "nme": "SOF13",
+            "dsc": "I",
+            "val": 65485
+          },
+          {
+            "acc": 25,
+            "nme": "SOF14",
+            "dsc": "I",
+            "val": 65486
+          },
+          {
+            "acc": 25,
+            "nme": "SOF15",
+            "dsc": "I",
+            "val": 65487
+          },
+          {
+            "acc": 25,
+            "nme": "SOF55",
+            "dsc": "I",
+            "val": 65527
+          },
+          {
+            "acc": 25,
+            "nme": "LSE",
+            "dsc": "I",
+            "val": 65528
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllAppSegmentsMap.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllAppSegmentsMap",
+        "super": "java/util/HashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/List;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/Rational.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/Rational",
+        "super": "java/lang/Number",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(J)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(JJ)V"
+          },
+          {
+            "nme": "gcd",
+            "acc": 10,
+            "dsc": "(JJ)J"
+          },
+          {
+            "nme": "lcm",
+            "acc": 10,
+            "dsc": "(JJ)J"
+          },
+          {
+            "nme": "numerator",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "denominator",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "intValue",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "longValue",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "floatValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "doubleValue",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)I"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "times",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "plus",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "negate",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "minus",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "reciprocal",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "divides",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;)Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "ZERO",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "acc": 24,
+            "nme": "NaN",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "acc": 18,
+            "nme": "numerator",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "denominator",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/IFD.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/IFD",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/psd/PSDEntry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/psd/PSDEntry",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(ILjava/lang/String;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "getNativeIdentifier",
+            "acc": 4,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getPSDClass",
+            "acc": 2,
+            "dsc": "()Ljava/lang/Class;",
+            "sig": "()Ljava/lang/Class<*>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/Half.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/Half",
+        "super": "java/lang/Number",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(S)V"
+          },
+          {
+            "nme": "intValue",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "longValue",
+            "acc": 1,
+            "dsc": "()J"
+          },
+          {
+            "nme": "floatValue",
+            "acc": 1,
+            "dsc": "()F"
+          },
+          {
+            "nme": "doubleValue",
+            "acc": 1,
+            "dsc": "()D"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/Half;)I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "valueOf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/metadata/tiff/Half;",
+            "exs": [
+              "java/lang/NumberFormatException"
+            ]
+          },
+          {
+            "nme": "parseHalf",
+            "acc": 9,
+            "dsc": "(Ljava/lang/String;)S",
+            "exs": [
+              "java/lang/NumberFormatException"
+            ]
+          },
+          {
+            "nme": "shortBitsToFloat",
+            "acc": 9,
+            "dsc": "(S)F"
+          },
+          {
+            "nme": "floatToShortBits",
+            "acc": 9,
+            "dsc": "(F)S"
+          },
+          {
+            "nme": "floatTo16Bits",
+            "acc": 10,
+            "dsc": "(F)I"
+          },
+          {
+            "nme": "readResolve",
+            "acc": 2,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "compareTo",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SIZE",
+            "dsc": "I",
+            "val": 16
+          },
+          {
+            "acc": 18,
+            "nme": "shortBits",
+            "dsc": "S"
+          },
+          {
+            "acc": 146,
+            "nme": "floatValue",
+            "dsc": "F"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFDirectory.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFDirectory",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Directory;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/exif/EXIFReader.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "com/twelvemonkeys/imageio/metadata/exif/EXIFReader",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFReader;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$1.class": {
+        "ver": 52,
+        "acc": 4128,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$1",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFWriter$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFWriter$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFWriter;)V"
+          },
+          {
+            "nme": "compare",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;Lcom/twelvemonkeys/imageio/metadata/Entry;)I"
+          },
+          {
+            "nme": "compare",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;Ljava/lang/Object;)I"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFWriter;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 0,
+            "nme": "directoryIterator",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Lcom/twelvemonkeys/imageio/metadata/Directory;>;"
+          },
+          {
+            "acc": 0,
+            "nme": "current",
+            "dsc": "Ljava/util/Iterator;",
+            "sig": "Ljava/util/Iterator<Lcom/twelvemonkeys/imageio/metadata/Entry;>;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFF.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFF",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "BYTE_ORDER_MARK_BIG_ENDIAN",
+            "dsc": "S",
+            "val": 19789
+          },
+          {
+            "acc": 25,
+            "nme": "BYTE_ORDER_MARK_LITTLE_ENDIAN",
+            "dsc": "S",
+            "val": 18761
+          },
+          {
+            "acc": 25,
+            "nme": "TIFF_MAGIC",
+            "dsc": "I",
+            "val": 42
+          },
+          {
+            "acc": 25,
+            "nme": "BIGTIFF_MAGIC",
+            "dsc": "I",
+            "val": 43
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_BYTE",
+            "dsc": "S",
+            "val": 1
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_ASCII",
+            "dsc": "S",
+            "val": 2
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SHORT",
+            "dsc": "S",
+            "val": 3
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_LONG",
+            "dsc": "S",
+            "val": 4
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_RATIONAL",
+            "dsc": "S",
+            "val": 5
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SBYTE",
+            "dsc": "S",
+            "val": 6
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_UNDEFINED",
+            "dsc": "S",
+            "val": 7
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SSHORT",
+            "dsc": "S",
+            "val": 8
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SLONG",
+            "dsc": "S",
+            "val": 9
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SRATIONAL",
+            "dsc": "S",
+            "val": 10
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_FLOAT",
+            "dsc": "S",
+            "val": 11
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_DOUBLE",
+            "dsc": "S",
+            "val": 12
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_IFD",
+            "dsc": "S",
+            "val": 13
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_LONG8",
+            "dsc": "S",
+            "val": 16
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_SLONG8",
+            "dsc": "S",
+            "val": 17
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_IFD8",
+            "dsc": "S",
+            "val": 18
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_NAMES",
+            "dsc": "[Ljava/lang/String;"
+          },
+          {
+            "acc": 25,
+            "nme": "TYPE_LENGTHS",
+            "dsc": "[I"
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXIF_IFD",
+            "dsc": "I",
+            "val": 34665
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_GPS_IFD",
+            "dsc": "I",
+            "val": 34853
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_INTEROP_IFD",
+            "dsc": "I",
+            "val": 40965
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_WIDTH",
+            "dsc": "I",
+            "val": 256
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_HEIGHT",
+            "dsc": "I",
+            "val": 257
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_BITS_PER_SAMPLE",
+            "dsc": "I",
+            "val": 258
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COMPRESSION",
+            "dsc": "I",
+            "val": 259
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PHOTOMETRIC_INTERPRETATION",
+            "dsc": "I",
+            "val": 262
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FILL_ORDER",
+            "dsc": "I",
+            "val": 266
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ORIENTATION",
+            "dsc": "I",
+            "val": 274
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SAMPLES_PER_PIXEL",
+            "dsc": "I",
+            "val": 277
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PLANAR_CONFIGURATION",
+            "dsc": "I",
+            "val": 284
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SAMPLE_FORMAT",
+            "dsc": "I",
+            "val": 339
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_YCBCR_SUB_SAMPLING",
+            "dsc": "I",
+            "val": 530
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_YCBCR_POSITIONING",
+            "dsc": "I",
+            "val": 531
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_X_RESOLUTION",
+            "dsc": "I",
+            "val": 282
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_Y_RESOLUTION",
+            "dsc": "I",
+            "val": 283
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_X_POSITION",
+            "dsc": "I",
+            "val": 286
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_Y_POSITION",
+            "dsc": "I",
+            "val": 287
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RESOLUTION_UNIT",
+            "dsc": "I",
+            "val": 296
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_STRIP_OFFSETS",
+            "dsc": "I",
+            "val": 273
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ROWS_PER_STRIP",
+            "dsc": "I",
+            "val": 278
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_STRIP_BYTE_COUNTS",
+            "dsc": "I",
+            "val": 279
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FREE_OFFSETS",
+            "dsc": "I",
+            "val": 288
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FREE_BYTE_COUNTS",
+            "dsc": "I",
+            "val": 289
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_JPEG_INTERCHANGE_FORMAT",
+            "dsc": "I",
+            "val": 513
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_JPEG_INTERCHANGE_FORMAT_LENGTH",
+            "dsc": "I",
+            "val": 514
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_GROUP3OPTIONS",
+            "dsc": "I",
+            "val": 292
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_GROUP4OPTIONS",
+            "dsc": "I",
+            "val": 293
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TRANSFER_FUNCTION",
+            "dsc": "I",
+            "val": 301
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PREDICTOR",
+            "dsc": "I",
+            "val": 317
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_WHITE_POINT",
+            "dsc": "I",
+            "val": 318
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PRIMARY_CHROMATICITIES",
+            "dsc": "I",
+            "val": 319
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COLOR_MAP",
+            "dsc": "I",
+            "val": 320
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_INK_SET",
+            "dsc": "I",
+            "val": 332
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_INK_NAMES",
+            "dsc": "I",
+            "val": 333
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_NUMBER_OF_INKS",
+            "dsc": "I",
+            "val": 334
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXTRA_SAMPLES",
+            "dsc": "I",
+            "val": 338
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TRANSFER_RANGE",
+            "dsc": "I",
+            "val": 342
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_YCBCR_COEFFICIENTS",
+            "dsc": "I",
+            "val": 529
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_REFERENCE_BLACK_WHITE",
+            "dsc": "I",
+            "val": 532
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DATE_TIME",
+            "dsc": "I",
+            "val": 306
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DOCUMENT_NAME",
+            "dsc": "I",
+            "val": 269
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_DESCRIPTION",
+            "dsc": "I",
+            "val": 270
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MAKE",
+            "dsc": "I",
+            "val": 271
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODEL",
+            "dsc": "I",
+            "val": 272
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PAGE_NAME",
+            "dsc": "I",
+            "val": 285
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PAGE_NUMBER",
+            "dsc": "I",
+            "val": 297
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SOFTWARE",
+            "dsc": "I",
+            "val": 305
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ARTIST",
+            "dsc": "I",
+            "val": 315
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_HOST_COMPUTER",
+            "dsc": "I",
+            "val": 316
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COPYRIGHT",
+            "dsc": "I",
+            "val": 33432
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBFILE_TYPE",
+            "dsc": "I",
+            "val": 254
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OLD_SUBFILE_TYPE",
+            "dsc": "I",
+            "val": 255
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUB_IFD",
+            "dsc": "I",
+            "val": 330
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_XMP",
+            "dsc": "I",
+            "val": 700
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IPTC",
+            "dsc": "I",
+            "val": 33723
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PHOTOSHOP",
+            "dsc": "I",
+            "val": 34377
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PHOTOSHOP_IMAGE_SOURCE_DATA",
+            "dsc": "I",
+            "val": 37724
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PHOTOSHOP_ANNOTATIONS",
+            "dsc": "I",
+            "val": 50255
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ICC_PROFILE",
+            "dsc": "I",
+            "val": 34675
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_BLC",
+            "dsc": "I",
+            "val": 34718
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_VECTOR",
+            "dsc": "I",
+            "val": 34719
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_PTC",
+            "dsc": "I",
+            "val": 34720
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_PLAIN_TEXT",
+            "dsc": "I",
+            "val": 37679
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_OLE_PROPERTY_SET",
+            "dsc": "I",
+            "val": 37680
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MODI_TEXT_POS_INFO",
+            "dsc": "I",
+            "val": 37681
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TILE_WIDTH",
+            "dsc": "I",
+            "val": 322
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TILE_HEIGTH",
+            "dsc": "I",
+            "val": 323
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TILE_OFFSETS",
+            "dsc": "I",
+            "val": 324
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_TILE_BYTE_COUNTS",
+            "dsc": "I",
+            "val": 325
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_JPEG_TABLES",
+            "dsc": "I",
+            "val": 347
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OLD_JPEG_PROC",
+            "dsc": "I",
+            "val": 512
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OLD_JPEG_Q_TABLES",
+            "dsc": "I",
+            "val": 519
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OLD_JPEG_DC_TABLES",
+            "dsc": "I",
+            "val": 520
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OLD_JPEG_AC_TABLES",
+            "dsc": "I",
+            "val": 521
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGQuality.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGQuality",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "getJPEGQuality",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;)F",
+            "sig": "(Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;>;)F",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getJPEGQuality",
+            "acc": 9,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)F",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getJPEGQuality",
+            "acc": 10,
+            "dsc": "([[I)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getQTables",
+            "acc": 9,
+            "dsc": "(Ljava/util/List;)[Ljavax/imageio/plugins/jpeg/JPEGQTable;",
+            "sig": "(Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;>;)[Ljavax/imageio/plugins/jpeg/JPEGQTable;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getQuantizationTables",
+            "acc": 10,
+            "dsc": "(Ljava/util/List;)[[I",
+            "sig": "(Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegment;>;)[[I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "NUM_QUANT_TABLES",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 24,
+            "nme": "DCT_SIZE_2",
+            "dsc": "I",
+            "val": 64
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTCEntry.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTCEntry",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(ILjava/lang/Object;)V"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getNativeIdentifier",
+            "acc": 4,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$1$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$1$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader$1;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Lorg/w3c/dom/Node;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "index",
+            "dsc": "I"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader$1;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/CompoundDirectory.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/CompoundDirectory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getDirectory",
+            "acc": 1025,
+            "dsc": "(I)Lcom/twelvemonkeys/imageio/metadata/Directory;"
+          },
+          {
+            "nme": "directoryCount",
+            "acc": 1025,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader$1.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader$1",
+        "super": "java/util/HashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "()V"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/Collection;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/Collection<Ljava/lang/Integer;>;"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFWriter.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFWriter",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(I)V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeTIFFHeader",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeIFD",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;Ljavax/imageio/stream/ImageOutputStream;)J",
+            "sig": "(Ljava/util/Collection<Lcom/twelvemonkeys/imageio/metadata/Entry;>;Ljavax/imageio/stream/ImageOutputStream;)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeIFD",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;Ljavax/imageio/stream/ImageOutputStream;Z)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeDirectoryCount",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeValueCount",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;I)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "computeIFDSize",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)J",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)J"
+          },
+          {
+            "nme": "computeDataSize",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;)J"
+          },
+          {
+            "nme": "ensureOrderedDirectory",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;)Lcom/twelvemonkeys/imageio/metadata/Directory;"
+          },
+          {
+            "nme": "isSorted",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;)Z"
+          },
+          {
+            "nme": "writeValue",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;JLjavax/imageio/stream/ImageOutputStream;)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getCount",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)I"
+          },
+          {
+            "nme": "computeStringLength",
+            "acc": 130,
+            "dsc": "([Ljava/lang/String;)I"
+          },
+          {
+            "nme": "writeValueInline",
+            "acc": 2,
+            "dsc": "(Ljava/lang/Object;SLjavax/imageio/stream/ImageOutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeStrings",
+            "acc": 130,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;[Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeValueAt",
+            "acc": 2,
+            "dsc": "(JLjava/lang/Object;SLjavax/imageio/stream/ImageOutputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "writeOffset",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageOutputStream;J)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "offsetSize",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "assertIntegerOffset",
+            "acc": 2,
+            "dsc": "(J)I",
+            "exs": [
+              "javax/imageio/IIOException"
+            ]
+          },
+          {
+            "nme": "assertLongOffset",
+            "acc": 2,
+            "dsc": "(J)J",
+            "exs": [
+              "javax/imageio/IIOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "WORD_LENGTH",
+            "dsc": "I",
+            "val": 2
+          },
+          {
+            "acc": 26,
+            "nme": "LONGWORD_LENGTH",
+            "dsc": "I",
+            "val": 4
+          },
+          {
+            "acc": 18,
+            "nme": "longOffsets",
+            "dsc": "Z"
+          },
+          {
+            "acc": 18,
+            "nme": "offsetSize",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "entryLength",
+            "dsc": "J"
+          },
+          {
+            "acc": 18,
+            "nme": "directoryCountLength",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/AbstractDirectory.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          },
+          {
+            "nme": "getEntryById",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "getEntryByFieldName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Lcom/twelvemonkeys/imageio/metadata/Entry;>;"
+          },
+          {
+            "nme": "assertMutable",
+            "acc": 20,
+            "dsc": "()V"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isReadOnly",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "entries",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/Entry;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "unmodifiable",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/Entry;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/Unknown.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/Unknown",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(SIJ)V"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "S"
+          },
+          {
+            "acc": 18,
+            "nme": "count",
+            "dsc": "I"
+          },
+          {
+            "acc": 18,
+            "nme": "pos",
+            "dsc": "J"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/MetadataReader.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1025,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPReader",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createDocumentBuilderFactory",
+            "acc": 2,
+            "dsc": "()Ljavax/xml/parsers/DocumentBuilderFactory;",
+            "exs": [
+              "javax/xml/parsers/ParserConfigurationException"
+            ]
+          },
+          {
+            "nme": "getToolkit",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Document;)Ljava/lang/String;"
+          },
+          {
+            "nme": "parseDirectories",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Node;Lorg/w3c/dom/NodeList;Ljava/lang/String;)Lcom/twelvemonkeys/imageio/metadata/xmp/XMPDirectory;"
+          },
+          {
+            "nme": "isResourceType",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Node;)Z"
+          },
+          {
+            "nme": "parseAsResource",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Node;)Lcom/twelvemonkeys/imageio/metadata/xmp/RDFDescription;"
+          },
+          {
+            "nme": "parseAttributesForKnownElements",
+            "acc": 2,
+            "dsc": "(Ljava/util/Map;Lorg/w3c/dom/Node;)V",
+            "sig": "(Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/Entry;>;>;Lorg/w3c/dom/Node;)V"
+          },
+          {
+            "nme": "getChildTextValue",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/Node;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "asIterable",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/NamedNodeMap;)Ljava/lang/Iterable;",
+            "sig": "(Lorg/w3c/dom/NamedNodeMap;)Ljava/lang/Iterable<+Lorg/w3c/dom/Node;>;"
+          },
+          {
+            "nme": "asIterable",
+            "acc": 2,
+            "dsc": "(Lorg/w3c/dom/NodeList;)Ljava/lang/Iterable;",
+            "sig": "(Lorg/w3c/dom/NodeList;)Ljava/lang/Iterable<+Lorg/w3c/dom/Node;>;"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/MetadataWriter.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/metadata/MetadataWriter",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 1025,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/psd/PSDReader$PSDResource.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/metadata/psd/PSDReader$PSDResource",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "readPascalString",
+            "acc": 8,
+            "dsc": "(Ljava/io/DataInput;)Ljava/lang/String;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(SLjavax/imageio/stream/ImageInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readData",
+            "acc": 4,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "id",
+            "acc": 17,
+            "dsc": "()I"
+          },
+          {
+            "nme": "data",
+            "acc": 17,
+            "dsc": "()[B"
+          },
+          {
+            "nme": "name",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toStringBuilder",
+            "acc": 4,
+            "dsc": "()Ljava/lang/StringBuilder;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 16,
+            "nme": "id",
+            "dsc": "S"
+          },
+          {
+            "acc": 16,
+            "nme": "name",
+            "dsc": "Ljava/lang/String;"
+          },
+          {
+            "acc": 16,
+            "nme": "size",
+            "dsc": "J"
+          },
+          {
+            "acc": 0,
+            "nme": "data",
+            "dsc": "[B"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/psd/PSDDirectory.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/psd/PSDDirectory",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/Entry.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/Entry",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getIdentifier",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getValue",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/Object;"
+          },
+          {
+            "nme": "getValueAsString",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTypeName",
+            "acc": 1025,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "valueCount",
+            "acc": 1025,
+            "dsc": "()I"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/psd/PSD.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/psd/PSD",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "SIGNATURE_8BPS",
+            "dsc": "I",
+            "val": 943870035
+          },
+          {
+            "acc": 25,
+            "nme": "RESOURCE_TYPE",
+            "dsc": "I",
+            "val": 943868237
+          },
+          {
+            "acc": 25,
+            "nme": "RESOURCE_TYPE_IMAGEREADY",
+            "dsc": "I",
+            "val": 1298486113
+          },
+          {
+            "acc": 25,
+            "nme": "RESOURCE_TYPE_PHOTODELUXE",
+            "dsc": "I",
+            "val": 1346917716
+          },
+          {
+            "acc": 25,
+            "nme": "RESOURCE_TYPE_LIGHTROOM",
+            "dsc": "I",
+            "val": 1097287783
+          },
+          {
+            "acc": 25,
+            "nme": "RESOURCE_TYPE_DCSR",
+            "dsc": "I",
+            "val": 1145262930
+          },
+          {
+            "acc": 25,
+            "nme": "RES_IPTC_NAA",
+            "dsc": "I",
+            "val": 1028
+          },
+          {
+            "acc": 25,
+            "nme": "RES_ICC_PROFILE",
+            "dsc": "I",
+            "val": 1039
+          },
+          {
+            "acc": 25,
+            "nme": "RES_CLIPPING_PATH",
+            "dsc": "I",
+            "val": 2000
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/Directory.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/Directory",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "getEntryById",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "getEntryByFieldName",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "add",
+            "acc": 1025,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1025,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "size",
+            "acc": 1025,
+            "dsc": "()I"
+          },
+          {
+            "nme": "isReadOnly",
+            "acc": 1025,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/exif/EXIF.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/exif/EXIF",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "TAG_EXPOSURE_TIME",
+            "dsc": "I",
+            "val": 33434
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_F_NUMBER",
+            "dsc": "I",
+            "val": 33437
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPOSURE_PROGRAM",
+            "dsc": "I",
+            "val": 34850
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SPECTRAL_SENSITIVITY",
+            "dsc": "I",
+            "val": 34852
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_ISO_SPEED_RATINGS",
+            "dsc": "I",
+            "val": 34855
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_OECF",
+            "dsc": "I",
+            "val": 34856
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXIF_VERSION",
+            "dsc": "I",
+            "val": 36864
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DATE_TIME_ORIGINAL",
+            "dsc": "I",
+            "val": 36867
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DATE_TIME_DIGITIZED",
+            "dsc": "I",
+            "val": 36868
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COMPONENTS_CONFIGURATION",
+            "dsc": "I",
+            "val": 37121
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COMPRESSED_BITS_PER_PIXEL",
+            "dsc": "I",
+            "val": 37122
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SHUTTER_SPEED_VALUE",
+            "dsc": "I",
+            "val": 37377
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_APERTURE_VALUE",
+            "dsc": "I",
+            "val": 37378
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_BRIGHTNESS_VALUE",
+            "dsc": "I",
+            "val": 37379
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPOSURE_BIAS_VALUE",
+            "dsc": "I",
+            "val": 37380
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MAX_APERTURE_VALUE",
+            "dsc": "I",
+            "val": 37381
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBJECT_DISTANCE",
+            "dsc": "I",
+            "val": 37382
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_METERING_MODE",
+            "dsc": "I",
+            "val": 37383
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_LIGHT_SOURCE",
+            "dsc": "I",
+            "val": 37384
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FLASH",
+            "dsc": "I",
+            "val": 37385
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FOCAL_LENGTH",
+            "dsc": "I",
+            "val": 37386
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_NUMBER",
+            "dsc": "I",
+            "val": 37393
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBJECT_AREA",
+            "dsc": "I",
+            "val": 37396
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_MAKER_NOTE",
+            "dsc": "I",
+            "val": 37500
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_USER_COMMENT",
+            "dsc": "I",
+            "val": 37510
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBSEC_TIME",
+            "dsc": "I",
+            "val": 37520
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBSEC_TIME_ORIGINAL",
+            "dsc": "I",
+            "val": 37521
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBSEC_TIME_DIGITIZED",
+            "dsc": "I",
+            "val": 37522
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FLASHPIX_VERSION",
+            "dsc": "I",
+            "val": 40960
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_COLOR_SPACE",
+            "dsc": "I",
+            "val": 40961
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PIXEL_X_DIMENSION",
+            "dsc": "I",
+            "val": 40962
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_PIXEL_Y_DIMENSION",
+            "dsc": "I",
+            "val": 40963
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_RELATED_SOUND_FILE",
+            "dsc": "I",
+            "val": 40964
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FLASH_ENERGY",
+            "dsc": "I",
+            "val": 41483
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SPATIAL_FREQUENCY_RESPONSE",
+            "dsc": "I",
+            "val": 41484
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FOCAL_PLANE_X_RESOLUTION",
+            "dsc": "I",
+            "val": 41486
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FOCAL_PLANE_Y_RESOLUTION",
+            "dsc": "I",
+            "val": 41487
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FOCAL_PLANE_RESOLUTION_UNIT",
+            "dsc": "I",
+            "val": 41488
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBJECT_LOCATION",
+            "dsc": "I",
+            "val": 41492
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPOSURE_INDEX",
+            "dsc": "I",
+            "val": 41493
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SENSING_METHOD",
+            "dsc": "I",
+            "val": 41495
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FILE_SOURCE",
+            "dsc": "I",
+            "val": 41728
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SCENE_TYPE",
+            "dsc": "I",
+            "val": 41729
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CFA_PATTERN",
+            "dsc": "I",
+            "val": 41730
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CUSTOM_RENDERED",
+            "dsc": "I",
+            "val": 41985
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_EXPOSURE_MODE",
+            "dsc": "I",
+            "val": 41986
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_WHITE_BALANCE",
+            "dsc": "I",
+            "val": 41987
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DIGITAL_ZOOM_RATIO",
+            "dsc": "I",
+            "val": 41988
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_FOCAL_LENGTH_IN_35_MM_FILM",
+            "dsc": "I",
+            "val": 41989
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SCENE_CAPTURE_TYPE",
+            "dsc": "I",
+            "val": 41990
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_GAIN_CONTROL",
+            "dsc": "I",
+            "val": 41991
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_CONTRAST",
+            "dsc": "I",
+            "val": 41992
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SATURATION",
+            "dsc": "I",
+            "val": 41993
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SHARPNESS",
+            "dsc": "I",
+            "val": 41994
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_DEVICE_SETTING_DESCRIPTION",
+            "dsc": "I",
+            "val": 41995
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_SUBJECT_DISTANCE_RANGE",
+            "dsc": "I",
+            "val": 41996
+          },
+          {
+            "acc": 25,
+            "nme": "TAG_IMAGE_UNIQUE_ID",
+            "dsc": "I",
+            "val": 42016
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/psd/PSDReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/psd/PSDReader",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory.class": {
+        "ver": 52,
+        "acc": 1057,
+        "nme": "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 4,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Directory;>;)V"
+          },
+          {
+            "nme": "getDirectory",
+            "acc": 1,
+            "dsc": "(I)Lcom/twelvemonkeys/imageio/metadata/Directory;"
+          },
+          {
+            "nme": "directoryCount",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "getEntryById",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "getEntryByFieldName",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;)Lcom/twelvemonkeys/imageio/metadata/Entry;"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Lcom/twelvemonkeys/imageio/metadata/Entry;>;"
+          },
+          {
+            "nme": "add",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)Z"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "isReadOnly",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "size",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "hashCode",
+            "acc": 1,
+            "dsc": "()I"
+          },
+          {
+            "nme": "equals",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "access$000",
+            "acc": 4104,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory;)Ljava/util/List;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "directories",
+            "dsc": "Ljava/util/List;",
+            "sig": "Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/Directory;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPEntry.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPEntry",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Object;)V"
+          },
+          {
+            "nme": "getNativeIdentifier",
+            "acc": 4,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTypeName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "fieldName",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader;Lorg/w3c/dom/NamedNodeMap;)V"
+          },
+          {
+            "nme": "iterator",
+            "acc": 1,
+            "dsc": "()Ljava/util/Iterator;",
+            "sig": "()Ljava/util/Iterator<Lorg/w3c/dom/Node;>;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 4112,
+            "nme": "val$pNodeList",
+            "dsc": "Lorg/w3c/dom/NamedNodeMap;"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$0",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPNamespaceMapping.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPNamespaceMapping",
+        "super": "java/util/HashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Z)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataReader",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "createSubIFDMap",
+            "acc": 10,
+            "dsc": "()Ljava/util/Map;",
+            "sig": "()Ljava/util/Map<Ljava/lang/Integer;Ljava/util/Collection<Ljava/lang/Integer;>;>;"
+          },
+          {
+            "nme": "read",
+            "acc": 1,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/Directory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readLinkedIFDs",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFDirectory;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readOffset",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readIFD",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;JLjava/util/Collection;)Lcom/twelvemonkeys/imageio/metadata/tiff/IFD;",
+            "sig": "(Ljavax/imageio/stream/ImageInputStream;JLjava/util/Collection<Ljava/lang/Integer;>;)Lcom/twelvemonkeys/imageio/metadata/tiff/IFD;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readEntryCount",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)J",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readSubIFDs",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/List;Ljava/util/Collection;)V",
+            "sig": "(Ljavax/imageio/stream/ImageInputStream;Ljava/util/List<Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFEntry;>;Ljava/util/Collection<Ljava/lang/Integer;>;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "getPointerOffsets",
+            "acc": 2,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)[J",
+            "exs": [
+              "javax/imageio/IIOException"
+            ]
+          },
+          {
+            "nme": "readEntry",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFEntry;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isValidType",
+            "acc": 2,
+            "dsc": "(S)Z"
+          },
+          {
+            "nme": "readValueCount",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "assertIntCount",
+            "acc": 2,
+            "dsc": "(J)I",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isValidOffset",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;J)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "isValidLengthAtOffset",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;JJ)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readValueAt",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;JJSI)Ljava/lang/Object;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readValueInLine",
+            "acc": 2,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;SI)Ljava/lang/Object;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "readValue",
+            "acc": 10,
+            "dsc": "(Ljavax/imageio/stream/ImageInputStream;SIZ)Ljava/lang/Object;",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "createSafeRational",
+            "acc": 10,
+            "dsc": "(JJ)Lcom/twelvemonkeys/imageio/metadata/tiff/Rational;"
+          },
+          {
+            "nme": "main",
+            "acc": 9,
+            "dsc": "([Ljava/lang/String;)V",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 24,
+            "nme": "DEBUG",
+            "dsc": "Z"
+          },
+          {
+            "acc": 26,
+            "nme": "VALID_TOP_LEVEL_IFDS",
+            "dsc": "Ljava/util/Collection;",
+            "sig": "Ljava/util/Collection<Ljava/lang/Integer;>;"
+          },
+          {
+            "acc": 26,
+            "nme": "VALID_SUB_IFDS",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/Integer;Ljava/util/Collection<Ljava/lang/Integer;>;>;"
+          },
+          {
+            "acc": 18,
+            "nme": "parsedIFDs",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/Long;>;"
+          },
+          {
+            "acc": 2,
+            "nme": "inputLength",
+            "dsc": "J"
+          },
+          {
+            "acc": 2,
+            "nme": "longOffsets",
+            "dsc": "Z"
+          },
+          {
+            "acc": 2,
+            "nme": "offsetSize",
+            "dsc": "I"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/exif/EXIFWriter.class": {
+        "ver": 52,
+        "acc": 131121,
+        "nme": "com/twelvemonkeys/imageio/metadata/exif/EXIFWriter",
+        "super": "com/twelvemonkeys/imageio/metadata/MetadataWriter",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Directory;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          },
+          {
+            "nme": "write",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "sig": "(Ljava/util/Collection<Lcom/twelvemonkeys/imageio/metadata/Entry;>;Ljavax/imageio/stream/ImageOutputStream;)Z",
+            "exs": [
+              "java/io/IOException"
+            ]
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "delegate",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/tiff/TIFFWriter;"
+          }
+        ],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/RDFDescription.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/RDFDescription",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/lang/String;Ljava/util/Collection;)V",
+            "sig": "(Ljava/lang/String;Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Entry;>;)V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "namespace",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader$HexDump.class": {
+        "ver": 52,
+        "acc": 33,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFReader$HexDump",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "dump",
+            "acc": 9,
+            "dsc": "([B)Ljava/lang/String;"
+          },
+          {
+            "nme": "dump",
+            "acc": 9,
+            "dsc": "(J[BII)Ljava/lang/String;"
+          },
+          {
+            "nme": "toAsciiString",
+            "acc": 10,
+            "dsc": "([BII)Ljava/lang/String;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 26,
+            "nme": "WIDTH",
+            "dsc": "I",
+            "val": 32
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMP.class": {
+        "ver": 52,
+        "acc": 1537,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMP",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<clinit>",
+            "acc": 8,
+            "dsc": "()V"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 25,
+            "nme": "NS_RDF",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_DC",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://purl.org/dc/elements/1.1/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_EXIF",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/exif/1.0/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_PHOTOSHOP",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/photoshop/1.0/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_ST_REF",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/xap/1.0/sType/ResourceRef#"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_TIFF",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/tiff/1.0/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_XAP",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/xap/1.0/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_XAP_MM",
+            "dsc": "Ljava/lang/String;",
+            "val": "http://ns.adobe.com/xap/1.0/mm/"
+          },
+          {
+            "acc": 25,
+            "nme": "NS_X",
+            "dsc": "Ljava/lang/String;",
+            "val": "adobe:ns:meta/"
+          },
+          {
+            "acc": 25,
+            "nme": "DEFAULT_NS_MAPPING",
+            "dsc": "Ljava/util/Map;",
+            "sig": "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+          },
+          {
+            "acc": 25,
+            "nme": "ELEMENTS",
+            "dsc": "Ljava/util/Set;",
+            "sig": "Ljava/util/Set<Ljava/lang/String;>;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllIdsList.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllIdsList",
+        "super": "java/util/ArrayList",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "contains",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPDirectory.class": {
+        "ver": 52,
+        "acc": 48,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPDirectory",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractCompoundDirectory",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(Ljava/util/Collection;Ljava/lang/String;)V",
+            "sig": "(Ljava/util/Collection<+Lcom/twelvemonkeys/imageio/metadata/Directory;>;Ljava/lang/String;)V"
+          },
+          {
+            "nme": "getWriterToolkit",
+            "acc": 0,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "isReadOnly",
+            "acc": 1,
+            "dsc": "()Z"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "toolkit",
+            "dsc": "Ljava/lang/String;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllSegmentsMap.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$AllSegmentsMap",
+        "super": "java/util/HashMap",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 2,
+            "dsc": "()V"
+          },
+          {
+            "nme": "toString",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "get",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Ljava/util/List;",
+            "sig": "(Ljava/lang/Object;)Ljava/util/List<Ljava/lang/String;>;"
+          },
+          {
+            "nme": "containsKey",
+            "acc": 1,
+            "dsc": "(Ljava/lang/Object;)Z"
+          },
+          {
+            "nme": "get",
+            "acc": 4161,
+            "dsc": "(Ljava/lang/Object;)Ljava/lang/Object;"
+          },
+          {
+            "nme": "<init>",
+            "acc": 4096,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/jpeg/JPEGSegmentUtil$1;)V"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/exif/TIFF.class": {
+        "ver": 52,
+        "acc": 132609,
+        "nme": "com/twelvemonkeys/imageio/metadata/exif/TIFF",
+        "super": "java/lang/Object",
+        "mthds": [],
+        "flds": [],
+        "vanns": [
+          {
+            "dsc": "Ljava/lang/Deprecated;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$2$1.class": {
+        "ver": 52,
+        "acc": 32,
+        "nme": "com/twelvemonkeys/imageio/metadata/xmp/XMPReader$2$1",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 0,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader$2;)V"
+          },
+          {
+            "nme": "hasNext",
+            "acc": 1,
+            "dsc": "()Z"
+          },
+          {
+            "nme": "next",
+            "acc": 1,
+            "dsc": "()Lorg/w3c/dom/Node;"
+          },
+          {
+            "nme": "remove",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "next",
+            "acc": 4161,
+            "dsc": "()Ljava/lang/Object;"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 2,
+            "nme": "index",
+            "dsc": "I"
+          },
+          {
+            "acc": 4112,
+            "nme": "this$1",
+            "dsc": "Lcom/twelvemonkeys/imageio/metadata/xmp/XMPReader$2;"
+          }
+        ]
+      },
+      "com/twelvemonkeys/imageio/metadata/iptc/IPTC$Tags.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/iptc/IPTC$Tags",
+        "super": "java/lang/Object",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "()V"
+          },
+          {
+            "nme": "isArray",
+            "acc": 8,
+            "dsc": "(S)Z"
+          }
+        ],
+        "flds": []
+      },
+      "com/twelvemonkeys/imageio/metadata/tiff/TIFFEntry.class": {
+        "ver": 52,
+        "acc": 49,
+        "nme": "com/twelvemonkeys/imageio/metadata/tiff/TIFFEntry",
+        "super": "com/twelvemonkeys/imageio/metadata/AbstractEntry",
+        "mthds": [
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(ILjava/lang/Object;)V"
+          },
+          {
+            "nme": "<init>",
+            "acc": 1,
+            "dsc": "(ISLjava/lang/Object;)V"
+          },
+          {
+            "nme": "getType",
+            "acc": 1,
+            "dsc": "()S"
+          },
+          {
+            "nme": "getFieldName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getTypeName",
+            "acc": 1,
+            "dsc": "()Ljava/lang/String;"
+          },
+          {
+            "nme": "getType",
+            "acc": 8,
+            "dsc": "(Lcom/twelvemonkeys/imageio/metadata/Entry;)S"
+          },
+          {
+            "nme": "guessType",
+            "acc": 10,
+            "dsc": "(Ljava/lang/Object;)S"
+          },
+          {
+            "nme": "getValueLength",
+            "acc": 8,
+            "dsc": "(IJ)J"
+          }
+        ],
+        "flds": [
+          {
+            "acc": 18,
+            "nme": "type",
+            "dsc": "S"
+          }
+        ]
+      }
+    }
+  }
+}
