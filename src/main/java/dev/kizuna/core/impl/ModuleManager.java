@@ -16,6 +16,7 @@ import dev.kizuna.mod.modules.impl.player.*;
 import dev.kizuna.mod.modules.impl.player.freelook.FreeLook;
 import dev.kizuna.mod.modules.impl.render.*;
 import dev.kizuna.mod.modules.settings.Setting;
+import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.settings.impl.BindSetting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
@@ -28,6 +29,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class ModuleManager implements Wrapper {
     public final java.util.ArrayList<Module> modules = new java.util.ArrayList<>();
     public static Mod lastLoadMod;
+    private boolean fontsInitialized = false;
 
     public ModuleManager() {
         if (Kawaii.nightly){
@@ -181,10 +183,13 @@ public class ModuleManager implements Wrapper {
         addModule(new BetterTab());
         addModule(new PlayerNotify());
         addModule(new PingFix());
+        addModule(new FontSetting());
         addModule(new BedrockPhase());
         addModule(new DeathTP());
         addModule(new SelfWeb());
         addModule(new EnderchestStealer());
+        addModule(new DynamicIsland());
+        addModule(new chamslastest());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
@@ -279,6 +284,16 @@ public class ModuleManager implements Wrapper {
     }
 
     public void render2D(DrawContext drawContext) {
+        // 确保在游戏完全初始化后初始化字体渲染器
+        if (!fontsInitialized && mc.getWindow() != null) {
+            try {
+                FontRenderers.createDefault(18.0f);
+                fontsInitialized = true;
+                System.out.println("[Kawaii] Font renderers initialized successfully");
+            } catch (Exception e) {
+                System.err.println("[Kawaii] Error initializing font renderers: " + e.getMessage());
+            }
+        }
         Arraylist.INSTANCE.counter = 20;
         modules.stream().filter(Module::isOn).forEach(module -> module.onRender2D(drawContext, MinecraftClient.getInstance().getTickDelta()));
     }

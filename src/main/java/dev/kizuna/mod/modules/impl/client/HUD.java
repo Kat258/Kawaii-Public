@@ -1,131 +1,130 @@
 package dev.kizuna.mod.modules.impl.client;
 
 import dev.kizuna.Kawaii;
-import dev.kizuna.api.utils.entity.InventoryUtil;
-import dev.kizuna.api.utils.math.MathUtil;
+import dev.kizuna.api.utils.render.RenderShaderUtil;
 import dev.kizuna.api.utils.render.TextUtil;
+import dev.kizuna.mod.gui.elements.NotificationHUD;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.Module;
-import dev.kizuna.mod.modules.impl.exploit.Blink;
-import dev.kizuna.mod.modules.impl.player.PacketMine;
-import dev.kizuna.mod.modules.impl.player.TimerModule;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
-import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
+import dev.kizuna.mod.modules.settings.impl.StringSetting;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.PlayerSkinDrawer;
 import net.minecraft.client.gui.screen.ChatScreen;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.PlayerListEntry;
-import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Items;
-import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.HashMap;
 import java.util.List;
-
-import static dev.kizuna.mod.modules.settings.impl.ColorSetting.timer;
+import java.util.Map;
 
 public class HUD extends Module {
     public static HUD INSTANCE;
+    public final BooleanSetting armor = add(new BooleanSetting("Armor", true));
+    public final BooleanSetting notification = add(new BooleanSetting("Notification", true));
+    public final SliderSetting notificationX = add(new SliderSetting("NotificationX", 5, 0, 1000, -1, notification::isOpen));
+    public final SliderSetting notificationY = add(new SliderSetting("NotificationY", 5, 0, 1000, -1, notification::isOpen));
+    public final SliderSetting notificationSpacing = add(new SliderSetting("NotificationSpacing", 25, 5, 100, -1, notification::isOpen));
+    public final BooleanSetting potionHud = add(new BooleanSetting("PotionHUD", true));
+    public final SliderSetting potionHudX = add(new SliderSetting("PotionHudX", 5, 0, 1000, -1, potionHud::isOpen));
+    public final SliderSetting potionHudY = add(new SliderSetting("PotionHudY", 5, 0, 1000, -1, potionHud::isOpen));
+    public final BooleanSetting itemsCountHud = add(new BooleanSetting("ItemsCountHud", true));
+    public final BooleanSetting up = add(new BooleanSetting("Up", false));
+    public final BooleanSetting customFont = add(new BooleanSetting("CustomFont", true));
+    public final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFACAFFD, true)));
+    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(0x6EACAFFD, true)).injectBoolean(true));
 
-    private final EnumSetting<HUD.Pages> page = add(new EnumSetting<>("Page", Pages.Module));
-    public final BooleanSetting up = add(new BooleanSetting("Up", false, () -> page.getValue() == Pages.Other));
-    //color
-    private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 5, 0.1, () -> page.getValue() == Pages.Color));
-    private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50, () -> page.getValue() == Pages.Color));
-    public final ColorSetting color = add(new ColorSetting("Color", 9740793, () -> page.getValue() == Pages.Color));
-    public final ColorSetting pulse = add(new ColorSetting("Pulse", new Color(79, 0, 0), () -> page.getValue() == Pages.Color).injectBoolean(false));
-    //module
-    public final BooleanSetting fps = add(new BooleanSetting("FPS", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting ping = add(new BooleanSetting("Ping", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting tps = add(new BooleanSetting("TPS", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting ip = add(new BooleanSetting("IP", false, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting time = add(new BooleanSetting("Time", false, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting speed = add(new BooleanSetting("Speed", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting brand = add(new BooleanSetting("Brand", false, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting potions = add(new BooleanSetting("Potions", true, () -> page.getValue() == Pages.Module));
-    public final BooleanSetting coords = add(new BooleanSetting("Coords", true, () -> page.getValue() == Pages.Module).setParent());
-    public final BooleanSetting fakeCoords = add(new BooleanSetting("FakeCoords", false, () -> page.getValue() == Pages.Module && coords.isOpen()));
+    public final BooleanSetting welcome = add(new BooleanSetting("Welcome", false).setParent());
+    public final BooleanSetting welcomeSync = add(new BooleanSetting("WelcomeSync", true,welcome::isOpen));
+    public final StringSetting welcomeText = add(new StringSetting("WelcomeText", "Hello, [username]! :^)",welcome::isOpen));
 
-    public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true, () -> page.getValue() == Pages.Module).setParent());
-    //public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% §f%version%-nightly §8 %time%", () -> page.getValue() == Pages.Module && waterMark.isOpen()));
-    public final SliderSetting waterMarkoffset = add(new SliderSetting("WaterMarkOffset", 1, 0, 100, -1, () -> page.getValue() == Pages.Module && waterMark.isOpen()));
+    public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true).setParent());
+    public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% %version%.",waterMark::isOpen));
+    public final SliderSetting offset = add(new SliderSetting("Offset", 5, 0, 100, -1,waterMark::isOpen));
 
-    private final BooleanSetting textRadar = add(new BooleanSetting("TextRadar", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting updatedelay = add(new SliderSetting("UpdateDelay", 5, 0, 1000, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
-    private final BooleanSetting textRadarhealth = add(new BooleanSetting("Health", false, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
-    private final BooleanSetting textRadarPos = add(new BooleanSetting("Distance", false, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
-    private final SliderSetting maxYaw = add(new SliderSetting("MaxYaw", 60,0,400, () -> page.getValue() == Pages.Module && textRadar.isOpen()));
+    public final BooleanSetting playerRadar = add(new BooleanSetting("PlayerRadar", true).setParent());
+    public final BooleanSetting playerIcons = add(new BooleanSetting("Icons", true, playerRadar::isOpen));
+    public final BooleanSetting playerRadarDistance = add(new BooleanSetting("Distance", true, playerRadar::isOpen));
+    public final BooleanSetting playerRadarPing = add(new BooleanSetting("Ping", true, playerRadar::isOpen));
+    public final BooleanSetting playerRadarHealth = add(new BooleanSetting("Health", true, playerRadar::isOpen));
 
-    public final BooleanSetting armor = add(new BooleanSetting("Armor", true, () -> page.getValue() == Pages.Module));
-
-    private final BooleanSetting pvphud = add(new BooleanSetting("PVPHud", false, () -> page.getValue() == Pages.Module).setParent());
-    private final BooleanSetting totemtext = add(new BooleanSetting("TotemText", false, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
-    private final BooleanSetting potiontext = add(new BooleanSetting("PotionText", false, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
-    private final SliderSetting pvpHudOffset = add(new SliderSetting("PVPOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && pvphud.isOpen()));
-
-    private final BooleanSetting mineprogress = add(new BooleanSetting("MineProgress", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting yOffset = add(new SliderSetting("MineProgressY", 1, -45, 450, () -> page.getValue() == Pages.Module && mineprogress.isOpen()));
-
-    private final BooleanSetting timerprogress = add(new BooleanSetting("TimerProgress", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting timery = add(new SliderSetting("TimerOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && timerprogress.isOpen()));
-
-    private final BooleanSetting blinkhud = add(new BooleanSetting("BlinkHud", false, () -> page.getValue() == Pages.Module).setParent());
-    private final SliderSetting blinky = add(new SliderSetting("BlinkOffset", 1, -45, 450, () -> page.getValue() == Pages.Module && blinkhud.isOpen()));
-
-    private Map<String, Integer> players = new HashMap<>();
-    int pulseProgress = 0;
+    public final BooleanSetting sync = add(new BooleanSetting("InfoColorSync", true));
+    public final BooleanSetting lowerCase = add(new BooleanSetting("LowerCase", false));
+    public final BooleanSetting fps = add(new BooleanSetting("FPS", true));
+    public final BooleanSetting ping = add(new BooleanSetting("Ping", true));
+    public final BooleanSetting tps = add(new BooleanSetting("TPS", true));
+    public final BooleanSetting ip = add(new BooleanSetting("IP", false));
+    public final BooleanSetting time = add(new BooleanSetting("Time", false));
+    public final BooleanSetting speed = add(new BooleanSetting("Speed", true));
+    public final BooleanSetting brand = add(new BooleanSetting("Brand", false));
+    public final BooleanSetting coords = add(new BooleanSetting("Coords", true));
+    private final SliderSetting pulseSpeed = add(new SliderSetting("Speed", 1, 0, 5, 0.1));
+    private final SliderSetting pulseCounter = add(new SliderSetting("Counter", 10, 1, 50));
 
     public HUD() {
         super("HUD", Category.Client);
+        setChinese("界面");
         INSTANCE = this;
     }
 
+    private final DecimalFormat decimal = new DecimalFormat("0.0");
+
     @Override
     public void onUpdate() {
-        if (timer.passed(updatedelay.getValue())) {
-            players = getTextRadarMap();
-            timer.reset();
+        if (Kawaii.GUI != null && Kawaii.GUI.notificationHud != null) {
+            NotificationHUD.updateNotifications();
         }
-        pulseProgress -= pulseSpeed.getValueInt();
     }
 
-    private String getTime() {
-        return (new SimpleDateFormat("MM/dd/yyyy HH:mm", Locale.CHINESE)).format(new Date());
+    @Override
+    public void onDisable() {
+        NotificationHUD.clearNotifications();
     }
-
-    private final DecimalFormat decimal = new DecimalFormat("0.0");
-    int x, y;
-    DrawContext drawContext;
 
     @Override
     public void onRender2D(DrawContext drawContext, float tickDelta) {
-        this.drawContext = drawContext;
-        x = waterMarkoffset.getValueInt();
-        y = this.yOffset.getValueInt();
         if (armor.getValue()) {
             Kawaii.GUI.armorHud.draw(drawContext, tickDelta, null);
         }
+        if (notification.getValue()) {
+            Kawaii.GUI.notificationHud.draw(drawContext, tickDelta, null);
+        }
+        if (potionHud.getValue()) {
+            Kawaii.GUI.potionHud.draw(drawContext, tickDelta, null);
+        }
+        if (itemsCountHud.getValue()) {
+            Kawaii.GUI.itemsCountHud.draw(drawContext, tickDelta, null);
+        }
+        if (welcome.getValue()) {
+            String text = welcomeText.getValue().replace("[username]", (welcomeSync.getValue() ? "" : "§f") + mc.player.getName().getString() + "§r");
+            float textWidth = TextUtil.getWidth(text);
+            float x = mc.getWindow().getScaledWidth() / 2.0f - textWidth / 2.0f;
+            float y = 6;
+            drawText(drawContext, text, (int) x, (int) y);
+        }
         if (waterMark.getValue()) {
-            if (Kawaii.nightly) {
-                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "-nightly" + "§8 %time%".replaceAll("%time%", getTime()),
-                        waterMarkoffset.getValueInt(),
-                        waterMarkoffset.getValueInt());
-            } else {
-                drawText(drawContext, Kawaii.NAME + "§f " + Kawaii.VERSION + "§8 %time%".replaceAll("%time%", getTime()),
-                        waterMarkoffset.getValueInt(),
-                        waterMarkoffset.getValueInt());
-            }
+            String waterMarkText = waterMarkString.getValue().replace("%version%", Kawaii.VERSION).replace("%hackname%", Kawaii.NAME);
+            int offsetValue = offset.getValueInt();
+            int textWidth = getWidth(waterMarkText);
+            int textHeight = getHeight();
+            float bgX = offsetValue - 2;
+            float bgY = offsetValue - 2;
+            float bgWidth = textWidth + 4;
+            float bgHeight = textHeight + 4;
+            RenderShaderUtil.drawBlurredShadow(drawContext.getMatrices(), bgX, bgY, bgWidth, bgHeight,10,new Color(0x80000000, true));
+            RenderShaderUtil.drawRoundedBlur(drawContext.getMatrices(), bgX, bgY, bgWidth, bgHeight, 3f);
+            drawText(drawContext, waterMarkText, offsetValue, offsetValue);
+        }
+        if (playerRadar.getValue() && mc.player != null && mc.world != null) {
+            renderPlayerRadar(drawContext);
         }
         int fontHeight = getHeight();
         int height;
@@ -141,26 +140,6 @@ public class HUD extends Module {
             height = fontHeight;
         }
         int windowWidth = mc.getWindow().getScaledWidth() - 1;
-        if (potions.getValue()) {
-            List<StatusEffectInstance> effects = new ArrayList<>(mc.player.getStatusEffects());
-            for (StatusEffectInstance potionEffect : effects) {
-                StatusEffect potion = potionEffect.getEffectType();
-                String power = "";
-                switch (potionEffect.getAmplifier()) {
-                    case 0 -> power = "I";
-                    case 1 -> power = "II";
-                    case 2 -> power = "III";
-                    case 3 -> power = "IV";
-                    case 4 -> power = "V";
-                }
-                String s = potion.getName().getString() + " " + power;
-                String s2 = getDuration(potionEffect);
-                String text = s + " " + s2;
-                int x = getWidth(text);
-                TextUtil.drawString(drawContext, text, windowWidth - x, y, potionEffect.getEffectType().getColor(), ClickGui.INSTANCE.customFont.getValue());
-                y -= height;
-            }
-        }
         if (brand.getValue()) {
             String brand = (mc.isInSingleplayer() ? "Vanilla" : mc.getNetworkHandler().getBrand().replaceAll("\\(.*?\\)", ""));
             int x = getWidth("ServerBrand " + brand);
@@ -168,7 +147,7 @@ public class HUD extends Module {
             y -= height;
         }
         if (time.getValue()) {
-            String text = "Time §f" + getTime();
+            String text = "Time §f" + (new SimpleDateFormat("h:mm a", Locale.ENGLISH)).format(new Date());
             int width = getWidth(text);
             drawText(drawContext, text, windowWidth - width, y);
             y -= height;
@@ -185,7 +164,6 @@ public class HUD extends Module {
         }
         if (speed.getValue()) {
             double x = mc.player.getX() - mc.player.prevX;
-            // double y = mc.player.getY() - mc.player.prevY;
             double z = mc.player.getZ() - mc.player.prevZ;
             double dist = Math.sqrt(x * x + z * z) / 1000.0;
             double div = 0.05 / 3600.0;
@@ -216,180 +194,182 @@ public class HUD extends Module {
         }
 
         if (coords.getValue()) {
-            if (!fakeCoords.getValue()) {
-                boolean inNether = mc.world.getRegistryKey().equals(World.NETHER);
+            boolean inNether = mc.world.getRegistryKey().equals(World.NETHER);
 
-                int posX = mc.player.getBlockX();
-                int posY = mc.player.getBlockY();
-                int posZ = mc.player.getBlockZ();
+            int posX = mc.player.getBlockX();
+            int posY = mc.player.getBlockY();
+            int posZ = mc.player.getBlockZ();
 
-                float factor = !inNether ? 0.125F : 8.0F;
+            float factor = !inNether ? 0.125F : 8.0F;
 
-                int anotherWorldX = (int) (mc.player.getX() * factor);
-                int anotherWorldZ = (int) (mc.player.getZ() * factor);
+            int anotherWorldX = (int) (mc.player.getX() * factor);
+            int anotherWorldZ = (int) (mc.player.getZ() * factor);
 
-                String coordsString = "XYZ §f" + (inNether ? (posX + ", " + posY + ", " + posZ + " §7[§f" + anotherWorldX + ", " + anotherWorldZ + "§7]§f") : (posX + ", " + posY + ", " + posZ + "§7 [§f" + anotherWorldX + ", " + anotherWorldZ + "§7]"));
+            String coordsString = "XYZ §f" + (inNether ? (posX + ", " + posY + ", " + posZ + " §7[§f" + anotherWorldX + ", " + anotherWorldZ + "§7]§f") : (posX + ", " + posY + ", " + posZ + "§7 [§f" + anotherWorldX + ", " + anotherWorldZ + "§7]"));
 
-                drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
-            }
-            if (fakeCoords.getValue()) {
-
-                String coordsString = "XYZ §f" + "臭傻逼想看你爹坐标?";
-
-                drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
-            }
-        }
-        if (mineprogress.getValue()) {
-            String string = PacketMine.INSTANCE.getInfo();
-            if (!string.equals("Done")) {
-                string = "[" + PacketMine.INSTANCE.getInfo() + "]";
-            }
-            drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + yOffset.getValueInt());
-        }
-        if (textRadar.getValue()) {
-            drawTextRadar(drawContext, waterMark.getValue() ? (int) (waterMarkoffset.getValue() + 2) : 2);
-        }
-        if (pvphud.getValue()) {
-            int pvpHudX = mc.getWindow().getWidth() / 4;
-            int pvpHudY = mc.getWindow().getHeight() / 4 + pvpHudOffset.getValueInt();
-            int textHeight = getHeight() + 1;
-            String t1 = "Totem §f" + InventoryUtil.getItemCount(Items.TOTEM_OF_UNDYING);
-            String t2 = "Potion §f" + InventoryUtil.getPotionCount(StatusEffects.RESISTANCE);
-            if (totemtext.getValue()) {
-                drawText(drawContext, t1, (pvpHudX - getWidth(t1) / 2), pvpHudY);
-                pvpHudY += textHeight;
-            }
-            if (potiontext.getValue()) {
-                if (mc.player.hasStatusEffect(StatusEffects.RESISTANCE) && mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() >= 2) {
-                    t2 += " §e" + (mc.player.getStatusEffect(StatusEffects.RESISTANCE).getDuration() / 20 + 1);
-                }
-                drawText(drawContext, t2, (pvpHudX - getWidth(t2) / 2), pvpHudY);
-                pvpHudY += textHeight;
-            }
-        }
-        if (timerprogress.getValue()) {
-            String string = "Timing " + TimerModule.INSTANCE.getInfo();
-            drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + timery.getValueInt());
-        }
-        if ((blinkhud.getValue()) && Blink.INSTANCE.isOn()) {
-            String string = "BlinkPacket" + Blink.INSTANCE.getInfo();
-            drawText(drawContext, string, mc.getWindow().getWidth() / 4 - getWidth(string) / 2, mc.getWindow().getHeight() / 4 + blinky.getValueInt());
+            drawText(drawContext, coordsString, (int) 2.0F, mc.getWindow().getScaledHeight() - fontHeight - (mc.currentScreen instanceof ChatScreen ? 15 : 0));
         }
     }
 
+    private void renderPlayerRadar(DrawContext context) {
+        int fontHeight = getHeight();
+        int totalWidth = 70;
+        if (playerRadarDistance.getValue()) totalWidth += 45;
+        if (playerRadarPing.getValue()) totalWidth += 35;
+        if (playerRadarHealth.getValue()) totalWidth += 40;
+        int totalPlayers = 0;
+        List<AbstractClientPlayerEntity> playersToShow = new ArrayList<>();
+        for (AbstractClientPlayerEntity player : mc.world.getPlayers()) {
+            if (player == mc.player) continue;
+            if (totalPlayers >= 6) break;
+            playersToShow.add(player);
+            totalPlayers++;
+        }
+        if (totalPlayers == 0) return;
+        float bgWidth = totalWidth + 6;
+        float bgHeight = (fontHeight + 1) * (totalPlayers + 1) + 7;
+        RenderShaderUtil.drawBlurredShadow(context.getMatrices(), 1 - 2, 156 - 2, bgWidth + 4, bgHeight + 4, 15, new Color(0x67000000, true));
+        RenderShaderUtil.drawRoundedBlur(context.getMatrices(), 1, 156, bgWidth, bgHeight, 3f);
+        String nameHeader = "Player";
+        drawText(context, nameHeader, 7,  160);
+        if (playerRadarDistance.getValue()) {
+            String distanceHeader = "Distance";
+            int distanceHeaderWidth = getWidth(distanceHeader);
+            int distanceHeaderX = 75 + (45 - distanceHeaderWidth) / 2;
+            drawText(context, distanceHeader, distanceHeaderX,  160);
+        }
+        if (playerRadarPing.getValue()) {
+            String pingHeader = "Ping";
+            int pingHeaderWidth = getWidth(pingHeader);
+            int pingHeaderX = 120 + (35 - pingHeaderWidth) / 2;
+            drawText(context, pingHeader, pingHeaderX,  160);
+        }
+        if (playerRadarHealth.getValue()) {
+            String healthHeader = "Health";
+            int healthHeaderWidth = getWidth(healthHeader);
+            int healthHeaderX = 155 + (40 - healthHeaderWidth) / 2;
+            drawText(context, healthHeader, healthHeaderX,  160);
+        }
+        float lineY = 160 + fontHeight + 1;
+        int offset = 1;
+        for (AbstractClientPlayerEntity player : playersToShow) {
+            float y = lineY + 2 + ((fontHeight + 1) * (offset - 1));
+            float currentX = 5;
+            if (playerIcons.getValue()) {
+                Identifier headTexture;
+                if (mc.getNetworkHandler() != null) {
+                    PlayerListEntry entry = mc.getNetworkHandler().getPlayerListEntry(player.getName().getString());
+                    if (entry != null) {
+                        headTexture = entry.getSkinTextures().texture();
+                        PlayerSkinDrawer.draw(context, headTexture, (int) currentX + 2, (int) y, fontHeight);
+                        currentX += fontHeight + 4;
+                    }
+                }
+            }
+            String playerName = player.getName().getString();
+            int playerNameWidth = getWidth(playerName);
+            int maxNameWidth = 70 - (playerIcons.getValue() ? (fontHeight + 4) : 0) - 4;
+            if (playerNameWidth > maxNameWidth) {
+                playerName = truncateTextFont(playerName, maxNameWidth);
+            }
+            drawText(context, playerName, (int) currentX + 2, (int) y);
+            if (playerRadarDistance.getValue()) {
+                String distance = "§f" + decimal.format(mc.player.distanceTo(player));
+                int distanceWidth = getWidth(distance);
+                int distanceX = 75 + (45 - distanceWidth) / 2;
+                drawText(context, distance, distanceX, (int) y);
+            }
+            if (playerRadarPing.getValue()) {
+                PlayerListEntry entry = mc.getNetworkHandler().getPlayerListEntry(player.getName().getString());
+                if (entry != null) {
+                    String ping = "§f" + entry.getLatency() + "ms";
+                    int pingWidth = getWidth(ping);
+                    int pingX = 120 + (35 - pingWidth) / 2;
+                    drawText(context, ping, pingX, (int) y);
+                } else {
+                    String ping = "§f-";
+                    int pingWidth = getWidth(ping);
+                    int pingX = 120 + (35 - pingWidth) / 2;
+                    drawText(context, ping, pingX, (int) y);
+                }
+            }
+            if (playerRadarHealth.getValue()) {
+                float health = player.getHealth() + player.getAbsorptionAmount();
+                String healthColor = getHealthColor(health);
+                String healthStr = healthColor + decimal.format(health);
+                int healthWidth = getWidth(healthStr);
+                int healthX = 155 + (40 - healthWidth) / 2;
+                drawText(context, healthStr, healthX, (int) y);
+            }
+            offset++;
+        }
+    }
+
+    private String truncateTextFont(String text, int maxWidth) {
+        if (getWidth(text) <= maxWidth) return text;
+        StringBuilder builder = new StringBuilder(text);
+        while (builder.length() > 1 && getWidth(builder.toString()) > maxWidth) {
+            builder.setLength(builder.length() - 1);
+        }
+        return builder.toString();
+    }
+
+    private String getHealthColor(float health) {
+        if (health <= 5) return "§c";
+        if (health <= 10) return "§6";
+        if (health <= 15) return "§e";
+        return "§a";
+    }
+
     private int getWidth(String s) {
-        if (ClickGui.INSTANCE.customFont.getValue()) {
+        boolean useCustomFont = customFont.getValue() && !containsChinese(s) && FontRenderers.ui != null;
+        if (useCustomFont) {
             return (int) FontRenderers.ui.getWidth(s);
         }
         return mc.textRenderer.getWidth(s);
     }
 
     private int getHeight() {
-        if (ClickGui.INSTANCE.customFont.getValue()) {
+        if (customFont.getValue() && FontRenderers.ui != null) {
             return (int) FontRenderers.ui.getFontHeight();
         }
         return mc.textRenderer.fontHeight;
     }
 
-    private void drawTextRadar(DrawContext drawContext, int yOffset) {
-        if (!players.isEmpty()) {
-            int y = mc.textRenderer.fontHeight + 7 + yOffset;
-            for (Map.Entry<String, Integer> player : players.entrySet()) {
-                String text = player.getKey() + " ";
-                drawText(drawContext, text, (int) 2.0F, y); // 使用 drawText 方法
-                y += mc.textRenderer.fontHeight + 1;
+    private void drawText(DrawContext drawContext, String S, int x, int y) {
+        boolean useCustomFont = customFont.getValue() && !containsChinese(S);
+        if (sync.getValue()) {
+            // 使用Arraylist.INSTANCE代替ModuleList.INSTANCE，因为ModuleList模块似乎未被加载
+            if (lowerCase.getValue()) {
+                S = S.toLowerCase();
+            }
+            TextUtil.drawString(drawContext, S, x, y, Colors.INSTANCE.getColor(Arraylist.INSTANCE.counter), useCustomFont);
+            return;
+        }
+        if (pulse.booleanValue) {
+            TextUtil.drawStringPulse(drawContext, S, x, y, color.getValue(), pulse.getValue(), pulseSpeed.getValue(), pulseCounter.getValueInt(), useCustomFont);
+        } else {
+            TextUtil.drawString(drawContext, S, x, y, color.getValue().getRGB(), useCustomFont);
+        }
+    }
+
+    private boolean containsChinese(String str) {
+        for (char c : str.toCharArray()) {
+            if (isChinese(c)) {
+                return true;
             }
         }
+        return false;
     }
 
-    private Map<String, Integer> getTextRadarMap() {
-        Map<String, Integer> retval = new HashMap<>();
-
-        DecimalFormat dfDistance = new DecimalFormat("#.#");
-        dfDistance.setRoundingMode(RoundingMode.CEILING);
-        StringBuilder distanceSB = new StringBuilder();
-
-        for (PlayerEntity player : mc.world.getPlayers()) {
-            if (player.isInvisible() || player.getName().equals(mc.player.getName())) continue;
-
-            int playerY = (int) player.getY();
-            int maxYawValue = maxYaw.getValueInt();
-
-            if (playerY > maxYawValue) continue;
-
-            int distanceInt = (int) mc.player.distanceTo(player);
-            String distance = dfDistance.format(distanceInt);
-
-            if (distanceInt >= 0) {
-                distanceSB.append(Formatting.WHITE);
-            }
-            distanceSB.append(distance);
-
-            String playerInfo =
-                    (textRadarhealth.getValue() ?
-                            (getHealthColor(player) + String.valueOf(round2(player.getAbsorptionAmount() + player.getHealth())) + " ") : "") +
-                            (Kawaii.FRIEND.isFriend(player) ? Formatting.GREEN : Formatting.RESET) +
-                            (Kawaii.ENEMY.isEnemy(player) ? Formatting.DARK_RED : Formatting.RESET) +
-                            player.getName().getString() + " " +
-                            (textRadarPos.getValue() ?
-                                    distanceSB + "m" : "")
-                            + Formatting.GREEN;
-
-            retval.put(playerInfo, distanceInt);
-            distanceSB.setLength(0);
-        }
-
-        if (!retval.isEmpty()) {
-            retval = MathUtil.sortByValue(retval, false);
-        }
-
-        return retval;
-    }
-
-
-    private Formatting getHealthColor(@NotNull PlayerEntity entity) {
-        int health = (int) ((int) entity.getHealth() + entity.getAbsorptionAmount());
-        if (health <= 15 && health > 7) return Formatting.YELLOW;
-        if (health > 15) return Formatting.GREEN;
-        return Formatting.RED;
-    }
-    public static float round2(double value) {
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(1, RoundingMode.HALF_UP);
-        return bd.floatValue();
-    }
-    private void drawText(DrawContext drawContext, String s, int x, int y) {
-        if (Colors.INSTANCE.hud.getValue()) {
-            TextUtil.drawString(drawContext, s, x, y, Colors.INSTANCE.clientColor.getValue().getRGB(), shouldUseCustomFont(s));
-        } else {
-            TextUtil.drawString(drawContext, s, x, y, color.getValue().getRGB(), shouldUseCustomFont(s));
-        }
-    }
-
-    private boolean shouldUseCustomFont(String s) {
-        if (s.matches(".*[\\u4e00-\\u9fa5].*")) {
-            return false;
-        }
-        return ClickGui.INSTANCE.customFont.getValue();
-    }
-
-    public static String getDuration(StatusEffectInstance pe) {
-        if (pe.isInfinite()) {
-            return "*:*";
-        } else {
-            int var1 = pe.getDuration();
-            int mins = var1 / 1200;
-            int sec = (var1 % 1200) / 20;
-
-            return mins + ":" + sec;
-        }
-
-    }
-    private enum Pages {
-        Module,
-        Offset,
-        Color,
-        Other,
-        Font
+    private boolean isChinese(char c) {
+        Character.UnicodeBlock ub = Character.UnicodeBlock.of(c);
+        return ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_COMPATIBILITY_IDEOGRAPHS
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_A
+                || ub == Character.UnicodeBlock.CJK_UNIFIED_IDEOGRAPHS_EXTENSION_B
+                || ub == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION
+                || ub == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS
+                || ub == Character.UnicodeBlock.GENERAL_PUNCTUATION;
     }
 }

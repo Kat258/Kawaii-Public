@@ -10,6 +10,9 @@ import dev.kizuna.mod.gui.clickgui.components.impl.ModuleComponent;
 import dev.kizuna.mod.gui.clickgui.tabs.ClickGuiTab;
 import dev.kizuna.mod.gui.clickgui.tabs.Tab;
 import dev.kizuna.mod.gui.elements.ArmorHUD;
+import dev.kizuna.mod.gui.elements.ItemsCountHUD;
+import dev.kizuna.mod.gui.elements.NotificationHUD;
+import dev.kizuna.mod.gui.elements.PotionHUD;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.ClickGui;
 import net.minecraft.client.gui.DrawContext;
@@ -20,94 +23,104 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GuiManager implements Wrapper {
+    public final ArrayList<ClickGuiTab> tabs = new ArrayList<>();
+    public static final ClickGuiScreen clickGui = new ClickGuiScreen();
 
-	public final ArrayList<ClickGuiTab> tabs = new ArrayList<>();
-	public static final ClickGuiScreen clickGui = new ClickGuiScreen();
-	public final ArmorHUD armorHud;
-	public static Tab currentGrabbed = null;
-	private int lastMouseX = 0;
-	private int lastMouseY = 0;
-	private int mouseX;
-	private int mouseY;
+    public final ArmorHUD armorHud;
+    public final NotificationHUD notificationHud;
+    public final PotionHUD potionHud;
+    public final ItemsCountHUD itemsCountHud;
+    public static Tab currentGrabbed = null;
+    private int lastMouseX = 0;
+    private int lastMouseY = 0;
+    private int mouseX;
+    private int mouseY;
 
-	public GuiManager() {
+    public GuiManager() {
 
-		armorHud = new ArmorHUD();
+        armorHud = new ArmorHUD();
+        notificationHud = new NotificationHUD();
+        potionHud = new PotionHUD();
+        itemsCountHud = new ItemsCountHUD();
 
-		int xOffset = 30;
-		for (Module.Category category : Module.Category.values()) {
-			ClickGuiTab tab = new ClickGuiTab(category, xOffset, 50);
-			for (Module module : Kawaii.MODULE.modules) {
-				if (module.getCategory() == category) {
-					ModuleComponent button = new ModuleComponent(tab, module);
-					tab.addChild(button);
-				}
-			}
-			tabs.add(tab);
-			xOffset += tab.getWidth() + 5;
-		}
-	}
-	
-	public Color getColor() {
-		return ClickGui.INSTANCE.bgEnable.getValue();
-	}
-	
-	public void onUpdate() {
-		if (isClickGuiOpen()) {
-			for (ClickGuiTab tab : tabs) {
-				tab.update(mouseX, mouseY);
-			}
-			armorHud.update(mouseX, mouseY);
-		}
-	}
+        int xOffset = 30;
+        for (Module.Category category : Module.Category.values()) {
+            ClickGuiTab tab = new ClickGuiTab(category, xOffset, 50);
+            for (Module module : Kawaii.MODULE.modules) {
+                if (module.getCategory() == category) {
+                    ModuleComponent button = new ModuleComponent(tab, module);
+                    tab.addChild(button);
+                }
+            }
+            tabs.add(tab);
+            xOffset += tab.getWidth() + 5;
+        }
+    }
 
-	
-	
-	public void draw(int x, int y, DrawContext drawContext, float tickDelta) {
-		MatrixStack matrixStack = drawContext.getMatrices();
-		boolean mouseClicked = ClickGuiScreen.clicked;
-		mouseX = x;
-		mouseY = y;
-		if (!mouseClicked) {
-			currentGrabbed = null;
-		}
-		if (currentGrabbed != null) {
-			currentGrabbed.moveWindow((lastMouseX - mouseX), (lastMouseY - mouseY));
-		}
-		this.lastMouseX = mouseX;
-		this.lastMouseY = mouseY;
-		RenderSystem.enableCull();
-		matrixStack.push();
-		//matrixStack.scale((float) ClickGui.size, (float) ClickGui.size, 1);
-		armorHud.draw(drawContext, tickDelta, getColor());
-		double quad = ClickGui.fade.ease(FadeUtils.Ease.In2);
-		if (quad < 1) {
-			switch (ClickGui.INSTANCE.mode.getValue()) {
-				case Pull -> {
-					quad = 1 - quad;
-					matrixStack.translate(0, -100 * quad, 0);
-				}
-				case Scale -> matrixStack.scale((float) quad, (float) quad, 1);
-			}
-		}
-		for (ClickGuiTab tab : tabs) {
-			tab.draw(drawContext, tickDelta, getColor());
-		}
-		matrixStack.pop();
-	}
+    public Color getColor() {
+        return ClickGui.INSTANCE.color.getValue();
+    }
 
-	public boolean isClickGuiOpen() {
-		return mc.currentScreen instanceof ClickGuiScreen;
-	}
+    public void onUpdate() {
+        if (isClickGuiOpen()) {
+            for (ClickGuiTab tab : tabs) {
+                tab.update(mouseX, mouseY);
+            }
+            armorHud.update(mouseX, mouseY);
+            notificationHud.update(mouseX, mouseY);
+            potionHud.update(mouseX, mouseY);
+            itemsCountHud.update(mouseX, mouseY);
+        }
+    }
 
-	public static final ArrayList<Snow> snows = new ArrayList<>(){
-		{
-			Random random = new Random();
-			for (int i = 0; i < 100; ++i) {
-				for (int y = 0; y < 3; ++y) {
-					add(new Snow(25 * i, y * -50, random.nextInt(3) + 1, random.nextInt(2) + 1));
-				}
-			}
-		}
-	};
+    public void draw(int x, int y, DrawContext drawContext, float tickDelta) {
+        MatrixStack matrixStack = drawContext.getMatrices();
+        boolean mouseClicked = ClickGuiScreen.clicked;
+        mouseX = x;
+        mouseY = y;
+        if (!mouseClicked) {
+            currentGrabbed = null;
+        }
+        if (currentGrabbed != null) {
+            currentGrabbed.moveWindow((lastMouseX - mouseX), (lastMouseY - mouseY));
+        }
+        this.lastMouseX = mouseX;
+        this.lastMouseY = mouseY;
+        RenderSystem.enableCull();
+        matrixStack.push();
+        //matrixStack.scale((float) ClickGui.size, (float) ClickGui.size, 1);
+        armorHud.draw(drawContext, tickDelta, getColor());
+        notificationHud.draw(drawContext, tickDelta, getColor());
+        potionHud.draw(drawContext, tickDelta, getColor());
+        itemsCountHud.draw(drawContext, tickDelta, getColor());
+        double quad = ClickGui.fade.ease(FadeUtils.Ease.In2);
+        if (quad < 1) {
+            switch (ClickGui.INSTANCE.mode.getValue()) {
+                case Pull -> {
+                    quad = 1 - quad;
+                    matrixStack.translate(0, -100 * quad, 0);
+                }
+                case Scale -> matrixStack.scale((float) quad, (float) quad, 1);
+            }
+        }
+        for (ClickGuiTab tab : tabs) {
+            tab.draw(drawContext, tickDelta, getColor());
+        }
+        matrixStack.pop();
+    }
+
+    public boolean isClickGuiOpen() {
+        return mc.currentScreen instanceof ClickGuiScreen;
+    }
+
+    public static final ArrayList<Snow> snows = new ArrayList<>(){
+        {
+            Random random = new Random();
+            for (int i = 0; i < 100; ++i) {
+                for (int y = 0; y < 3; ++y) {
+                    add(new Snow(25 * i, y * -50, random.nextInt(3) + 1, random.nextInt(2) + 1));
+                }
+            }
+        }
+    };
 }
