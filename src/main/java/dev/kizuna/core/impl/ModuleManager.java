@@ -190,6 +190,7 @@ public class ModuleManager implements Wrapper {
         addModule(new EnderchestStealer());
         addModule(new DynamicIsland());
         addModule(new chamslastest());
+        addModule(new DynamicIslandLegacy());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
