@@ -297,8 +297,14 @@ public class NameTags extends Module {
                     }
                 }
                 if (rect.booleanValue) {
-                    Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 14f), textWidth + 4, 13, rect.getValue());
+                    Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 13f), textWidth + 4, 11, rect.getValue());
                 }
+                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), textWidth + 4, 1.5f, new Color(0x80000000, true));
+                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), (textWidth + 4) * Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))), 1.5f,
+                        Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))) > 0.6f ? new Color(0x9900FF00, true) :
+                                Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))) > 0.3f ? new Color(0x99EEFF05, true) :
+                                        new Color(0x99FF0000, true));
+                int textColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue().getRGB() : this.color.getValue().getRGB();
                 if (outline.booleanValue) {
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 3, (float) (posY - 14f), textWidth + 6, 1, outline.getValue());
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 3, (float) (posY - 2f), textWidth + 6, 1, outline.getValue());
