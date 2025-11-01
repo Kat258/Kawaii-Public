@@ -167,15 +167,16 @@ public class DynamicIsland extends Module {
         }
         currentX += (int) (TextUtil.getWidth(parts[3]) + TextUtil.getWidth(" | "));
 
-        // FPS - 第五个显示
-        float fpsProgress = Math.max(0, Math.min(1.0f, (expandProgress - 0.15f * 4) / 0.2f));
+        // FPS - 第五个显示，降低显示门槛
+        float fpsProgress = Math.max(0, Math.min(1.0f, (expandProgress - 0.15f * 3) / 0.3f));
         float fpsAlpha = animation.easeOutCubic(fpsProgress);
-        if (currentX + FontRenderers.icon.getWidth("O") <= maxX && fpsAlpha > 0.01f) {
+        if (fpsAlpha > 0.01f) {
+            // 强制渲染FPS图标
             int iconColor = new Color(255, 255, 255, (int) (255 * alpha * fpsAlpha)).getRGB();
             FontRenderers.icon.drawString(matrices, "O", currentX, iconY, iconColor);
-        }
-        currentX += (int) (FontRenderers.icon.getWidth("O") + 2);
-        if (currentX + TextUtil.getWidth(parts[4]) <= maxX && fpsAlpha > 0.01f) {
+            currentX += (int) (FontRenderers.icon.getWidth("O") + 2);
+            
+            // 强制渲染FPS文本
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * fpsAlpha)).getRGB();
             TextUtil.drawString(context, parts[4], currentX, textY, textColor);
         }
