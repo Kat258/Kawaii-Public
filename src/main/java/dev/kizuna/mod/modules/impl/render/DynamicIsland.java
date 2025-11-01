@@ -95,7 +95,10 @@ public class DynamicIsland extends Module {
     private void renderDefaultHUD(DrawContext context) {
         if (mc.player == null) return;
         MatrixStack matrices = context.getMatrices();
-        int ping = mc.getNetworkHandler() != null ? mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid()).getLatency() : 0;
+        int ping = 0;
+        if (mc.getNetworkHandler() != null && mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid()) != null) {
+            ping = mc.getNetworkHandler().getPlayerListEntry(mc.player.getUuid()).getLatency();
+        }
         String displayText = String.format("%s | %s | %s | %s | %dFPS", Kawaii.NAME + ".", mc.getSession().getUsername(), getServerIP(), getPingText(ping), mc.getCurrentFps());
         int iconTotalWidth = (int) (FontRenderers.icon.getWidth("5") +
                 FontRenderers.icon.getWidth("4") + FontRenderers.icon.getWidth("L") +
