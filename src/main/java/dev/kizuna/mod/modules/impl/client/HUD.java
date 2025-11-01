@@ -8,6 +8,7 @@ import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
+import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import dev.kizuna.mod.modules.settings.impl.StringSetting;
 import net.minecraft.client.gui.DrawContext;
@@ -33,9 +34,15 @@ public class HUD extends Module {
     public final SliderSetting notificationX = add(new SliderSetting("NotificationX", 5, 0, 1000, -1, notification::isOpen));
     public final SliderSetting notificationY = add(new SliderSetting("NotificationY", 5, 0, 1000, -1, notification::isOpen));
     public final SliderSetting notificationSpacing = add(new SliderSetting("NotificationSpacing", 25, 5, 100, -1, notification::isOpen));
+    public final EnumSetting<FontType> notificationFont = add(new EnumSetting<>("NotificationFont", FontType.UI, notification::isOpen));
     public final BooleanSetting potionHud = add(new BooleanSetting("PotionHUD", true));
     public final SliderSetting potionHudX = add(new SliderSetting("PotionHudX", 5, 0, 1000, -1, potionHud::isOpen));
     public final SliderSetting potionHudY = add(new SliderSetting("PotionHudY", 5, 0, 1000, -1, potionHud::isOpen));
+    public final EnumSetting<FontType> potionHudFont = add(new EnumSetting<>("PotionHudFont", FontType.UI, potionHud::isOpen));
+    
+    public enum FontType {
+        UI, DEFAULT, ICON, TROLL, CALIBRI
+    }
     public final BooleanSetting itemsCountHud = add(new BooleanSetting("ItemsCountHud", true));
     public final BooleanSetting up = add(new BooleanSetting("Up", false));
     public final BooleanSetting customFont = add(new BooleanSetting("CustomFont", true));

@@ -6,7 +6,9 @@ import dev.kizuna.mod.gui.clickgui.tabs.Tab;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.impl.client.HUD;
 import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
+import dev.kizuna.api.utils.render.TextUtil;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -18,6 +20,27 @@ public class NotificationHUD extends Tab {
     public NotificationHUD() {
         this.width = 120;
         this.height = 30;
+    }
+    
+    private int getTextWidth(String text, HUD.FontType fontType) {
+        switch (fontType) {
+            case UI -> { return (int) FontRenderers.ui.getWidth(text); }
+            case ICON -> { return (int) FontRenderers.icon.getWidth(text); }
+            case TROLL -> { return (int) FontRenderers.troll.getWidth(text); }
+            case CALIBRI -> { 
+                if (FontRenderers.Calibri != null) { 
+                    return (int) FontRenderers.Calibri.getWidth(text); 
+                }
+                return (int) FontRenderers.ui.getWidth(text);
+            }
+            default -> { return mc.textRenderer.getWidth(text); }
+        }
+    }
+    
+    private void drawText(MatrixStack matrices, String text, float x, float y, int color, HUD.FontType fontType) {
+        DrawContext context = new DrawContext(mc, mc.getBufferBuilders().getEntityVertexConsumers());
+        boolean useCustomFont = fontType != HUD.FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
     }
 
     @Override
@@ -67,7 +90,7 @@ public class NotificationHUD extends Tab {
             NotificationUtil notification = activeNotifications.get(i);
             if (notification == null) continue;
             String message = notification.message;
-            int textWidth = (int) FontRenderers.ui.getWidth(message);
+            int textWidth = getTextWidth(message, HUD.INSTANCE.notificationFont.getValue());
             int backgroundWidthValue = Math.max(textWidth + 10, 100);
             // 使用基本位置偏移和可调整的间隔
             int spacing = HUD.INSTANCE != null ? HUD.INSTANCE.notificationSpacing.getValueInt() : 25;
@@ -80,7 +103,7 @@ public class NotificationHUD extends Tab {
             RenderShaderUtil.drawRect(matrixStack, (float) offsetX + 2f, (float) offsetY + (20 - 12.5f) / 2f, 3f, 12.5f, 1f, new Color(0x8E8308FF, true));
             int textColor = new Color(255, 255, 255, (int) (255 * notification.getCurrentAlpha())).getRGB();
             float textY = (float) offsetY + (20 - 8) / 2.0f;
-            FontRenderers.ui.drawString(matrixStack, message, (float) offsetX + 8, textY + 1.0f, textColor);
+            drawText(matrixStack, message, (float) offsetX + 8, textY + 1.0f, textColor, HUD.INSTANCE.notificationFont.getValue());
         }
     }
 }

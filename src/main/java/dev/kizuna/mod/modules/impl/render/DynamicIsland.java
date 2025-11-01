@@ -11,6 +11,7 @@ import dev.kizuna.mod.modules.impl.combat.AutoAnchor;
 import dev.kizuna.mod.modules.impl.combat.KawaiiAura;
 import dev.kizuna.mod.modules.impl.combat.KillAura;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
+import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -30,6 +31,11 @@ public class DynamicIsland extends Module {
     
     public final SliderSetting posX = add(new SliderSetting("PositionX", 5, 0, 1000, -1));
     public final SliderSetting posY = add(new SliderSetting("PositionY", 5, 0, 1000, -1));
+    public final EnumSetting<FontType> font = add(new EnumSetting<>("Font", FontType.UI));
+    
+    public enum FontType {
+        UI, DEFAULT, ICON, TROLL, CALIBRI
+    }
 
     public DynamicIsland() {
         super("DynamicIsland", Category.Client);
@@ -112,7 +118,7 @@ public class DynamicIsland extends Module {
         float expandProgress = animation.getExpandProgress();
         RenderShaderUtil.drawRoundedBlur(matrices, x - 1, y, (float) width, (float) height, 10f, new Color(0xFF000000, true), 10.0f, 0.45f);
 
-        int textY = y + (int) ((height - TextUtil.getHeight()) / 2f) + 1;
+        int textY = y + (int) ((height - getHeight()) / 2f) + 1;
         int iconY = y + (int) ((height - FontRenderers.icon.getFontHeight()) / 2f) + 2;
         int currentX = x + 10;
         String[] parts = displayText.split(" \\| ");
@@ -123,7 +129,7 @@ public class DynamicIsland extends Module {
         if (currentX + TextUtil.getWidth(parts[0]) <= maxX && clientNameAlpha > 0.01f) {
             int rainbowColor = getRainbowColorWithAlpha(alpha * clientNameAlpha);
 //         Color titleColor = ColorUtil.getRainbow(2L, 0.7f, 1.0f, 255, (long) (width/2*5L));
-            TextUtil.drawString(context, parts[0], currentX, textY, rainbowColor);
+            drawText(context, parts[0], currentX, textY, rainbowColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[0]) + TextUtil.getWidth(" | "));
 
@@ -137,7 +143,7 @@ public class DynamicIsland extends Module {
         currentX += (int) (FontRenderers.icon.getWidth("5") + 2);
         if (currentX + TextUtil.getWidth(parts[1]) <= maxX && playerNameAlpha > 0.01f) {
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * playerNameAlpha)).getRGB();
-            TextUtil.drawString(context, parts[1], currentX, textY, textColor);
+            drawText(context, parts[1], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[1]) + TextUtil.getWidth(" | "));
 
@@ -151,7 +157,7 @@ public class DynamicIsland extends Module {
         currentX += (int) (FontRenderers.icon.getWidth("4") + 2);
         if (currentX + TextUtil.getWidth(parts[2]) <= maxX && serverIpAlpha > 0.01f) {
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * serverIpAlpha)).getRGB();
-            TextUtil.drawString(context, parts[2], currentX, textY, textColor);
+            drawText(context, parts[2], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[2]) + TextUtil.getWidth(" | "));
 
@@ -166,7 +172,7 @@ public class DynamicIsland extends Module {
         if (currentX + TextUtil.getWidth(parts[3]) <= maxX && pingAlpha > 0.01f) {
             Color pingColor = getPingColor(ping);
             int textColor = new Color(pingColor.getRed(), pingColor.getGreen(), pingColor.getBlue(), (int) (255 * alpha * pingAlpha)).getRGB();
-            TextUtil.drawString(context, parts[3], currentX, textY, textColor);
+            drawText(context, parts[3], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[3]) + TextUtil.getWidth(" | "));
 
@@ -181,7 +187,7 @@ public class DynamicIsland extends Module {
             
             // 强制渲染FPS文本
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * fpsAlpha)).getRGB();
-            TextUtil.drawString(context, parts[4], currentX, textY, textColor);
+            drawText(context, parts[4], currentX, textY, textColor);
         }
     }
 
@@ -221,18 +227,18 @@ public class DynamicIsland extends Module {
         float healthPercent = (float) Math.min(Math.max(healthAnimation.getAnimationD() / target.getMaxHealth(), 0f), 1f);
         int textX = avatarX + 30 + 5, textY = avatarY + 5;
         float textAlpha = Math.max(0, (animation.getExpandProgress() - 0.1f) / 0.9f) * animation.getAlpha();
-        FontRenderers.ui.drawString(matrices, target.getName().getString(), textX, textY, getRainbowColorWithAlpha(textAlpha));
+        drawString(matrices, target.getName().getString(), textX, textY, getRainbowColorWithAlpha(textAlpha));
         if (animation.getHealthBarProgress() > 0.1f) {
             String healthText = String.format("%.1fHP", healthAnimation.getAnimationD());
             float healthTextAlpha = Math.max(0, (animation.getExpandProgress() - 0.3f) / 0.7f) * animation.getAlpha();
-            FontRenderers.ui.drawString(matrices, healthText, textX, textY + 10, new Color(255, 255, 255, (int)(255 * healthTextAlpha)).getRGB());
+            drawString(matrices, healthText, textX, textY + 10, new Color(255, 255, 255, (int)(255 * healthTextAlpha)).getRGB());
             String pops = "0";
             if (Kawaii.POP.popContainer.containsKey(target.getName().getString())) {
                 pops = String.valueOf(Kawaii.POP.popContainer.get(target.getName().getString()));
             }
             String popText = pops + "Pops";
             float popTextX = textX + FontRenderers.ui.getWidth(healthText) + 8;
-            FontRenderers.ui.drawString(matrices, popText, popTextX, textY + 10, new Color(255, 255, 255, (int)(255 * healthTextAlpha)).getRGB());
+            drawString(matrices, popText, popTextX, textY + 10, new Color(255, 255, 255, (int)(255 * healthTextAlpha)).getRGB());
             int healthBarWidth = (int)width - (textX - x) - 10;
             int healthBarY = textY + 20;
             int animatedHealthBarWidth = (int)(healthBarWidth * animation.getExpandProgress());
@@ -293,5 +299,30 @@ public class DynamicIsland extends Module {
             return false;
         }
         return !player.isDead();
+    }
+    
+    private void drawText(DrawContext context, String text, float x, float y, int color) {
+        boolean useCustomFont = font.getValue() != FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
+    }
+    
+    private void drawString(MatrixStack matrices, String text, float x, float y, int color) {
+        DrawContext context = new DrawContext(mc, mc.getBufferBuilders().getEntityVertexConsumers());
+        boolean useCustomFont = font.getValue() != FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
+    }
+    
+    private float getHeight() {
+        switch (font.getValue()) {
+            case UI -> FontRenderers.ui.getFontHeight();
+            case ICON -> FontRenderers.icon.getFontHeight();
+            case TROLL -> FontRenderers.troll.getFontHeight();
+            case CALIBRI -> {
+                if (FontRenderers.Calibri != null) {
+                    return FontRenderers.Calibri.getFontHeight();
+                }
+            }
+        }
+        return mc.textRenderer.fontHeight;
     }
 }

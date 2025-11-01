@@ -9,6 +9,8 @@ import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.impl.client.HUD;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.math.MatrixStack;
+import dev.kizuna.api.utils.render.TextUtil;
+import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 
@@ -20,6 +22,42 @@ public class PotionHUD extends Tab {
         this.height = 25;
         this.x = (int) Kawaii.CONFIG.getFloat("potion_x", 10);
         this.y = (int) Kawaii.CONFIG.getFloat("potion_y", 260);
+    }
+    
+    private float getTextWidth(String text, HUD.FontType fontType) {
+        switch (fontType) {
+            case UI -> { return FontRenderers.ui.getWidth(text); }
+            case ICON -> { return FontRenderers.icon.getWidth(text); }
+            case TROLL -> { return FontRenderers.troll.getWidth(text); }
+            case CALIBRI -> { 
+                if (FontRenderers.Calibri != null) { 
+                    return FontRenderers.Calibri.getWidth(text); 
+                }
+                return FontRenderers.ui.getWidth(text);
+            }
+            default -> { return mc.textRenderer.getWidth(text); }
+        }
+    }
+    
+    private float getFontHeight(HUD.FontType fontType) {
+        switch (fontType) {
+            case UI -> { return FontRenderers.ui.getFontHeight(); }
+            case ICON -> { return FontRenderers.icon.getFontHeight(); }
+            case TROLL -> { return FontRenderers.troll.getFontHeight(); }
+            case CALIBRI -> { 
+                if (FontRenderers.Calibri != null) { 
+                    return FontRenderers.Calibri.getFontHeight(); 
+                }
+                return FontRenderers.ui.getFontHeight();
+            }
+            default -> { return mc.textRenderer.fontHeight; }
+        }
+    }
+    
+    private void drawText(MatrixStack matrices, String text, float x, float y, int color, HUD.FontType fontType) {
+        DrawContext context = new DrawContext(mc, mc.getBufferBuilders().getEntityVertexConsumers());
+        boolean useCustomFont = fontType != HUD.FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
     }
 
     @Override
@@ -50,8 +88,8 @@ public class PotionHUD extends Tab {
             String name = effect.getEffectType().getName().getString();
             String amplifier = getAmplifierString(effect.getAmplifier());
             String duration = getDurationString(effect);
-            float nameWidth = FontRenderers.ui.getWidth(name + " " + amplifier);
-            float timeWidth = FontRenderers.ui.getWidth(duration);
+            float nameWidth = getTextWidth(name + " " + amplifier, HUD.INSTANCE.potionHudFont.getValue());
+            float timeWidth = getTextWidth(duration, HUD.INSTANCE.potionHudFont.getValue());
             float totalWidth = Math.max(nameWidth, timeWidth) + 25;
             if (totalWidth > maxWidth) {
                 maxWidth = totalWidth;
@@ -86,7 +124,7 @@ public class PotionHUD extends Tab {
             float colorBarY = effectY + (effectHeight - colorBarHeight) / 2;
             RenderShaderUtil.drawRect(matrixStack, colorBarX, colorBarY, 3, colorBarHeight, 1f, effectColor);
             RenderShaderUtil.drawBlurredShadow(matrixStack, colorBarX, colorBarY, 3, colorBarHeight, 15, effectColor);
-            float textHeight = FontRenderers.ui.getFontHeight();
+            float textHeight = getFontHeight(HUD.INSTANCE.potionHudFont.getValue());
             float totalTextHeight = textHeight * 2;
             float textStartY = effectY + (effectHeight - totalTextHeight) / 2;
             float timeY = textStartY + textHeight;
@@ -96,8 +134,8 @@ public class PotionHUD extends Tab {
             drawContext.drawSprite(0, 0, 0,  15,  15, mc.getStatusEffectSpriteManager().getSprite(effect.getEffectType()));
             matrixStack.pop();
             String nameWithLevel = name + " " + amplifier;
-            FontRenderers.ui.drawString(matrixStack, nameWithLevel, currentX + 8 + 15 + 4, textStartY + 2, effectColor.getRGB());
-            FontRenderers.ui.drawString(matrixStack, duration, currentX + 8 + 15 + 4, timeY + 1.0, new Color(0xFFFFFF).getRGB());
+            drawText(matrixStack, nameWithLevel, (float)(currentX + 8 + 15 + 4), textStartY + 2, effectColor.getRGB(), HUD.INSTANCE.potionHudFont.getValue());
+            drawText(matrixStack, duration, (float)(currentX + 8 + 15 + 4), (float)(timeY + 1.0), new Color(0xFFFFFF).getRGB(), HUD.INSTANCE.potionHudFont.getValue());
             yOffset += effectHeight + 5;
         }
     }

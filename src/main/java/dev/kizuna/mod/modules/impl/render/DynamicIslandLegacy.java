@@ -10,6 +10,7 @@ import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.combat.AutoAnchor;
 import dev.kizuna.mod.modules.impl.combat.KawaiiAura;
 import dev.kizuna.mod.modules.impl.combat.KillAura;
+import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.ServerInfo;
@@ -26,6 +27,12 @@ public class DynamicIslandLegacy extends Module {
     private AbstractClientPlayerEntity currentTarget = null;
     private double lastHealth = 0.0;
 
+    public final EnumSetting<FontType> font = add(new EnumSetting<>("Font", FontType.UI));
+    
+    public enum FontType {
+        UI, DEFAULT, ICON, TROLL, CALIBRI
+    }
+    
     public DynamicIslandLegacy() {
         super("DynamicIslandLegacy", Category.Client);
         setChinese("灵动岛");
@@ -107,7 +114,7 @@ public class DynamicIslandLegacy extends Module {
         float expandProgress = animation.getExpandProgress();
         RenderShaderUtil.drawRoundedBlur(matrices, x - 1, y, (float) width, (float) height, 10f, new Color(0xFF000000, true), 10.0f, 0.45f);
 
-        int textY = y + (int) ((height - TextUtil.getHeight()) / 2f) + 1;
+        int textY = y + (int) ((height - getHeight()) / 2f) + 1;
         int iconY = y + (int) ((height - FontRenderers.icon.getFontHeight()) / 2f) + 2;
         int currentX = x + 10;
         String[] parts = displayText.split(" \\| ");
@@ -118,7 +125,7 @@ public class DynamicIslandLegacy extends Module {
         if (currentX + TextUtil.getWidth(parts[0]) <= maxX && clientNameAlpha > 0.01f) {
             int rainbowColor = getRainbowColorWithAlpha(alpha * clientNameAlpha);
 //         Color titleColor = ColorUtil.getRainbow(2L, 0.7f, 1.0f, 255, (long) (width/2*5L));
-            TextUtil.drawString(context, parts[0], currentX, textY, rainbowColor);
+            drawText(context, parts[0], currentX, textY, rainbowColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[0]) + TextUtil.getWidth(" | "));
 
@@ -132,7 +139,7 @@ public class DynamicIslandLegacy extends Module {
         currentX += (int) (FontRenderers.icon.getWidth("5") + 2);
         if (currentX + TextUtil.getWidth(parts[1]) <= maxX && playerNameAlpha > 0.01f) {
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * playerNameAlpha)).getRGB();
-            TextUtil.drawString(context, parts[1], currentX, textY, textColor);
+            drawText(context, parts[1], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[1]) + TextUtil.getWidth(" | "));
 
@@ -146,7 +153,7 @@ public class DynamicIslandLegacy extends Module {
         currentX += (int) (FontRenderers.icon.getWidth("4") + 2);
         if (currentX + TextUtil.getWidth(parts[2]) <= maxX && serverIpAlpha > 0.01f) {
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * serverIpAlpha)).getRGB();
-            TextUtil.drawString(context, parts[2], currentX, textY, textColor);
+            drawText(context, parts[2], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[2]) + TextUtil.getWidth(" | "));
 
@@ -161,7 +168,7 @@ public class DynamicIslandLegacy extends Module {
         if (currentX + TextUtil.getWidth(parts[3]) <= maxX && pingAlpha > 0.01f) {
             Color pingColor = getPingColor(ping);
             int textColor = new Color(pingColor.getRed(), pingColor.getGreen(), pingColor.getBlue(), (int) (255 * alpha * pingAlpha)).getRGB();
-            TextUtil.drawString(context, parts[3], currentX, textY, textColor);
+            drawText(context, parts[3], currentX, textY, textColor);
         }
         currentX += (int) (TextUtil.getWidth(parts[3]) + TextUtil.getWidth(" | "));
 
@@ -174,7 +181,7 @@ public class DynamicIslandLegacy extends Module {
             currentX += (int) (FontRenderers.icon.getWidth("O") + 2);
 
             int textColor = new Color(255, 255, 255, (int) (255 * alpha * fpsAlpha)).getRGB();
-            TextUtil.drawString(context, parts[4], currentX, textY, textColor);
+            drawText(context, parts[4], currentX, textY, textColor);
         }
     }
 
@@ -282,5 +289,30 @@ public class DynamicIslandLegacy extends Module {
             return false;
         }
         return !player.isDead();
+    }
+    
+    private void drawText(DrawContext context, String text, float x, float y, int color) {
+        boolean useCustomFont = font.getValue() != FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
+    }
+
+    private void drawString(MatrixStack matrices, String text, float x, float y, int color) {
+        DrawContext context = new DrawContext(mc, mc.getBufferBuilders().getEntityVertexConsumers());
+        boolean useCustomFont = font.getValue() != FontType.DEFAULT;
+        TextUtil.drawString(context, text, x, y, color, useCustomFont);
+    }
+    
+    private float getHeight() {
+        switch (font.getValue()) {
+            case UI -> { return FontRenderers.ui.getFontHeight(); }
+            case ICON -> { return FontRenderers.icon.getFontHeight(); }
+            case TROLL -> { return FontRenderers.troll.getFontHeight(); }
+            case CALIBRI -> {
+                if (FontRenderers.Calibri != null) {
+                    return FontRenderers.Calibri.getFontHeight();
+                }
+            }
+        }
+        return mc.textRenderer.fontHeight;
     }
 }
