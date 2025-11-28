@@ -191,8 +191,6 @@ public class ModuleManager implements Wrapper {
         addModule(new DynamicIsland());
         addModule(new chamslastest());
         addModule(new DynamicIslandLegacy());
-        addModule(new ShaderLatest());
-        addModule(new PacketDebug());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
