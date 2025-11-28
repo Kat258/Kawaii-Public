@@ -208,9 +208,10 @@ public class AutoAnchor extends Module {
 			return;
 		}
 		if (usingPause.getValue() && mc.player.isUsingItem()) {
-			return;
-		}
-		if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
+            return;
+        }
+        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
+        if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
 		if (currentPos != null) {
 			if (breakCrystal.getValue()) CombatUtil.attackCrystal(new BlockPos(currentPos), rotate.getValue(), false);
 			boolean shouldSpam = this.spam.getValue() && (!mineSpam.getValue() || Kawaii.BREAK.isMining(currentPos, false));
@@ -533,9 +534,10 @@ public class AutoAnchor extends Module {
 			return;
 		}
 		if (usingPause.getValue() && mc.player.isUsingItem()) {
-			return;
-		}
-		if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
+            return;
+        }
+        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
+        if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
 		if (!assistTimer.passed((long) (delay.getValueFloat() * 1000))) {
 			return;
 		}

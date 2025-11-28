@@ -77,6 +77,7 @@ public class HoleKick extends Module {
             return;
         if (PacketThrow.INSTANCE.getBind().isPressed())
             return;
+        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
         if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
         for (PlayerEntity player : CombatUtil.getEnemies(range.getValue())) {
             if (!canPush(player)) continue;

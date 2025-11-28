@@ -36,6 +36,8 @@ public class PacketThrow extends Module {
             add(new BooleanSetting("OnlyGround", true));
     private final BooleanSetting inventory =
             add(new BooleanSetting("InventorySwap", true));
+    public final BooleanSetting pauseCombat =
+            add(new BooleanSetting("PauseCombat", true));
 
     private final Timer delayTimer = new Timer();
 

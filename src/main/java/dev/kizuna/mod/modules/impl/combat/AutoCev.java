@@ -52,6 +52,7 @@ public class AutoCev extends Module {
     @Override
     public void onUpdate() {
         if (ground.getValue() && !mc.player.isOnGround()) return;
+        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
         PacketMine.INSTANCE.crystal.setValue(true);
         if ((target = CombatUtil.getClosestEnemy(targetRange.getValue())) != null) {
             BlockPos targetPos = EntityUtil.getEntityPos(target);
