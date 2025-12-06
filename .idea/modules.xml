@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Kawaii-Fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Kawaii-Fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dev.kawaii.Kawaii-Fabric.main.iml" filepath="$PROJECT_DIR$/.idea/modules/dev.kawaii.Kawaii-Fabric.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dev.kawaii.Kawaii-Fabric.test.iml" filepath="$PROJECT_DIR$/.idea/modules/dev.kawaii.Kawaii-Fabric.test.iml" />
     </modules>
   </component>
 </project>

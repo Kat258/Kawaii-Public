@@ -100,6 +100,56 @@ public class NameTags extends Module {
         return text != null && text.matches(".*[\\u4e00-\\u9fa5].*");
     }
 
+    /**
+     * 处理包含 mTag 标记的字符串渲染，支持 RGB 颜色
+     * mTag 标记会被替换为 #ff80d0 颜色的 [M]
+     */
+    private void drawStringWithRGBSupport(DrawContext context, String text, float x, float y, 
+                                          int defaultColor, Font fontMode, boolean shadow) {
+        if (!text.contains("\u00a7#mTag")) {
+            // 无 mTag 标记，正常渲染
+            if (fontMode == Font.Fancy) {
+                FontRenderers.ui.drawString(context.getMatrices(), text, x, y, defaultColor);
+            } else {
+                context.drawText(mc.textRenderer, text, (int)x, (int)y, defaultColor, shadow);
+            }
+            return;
+        }
+
+        // 有 mTag 标记，需要分段渲染
+        String[] parts = text.split("\u00a7#mTag");
+        float currentX = x;
+
+        for (int i = 0; i < parts.length; i++) {
+            String part = parts[i];
+            
+            if (i > 0) {
+                // 渲染 mTag 部分（[M]），使用 RGB 颜色 #ff80d0
+                String mTag = "[M]";
+                int mTagColor = 0xffff80d0; // RGB 颜色
+                
+                if (fontMode == Font.Fancy) {
+                    FontRenderers.ui.drawString(context.getMatrices(), mTag, currentX, y, mTagColor);
+                    currentX += FontRenderers.ui.getWidth(mTag);
+                } else {
+                    context.drawText(mc.textRenderer, mTag, (int)currentX, (int)y, mTagColor, shadow);
+                    currentX += mc.textRenderer.getWidth(mTag);
+                }
+            }
+
+            // 渲染普通部分
+            if (!part.isEmpty()) {
+                if (fontMode == Font.Fancy) {
+                    FontRenderers.ui.drawString(context.getMatrices(), part, currentX, y, defaultColor);
+                    currentX += FontRenderers.ui.getWidth(part);
+                } else {
+                    context.drawText(mc.textRenderer, part, (int)currentX, (int)y, defaultColor, shadow);
+                    currentX += mc.textRenderer.getWidth(part);
+                }
+            }
+        }
+    }
+
     @Override
     public void onRender2D(DrawContext context, float tickDelta) {
         if (mc == null || mc.world == null) return;
@@ -311,18 +361,10 @@ public class NameTags extends Module {
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 3, (float) (posY - 14f), 1, 12, outline.getValue());
                     Render2DUtil.drawRect(context.getMatrices(), tagX + textWidth + 2, (float) (posY - 14f), 1, 12, outline.getValue());
                 }
-                if (chosenFont == Font.Fancy) {
-                    Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
-                    if (Kawaii.ENEMY.isEnemy(ent)) renderColor = enemyColor.getValue();
-                    FontRenderers.ui.drawString(context.getMatrices(), final_string, tagX, (float) posY - 10, renderColor.getRGB());
-                } else {
-                    context.getMatrices().push();
-                    context.getMatrices().translate(tagX, ((float) posY - 11), 0);
-                    Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
-                    if (Kawaii.ENEMY.isEnemy(ent)) renderColor = enemyColor.getValue();
-                    context.drawText(mc.textRenderer, final_string, 0, 0, renderColor.getRGB(), true);
-                    context.getMatrices().pop();
-                }
+                Color renderColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue() : this.color.getValue();
+                if (Kawaii.ENEMY.isEnemy(ent)) renderColor = enemyColor.getValue();
+                
+                drawStringWithRGBSupport(context, final_string, tagX, (float) posY - 10, renderColor.getRGB(), chosenFont, chosenFont != Font.Fancy);
 
                 context.getMatrices().pop();
             }
@@ -349,7 +391,7 @@ public class NameTags extends Module {
     private String translateGamemode(GameMode gamemode) {
         if (gamemode == null) return "§7[BOT]";
         return switch (gamemode) {
-            case SURVIVAL -> { if (mTag.getValue()) yield "§d[M]"; else yield "§b[S]"; }
+            case SURVIVAL -> { if (mTag.getValue()) yield "\u00a7#mTag"; else yield "§b[S]"; }
             case CREATIVE -> "§c[C]";
             case SPECTATOR -> "§7[SP]";
             case ADVENTURE -> "§e[A]";
