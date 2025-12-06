@@ -312,4 +312,40 @@ public class Render3DUtil implements Wrapper {
 
         return new Vector3f(xNormal / normalSqrt, yNormal / normalSqrt, zNormal / normalSqrt);
     }
+
+    /**
+     * Fallback frustum visibility test. Penumbra used a worldRenderer accessor; here we try to
+     * delegate to the vanilla frustum when possible and otherwise fall back to a simple distance check.
+     */
+    public static boolean isFrustumVisible(Box box) {
+        try {
+            // try to call worldRenderer.frustum.isVisible(box) via reflection if present
+            if (mc.worldRenderer != null) {
+                try {
+                    java.lang.reflect.Field frustumField = mc.worldRenderer.getClass().getDeclaredField("frustum");
+                    frustumField.setAccessible(true);
+                    Object frustum = frustumField.get(mc.worldRenderer);
+                    if (frustum != null) {
+                        try {
+                            java.lang.reflect.Method isVisible = frustum.getClass().getMethod("isVisible", Box.class);
+                            Object r = isVisible.invoke(frustum, box);
+                            if (r instanceof Boolean) return (Boolean) r;
+                        } catch (Throwable ignored) {
+                        }
+                    }
+                } catch (Throwable ignored) {
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+
+        // fallback: approximate by distance to camera (prevents skipping when reflection failed)
+        Vec3d cam = mc.gameRenderer.getCamera().getPos();
+        double cx = (box.minX + box.maxX) / 2.0 - cam.getX();
+        double cy = (box.minY + box.maxY) / 2.0 - cam.getY();
+        double cz = (box.minZ + box.maxZ) / 2.0 - cam.getZ();
+        double dist2 = cx * cx + cy * cy + cz * cz;
+        // keep a reasonably large cutoff (e.g., ~200 blocks squared)
+        return dist2 < 200.0 * 200.0;
+    }
 }
