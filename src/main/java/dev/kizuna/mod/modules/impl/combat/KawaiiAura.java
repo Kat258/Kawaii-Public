@@ -96,6 +96,9 @@ public class KawaiiAura extends Module {
     private final SliderSetting noSuicide = add(new SliderSetting("NoSuicide", 3.0, 0.0, 10.0, place::isOpen).setSuffix("hp"));
     private final BooleanSetting smart = add(new BooleanSetting("Smart", true, place::isOpen));
     private final SliderSetting placeDelay = add(new SliderSetting("PlaceDelay", 300, 0, 1000, place::isOpen).setSuffix("ms"));
+    private final BooleanSetting smartPlace = add(new BooleanSetting("SmartDelay", false, place::isOpen));
+    private final SliderSetting placeLHealth = add(new SliderSetting("Health", 10.0, 0.0, 36.0, () -> place.isOpen() && smartPlace.getValue()).setSuffix("hp"));
+    private final SliderSetting placeLDelay = add(new SliderSetting("LowDelay", 100, 0, 1000, () -> place.isOpen() && smartPlace.getValue()).setSuffix("ms"));
     private final EnumSetting<SwapMode> autoSwap = add(new EnumSetting<>("AutoSwap", SwapMode.Off, place::isOpen));
     private final BooleanSetting afterBreak = add(new BooleanSetting("AfterBreak", true, place::isOpen));
     private final SliderSetting autoMinDamage = add(new SliderSetting("PistonMin", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
@@ -109,6 +112,9 @@ public class KawaiiAura extends Module {
     //Break
     private final BooleanSetting breakSetting = add(new BooleanSetting("Break", true).setParent());
     private final SliderSetting breakDelay = add(new SliderSetting("BreakDelay", 300, 0, 1000, breakSetting::isOpen).setSuffix("ms"));
+    private final BooleanSetting smartBreak = add(new BooleanSetting("SmartDelay", false, breakSetting::isOpen));
+    private final SliderSetting breakLHealth = add(new SliderSetting("Health", 10.0, 0.0, 36.0, () -> breakSetting.isOpen() && smartBreak.getValue()).setSuffix("hp"));
+    private final SliderSetting breakLDelay = add(new SliderSetting("LowDelay", 100, 0, 1000, () -> breakSetting.isOpen() && smartBreak.getValue()).setSuffix("ms"));
     private final SliderSetting minAge = add(new SliderSetting("MinAge", 0, 0, 20, breakSetting::isOpen).setSuffix("tick"));
     private final BooleanSetting breakRemove = add(new BooleanSetting("Remove", false, breakSetting::isOpen));
     private final BooleanSetting onlyTick = add(new BooleanSetting("OnlyTick", true, breakSetting::isOpen));
@@ -695,10 +701,14 @@ public class KawaiiAura extends Module {
         for (EndCrystalEntity entity : BlockUtil.getEndCrystals(new Box(pos.getX(), pos.getY(), pos.getZ(), pos.getX() + 1, pos.getY() + 2, pos.getZ() + 1))) {
             if (entity.age < minAge.getValueInt()) continue;
             if (rotate.getValue() && onBreak.getValue()) {
-                if (!faceVector(entity.getPos().add(0, yOffset.getValue(), 0))) return;
-            }
-            if (!CombatUtil.breakTimer.passedMs((long) breakDelay.getValue())) return;
-            animation.to = 1;
+            if (!faceVector(entity.getPos().add(0, yOffset.getValue(), 0))) return;
+        }
+        long delay = (long) breakDelay.getValue();
+        if (smartBreak.getValue() && displayTarget != null && EntityUtil.getHealth(displayTarget) <= breakLHealth.getValue()) {
+            delay = (long) breakLDelay.getValue();
+        }
+        if (!CombatUtil.breakTimer.passedMs(delay)) return;
+        animation.to = 1;
             animation.from = 1;
             CombatUtil.breakTimer.reset();
             syncPos = pos;
@@ -741,7 +751,11 @@ public class KawaiiAura extends Module {
         if (rotate.getValue()) {
             if (!faceVector(vec)) return;
         }
-        if (!placeTimer.passedMs((long) placeDelay.getValue())) return;
+        long delay = (long) placeDelay.getValue();
+        if (smartPlace.getValue() && displayTarget != null && EntityUtil.getHealth(displayTarget) <= placeLHealth.getValue()) {
+            delay = (long) placeLDelay.getValue();
+        }
+        if (!placeTimer.passedMs(delay)) return;
         if (mc.player.getMainHandStack().getItem().equals(Items.END_CRYSTAL) || mc.player.getOffHandStack().getItem().equals(Items.END_CRYSTAL)) {
             placeTimer.reset();
             syncPos = pos;

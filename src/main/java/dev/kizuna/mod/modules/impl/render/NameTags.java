@@ -68,6 +68,16 @@ public class NameTags extends Module {
 
     private static final Map<UUID, Integer> lastStuckArrowCount = new ConcurrentHashMap<>();
 
+    private static final Color COLOR_RED = Color.RED;
+    private static final Color COLOR_ORANGE = Color.ORANGE;
+    private static final Color COLOR_GREEN = Color.GREEN;
+    private static final Color COLOR_BAR_GREEN = new Color(0x9900FF00, true);
+    private static final Color COLOR_BAR_YELLOW = new Color(0x99EEFF05, true);
+    private static final Color COLOR_BAR_RED = new Color(0x99FF0000, true);
+    private static final Color COLOR_BAR_BG = new Color(0x80000000, true);
+    
+    private final Vector4d positionVec = new Vector4d();
+
     public NameTags() {
         super("NameTags", Category.Render);
         INSTANCE = this;
@@ -97,7 +107,8 @@ public class NameTags extends Module {
     }
 
     private boolean containsChinese(String text) {
-        return text != null && text.matches(".*[\\u4e00-\\u9fa5].*");
+        if (text == null) return false;
+        return isChinese(text);
     }
 
     /**
@@ -163,12 +174,13 @@ public class NameTags extends Module {
             double z = ent.prevZ + (ent.getZ() - ent.prevZ) * mc.getTickDelta();
             Vec3d vector = new Vec3d(x, y + height.getValue() + ent.getBoundingBox().getLengthY() + 0.3, z);
             Vec3d preVec = vector;
-            vector = TextUtil.worldSpaceToScreenSpace(new Vec3d(vector.x, vector.y, vector.z));
+            vector = TextUtil.worldSpaceToScreenSpace(vector);
             if (vector.z > 0 && vector.z < 1) {
-                Vector4d position = new Vector4d(vector.x, vector.y, vector.z, 0);
-                position.x = Math.min(vector.x, position.x);
-                position.y = Math.min(vector.y, position.y);
-                position.z = Math.max(vector.x, position.z);
+                // Reuse field Vector4d
+                positionVec.set(vector.x, vector.y, vector.z, 0);
+                positionVec.x = Math.min(vector.x, positionVec.x);
+                positionVec.y = Math.min(vector.y, positionVec.y);
+                positionVec.z = Math.max(vector.x, positionVec.z);
 
                 String fallPrefix = "";
                 if (showFallTime.getValue()) {
@@ -217,9 +229,9 @@ public class NameTags extends Module {
                 }
 
 
-                double posX = position.x;
-                double posY = position.y;
-                double endPosX = position.z;
+                double posX = positionVec.x;
+                double posY = positionVec.y;
+                double endPosX = positionVec.z;
 
                 float diff = (float) (endPosX - posX) / 2;
                 float textWidth;
@@ -236,14 +248,6 @@ public class NameTags extends Module {
 
                 float tagX = (float) ((posX + diff - textWidth / 2));
 
-                ArrayList<ItemStack> stacks = new ArrayList<>();
-                stacks.add(ent.getMainHandStack());
-                stacks.add(ent.getInventory().armor.get(3));
-                stacks.add(ent.getInventory().armor.get(2));
-                stacks.add(ent.getInventory().armor.get(1));
-                stacks.add(ent.getInventory().armor.get(0));
-                stacks.add(ent.getOffHandStack());
-
                 context.getMatrices().push();
                 context.getMatrices().translate(tagX - 2 + (textWidth + 4) / 2f, (float) (posY - 13f) + 6.5f, 0);
                 float size = (float) Math.max(1 - MathHelper.sqrt((float) mc.cameraEntity.squaredDistanceTo(preVec)) * 0.01 * scaled.getValue(), 0);
@@ -253,9 +257,12 @@ public class NameTags extends Module {
 
                 float item_offset = 0;
                 if (armorMode.getValue() != Armor.None) {
-                    int count = 0;
-                    for (ItemStack armorComponent : stacks) {
-                        count++;
+                    for (int i = 0; i < 6; i++) {
+                        ItemStack armorComponent;
+                        if (i == 0) armorComponent = ent.getMainHandStack();
+                        else if (i == 5) armorComponent = ent.getOffHandStack();
+                        else armorComponent = ent.getInventory().armor.get(4 - i);
+                        
                         if (!armorComponent.isEmpty()) {
                             context.getMatrices().push();
                             context.getMatrices().translate(tagX - 2 + (textWidth + 4) / 2f, (float) (posY - 13f) + 6.5f, 0);
@@ -265,10 +272,10 @@ public class NameTags extends Module {
                             float durability = armorComponent.getMaxDamage() - armorComponent.getDamage();
                             int percent = (int) ((durability / (float) armorComponent.getMaxDamage()) * 100F);
                             Color color;
-                            if (percent <= 33) color = Color.RED; else if (percent <= 66) color = Color.ORANGE; else color = Color.GREEN;
+                            if (percent <= 33) color = COLOR_RED; else if (percent <= 66) color = COLOR_ORANGE; else color = COLOR_GREEN;
                             switch (armorMode.getValue()) {
                                 case OnlyArmor -> {
-                                    if (count > 1 && count < 6) {
+                                    if (i > 0 && i < 5) {
                                         DiffuseLighting.disableGuiDepthLighting();
                                         context.drawItem(armorComponent, 0, 0);
                                         context.drawItemInSlot(mc.textRenderer, armorComponent, 0, 0);
@@ -295,12 +302,12 @@ public class NameTags extends Module {
                                     context.drawItemInSlot(mc.textRenderer, armorComponent, 0, 0);
                                     if (armorComponent.getMaxDamage() > 0) {
                                         if (!armorComponent.isItemBarVisible()) {
-                                            int i = armorComponent.getItemBarStep();
+                                            int step = armorComponent.getItemBarStep();
                                             int j = armorComponent.getItemBarColor();
                                             int k = 2;
                                             int l = 13;
                                             context.fill(RenderLayer.getGuiOverlay(), k, l, k + 13, l + 2, -16777216);
-                                            context.fill(RenderLayer.getGuiOverlay(), k, l, k + i, l + 1, j | -16777216);
+                                            context.fill(RenderLayer.getGuiOverlay(), k, l, k + step, l + 1, j | -16777216);
                                         }
                                         if (chosenFont == Font.Fancy) {
                                             FontRenderers.ui.drawString(context.getMatrices(), String.valueOf(percent), 9 - FontRenderers.ui.getWidth(String.valueOf(percent)) / 2, 7, color.getRGB());
@@ -349,11 +356,12 @@ public class NameTags extends Module {
                 if (rect.booleanValue) {
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 13f), textWidth + 4, 11, rect.getValue());
                 }
-                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), textWidth + 4, 1.5f, new Color(0x80000000, true));
-                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), (textWidth + 4) * Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))), 1.5f,
-                        Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))) > 0.6f ? new Color(0x9900FF00, true) :
-                                Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount()))) > 0.3f ? new Color(0x99EEFF05, true) :
-                                        new Color(0x99FF0000, true));
+                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), textWidth + 4, 1.5f, COLOR_BAR_BG);
+                float healthP = Math.max(0, Math.min(1, (ent.getHealth() + ent.getAbsorptionAmount()) / (ent.getMaxHealth() + ent.getAbsorptionAmount())));
+                Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), (textWidth + 4) * healthP, 1.5f,
+                        healthP > 0.6f ? COLOR_BAR_GREEN :
+                                healthP > 0.3f ? COLOR_BAR_YELLOW :
+                                        COLOR_BAR_RED);
                 int textColor = Kawaii.FRIEND.isFriend(ent) ? friendColor.getValue().getRGB() : this.color.getValue().getRGB();
                 if (outline.booleanValue) {
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 3, (float) (posY - 14f), textWidth + 6, 1, outline.getValue());
@@ -407,9 +415,7 @@ public class NameTags extends Module {
     }
 
     public static float round2(double value) {
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(1, RoundingMode.HALF_UP);
-        return bd.floatValue();
+        return (float) (Math.round(value * 10.0) / 10.0);
     }
 
     public enum Font { Fancy, Fast }
