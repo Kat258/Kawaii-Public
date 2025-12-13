@@ -117,7 +117,10 @@ public class NameTags extends Module {
      */
     private void drawStringWithRGBSupport(DrawContext context, String text, float x, float y, 
                                           int defaultColor, Font fontMode, boolean shadow) {
-        if (!text.contains("\u00a7#mTag")) {
+        String mTagMarker = "\u00a7#mTag";
+        int index = text.indexOf(mTagMarker);
+        
+        if (index == -1) {
             // 无 mTag 标记，正常渲染
             if (fontMode == Font.Fancy) {
                 FontRenderers.ui.drawString(context.getMatrices(), text, x, y, defaultColor);
@@ -128,28 +131,15 @@ public class NameTags extends Module {
         }
 
         // 有 mTag 标记，需要分段渲染
-        String[] parts = text.split("\u00a7#mTag");
         float currentX = x;
-
-        for (int i = 0; i < parts.length; i++) {
-            String part = parts[i];
-            
-            if (i > 0) {
-                // 渲染 mTag 部分（[M]），使用 RGB 颜色 #ff80d0
-                String mTag = "[M]";
-                int mTagColor = 0xffff80d0; // RGB 颜色
-                
-                if (fontMode == Font.Fancy) {
-                    FontRenderers.ui.drawString(context.getMatrices(), mTag, currentX, y, mTagColor);
-                    currentX += FontRenderers.ui.getWidth(mTag);
-                } else {
-                    context.drawText(mc.textRenderer, mTag, (int)currentX, (int)y, mTagColor, shadow);
-                    currentX += mc.textRenderer.getWidth(mTag);
-                }
-            }
-
-            // 渲染普通部分
-            if (!part.isEmpty()) {
+        String mTag = "[M]";
+        int mTagColor = 0xffff80d0; // RGB 颜色
+        
+        int lastIndex = 0;
+        while (index != -1) {
+            // 渲染标记前的部分
+            if (index > lastIndex) {
+                String part = text.substring(lastIndex, index);
                 if (fontMode == Font.Fancy) {
                     FontRenderers.ui.drawString(context.getMatrices(), part, currentX, y, defaultColor);
                     currentX += FontRenderers.ui.getWidth(part);
@@ -157,6 +147,28 @@ public class NameTags extends Module {
                     context.drawText(mc.textRenderer, part, (int)currentX, (int)y, defaultColor, shadow);
                     currentX += mc.textRenderer.getWidth(part);
                 }
+            }
+            
+            // 渲染 mTag
+            if (fontMode == Font.Fancy) {
+                FontRenderers.ui.drawString(context.getMatrices(), mTag, currentX, y, mTagColor);
+                currentX += FontRenderers.ui.getWidth(mTag);
+            } else {
+                context.drawText(mc.textRenderer, mTag, (int)currentX, (int)y, mTagColor, shadow);
+                currentX += mc.textRenderer.getWidth(mTag);
+            }
+            
+            lastIndex = index + mTagMarker.length();
+            index = text.indexOf(mTagMarker, lastIndex);
+        }
+        
+        // 渲染剩余部分
+        if (lastIndex < text.length()) {
+            String part = text.substring(lastIndex);
+            if (fontMode == Font.Fancy) {
+                FontRenderers.ui.drawString(context.getMatrices(), part, currentX, y, defaultColor);
+            } else {
+                context.drawText(mc.textRenderer, part, (int)currentX, (int)y, defaultColor, shadow);
             }
         }
     }
@@ -198,23 +210,26 @@ public class NameTags extends Module {
                     }
                 }
 
-                String final_string = fallPrefix;
+                StringBuilder final_string_builder = new StringBuilder();
+                if (!fallPrefix.isEmpty()) {
+                    final_string_builder.append(fallPrefix);
+                }
 
                 if (god.getValue() && ent.hasStatusEffect(StatusEffects.SLOWNESS)) {
-                    final_string += "§4GOD ";
+                    final_string_builder.append("§4GOD ");
                 }
                 if (ping.getValue()) {
-                    final_string += getEntityPing(ent) + "ms ";
+                    final_string_builder.append(getEntityPing(ent)).append("ms ");
                 }
                 if (gamemode.getValue()) {
-                    final_string += translateGamemode(getEntityGamemode(ent)) + " ";
+                    final_string_builder.append(translateGamemode(getEntityGamemode(ent))).append(" ");
                 }
-                final_string += Formatting.RESET + ent.getName().getString();
+                final_string_builder.append(Formatting.RESET).append(ent.getName().getString());
                 if (health.getValue()) {
-                    final_string += " " + getHealthColor(ent) + round2(ent.getAbsorptionAmount() + ent.getHealth());
+                    final_string_builder.append(" ").append(getHealthColor(ent)).append(round2(ent.getAbsorptionAmount() + ent.getHealth()));
                 }
                 if (distance.getValue()) {
-                    final_string += " " + Formatting.RESET + String.format("%.1f", mc.player.distanceTo(ent)) + "m";
+                    final_string_builder.append(" ").append(Formatting.RESET).append(String.format("%.1f", mc.player.distanceTo(ent))).append("m");
                 }
                 if (pops.getValue()) {
                     Integer currentPopCount = Kawaii.POP.getPop(ent.getName().getString());
@@ -225,8 +240,10 @@ public class NameTags extends Module {
                         lastStuckArrowCount.put(ent.getUuid(), currentPopCount);
                     }
 
-                    final_string += " §bPop" + " " + Formatting.LIGHT_PURPLE + currentPopCount.toString();
+                    final_string_builder.append(" §bPop ").append(Formatting.LIGHT_PURPLE).append(currentPopCount);
                 }
+                
+                String final_string = final_string_builder.toString();
 
 
                 double posX = positionVec.x;

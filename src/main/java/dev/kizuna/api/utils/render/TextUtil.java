@@ -146,21 +146,42 @@ public class TextUtil implements Wrapper {
 	public static final Matrix4f lastProjMat = new Matrix4f();
 	public static final Matrix4f lastModMat = new Matrix4f();
 	public static final Matrix4f lastWorldSpaceMatrix = new Matrix4f();
+	// Reusable objects for worldSpaceToScreenSpace to avoid allocation
+	private static final int[] viewport = new int[4];
+	private static final Vector3f target = new Vector3f();
+	private static final Vector4f transformedCoordinates = new Vector4f();
+	private static final Matrix4f matrixProj = new Matrix4f();
+	private static final Matrix4f matrixModel = new Matrix4f();
+
+	public static void updateViewport() {
+		viewport[0] = 0;
+		viewport[1] = 0;
+		viewport[2] = mc.getWindow().getFramebufferWidth();
+		viewport[3] = mc.getWindow().getFramebufferHeight();
+	}
+
 	public static Vec3d worldSpaceToScreenSpace(Vec3d pos) {
 		Camera camera = mc.getEntityRenderDispatcher().camera;
 		int displayHeight = mc.getWindow().getHeight();
-		int[] viewport = new int[4];
-		GL11.glGetIntegerv(GL11.GL_VIEWPORT, viewport);
-		Vector3f target = new Vector3f();
+		
+		// Use cached viewport if possible, or update it once per frame outside this method.
+		// For safety, we can fallback to getWindow dimensions which is much faster than glGetIntegerv
+		if (viewport[2] == 0 || viewport[3] == 0) {
+			updateViewport();
+		}
 
 		double deltaX = pos.x - camera.getPos().x;
 		double deltaY = pos.y - camera.getPos().y;
 		double deltaZ = pos.z - camera.getPos().z;
 
-		Vector4f transformedCoordinates = new Vector4f((float) deltaX, (float) deltaY, (float) deltaZ, 1.f).mul(lastWorldSpaceMatrix);
-		Matrix4f matrixProj = new Matrix4f(lastProjMat);
-		Matrix4f matrixModel = new Matrix4f(lastModMat);
+		// Reuse vector/matrix objects
+		transformedCoordinates.set((float) deltaX, (float) deltaY, (float) deltaZ, 1.f).mul(lastWorldSpaceMatrix);
+		
+		matrixProj.set(lastProjMat);
+		matrixModel.set(lastModMat);
+		
 		matrixProj.mul(matrixModel).project(transformedCoordinates.x(), transformedCoordinates.y(), transformedCoordinates.z(), viewport, target);
+		
 		return new Vec3d(target.x / mc.getWindow().getScaleFactor(), (displayHeight - target.y) / mc.getWindow().getScaleFactor(), target.z);
 	}
 
