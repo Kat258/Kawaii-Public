@@ -192,6 +192,7 @@ public class ModuleManager implements Wrapper {
         addModule(new chamslastest());
         addModule(new DynamicIslandLegacy());
         addModule(new CrystalChams());
+        addModule(new ItemTag2());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
