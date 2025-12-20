@@ -185,10 +185,18 @@ public class ItemTag2 extends Module {
                 // Draw text lines
                 float currentY = (float) posY - 10 - (lines.size() - 1) * lineHeight;
                 for (String line : lines) {
+                    float lineWidth;
                     if (chosenFont == NameTags.Font.Fancy) {
-                        FontRenderers.ui.drawString(context.getMatrices(), line, tagX, currentY, color.getValue().getRGB());
+                        lineWidth = FontRenderers.ui.getWidth(line);
                     } else {
-                        context.drawText(mc.textRenderer, line, (int)tagX, (int)currentY, color.getValue().getRGB(), true);
+                        lineWidth = mc.textRenderer.getWidth(line);
+                    }
+                    float centeredX = tagX + (maxTextWidth - lineWidth) / 2f;
+
+                    if (chosenFont == NameTags.Font.Fancy) {
+                        FontRenderers.ui.drawString(context.getMatrices(), line, centeredX, currentY, color.getValue().getRGB());
+                    } else {
+                        context.drawText(mc.textRenderer, line, (int)centeredX, (int)currentY, color.getValue().getRGB(), true);
                     }
                     currentY += lineHeight;
                 }
