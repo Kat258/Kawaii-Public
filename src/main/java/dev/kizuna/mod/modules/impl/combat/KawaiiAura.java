@@ -99,6 +99,7 @@ public class KawaiiAura extends Module {
     private final BooleanSetting smartPlace = add(new BooleanSetting("SmartDelay", false, place::isOpen));
     private final SliderSetting placeLHealth = add(new SliderSetting("Health", 10.0, 0.0, 36.0, () -> place.isOpen() && smartPlace.getValue()).setSuffix("hp"));
     private final SliderSetting placeLDelay = add(new SliderSetting("LowDelay", 100, 0, 1000, () -> place.isOpen() && smartPlace.getValue()).setSuffix("ms"));
+    private final EnumSetting<Sequential> sequential = add(new EnumSetting<>("Sequential", Sequential.NONE, place::isOpen));
     private final EnumSetting<SwapMode> autoSwap = add(new EnumSetting<>("AutoSwap", SwapMode.Off, place::isOpen));
     private final BooleanSetting afterBreak = add(new BooleanSetting("AfterBreak", true, place::isOpen));
     private final SliderSetting autoMinDamage = add(new SliderSetting("PistonMin", 5.0, 0.0, 36.0, place::isOpen).setSuffix("dmg"));
@@ -756,10 +757,25 @@ public class KawaiiAura extends Module {
             delay = (long) placeLDelay.getValue();
         }
         if (!placeTimer.passedMs(delay)) return;
-        if (mc.player.getMainHandStack().getItem().equals(Items.END_CRYSTAL) || mc.player.getOffHandStack().getItem().equals(Items.END_CRYSTAL)) {
+
+        int limit = 1;
+        if (sequential.getValue() == Sequential.STRICT) {
+            limit = 2;
+        } else if (sequential.getValue() == Sequential.STRONG) {
+            limit = 10;
+        }
+
+        boolean holding = mc.player.getMainHandStack().getItem().equals(Items.END_CRYSTAL) || mc.player.getOffHandStack().getItem().equals(Items.END_CRYSTAL);
+
+        if (holding) {
             placeTimer.reset();
             syncPos = pos;
-            placeCrystal(pos);
+            for (int i = 0; i < limit; i++) {
+                placeCrystal(pos);
+                if (sequential.getValue() == Sequential.STRONG) {
+                    predictAttack(pos);
+                }
+            }
         } else {
             placeTimer.reset();
             syncPos = pos;
@@ -767,13 +783,31 @@ public class KawaiiAura extends Module {
             int crystal = getCrystal();
             if (crystal == -1) return;
             doSwap(crystal);
-            placeCrystal(pos);
+            for (int i = 0; i < limit; i++) {
+                placeCrystal(pos);
+                if (sequential.getValue() == Sequential.STRONG) {
+                    predictAttack(pos);
+                }
+            }
             if (autoSwap.getValue() == SwapMode.Silent) {
                 doSwap(old);
             } else if (autoSwap.getValue() == SwapMode.Inventory) {
                 doSwap(crystal);
                 EntityUtil.syncInventory();
             }
+        }
+    }
+
+    private void predictAttack(BlockPos pos) {
+        int id = -1;
+        for (Entity e : mc.world.getEntities()) {
+            if (e.getId() > id) id = e.getId();
+        }
+        if (id != -1) {
+            EndCrystalEntity fake = new EndCrystalEntity(mc.world, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+            fake.setId(id + 1);
+            mc.getNetworkHandler().sendPacket(PlayerInteractEntityC2SPacket.attack(fake, mc.player.isSneaking()));
+            EntityUtil.swingHand(Hand.MAIN_HAND, swingMode.getValue());
         }
     }
     private void doPlaceBase(BlockPos pos) {
@@ -858,9 +892,9 @@ public class KawaiiAura extends Module {
         Off, Normal, Silent, SILENT_ALT, Inventory
     }
     public enum Sequential {
-        NORMAL,
+        NONE,
         STRICT,
-        NONE
+        STRONG
     }
 
     private class PlayerAndPredict {
