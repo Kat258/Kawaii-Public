@@ -9,6 +9,7 @@ import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
@@ -31,6 +32,8 @@ public class AutoTotem extends Module {
 			add(new SliderSetting("Health", 16.0f, 0.0f, 36.0f, 0.1));
 	private final BooleanSetting gappleoffhand =
 			add(new BooleanSetting("GappleOffhand", false));
+	private final BooleanSetting elytraCheck =
+			add(new BooleanSetting("ElytraCheck", false));
 
 	public AutoTotem() {
 		super("AutoTotem", Category.Combat);
@@ -63,7 +66,8 @@ public class AutoTotem extends Module {
 		if (!timer.passedMs(50)) {
 			return;
 		}
-		if (gapple.getValue() && !mainHand.getValue() && mc.player.getMainHandStack().getItem() instanceof SwordItem && mc.options.useKey.isPressed()) {
+		boolean elytra = elytraCheck.getValue() && mc.player.getEquippedStack(EquipmentSlot.CHEST).getItem() == Items.ELYTRA;
+		if (!elytra && gapple.getValue() && !mainHand.getValue() && mc.player.getMainHandStack().getItem() instanceof SwordItem && mc.options.useKey.isPressed()) {
 			if (mc.player.getOffHandStack().getItem() != Items.ENCHANTED_GOLDEN_APPLE && mc.player.getOffHandStack().getItem() != Items.GOLDEN_APPLE) {
 				int itemSlot = findItemInventorySlot(Items.ENCHANTED_GOLDEN_APPLE);
 				if (itemSlot == -1) {
@@ -79,7 +83,7 @@ public class AutoTotem extends Module {
 			}
 			return;
 		}
-		if (mc.player.getHealth() + mc.player.getAbsorptionAmount() > health.getValue()) {
+		if (!elytra && mc.player.getHealth() + mc.player.getAbsorptionAmount() > health.getValue()) {
 			if (!mainHand.getValue() && crystal.getValue() && mc.player.getOffHandStack().getItem() != Items.END_CRYSTAL) {
 				int itemSlot = findItemInventorySlot(Items.END_CRYSTAL);
 				if (itemSlot != -1) {
