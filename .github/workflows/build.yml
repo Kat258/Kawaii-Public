@@ -28,9 +28,6 @@ jobs:
     - name: Build with Gradle
       run: .\gradlew.bat build
 
-    - name: Copy ZKM Libs
-      run: .\gradlew.bat copyZkmLibs
-
     - name: Run ZKM Obfuscation
       run: |
         cd "obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0"
