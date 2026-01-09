@@ -1,0 +1,16 @@
+In class dev.kizuna.api.events.eventbus.LambdaListener
+    in method public LambdaListener(dev.kizuna.api.events.eventbus.LambdaListener$Factory, java.lang.Class, java.lang.Object, java.lang.reflect.Method)
+        java.lang.reflect.Method.getName()
+        java.lang.invoke.MethodHandles$Lookup.findStatic(java.lang.Class, java.lang.String, java.lang.invoke.MethodType)
+        java.lang.invoke.MethodHandles$Lookup.findVirtual(java.lang.Class, java.lang.String, java.lang.invoke.MethodType)
+In class dev.kizuna.api.events.eventbus.NoLambdaFactoryException
+    in method public NoLambdaFactoryException(java.lang.Class)
+        java.lang.Class.getName()
+In class dev.kizuna.api.utils.render.Render3DUtil
+    in method public static boolean isFrustumVisible(net.minecraft.class_238)
+        java.lang.Class.getMethod(java.lang.String, java.lang.Class[])
+        java.lang.Class.getDeclaredField(java.lang.String)
+In class dev.kizuna.mod.modules.settings.impl.BindSetting
+    in method public java.lang.String getBind()
+        java.lang.reflect.Field.getName()
+        java.lang.reflect.Field.getName()
