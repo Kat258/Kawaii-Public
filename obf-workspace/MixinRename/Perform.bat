@@ -1,0 +1,1 @@
+MixinRename.py --jar "..\ZKM-21.0.0-Cracked\ZKM 21.0.0\Kawaii-1S.jar" --pkg dev.kizuna.asm --out Kawaii-S2.jar --configs fabric.mod.json kawaii-refmap.json kawaii.accesswidener kawaii.mixins.json --backup obf_backups
