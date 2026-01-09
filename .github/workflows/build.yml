@@ -28,8 +28,62 @@ jobs:
     - name: Build with Gradle
       run: .\gradlew.bat build
 
+    - name: Copy ZKM Libs
+      run: .\gradlew.bat copyZkmLibs
+
+    - name: Run ZKM Obfuscation
+      run: |
+        cd "obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0"
+        .\Script.bat
+      shell: cmd
+
+    - name: Run fix_mod_json.py
+      run: python fix_mod_json.py
+
+    - name: Run MixinRename
+      run: |
+        cd "obf-workspace\MixinRename"
+        python MixinRename.py --jar "..\ZKM-21.0.0-Cracked\ZKM 21.0.0\Kawaii-1S.jar" --pkg dev.kizuna.asm --out Kawaii-S2.jar --configs fabric.mod.json kawaii-refmap.json kawaii.accesswidener kawaii.mixins.json --backup obf_backups
+      shell: cmd
+
+    - name: Set up JDK 11 for JNIC
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+
+    - name: Extract JNIC
+      run: |
+        cd "obf-workspace"
+        powershell Expand-Archive -Path JNIC-3.5.1.zip -DestinationPath JNIC-3.5.1 -Force
+      shell: cmd
+
+    - name: Run update_jnic_config.py
+      run: |
+        cd "obf-workspace\JNIC-3.5.1"
+        python update_jnic_config.py
+      shell: cmd
+
+    - name: Modify run.bat and Run JNIC
+      run: |
+        cd "obf-workspace\JNIC-3.5.1"
+        powershell -Command "(Get-Content run.bat) -replace 'java11', 'java' -replace 'pause', '' | Set-Content run.bat"
+        .\run.bat
+      shell: cmd
+
+    - name: Rename and Upload Final JAR
+      run: |
+        cd "obf-workspace\JNIC-3.5.1"
+        if exist Kawaii-S3.jar (
+          move Kawaii-S3.jar Kawaii-jnic-post.jar
+        ) else (
+          echo "Kawaii-S3.jar not found!"
+          exit /b 1
+        )
+      shell: cmd
+
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Kawaii-Fabric-Mod
-        path: build/libs/*.jar
+        name: Kawaii-jnic-post
+        path: obf-workspace/JNIC-3.5.1/Kawaii-jnic-post.jar

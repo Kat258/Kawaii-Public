@@ -19,7 +19,7 @@ from pathlib import Path
 
 ALNUM = string.ascii_letters + string.digits
 OBF_PREFIX = "m$$0"
-OBF_LEN = 45
+OBF_LEN = 65
 CLASS_MAGIC = b"\xCA\xFE\xBA\xBE"
 
 def gen_obf():

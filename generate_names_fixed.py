@@ -3,7 +3,7 @@ import string
 import os
 
 def generate_names():
-    prefix = "m$$0"
+    prefix = "mSS0"
     chars = string.ascii_letters + string.digits
     names = []
     for _ in range(1000):
