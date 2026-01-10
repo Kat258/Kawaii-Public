@@ -216,7 +216,11 @@ obfuscateReferencesExclude
 
 
 stringEncryptionExclude
-                @net.minecraftforge.fml.common.Mod *.* *(*);
+                net.minecraft.client.main.Main and
+                dev.kizuna.asm.mixins.** and
+                @org.spongepowered.asm.mixin.Mixin * and
+                @org.spongepowered.asm.mixin.Mixin *.* and
+                @org.spongepowered.asm.mixin.Mixin *.*(*);
 
 integerEncryptionExclude
     @net.minecraftforge.fml.common.Mod *.* *(*);
@@ -240,7 +244,7 @@ obfuscate   changeLogFileIn=""
             methodParameterChanges=none
             obfuscateFlow=aggressive
             exceptionObfuscation=heavy
-            encryptStringLiterals=none
+            encryptStringLiterals=aggressive
             encryptIntegerConstants=aggressive
             encryptLongConstants=normal
             newClassNameFile="names.txt"
