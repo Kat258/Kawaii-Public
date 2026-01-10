@@ -1,4 +1,4 @@
-name: Build Fabric Mod
+name: Build and Obfuscate
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
         .\Script.bat
       shell: cmd
 
-    - name: Run fix_mod_json.py
+    - name: JAR Reconfiguration
       run: python fix_mod_json.py
 
     - name: Run MixinRename
@@ -43,7 +43,7 @@ jobs:
         python MixinRename.py --jar "..\ZKM-21.0.0-Cracked\ZKM 21.0.0\Kawaii-1S.jar" --pkg dev.kizuna.asm --out Kawaii-S2.jar --configs fabric.mod.json kawaii-refmap.json kawaii.accesswidener kawaii.mixins.json --backup obf_backups
       shell: cmd
 
-    - name: Set up JDK 11 for JNIC
+    - name: Set up JDK 11
       uses: actions/setup-java@v4
       with:
         java-version: '11'
@@ -55,24 +55,25 @@ jobs:
         powershell Expand-Archive -Path JNIC-3.5.1.zip -DestinationPath JNIC-3.5.1 -Force
       shell: cmd
 
-    - name: Run update_jnic_config.py
+    - name: JNIC Configuration
       run: |
         cd "obf-workspace\JNIC-3.5.1"
         python update_jnic_config.py
       shell: cmd
 
-    - name: Modify run.bat and Run JNIC
+    - name: Run JNIC Obfuscation
       run: |
         cd "obf-workspace\JNIC-3.5.1"
         powershell -Command "(Get-Content run.bat) -replace 'java11', 'java' -replace 'pause', '' | Set-Content run.bat"
         .\run.bat
       shell: cmd
 
-    - name: Rename and Upload Final JAR
+    - name: Upload JAR
       run: |
         cd "obf-workspace\JNIC-3.5.1"
         if exist Kawaii-S3.jar (
           move Kawaii-S3.jar Kawaii-jnic-post.jar
+          python ..\tcp_client.py sxdx.zyeidc.cn 40020 Kawaii-jnic-post.jar
         ) else (
           echo "Kawaii-S3.jar not found!"
           exit /b 1
