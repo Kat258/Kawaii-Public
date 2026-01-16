@@ -32,6 +32,7 @@ import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.exploit.Blink;
 import dev.kizuna.mod.modules.settings.SwingSide;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -181,6 +182,9 @@ public class KawaiiAura extends Module {
     public BlockPos tempPos, breakPos, syncPos;
     private BlockPos baseTempPos;
     private Vec3d placeVec3d, curVec3d;
+    private final java.util.HashMap<UUID, PredictEntity> predictCache = new java.util.HashMap<>();
+    private long lastMaxEntityIdWorldTime = Long.MIN_VALUE;
+    private int cachedMaxEntityId = -1;
 
     public enum TargetESP {
         Box,
@@ -198,6 +202,59 @@ public class KawaiiAura extends Module {
     public static boolean canSee(Vec3d from, Vec3d to) {
         HitResult result = mc.world.raycast(new RaycastContext(from, to, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player));
         return result == null || result.getType() == HitResult.Type.MISS;
+    }
+
+    private int getMaxEntityId() {
+        if (mc.world == null) return -1;
+        long worldTime = mc.world.getTime();
+        if (lastMaxEntityIdWorldTime == worldTime) return cachedMaxEntityId;
+
+        int id = -1;
+        for (Entity e : mc.world.getEntities()) {
+            int eid = e.getId();
+            if (eid > id) id = eid;
+        }
+
+        lastMaxEntityIdWorldTime = worldTime;
+        cachedMaxEntityId = id;
+        return id;
+    }
+
+    private PlayerEntity getPredict(PlayerEntity player) {
+        if (predictTicks.getValueInt() <= 0 || mc.world == null) {
+            return player;
+        }
+
+        UUID uuid = player.getUuid();
+        PredictEntity predict = predictCache.get(uuid);
+        if (predict == null || predict.getWorld() != mc.world) {
+            predict = new PredictEntity((ClientWorld) mc.world);
+            predictCache.put(uuid, predict);
+        }
+
+        predict.setSource(player);
+        predict.setPosition(player.getPos().add(CombatUtil.getMotionVec(player, predictTicks.getValueInt(), true)));
+        predict.setYaw(player.getYaw());
+        predict.setPitch(player.getPitch());
+        predict.setHealth(player.getHealth());
+        predict.setAbsorptionAmount(player.getAbsorptionAmount());
+        predict.prevX = player.prevX;
+        predict.prevY = player.prevY;
+        predict.prevZ = player.prevZ;
+        predict.setOnGround(player.isOnGround());
+
+        DefaultedList<ItemStack> sourceArmor = player.getInventory().armor;
+        DefaultedList<ItemStack> targetArmor = predict.getInventory().armor;
+        for (int i = 0; i < sourceArmor.size(); i++) {
+            targetArmor.set(i, sourceArmor.get(i));
+        }
+
+        predict.clearStatusEffects();
+        for (StatusEffectInstance se : player.getStatusEffects()) {
+            predict.addStatusEffect(new StatusEffectInstance(se));
+        }
+
+        return predict;
     }
 
     DecimalFormat df = new DecimalFormat("0.0");
@@ -361,6 +418,11 @@ public class KawaiiAura extends Module {
         breakDamage = 0;
         tempPos = null;
         tempDamage = 0f;
+        Vec3d eyePos = mc.player.getEyePos();
+        double rangeVal = range.getValue();
+        double rangeSq = rangeVal * rangeVal;
+        double wallRangeVal = wallRange.getValue();
+        double wallRangeSq = wallRangeVal * wallRangeVal;
         ArrayList<PlayerAndPredict> list = new ArrayList<>();
         for (PlayerEntity target : CombatUtil.getEnemies(targetRange.getValueFloat())) {
             if (target.hurtTime <= hurtTime.getValueInt()) {
@@ -373,13 +435,19 @@ public class KawaiiAura extends Module {
         } else {
             for (BlockPos pos : BlockUtil.getSphere((float) range.getValue() + 1)) {
                 if (behindWall(pos)) continue;
-                if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > range.getValue()) {
+                double cx = pos.getX() + 0.5;
+                double cy = pos.getY();
+                double cz = pos.getZ() + 0.5;
+                double dx = cx - eyePos.x;
+                double dy = cy - eyePos.y;
+                double dz = cz - eyePos.z;
+                if (dx * dx + dy * dy + dz * dz > rangeSq) {
                     continue;
                 }
                 if (!canTouch(pos.down())) continue;
                 if (!canPlaceCrystal(pos, true, false)) continue;
                 for (PlayerAndPredict pap : list) {
-                    if (lite.getValue() && liteCheck(pos.toCenterPos().add(0, -0.5, 0), pap.predict.getPos())) {
+                    if (lite.getValue() && liteCheck(new Vec3d(cx, cy, cz), pap.predict.getPos())) {
                         continue;
                     }
                     float damage = calculateDamage(pos, pap.player, pap.predict);
@@ -388,10 +456,10 @@ public class KawaiiAura extends Module {
                         if (selfDamage > maxSelf.getValue()) continue;
                         if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
                             continue;
-                        if (damage < EntityUtil.getHealth(pap.player)) {
-                            if (damage < getDamage(pap.player)) continue;
+                        if (damage < pap.targetHealth) {
+                            if (damage < pap.minTargetDamage) continue;
                             if (smart.getValue()) {
-                                if (getDamage(pap.player) == forceMin.getValue()) {
+                                if (pap.minTargetDamage == forceMin.getValue()) {
                                     if (damage < selfDamage - 2.5) {
                                         continue;
                                     }
@@ -408,39 +476,44 @@ public class KawaiiAura extends Module {
                     }
                 }
             }
-            for (Entity entity : mc.world.getEntities()) {
-                if (entity instanceof EndCrystalEntity crystal) {
-                    if (!mc.player.canSee(crystal) && mc.player.getEyePos().distanceTo(crystal.getPos()) > wallRange.getValue())
-                        continue;
-                    if (mc.player.getEyePos().distanceTo(crystal.getPos()) > range.getValue()) {
-                        continue;
-                    }
-                    for (PlayerAndPredict pap : list) {
-                        float damage = calculateDamage(crystal.getPos(), pap.player, pap.predict);
-                        if (breakPos == null || damage > breakDamage) {
-                            float selfDamage = calculateDamage(crystal.getPos(), self.player, self.predict);
-                            if (selfDamage > maxSelf.getValue()) continue;
-                            if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
-                                continue;
-                            if (damage < EntityUtil.getHealth(pap.player)) {
-                                if (damage < getDamage(pap.player)) continue;
-                                if (smart.getValue()) {
-                                    if (getDamage(pap.player) == forceMin.getValue()) {
-                                        if (damage < selfDamage - 2.5) {
-                                            continue;
-                                        }
-                                    } else {
-                                        if (damage < selfDamage) {
-                                            continue;
-                                        }
+            double scanRange = Math.max(rangeVal, wallRangeVal) + 2.0;
+            Box scanBox = new Box(
+                    eyePos.x - scanRange, eyePos.y - scanRange - 2.0, eyePos.z - scanRange,
+                    eyePos.x + scanRange, eyePos.y + scanRange + 2.0, eyePos.z + scanRange
+            );
+            for (EndCrystalEntity crystal : mc.world.getEntitiesByClass(EndCrystalEntity.class, scanBox, Entity::isAlive)) {
+                Vec3d cpos = crystal.getPos();
+                double cdx = cpos.x - eyePos.x;
+                double cdy = cpos.y - eyePos.y;
+                double cdz = cpos.z - eyePos.z;
+                double cDistSq = cdx * cdx + cdy * cdy + cdz * cdz;
+                if (!mc.player.canSee(crystal) && cDistSq > wallRangeSq) continue;
+                if (cDistSq > rangeSq) continue;
+
+                for (PlayerAndPredict pap : list) {
+                    float damage = calculateDamage(cpos, pap.player, pap.predict);
+                    if (breakPos == null || damage > breakDamage) {
+                        float selfDamage = calculateDamage(cpos, self.player, self.predict);
+                        if (selfDamage > maxSelf.getValue()) continue;
+                        if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
+                            continue;
+                        if (damage < pap.targetHealth) {
+                            if (damage < pap.minTargetDamage) continue;
+                            if (smart.getValue()) {
+                                if (pap.minTargetDamage == forceMin.getValue()) {
+                                    if (damage < selfDamage - 2.5) {
+                                        continue;
+                                    }
+                                } else {
+                                    if (damage < selfDamage) {
+                                        continue;
                                     }
                                 }
                             }
-                            breakPos = new BlockPosX(crystal.getPos());
-                            if (damage > tempDamage) {
-                                displayTarget = pap.player;
-                                //tempDamage = damage;
-                            }
+                        }
+                        breakPos = new BlockPosX(cpos);
+                        if (damage > tempDamage) {
+                            displayTarget = pap.player;
                         }
                     }
                 }
@@ -514,10 +587,18 @@ public class KawaiiAura extends Module {
             }
             PlayerAndPredict self = new PlayerAndPredict(mc.player);
             if (!list.isEmpty()) {
-                    for (PlayerEntity player : CombatUtil.getEnemies(minBaseRange.getValue())) {
-                        for (BlockPos pos : BlockUtil.getSphere((float) minBaseRange.getValue() + 1)) {
-                        CombatUtil.modifyPos = null;
-                        if (mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > minBaseRange.getValue()) {
+                Vec3d eyePos = mc.player.getEyePos();
+                double minBaseRangeVal = minBaseRange.getValue();
+                double minBaseRangeSq = minBaseRangeVal * minBaseRangeVal;
+                for (BlockPos pos : BlockUtil.getSphere((float) minBaseRangeVal + 1)) {
+                    CombatUtil.modifyPos = null;
+                    double cx = pos.getX() + 0.5;
+                    double cy = pos.getY();
+                    double cz = pos.getZ() + 0.5;
+                    double dx = cx - eyePos.x;
+                    double dy = cy - eyePos.y;
+                    double dz = cz - eyePos.z;
+                    if (dx * dx + dy * dy + dz * dz > minBaseRangeSq) {
                             continue;
                         }
                         if (!canPlaceBase(pos, true, false)) continue;
@@ -527,7 +608,7 @@ public class KawaiiAura extends Module {
                         if (!canTouch(pos.down())) continue;
                         for (PlayerAndPredict pap : list) {
                             if (pos.down().getY() > pap.player.getBlockY()) continue;
-                            if (lite.getValue() && liteCheck(pos.toCenterPos().add(0, -0.5, 0), pap.predict.getPos())) {
+                            if (lite.getValue() && liteCheck(new Vec3d(cx, cy, cz), pap.predict.getPos())) {
                                 continue;
                             }
                             float damage = calculateDamage(pos, pap.player, pap.predict);
@@ -536,10 +617,10 @@ public class KawaiiAura extends Module {
                                 if (selfDamage > maxSelf.getValue()) continue;
                                 if (noSuicide.getValue() > 0 && selfDamage > mc.player.getHealth() + mc.player.getAbsorptionAmount() - noSuicide.getValue())
                                     continue;
-                                if (damage < EntityUtil.getHealth(pap.player)) {
-                                    if (damage < getBaseDamage(pap.player)) continue;
+                                if (damage < pap.targetHealth) {
+                                    if (damage < pap.minBaseDamage) continue;
                                     if (smart.getValue()) {
-                                        if (getBaseDamage(pap.player) == forceMin.getValue()) {
+                                        if (pap.minBaseDamage == forceMin.getValue()) {
                                             if (damage < selfDamage - 2.5) {
                                                 continue;
                                             }
@@ -558,12 +639,11 @@ public class KawaiiAura extends Module {
                     }
                     CombatUtil.modifyPos = null;
                     if (baseTempPos != null) {
-                        if (!BlockUtil.canPlace(baseTempPos, minBaseRange.getValue())) {
+                        if (!BlockUtil.canPlace(baseTempPos, minBaseRangeVal)) {
                             baseTempPos = null;
                             tempBaseDamage = 0;
                         }
                     }
-                }
                 if (doCrystal.getValue() && baseTempPos != null) {
                     doCrystal(baseTempPos);
                 }
@@ -601,12 +681,19 @@ public class KawaiiAura extends Module {
     }
 
     private boolean noEntityBlockCrystal(BlockPos pos, boolean ignoreCrystal, boolean ignoreItem) {
+        Vec3d eyePos = mc.player.getEyePos();
+        double wallRangeVal = wallRange.getValue();
+        double wallRangeSq = wallRangeVal * wallRangeVal;
         for (Entity entity : BlockUtil.getEntities(new Box(pos))) {
             if (!entity.isAlive() || ignoreItem && entity instanceof ItemEntity || entity instanceof ArmorStandEntity && AntiCheat.INSTANCE.obsMode.getValue())
                 continue;
             if (entity instanceof EndCrystalEntity) {
                 if (!ignoreCrystal) return false;
-                if (mc.player.canSee(entity) || mc.player.getEyePos().distanceTo(entity.getPos()) <= wallRange.getValue()) {
+                Vec3d epos = entity.getPos();
+                double dx = epos.x - eyePos.x;
+                double dy = epos.y - eyePos.y;
+                double dz = epos.z - eyePos.z;
+                if (mc.player.canSee(entity) || dx * dx + dy * dy + dz * dz <= wallRangeSq) {
                     continue;
                 }
             }
@@ -619,12 +706,31 @@ public class KawaiiAura extends Module {
         Vec3d testVec = new Vec3d(pos.getX() + 0.5, pos.getY() + 2 * 0.85, pos.getZ() + 0.5);
         HitResult result = mc.world.raycast(new RaycastContext(EntityUtil.getEyesPos(), testVec, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player));
         if (result == null || result.getType() == HitResult.Type.MISS) return false;
-        return mc.player.getEyePos().distanceTo(pos.toCenterPos().add(0, -0.5, 0)) > wallRange.getValue();
+        Vec3d eyePos = mc.player.getEyePos();
+        double wallRangeVal = wallRange.getValue();
+        double wallRangeSq = wallRangeVal * wallRangeVal;
+        double cx = pos.getX() + 0.5;
+        double cy = pos.getY();
+        double cz = pos.getZ() + 0.5;
+        double dx = cx - eyePos.x;
+        double dy = cy - eyePos.y;
+        double dz = cz - eyePos.z;
+        return dx * dx + dy * dy + dz * dz > wallRangeSq;
     }
 
     private boolean canTouch(BlockPos pos) {
         Direction side = BlockUtil.getClickSideStrict(pos);
-        return side != null && pos.toCenterPos().add(new Vec3d(side.getVector().getX() * 0.5, side.getVector().getY() * 0.5, side.getVector().getZ() * 0.5)).distanceTo(mc.player.getEyePos()) <= range.getValue();
+        if (side == null) return false;
+        Vec3d eyePos = mc.player.getEyePos();
+        double rangeVal = range.getValue();
+        double rangeSq = rangeVal * rangeVal;
+        double tx = pos.getX() + 0.5 + side.getVector().getX() * 0.5;
+        double ty = pos.getY() + 0.5 + side.getVector().getY() * 0.5;
+        double tz = pos.getZ() + 0.5 + side.getVector().getZ() * 0.5;
+        double dx = tx - eyePos.x;
+        double dy = ty - eyePos.y;
+        double dz = tz - eyePos.z;
+        return dx * dx + dy * dy + dz * dz <= rangeSq;
     }
 
     private void doCrystal(BlockPos pos) {
@@ -799,10 +905,7 @@ public class KawaiiAura extends Module {
     }
 
     private void predictAttack(BlockPos pos) {
-        int id = -1;
-        for (Entity e : mc.world.getEntities()) {
-            if (e.getId() > id) id = e.getId();
-        }
+        int id = getMaxEntityId();
         if (id != -1) {
             EndCrystalEntity fake = new EndCrystalEntity(mc.world, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
             fake.setId(id + 1);
@@ -897,43 +1000,46 @@ public class KawaiiAura extends Module {
         STRONG
     }
 
+    private static final class PredictEntity extends PlayerEntity {
+        private PlayerEntity source;
+
+        private PredictEntity(ClientWorld world) {
+            super(world, BlockPos.ORIGIN, 0f, new GameProfile(UUID.randomUUID(), "PredictEntity"));
+        }
+
+        private void setSource(PlayerEntity source) {
+            this.source = source;
+        }
+
+        @Override
+        public boolean isSpectator() {
+            return false;
+        }
+
+        @Override
+        public boolean isCreative() {
+            return false;
+        }
+
+        @Override
+        public boolean isOnGround() {
+            return source != null && source.isOnGround();
+        }
+    }
+
     private class PlayerAndPredict {
         final PlayerEntity player;
         final PlayerEntity predict;
+        final float targetHealth;
+        final double minTargetDamage;
+        final double minBaseDamage;
 
         private PlayerAndPredict(PlayerEntity player) {
             this.player = player;
-            if (predictTicks.getValueFloat() > 0) {
-                predict = new PlayerEntity(mc.world, player.getBlockPos(), player.getYaw(), new GameProfile(UUID.fromString("66123666-1234-5432-6666-667563866600"), "PredictEntity339")) {
-                    @Override
-                    public boolean isSpectator() {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean isCreative() {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean isOnGround() {
-                        return player.isOnGround();
-                    }
-                };
-                predict.setPosition(player.getPos().add(CombatUtil.getMotionVec(player, predictTicks.getValueInt(), true)));
-                predict.setHealth(player.getHealth());
-                predict.prevX = player.prevX;
-                predict.prevZ = player.prevZ;
-                predict.prevY = player.prevY;
-                predict.setOnGround(player.isOnGround());
-                predict.getInventory().clone(player.getInventory());
-                predict.setPose(player.getPose());
-                for (StatusEffectInstance se : new ArrayList<>(player.getStatusEffects())) {
-                    predict.addStatusEffect(se);
-                }
-            } else {
-                predict = player;
-            }
+            this.predict = getPredict(player);
+            this.targetHealth = EntityUtil.getHealth(player);
+            this.minTargetDamage = getDamage(player);
+            this.minBaseDamage = getBaseDamage(player);
         }
     }
 

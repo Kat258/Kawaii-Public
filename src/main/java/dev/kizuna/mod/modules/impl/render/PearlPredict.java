@@ -52,20 +52,24 @@ public class PearlPredict extends Module {
         PearlPredict.matrixStack = matrixStack;
         if (nullCheck()) return;
         RenderSystem.disableDepthTest();
-        for (Entity entity : mc.world.getEntities()) {
-            if (entity instanceof EnderPearlEntity pearl) {
-                FakeEntity fakeentity = map.get(pearl);
-                if (fakeentity != null) {
-                    calcTrajectory(fakeentity.yaw, fakeentity.pitch, fakeentity.pos, fakeentity.velocity);
-                }
-            } else if (entity instanceof PlayerEntity ent && ent != mc.player) {
-                if (ent.getMainHandStack().getItem() == Items.ENDER_PEARL || ent.getOffHandStack().getItem() == Items.ENDER_PEARL) {
-                    double x = ent.prevX + (ent.getX() - ent.prevX) * mc.getTickDelta();
-                    double y = ent.prevY + (ent.getY() - ent.prevY) * mc.getTickDelta();
-                    double z = ent.prevZ + (ent.getZ() - ent.prevZ) * mc.getTickDelta();
-                    calcTrajectory(ent.getYaw(mc.getTickDelta()), ent.getPitch(mc.getTickDelta()), new Vec3d(x,y,z), ent.getVelocity());
-                }
+        float tickDelta = mc.getTickDelta();
+        double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
+        Box scanBox = mc.player.getBoundingBox().expand(radius);
+
+        for (EnderPearlEntity pearl : mc.world.getEntitiesByClass(EnderPearlEntity.class, scanBox, Entity::isAlive)) {
+            FakeEntity fakeentity = map.get(pearl);
+            if (fakeentity != null) {
+                calcTrajectory(fakeentity.yaw, fakeentity.pitch, fakeentity.pos, fakeentity.velocity);
             }
+        }
+
+        for (PlayerEntity ent : mc.world.getPlayers()) {
+            if (ent == mc.player) continue;
+            if (ent.getMainHandStack().getItem() != Items.ENDER_PEARL && ent.getOffHandStack().getItem() != Items.ENDER_PEARL) continue;
+            double x = ent.prevX + (ent.getX() - ent.prevX) * tickDelta;
+            double y = ent.prevY + (ent.getY() - ent.prevY) * tickDelta;
+            double z = ent.prevZ + (ent.getZ() - ent.prevZ) * tickDelta;
+            calcTrajectory(ent.getYaw(tickDelta), ent.getPitch(tickDelta), new Vec3d(x, y, z), ent.getVelocity());
         }
         RenderSystem.enableDepthTest();
     }
@@ -118,13 +122,11 @@ public class PearlPredict extends Module {
 
 
             Vec3d pos = new Vec3d(x, y, z);
-
-            for (Entity ent : mc.world.getEntities()) {
-                if (ent instanceof ArrowEntity || ent.equals(mc.player)) continue;
-                if (ent.getBoundingBox().intersects(new Box(x - 0.3, y - 0.3, z - 0.3, x + 0.3, y + 0.3, z + 0.3))) {
-                    Render3DUtil.drawBox(matrixStack, ent.getBoundingBox(), color.getValue());
-                    break;
-                }
+            Box hitBox = new Box(x - 0.3, y - 0.3, z - 0.3, x + 0.3, y + 0.3, z + 0.3);
+            java.util.List<Entity> hitEntities = mc.world.getOtherEntities(mc.player, hitBox, ent -> !(ent instanceof ArrowEntity));
+            if (!hitEntities.isEmpty()) {
+                Render3DUtil.drawBox(matrixStack, hitEntities.get(0).getBoundingBox(), color.getValue());
+                break;
             }
 
             BlockHitResult bhr = mc.world.raycast(new RaycastContext(lastPos, pos, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, mc.player));

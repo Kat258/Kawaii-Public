@@ -22,6 +22,7 @@ import dev.kizuna.mod.modules.settings.impl.ColorSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -38,6 +39,7 @@ import net.minecraft.world.RaycastContext;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 import static dev.kizuna.api.utils.world.BlockUtil.*;
 
@@ -161,6 +163,7 @@ public class AutoAnchor extends Module {
 	static Vec3d placeVec3d;
 	static Vec3d curVec3d;
 	double fade = 0;
+	private final ConcurrentHashMap<UUID, PredictEntity> predictCache = new ConcurrentHashMap<>();
 	@Override
 	public void onRender3D(MatrixStack matrixStack) {
 		if (displayTarget != null && currentPos != null) {
@@ -439,27 +442,76 @@ public class AutoAnchor extends Module {
 		HitResult result = mc.world.raycast(new RaycastContext(from, to, RaycastContext.ShapeType.COLLIDER, RaycastContext.FluidHandling.NONE, mc.player));
 		return result == null || result.getType() == HitResult.Type.MISS;
 	}
+
+	private PlayerEntity getPredict(PlayerEntity player) {
+		if (predictTicks.getValueInt() <= 0 || mc.world == null) {
+			return player;
+		}
+
+		UUID uuid = player.getUuid();
+		PredictEntity predict = predictCache.get(uuid);
+		if (predict == null || predict.getWorld() != mc.world) {
+			predict = new PredictEntity((ClientWorld) mc.world);
+			predictCache.put(uuid, predict);
+		}
+
+		predict.setSource(player);
+		predict.setPosition(player.getPos().add(CombatUtil.getMotionVec(player, predictTicks.getValueInt(), true)));
+		predict.setYaw(player.getYaw());
+		predict.setPitch(player.getPitch());
+		predict.setHealth(player.getHealth());
+		predict.setAbsorptionAmount(player.getAbsorptionAmount());
+		predict.prevX = player.prevX;
+		predict.prevY = player.prevY;
+		predict.prevZ = player.prevZ;
+		predict.setOnGround(player.isOnGround());
+		predict.setPose(player.getPose());
+
+		for (int i = 0; i < player.getInventory().armor.size(); i++) {
+			predict.getInventory().armor.set(i, player.getInventory().armor.get(i));
+		}
+
+		predict.clearStatusEffects();
+		for (StatusEffectInstance se : player.getStatusEffects()) {
+			predict.addStatusEffect(new StatusEffectInstance(se));
+		}
+
+		return predict;
+	}
+
+	private static final class PredictEntity extends PlayerEntity {
+		private PlayerEntity source;
+
+		private PredictEntity(ClientWorld world) {
+			super(world, BlockPos.ORIGIN, 0f, new GameProfile(UUID.randomUUID(), "PredictEntity"));
+		}
+
+		private void setSource(PlayerEntity source) {
+			this.source = source;
+		}
+
+		@Override
+		public boolean isSpectator() {
+			return false;
+		}
+
+		@Override
+		public boolean isCreative() {
+			return false;
+		}
+
+		@Override
+		public boolean isOnGround() {
+			return source != null && source.isOnGround();
+		}
+	}
+
 	public static class PlayerAndPredict {
 		public final PlayerEntity player;
 		public final PlayerEntity predict;
 		public PlayerAndPredict(PlayerEntity player) {
 			this.player = player;
-			if (INSTANCE.predictTicks.getValueFloat() > 0) {
-				predict = new PlayerEntity(mc.world, player.getBlockPos(), player.getYaw(), new GameProfile(UUID.fromString("66123666-1234-5432-6666-667563866600"), "PredictEntity339")) {@Override public boolean isSpectator() {return false;} @Override public boolean isCreative() {return false;}};
-				predict.setPosition(player.getPos().add(CombatUtil.getMotionVec(player, INSTANCE.predictTicks.getValueInt(), true)));
-				predict.setHealth(player.getHealth());
-				predict.prevX = player.prevX;
-				predict.prevZ = player.prevZ;
-				predict.prevY = player.prevY;
-				predict.setPose(player.getPose());
-				predict.setOnGround(player.isOnGround());
-				predict.getInventory().clone(player.getInventory());
-				for (StatusEffectInstance se : new ArrayList<>(player.getStatusEffects())) {
-					predict.addStatusEffect(se);
-				}
-			} else {
-				predict = player;
-			}
+			this.predict = INSTANCE.getPredict(player);
 		}
 	}
 

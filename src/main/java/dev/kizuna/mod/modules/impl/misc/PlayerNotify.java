@@ -18,9 +18,13 @@ import java.util.UUID;
 public class PlayerNotify extends Module {
     public static PlayerNotify INSTANCE;
     private long lastTime;
-    private Map<UUID, String> lastPlayers;
+    private HashMap<UUID, String> lastPlayers;
+    private HashMap<UUID, String> currentPlayers;
     private boolean firstRun;
     private final MinecraftClient mc = MinecraftClient.getInstance();
+    private static final String PREFIX = "§r[§dPlayer Notifier§r]§8";
+    private static final String JOIN_PREFIX = PREFIX + "[§a+§8]§7 ";
+    private static final String LEAVE_PREFIX = PREFIX + "[§c-§8]§7 ";
 
     public PlayerNotify() {
         super("PlayerNotify", Category.Misc);
@@ -31,42 +35,65 @@ public class PlayerNotify extends Module {
     @Override
     public void onEnable() {
         lastTime = System.currentTimeMillis();
-        firstRun = true;
         lastPlayers = new HashMap<>();
+        currentPlayers = new HashMap<>();
+
+        firstRun = true;
         if (mc.getNetworkHandler() != null) {
             for (PlayerListEntry entry : mc.getNetworkHandler().getPlayerList()) {
-                UUID id = entry.getProfile().getId();
-                lastPlayers.put(id, entry.getProfile().getName());
+                var profile = entry.getProfile();
+                lastPlayers.put(profile.getId(), profile.getName());
             }
+            firstRun = false;
         }
     }
 
     @EventHandler
     private void onTick(TickEvent event) {
         if (event.getStage() != Event.Stage.Post) return;
-        if (mc.getNetworkHandler() == null) return;
+        var network = mc.getNetworkHandler();
+        if (network == null) return;
         long currentTime = System.currentTimeMillis();
         if (currentTime - lastTime < 1000) return;
-        Map<UUID, String> currentPlayers = new HashMap<>();
-        for (PlayerListEntry entry : mc.getNetworkHandler().getPlayerList()) {
-            currentPlayers.put(entry.getProfile().getId(), entry.getProfile().getName());}
-        if (firstRun) {firstRun = false;lastPlayers = currentPlayers;lastTime = currentTime;return;}
-        for (Map.Entry<UUID, String> e : currentPlayers.entrySet()) {UUID id = e.getKey();
+
+        currentPlayers.clear();
+        for (PlayerListEntry entry : network.getPlayerList()) {
+            var profile = entry.getProfile();
+            currentPlayers.put(profile.getId(), profile.getName());
+        }
+
+        if (firstRun) {
+            firstRun = false;
+            HashMap<UUID, String> tmp = lastPlayers;
+            lastPlayers = currentPlayers;
+            currentPlayers = tmp;
+            currentPlayers.clear();
+            lastTime = currentTime;
+            return;
+        }
+
+        for (Map.Entry<UUID, String> e : currentPlayers.entrySet()) {
+            UUID id = e.getKey();
             if (!lastPlayers.containsKey(id)) {
-                CommandManager.sendChatMessage("§r[§dPlayer Notifier§r]§8[§a+§8]§7 " + e.getValue());
+                CommandManager.sendChatMessage(JOIN_PREFIX + e.getValue());
             }
         }
-        for (Map.Entry<UUID, String> e : lastPlayers.entrySet()) {UUID id = e.getKey();
+        for (Map.Entry<UUID, String> e : lastPlayers.entrySet()) {
+            UUID id = e.getKey();
             if (!currentPlayers.containsKey(id)) {
-                CommandManager.sendChatMessage("§r[§dPlayer Notifier§r]§8[§c-§8]§7 " + e.getValue());
+                CommandManager.sendChatMessage(LEAVE_PREFIX + e.getValue());
             }
         }
+        HashMap<UUID, String> tmp = lastPlayers;
         lastPlayers = currentPlayers;
+        currentPlayers = tmp;
+        currentPlayers.clear();
         lastTime = currentTime;
     }
 
     @Override
     public void onDisable() {
-        if (lastPlayers != null) lastPlayers.clear();
+        lastPlayers.clear();
+        currentPlayers.clear();
     }
 }

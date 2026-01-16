@@ -13,6 +13,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import org.joml.Vector4d;
@@ -20,7 +21,6 @@ import org.joml.Vector4d;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ItemTag2 extends Module {
     public static ItemTag2 INSTANCE;
@@ -43,78 +43,148 @@ public class ItemTag2 extends Module {
     public final EnumSetting<NameTags.Font> font = add(new EnumSetting<>("FontMode", NameTags.Font.Fast));
 
     private final Vector4d positionVec = new Vector4d();
+    private final ArrayList<CachedGroup> cachedGroups = new ArrayList<>();
+    private long lastCacheWorldTime = Long.MIN_VALUE;
 
     public ItemTag2() {
         super("ItemTag2", Category.Render);
         INSTANCE = this;
     }
 
-    @Override
-    public void onRender2D(DrawContext context, float tickDelta) {
-        if (mc == null || mc.world == null) return;
+    private void updateCacheIfNeeded() {
+        if (mc == null || mc.world == null || mc.player == null) return;
+        long worldTime = mc.world.getTime();
+        if (worldTime == lastCacheWorldTime) return;
+        lastCacheWorldTime = worldTime;
 
-        Set<Entity> processed = new HashSet<>();
-        List<Entity> allEntities = new ArrayList<>();
-        for (Entity e : mc.world.getEntities()) {
-            allEntities.add(e);
+        cachedGroups.clear();
+
+        double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
+        Box scanBox = mc.player.getBoundingBox().expand(radius);
+        ArrayList<ItemEntity> items = new ArrayList<>(mc.world.getEntitiesByClass(ItemEntity.class, scanBox, Entity::isAlive));
+        if (items.isEmpty()) return;
+
+        int limit = (int) maxLines.getValue();
+
+        if (!merge.getValue()) {
+            for (ItemEntity item : items) {
+                CachedGroup group = new CachedGroup();
+                group.x = item.getX();
+                group.y = item.getY();
+                group.z = item.getZ();
+                group.boxY = item.getBoundingBox().getLengthY();
+
+                ItemStack stack = item.getStack();
+                String itemName = stack.getName().getString();
+                int count = stack.getCount();
+
+                group.lines = new ArrayList<>(1);
+                group.lines.add(itemName + (count > 1 ? " x" + count : ""));
+                cachedGroups.add(group);
+            }
+            return;
         }
 
-        for (Entity ent : allEntities) {
-            if (!(ent instanceof ItemEntity itemEntity) || processed.contains(ent)) continue;
+        double range = mergeRange.getValue();
+        double rangeSq = range * range;
+        double cellSize = Math.max(1.0, range);
 
-            List<ItemEntity> group = new ArrayList<>();
-            group.add(itemEntity);
-            processed.add(ent);
+        HashMap<Long, ArrayList<ItemEntity>> buckets = new HashMap<>();
+        for (ItemEntity item : items) {
+            int cellX = (int) Math.floor(item.getX() / cellSize);
+            int cellZ = (int) Math.floor(item.getZ() / cellSize);
+            long key = (((long) cellX) << 32) ^ (cellZ & 0xffffffffL);
+            buckets.computeIfAbsent(key, k -> new ArrayList<>()).add(item);
+        }
 
-            if (merge.getValue()) {
-                for (Entity other : allEntities) {
-                    if (other instanceof ItemEntity otherItem && !processed.contains(other)) {
-                        if (ent.squaredDistanceTo(other) <= mergeRange.getValue() * mergeRange.getValue()) {
-                            group.add(otherItem);
-                            processed.add(other);
+        Set<ItemEntity> visited = Collections.newSetFromMap(new IdentityHashMap<>());
+        ArrayDeque<ItemEntity> queue = new ArrayDeque<>();
+
+        for (ItemEntity start : items) {
+            if (visited.contains(start)) continue;
+
+            queue.clear();
+            queue.add(start);
+            visited.add(start);
+
+            ArrayList<ItemEntity> groupItems = new ArrayList<>();
+
+            while (!queue.isEmpty()) {
+                ItemEntity cur = queue.poll();
+                groupItems.add(cur);
+
+                int curCellX = (int) Math.floor(cur.getX() / cellSize);
+                int curCellZ = (int) Math.floor(cur.getZ() / cellSize);
+
+                for (int dx = -1; dx <= 1; dx++) {
+                    for (int dz = -1; dz <= 1; dz++) {
+                        int nx = curCellX + dx;
+                        int nz = curCellZ + dz;
+                        long key = (((long) nx) << 32) ^ (nz & 0xffffffffL);
+                        ArrayList<ItemEntity> candidates = buckets.get(key);
+                        if (candidates == null) continue;
+
+                        for (ItemEntity cand : candidates) {
+                            if (visited.contains(cand)) continue;
+                            if (cur.squaredDistanceTo(cand) <= rangeSq) {
+                                visited.add(cand);
+                                queue.add(cand);
+                            }
                         }
                     }
                 }
             }
 
-            // Calculate average position
             double totalX = 0, totalY = 0, totalZ = 0;
-            for (ItemEntity e : group) {
-                totalX += e.prevX + (e.getX() - e.prevX) * tickDelta;
-                totalY += e.prevY + (e.getY() - e.prevY) * tickDelta;
-                totalZ += e.prevZ + (e.getZ() - e.prevZ) * tickDelta;
-            }
-            double x = totalX / group.size();
-            double y = totalY / group.size();
-            double z = totalZ / group.size();
+            double maxBoxY = 0;
+            HashMap<String, Integer> itemCounts = new HashMap<>();
 
-            // Aggregate items
-            Map<String, Integer> itemCounts = new HashMap<>();
-            for (ItemEntity e : group) {
-                ItemStack stack = e.getStack();
+            for (ItemEntity item : groupItems) {
+                totalX += item.getX();
+                totalY += item.getY();
+                totalZ += item.getZ();
+                maxBoxY = Math.max(maxBoxY, item.getBoundingBox().getLengthY());
+
+                ItemStack stack = item.getStack();
                 String name = stack.getName().getString();
-                itemCounts.put(name, itemCounts.getOrDefault(name, 0) + stack.getCount());
+                int count = stack.getCount();
+                Integer prev = itemCounts.get(name);
+                itemCounts.put(name, prev == null ? count : prev + count);
             }
 
-            // Generate lines
-            List<String> lines = new ArrayList<>();
-            List<String> sortedNames = itemCounts.keySet().stream().sorted().collect(Collectors.toList());
-            
-            int limit = (int) maxLines.getValue();
-            int displayedCount = 0;
-            
+            CachedGroup group = new CachedGroup();
+            group.x = totalX / groupItems.size();
+            group.y = totalY / groupItems.size();
+            group.z = totalZ / groupItems.size();
+            group.boxY = maxBoxY;
+
+            ArrayList<String> sortedNames = new ArrayList<>(itemCounts.keySet());
+            Collections.sort(sortedNames);
+
+            ArrayList<String> lines = new ArrayList<>();
+            int displayed = 0;
             for (String name : sortedNames) {
-                if (displayedCount >= limit) break;
+                if (displayed >= limit) break;
                 int count = itemCounts.get(name);
                 lines.add(name + (count > 1 ? " x" + count : ""));
-                displayedCount++;
+                displayed++;
             }
-            
             if (sortedNames.size() > limit) {
                 lines.add("(...) +" + (sortedNames.size() - limit));
             }
 
-            Vec3d vector = new Vec3d(x, y + height.getValue() + itemEntity.getBoundingBox().getLengthY() + 0.3, z);
+            group.lines = lines;
+            cachedGroups.add(group);
+        }
+    }
+
+    @Override
+    public void onRender2D(DrawContext context, float tickDelta) {
+        if (mc == null || mc.world == null) return;
+        updateCacheIfNeeded();
+
+        for (CachedGroup group : cachedGroups) {
+            Vec3d vector = new Vec3d(group.x, group.y + height.getValue() + group.boxY + 0.3, group.z);
             Vec3d preVec = vector;
             vector = TextUtil.worldSpaceToScreenSpace(vector);
             if (vector.z > 0 && vector.z < 1) {
@@ -131,7 +201,7 @@ public class ItemTag2 extends Module {
                 NameTags.Font chosenFont = font.getValue();
                 
                 float maxTextWidth = 0;
-                for (String line : lines) {
+                for (String line : group.lines) {
                     float w;
                     if (chosenFont == NameTags.Font.Fancy) {
                         w = FontRenderers.ui.getWidth(line);
@@ -152,39 +222,30 @@ public class ItemTag2 extends Module {
                 context.getMatrices().translate(-(tagX - 2 + (maxTextWidth + 4) / 2f), -(float) ((posY - 13f) + 6.5f), 0);
 
                 float lineHeight = (chosenFont == NameTags.Font.Fancy) ? FontRenderers.ui.getFontHeight() + 2 : mc.textRenderer.fontHeight + 2;
-                float totalHeight = lines.size() * lineHeight;
-
-                // Draw background rect
+                int lineCount = group.lines.size();
                 if (rect.booleanValue) {
-                    Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 13f) - (lines.size() - 1) * lineHeight, maxTextWidth + 4, 11 + (lines.size() - 1) * lineHeight, rect.getValue());
+                    Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 13f) - (lineCount - 1) * lineHeight, maxTextWidth + 4, 11 + (lineCount - 1) * lineHeight, rect.getValue());
                 }
                 
-                // Draw customizable colored line at the bottom
                 if (lineColor.booleanValue) {
                     Render2DUtil.drawRect(context.getMatrices(), tagX - 2, (float) (posY - 2f), maxTextWidth + 4, 1.5f, lineColor.getValue());
                 }
 
-                // Draw outline
                 if (outline.booleanValue) {
-                    float rectTop = (float) (posY - 14f) - (lines.size() - 1) * lineHeight;
+                    float rectTop = (float) (posY - 14f) - (lineCount - 1) * lineHeight;
                     float rectBottom = (float) (posY - 2f);
                     float rectLeft = tagX - 3;
                     float rectRight = tagX + maxTextWidth + 2;
                     float rectHeight = rectBottom - rectTop + 1; // Approx height
 
-                    // Top
                     Render2DUtil.drawRect(context.getMatrices(), rectLeft, rectTop, maxTextWidth + 6, 1, outline.getValue());
-                    // Bottom
                     Render2DUtil.drawRect(context.getMatrices(), rectLeft, rectBottom, maxTextWidth + 6, 1, outline.getValue());
-                    // Left
                     Render2DUtil.drawRect(context.getMatrices(), rectLeft, rectTop, 1, rectHeight, outline.getValue());
-                    // Right
                     Render2DUtil.drawRect(context.getMatrices(), rectRight, rectTop, 1, rectHeight, outline.getValue());
                 }
                 
-                // Draw text lines
-                float currentY = (float) posY - 10 - (lines.size() - 1) * lineHeight;
-                for (String line : lines) {
+                float currentY = (float) posY - 10 - (lineCount - 1) * lineHeight;
+                for (String line : group.lines) {
                     float lineWidth;
                     if (chosenFont == NameTags.Font.Fancy) {
                         lineWidth = FontRenderers.ui.getWidth(line);
@@ -204,5 +265,13 @@ public class ItemTag2 extends Module {
                 context.getMatrices().pop();
             }
         }
+    }
+
+    private static class CachedGroup {
+        double x;
+        double y;
+        double z;
+        double boxY;
+        ArrayList<String> lines;
     }
 }

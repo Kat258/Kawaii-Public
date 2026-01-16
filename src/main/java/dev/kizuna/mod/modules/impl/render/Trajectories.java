@@ -23,6 +23,7 @@ import net.minecraft.world.RaycastContext;
 import dev.kizuna.mod.modules.Module;
 
 import java.awt.*;
+import java.util.List;
 
 public class Trajectories extends Module {
     public Trajectories() {
@@ -148,12 +149,11 @@ public class Trajectories extends Module {
 
             Vec3d pos = new Vec3d(x, y, z);
 
-            for (Entity ent : mc.world.getEntities()) {
-                if (ent instanceof ArrowEntity || ent.equals(mc.player)) continue;
-                if (ent.getBoundingBox().intersects(new Box(x - 0.3, y - 0.3, z - 0.3, x + 0.3, y + 0.3, z + 0.3))) {
-                    Render3DUtil.drawBox(matrixStack, ent.getBoundingBox(), color.getValue());
-                    break;
-                }
+            Box hitBox = new Box(x - 0.3, y - 0.3, z - 0.3, x + 0.3, y + 0.3, z + 0.3);
+            List<Entity> hitEntities = mc.world.getOtherEntities(mc.player, hitBox, ent -> !(ent instanceof ArrowEntity));
+            if (!hitEntities.isEmpty()) {
+                Render3DUtil.drawBox(matrixStack, hitEntities.get(0).getBoundingBox(), color.getValue());
+                break;
             }
 
             BlockHitResult bhr = mc.world.raycast(new RaycastContext(lastPos, pos, RaycastContext.ShapeType.OUTLINE, RaycastContext.FluidHandling.NONE, mc.player));

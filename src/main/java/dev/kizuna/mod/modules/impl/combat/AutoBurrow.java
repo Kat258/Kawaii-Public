@@ -17,6 +17,7 @@ import net.minecraft.entity.decoration.EndCrystalEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.MathHelper;
 
@@ -75,9 +76,15 @@ public class AutoBurrow extends Module {
 
     public boolean findcrystal() {
         PlayerAndPredict self = new PlayerAndPredict(mc.player);
-        for (Entity crystal : mc.world.getEntities()) {
-            if (!(crystal instanceof EndCrystalEntity)) continue;
-            if (EntityUtil.getEyesPos().distanceTo(crystal.getPos()) > cRange.getValue()) continue;
+        Vec3d eyePos = EntityUtil.getEyesPos();
+        double range = cRange.getValue();
+        double rangeSq = range * range;
+        Box box = new Box(
+                eyePos.x - range, eyePos.y - range, eyePos.z - range,
+                eyePos.x + range, eyePos.y + range, eyePos.z + range
+        );
+        for (EndCrystalEntity crystal : mc.world.getEntitiesByClass(EndCrystalEntity.class, box, Entity::isAlive)) {
+            if (eyePos.squaredDistanceTo(crystal.getPos()) > rangeSq) continue;
             float selfDamage = calculateDamage(crystal.getPos(), self.player, self.predict);
             if (selfDamage < breakMinSelf.getValue()) continue;
             return true;

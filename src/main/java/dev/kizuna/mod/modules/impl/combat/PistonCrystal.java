@@ -27,6 +27,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 
 public class PistonCrystal extends Module {
     public static PistonCrystal INSTANCE;
@@ -87,7 +88,7 @@ public class PistonCrystal extends Module {
     public BlockPos bestPos = null;
     public BlockPos bestOPos = null;
     public Direction bestFacing = null;
-    public double distance = 100;
+    public double distanceSq = 10000;
     public boolean getPos = false;
     private boolean isPiston = false;
     public int stage = 1;
@@ -166,7 +167,7 @@ public class PistonCrystal extends Module {
         }
         if (crystalTimer.passedMs(posUpdateDelay.getValueInt())) {
             stage = 0;
-            distance = 100;
+            distanceSq = 10000;
             getPos = false;
             getBestPos(pos.up(2));
             getBestPos(pos.up());
@@ -255,13 +256,19 @@ public class PistonCrystal extends Module {
         if (!BlockUtil.canPlace(pos, placeRange.getValue()) && !isPiston(pos, facing)) {
             return;
         }
-        if (!(MathHelper.sqrt((float) EntityUtil.getEyesPos().squaredDistanceTo(pos.toCenterPos())) < distance || bestPos == null)) {
-            return;
-        }
+        Vec3d eyePos = EntityUtil.getEyesPos();
+        double cx = pos.getX() + 0.5;
+        double cy = pos.getY() + 0.5;
+        double cz = pos.getZ() + 0.5;
+        double dx = cx - eyePos.x;
+        double dy = cy - eyePos.y;
+        double dz = cz - eyePos.z;
+        double distSq = dx * dx + dy * dy + dz * dz;
+        if (bestPos != null && distSq >= distanceSq) return;
         bestPos = pos;
         bestOPos = oPos;
         bestFacing = facing;
-        distance = MathHelper.sqrt((float) EntityUtil.getEyesPos().squaredDistanceTo(pos.toCenterPos()));
+        distanceSq = distSq;
         getPos = true;
         crystalTimer.reset();
     }

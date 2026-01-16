@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = 'https://maven.fabricmc.net/' }
+    }
+    dependencies {
+        classpath 'com.guardsquare:proguard-gradle:7.4.2'
+    }
+}
+
 plugins {
     id 'fabric-loom' version '1.6.3'
     id 'maven-publish'
@@ -65,3 +75,64 @@ task copyZkmLibs(type: Copy) {
     from(configurations.compileClasspath)
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
+
+import proguard.gradle.ProGuardTask
+
+tasks.register('proguardJar', ProGuardTask) {
+    dependsOn tasks.remapJar
+    doNotTrackState("ProGuardTask inputs are not fully trackable (e.g. JDK jmods).")
+
+    def inJar = tasks.remapJar.archiveFile.get().asFile
+    def outJar = file("$buildDir/libs/${project.archives_base_name}-${project.version}-optimized.jar")
+
+    injars(inJar.absolutePath)
+    outjars(outJar.absolutePath)
+
+    def javaHome = System.getProperty('java.home')
+    if (System.getProperty('java.version').startsWith('1.')) {
+        libraryjars "${javaHome}/lib/rt.jar"
+    } else {
+        def jmodsDir = file("${javaHome}/jmods")
+        if (jmodsDir.exists()) {
+            def jmodFiles = fileTree(jmodsDir).matching { include('*.jmod') }.files
+            if (!jmodFiles.isEmpty()) {
+                libraryjars(files(jmodFiles), jarfilter: '!**.jar', filter: '!module-info.class')
+            }
+        }
+    }
+
+    def mcIntermediaryJars = fileTree("$rootDir/obf-workspace/zkmLibs").matching {
+        include("minecraft-merged-intermediary-${project.minecraft_version}-*.jar")
+    }.files
+    if (!mcIntermediaryJars.isEmpty()) {
+        libraryjars(files(mcIntermediaryJars))
+    }
+
+    def libJars = new LinkedHashSet<File>()
+    libJars.addAll(configurations.compileClasspath.files)
+    libJars.addAll(configurations.runtimeClasspath.files)
+    libraryjars(files(libJars))
+
+    dontobfuscate()
+    ignorewarnings()
+    dontwarn('**')
+
+    keepattributes(
+            'RuntimeVisibleAnnotations,' +
+                    'RuntimeInvisibleAnnotations,' +
+                    'RuntimeVisibleParameterAnnotations,' +
+                    'RuntimeInvisibleParameterAnnotations,' +
+                    'Signature,' +
+                    'InnerClasses,' +
+                    'EnclosingMethod'
+    )
+
+    keep('class dev.kizuna.** { *; }')
+    keep('class net.fabricmc.api.** { *; }')
+    keep('class net.fabricmc.loader.api.** { *; }')
+    keep('class org.spongepowered.asm.mixin.** { *; }')
+    keep('class com.mojang.blaze3d.** { *; }')
+    keep('class net.minecraft.** { *; }')
+}
+
+tasks.assemble.dependsOn(tasks.named('proguardJar'))

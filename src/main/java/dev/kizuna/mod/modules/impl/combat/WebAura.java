@@ -138,7 +138,8 @@ public class WebAura extends Module {
         if (preferAnchor.getValue() && AutoAnchor.INSTANCE.currentPos != null) {
             return;
         }
-        if (getWebSlot() == -1) {
+        int webSlot = getWebSlot();
+        if (webSlot == -1) {
             return;
         }
         if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
@@ -150,18 +151,20 @@ public class WebAura extends Module {
             Vec3d playerPos = predictTicks.getValue() > 0 ? CombatUtil.getEntityPosVec(player, predictTicks.getValueInt()) : player.getPos();
             int webs = 0;
             if (down.getValue()) {
-                placeWeb(new BlockPosX(playerPos.getX(), playerPos.getY() - 0.8, playerPos.getZ()));
+                placeWeb(new BlockPosX(playerPos.getX(), playerPos.getY() - 0.8, playerPos.getZ()), webSlot);
             }
-            List<BlockPos> list = new ArrayList<>();
-            for (float x : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
-                for (float z : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
-                    for (float y : new float[]{0, 1, -1}) {
+            float off = offset.getValueFloat();
+            int offsetCount = off == 0f ? 1 : 3;
+            Box targetBox = player.getBoundingBox();
+            for (int xi = 0; xi < offsetCount; xi++) {
+                float x = getOffsetValue(off, xi);
+                for (int zi = 0; zi < offsetCount; zi++) {
+                    float z = getOffsetValue(off, zi);
+                    for (int yi = 0; yi < 3; yi++) {
+                        float y = getYOffsetValue(yi);
                         BlockPosX pos = new BlockPosX(playerPos.getX() + x, playerPos.getY() + y, playerPos.getZ() + z);
-                        if (!list.contains(pos)) {
-                            list.add(pos);
-                            if (isTargetHere(pos, player) && mc.world.getBlockState(pos).getBlock() == Blocks.COBWEB && !Kawaii.BREAK.isMining(pos)) {
-                                webs++;
-                            }
+                        if (intersectsBlock(targetBox, pos) && mc.world.getBlockState(pos).getBlock() == Blocks.COBWEB && !Kawaii.BREAK.isMining(pos)) {
+                            webs++;
                         }
                     }
                 }
@@ -172,11 +175,13 @@ public class WebAura extends Module {
             boolean skip = false;
             if (feet.getValue()) {
                 start:
-                for (float x : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
-                    for (float z : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
+                for (int xi = 0; xi < offsetCount; xi++) {
+                    float x = getOffsetValue(off, xi);
+                    for (int zi = 0; zi < offsetCount; zi++) {
+                        float z = getOffsetValue(off, zi);
                         BlockPosX pos = new BlockPosX(playerPos.getX() + x, playerPos.getY(), playerPos.getZ() + z);
-                        if (isTargetHere(pos, player)) {
-                            if (placeWeb(pos)) {
+                        if (intersectsBlock(targetBox, pos)) {
+                            if (placeWeb(pos, webSlot)) {
                                 webs++;
                                 if (webs >= maxWebs.getValueFloat()) {
                                     skip = true;
@@ -190,11 +195,13 @@ public class WebAura extends Module {
             if (skip) continue;
             if (face.getValue()) {
                 start:
-                for (float x : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
-                    for (float z : new float[]{0, offset.getValueFloat(), -offset.getValueFloat()}) {
+                for (int xi = 0; xi < offsetCount; xi++) {
+                    float x = getOffsetValue(off, xi);
+                    for (int zi = 0; zi < offsetCount; zi++) {
+                        float z = getOffsetValue(off, zi);
                         BlockPosX pos = new BlockPosX(playerPos.getX() + x, playerPos.getY() + 1.1, playerPos.getZ() + z);
-                        if (isTargetHere(pos, player)) {
-                            if (placeWeb(pos)) {
+                        if (intersectsBlock(targetBox, pos)) {
+                            if (placeWeb(pos, webSlot)) {
                                 webs++;
                                 if (webs >= maxWebs.getValueFloat()) {
                                     break start;
@@ -206,20 +213,37 @@ public class WebAura extends Module {
             }
         }
     }
-    private boolean isTargetHere(BlockPos pos, PlayerEntity target) {
-        return new Box(pos).intersects(target.getBoundingBox());
+    private static float getOffsetValue(float off, int index) {
+        return switch (index) {
+            case 0 -> 0f;
+            case 1 -> off;
+            default -> -off;
+        };
     }
-    private boolean placeWeb(BlockPos pos) {
+
+    private static float getYOffsetValue(int index) {
+        return switch (index) {
+            case 0 -> 0f;
+            case 1 -> 1f;
+            default -> -1f;
+        };
+    }
+
+    private static boolean intersectsBlock(Box targetBox, BlockPos pos) {
+        double minX = pos.getX();
+        double minY = pos.getY();
+        double minZ = pos.getZ();
+        return targetBox.maxX > minX && targetBox.minX < minX + 1.0
+                && targetBox.maxY > minY && targetBox.minY < minY + 1.0
+                && targetBox.maxZ > minZ && targetBox.minZ < minZ + 1.0;
+    }
+    private boolean placeWeb(BlockPos pos, int webSlot) {
         if (this.pos.contains(pos)) return false;
         this.pos.add(pos);
         if (progress >= blocksPer.getValueInt()) return false;
-        if (getWebSlot() == -1) {
-            return false;
-        }
         if (detectMining.getValue() && (Kawaii.BREAK.isMining(pos))) return false;
         if (BlockUtil.getPlaceSide(pos, placeRange.getValue()) != null && (mc.world.isAir(pos) || ignore && getBlock(pos) == Blocks.COBWEB) && pos.getY() < 320) {
             int oldSlot = mc.player.getInventory().selectedSlot;
-            int webSlot = getWebSlot();
             if (!placeBlock(pos, rotate.getValue(), webSlot)) return false;
             BlockUtil.placedPos.add(pos);
             progress++;

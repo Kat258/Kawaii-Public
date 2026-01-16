@@ -20,6 +20,7 @@ import net.minecraft.client.render.entity.EndCrystalEntityRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.decoration.EndCrystalEntity;
 import org.joml.Matrix4f;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.mod.modules.impl.render.crystalchams.CrystalChamsVertexConsumer;
@@ -63,20 +64,19 @@ public class CrystalChams extends Module {
                 CrystalChamsVertexConsumer.fill = fill.getValue();
                 CrystalChamsVertexConsumer.outline = outline.getValue();
 
-                for (Entity entity : mc.world.getEntities()) {
-                        if (entity instanceof EndCrystalEntity crystalEntity) {
-                                if (!Render3DUtil.isFrustumVisible(entity.getBoundingBox())) continue;
-                                EntityRenderer renderer = mc.getEntityRenderDispatcher().getRenderer(entity);
-                                if (renderer instanceof EndCrystalEntityRenderer crystalRenderer) {
-                                        CrystalChamsVertexConsumer.matrix4f = matrixStack.peek().getPositionMatrix();
-                                        CrystalChamsVertexConsumer.offset = new Vec3d(entity.getX(), entity.getY(), entity.getZ());
-                                        CrystalChamsVertexConsumer.camera = mc.gameRenderer.getCamera().getPos();
-                                        float yaw = 0f;
-                                        float tickDelta = mc.getTickDelta();
-                                        // use a fullbright-like light value; adjust if needed
-                                        int light = 15728880;
-                                        crystalRenderer.render(crystalEntity, yaw, tickDelta, matrixStack, CustomVertexConsumerProvider.INSTANCE, light);
-                                }
+                double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
+                Box scanBox = mc.player.getBoundingBox().expand(radius);
+                for (EndCrystalEntity crystalEntity : mc.world.getEntitiesByClass(EndCrystalEntity.class, scanBox, Entity::isAlive)) {
+                        if (!Render3DUtil.isFrustumVisible(crystalEntity.getBoundingBox())) continue;
+                        EntityRenderer renderer = mc.getEntityRenderDispatcher().getRenderer(crystalEntity);
+                        if (renderer instanceof EndCrystalEntityRenderer crystalRenderer) {
+                                CrystalChamsVertexConsumer.matrix4f = matrixStack.peek().getPositionMatrix();
+                                CrystalChamsVertexConsumer.offset = new Vec3d(crystalEntity.getX(), crystalEntity.getY(), crystalEntity.getZ());
+                                CrystalChamsVertexConsumer.camera = mc.gameRenderer.getCamera().getPos();
+                                float yaw = 0f;
+                                float tickDelta = mc.getTickDelta();
+                                int light = 15728880;
+                                crystalRenderer.render(crystalEntity, yaw, tickDelta, matrixStack, CustomVertexConsumerProvider.INSTANCE, light);
                         }
                 }
 

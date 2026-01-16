@@ -13,6 +13,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;
@@ -33,33 +34,45 @@ public class Tracers extends Module {
 	public void onRender3D(MatrixStack matrixStack) {
 		boolean prev_bob = mc.options.getBobView().getValue();
 		mc.options.getBobView().setValue(false);
+		float tickDelta = mc.getTickDelta();
+		Vec3d start = mc.player.getCameraPosVec(tickDelta).add(Vec3d.fromPolar(mc.player.getPitch(tickDelta), mc.player.getYaw(tickDelta)).multiply(0.2));
 		if (item.booleanValue || player.booleanValue) {
-			for (Entity entity : mc.world.getEntities()) {
-				if (entity instanceof ItemEntity && item.booleanValue) {
-					drawLine(entity.getPos(), item.getValue());
-				} else if (entity instanceof PlayerEntity && player.booleanValue && entity != mc.player) {
-					PlayerEntity playerEntity = (PlayerEntity) entity;
-					if (!Kawaii.FRIEND.isFriend(playerEntity)) {
-						drawLine(entity.getPos(), player.getValue());
-					}
+			double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
+			double radiusSq = radius * radius;
+			Box scanBox = mc.player.getBoundingBox().expand(radius);
+
+			if (item.booleanValue) {
+				Color color = item.getValue();
+				for (ItemEntity entity : mc.world.getEntitiesByClass(ItemEntity.class, scanBox, Entity::isAlive)) {
+					drawLine(entity.getPos(), start, color);
+				}
+			}
+
+			if (player.booleanValue) {
+				Color color = player.getValue();
+				for (PlayerEntity entity : mc.world.getPlayers()) {
+					if (entity == mc.player) continue;
+					if (mc.player.squaredDistanceTo(entity) > radiusSq) continue;
+					if (Kawaii.FRIEND.isFriend(entity)) continue;
+					drawLine(entity.getPos(), start, color);
 				}
 			}
 		}
 		ArrayList<BlockEntity> blockEntities = BlockUtil.getTileEntities();
 		for (BlockEntity blockEntity : blockEntities) {
 			if (blockEntity instanceof ChestBlockEntity && chest.booleanValue) {
-				drawLine(blockEntity.getPos().toCenterPos(), chest.getValue());
+				drawLine(blockEntity.getPos().toCenterPos(), start, chest.getValue());
 			} else if (blockEntity instanceof EnderChestBlockEntity && enderChest.booleanValue) {
-				drawLine(blockEntity.getPos().toCenterPos(), enderChest.getValue());
+				drawLine(blockEntity.getPos().toCenterPos(), start, enderChest.getValue());
 			} else if (blockEntity instanceof ShulkerBoxBlockEntity && shulkerBox.booleanValue) {
-				drawLine(blockEntity.getPos().toCenterPos(), shulkerBox.getValue());
+				drawLine(blockEntity.getPos().toCenterPos(), start, shulkerBox.getValue());
 			}
 		}
 		mc.options.getBobView().setValue(prev_bob);
 	}
 
 
-	private void drawLine(Vec3d pos, Color color) {
-		Render3DUtil.drawLine(pos, mc.player.getCameraPosVec(mc.getTickDelta()).add(Vec3d.fromPolar(mc.player.getPitch(mc.getTickDelta()), mc.player.getYaw(mc.getTickDelta())).multiply(0.2)), color);
+	private void drawLine(Vec3d pos, Vec3d start, Color color) {
+		Render3DUtil.drawLine(pos, start, color);
 	}
 }

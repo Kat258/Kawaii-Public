@@ -31,6 +31,7 @@ import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.HandSwingC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 
 import java.awt.*;
@@ -209,37 +210,50 @@ public class KillAura extends Module {
     }
     
     private Entity getTarget() {
-        Entity target = null;
-        double distance = range.getValue();
-        double maxHealth = 36.0;
-        for (Entity entity : mc.world.getEntities()) {
-            if (!isEnemy(entity)) continue;
-            if (!mc.player.canSee(entity) && mc.player.distanceTo(entity) > wallRange.getValue()) {
+        Entity best = null;
+        double rangeVal = range.getValue();
+        double rangeSq = rangeVal * rangeVal;
+        double wallRangeVal = wallRange.getValue();
+        double wallRangeSq = wallRangeVal * wallRangeVal;
+        double bestDistanceSq = Double.MAX_VALUE;
+        double bestHealth = Double.MAX_VALUE;
+
+        Box box = mc.player.getBoundingBox().expand(rangeVal);
+        for (Entity entity : mc.world.getOtherEntities(mc.player, box, this::isEnemy)) {
+            if (!CombatUtil.isValid(entity, rangeVal)) continue;
+
+            double distSq = mc.player.squaredDistanceTo(entity);
+            if (distSq > rangeSq) continue;
+            if (!mc.player.canSee(entity) && distSq > wallRangeSq) continue;
+
+            if (armorLow.getValue() && entity instanceof PlayerEntity && EntityUtil.isArmorLow((PlayerEntity) entity, 10)) {
+                return entity;
+            }
+
+            if (best == null) {
+                best = entity;
+                bestDistanceSq = distSq;
+                bestHealth = EntityUtil.getHealth(entity);
                 continue;
             }
-            if (!CombatUtil.isValid(entity, range.getValue())) continue;
 
-            if (target == null) {
-                target = entity;
-                distance = mc.player.distanceTo(entity);
-                maxHealth = EntityUtil.getHealth(entity);
+            if (targetMode.getValue() == TargetMode.HEALTH) {
+                double hp = EntityUtil.getHealth(entity);
+                if (hp < bestHealth) {
+                    best = entity;
+                    bestHealth = hp;
+                    bestDistanceSq = distSq;
+                }
             } else {
-                if (armorLow.getValue() && entity instanceof PlayerEntity && EntityUtil.isArmorLow((PlayerEntity) entity, 10)) {
-                    target = entity;
-                    break;
-                }
-                if (targetMode.getValue() == TargetMode.HEALTH && EntityUtil.getHealth(entity) < maxHealth) {
-                    target = entity;
-                    maxHealth = EntityUtil.getHealth(entity);
-                    continue;
-                }
-                if (targetMode.getValue() == TargetMode.DISTANCE && mc.player.distanceTo(entity) < distance) {
-                    target = entity;
-                    distance = mc.player.distanceTo(entity);
+                if (distSq < bestDistanceSq) {
+                    best = entity;
+                    bestDistanceSq = distSq;
+                    bestHealth = EntityUtil.getHealth(entity);
                 }
             }
         }
-        return target;
+
+        return best;
     }
     private boolean isEnemy(Entity entity) {
         if (entity instanceof SlimeEntity && Slimes.getValue()) return true;

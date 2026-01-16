@@ -22,6 +22,9 @@ import net.minecraft.util.math.*;
 
 public class HoleKick extends Module {
     public static HoleKick INSTANCE;
+    private static final float[] OFFSETS = new float[]{-0.25f, 0f, 0.25f};
+    private static final float[] WEB_OFFSETS = new float[]{0f, 0.3F, -0.3f};
+    private static final int[] WEB_Y_OFFSETS = new int[]{0, 1, 2};
     private final BooleanSetting torch = add(new BooleanSetting("Torch", false));
     private final BooleanSetting rotate = add(new BooleanSetting("Rotation", true));
     private final BooleanSetting yawDeceive = add(new BooleanSetting("YawDeceive", true));
@@ -60,7 +63,13 @@ public class HoleKick extends Module {
     }
 
     static boolean isTargetHere(BlockPos pos, Entity target) {
-        return new Box(pos).intersects(target.getBoundingBox());
+        Box box = target.getBoundingBox();
+        double minX = pos.getX();
+        double minY = pos.getY();
+        double minZ = pos.getZ();
+        return box.maxX > minX && box.minX < minX + 1.0
+                && box.maxY > minY && box.minY < minY + 1.0
+                && box.maxZ > minZ && box.minZ < minZ + 1.0;
     }
 
     @Override
@@ -102,9 +111,8 @@ public class HoleKick extends Module {
                 }
             }
 
-            float[] offset = new float[]{-0.25f, 0f, 0.25f};
-            for (float x : offset) {
-                for (float z : offset) {
+            for (float x : OFFSETS) {
+                for (float z : OFFSETS) {
                     BlockPosX playerPos = new BlockPosX(player.getX() + x, player.getY() + 0.5, player.getZ() + z);
                     for (Direction i : Direction.values()) {
                         if (i == Direction.UP || i == Direction.DOWN) continue;
@@ -143,8 +151,8 @@ public class HoleKick extends Module {
                 }
             }
 
-            for (float x : offset) {
-                for (float z : offset) {
+            for (float x : OFFSETS) {
+                for (float z : OFFSETS) {
                     BlockPosX playerPos = new BlockPosX(player.getX() + x, player.getY() + 0.5, player.getZ() + z);
                     for (Direction i : Direction.values()) {
                         if (i == Direction.UP || i == Direction.DOWN) continue;
@@ -363,9 +371,9 @@ public class HoleKick extends Module {
     }
     public static boolean isInWeb(PlayerEntity player) {
         Vec3d playerPos = player.getPos();
-        for (float x : new float[]{0, 0.3F, -0.3f}) {
-            for (float z : new float[]{0, 0.3F, -0.3f}) {
-                for (int y : new int[]{0, 1, 2}) {
+        for (float x : WEB_OFFSETS) {
+            for (float z : WEB_OFFSETS) {
+                for (int y : WEB_Y_OFFSETS) {
                     BlockPos pos = new BlockPosX(playerPos.getX() + x, playerPos.getY(), playerPos.getZ() + z).up(y);
                     if (isTargetHere(pos, player) && mc.world.getBlockState(pos).getBlock() == Blocks.COBWEB) {
                         return true;
@@ -385,8 +393,6 @@ public class HoleKick extends Module {
     private Boolean canPush(PlayerEntity player) {
         if (onlyGround.getValue() && !player.isOnGround()) return false;
         if (!allowWeb.getValue() && Kawaii.PLAYER.isInWeb(player)) return false;
-        float[] offset = new float[]{-0.25f, 0f, 0.25f};
-
         int progress = 0;
 
         if (mc.world.canCollide(player, new Box(new BlockPosX(player.getX() + 1, player.getY() + 0.5, player.getZ())))) progress++;
@@ -394,8 +400,8 @@ public class HoleKick extends Module {
         if (mc.world.canCollide(player, new Box(new BlockPosX(player.getX(), player.getY() + 0.5, player.getZ() + 1)))) progress++;
         if (mc.world.canCollide(player, new Box(new BlockPosX(player.getX(), player.getY() + 0.5, player.getZ() - 1)))) progress++;
 
-        for (float x : offset) {
-            for (float z : offset) {
+        for (float x : OFFSETS) {
+            for (float z : OFFSETS) {
                 BlockPosX playerPos = new BlockPosX(player.getX() + x, player.getY() + 0.5, player.getZ() + z);
                 for (Direction i : Direction.values()) {
                     if (i == Direction.UP || i == Direction.DOWN) continue;

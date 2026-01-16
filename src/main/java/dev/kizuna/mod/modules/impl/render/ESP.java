@@ -33,14 +33,32 @@ public class ESP extends Module {
 
     @Override
 	public void onRender3D(MatrixStack matrixStack) {
+		float tickDelta = mc.getTickDelta();
 		if (item.booleanValue || player.booleanValue) {
-			for (Entity entity : mc.world.getEntities()) {
-				if (entity instanceof ItemEntity && item.booleanValue) {
-					Color color = this.item.getValue();
-					Render3DUtil.draw3DBox(matrixStack, ((IEntity) entity).getDimensions().getBoxAt(new Vec3d(MathUtil.interpolate(entity.lastRenderX, entity.getX(), mc.getTickDelta()), MathUtil.interpolate(entity.lastRenderY, entity.getY(), mc.getTickDelta()), MathUtil.interpolate(entity.lastRenderZ, entity.getZ(), mc.getTickDelta()))), color, false, true);
-				} else if (entity instanceof PlayerEntity && player.booleanValue) {
-					Color color = this.player.getValue();
-					Render3DUtil.draw3DBox(matrixStack, ((IEntity) entity).getDimensions().getBoxAt(new Vec3d(MathUtil.interpolate(entity.lastRenderX, entity.getX(), mc.getTickDelta()), MathUtil.interpolate(entity.lastRenderY, entity.getY(), mc.getTickDelta()), MathUtil.interpolate(entity.lastRenderZ, entity.getZ(), mc.getTickDelta()))).expand(0, 0.1, 0), color, false, true);
+			double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
+			double radiusSq = radius * radius;
+			Box scanBox = mc.player.getBoundingBox().expand(radius);
+
+			if (item.booleanValue) {
+				Color color = this.item.getValue();
+				for (ItemEntity entity : mc.world.getEntitiesByClass(ItemEntity.class, scanBox, Entity::isAlive)) {
+					Render3DUtil.draw3DBox(matrixStack, ((IEntity) entity).getDimensions().getBoxAt(new Vec3d(
+							MathUtil.interpolate(entity.lastRenderX, entity.getX(), tickDelta),
+							MathUtil.interpolate(entity.lastRenderY, entity.getY(), tickDelta),
+							MathUtil.interpolate(entity.lastRenderZ, entity.getZ(), tickDelta)
+					)), color, false, true);
+				}
+			}
+
+			if (player.booleanValue) {
+				Color color = this.player.getValue();
+				for (PlayerEntity entity : mc.world.getPlayers()) {
+					if (mc.player.squaredDistanceTo(entity) > radiusSq) continue;
+					Render3DUtil.draw3DBox(matrixStack, ((IEntity) entity).getDimensions().getBoxAt(new Vec3d(
+							MathUtil.interpolate(entity.lastRenderX, entity.getX(), tickDelta),
+							MathUtil.interpolate(entity.lastRenderY, entity.getY(), tickDelta),
+							MathUtil.interpolate(entity.lastRenderZ, entity.getZ(), tickDelta)
+					)).expand(0, 0.1, 0), color, false, true);
 				}
 			}
 		}

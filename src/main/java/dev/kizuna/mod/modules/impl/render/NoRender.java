@@ -13,6 +13,7 @@ import net.minecraft.entity.projectile.thrown.EggEntity;
 import net.minecraft.entity.projectile.thrown.ExperienceBottleEntity;
 import net.minecraft.entity.projectile.thrown.PotionEntity;
 import net.minecraft.network.packet.s2c.play.TitleS2CPacket;
+import net.minecraft.util.math.Box;
 
 public class NoRender extends Module {
 	public static NoRender INSTANCE;
@@ -57,23 +58,36 @@ public class NoRender extends Module {
 	}
 
 	@Override
-	public void onRender3D(MatrixStack matrixStack) {
-		for(Entity ent : mc.world.getEntities()){
-			if(ent instanceof PotionEntity){
-				if(potions.getValue())
-					mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
+	public void onUpdate() {
+		if (mc.world == null || mc.player == null) return;
+
+		boolean removePotions = potions.getValue();
+		boolean removeXp = xp.getValue();
+		boolean removeArrows = arrows.getValue();
+		boolean removeEggs = eggs.getValue();
+		if (!removePotions && !removeXp && !removeArrows && !removeEggs) return;
+
+		double radius = (mc.options.getClampedViewDistance() + 2) * 16.0;
+		Box scanBox = mc.player.getBoundingBox().expand(radius);
+
+		if (removePotions) {
+			for (PotionEntity ent : mc.world.getEntitiesByClass(PotionEntity.class, scanBox, Entity::isAlive)) {
+				mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
 			}
-			if(ent instanceof ExperienceBottleEntity){
-				if(xp.getValue())
-					mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
+		}
+		if (removeXp) {
+			for (ExperienceBottleEntity ent : mc.world.getEntitiesByClass(ExperienceBottleEntity.class, scanBox, Entity::isAlive)) {
+				mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
 			}
-			if(ent instanceof ArrowEntity){
-				if(arrows.getValue())
-					mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
+		}
+		if (removeArrows) {
+			for (ArrowEntity ent : mc.world.getEntitiesByClass(ArrowEntity.class, scanBox, Entity::isAlive)) {
+				mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
 			}
-			if(ent instanceof EggEntity){
-				if(eggs.getValue())
-					mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
+		}
+		if (removeEggs) {
+			for (EggEntity ent : mc.world.getEntitiesByClass(EggEntity.class, scanBox, Entity::isAlive)) {
+				mc.world.removeEntity(ent.getId(), Entity.RemovalReason.KILLED);
 			}
 		}
 	}

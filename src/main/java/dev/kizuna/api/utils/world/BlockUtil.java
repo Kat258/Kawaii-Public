@@ -39,6 +39,12 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class BlockUtil implements Wrapper {
+    private static long tileEntitiesCacheTimeMs = 0L;
+    private static int tileEntitiesCacheChunkX = Integer.MIN_VALUE;
+    private static int tileEntitiesCacheChunkZ = Integer.MIN_VALUE;
+    private static int tileEntitiesCacheViewDistance = -1;
+    private static ArrayList<BlockEntity> tileEntitiesCache = new ArrayList<>();
+
     public static final List<Block> shiftBlocks = Arrays.asList(
             Blocks.ENDER_CHEST, Blocks.CHEST, Blocks.TRAPPED_CHEST, Blocks.CRAFTING_TABLE,
             Blocks.BIRCH_TRAPDOOR, Blocks.BAMBOO_TRAPDOOR, Blocks.DARK_OAK_TRAPDOOR, Blocks.CHERRY_TRAPDOOR,
@@ -80,26 +86,11 @@ public class BlockUtil implements Wrapper {
     }
 
     public static List<Entity> getEntities(Box box) {
-        List<Entity> list = new ArrayList<>();
-        for (Entity entity : mc.world.getEntities()) {
-            if (entity == null) continue;
-            if (entity.getBoundingBox().intersects(box)) {
-                list.add(entity);
-            }
-        }
-        return list;
+        return mc.world.getOtherEntities(null, box);
     }
 
     public static List<EndCrystalEntity> getEndCrystals(Box box) {
-        List<EndCrystalEntity> list = new ArrayList<>();
-        for (Entity entity : mc.world.getEntities()) {
-            if (entity instanceof EndCrystalEntity crystal) {
-                if (crystal.getBoundingBox().intersects(box)) {
-                    list.add(crystal);
-                }
-            }
-        }
-        return list;
+        return mc.world.getEntitiesByClass(EndCrystalEntity.class, box, entity -> true);
     }
     public static boolean hasEntity(BlockPos pos, boolean ignoreCrystal) {
         for (Entity entity : getEntities(new Box(pos))) {
@@ -382,7 +373,41 @@ public class BlockUtil implements Wrapper {
     }
 
     public static ArrayList<BlockEntity> getTileEntities(){
-        return getLoadedChunks().flatMap(chunk -> chunk.getBlockEntities().values().stream()).collect(Collectors.toCollection(ArrayList::new));
+        if (mc.player == null || mc.world == null) return new ArrayList<>();
+
+        int viewDistance = mc.options.getClampedViewDistance();
+        ChunkPos center = mc.player.getChunkPos();
+        long now = System.currentTimeMillis();
+
+        if (now - tileEntitiesCacheTimeMs < 250L
+                && tileEntitiesCacheChunkX == center.x
+                && tileEntitiesCacheChunkZ == center.z
+                && tileEntitiesCacheViewDistance == viewDistance) {
+            return tileEntitiesCache;
+        }
+
+        int radius = Math.max(2, viewDistance) + 3;
+        int minX = center.x - radius;
+        int maxX = center.x + radius;
+        int minZ = center.z - radius;
+        int maxZ = center.z + radius;
+
+        ArrayList<BlockEntity> result = new ArrayList<>();
+        for (int x = minX; x <= maxX; x++) {
+            for (int z = minZ; z <= maxZ; z++) {
+                if (!mc.world.isChunkLoaded(x, z)) continue;
+                WorldChunk chunk = mc.world.getChunk(x, z);
+                if (chunk == null) continue;
+                result.addAll(chunk.getBlockEntities().values());
+            }
+        }
+
+        tileEntitiesCache = result;
+        tileEntitiesCacheTimeMs = now;
+        tileEntitiesCacheChunkX = center.x;
+        tileEntitiesCacheChunkZ = center.z;
+        tileEntitiesCacheViewDistance = viewDistance;
+        return tileEntitiesCache;
     }
 
     public static Stream<WorldChunk> getLoadedChunks(){
@@ -415,18 +440,39 @@ public class BlockUtil implements Wrapper {
         return getSphere(range, mc.player.getEyePos());
     }
     public static ArrayList<BlockPos> getSphere(float range, Vec3d pos) {
-        ArrayList<BlockPos> list = new ArrayList<>();
-        for (double x = pos.getX() - range; x < pos.getX() + range; ++x) {
-            for (double z = pos.getZ() - range; z < pos.getZ() + range; ++z) {
-                for (double y = pos.getY() - range; y < pos.getY() + range; ++y) {
-                    BlockPos curPos = new BlockPosX(x, y, z);
-                    if (curPos.toCenterPos().distanceTo(pos) > range) continue;
-                    if (!list.contains(curPos)) {
-                        list.add(curPos);
-                    }
+        if (range <= 0) return new ArrayList<>();
+
+        double px = pos.getX();
+        double py = pos.getY();
+        double pz = pos.getZ();
+        double rangeSq = (double) range * (double) range;
+
+        int minX = MathHelper.floor(px - range);
+        int maxX = MathHelper.ceil(px + range);
+        int minY = MathHelper.floor(py - range);
+        int maxY = MathHelper.ceil(py + range);
+        int minZ = MathHelper.floor(pz - range);
+        int maxZ = MathHelper.ceil(pz + range);
+
+        int estimated = (maxX - minX + 1) * (maxY - minY + 1) * (maxZ - minZ + 1);
+        ArrayList<BlockPos> list = new ArrayList<>(Math.max(estimated / 3, 16));
+
+        for (int x = minX; x <= maxX; x++) {
+            double dx = (x + 0.5) - px;
+            double dxSq = dx * dx;
+            for (int z = minZ; z <= maxZ; z++) {
+                double dz = (z + 0.5) - pz;
+                double dzSq = dz * dz;
+                double dxzSq = dxSq + dzSq;
+                if (dxzSq > rangeSq) continue;
+                for (int y = minY; y <= maxY; y++) {
+                    double dy = (y + 0.5) - py;
+                    if (dxzSq + dy * dy > rangeSq) continue;
+                    list.add(new BlockPos(x, y, z));
                 }
             }
         }
+
         return list;
     }
 
