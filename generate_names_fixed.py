@@ -7,7 +7,7 @@ def generate_names():
     chars = string.ascii_letters + string.digits
     names = []
     for _ in range(1000):
-        suffix = ''.join(random.choice(chars) for _ in range(25))
+        suffix = ''.join(random.choice(chars) for _ in range(74))
         names.append(prefix + suffix)
     
     file_path = r"obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt"

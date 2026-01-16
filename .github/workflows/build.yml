@@ -28,6 +28,12 @@ jobs:
     - name: Build with Gradle
       run: .\gradlew.bat build
 
+    - name: Names
+      run: |
+        cd "obf-workspace"
+        python generate_names_fixed.py
+      shell: cmd
+
     - name: Run ZKM Obfuscation
       run: |
         cd "obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0"

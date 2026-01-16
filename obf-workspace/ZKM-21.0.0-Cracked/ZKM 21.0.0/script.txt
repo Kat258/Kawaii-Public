@@ -241,7 +241,7 @@ methodParameterObfuscationExclude
 
 obfuscate   changeLogFileIn=""
             changeLogFileOut="ChangeLog.txt"
-            methodParameterChanges=none
+            methodParameterChanges=normal
             obfuscateFlow=aggressive
             exceptionObfuscation=heavy
             encryptStringLiterals=aggressive
@@ -261,6 +261,9 @@ obfuscate   changeLogFileIn=""
             obfuscateParameters=none
             collapsePackagesWithDefault="PROTECTED_BY_MARK_7601"
             newNamesPrefix=""
-            preverify=true;
+            preverify=true
+            legalIdentifiers=true
+            hideStaticMethodNames=true
+            hideFieldNames=true;
 
 saveAll     archiveCompression=all "Kawaii-1S.jar";
