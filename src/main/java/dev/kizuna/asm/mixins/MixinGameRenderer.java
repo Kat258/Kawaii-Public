@@ -8,7 +8,11 @@ import dev.kizuna.mod.modules.impl.player.Freecam;
 import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import dev.kizuna.mod.modules.impl.player.freelook.CameraState;
 import dev.kizuna.mod.modules.impl.player.freelook.FreeLook;
-import dev.kizuna.mod.modules.impl.render.*;
+import dev.kizuna.mod.modules.impl.render.CustomFov;
+import dev.kizuna.mod.modules.impl.render.HighLight;
+import dev.kizuna.mod.modules.impl.render.NoRender;
+import dev.kizuna.mod.modules.impl.render.NoSlowBob;
+import dev.kizuna.mod.modules.impl.render.Zoom;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.CameraSubmersionType;
@@ -247,5 +251,14 @@ public class MixinGameRenderer {
             cameraEntity.setYaw(originalYaw);
             cameraEntity.setPitch(originalPitch);
         }
+    }
+
+    @Redirect(method = "bobView", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F"))
+    private float onBobViewLerp(float delta, float start, float end) {
+        float value = MathHelper.lerp(delta, start, end);
+        if (NoSlowBob.INSTANCE.isOn()) {
+            value *= NoSlowBob.INSTANCE.getBobMultiplier();
+        }
+        return value;
     }
 }
