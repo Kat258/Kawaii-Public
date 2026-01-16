@@ -241,7 +241,7 @@ methodParameterObfuscationExclude
 
 obfuscate   changeLogFileIn=""
             changeLogFileOut="ChangeLog.txt"
-            methodParameterChanges=normal
+            methodParameterChanges=none
             obfuscateFlow=aggressive
             exceptionObfuscation=heavy
             encryptStringLiterals=aggressive
