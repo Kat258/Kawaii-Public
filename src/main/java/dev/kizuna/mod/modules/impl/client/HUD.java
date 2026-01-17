@@ -44,6 +44,9 @@ public class HUD extends Module {
         UI, DEFAULT, ICON, TROLL, CALIBRI
     }
     public final BooleanSetting itemsCountHud = add(new BooleanSetting("ItemsCountHud", true));
+    public final BooleanSetting showPotionCount = add(new BooleanSetting("ShowPotionCount", false));
+    public final SliderSetting potionCountX = add(new SliderSetting("PotionCountX", 5, 0, 1000, -1, showPotionCount::isOpen));
+    public final SliderSetting potionCountY = add(new SliderSetting("PotionCountY", 5, 0, 1000, -1, showPotionCount::isOpen));
     public final BooleanSetting up = add(new BooleanSetting("Up", false));
     public final BooleanSetting customFont = add(new BooleanSetting("CustomFont", true));
     public final ColorSetting color = add(new ColorSetting("Color", new Color(0xFFACAFFD, true)));
@@ -109,6 +112,11 @@ public class HUD extends Module {
         }
         if (itemsCountHud.getValue()) {
             Kawaii.GUI.itemsCountHud.draw(drawContext, tickDelta, null);
+        }
+        if (showPotionCount.getValue()) {
+            int splashPotionCount = InventoryUtil.getItemCount(Items.SPLASH_POTION);
+            String text = "Potion: " + splashPotionCount;
+            drawText(drawContext, text, (int)potionCountX.getValue(), (int)potionCountY.getValue());
         }
         if (welcome.getValue()) {
             String text = welcomeText.getValue().replace("[username]", (welcomeSync.getValue() ? "" : "§f") + mc.player.getName().getString() + "§r");
