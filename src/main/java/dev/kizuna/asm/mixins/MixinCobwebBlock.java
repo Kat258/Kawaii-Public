@@ -1,7 +1,7 @@
 package dev.kizuna.asm.mixins;
 
-import dev.kizuna.mod.modules.impl.movement.FastWeb;
 import dev.kizuna.api.utils.Wrapper;
+import dev.kizuna.mod.modules.impl.movement.FastWeb;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CobwebBlock;
 import net.minecraft.entity.Entity;

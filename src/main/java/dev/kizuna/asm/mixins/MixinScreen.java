@@ -1,6 +1,7 @@
 package dev.kizuna.asm.mixins;
 
 import dev.kizuna.core.impl.GuiManager;
+import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
 import dev.kizuna.mod.modules.impl.client.ClientSetting;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
@@ -10,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import static dev.kizuna.core.Manager.mc;
+import static dev.kizuna.api.utils.Wrapper.mc;
 
 @Mixin(Screen.class)
 public class MixinScreen {
@@ -28,6 +29,13 @@ public class MixinScreen {
         }
         if (ClientSetting.INSTANCE.snow.booleanValue) {
             GuiManager.snows.forEach(snow -> snow.drawSnow(context, ClientSetting.INSTANCE.snow.getValue()));
+        }
+    }
+
+    @Inject(method = "applyBlur(F)V", at = @At("HEAD"), cancellable = true)
+    public void renderBackgroundBlurHook(float amount, CallbackInfo ci) {
+        if (mc.currentScreen instanceof ClickGuiScreen) {
+            ci.cancel();
         }
     }
 }

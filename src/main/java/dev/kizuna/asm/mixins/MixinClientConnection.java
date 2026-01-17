@@ -1,11 +1,11 @@
 package dev.kizuna.asm.mixins;
 
 import dev.kizuna.Kawaii;
+import dev.kizuna.api.events.impl.PacketEvent;
+import dev.kizuna.core.impl.CommandManager;
 import dev.kizuna.mod.modules.impl.client.ClientSetting;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.timeout.TimeoutException;
-import dev.kizuna.api.events.impl.PacketEvent;
-import dev.kizuna.core.impl.CommandManager;
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.handler.PacketEncoderException;
 import net.minecraft.network.packet.Packet;

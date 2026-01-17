@@ -139,7 +139,7 @@ classpath   "..\..\zkmLibs\IAS-Fabric-1.20.4-9.0.2-SNAPSHOT-f7b3a0fefc85.jar"
 ignoreMissingReferences dev.kizuna.**;
 
 open        openNestedArchives=false
-            "..\..\..\build\libs\kawaii-0.4.2-optimized.jar";
+            "..\..\..\build\libs\kawaii-0.4.2.jar";
 
 exclude     *.<link>accesswidener and
             kawaii.accesswidener. and

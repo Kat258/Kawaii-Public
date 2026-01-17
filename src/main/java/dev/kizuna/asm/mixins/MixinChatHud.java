@@ -1,14 +1,14 @@
 package dev.kizuna.asm.mixins;
 
 import com.llamalad7.mixinextras.sugar.Local;
-import dev.kizuna.asm.accessors.IChatHud;
-import dev.kizuna.mod.modules.impl.client.ClientSetting;
 import dev.kizuna.api.interfaces.IChatHudHook;
 import dev.kizuna.api.interfaces.IChatHudLine;
-import dev.kizuna.core.impl.CommandManager;
 import dev.kizuna.api.utils.math.FadeUtils;
 import dev.kizuna.api.utils.render.ColorUtil;
 import dev.kizuna.api.utils.render.TextUtil;
+import dev.kizuna.asm.accessors.IChatHud;
+import dev.kizuna.core.impl.CommandManager;
+import dev.kizuna.mod.modules.impl.client.ClientSetting;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
@@ -19,7 +19,6 @@ import net.minecraft.network.message.MessageSignatureData;
 import net.minecraft.text.OrderedText;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.MathHelper;
-import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -56,27 +55,26 @@ public abstract class MixinChatHud implements IChatHudHook {
         addMessage(message);
         nextMessageId = 0;
     }
-    
-    @Inject(method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/List;add(ILjava/lang/Object;)V", ordinal = 0, shift = At.Shift.AFTER))
-    private void onAddMessageAfterNewChatHudLineVisible(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo info) {
+
+    @Inject(method = "Lnet/minecraft/client/gui/hud/ChatHud;addVisibleMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;add(ILjava/lang/Object;)V", shift = At.Shift.AFTER))
+    private void onAddMessageAfterNewChatHudLineVisible(ChatHudLine message, CallbackInfo ci) {
         ((IChatHudLine) (Object) visibleMessages.get(0)).setMessageId(nextMessageId);
     }
 
-    @Inject(method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V", at = @At(value = "INVOKE", target = "Ljava/util/List;add(ILjava/lang/Object;)V", ordinal = 1, shift = At.Shift.AFTER))
-    private void onAddMessageAfterNewChatHudLine(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo info) {
+    @Inject(method = "Lnet/minecraft/client/gui/hud/ChatHud;addMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V", at = @At(value = "INVOKE", target = "Ljava/util/List;add(ILjava/lang/Object;)V", shift = At.Shift.AFTER))
+    private void onAddMessageAfterNewChatHudLine(ChatHudLine message, CallbackInfo ci) {
         ((IChatHudLine) (Object) messages.get(0)).setMessageId(nextMessageId);
     }
-    
-    @Inject(at = @At("HEAD"), method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V")
-    private void onAddMessage(Text message, @Nullable MessageSignatureData signature, int ticks, @Nullable MessageIndicator indicator, boolean refresh, CallbackInfo info) {
-       if (nextMessageId != 0) {
-           visibleMessages.removeIf(msg -> msg == null || ((IChatHudLine) (Object) msg).getMessageId() == nextMessageId);
-           messages.removeIf(msg -> msg == null || ((IChatHudLine) (Object) msg).getMessageId() == nextMessageId);
-       }
+
+    @Inject(at = @At("HEAD"), method = "Lnet/minecraft/client/gui/hud/ChatHud;addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V")
+    private void onAddMessage(Text message, MessageSignatureData signatureData, MessageIndicator indicator, CallbackInfo ci) {
+        if (nextMessageId != 0) {
+            visibleMessages.removeIf(msg -> msg == null || ((IChatHudLine) (Object) msg).getMessageId() == nextMessageId);
+            messages.removeIf(msg -> msg == null || ((IChatHudLine) (Object) msg).getMessageId() == nextMessageId);
+        }
     }
 
-    @Redirect(method = {"addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V"},
-            at = @At(value = "INVOKE", target = "Ljava/util/List;size()I", ordinal = 2, remap = false))
+    @Redirect(method = {"Lnet/minecraft/client/gui/hud/ChatHud;addVisibleMessage(Lnet/minecraft/client/gui/hud/ChatHudLine;)V"}, at = @At(value = "INVOKE", target = "Ljava/util/List;size()I", ordinal = 2, remap = false))
     public int chatLinesSize(List<ChatHudLine.Visible> list) {
         return ClientSetting.INSTANCE.isOn() && ClientSetting.INSTANCE.infiniteChat.getValue() ? -2147483647 : list.size();
     }
@@ -106,7 +104,7 @@ public abstract class MixinChatHud implements IChatHudHook {
     }
 
     @Inject(method = {"render"}, at = {@At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTextWithShadow(Lnet/minecraft/client/font/TextRenderer;Lnet/minecraft/text/OrderedText;III)I", ordinal = 0, shift = At.Shift.BEFORE)})
-    private void translate(DrawContext context, int currentTick, int mouseX, int mouseY, CallbackInfo ci) {
+    private void translate(DrawContext context, int currentTick, int mouseX, int mouseY, boolean focused, CallbackInfo ci) {
         if (map.containsKey(last)) {
             context.getMatrices().translate(ClientSetting.INSTANCE.animateOffset.getValue() * (1 - map.get(last).ease(ClientSetting.INSTANCE.ease.getValue())), 0.0, 0.0f);
         }
@@ -186,8 +184,8 @@ public abstract class MixinChatHud implements IChatHudHook {
         return messageIndicator;
     }
 
-    @Inject(method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V", at = @At("TAIL"))
-    private void addMessage(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo ci) {
+    @Inject(method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V", at = @At("TAIL"))
+    private void addMessage(Text message, MessageSignatureData signatureData, MessageIndicator indicator, CallbackInfo ci) {
         messageTimestamps.add(0, new FadeUtils((long) fadeTime));
         while (this.messageTimestamps.size() > this.visibleMessages.size()) {
             this.messageTimestamps.remove(this.messageTimestamps.size() - 1);

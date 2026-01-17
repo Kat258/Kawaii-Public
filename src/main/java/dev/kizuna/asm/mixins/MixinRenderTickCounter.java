@@ -2,23 +2,29 @@ package dev.kizuna.asm.mixins;
 
 import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.impl.TimerEvent;
+import net.minecraft.client.render.RenderTickCounter;
+import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-@Mixin(targets = "net.minecraft.client.render.RenderTickCounter$Dynamic")
+@Mixin(RenderTickCounter.Dynamic.class)
 public class MixinRenderTickCounter {
-	@Inject(method = "getTickDelta(Z)F", at = @At("RETURN"), cancellable = true)
-	private void onGetTickDelta(boolean ignoreFreeze, CallbackInfoReturnable<Float> cir) {
+	@Shadow
+    private float lastFrameDuration;
+
+	@Inject(at = {@At(value = "FIELD", target = "Lnet/minecraft/client/render/RenderTickCounter$Dynamic;prevTimeMillis:J",
+			opcode = Opcodes.PUTFIELD, ordinal = 0) }, method = {"beginRenderTick(J)I" })
+	public void onBeginRenderTick(long long_1, CallbackInfoReturnable<Integer> cir) {
 		TimerEvent event = new TimerEvent();
 		Kawaii.EVENT_BUS.post(event);
 		if (!event.isCancelled()) {
-			float tickDelta = cir.getReturnValueF();
 			if (event.isModified()) {
-				cir.setReturnValue(tickDelta * event.get());
+				lastFrameDuration *= event.get();
 			} else {
-				cir.setReturnValue(tickDelta * Kawaii.TIMER.get());
+				lastFrameDuration *= Kawaii.TIMER.get();
 			}
 		}
 	}

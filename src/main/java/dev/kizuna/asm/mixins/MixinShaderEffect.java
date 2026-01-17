@@ -1,7 +1,7 @@
 package dev.kizuna.asm.mixins;
 
-import dev.kizuna.asm.accessors.IPostProcessShader;
 import dev.kizuna.api.interfaces.IShaderEffect;
+import dev.kizuna.asm.accessors.IPostProcessShader;
 import net.minecraft.client.gl.Framebuffer;
 import net.minecraft.client.gl.PostEffectPass;
 import net.minecraft.client.gl.PostEffectProcessor;

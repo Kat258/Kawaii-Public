@@ -1,8 +1,8 @@
 package dev.kizuna.asm.mixins;
 
 
-import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import dev.kizuna.api.utils.combat.CombatUtil;
+import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;

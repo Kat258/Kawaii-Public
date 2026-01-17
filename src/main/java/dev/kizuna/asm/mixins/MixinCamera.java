@@ -20,25 +20,24 @@ import org.spongepowered.asm.mixin.injection.invoke.arg.Args;
 @Mixin(Camera.class)
 public abstract class MixinCamera {
     @Shadow
-    protected abstract double clipToSpace(double desiredCameraDistance);
+    protected abstract float clipToSpace(float f);
 
-    @ModifyArgs(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;moveBy(DDD)V", ordinal = 0))
+    @ModifyArgs(method = "update", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/Camera;moveBy(FFF)V", ordinal = 0))
     private void modifyCameraDistance(Args args) {
         if (CameraClip.INSTANCE.isOn()) {
-            args.set(0, -clipToSpace(CameraClip.INSTANCE.getDistance()));
+            args.set(0, -clipToSpace((float) CameraClip.INSTANCE.getDistance()));
         }
     }
 
     @Inject(method = "clipToSpace", at = @At("HEAD"), cancellable = true)
-    private void onClipToSpace(double desiredCameraDistance, CallbackInfoReturnable<Double> info) {
+    private void onClipToSpace(float f, CallbackInfoReturnable<Float> cir) {
         if (CameraClip.INSTANCE.isOn()) {
-            info.setReturnValue(CameraClip.INSTANCE.getDistance());
+            cir.setReturnValue((float) CameraClip.INSTANCE.getDistance());
         }
     }
 
     @Shadow
     private boolean thirdPerson;
-
 
     @Inject(method = "update", at = @At("TAIL"))
     private void updateHook(BlockView area, Entity focusedEntity, boolean thirdPerson, boolean inverseView, float tickDelta, CallbackInfo ci) {

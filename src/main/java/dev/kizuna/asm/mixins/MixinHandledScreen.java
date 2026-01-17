@@ -154,7 +154,7 @@ public abstract class MixinHandledScreen<T extends ScreenHandler> extends Screen
     }
     @Unique
     private void drawBackground(DrawContext context, int x, int y) {
-        Render2DUtil.drawRect(context.getMatrices(), x, y, 176, 67, new Color(0, 0,0, 120));
+       Render2DUtil.drawRect(context.getMatrices(), x, y, 176, 67, new Color(0, 0,0, 120));
     }
     @Unique
     private static boolean hasItems(ItemStack itemStack) {

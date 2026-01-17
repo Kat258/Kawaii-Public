@@ -1,7 +1,6 @@
 package dev.kizuna.asm.mixins;
 
 import dev.kizuna.Kawaii;
-import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.impl.WorldBreakEvent;
 import net.minecraft.entity.player.BlockBreakingInfo;
 import org.spongepowered.asm.mixin.Mixin;

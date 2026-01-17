@@ -1,8 +1,8 @@
 package dev.kizuna.asm.mixins;
 
 import dev.kizuna.Kawaii;
-import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import dev.kizuna.api.events.impl.ClickBlockEvent;
+import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerInteractionManager;
@@ -38,12 +38,6 @@ public class MixinClientPlayerInteractionManager {
 		if (InteractTweaks.INSTANCE.noAbort())
 			callbackInfo.cancel();
 	}
-	@Inject(at = { @At("HEAD") }, method = { "getReachDistance()F" }, cancellable = true)
-	private void onGetReachDistance(CallbackInfoReturnable<Float> ci) {
-		if (InteractTweaks.INSTANCE.reach()) {
-			ci.setReturnValue(InteractTweaks.INSTANCE.distance.getValueFloat());
-		}
-	}
 
 	@Shadow
 	private int lastSelectedSlot;
@@ -62,11 +56,6 @@ public class MixinClientPlayerInteractionManager {
 			this.lastSelectedSlot = i;
 			this.networkHandler.sendPacket(new UpdateSelectedSlotC2SPacket(this.lastSelectedSlot));
 		}
-	}
-	@Inject(at = { @At("HEAD") }, method = { "hasExtendedReach()Z" }, cancellable = true)
-	private void hasExtendedReach(CallbackInfoReturnable<Boolean> cir) {
-		if (InteractTweaks.INSTANCE.reach())
-			cir.setReturnValue(true);
 	}
 
 	@Inject(method = "attackBlock", at = @At("HEAD"), cancellable = true)

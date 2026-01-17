@@ -1,11 +1,11 @@
 package dev.kizuna.asm.mixins;
 
 import dev.kizuna.Kawaii;
+import dev.kizuna.api.utils.Wrapper;
 import dev.kizuna.mod.gui.clickgui.ClickGuiScreen;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import dev.kizuna.mod.modules.settings.impl.StringSetting;
-import dev.kizuna.api.utils.Wrapper;
 import net.minecraft.client.Keyboard;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.Element;

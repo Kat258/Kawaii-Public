@@ -1,11 +1,12 @@
 package dev.kizuna.asm.mixins;
 
+import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.Event;
 import dev.kizuna.api.events.impl.JumpEvent;
 import dev.kizuna.api.events.impl.TravelEvent;
 import dev.kizuna.api.utils.Wrapper;
-import dev.kizuna.Kawaii;
 import dev.kizuna.mod.modules.impl.client.ClientSetting;
+import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
@@ -33,6 +34,20 @@ public class MixinPlayerEntity implements Wrapper {
     @Inject(method = "jump", at = @At("RETURN"))
     private void onJumpPost(CallbackInfo ci) {
         Kawaii.EVENT_BUS.post(new JumpEvent(Event.Stage.Post));
+    }
+
+    @Inject(method = "getBlockInteractionRange", at = @At("HEAD"), cancellable = true)
+    public void getBlockInteractionRangeHook(CallbackInfoReturnable<Double> ci) {
+        if (InteractTweaks.INSTANCE.reach()) {
+            ci.setReturnValue(InteractTweaks.INSTANCE.distance.getValue());
+        }
+    }
+
+    @Inject(method = "getEntityInteractionRange", at = @At("HEAD"), cancellable = true)
+    public void getEntityInteractionRangeHook(CallbackInfoReturnable<Double> ci) {
+        if (InteractTweaks.INSTANCE.reach()) {
+            ci.setReturnValue(InteractTweaks.INSTANCE.distance.getValue());
+        }
     }
 
     @Inject(method = "travel", at = @At("HEAD"), cancellable = true)
