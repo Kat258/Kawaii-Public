@@ -393,11 +393,11 @@ public class ShulkerStealer extends Module {
             stealCountList[20] = stealCountList[20] - i.getCount();
             return true;
         }
-        if(i.getItem().equals(Items.SPLASH_POTION) && this.stealCountList[21] > 0) {
+        if(i.getItem() instanceof PotionItem && this.stealCountList[21] > 0) {
             PotionContentsComponent contents = i.get(DataComponentTypes.POTION_CONTENTS);
             if (contents != null) {
                 for (StatusEffectInstance potionEffect : contents.getEffects()) {
-                    if (potionEffect.getEffectType() == StatusEffects.SLOW_FALLING) {
+                    if (potionEffect.getEffectType().value() == StatusEffects.SLOW_FALLING.value()) {
                         stealCountList[21] = stealCountList[21] - i.getCount();
                         return true;
                     }
