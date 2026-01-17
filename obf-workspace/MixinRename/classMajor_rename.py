@@ -98,8 +98,8 @@ def find_jars(root='.', recursive=False):
 def main():
     parser = argparse.ArgumentParser(description="Downgrade jar .class major version (e.g. 21->17).")
     parser.add_argument('paths', nargs='*', help='jar file(s) to process. If omitted, scan current directory.')
-    parser.add_argument('--from', dest='from_major', type=int, default=21, help='original major version to replace (default 21)')
-    parser.add_argument('--to', dest='to_major', type=int, default=17, help='new major version (default 17)')
+    parser.add_argument('--from', dest='from_major', type=int, default=65, help='original major version to replace (default 65 for Java 21)')
+    parser.add_argument('--to', dest='to_major', type=int, default=61, help='new major version (default 61 for Java 17)')
     parser.add_argument('-r', '--recursive', action='store_true', help='recursively find jars in subdirectories when no explicit files provided')
     parser.add_argument('--no-backup', action='store_true', help="don't keep a .bak backup (default: create backup)")
     args = parser.parse_args()
