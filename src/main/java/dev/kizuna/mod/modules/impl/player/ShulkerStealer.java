@@ -166,7 +166,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[6] = (int) (this.glowstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.GLOWSTONE)));
         this.stealCountList[7] = (int) (this.anchor.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.RESPAWN_ANCHOR)));
         this.stealCountList[8] = (int) (this.pearl.getValue() - InventoryUtil.getItemCount(Items.ENDER_PEARL));
-        this.stealCountList[9] = (int) (this.turtleMaster.getValue() - InventoryUtil.getPotCount((StatusEffect) StatusEffects.RESISTANCE));
+        this.stealCountList[9] = (int) (this.turtleMaster.getValue() - InventoryUtil.getPotCount(StatusEffects.RESISTANCE.value()));
         this.stealCountList[10] = (int) (this.helmet.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.HELMET));
         this.stealCountList[11] = (int) (this.chestplate.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.CHESTPLATE));
         this.stealCountList[12] = (int) (this.leggings.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.LEGGINGS));

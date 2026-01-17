@@ -42,16 +42,16 @@ jobs:
     - name: JAR Reconfiguration
       run: python fix_mod_json.py
 
+    - name: classMajorRename
+      run: |
+        cd "obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0""
+        python classMajor_rename.py
+      shell: cmd
+
     - name: Run MixinRename
       run: |
         cd "obf-workspace\MixinRename"
-        python MixinRename.py --jar "..\ZKM-21.0.0-Cracked\ZKM 21.0.0\Kawaii-1S.jar" --pkg dev.kizuna.asm --out Kawaii-S2.jar --configs fabric.mod.json kawaii-refmap.json kawaii.accesswidener kawaii.mixins.json --backup obf_backups
-      shell: cmd
-
-    - name: classMajorRename
-      run: |
-        cd "obf-workspace\MixinRename"
-        python classMajor_rename.py
+        python MixinRename.py --jar "..\ZKM-21.0.0-Cracked\ZKM 21.0.0\Kawaii-1S-to61.jar" --pkg dev.kizuna.asm --out Kawaii-S2.jar --configs fabric.mod.json kawaii-refmap.json kawaii.accesswidener kawaii.mixins.json --backup obf_backups
       shell: cmd
 
     - name: Set up JDK 11
