@@ -22,7 +22,7 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 
 MAGIC = b'\xCA\xFE\xBA\xBE'
 
-def process_jar(path, from_major=21, to_major=17, make_backup=True):
+def process_jar(path, from_major=65, to_major=61, make_backup=True):
     changed_classes = 0
     total_classes = 0
 

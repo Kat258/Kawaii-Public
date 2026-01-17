@@ -80,14 +80,14 @@ public class PacketThrow extends Module {
         int newSlot;
         if (inventory.getValue() && (newSlot = InventoryUtil.findItemInventorySlot(Items.EXPERIENCE_BOTTLE)) != -1) {
             InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), down.getValue() ? 90 : mc.player.getPitch()));
             EntityUtil.swingHand(Hand.MAIN_HAND, AntiCheat.INSTANCE.swingMode.getValue());
             InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
             EntityUtil.syncInventory();
             delayTimer.reset();
         } else if ((newSlot = InventoryUtil.findItem(Items.EXPERIENCE_BOTTLE)) != -1) {
             InventoryUtil.switchToSlot(newSlot);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), down.getValue() ? 90 : mc.player.getPitch()));
             EntityUtil.swingHand(Hand.MAIN_HAND, AntiCheat.INSTANCE.swingMode.getValue());
             InventoryUtil.switchToSlot(oldSlot);
             delayTimer.reset();
