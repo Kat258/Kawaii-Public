@@ -1,6 +1,7 @@
 package dev.kizuna.mod.modules.impl.client;
 
 import dev.kizuna.Kawaii;
+import dev.kizuna.api.utils.entity.InventoryUtil;
 import dev.kizuna.api.utils.render.RenderShaderUtil;
 import dev.kizuna.api.utils.render.TextUtil;
 import dev.kizuna.mod.gui.elements.NotificationHUD;
@@ -16,6 +17,7 @@ import net.minecraft.client.gui.PlayerSkinDrawer;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.network.PlayerListEntry;
+import net.minecraft.item.Items;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 
