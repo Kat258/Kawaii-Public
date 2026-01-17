@@ -127,7 +127,7 @@ public class InventoryUtil implements Wrapper {
     public static int getPotCount(StatusEffect potion) {
         int count = 0;
         for (Map.Entry<Integer, ItemStack> entry : InventoryUtil.getInventoryAndHotbarSlots().entrySet()) {
-            if (!(entry.getValue().getItem() instanceof SplashPotionItem)){
+            if (!(entry.getValue().getItem() instanceof SplashPotionItem) && !(entry.getValue().getItem() instanceof PotionItem)){
                 continue;
             }
             PotionContentsComponent contents = entry.getValue().get(DataComponentTypes.POTION_CONTENTS);
