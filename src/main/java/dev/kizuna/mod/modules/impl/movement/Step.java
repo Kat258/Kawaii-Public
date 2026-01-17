@@ -10,6 +10,9 @@ import dev.kizuna.mod.modules.impl.combat.FeetPlace;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
+import dev.kizuna.api.utils.world.BlockUtil;
+import dev.kizuna.api.utils.entity.EntityUtil;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
@@ -54,6 +57,28 @@ public class Step extends Module {
 	boolean timer;
 	@Override
 	public void onUpdate() {
+		if (nullCheck()) return;
+		if (surroundPause.getValue() && (FeetPlace.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
+			setStepHeight(0.6f);
+			return;
+		}
+		if (inWebPause.getValue() && BlockUtil.getState(EntityUtil.getPlayerPos(true)).getBlock() == Blocks.COBWEB) {
+			setStepHeight(0.6f);
+			return;
+		}
+		if (inBlockPause.getValue() && EntityUtil.isInsideBlock()) {
+			setStepHeight(0.6f);
+			return;
+		}
+		if (sneakingPause.getValue() && mc.player.isSneaking()) {
+			setStepHeight(0.6f);
+			return;
+		}
+		if (onlyMoving.getValue() && !MovementUtil.isMoving()) {
+			setStepHeight(0.6f);
+			return;
+		}
+		setStepHeight((float) height.getValue());
 	}
 
 	int packets = 0;

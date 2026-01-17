@@ -142,9 +142,9 @@ public class AutoPot extends Module {
                 if (onlyGround.getValue() && !(mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0))))) {
                     StatusEffect toQueue = null;
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                        toQueue = (StatusEffect) StatusEffects.SPEED;
+                        toQueue = StatusEffects.SPEED.value();
                     } else if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                        toQueue = (StatusEffect) StatusEffects.RESISTANCE;
+                        toQueue = StatusEffects.RESISTANCE.value();
                     }
                     if (toQueue != null) {
                         pendingEffect = toQueue;
@@ -294,7 +294,7 @@ public class AutoPot extends Module {
     }
 
     public boolean throwSlowFalling() {
-        StatusEffect target = (StatusEffect) StatusEffects.SLOW_FALLING;
+        StatusEffect target = StatusEffects.SLOW_FALLING.value();
         ItemStack main = mc.player.getMainHandStack();
         if (Item.getRawId(main.getItem()) == Item.getRawId(Items.SPLASH_POTION)) {
         }
