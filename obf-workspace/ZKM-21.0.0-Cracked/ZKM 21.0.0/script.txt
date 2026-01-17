@@ -141,7 +141,7 @@ classpath   "..\..\zkmLibs\httpclient-4.5.13.jar"
 ignoreMissingReferences dev.kizuna.**;
 
 open        openNestedArchives=false
-            "..\..\..\build\libs\kawaii-0.4.2.jar";
+            "..\..\..\build\libs\Kawaii-Fabric-0.4.2.jar";
 
 exclude     *.<link>accesswidener and
             kawaii.accesswidener. and
