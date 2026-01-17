@@ -3,11 +3,11 @@ package dev.kizuna.mod.modules.impl.player;
 import dev.kizuna.Kawaii;
 import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.impl.LookAtEvent;
-import dev.kizuna.mod.modules.impl.client.AntiCheat;
-import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.api.utils.entity.EntityUtil;
 import dev.kizuna.api.utils.entity.InventoryUtil;
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.mod.modules.impl.client.AntiCheat;
+import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
@@ -53,16 +53,16 @@ public class AutoPearl extends Module {
 			int pearl;
 
 			if (mc.player.getMainHandStack().getItem() == Items.ENDER_PEARL) {
-				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
 			} else if (inventory.getValue() && (pearl = InventoryUtil.findItemInventorySlot(Items.ENDER_PEARL)) != -1) {
 				InventoryUtil.inventorySwap(pearl, mc.player.getInventory().selectedSlot);
-				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
 				InventoryUtil.inventorySwap(pearl, mc.player.getInventory().selectedSlot);
 				EntityUtil.syncInventory();
 			} else if ((pearl = InventoryUtil.findItem(Items.ENDER_PEARL)) != -1) {
 				int old = mc.player.getInventory().selectedSlot;
 				InventoryUtil.switchToSlot(pearl);
-				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+				sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
 				InventoryUtil.switchToSlot(old);
 			}
 			throwing = false;
@@ -83,14 +83,14 @@ public class AutoPearl extends Module {
 		int pearl;
 		if (mc.player.getMainHandStack().getItem() == Items.ENDER_PEARL) {
 			Kawaii.ROTATION.snapAt(yaw, pitch);
-			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, yaw, pitch));
 			if (AntiCheat.INSTANCE.snapBack.getValue()) {
 				Kawaii.ROTATION.snapBack();
 			}
 		} else if (inventory.getValue() && (pearl = InventoryUtil.findItemInventorySlot(Items.ENDER_PEARL)) != -1) {
 			InventoryUtil.inventorySwap(pearl, mc.player.getInventory().selectedSlot);
 			Kawaii.ROTATION.snapAt(yaw, pitch);
-			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, yaw, pitch));
 			InventoryUtil.inventorySwap(pearl, mc.player.getInventory().selectedSlot);
 			EntityUtil.syncInventory();
 			if (AntiCheat.INSTANCE.snapBack.getValue()) {
@@ -100,7 +100,7 @@ public class AutoPearl extends Module {
 			int old = mc.player.getInventory().selectedSlot;
 			InventoryUtil.switchToSlot(pearl);
 			Kawaii.ROTATION.snapAt(yaw, pitch);
-			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+			sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, yaw, pitch));
 			InventoryUtil.switchToSlot(old);
 			if (AntiCheat.INSTANCE.snapBack.getValue()) {
 				Kawaii.ROTATION.snapBack();

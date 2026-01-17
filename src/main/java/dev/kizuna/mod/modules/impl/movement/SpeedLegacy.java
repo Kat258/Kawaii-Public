@@ -72,7 +72,7 @@ public class SpeedLegacy extends Module {
     public void invoke(PacketEvent.Receive event) {
         if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket packet) {
             if (mc.player != null
-                    && packet.getId() == mc.player.getId()
+                    && packet.getEntityId() == mc.player.getId()
                     && this.velocity.getValue()) {
                 double speed = Math.sqrt(
                         packet.getVelocityX() * packet.getVelocityX()

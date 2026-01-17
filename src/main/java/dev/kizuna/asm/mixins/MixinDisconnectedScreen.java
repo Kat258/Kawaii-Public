@@ -61,6 +61,6 @@ public abstract class MixinDisconnectedScreen extends Screen {
     @Unique
     private void tryConnecting() {
         var lastServer = AutoReconnect.INSTANCE.lastServerConnection;
-        ConnectScreen.connect(new TitleScreen(), mc, lastServer.left(), lastServer.right(), false);
+        ConnectScreen.connect(new TitleScreen(), mc, lastServer.left(), lastServer.right(), false, null);
     }
 }

@@ -18,7 +18,6 @@ import dev.kizuna.mod.modules.impl.render.*;
 import dev.kizuna.mod.modules.settings.Setting;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.settings.impl.BindSetting;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.math.MatrixStack;
 import org.lwjgl.opengl.GL11;
@@ -62,7 +61,6 @@ public class ModuleManager implements Wrapper {
         addModule(new SelfTrap());
         addModule(new InventorySort());
         addModule(new PacketThrow());
-        addModule(new AutoHeal());
         addModule(new AutoPot());
         addModule(new HoleKick());
         addModule(new AutoTotem());
@@ -299,7 +297,8 @@ public class ModuleManager implements Wrapper {
             }
         }
         Arraylist.INSTANCE.counter = 20;
-        modules.stream().filter(Module::isOn).forEach(module -> module.onRender2D(drawContext, MinecraftClient.getInstance().getTickDelta()));
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        modules.stream().filter(Module::isOn).forEach(module -> module.onRender2D(drawContext, tickDelta));
     }
 
     public void render3D(MatrixStack matrixStack) {
@@ -310,7 +309,7 @@ public class ModuleManager implements Wrapper {
         RenderSystem.disableDepthTest();
         matrixStack.push();
         modules.stream().filter(Module::isOn).forEach(module -> module.onRender3D(matrixStack));
-        Kawaii.EVENT_BUS.post(new Render3DEvent(matrixStack, mc.getTickDelta()));
+        Kawaii.EVENT_BUS.post(new Render3DEvent(matrixStack, mc.getRenderTickCounter().getTickDelta(true)));
         matrixStack.pop();
         RenderSystem.enableDepthTest();
         GL11.glDisable(GL11.GL_BLEND);

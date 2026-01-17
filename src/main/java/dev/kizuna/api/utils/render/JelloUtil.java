@@ -13,33 +13,33 @@ public class JelloUtil implements Wrapper {
     private static float circleStep;
 
     public static void drawJello(MatrixStack matrix, Entity target, Color color) {
-        double cs = prevCircleStep + (circleStep - prevCircleStep) * mc.getTickDelta();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        double cs = prevCircleStep + (circleStep - prevCircleStep) * tickDelta;
         double prevSinAnim = absSinAnimation(cs - 0.45f);
         double sinAnim = absSinAnimation(cs);
-        double x = target.prevX + (target.getX() - target.prevX) * mc.getTickDelta() - mc.getEntityRenderDispatcher().camera.getPos().getX();
-        double y = target.prevY + (target.getY() - target.prevY) * mc.getTickDelta() - mc.getEntityRenderDispatcher().camera.getPos().getY() + prevSinAnim * target.getHeight();
-        double z = target.prevZ + (target.getZ() - target.prevZ) * mc.getTickDelta() - mc.getEntityRenderDispatcher().camera.getPos().getZ();
-        double nextY = target.prevY + (target.getY() - target.prevY) * mc.getTickDelta() - mc.getEntityRenderDispatcher().camera.getPos().getY() + sinAnim * target.getHeight();
+        double x = target.prevX + (target.getX() - target.prevX) * tickDelta - mc.getEntityRenderDispatcher().camera.getPos().getX();
+        double y = target.prevY + (target.getY() - target.prevY) * tickDelta - mc.getEntityRenderDispatcher().camera.getPos().getY() + prevSinAnim * target.getHeight();
+        double z = target.prevZ + (target.getZ() - target.prevZ) * tickDelta - mc.getEntityRenderDispatcher().camera.getPos().getZ();
+        double nextY = target.prevY + (target.getY() - target.prevY) * tickDelta - mc.getEntityRenderDispatcher().camera.getPos().getY() + sinAnim * target.getHeight();
 
         matrix.push();
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
         RenderSystem.disableCull();
         Tessellator tessellator = Tessellator.getInstance();
-        BufferBuilder bufferBuilder = tessellator.getBuffer();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.TRIANGLE_STRIP, VertexFormats.POSITION_COLOR);
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.TRIANGLE_STRIP, VertexFormats.POSITION_COLOR);
 
         float cos;
         float sin;
         for (int i = 0; i <= 30; i++) {
             cos = (float) (x + Math.cos(i * 6.28 / 30) * ((target.getBoundingBox().maxX - target.getBoundingBox().minX) + (target.getBoundingBox().maxZ - target.getBoundingBox().minZ)) * 0.5f);
             sin = (float) (z + Math.sin(i * 6.28 / 30) * ((target.getBoundingBox().maxX - target.getBoundingBox().minX) + (target.getBoundingBox().maxZ - target.getBoundingBox().minZ)) * 0.5f);
-            bufferBuilder.vertex(matrix.peek().getPositionMatrix(), cos, (float) nextY, sin).color(color.getRGB()).next();
-            bufferBuilder.vertex(matrix.peek().getPositionMatrix(), cos, (float) y, sin).color(ColorUtil.injectAlpha(color, 0).getRGB()).next();
+            bufferBuilder.vertex(matrix.peek().getPositionMatrix(), cos, (float) nextY, sin).color(color.getRGB());
+            bufferBuilder.vertex(matrix.peek().getPositionMatrix(), cos, (float) y, sin).color(ColorUtil.injectAlpha(color, 0).getRGB());
         }
 
-        tessellator.draw();
+        BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         RenderSystem.enableCull();
         RenderSystem.disableBlend();
         matrix.pop();

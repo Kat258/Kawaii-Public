@@ -3,15 +3,18 @@ package dev.kizuna.mod.modules.impl.render;
 import com.mojang.blaze3d.systems.RenderSystem;
 import dev.kizuna.api.utils.math.MathUtil;
 import dev.kizuna.api.utils.render.Render3DUtil;
+import dev.kizuna.api.utils.item.EnchantmentUtil;
 import dev.kizuna.mod.modules.impl.player.AutoPearl;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.*;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
@@ -74,11 +77,12 @@ public class Trajectories extends Module {
         RenderSystem.disableDepthTest();
         boolean prev_bob = mc.options.getBobView().getValue();
         mc.options.getBobView().setValue(false);
-        double x = MathUtil.interpolate(mc.player.prevX, mc.player.getX(), mc.getTickDelta());
-        double y = MathUtil.interpolate(mc.player.prevY, mc.player.getY(), mc.getTickDelta());
-        double z = MathUtil.interpolate(mc.player.prevZ, mc.player.getZ(), mc.getTickDelta());
-        if ((offHand.getItem() instanceof CrossbowItem && EnchantmentHelper.getLevel(Enchantments.MULTISHOT, offHand) != 0) ||
-                (mainHand.getItem() instanceof CrossbowItem && EnchantmentHelper.getLevel(Enchantments.MULTISHOT, mainHand) != 0)) {
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        double x = MathUtil.interpolate(mc.player.prevX, mc.player.getX(), tickDelta);
+        double y = MathUtil.interpolate(mc.player.prevY, mc.player.getY(), tickDelta);
+        double z = MathUtil.interpolate(mc.player.prevZ, mc.player.getZ(), tickDelta);
+        if ((offHand.getItem() instanceof CrossbowItem && EnchantmentUtil.getLevel(Enchantments.MULTISHOT, offHand) != 0) ||
+                (mainHand.getItem() instanceof CrossbowItem && EnchantmentUtil.getLevel(Enchantments.MULTISHOT, mainHand) != 0)) {
 
             calcTrajectory(hand == Hand.OFF_HAND ? offHand.getItem() : mainHand.getItem(), mc.player.getYaw() - 10, x, y, z);
             calcTrajectory(hand == Hand.OFF_HAND ? offHand.getItem() : mainHand.getItem(), mc.player.getYaw(), x, y, z);

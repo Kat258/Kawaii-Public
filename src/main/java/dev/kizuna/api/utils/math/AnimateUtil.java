@@ -41,7 +41,7 @@ public class AnimateUtil implements Wrapper {
         }
 
         double diff = (endPoint - current);
-        double factor = diff * mc.getTickDelta() / (1 / speed * (Math.min(240D, Kawaii.FPS.getFps()) / 240D));
+        double factor = diff * mc.getRenderTickCounter().getTickDelta(true) / (1 / speed * (Math.min(240D, Kawaii.FPS.getFps()) / 240D));
         if (diff < 0 && factor < diff) {
             factor = diff;
         } else if (diff > 0 && factor >= diff) {
@@ -80,7 +80,7 @@ public class AnimateUtil implements Wrapper {
         }
 
         double diff = (endPoint - current);
-        double factor = diff * mc.getTickDelta() * speed;
+        double factor = diff * mc.getRenderTickCounter().getTickDelta(true) * speed;
         if (diff < 0 && factor < diff) {
             factor = diff;
         } else if (diff > 0 && factor >= diff) {

@@ -16,6 +16,8 @@ import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
@@ -25,7 +27,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.network.packet.c2s.play.ClientCommandC2SPacket;
-import net.minecraft.potion.PotionUtil;
 import net.minecraft.util.Hand;
 
 import java.util.List;
@@ -141,9 +142,9 @@ public class AutoPot extends Module {
                 if (onlyGround.getValue() && !(mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0))))) {
                     StatusEffect toQueue = null;
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                        toQueue = StatusEffects.SPEED;
+                        toQueue = (StatusEffect) StatusEffects.SPEED;
                     } else if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                        toQueue = StatusEffects.RESISTANCE;
+                        toQueue = (StatusEffect) StatusEffects.RESISTANCE;
                     }
                     if (toQueue != null) {
                         pendingEffect = toQueue;
@@ -164,15 +165,15 @@ public class AutoPot extends Module {
                         } catch (Throwable ignored) {}
                     }
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                        throwing = checkThrow(StatusEffects.SPEED);
+                        throwing = checkThrow((StatusEffect) StatusEffects.SPEED);
                         if (isThrow()) {
-                            if (throwPotion(StatusEffects.SPEED)) delayTimer.reset();
+                            if (throwPotion((StatusEffect) StatusEffects.SPEED)) delayTimer.reset();
                         }
                     }
                     if (!throwing && resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                        throwing = checkThrow(StatusEffects.RESISTANCE);
+                        throwing = checkThrow((StatusEffect) StatusEffects.RESISTANCE);
                         if (isThrow()) {
-                            if (throwPotion(StatusEffects.RESISTANCE)) delayTimer.reset();
+                            if (throwPotion((StatusEffect) StatusEffects.RESISTANCE)) delayTimer.reset();
                         }
                     }
                 }
@@ -186,18 +187,18 @@ public class AutoPot extends Module {
 
         if (!onlyGround.getValue() || (mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0))))) {
             if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                throwing = checkThrow(StatusEffects.SPEED);
+                throwing = checkThrow((StatusEffect) StatusEffects.SPEED);
                 if (isThrow() && delayTimer.passedMs((long) (delay.getValue() * 1000))) {
-                    if (throwPotion(StatusEffects.SPEED)) {
+                    if (throwPotion((StatusEffect) StatusEffects.SPEED)) {
                         delayTimer.reset();
                         return;
                     }
                 }
             }
             if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                throwing = checkThrow(StatusEffects.RESISTANCE);
+                throwing = checkThrow((StatusEffect) StatusEffects.RESISTANCE);
                 if (isThrow() && delayTimer.passedMs((long) (delay.getValue() * 1000))) {
-                    if (throwPotion(StatusEffects.RESISTANCE)) {
+                    if (throwPotion((StatusEffect) StatusEffects.RESISTANCE)) {
                         delayTimer.reset();
                         return;
                     }
@@ -264,7 +265,7 @@ public class AutoPot extends Module {
             if (inventory.getValue() && (newSlot = findPotionInventorySlot(targetEffect)) != -1) {
                 Kawaii.ROTATION.snapAt(Kawaii.ROTATION.rotationYaw, 90);
                 InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
-                try { sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id)); } catch (Throwable ignored) {}
+                try { sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch())); } catch (Throwable ignored) {}
                 InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
                 EntityUtil.syncInventory();
                 if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
@@ -272,7 +273,7 @@ public class AutoPot extends Module {
             } else if ((newSlot = findPotion(targetEffect)) != -1) {
                 Kawaii.ROTATION.snapAt(Kawaii.ROTATION.rotationYaw, 90);
                 InventoryUtil.switchToSlot(newSlot);
-                try { sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id)); } catch (Throwable ignored) {}
+                try { sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch())); } catch (Throwable ignored) {}
                 InventoryUtil.switchToSlot(oldSlot);
                 if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
                 return true;
@@ -293,19 +294,9 @@ public class AutoPot extends Module {
     }
 
     public boolean throwSlowFalling() {
-        StatusEffect target = StatusEffects.SLOW_FALLING;
+        StatusEffect target = (StatusEffect) StatusEffects.SLOW_FALLING;
         ItemStack main = mc.player.getMainHandStack();
         if (Item.getRawId(main.getItem()) == Item.getRawId(Items.SPLASH_POTION)) {
-            List<StatusEffectInstance> effects = PotionUtil.getPotionEffects(main);
-            for (StatusEffectInstance eff : effects) {
-                if (eff.getEffectType() == target) {
-                    Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
-                    sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
-                    if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
-                    return true;
-
-                }
-            }
         }
 
         if (inventory.getValue()) {
@@ -314,7 +305,7 @@ public class AutoPot extends Module {
                 int current = mc.player.getInventory().selectedSlot;
                 InventoryUtil.inventorySwap(invSlot, current);
                 Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
-                sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+                sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
                 InventoryUtil.inventorySwap(invSlot, current);
                 EntityUtil.syncInventory();
                 if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
@@ -327,7 +318,7 @@ public class AutoPot extends Module {
             int old = mc.player.getInventory().selectedSlot;
             InventoryUtil.switchToSlot(hot);
             Kawaii.ROTATION.snapAt(mc.player.getYaw(), mc.player.getPitch());
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             InventoryUtil.switchToSlot(old);
             if (AntiCheat.INSTANCE.snapBack.getValue()) Kawaii.ROTATION.snapBack();
             return true;
@@ -338,9 +329,10 @@ public class AutoPot extends Module {
         for (int i = 0; i < 45; ++i) {
             ItemStack itemStack = mc.player.getInventory().getStack(i);
             if (Item.getRawId(itemStack.getItem()) != Item.getRawId(Items.SPLASH_POTION)) continue;
-            List<StatusEffectInstance> effects = PotionUtil.getPotionEffects(itemStack);
-            for (StatusEffectInstance effect : effects) {
-                if (effect.getEffectType() == targetEffect) return i < 9 ? i + 36 : i;
+            PotionContentsComponent contents = itemStack.get(DataComponentTypes.POTION_CONTENTS);
+            if (contents == null) continue;
+            for (StatusEffectInstance effect : contents.getEffects()) {
+                if (effect.getEffectType().value() == targetEffect) return i < 9 ? i + 36 : i;
             }
         }
         return -1;
@@ -350,9 +342,10 @@ public class AutoPot extends Module {
         for (int i = 0; i < 9; ++i) {
             ItemStack itemStack = InventoryUtil.getStackInSlot(i);
             if (Item.getRawId(itemStack.getItem()) != Item.getRawId(Items.SPLASH_POTION)) continue;
-            List<StatusEffectInstance> effects = PotionUtil.getPotionEffects(itemStack);
-            for (StatusEffectInstance effect : effects) {
-                if (effect.getEffectType() == targetEffect) return i;
+            PotionContentsComponent contents = itemStack.get(DataComponentTypes.POTION_CONTENTS);
+            if (contents == null) continue;
+            for (StatusEffectInstance effect : contents.getEffects()) {
+                if (effect.getEffectType().value() == targetEffect) return i;
             }
         }
         return -1;

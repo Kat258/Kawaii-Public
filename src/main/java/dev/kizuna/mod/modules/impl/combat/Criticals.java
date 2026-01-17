@@ -1,15 +1,11 @@
 package dev.kizuna.mod.modules.impl.combat;
 
-import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
-import dev.kizuna.mod.modules.settings.impl.EnumSetting;
-import io.netty.buffer.Unpooled;
 import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
+import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import net.minecraft.block.Blocks;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.decoration.EndCrystalEntity;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.c2s.play.PlayerInteractEntityC2SPacket;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
@@ -34,11 +30,11 @@ public class Criticals extends Module {
 
     @EventHandler
     public void onPacketSend(PacketEvent.Send event) {
-        Entity entity;
-        if (event.getPacket() instanceof PlayerInteractEntityC2SPacket packet && getInteractType(packet) == InteractType.ATTACK && !((entity = getEntity(packet)) instanceof EndCrystalEntity)) {
-            if ((!onlyGround.getValue() || mc.player.isOnGround() || mc.player.getAbilities().flying) && !mc.player.isInLava() && !mc.player.isSubmergedInWater() && entity != null) {
-                mc.player.addCritParticles(entity);
-                doCrit();
+        if (event.getPacket() instanceof PlayerInteractEntityC2SPacket) {
+            if (!onlyGround.getValue() || mc.player.isOnGround() || mc.player.getAbilities().flying) {
+                if (!mc.player.isInLava() && !mc.player.isSubmergedInWater()) {
+                    doCrit();
+                }
             }
         }
     }
@@ -70,23 +66,4 @@ public class Criticals extends Module {
         }
     }
 
-    public static Entity getEntity(PlayerInteractEntityC2SPacket packet) {
-        PacketByteBuf packetBuf = new PacketByteBuf(Unpooled.buffer());
-        packet.write(packetBuf);
-        return mc.world == null ? null : mc.world.getEntityById(packetBuf.readVarInt());
-    }
-
-    public static InteractType getInteractType(PlayerInteractEntityC2SPacket packet) {
-        PacketByteBuf packetBuf = new PacketByteBuf(Unpooled.buffer());
-        packet.write(packetBuf);
-
-        packetBuf.readVarInt();
-        return packetBuf.readEnumConstant(InteractType.class);
-    }
-
-    public enum InteractType {
-        INTERACT,
-        ATTACK,
-        INTERACT_AT
-    }
 }

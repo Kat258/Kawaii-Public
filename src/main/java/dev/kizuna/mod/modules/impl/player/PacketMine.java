@@ -9,6 +9,7 @@ import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.api.utils.combat.CombatUtil;
 import dev.kizuna.api.utils.entity.EntityUtil;
 import dev.kizuna.api.utils.entity.InventoryUtil;
+import dev.kizuna.api.utils.item.EnchantmentUtil;
 import dev.kizuna.api.utils.math.Easing;
 import dev.kizuna.api.utils.math.FadeUtils;
 import dev.kizuna.api.utils.math.Timer;
@@ -679,7 +680,7 @@ public class PacketMine extends Module {
 			for (int i = 0; i < 9; ++i) {
 				final ItemStack stack = mc.player.getInventory().getStack(i);
 				if (stack != ItemStack.EMPTY) {
-					final float digSpeed = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack);
+					final float digSpeed = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, stack);
 					final float destroySpeed = stack.getMiningSpeedMultiplier(mc.world.getBlockState(pos));
 					if (digSpeed + destroySpeed > CurrentFastest) {
 						CurrentFastest = digSpeed + destroySpeed;
@@ -694,7 +695,7 @@ public class PacketMine extends Module {
 			float CurrentFastest = 1.0f;
 			for (Map.Entry<Integer, ItemStack> entry : InventoryUtil.getInventoryAndHotbarSlots().entrySet()) {
 				if (!(entry.getValue().getItem() instanceof AirBlockItem)) {
-					final float digSpeed = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, entry.getValue());
+					final float digSpeed = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, entry.getValue());
 					final float destroySpeed = entry.getValue().getMiningSpeedMultiplier(mc.world.getBlockState(pos));
 					if (digSpeed + destroySpeed > CurrentFastest) {
 						CurrentFastest = digSpeed + destroySpeed;
@@ -792,7 +793,7 @@ public class PacketMine extends Module {
 	public float getDigSpeed(BlockState state, ItemStack itemStack) {
 		float digSpeed = getDestroySpeed(state, itemStack);
 		if (digSpeed > 1) {
-			int efficiencyModifier = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, itemStack);
+			int efficiencyModifier = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, itemStack);
 			if (efficiencyModifier > 0 && !itemStack.isEmpty()) {
 				digSpeed += (float) (StrictMath.pow(efficiencyModifier, 2) + 1);
 			}
@@ -810,7 +811,7 @@ public class PacketMine extends Module {
 			}
 			digSpeed *= fatigueScale;
 		}
-		if (mc.player.isSubmergedInWater() && !EnchantmentHelper.hasAquaAffinity(mc.player)) {
+		if (mc.player.isSubmergedInWater() && !EnchantmentUtil.hasAquaAffinity(mc.player)) {
 			digSpeed /= 5;
 		}
 		boolean inWeb = Kawaii.PLAYER.isInWeb(mc.player) && mc.world.getBlockState(breakPos).getBlock() == Blocks.COBWEB;

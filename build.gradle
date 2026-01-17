@@ -9,11 +9,10 @@ buildscript {
 }
 
 plugins {
-    id 'fabric-loom' version '1.6.3'
+    id 'fabric-loom' version '1.14-SNAPSHOT'
     id 'maven-publish'
 }
 
-archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
@@ -34,11 +33,10 @@ dependencies {
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
     modImplementation name: 'nether-pathfinder-1.4.1'
-    modImplementation name: 'IAS-Fabric-1.20.4-9.0.2-SNAPSHOT'
-    modImplementation name: 'satin-1.15.0'
-    include name: 'satin-1.15.0'
-    include name: 'IAS-Fabric-1.20.4-9.0.2-SNAPSHOT'
-    include "org.ladysnake:satin:1.15.0"
+    modImplementation name: 'IAS-Fabric-1.21.1-9.0.4'
+    modImplementation name: 'satin-2.0.0'
+    include name: 'satin-2.0.0'
+    include name: 'IAS-Fabric-1.21.1-9.0.4'
 }
 
 processResources {
@@ -50,12 +48,12 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-    it.options.release = 17
+    it.options.release = 21
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 publishing {

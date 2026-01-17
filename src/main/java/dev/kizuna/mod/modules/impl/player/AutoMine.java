@@ -6,6 +6,7 @@ import dev.kizuna.api.events.impl.ClickBlockEvent;
 import dev.kizuna.api.events.impl.PacketEvent;
 import dev.kizuna.api.events.impl.Render3DEvent;
 import dev.kizuna.api.utils.entity.InventoryUtil;
+import dev.kizuna.api.utils.item.EnchantmentUtil;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
@@ -13,7 +14,6 @@ import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.effect.StatusEffectUtil;
 import net.minecraft.entity.effect.StatusEffects;
@@ -259,7 +259,7 @@ public class AutoMine extends Module {
         float f = mc.player.getInventory().getStack(tool).getMiningSpeedMultiplier(block);
         if (f > 1.0F) {
             ItemStack stack = mc.player.getInventory().getStack(tool);
-            int i = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack);
+            int i = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, stack);
             if (i > 0 && !stack.isEmpty()) {
                 f += (float) (i * i + 1);
             }
@@ -277,7 +277,7 @@ public class AutoMine extends Module {
             f *= g;
         }
         if (mc.player.isSubmergedIn(FluidTags.WATER)
-                && !EnchantmentHelper.hasAquaAffinity(mc.player)) {
+                && !EnchantmentUtil.hasAquaAffinity(mc.player)) {
             f /= 5.0f;
         }
         if (!mc.player.isOnGround()) {
@@ -305,7 +305,7 @@ public class AutoMine extends Module {
                 continue;
             }
             float speed = stack.getMiningSpeedMultiplier(state);
-            final int efficiency = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack);
+            final int efficiency = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, stack);
             if (efficiency > 0)
             {
                 speed += efficiency * efficiency + 1.0f;

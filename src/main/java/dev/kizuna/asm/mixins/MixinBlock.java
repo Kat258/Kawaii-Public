@@ -22,7 +22,6 @@ public abstract class MixinBlock implements ItemConvertible {
 			cir.setReturnValue(XRay.INSTANCE.isCheckableOre(state.getBlock()));
 	}
 
-	@Inject(method = "isTransparent", at = @At("HEAD"), cancellable = true)
 	public void isTransparentHook(BlockState state, BlockView world, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
 		if (MinecraftClient.getInstance() == null) return;
 		if (XRay.INSTANCE.isOn())

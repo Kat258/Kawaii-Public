@@ -6,7 +6,6 @@ import dev.kizuna.api.events.impl.SprintEvent;
 import dev.kizuna.mod.modules.impl.exploit.NoBadEffects;
 import dev.kizuna.mod.modules.impl.movement.ElytraFly;
 import dev.kizuna.mod.modules.impl.movement.Glide;
-import dev.kizuna.mod.modules.impl.render.NameTags;
 import dev.kizuna.mod.modules.impl.render.ViewModel;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
@@ -15,7 +14,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.*;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
@@ -36,9 +35,9 @@ public abstract class MixinLivingEntity extends Entity {
 
     @Redirect(method = "tickMovement",
             at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/entity/effect/StatusEffect;)Z"),
+                    target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"),
             require = 0)
-    private boolean tickMovementHook(LivingEntity instance, StatusEffect effect) {
+    private boolean tickMovementHook(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if (Glide.INSTANCE != null && Glide.INSTANCE.isOn() && Glide.INSTANCE.onlyFall.getValue())
             return false;
         return instance.hasStatusEffect(effect);
@@ -49,7 +48,7 @@ public abstract class MixinLivingEntity extends Entity {
 
     @Shadow
     @Nullable
-    public EntityAttributeInstance getAttributeInstance(EntityAttribute attribute) {
+    public EntityAttributeInstance getAttributeInstance(RegistryEntry<EntityAttribute> attribute) {
         return this.getAttributes().getCustomInstance(attribute);
     }
 
@@ -79,9 +78,9 @@ public abstract class MixinLivingEntity extends Entity {
 
     @Redirect(method = "travel",
             at = @At(value = "INVOKE",
-                    target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/entity/effect/StatusEffect;)Z"),
+                    target = "Lnet/minecraft/entity/LivingEntity;hasStatusEffect(Lnet/minecraft/registry/entry/RegistryEntry;)Z"),
             require = 0)
-    private boolean travelEffectHook(LivingEntity instance, StatusEffect effect) {
+    private boolean travelEffectHook(LivingEntity instance, RegistryEntry<StatusEffect> effect) {
         if (NoBadEffects.INSTANCE.isOn()) {
             if (effect == StatusEffects.SLOW_FALLING && NoBadEffects.INSTANCE.slowFalling.getValue()) {
                 return false;
@@ -102,7 +101,7 @@ public abstract class MixinLivingEntity extends Entity {
                 sprinting = event.isSprint();
                 super.setSprinting(sprinting);
                 EntityAttributeInstance entityAttributeInstance = this.getAttributeInstance(EntityAttributes.GENERIC_MOVEMENT_SPEED);
-                entityAttributeInstance.removeModifier(SPRINTING_SPEED_BOOST.getId());
+                entityAttributeInstance.removeModifier(SPRINTING_SPEED_BOOST.id());
                 if (sprinting) {
                     entityAttributeInstance.addTemporaryModifier(SPRINTING_SPEED_BOOST);
                 }

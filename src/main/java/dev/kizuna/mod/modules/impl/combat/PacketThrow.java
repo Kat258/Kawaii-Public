@@ -5,12 +5,11 @@ import dev.kizuna.api.events.eventbus.EventPriority;
 import dev.kizuna.api.events.impl.RotateEvent;
 import dev.kizuna.api.utils.entity.EntityUtil;
 import dev.kizuna.api.utils.entity.InventoryUtil;
+import dev.kizuna.api.utils.item.EnchantmentUtil;
 import dev.kizuna.api.utils.math.Timer;
 import dev.kizuna.mod.modules.impl.client.AntiCheat;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -18,8 +17,6 @@ import net.minecraft.network.packet.c2s.play.PlayerInteractItemC2SPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.collection.DefaultedList;
 import dev.kizuna.mod.modules.Module;
-
-import java.util.Map;
 
 public class PacketThrow extends Module {
 
@@ -83,14 +80,14 @@ public class PacketThrow extends Module {
         int newSlot;
         if (inventory.getValue() && (newSlot = InventoryUtil.findItemInventorySlot(Items.EXPERIENCE_BOTTLE)) != -1) {
             InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             EntityUtil.swingHand(Hand.MAIN_HAND, AntiCheat.INSTANCE.swingMode.getValue());
             InventoryUtil.inventorySwap(newSlot, mc.player.getInventory().selectedSlot);
             EntityUtil.syncInventory();
             delayTimer.reset();
         } else if ((newSlot = InventoryUtil.findItem(Items.EXPERIENCE_BOTTLE)) != -1) {
             InventoryUtil.switchToSlot(newSlot);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             EntityUtil.swingHand(Hand.MAIN_HAND, AntiCheat.INSTANCE.swingMode.getValue());
             InventoryUtil.switchToSlot(oldSlot);
             delayTimer.reset();
@@ -127,12 +124,7 @@ public class PacketThrow extends Module {
             for (ItemStack armor : armors) {
                 if (armor.isEmpty()) continue;
                 if (EntityUtil.getDamagePercent(armor) >= 100) continue;
-                Map<Enchantment, Integer> enchantments = EnchantmentHelper.get(armor);
-                for (Enchantment enchantment : enchantments.keySet()) {
-                    if (enchantment == Enchantments.MENDING) {
-                        return true;
-                    }
-                }
+                if (EnchantmentUtil.hasEnchantment(Enchantments.MENDING, armor)) return true;
                 return false;
             }
         } else {

@@ -1,11 +1,11 @@
 package dev.kizuna.api.utils.render.shaders;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import ladysnake.satin.api.managed.ManagedCoreShader;
-import ladysnake.satin.api.managed.ShaderEffectManager;
-import ladysnake.satin.api.managed.uniform.Uniform1f;
-import ladysnake.satin.api.managed.uniform.Uniform2f;
-import ladysnake.satin.api.managed.uniform.Uniform4f;
+import org.ladysnake.satin.api.managed.ManagedCoreShader;
+import org.ladysnake.satin.api.managed.ShaderEffectManager;
+import org.ladysnake.satin.api.managed.uniform.Uniform1f;
+import org.ladysnake.satin.api.managed.uniform.Uniform2f;
+import org.ladysnake.satin.api.managed.uniform.Uniform4f;
 import dev.kizuna.api.utils.Wrapper;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.util.Identifier;

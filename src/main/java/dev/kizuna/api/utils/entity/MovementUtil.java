@@ -84,7 +84,8 @@ public class MovementUtil implements Wrapper {
     public static double[] directionSpeedKey(double speed) {
         float forward = (mc.options.forwardKey.isPressed() ? 1 : 0) + (mc.options.backKey.isPressed() ? -1 : 0);
         float side = (mc.options.leftKey.isPressed() ? 1 : 0) + (mc.options.rightKey.isPressed() ? -1 : 0);
-        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * mc.getTickDelta();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * tickDelta;
         if (forward != 0.0f) {
             if (side > 0.0f) {
                 yaw += ((forward > 0.0f) ? -45 : 45);
@@ -107,7 +108,8 @@ public class MovementUtil implements Wrapper {
     public static double[] directionSpeed(double speed) {
         float forward = mc.player.input.movementForward;
         float side = mc.player.input.movementSideways;
-        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * mc.getTickDelta();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * tickDelta;
         if (forward != 0.0f) {
             if (side > 0.0f) {
                 yaw += ((forward > 0.0f) ? -45 : 45);

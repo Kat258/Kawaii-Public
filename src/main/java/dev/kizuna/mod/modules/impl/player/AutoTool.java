@@ -1,8 +1,8 @@
 package dev.kizuna.mod.modules.impl.player;
 
 import dev.kizuna.mod.modules.Module;
+import dev.kizuna.api.utils.item.EnchantmentUtil;
 import net.minecraft.block.AirBlock;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.hit.BlockHitResult;
@@ -34,7 +34,7 @@ public class AutoTool extends Module {
         for (int i = 0; i < 9; ++i) {
             final ItemStack stack = mc.player.getInventory().getStack(i);
             if (stack != ItemStack.EMPTY) {
-                final float digSpeed = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack);
+                final float digSpeed = EnchantmentUtil.getLevel(Enchantments.EFFICIENCY, stack);
                 final float destroySpeed = stack.getMiningSpeedMultiplier(mc.world.getBlockState(pos));
 
                 if (mc.world.getBlockState(pos).getBlock() instanceof AirBlock) return -1;

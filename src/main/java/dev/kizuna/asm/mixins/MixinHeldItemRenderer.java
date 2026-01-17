@@ -9,6 +9,7 @@ import net.minecraft.client.render.item.HeldItemRenderer;
 import net.minecraft.client.render.model.json.ModelTransformationMode;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
@@ -37,7 +38,7 @@ public abstract class MixinHeldItemRenderer {
     @Shadow
     public abstract void renderItem(LivingEntity entity, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light);
 
-    @Shadow protected abstract void applyEatOrDrinkTransformation(MatrixStack matrices, float tickDelta, Arm arm, ItemStack stack);
+    @Shadow protected abstract void applyEatOrDrinkTransformation(MatrixStack matrices, float tickDelta, Arm arm, ItemStack stack, PlayerEntity player);
 
     @Inject(method = "renderFirstPersonItem", at = @At(value = "HEAD"), cancellable = true)
     private void onRenderItemHook(AbstractClientPlayerEntity player, float tickDelta, float pitch, Hand hand, float swingProgress, ItemStack item, float equipProgress, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
@@ -68,8 +69,8 @@ public abstract class MixinHeldItemRenderer {
                     matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-11.935F));
                     matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((float) i * 65.3F));
                     matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float) i * -9.785F));
-                    f = (float) item.getMaxUseTime() - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
-                    g = f / (float) CrossbowItem.getPullTime(item);
+                    f = (float) item.getMaxUseTime(mc.player) - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
+                    g = f / (float) CrossbowItem.getPullTime(item, mc.player);
                     if (g > 1.0F) {
                         g = 1.0F;
                     }
@@ -113,7 +114,7 @@ public abstract class MixinHeldItemRenderer {
                         if (ViewModel.INSTANCE.eatAnimation.getValue()) {
                             applyEatOrDrinkTransformationCustom(matrices, tickDelta, arm, item);
                         } else {
-                            applyEatOrDrinkTransformation(matrices, tickDelta, arm, item);
+                            applyEatOrDrinkTransformation(matrices, tickDelta, arm, item, mc.player);
                         }
                         this.applyEquipOffset(matrices, arm, equipProgress);
                     }
@@ -123,7 +124,7 @@ public abstract class MixinHeldItemRenderer {
                         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-13.935F));
                         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((float) l * 35.3F));
                         matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float) l * -9.785F));
-                        m = (float) item.getMaxUseTime() - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
+                        m = (float) item.getMaxUseTime(mc.player) - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
                         f = m / 20.0F;
                         f = (f * f + f * 2.0F) / 3.0F;
                         if (f > 1.0F) {
@@ -145,7 +146,7 @@ public abstract class MixinHeldItemRenderer {
                         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(-55.0F));
                         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees((float) l * 35.3F));
                         matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees((float) l * -9.785F));
-                        m = (float) item.getMaxUseTime() - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
+                        m = (float) item.getMaxUseTime(mc.player) - ((float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F);
                         f = m / 10.0F;
                         if (f > 1.0F) {
                             f = 1.0F;
@@ -200,7 +201,7 @@ public abstract class MixinHeldItemRenderer {
 
     private void applyEatOrDrinkTransformationCustom(MatrixStack matrices, float tickDelta, Arm arm, @NotNull ItemStack stack) {
         float f = (float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F;
-        float g = f / (float) stack.getMaxUseTime();
+        float g = f / (float) stack.getMaxUseTime(mc.player);
         float h;
         if (g < 0.8F) {
             h = MathHelper.abs(MathHelper.cos(f / 4.0F * 3.1415927F) * 0.005F);
@@ -216,7 +217,7 @@ public abstract class MixinHeldItemRenderer {
     }
 
     @Inject(method = "applyEatOrDrinkTransformation", at = @At(value = "HEAD"), cancellable = true)
-    private void applyEatOrDrinkTransformationHook(MatrixStack matrices, float tickDelta, Arm arm, ItemStack stack, CallbackInfo ci) {
+    private void applyEatOrDrinkTransformationHook(MatrixStack matrices, float tickDelta, Arm arm, ItemStack stack, PlayerEntity player, CallbackInfo ci) {
         if (ViewModel.INSTANCE.isOn() && ViewModel.INSTANCE.eatAnimation.getValue()) {
             applyEatOrDrinkTransformationCustom(matrices, tickDelta, arm, stack);
             ci.cancel();
@@ -226,7 +227,7 @@ public abstract class MixinHeldItemRenderer {
     private void applyBrushTransformation(MatrixStack matrices, float tickDelta, Arm arm, @NotNull ItemStack stack, float equipProgress) {
         applyEquipOffset(matrices, arm, equipProgress);
         float f = (float) mc.player.getItemUseTimeLeft() - tickDelta + 1.0F;
-        float g = 1.0F - f / (float) stack.getMaxUseTime();
+        float g = 1.0F - f / (float) stack.getMaxUseTime(mc.player);
         float m = -15.0F + 75.0F * MathHelper.cos(g * 45.0F * 3.1415927F);
 
         if (arm != Arm.RIGHT) {

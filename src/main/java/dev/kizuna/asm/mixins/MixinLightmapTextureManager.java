@@ -67,9 +67,9 @@ public class MixinLightmapTextureManager {
 					float j = this.getDarkness(this.client.player, i, delta) * h;
 					float k = this.client.player.getUnderwaterVisibility();
 					float l;
-                    l = 1;
+					l = 1;
 
-                    Vector3f vector3f = new Vector3f(f, f, 1.0F).lerp(new Vector3f(1.0F, 1.0F, 1.0F), 0.35F);
+					Vector3f vector3f = new Vector3f(f, f, 1.0F).lerp(new Vector3f(1.0F, 1.0F, 1.0F), 0.35F);
 					float m = this.flickerIntensity + 1.5F;
 					Vector3f vector3f2 = new Vector3f();
 
@@ -95,13 +95,13 @@ public class MixinLightmapTextureManager {
 								}
 							}
 
-                            {
-                                float v = Math.max(vector3f2.x(), Math.max(vector3f2.y(), vector3f2.z()));
-                                if (v < 1.0F) {
-                                    this.image.setColor(o, n, new Color(Ambience.INSTANCE.worldColor.getValue().getBlue(), Ambience.INSTANCE.worldColor.getValue().getGreen(), Ambience.INSTANCE.worldColor.getValue().getRed(), Ambience.INSTANCE.worldColor.getValue().getAlpha()).getRGB());
-                                    continue;
-                                }
-                            }
+							{
+								float v = Math.max(vector3f2.x(), Math.max(vector3f2.y(), vector3f2.z()));
+								if (v < 1.0F) {
+									this.image.setColor(o, n, new Color(Ambience.INSTANCE.worldColor.getValue().getBlue(), Ambience.INSTANCE.worldColor.getValue().getGreen(), Ambience.INSTANCE.worldColor.getValue().getRed(), Ambience.INSTANCE.worldColor.getValue().getAlpha()).getRGB());
+									continue;
+								}
+							}
 
 							if (!bl) {
 								if (j > 0.0F) {
@@ -135,7 +135,7 @@ public class MixinLightmapTextureManager {
 	private static void clamp(Vector3f vec) {
 		vec.set(MathHelper.clamp(vec.x, 0.0F, 1.0F), MathHelper.clamp(vec.y, 0.0F, 1.0F), MathHelper.clamp(vec.z, 0.0F, 1.0F));
 	}
-	
+
 	@Inject(method = "getDarknessFactor(F)F", at = @At("HEAD"), cancellable = true)
 	private void getDarknessFactor(float tickDelta, CallbackInfoReturnable<Float> info) {
 		if (NoRender.INSTANCE.isOn() && NoRender.INSTANCE.darkness.getValue()) info.setReturnValue(0.0f);
@@ -156,15 +156,10 @@ public class MixinLightmapTextureManager {
 
 	@Shadow
 	private float getDarknessFactor(float delta) {
-		if (this.client.player.hasStatusEffect(StatusEffects.DARKNESS)) {
-			StatusEffectInstance statusEffectInstance = this.client.player.getStatusEffect(StatusEffects.DARKNESS);
-			if (statusEffectInstance != null && statusEffectInstance.getFactorCalculationData().isPresent()) {
-				return statusEffectInstance.getFactorCalculationData().get().lerp(this.client.player, delta);
-			}
-		}
-
-		return 0.0F;
+		StatusEffectInstance statusEffectInstance = this.client.player.getStatusEffect(StatusEffects.DARKNESS);
+		return statusEffectInstance != null ? statusEffectInstance.getFadeFactor(this.client.player, delta) : 0.0F;
 	}
+
 	@Shadow
 	private float getDarkness(LivingEntity entity, float factor, float delta) {
 		float f = 0.45F * factor;

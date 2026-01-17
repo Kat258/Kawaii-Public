@@ -7,15 +7,15 @@ import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.api.utils.Wrapper;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.util.math.BlockPos;
@@ -23,8 +23,6 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
-
-import java.util.ArrayList;
 
 public class ExplosionUtil implements Wrapper {
     public static float anchorDamage(BlockPos pos, PlayerEntity target, PlayerEntity predict){
@@ -112,13 +110,21 @@ public class ExplosionUtil implements Wrapper {
     }
     public static int getProtectionAmount(Iterable<ItemStack> armorItems) {
         int value = 0;
-        for (ItemStack itemStack : new ArrayList<>((DefaultedList<ItemStack>) armorItems)) {
-            int level = EnchantmentHelper.getLevel(Enchantments.PROTECTION, itemStack);
-            if (level == 0) {
-                value += EnchantmentHelper.getLevel(Enchantments.BLAST_PROTECTION, itemStack) * 2;
-            } else {
-                value += level;
+        for (ItemStack itemStack : armorItems) {
+            if (itemStack == null || itemStack.isEmpty()) continue;
+            ItemEnchantmentsComponent enchantments = itemStack.get(DataComponentTypes.ENCHANTMENTS);
+            if (enchantments == null) continue;
+
+            int protection = 0;
+            int blastProtection = 0;
+            for (var entry : enchantments.getEnchantmentEntries()) {
+                if (entry.getKey().matchesKey(Enchantments.PROTECTION)) {
+                    protection = entry.getIntValue();
+                } else if (entry.getKey().matchesKey(Enchantments.BLAST_PROTECTION)) {
+                    blastProtection = entry.getIntValue();
+                }
             }
+            value += protection == 0 ? blastProtection * 2 : protection;
         }
         return value;
     }

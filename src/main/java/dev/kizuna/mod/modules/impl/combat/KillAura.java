@@ -107,7 +107,7 @@ public class KillAura extends Module {
     @Override
     public void onRender3D(MatrixStack matrixStack) {
         if (target != null) {
-            doRender(matrixStack, mc.getTickDelta(), target, mode.getValue());
+            doRender(matrixStack, mc.getRenderTickCounter().getTickDelta(true), target, mode.getValue());
         }
     }
     public void doRender(MatrixStack matrixStack, float partialTicks, Entity entity, TargetESP mode) {
@@ -157,7 +157,7 @@ public class KillAura extends Module {
     @EventHandler
     public void onPacket(PacketEvent.Send event) {
         Packet<?> packet = event.getPacket();
-        if (packet instanceof HandSwingC2SPacket || packet instanceof PlayerInteractEntityC2SPacket && Criticals.getInteractType((PlayerInteractEntityC2SPacket) packet) == Criticals.InteractType.ATTACK) {
+        if (packet instanceof HandSwingC2SPacket || packet instanceof PlayerInteractEntityC2SPacket) {
             tick.reset();
         }
     }

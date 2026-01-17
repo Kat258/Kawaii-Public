@@ -4,7 +4,6 @@ import dev.kizuna.api.utils.Wrapper;
 import dev.kizuna.api.utils.world.BlockUtil;
 import dev.kizuna.asm.accessors.IExplosion;
 import net.minecraft.block.Blocks;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.DamageUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.explosion.Explosion;
+import dev.kizuna.api.utils.math.ExplosionUtil;
 
 public class MeteorExplosionUtil implements Wrapper {
     public static final Explosion explosion = new Explosion(mc.world, null, 0, 0, 0, 6f, false, Explosion.DestructionType.DESTROY);
@@ -52,7 +52,7 @@ public class MeteorExplosionUtil implements Wrapper {
         damage = resistanceReduction(player, damage);
 
         // Reduce by armour
-        damage = DamageUtil.getDamageLeft((float) damage, (float) player.getArmor(), (float) player.getAttributeInstance(EntityAttributes.GENERIC_ARMOR_TOUGHNESS).getValue());
+        damage = DamageUtil.getDamageLeft(player, (float) damage, mc.world.getDamageSources().explosion(explosion), (float) player.getArmor(), (float) player.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS));
 
         // Reduce by enchants
         ((IExplosion) explosion).setWorld(mc.world);
@@ -61,7 +61,7 @@ public class MeteorExplosionUtil implements Wrapper {
         ((IExplosion) explosion).setZ(pos.z);
         ((IExplosion) explosion).setPower(power);
 
-        damage = blastProtReduction(player, damage, explosion);
+        damage = blastProtReduction(player, damage);
 
         if (damage < 0) damage = 0;
         return damage;
@@ -76,8 +76,8 @@ public class MeteorExplosionUtil implements Wrapper {
         };
     }
 
-    private static double blastProtReduction(Entity player, double damage, Explosion explosion) {
-        int protLevel = EnchantmentHelper.getProtectionAmount(player.getArmorItems(), mc.world.getDamageSources().explosion(explosion));
+    private static double blastProtReduction(LivingEntity player, double damage) {
+        int protLevel = ExplosionUtil.getProtectionAmount(player.getArmorItems());
         if (protLevel > 20) protLevel = 20;
 
         damage *= (1 - (protLevel / 25.0));

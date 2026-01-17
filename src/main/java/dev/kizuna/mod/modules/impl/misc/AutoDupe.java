@@ -166,7 +166,7 @@ public class AutoDupe extends Module {
             if (golden_apple != -1) {
                 if (mc.currentScreen != null) mc.currentScreen.close();
                 InventoryUtil.switchToSlot(golden_apple);
-                Module.sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+                Module.sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             }
             return;
         }
@@ -355,7 +355,7 @@ public class AutoDupe extends Module {
                         int slot = InventoryUtil.findItemInventorySlot(Items.EGG);
                         InventoryUtil.inventorySwap(slot, mc.player.getInventory().selectedSlot);
                         Kawaii.ROTATION.snapAt(Kawaii.ROTATION.lastYaw, 89);
-                        sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+                        sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
                         InventoryUtil.inventorySwap(slot, mc.player.getInventory().selectedSlot);
                     }
                     case Tame -> {

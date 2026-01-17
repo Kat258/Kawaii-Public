@@ -167,7 +167,7 @@ public class AutoAnchor extends Module {
 	@Override
 	public void onRender3D(MatrixStack matrixStack) {
 		if (displayTarget != null && currentPos != null) {
-			KillAura.doRender(matrixStack, mc.getTickDelta(), displayTarget, color.getValue(), mode.getValue());
+			KillAura.doRender(matrixStack, mc.getRenderTickCounter().getTickDelta(true), displayTarget, color.getValue(), mode.getValue());
 		}
 	}
 

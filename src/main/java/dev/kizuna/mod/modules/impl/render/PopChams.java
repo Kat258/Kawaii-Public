@@ -103,20 +103,19 @@ public class PopChams extends Module {
         matrices.translate((float) x, (float) y, (float) z);
 
         float yRotYaw = (float) ((alpha / 255f) * 360f * rotSpeed.getValue());
-        yRotYaw = yRotYaw == 0 ? 0 : Render2DUtil.interpolateFloat(yRotYaw, (float) (yRotYaw - (((aSpeed.getValue() / 255f) * 360f * rotSpeed.getValue()))), mc.getTickDelta());
+        yRotYaw = yRotYaw == 0 ? 0 : Render2DUtil.interpolateFloat(yRotYaw, (float) (yRotYaw - (((aSpeed.getValue() / 255f) * 360f * rotSpeed.getValue()))), mc.getRenderTickCounter().getTickDelta(true));
 
         matrices.multiply(RotationAxis.POSITIVE_Y.rotation(MathUtil.rad(180 - entity.bodyYaw + yRotYaw)));
         prepareScale(matrices);
 
-        modelBase.animateModel((PlayerEntity) entity, entity.limbAnimator.getPos(), entity.limbAnimator.getSpeed(), mc.getTickDelta());
+        modelBase.animateModel((PlayerEntity) entity, entity.limbAnimator.getPos(), entity.limbAnimator.getSpeed(), mc.getRenderTickCounter().getTickDelta(true));
 
         float limbSpeed = Math.min(entity.limbAnimator.getSpeed(), 1f);
 
         modelBase.setAngles((PlayerEntity) entity, entity.limbAnimator.getPos(), limbSpeed, entity.age, entity.headYaw - entity.bodyYaw, entity.getPitch());
 
-        BufferBuilder buffer = Tessellator.getInstance().getBuffer();
-            RenderSystem.setShader(GameRenderer::getPositionProgram);
-            buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
+        RenderSystem.setShader(GameRenderer::getPositionProgram);
+        BufferBuilder buffer = Tessellator.getInstance().begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
         RenderSystem.setShaderColor(
                 color.getValue().getRed() / 255.0f,
                 color.getValue().getGreen() / 255.0f,
@@ -124,7 +123,7 @@ public class PopChams extends Module {
                 alpha / 255f
         );
 
-        modelBase.render(matrices, buffer, 10, 0, color.getValue().getRed(), color.getValue().getGreen(), color.getValue().getBlue(), alpha / 255f);
+        modelBase.render(matrices, buffer, 10, 0, color.getValue().getRed());
         Render2DUtil.endBuilding(buffer);
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
         matrices.pop();

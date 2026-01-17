@@ -111,7 +111,7 @@ public class Velocity extends Module {
 			}
 
 			if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket packet) {
-				if (packet.getId() == mc.player.getId()) {
+				if (packet.getEntityId() == mc.player.getId()) {
 					if (horizontal.getValue() == 0 && vertical.getValue() == 0) {
 						event.cancel();
 					} else {

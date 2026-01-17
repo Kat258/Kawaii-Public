@@ -13,11 +13,13 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.block.ShulkerBoxBlock;
 import net.minecraft.client.gui.screen.ingame.ShulkerBoxScreen;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
 import net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket;
-import net.minecraft.potion.PotionUtil;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.screen.ShulkerBoxScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -164,7 +166,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[6] = (int) (this.glowstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.GLOWSTONE)));
         this.stealCountList[7] = (int) (this.anchor.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.RESPAWN_ANCHOR)));
         this.stealCountList[8] = (int) (this.pearl.getValue() - InventoryUtil.getItemCount(Items.ENDER_PEARL));
-        this.stealCountList[9] = (int) (this.turtleMaster.getValue() - InventoryUtil.getPotCount(StatusEffects.RESISTANCE));
+        this.stealCountList[9] = (int) (this.turtleMaster.getValue() - InventoryUtil.getPotCount((StatusEffect) StatusEffects.RESISTANCE));
         this.stealCountList[10] = (int) (this.helmet.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.HELMET));
         this.stealCountList[11] = (int) (this.chestplate.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.CHESTPLATE));
         this.stealCountList[12] = (int) (this.leggings.getValue() - InventoryUtil.getArmorCount(ArmorItem.Type.LEGGINGS));
@@ -176,7 +178,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[18] = (int) (this.redstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.REDSTONE_BLOCK)));
         this.stealCountList[19] = (int) (this.cfruit.getValue() - InventoryUtil.getItemCount(Items.CHORUS_FRUIT));
         this.stealCountList[20] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
-        this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount(StatusEffects.SLOW_FALLING));
+        this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount((StatusEffect) StatusEffects.SLOW_FALLING));
         this.stealCountList[22] = (int) (this.cryobsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.CRYING_OBSIDIAN)));
         this.stealCountList[23] = (int) (this.slowfallingarrow.getValue() - InventoryUtil.getItemCount(Items.TIPPED_ARROW));
     }
@@ -337,11 +339,13 @@ public class ShulkerStealer extends Module {
             return true;
         }
         if(i.getItem().equals(Items.SPLASH_POTION) && this.stealCountList[9] > 0){
-            List<StatusEffectInstance> effects = new ArrayList<>(PotionUtil.getPotionEffects(i));
-            for(StatusEffectInstance potionEffect :  effects){
-                if(potionEffect.getEffectType() == StatusEffects.RESISTANCE){
-                    stealCountList[9] = stealCountList[9] - i.getCount();
-                    return true;
+            PotionContentsComponent contents = i.get(DataComponentTypes.POTION_CONTENTS);
+            if (contents != null) {
+                for(StatusEffectInstance potionEffect : contents.getEffects()){
+                    if(potionEffect.getEffectType().value() == StatusEffects.RESISTANCE){
+                        stealCountList[9] = stealCountList[9] - i.getCount();
+                        return true;
+                    }
                 }
             }
         }
@@ -390,11 +394,13 @@ public class ShulkerStealer extends Module {
             return true;
         }
         if(i.getItem().equals(Items.SPLASH_POTION) && this.stealCountList[21] > 0) {
-            List<StatusEffectInstance> effects = new ArrayList<>(PotionUtil.getPotionEffects(i));
-            for (StatusEffectInstance potionEffect : effects) {
-                if (potionEffect.getEffectType() == StatusEffects.SLOW_FALLING) {
-                    stealCountList[21] = stealCountList[21] - i.getCount();
-                    return true;
+            PotionContentsComponent contents = i.get(DataComponentTypes.POTION_CONTENTS);
+            if (contents != null) {
+                for (StatusEffectInstance potionEffect : contents.getEffects()) {
+                    if (potionEffect.getEffectType() == StatusEffects.SLOW_FALLING) {
+                        stealCountList[21] = stealCountList[21] - i.getCount();
+                        return true;
+                    }
                 }
             }
         }

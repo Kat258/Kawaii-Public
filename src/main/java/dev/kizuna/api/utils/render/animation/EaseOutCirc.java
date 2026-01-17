@@ -37,7 +37,7 @@ public class EaseOutCirc implements Wrapper {
 
     public double getAnimationD() {
         double delta = dstValue - value;
-        double animation = createAnimation((prevStep + (step - prevStep) * mc.getTickDelta()) / (double) maxTicks);
+        double animation = createAnimation((prevStep + (step - prevStep) * mc.getRenderTickCounter().getTickDelta(true)) / (double) maxTicks);
         return value + delta * animation;
     }
 }

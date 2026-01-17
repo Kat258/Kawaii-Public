@@ -51,7 +51,7 @@ public abstract class MixinEndCrystalEntityRenderer extends EntityRenderer<EndCr
     private ModelPart bottom;
 
     @Unique
-    final Identifier BLANK = new Identifier("textures/blank.png");
+    final Identifier BLANK = Identifier.of("minecraft", "textures/blank.png");
 
     @Unique
     private float yOffset(EndCrystalEntity crystal, float tickDelta) {
@@ -89,19 +89,19 @@ public abstract class MixinEndCrystalEntityRenderer extends EntityRenderer<EndCr
             matrixStack.multiply((new Quaternionf()).setAngleAxis(1.0471976F, SINE_45_DEGREES, 0.0F, SINE_45_DEGREES));
             Color color = module.outerFrame.getValue();
             if (module.outerFrame.booleanValue)
-                this.frame.render(matrixStack, vertexConsumer, i, k, color.getRed() / 255f, color.getGreen() / 255f, color.getBlue() / 255f, color.getAlpha() / 255f);
+                this.frame.render(matrixStack, vertexConsumer, i, k);
             matrixStack.scale(0.875F, 0.875F, 0.875F);
             matrixStack.multiply((new Quaternionf()).setAngleAxis(1.0471976F, SINE_45_DEGREES, 0.0F, SINE_45_DEGREES));
             matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(j));
             color = module.innerFrame.getValue();
             if (module.innerFrame.booleanValue)
-                this.frame.render(matrixStack, vertexConsumer, i, k, color.getRed() / 255f, color.getGreen() / 255f, color.getBlue() / 255f, color.getAlpha() / 255f);
+                this.frame.render(matrixStack, vertexConsumer, i, k);
             matrixStack.scale(0.875F, 0.875F, 0.875F);
             matrixStack.multiply((new Quaternionf()).setAngleAxis(1.0471976F, SINE_45_DEGREES, 0.0F, SINE_45_DEGREES));
             matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(j));
             color = module.core.getValue();
             if (module.core.booleanValue)
-                this.core.render(matrixStack, vertexConsumer, i, k, color.getRed() / 255f, color.getGreen() / 255f, color.getBlue() / 255f, color.getAlpha() / 255f);
+                this.core.render(matrixStack, vertexConsumer, i, k);
             matrixStack.pop();
             matrixStack.pop();
 

@@ -21,10 +21,11 @@ public class CaptureMark {
 
     public static void render(Entity target, Color color) {
         Camera camera = mc.gameRenderer.getCamera();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
 
-        double tPosX = Render2DUtil.interpolate(target.prevX, target.getX(), mc.getTickDelta()) - camera.getPos().x;
-        double tPosY = Render2DUtil.interpolate(target.prevY, target.getY(), mc.getTickDelta()) - camera.getPos().y;
-        double tPosZ = Render2DUtil.interpolate(target.prevZ, target.getZ(), mc.getTickDelta()) - camera.getPos().z;
+        double tPosX = Render2DUtil.interpolate(target.prevX, target.getX(), tickDelta) - camera.getPos().x;
+        double tPosY = Render2DUtil.interpolate(target.prevY, target.getY(), tickDelta) - camera.getPos().y;
+        double tPosZ = Render2DUtil.interpolate(target.prevZ, target.getZ(), tickDelta) - camera.getPos().z;
 
         MatrixStack matrices = new MatrixStack();
         RenderSystem.disableDepthTest();
@@ -34,22 +35,20 @@ public class CaptureMark {
         matrices.translate(tPosX, (tPosY + target.getEyeHeight(target.getPose()) / 2f), tPosZ);
         matrices.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(-camera.getYaw()));
         matrices.multiply(RotationAxis.POSITIVE_X.rotationDegrees(camera.getPitch()));
-        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(Render2DUtil.interpolateFloat(prevEspValue, espValue, mc.getTickDelta())));
+        matrices.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(Render2DUtil.interpolateFloat(prevEspValue, espValue, tickDelta)));
         RenderSystem.enableBlend();
         RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE);
-        VertexConsumerProvider.Immediate immediate = VertexConsumerProvider.immediate(Tessellator.getInstance().getBuffer());
         RenderSystem.setShaderTexture(0, capture);
         matrices.translate(-0.75, -0.75, -0.01);
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
         RenderSystem.setShader(GameRenderer::getPositionTexColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
-        bufferBuilder.vertex(matrix, 0, 1.5f, 0).texture(0f, 1f).color(color.getRGB()).next();
-        bufferBuilder.vertex(matrix, 1.5f, 1.5f, 0).texture(1f, 1f).color(color.getRGB()).next();
-        bufferBuilder.vertex(matrix, 1.5f, 0, 0).texture(1f, 0).color(color.getRGB()).next();
-        bufferBuilder.vertex(matrix, 0, 0, 0).texture(0, 0).color(color.getRGB()).next();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE_COLOR);
+        bufferBuilder.vertex(matrix, 0, 1.5f, 0).texture(0f, 1f).color(color.getRGB());
+        bufferBuilder.vertex(matrix, 1.5f, 1.5f, 0).texture(1f, 1f).color(color.getRGB());
+        bufferBuilder.vertex(matrix, 1.5f, 0, 0).texture(1f, 0).color(color.getRGB());
+        bufferBuilder.vertex(matrix, 0, 0, 0).texture(0, 0).color(color.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
-        immediate.draw();
         RenderSystem.enableCull();
         RenderSystem.enableDepthTest();
         RenderSystem.blendFunc(GlStateManager.SrcFactor.SRC_ALPHA, GlStateManager.DstFactor.ONE_MINUS_SRC_ALPHA);

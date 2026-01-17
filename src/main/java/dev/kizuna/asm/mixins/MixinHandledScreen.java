@@ -11,15 +11,14 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.screen.ingame.ScreenHandlerProvider;
 import net.minecraft.client.render.DiffuseLighting;
-import net.minecraft.inventory.Inventories;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ContainerComponent;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Util;
-import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.MathHelper;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.opengl.GL11;
@@ -32,6 +31,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.awt.*;
+import java.util.List;
 import java.util.Set;
 
 import static dev.kizuna.api.utils.Wrapper.mc;
@@ -119,16 +119,15 @@ public abstract class MixinHandledScreen<T extends ScreenHandler> extends Screen
     @Unique
     public void renderShulkerToolTip(DrawContext context, int mouseX, int mouseY, ItemStack stack) {
         try {
-            NbtCompound compoundTag = stack.getSubNbt("BlockEntityTag");
-            DefaultedList<ItemStack> itemStacks = DefaultedList.ofSize(27, ItemStack.EMPTY);
-            Inventories.readNbt(compoundTag, itemStacks);
-            draw(context, itemStacks, mouseX, mouseY);
+            ContainerComponent compoundTag = stack.get(DataComponentTypes.CONTAINER);
+            if (compoundTag == null) return;
+            draw(context, compoundTag.stream().toList(), mouseX, mouseY);
         } catch (Exception ignore) {
         }
     }
 
     @Unique
-    private void draw(DrawContext context, DefaultedList<ItemStack> itemStacks, int mouseX, int mouseY) {
+    private void draw(DrawContext context, List<ItemStack> itemStacks, int mouseX, int mouseY) {
         RenderSystem.disableDepthTest();
         GL11.glClear(GL11.GL_DEPTH_BUFFER_BIT);
 
@@ -155,12 +154,12 @@ public abstract class MixinHandledScreen<T extends ScreenHandler> extends Screen
     }
     @Unique
     private void drawBackground(DrawContext context, int x, int y) {
-       Render2DUtil.drawRect(context.getMatrices(), x, y, 176, 67, new Color(0, 0,0, 120));
+        Render2DUtil.drawRect(context.getMatrices(), x, y, 176, 67, new Color(0, 0,0, 120));
     }
     @Unique
-    private boolean hasItems(ItemStack itemStack) {
-        NbtCompound compoundTag = itemStack.getSubNbt("BlockEntityTag");
-        return compoundTag != null && compoundTag.contains("Items", 9);
+    private static boolean hasItems(ItemStack itemStack) {
+        ContainerComponent compoundTag = itemStack.get(DataComponentTypes.CONTAINER);
+        return compoundTag != null && !compoundTag.stream().toList().isEmpty();
     }
     @Shadow public abstract void renderBackground(DrawContext context, int mouseX, int mouseY, float delta);
 

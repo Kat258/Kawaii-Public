@@ -335,7 +335,7 @@ public class KawaiiAura extends Module {
         if (!thread.getValue()) updateCrystalPos();
         if (!onlyTick.getValue()) doInteract();
         if (displayTarget != null && !noPosTimer.passedMs(500)) {
-            doRender(matrixStack, mc.getTickDelta(), displayTarget, mode.getValue());
+            doRender(matrixStack, mc.getRenderTickCounter().getTickDelta(true), displayTarget, mode.getValue());
         }
     }
 

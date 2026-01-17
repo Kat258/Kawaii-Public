@@ -16,59 +16,59 @@ import java.awt.*;
 public class Render2DUtil implements Wrapper {
 
 
-    public static final Identifier capture = new Identifier("textures/capture.png");
+    public static final Identifier capture = Identifier.of("minecraft", "textures/capture.png");
 
     public static void horizontalGradient(MatrixStack matrices, float x1, float y1, float x2, float y2, Color startColor, Color endColor) {
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, x1, y1, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x1, y2, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x2, y2, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x2, y1, 0.0F).color(endColor.getRGB()).next();
+        bufferBuilder.vertex(matrix, x1, y1, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, x1, y2, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, x2, y2, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, x2, y1, 0.0F).color(endColor.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
 
     public static void verticalGradient(MatrixStack matrices, float left, float top, float right, float bottom, Color startColor, Color endColor) {
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, left, top, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, left, bottom, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, right, bottom, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, right, top, 0.0F).color(startColor.getRGB()).next();
+        bufferBuilder.vertex(matrix, left, top, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, left, bottom, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, right, bottom, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, right, top, 0.0F).color(startColor.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
 
     public static void drawRectVertical(MatrixStack matrices, float x, float y, float width, float height, Color startColor, Color endColor) {
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, x, y, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(startColor.getRGB()).next();
+        bufferBuilder.vertex(matrix, x, y, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(startColor.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
     public static void drawRectHorizontal(MatrixStack matrices, float x, float y, float width, float height, Color startColor, Color endColor) {
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, x, y, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(startColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(endColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(endColor.getRGB()).next();
+        bufferBuilder.vertex(matrix, x, y, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(startColor.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(endColor.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(endColor.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
@@ -79,15 +79,15 @@ public class Render2DUtil implements Wrapper {
     public static void drawRect(MatrixStack matrices, float x, float y, float width, float height, Color c) {
         if (c.getAlpha() <= 5) return;
         Matrix4f matrix = matrices.peek().getPositionMatrix();
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(c.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(c.getRGB()).next();
-        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(c.getRGB()).next();
-        bufferBuilder.vertex(matrix, x, y, 0.0F).color(c.getRGB()).next();
-        Tessellator.getInstance().draw();
+        bufferBuilder.vertex(matrix, x, y + height, 0.0F).color(c.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y + height, 0.0F).color(c.getRGB());
+        bufferBuilder.vertex(matrix, x + width, y, 0.0F).color(c.getRGB());
+        bufferBuilder.vertex(matrix, x, y, 0.0F).color(c.getRGB());
+        BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
 
@@ -121,8 +121,8 @@ public class Render2DUtil implements Wrapper {
 
 
     public static void renderRoundedQuadInternal(Matrix4f matrix, float cr, float cg, float cb, float ca, double fromX, double fromY, double toX, double toY, double radius, double samples) {
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
-        bufferBuilder.begin(VertexFormat.DrawMode.TRIANGLE_FAN, VertexFormats.POSITION_COLOR);
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.TRIANGLE_FAN, VertexFormats.POSITION_COLOR);
 
         double[][] map = new double[][]{new double[]{toX - radius, toY - radius, radius}, new double[]{toX - radius, fromY + radius, radius}, new double[]{fromX + radius, fromY + radius, radius}, new double[]{fromX + radius, toY - radius, radius}};
         for (int i = 0; i < 4; i++) {
@@ -132,12 +132,12 @@ public class Render2DUtil implements Wrapper {
                 float rad1 = (float) Math.toRadians(r);
                 float sin = (float) (Math.sin(rad1) * rad);
                 float cos = (float) (Math.cos(rad1) * rad);
-                bufferBuilder.vertex(matrix, (float) current[0] + sin, (float) current[1] + cos, 0.0F).color(cr, cg, cb, ca).next();
+                bufferBuilder.vertex(matrix, (float) current[0] + sin, (float) current[1] + cos, 0.0F).color(cr, cg, cb, ca);
             }
             float rad1 = (float) Math.toRadians((360 / 4d + i * 90d));
             float sin = (float) (Math.sin(rad1) * rad);
             float cos = (float) (Math.cos(rad1) * rad);
-            bufferBuilder.vertex(matrix, (float) current[0] + sin, (float) current[1] + cos, 0.0F).color(cr, cg, cb, ca).next();
+            bufferBuilder.vertex(matrix, (float) current[0] + sin, (float) current[1] + cos, 0.0F).color(cr, cg, cb, ca);
         }
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
     }
@@ -147,10 +147,10 @@ public class Render2DUtil implements Wrapper {
         RenderSystem.setShaderColor(1f, 1f, 1f, 1f);
     }
     public static void setRectPoints(BufferBuilder bufferBuilder, Matrix4f matrix, float x, float y, float x1, float y1, Color c1, Color c2, Color c3, Color c4) {
-        bufferBuilder.vertex(matrix, x, y1, 0.0F).color(c1.getRGB()).next();
-        bufferBuilder.vertex(matrix, x1, y1, 0.0F).color(c2.getRGB()).next();
-        bufferBuilder.vertex(matrix, x1, y, 0.0F).color(c3.getRGB()).next();
-        bufferBuilder.vertex(matrix, x, y, 0.0F).color(c4.getRGB()).next();
+        bufferBuilder.vertex(matrix, x, y1, 0.0F).color(c1.getRGB());
+        bufferBuilder.vertex(matrix, x1, y1, 0.0F).color(c2.getRGB());
+        bufferBuilder.vertex(matrix, x1, y, 0.0F).color(c3.getRGB());
+        bufferBuilder.vertex(matrix, x, y, 0.0F).color(c4.getRGB());
     }
 
     public static void endRender() {
@@ -192,8 +192,7 @@ public class Render2DUtil implements Wrapper {
         Tessellator tessellator = Tessellator.getInstance();
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        BufferBuilder buffer = tessellator.getBuffer();  // 1.20.4 获取 BufferBuilder
-        buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);  // 1.20.4 调用 begin
+        BufferBuilder buffer = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
         int rgb = color.getRGB();
 
         float xEnd = outlineX + outlineWidth;
@@ -265,21 +264,19 @@ public class Render2DUtil implements Wrapper {
         endRender();
     }
     public static void endBuilding(BufferBuilder bb) {
-        BufferBuilder.BuiltBuffer builtBuffer = bb.endNullable();
-        if (builtBuffer != null)
-            BufferRenderer.drawWithGlobalProgram(builtBuffer);
+        BufferRenderer.drawWithGlobalProgram(bb.end());
     }
 
     public static void draw2DGradientRect(MatrixStack matrices, float left, float top, float right, float bottom, Color leftBottomColor, Color leftTopColor, Color rightBottomColor, Color rightTopColor) {
         Matrix4f matrix = matrices.peek().getPositionMatrix();
         setupRender();
         RenderSystem.setShader(GameRenderer::getPositionColorProgram);
-        BufferBuilder bufferBuilder = Tessellator.getInstance().getBuffer();
-        bufferBuilder.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
-        bufferBuilder.vertex(matrix, right, top, 0.0F).color(rightTopColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, left, top, 0.0F).color(leftTopColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, left, bottom, 0.0F).color(leftBottomColor.getRGB()).next();
-        bufferBuilder.vertex(matrix, right, bottom, 0.0F).color(rightBottomColor.getRGB()).next();
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
+        bufferBuilder.vertex(matrix, right, top, 0.0F).color(rightTopColor.getRGB());
+        bufferBuilder.vertex(matrix, left, top, 0.0F).color(leftTopColor.getRGB());
+        bufferBuilder.vertex(matrix, left, bottom, 0.0F).color(leftBottomColor.getRGB());
+        bufferBuilder.vertex(matrix, right, bottom, 0.0F).color(rightBottomColor.getRGB());
         BufferRenderer.drawWithGlobalProgram(bufferBuilder.end());
         endRender();
     }
@@ -290,7 +287,12 @@ public class Render2DUtil implements Wrapper {
         double z = 0;
         Matrix4f matrix = matrices.peek().getPositionMatrix();
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-        BufferBuilder buffer = Tessellator.getInstance().getBuffer();
-
-
-    }}
+        Tessellator tessellator = Tessellator.getInstance();
+        BufferBuilder buffer = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
+        buffer.vertex(matrix, (float) x0, (float) y1, (float) z).texture((u) / (float) textureWidth, (v + (float) regionHeight) / (float) textureHeight);
+        buffer.vertex(matrix, (float) x1, (float) y1, (float) z).texture((u + (float) regionWidth) / (float) textureWidth, (v + (float) regionHeight) / (float) textureHeight);
+        buffer.vertex(matrix, (float) x1, (float) y0, (float) z).texture((u + (float) regionWidth) / (float) textureWidth, (v) / (float) textureHeight);
+        buffer.vertex(matrix, (float) x0, (float) y0, (float) z).texture((u) / (float) textureWidth, (v) / (float) textureHeight);
+        BufferRenderer.drawWithGlobalProgram(buffer.end());
+    }
+}

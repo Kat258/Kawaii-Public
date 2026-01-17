@@ -34,7 +34,7 @@ public class Tracers extends Module {
 	public void onRender3D(MatrixStack matrixStack) {
 		boolean prev_bob = mc.options.getBobView().getValue();
 		mc.options.getBobView().setValue(false);
-		float tickDelta = mc.getTickDelta();
+		float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
 		Vec3d start = mc.player.getCameraPosVec(tickDelta).add(Vec3d.fromPolar(mc.player.getPitch(tickDelta), mc.player.getYaw(tickDelta)).multiply(0.2));
 		if (item.booleanValue || player.booleanValue) {
 			double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;

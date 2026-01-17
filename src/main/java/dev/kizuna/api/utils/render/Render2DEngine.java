@@ -9,8 +9,6 @@ import java.awt.*;
 public class Render2DEngine {
 
     public static void endBuilding(BufferBuilder bb) {
-        BufferBuilder.BuiltBuffer builtBuffer = bb.endNullable();
-        if (builtBuffer != null)
-            BufferRenderer.drawWithGlobalProgram(builtBuffer);
+        BufferRenderer.drawWithGlobalProgram(bb.end());
     }
 }

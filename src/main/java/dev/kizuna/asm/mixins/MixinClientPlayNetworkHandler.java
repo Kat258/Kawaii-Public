@@ -5,7 +5,6 @@ import dev.kizuna.api.events.impl.EntityVelocityUpdateEvent;
 import dev.kizuna.api.events.impl.GameLeftEvent;
 import dev.kizuna.api.events.impl.SendMessageEvent;
 import dev.kizuna.mod.modules.impl.client.ServerApply;
-import dev.kizuna.mod.modules.impl.render.NameTags;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientCommonNetworkHandler;
 import net.minecraft.client.network.ClientConnectionState;
@@ -18,8 +17,6 @@ import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.TeleportConfirmC2SPacket;
 import net.minecraft.network.packet.s2c.play.*;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -27,8 +24,6 @@ import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Locale;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class MixinClientPlayNetworkHandler extends ClientCommonNetworkHandler {
@@ -87,22 +82,23 @@ public abstract class MixinClientPlayNetworkHandler extends ClientCommonNetworkH
     }
 
     @Inject(method = "onEntityVelocityUpdate", at = @At("HEAD"), cancellable = true)
-    public void test(EntityVelocityUpdateS2CPacket packet, CallbackInfo ci) {
+    public void onEntityVelocityUpdate(EntityVelocityUpdateS2CPacket packet, CallbackInfo ci) {
         NetworkThreadUtils.forceMainThread(packet,(ClientPlayNetworkHandler) (Object) this, this.client);
-        Entity entity = this.world.getEntityById(packet.getId());
+        Entity entity = this.world.getEntityById(packet.getEntityId());
         if (entity != null) {
             if (entity == MinecraftClient.getInstance().player) {
                 EntityVelocityUpdateEvent event = new EntityVelocityUpdateEvent();
                 Kawaii.EVENT_BUS.post(event);
                 if (!event.isCancelled()) {
-                    entity.setVelocityClient((double) packet.getVelocityX() / 8000.0, (double) packet.getVelocityY() / 8000.0, (double) packet.getVelocityZ() / 8000.0);
+                    entity.setVelocityClient(packet.getVelocityX(), packet.getVelocityY(), packet.getVelocityZ());
                 }
             } else {
-                entity.setVelocityClient((double) packet.getVelocityX() / 8000.0, (double) packet.getVelocityY() / 8000.0, (double) packet.getVelocityZ() / 8000.0);
+                entity.setVelocityClient(packet.getVelocityX(), packet.getVelocityY(), packet.getVelocityZ());
             }
         }
         ci.cancel();
     }
+
     @Inject(method = "onPlayerPositionLook", at = @At("HEAD"), cancellable = true)
     public void onPlayerPositionLook(PlayerPositionLookS2CPacket packet, CallbackInfo ci) {
         ci.cancel();

@@ -8,25 +8,24 @@ import dev.kizuna.mod.modules.impl.player.Freecam;
 import dev.kizuna.mod.modules.impl.player.InteractTweaks;
 import dev.kizuna.mod.modules.impl.player.freelook.CameraState;
 import dev.kizuna.mod.modules.impl.player.freelook.FreeLook;
-import dev.kizuna.mod.modules.impl.render.CustomFov;
-import dev.kizuna.mod.modules.impl.render.HighLight;
-import dev.kizuna.mod.modules.impl.render.NoRender;
-import dev.kizuna.mod.modules.impl.render.NoSlowBob;
-import dev.kizuna.mod.modules.impl.render.Zoom;
+import dev.kizuna.mod.modules.impl.render.*;
+import net.minecraft.block.enums.CameraSubmersionType;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
-import net.minecraft.client.render.CameraSubmersionType;
 import net.minecraft.client.render.GameRenderer;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.decoration.ItemFrameEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.hit.EntityHitResult;
-import net.minecraft.util.math.*;
+import net.minecraft.util.hit.HitResult;
+import net.minecraft.util.math.Box;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.RotationAxis;
+import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix4f;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
@@ -39,8 +38,10 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import static dev.kizuna.api.utils.Wrapper.mc;
+
 @Mixin(GameRenderer.class)
-public class MixinGameRenderer {
+public abstract class MixinGameRenderer {
     @Shadow
     @Final
     MinecraftClient client;
@@ -58,6 +59,12 @@ public class MixinGameRenderer {
     private float zoomY;
     @Shadow
     private float viewDistance;
+
+    @Shadow
+    private static HitResult ensureTargetInRange(HitResult hitResult, Vec3d cameraPos, double interactionRange) {
+        return null;
+    }
+
     @Inject(method = "showFloatingItem", at = @At("HEAD"), cancellable = true)
     private void onShowFloatingItem(ItemStack floatingItem, CallbackInfo info) {
         if (floatingItem.getItem() == Items.TOTEM_OF_UNDYING && NoRender.INSTANCE.isOn() && NoRender.INSTANCE.totem.getValue()) {
@@ -85,20 +92,33 @@ public class MixinGameRenderer {
     }
 
     @Inject(at = @At(value = "FIELD", target = "Lnet/minecraft/client/render/GameRenderer;renderHand:Z", opcode = Opcodes.GETFIELD, ordinal = 0), method = "renderWorld")
-    void render3dHook(float tickDelta, long limitTime, MatrixStack matrix, CallbackInfo ci) {
+    void render3dHook(RenderTickCounter tickCounter, CallbackInfo ci) {
+        Camera camera = mc.gameRenderer.getCamera();
+        MatrixStack matrixStack = new MatrixStack();
+        RenderSystem.getModelViewStack().pushMatrix().mul(matrixStack.peek().getPositionMatrix());
+        matrixStack.multiply(RotationAxis.POSITIVE_X.rotationDegrees(camera.getPitch()));
+        matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(camera.getYaw() + 180.0f));
+        RenderSystem.applyModelViewMatrix();
+
         TextUtil.lastProjMat.set(RenderSystem.getProjectionMatrix());
         TextUtil.lastModMat.set(RenderSystem.getModelViewMatrix());
-        TextUtil.lastWorldSpaceMatrix.set(matrix.peek().getPositionMatrix());
+        TextUtil.lastWorldSpaceMatrix.set(matrixStack.peek().getPositionMatrix());
         Kawaii.FPS.record();
-        Kawaii.MODULE.render3D(matrix);
+        Kawaii.MODULE.render3D(matrixStack);
+
+        RenderSystem.getModelViewStack().popMatrix();
+        RenderSystem.applyModelViewMatrix();
     }
 
     @Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D", at = @At("HEAD"), cancellable = true)
     public void getFov(Camera camera, float tickDelta, boolean changingFov, CallbackInfoReturnable<Double> ci) {
-        if (!this.renderingPanorama|| Zoom.INSTANCE.isOn()) {
+        if (!this.renderingPanorama && (CustomFov.INSTANCE.isOn() || Zoom.INSTANCE.isOn())) {
             double d = 70.0;
             if (changingFov) {
-                if (CustomFov.INSTANCE.isOn() &&CustomFov.INSTANCE.fov.getValue()) {
+                if (CustomFov.INSTANCE.isOn()) {
+                    if (!CustomFov.INSTANCE.fov.getValue()) {
+                        return;
+                    }
                     double fov = CustomFov.INSTANCE.fovValue.getValue();
 
                     if (Zoom.on) {
@@ -115,6 +135,9 @@ public class MixinGameRenderer {
                 }
             } else {
                 if (CustomFov.INSTANCE.isOn()) {
+                    if (!CustomFov.INSTANCE.itemFov.getValue()) {
+                        return;
+                    }
                     ci.setReturnValue(CustomFov.INSTANCE.itemFovValue.getValue());
                     return;
                 }
@@ -134,14 +157,14 @@ public class MixinGameRenderer {
         }
     }
 
-    @Inject(method = "renderWorld", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/GameRenderer;renderHand(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/client/render/Camera;F)V", shift = At.Shift.AFTER))
-    public void postRender3dHook(float tickDelta, long limitTime, MatrixStack matrix, CallbackInfo ci) {
+    @Inject(method = "renderWorld", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/GameRenderer;renderHand(Lnet/minecraft/client/render/Camera;FLorg/joml/Matrix4f;)V", shift = At.Shift.AFTER))
+    public void postRender3dHook(RenderTickCounter renderTickCounter, CallbackInfo ci) {
         Kawaii.SHADER.renderShaders();
     }
 
     @Inject(method = "getBasicProjectionMatrix",at = @At("TAIL"), cancellable = true)
     public void getBasicProjectionMatrixHook(double fov, CallbackInfoReturnable<Matrix4f> cir) {
-        if(CustomFov.INSTANCE.aspectRatio.getValue()) {
+        if (CustomFov.INSTANCE.isOn() && CustomFov.INSTANCE.aspectRatio.getValue()) {
             MatrixStack matrixStack = new MatrixStack();
             matrixStack.peek().getPositionMatrix().identity();
             if (zoom != 1.0f) {
@@ -153,7 +176,7 @@ public class MixinGameRenderer {
         }
     }
 
-    @Inject(method = "updateTargetedEntity", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "updateCrosshairTarget", at = @At("HEAD"), cancellable = true)
     private void updateTargetedEntityHook(float tickDelta, CallbackInfo ci) {
         ci.cancel();
         update(tickDelta);
@@ -162,59 +185,59 @@ public class MixinGameRenderer {
     @Unique
     public void update(float tickDelta) {
         Entity entity = this.client.getCameraEntity();
-        if (entity != null) {
-            if (this.client.world != null) {
-                this.client.getProfiler().push("pick");
+        if (entity != null && this.client.world != null && this.client.player != null) {
+            this.client.getProfiler().push("pick");
+
+            double blockRange = this.client.player.getBlockInteractionRange();
+            double entityRange = this.client.player.getEntityInteractionRange();
+
+            InteractTweaks.INSTANCE.isActive = InteractTweaks.INSTANCE.ghostHand();
+            HitResult hitResult = findCrosshairTarget(entity, blockRange, entityRange, tickDelta);
+            this.client.crosshairTarget = hitResult;
+            InteractTweaks.INSTANCE.isActive = false;
+
+            if (hitResult instanceof EntityHitResult entityHitResult) {
+                this.client.targetedEntity = entityHitResult.getEntity();
+            } else {
                 this.client.targetedEntity = null;
-                double d = this.client.interactionManager.getReachDistance();
-                InteractTweaks.INSTANCE.isActive = InteractTweaks.INSTANCE.ghostHand();
-                this.client.crosshairTarget = entity.raycast(d, tickDelta, false);
-                InteractTweaks.INSTANCE.isActive = false;
-                Vec3d vec3d = entity.getCameraPosVec(tickDelta);
-                boolean bl = false;
-                double e = d;
-                if (this.client.interactionManager.hasExtendedReach()) {
-                    e = 6.0;
-                    d = e;
-                } else {
-                    if (d > 3.0) {
-                        bl = true;
-                    }
-                }
-
-                e *= e;
-                if (this.client.crosshairTarget != null) {
-                    e = this.client.crosshairTarget.getPos().squaredDistanceTo(vec3d);
-                }
-
-                Vec3d vec3d2 = entity.getRotationVec(1.0F);
-                Vec3d vec3d3 = vec3d.add(vec3d2.x * d, vec3d2.y * d, vec3d2.z * d);
-                Box box = entity.getBoundingBox().stretch(vec3d2.multiply(d)).expand(1.0, 1.0, 1.0);
-                if (Freecam.INSTANCE.isOn()) {
-                    client.crosshairTarget = InteractUtil.getRtxTarget(Freecam.INSTANCE.getFakeYaw(), Freecam.INSTANCE.getFakePitch(), Freecam.INSTANCE.getFakeX(), Freecam.INSTANCE.getFakeY(), Freecam.INSTANCE.getFakeZ());
-                    client.getProfiler().pop();
-                    return;
-                }
-                if (!InteractTweaks.INSTANCE.noEntityTrace()) {
-                    EntityHitResult entityHitResult = ProjectileUtil.raycast(entity, vec3d, vec3d3, box, (entityx) -> !entityx.isSpectator() && entityx.canHit(), e);
-                    if (entityHitResult != null) {
-                        Entity entity2 = entityHitResult.getEntity();
-                        Vec3d vec3d4 = entityHitResult.getPos();
-                        double g = vec3d.squaredDistanceTo(vec3d4);
-                        if (bl && g > 9.0) {
-                            this.client.crosshairTarget = BlockHitResult.createMissed(vec3d4, Direction.getFacing(vec3d2.x, vec3d2.y, vec3d2.z), BlockPos.ofFloored(vec3d4));
-                        } else if (g < e || this.client.crosshairTarget == null) {
-                            this.client.crosshairTarget = entityHitResult;
-                            if (entity2 instanceof LivingEntity || entity2 instanceof ItemFrameEntity) {
-                                this.client.targetedEntity = entity2;
-                            }
-                        }
-                    }
-                }
-
-                this.client.getProfiler().pop();
             }
+
+            if (Freecam.INSTANCE.isOn()) {
+                client.crosshairTarget = InteractUtil.getRtxTarget(Freecam.INSTANCE.getFakeYaw(), Freecam.INSTANCE.getFakePitch(), Freecam.INSTANCE.getFakeX(), Freecam.INSTANCE.getFakeY(), Freecam.INSTANCE.getFakeZ());
+            }
+
+            this.client.getProfiler().pop();
         }
+    }
+
+    @Unique
+    private HitResult findCrosshairTarget(Entity camera, double blockInteractionRange, double entityInteractionRange, float tickDelta) {
+        double d = Math.max(blockInteractionRange, entityInteractionRange);
+        double e = MathHelper.square(d);
+        Vec3d vec3d = camera.getCameraPosVec(tickDelta);
+        HitResult hitResult = camera.raycast(d, tickDelta, false);
+        double f = hitResult.getPos().squaredDistanceTo(vec3d);
+
+        if (hitResult.getType() != HitResult.Type.MISS) {
+            e = f;
+            d = Math.sqrt(f);
+        }
+
+        Vec3d vec3d2 = camera.getRotationVec(1.0F);
+        Vec3d vec3d3 = vec3d.add(vec3d2.multiply(d));
+        Box box = camera.getBoundingBox().stretch(vec3d2.multiply(d)).expand(1.0, 1.0, 1.0);
+
+        if (InteractTweaks.INSTANCE.noEntityTrace()) {
+            return ensureTargetInRange(hitResult, vec3d, blockInteractionRange);
+        }
+
+        EntityHitResult entityHitResult = ProjectileUtil.raycast(camera, vec3d, vec3d3, box, (e2) -> !e2.isSpectator() && e2.canHit(), e);
+
+        if (entityHitResult != null && entityHitResult.getPos().squaredDistanceTo(vec3d) < f) {
+            return ensureTargetInRange(entityHitResult, vec3d, entityInteractionRange);
+        }
+
+        return ensureTargetInRange(hitResult, vec3d, blockInteractionRange);
     }
 
     @Unique
@@ -228,7 +251,7 @@ public class MixinGameRenderer {
     private float originalPitch;
 
     @Inject(method = "renderHand", at = @At("HEAD"))
-    private void onRenderHandBegin(MatrixStack matrices, Camera camera, float tickDelta, CallbackInfo ci) {
+    private void onRenderHandBegin(Camera camera, float tickDelta, Matrix4f matrix4f, CallbackInfo ci) {
         this.camera = FreeLook.INSTANCE.getCameraState();
 
         if (this.camera.doTransition || this.camera.doLock) {
@@ -246,19 +269,10 @@ public class MixinGameRenderer {
     }
 
     @Inject(method = "renderHand", at = @At("RETURN"))
-    private void onRenderHandEnd(MatrixStack matrices, Camera camera, float tickDelta, CallbackInfo ci) {
+    private void onRenderHandEnd(Camera camera, float tickDelta, Matrix4f matrix4f, CallbackInfo ci) {
         if (this.camera.doTransition || this.camera.doLock) {
             cameraEntity.setYaw(originalYaw);
             cameraEntity.setPitch(originalPitch);
         }
-    }
-
-    @Redirect(method = "bobView", at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;lerp(FFF)F"))
-    private float onBobViewLerp(float delta, float start, float end) {
-        float value = MathHelper.lerp(delta, start, end);
-        if (NoSlowBob.INSTANCE.isOn()) {
-            value *= NoSlowBob.INSTANCE.getBobMultiplier();
-        }
-        return value;
     }
 }

@@ -74,7 +74,7 @@ public class CrystalChams extends Module {
                                 CrystalChamsVertexConsumer.offset = new Vec3d(crystalEntity.getX(), crystalEntity.getY(), crystalEntity.getZ());
                                 CrystalChamsVertexConsumer.camera = mc.gameRenderer.getCamera().getPos();
                                 float yaw = 0f;
-                                float tickDelta = mc.getTickDelta();
+                                float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
                                 int light = 15728880;
                                 crystalRenderer.render(crystalEntity, yaw, tickDelta, matrixStack, CustomVertexConsumerProvider.INSTANCE, light);
                         }

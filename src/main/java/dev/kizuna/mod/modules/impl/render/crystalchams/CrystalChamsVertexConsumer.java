@@ -16,7 +16,7 @@ import java.awt.*;
  * Adapted CrystalChamsVertexConsumer for Kawaii.
  * Draws quads immediately (fill) and lines (outline) when 4 vertices are collected.
  */
-public class CrystalChamsVertexConsumer implements VertexConsumer {
+public class CrystalChamsVertexConsumer implements VertexConsumer, dev.kizuna.mod.modules.impl.render.crystalchams.CrystalChamsVertexConsumer1 {
     public static final CrystalChamsVertexConsumer INSTANCE = new CrystalChamsVertexConsumer();
 
     private final float[] xs = new float[4];
@@ -62,11 +62,10 @@ public class CrystalChamsVertexConsumer implements VertexConsumer {
                 RenderSystem.disableDepthTest();
                 RenderSystem.setShader(GameRenderer::getPositionColorProgram);
 
-                BufferBuilder buffer = Tessellator.getInstance().getBuffer();
-                buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
+                BufferBuilder buffer = Tessellator.getInstance().begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_COLOR);
 
                 for (int n = 0; n < 4; n++) {
-                    buffer.vertex(matrix4f, wx[n], wy[n], wz[n]).color(fillColor.getRed(), fillColor.getGreen(), fillColor.getBlue(), fillColor.getAlpha()).next();
+                    buffer.vertex(matrix4f, wx[n], wy[n], wz[n]).color(fillColor.getRed(), fillColor.getGreen(), fillColor.getBlue(), fillColor.getAlpha());
                 }
 
                 BufferRenderer.drawWithGlobalProgram(buffer.end());
@@ -81,16 +80,15 @@ public class CrystalChamsVertexConsumer implements VertexConsumer {
                 RenderSystem.setShader(GameRenderer::getRenderTypeLinesProgram);
                 RenderSystem.lineWidth(width);
 
-                BufferBuilder buffer = Tessellator.getInstance().getBuffer();
-                buffer.begin(VertexFormat.DrawMode.LINES, VertexFormats.POSITION_COLOR);
+                BufferBuilder buffer = Tessellator.getInstance().begin(VertexFormat.DrawMode.LINES, VertexFormats.POSITION_COLOR);
 
                 // edges 0-1,1-2,2-3,3-0
-                int[][] edges = {{0,1},{1,2},{2,3},{3,0}};
+                int[][] edges = {{0, 1}, {1, 2}, {2, 3}, {3, 0}};
                 for (int[] e : edges) {
                     int a = e[0];
                     int b = e[1];
-                    buffer.vertex(matrix4f, wx[a], wy[a], wz[a]).color(outlineColor.getRed(), outlineColor.getGreen(), outlineColor.getBlue(), outlineColor.getAlpha()).next();
-                    buffer.vertex(matrix4f, wx[b], wy[b], wz[b]).color(outlineColor.getRed(), outlineColor.getGreen(), outlineColor.getBlue(), outlineColor.getAlpha()).next();
+                    buffer.vertex(matrix4f, wx[a], wy[a], wz[a]).color(outlineColor.getRed(), outlineColor.getGreen(), outlineColor.getBlue(), outlineColor.getAlpha());
+                    buffer.vertex(matrix4f, wx[b], wy[b], wz[b]).color(outlineColor.getRed(), outlineColor.getGreen(), outlineColor.getBlue(), outlineColor.getAlpha());
                 }
 
                 BufferRenderer.drawWithGlobalProgram(buffer.end());
@@ -153,20 +151,5 @@ public class CrystalChamsVertexConsumer implements VertexConsumer {
     @Override
     public VertexConsumer normal(float x, float y, float z) {
         return this;
-    }
-
-    @Override
-    public void fixedColor(int r, int g, int b, int a) {
-        // no-op
-    }
-
-    @Override
-    public void unfixColor() {
-        // no-op
-    }
-
-    @Override
-    public void next() {
-        // no-op
     }
 }

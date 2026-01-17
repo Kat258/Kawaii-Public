@@ -85,7 +85,7 @@ public class PotionHUD extends Tab {
         float maxWidth = 125;
         int effectCount = 0;
         for (StatusEffectInstance effect : mc.player.getStatusEffects()) {
-            String name = effect.getEffectType().getName().getString();
+            String name = effect.getEffectType().value().getName().getString();
             String amplifier = getAmplifierString(effect.getAmplifier());
             String duration = getDurationString(effect);
             float nameWidth = getTextWidth(name + " " + amplifier, HUD.INSTANCE.potionHudFont.getValue());
@@ -111,7 +111,7 @@ public class PotionHUD extends Tab {
         
         float yOffset = 0;
         for (StatusEffectInstance effect : mc.player.getStatusEffects()) {
-            StatusEffect statusEffect = effect.getEffectType();
+            StatusEffect statusEffect = effect.getEffectType().value();
             String name = statusEffect.getName().getString();
             String amplifier = getAmplifierString(effect.getAmplifier());
             String duration = getDurationString(effect);

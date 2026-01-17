@@ -33,7 +33,7 @@ public class ESP extends Module {
 
     @Override
 	public void onRender3D(MatrixStack matrixStack) {
-		float tickDelta = mc.getTickDelta();
+		float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
 		if (item.booleanValue || player.booleanValue) {
 			double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
 			double radiusSq = radius * radius;

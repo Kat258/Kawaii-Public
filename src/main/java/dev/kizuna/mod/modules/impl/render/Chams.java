@@ -108,8 +108,7 @@ public class Chams extends Module {
         Tessellator tessellator = Tessellator.getInstance();
         RenderSystem.setShader(GameRenderer::getPositionProgram);
         RenderSystem.lineWidth(2.0f);
-        BufferBuilder vertexConsumer = tessellator.getBuffer(); // 获取 BufferBuilder 实例
-        vertexConsumer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION); // 在 BufferBuilder 上调用 begin 方法
+        BufferBuilder vertexConsumer = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
         Color color = this.color.getValue();
         event.matrixStack.push();
         RenderSystem.setShaderColor((float)color.getRed() / 255.0f, (float)color.getGreen() / 255.0f, (float)color.getBlue() / 255.0f, (float)color.getAlpha() / 255.0f);
@@ -171,7 +170,7 @@ public class Chams extends Module {
         float green = color1.getGreen() / 255.0f;
         float blue = color1.getBlue() / 255.0f;
 
-        event.model.render(event.matrixStack, vertexConsumer, event.i, p, red, green, blue, 1.0f);
+        event.model.render(event.matrixStack, vertexConsumer, event.i, p);
         Render2DUtil.endBuilding(vertexConsumer);
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
         RenderSystem.disableBlend();
@@ -200,8 +199,7 @@ public class Chams extends Module {
         Tessellator tessellator = Tessellator.getInstance();
         RenderSystem.setShader(GameRenderer::getPositionProgram);
         RenderSystem.lineWidth(2.0f);
-        BufferBuilder vertexConsumer = tessellator.getBuffer(); // 获取 BufferBuilder 实例
-        vertexConsumer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION); // 在 BufferBuilder 上调用 begin 方法
+        BufferBuilder vertexConsumer = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
         event.matrixStack.push();
         Color color = this.color.getValue();
         RenderSystem.setShaderColor((float)color.getRed() / 255.0f, (float)color.getGreen() / 255.0f, (float)color.getBlue() / 255.0f, (float)color.getAlpha() / 255.0f);
@@ -268,8 +266,7 @@ public class Chams extends Module {
             Tessellator tessellator = Tessellator.getInstance();
             RenderSystem.setShader(GameRenderer::getPositionProgram);
             RenderSystem.lineWidth(2.0f);
-            BufferBuilder vertexConsumer = tessellator.getBuffer(); // 获取 BufferBuilder 实例
-            vertexConsumer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION); // 在 BufferBuilder 上调用 begin 方法
+            BufferBuilder vertexConsumer = tessellator.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
             event.matrices.push();
             Color color = this.color.getValue();
             RenderSystem.setShaderColor((float)color.getRed() / 255.0f, (float)color.getGreen() / 255.0f, (float)color.getBlue() / 255.0f, MathHelper.clamp(((float)color.getAlpha() + 40.0f) / 255.0f, 0.0f, 1.0f));

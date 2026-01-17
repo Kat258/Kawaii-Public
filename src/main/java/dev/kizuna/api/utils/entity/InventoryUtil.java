@@ -13,7 +13,8 @@ import net.minecraft.item.*;
 import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
 import net.minecraft.network.packet.c2s.play.PickFromInventoryC2SPacket;
 import net.minecraft.network.packet.c2s.play.UpdateSelectedSlotC2SPacket;
-import net.minecraft.potion.PotionUtil;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.screen.slot.SlotActionType;
@@ -113,9 +114,10 @@ public class InventoryUtil implements Wrapper {
         for (int i = 0; i < 45; ++i) {
             ItemStack itemStack = mc.player.getInventory().getStack(i);
             if (Item.getRawId(itemStack.getItem()) != Item.getRawId(Items.SPLASH_POTION)) continue;
-            List<StatusEffectInstance> effects = PotionUtil.getPotionEffects(itemStack);
-            for (StatusEffectInstance effect : effects) {
-                if (effect.getEffectType() == targetEffect) {
+            PotionContentsComponent contents = itemStack.get(DataComponentTypes.POTION_CONTENTS);
+            if (contents == null) continue;
+            for (StatusEffectInstance effect : contents.getEffects()) {
+                if (effect.getEffectType().value() == targetEffect) {
                     count = count + itemStack.getCount();
                 }
             }
@@ -128,9 +130,10 @@ public class InventoryUtil implements Wrapper {
             if (!(entry.getValue().getItem() instanceof SplashPotionItem)){
                 continue;
             }
-            List<StatusEffectInstance> effects = new ArrayList<>(PotionUtil.getPotionEffects(entry.getValue()));
-            for(StatusEffectInstance potionEffect :  effects){
-                if(potionEffect.getEffectType() == potion){
+            PotionContentsComponent contents = entry.getValue().get(DataComponentTypes.POTION_CONTENTS);
+            if (contents == null) continue;
+            for(StatusEffectInstance potionEffect : contents.getEffects()){
+                if(potionEffect.getEffectType().value() == potion){
                     count = count + entry.getValue().getCount();
                     break;
                 }

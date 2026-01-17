@@ -240,16 +240,16 @@ public class ElytraFly extends Module {
         ElytraFly.INSTANCE.fireworkTimer.reset();
         int firework;
         if (mc.player.getMainHandStack().getItem() == Items.FIREWORK_ROCKET) {
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
         } else if (inventory.getValue() && (firework = InventoryUtil.findItemInventorySlot(Items.FIREWORK_ROCKET)) != -1) {
             InventoryUtil.inventorySwap(firework, mc.player.getInventory().selectedSlot);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             InventoryUtil.inventorySwap(firework, mc.player.getInventory().selectedSlot);
             EntityUtil.syncInventory();
         } else if ((firework = InventoryUtil.findItem(Items.FIREWORK_ROCKET)) != -1) {
             int old = mc.player.getInventory().selectedSlot;
             InventoryUtil.switchToSlot(firework);
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             InventoryUtil.switchToSlot(old);
         }
     }
@@ -291,7 +291,7 @@ public class ElytraFly extends Module {
             setX(dir[0]);
             setZ(dir[1]);
         } else {
-            Vec3d lookVec = getRotationVec(mc.getTickDelta());
+            Vec3d lookVec = getRotationVec(mc.getRenderTickCounter().getTickDelta(true));
             double lookDist = Math.sqrt(lookVec.x * lookVec.x + lookVec.z * lookVec.z);
             double motionDist = Math.sqrt(getX() * getX() + getZ() * getZ());
             if (mc.player.input.sneaking) {

@@ -5,15 +5,16 @@ import dev.kizuna.api.events.eventbus.EventHandler;
 import dev.kizuna.api.events.impl.UpdateWalkingPlayerEvent;
 import dev.kizuna.api.utils.entity.MovementUtil;
 import dev.kizuna.mod.modules.Module;
-import dev.kizuna.mod.modules.impl.combat.FeetPlace;
 import dev.kizuna.mod.modules.impl.combat.SelfTrap;
+import dev.kizuna.mod.modules.impl.combat.FeetPlace;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class Step extends Module {
-	public static Step INSTANCE;
+    public static Step INSTANCE;
 	private final EnumSetting<Mode> mode = add(new EnumSetting<>("Mode", Mode.Vanilla));
 	private final SliderSetting height = add(new SliderSetting("Height", 1, 0.0, 5, 0.5));
 	public final BooleanSetting onlyMoving =
@@ -30,15 +31,18 @@ public class Step extends Module {
 			add(new BooleanSetting("InBlockPause", true));
 	public final BooleanSetting sneakingPause =
 			add(new BooleanSetting("SneakingPause", true));
+	public final BooleanSetting pathingPause =
+			add(new BooleanSetting("PathingPause", true));
 	public Step() {
-		super("Step", Category.Movement);
-		INSTANCE = this;
+		super("Step", "Steps up blocks.", Category.Movement);
+		setChinese("步行辅助");
+        INSTANCE = this;
 	}
 
 	@Override
 	public void onDisable() {
 		if (nullCheck()) return;
-		mc.player.setStepHeight(0.6f);
+		setStepHeight(0.6f);
 		Kawaii.TIMER.reset();
 	}
 
@@ -50,11 +54,6 @@ public class Step extends Module {
 	boolean timer;
 	@Override
 	public void onUpdate() {
-		if ( sneakingPause.getValue() && mc.player.isSneaking() || inBlockPause.getValue() && Kawaii.PLAYER.insideBlock || mc.player.isInLava() || mc.player.isTouchingWater() || inWebPause.getValue() && Kawaii.PLAYER.isInWeb(mc.player) || !mc.player.isOnGround() || onlyMoving.getValue() && !MovementUtil.isMoving() || surroundPause.getValue() && (FeetPlace.INSTANCE.isOn() || SelfTrap.INSTANCE.isOn())) {
-			mc.player.setStepHeight(0.6f);
-			return;
-		}
-		mc.player.setStepHeight(height.getValueFloat());
 	}
 
 	int packets = 0;
@@ -138,6 +137,10 @@ public class Step extends Module {
 		}
 
 		return null;
+	}
+
+	private void setStepHeight(float value) {
+		mc.player.getAttributeInstance(EntityAttributes.GENERIC_STEP_HEIGHT).setBaseValue(value);
 	}
 
 	public enum Mode {

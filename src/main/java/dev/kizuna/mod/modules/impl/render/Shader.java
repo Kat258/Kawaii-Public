@@ -1,12 +1,13 @@
 package dev.kizuna.mod.modules.impl.render;
 
 import dev.kizuna.Kawaii;
+import dev.kizuna.api.utils.render.Render3DUtil;
+import dev.kizuna.core.impl.ShaderManager;
+import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.ColorSetting;
 import dev.kizuna.mod.modules.settings.impl.EnumSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
-import dev.kizuna.core.impl.ShaderManager;
-import dev.kizuna.mod.modules.Module;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ItemEntity;
@@ -35,7 +36,6 @@ public class Shader extends Module {
     public final EnumSetting<ShaderManager.Shader> mode = add(new EnumSetting<>("Mode", ShaderManager.Shader.Solid, () -> page.getValue() == Page.Shader));
     public final SliderSetting speed = add(new SliderSetting("Speed", 4, 0, 20, 0.1, () -> page.getValue() == Page.Shader));
     public final ColorSetting fill = add(new ColorSetting("Color", new Color(255,255,255), () -> page.getValue() == Page.Shader));
-    public final ColorSetting fill2 = add(new ColorSetting("Color2", new Color(255,255,255), () -> page.getValue() == Page.Shader));
 
     public final SliderSetting maxSample =
             add(new SliderSetting("MaxSample", 10.0f, 0f, 20.0f, () -> page.getValue() == Page.Shader));
@@ -105,8 +105,9 @@ public class Shader extends Module {
 
     @Override
     public void onRender3D(MatrixStack matrixStack) {
-        if (hands.getValue())
-            Kawaii.SHADER.renderShader(()-> mc.gameRenderer.renderHand(matrixStack, mc.gameRenderer.getCamera(), mc.getTickDelta()), mode.getValue());
+        if (hands.getValue()) {
+
+        }
     }
 
     @Override

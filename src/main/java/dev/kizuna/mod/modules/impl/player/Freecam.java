@@ -129,22 +129,22 @@ public class Freecam extends Module {
     }
 
     public float getFakeYaw() {
-        return (float) MathUtil.interpolate(prevFakeYaw, fakeYaw, mc.getTickDelta());
+        return (float) MathUtil.interpolate(prevFakeYaw, fakeYaw, mc.getRenderTickCounter().getTickDelta(true));
     }
 
     public float getFakePitch() {
-        return (float) MathUtil.interpolate(prevFakePitch, fakePitch, mc.getTickDelta());
+        return (float) MathUtil.interpolate(prevFakePitch, fakePitch, mc.getRenderTickCounter().getTickDelta(true));
     }
 
     public double getFakeX() {
-        return MathUtil.interpolate(prevFakeX, fakeX, mc.getTickDelta());
+        return MathUtil.interpolate(prevFakeX, fakeX, mc.getRenderTickCounter().getTickDelta(true));
     }
 
     public double getFakeY() {
-        return MathUtil.interpolate(prevFakeY, fakeY, mc.getTickDelta());
+        return MathUtil.interpolate(prevFakeY, fakeY, mc.getRenderTickCounter().getTickDelta(true));
     }
 
     public double getFakeZ() {
-        return MathUtil.interpolate(prevFakeZ, fakeZ, mc.getTickDelta());
+        return MathUtil.interpolate(prevFakeZ, fakeZ, mc.getRenderTickCounter().getTickDelta(true));
     }
 }

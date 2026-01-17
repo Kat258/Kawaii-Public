@@ -5,8 +5,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import dev.kizuna.api.interfaces.IShaderEffect;
 import dev.kizuna.api.utils.render.Render3DUtil;
 import dev.kizuna.mod.modules.impl.client.Colors;
-import ladysnake.satin.api.managed.ManagedShaderEffect;
-import ladysnake.satin.api.managed.ShaderEffectManager;
+import org.ladysnake.satin.api.managed.ManagedShaderEffect;
+import org.ladysnake.satin.api.managed.ShaderEffectManager;
 import dev.kizuna.api.utils.Wrapper;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.Framebuffer;
@@ -106,6 +106,7 @@ public class ShaderManager implements Wrapper {
 
     public void setupShader(Shader shader, ManagedShaderEffect effect) {
         dev.kizuna.mod.modules.impl.render.Shader shaderChams = dev.kizuna.mod.modules.impl.render.Shader.INSTANCE;
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
         if (shader == Shader.Rainbow) {
                 effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
             effect.setUniformValue("radius", shaderChams.radius.getValueFloat());
@@ -115,7 +116,7 @@ public class ShaderManager implements Wrapper {
 
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Gradient) {
                 effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
@@ -131,7 +132,7 @@ public class ShaderManager implements Wrapper {
 
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Smoke) {
                 effect.setUniformValue("alpha1", (shaderChams.fill.getValue().getAlpha() / 255f));
@@ -146,7 +147,7 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("oct", (int) shaderChams.octaves.getValue());
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Solid) {
                 effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
@@ -157,7 +158,7 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("maxSample", shaderChams.maxSample.getValueFloat());
             effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f);
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
         } else if (shader == ShaderManager.Shader.Pulse) {
             effect.setUniformValue("alpha2", (shaderChams.fill.getValue().getAlpha() / 255f));
             effect.setUniformValue("oct", (int) shaderChams.octaves.getValue());
@@ -170,13 +171,13 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("moreGradient", (float) shaderChams.gradient.getValue());
 
             effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f);
-            effect.setUniformValue("color2", shaderChams.fill2.getValue().getRed() / 255f, shaderChams.fill2.getValue().getGreen() / 255f, shaderChams.fill2.getValue().getBlue() / 255f);
+            effect.setUniformValue("color2", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f);
             effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
             effect.setUniformValue("minAlpha", shaderChams.alpha.getValueFloat() / 255f);
 
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == ShaderManager.Shader.Snow) {
             effect.setUniformValue("color", shaderChams.fill.getValue().getRed() / 255f, shaderChams.fill.getValue().getGreen() / 255f, shaderChams.fill.getValue().getBlue() / 255f, shaderChams.fill.getValue().getAlpha() / 255f);
@@ -186,7 +187,7 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("maxSample", shaderChams.maxSample.getValueFloat());
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         } else if (shader == Shader.Flow) {
             effect.setUniformValue("mixFactor", shaderChams.fill.getValue().getAlpha() / 255f);
@@ -196,20 +197,20 @@ public class ShaderManager implements Wrapper {
             effect.setUniformValue("maxSample", shaderChams.maxSample.getValueFloat());
             effect.setUniformValue("resolution", (float) mc.getWindow().getScaledWidth(), (float) mc.getWindow().getScaledHeight());
             effect.setUniformValue("time", time);
-            effect.render(mc.getTickDelta());
+            effect.render(tickDelta);
             time += (float) shaderChams.speed.getValue() * 0.002f;
         }
     }
 
     public void reloadShaders() {
-        DEFAULT = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/outline.json"));
-        SMOKE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/smoke.json"));
-        PULSE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/pulse.json"));
-        GRADIENT = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/gradient.json"));
-        SNOW = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/snow.json"));
-        FLOW = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/flow.json"));
-        RAINBOW = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/rainbow.json"));
-        DEFAULT_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/outline.json"), managedShaderEffect -> {
+        DEFAULT = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/outline.json"));
+        SMOKE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/smoke.json"));
+        PULSE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/pulse.json"));
+        GRADIENT = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/gradient.json"));
+        SNOW = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/snow.json"));
+        FLOW = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/flow.json"));
+        RAINBOW = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/rainbow.json"));
+        DEFAULT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/outline.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -217,7 +218,7 @@ public class ShaderManager implements Wrapper {
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        SMOKE_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/smoke.json"), managedShaderEffect -> {
+        SMOKE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/smoke.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -225,7 +226,7 @@ public class ShaderManager implements Wrapper {
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        PULSE_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/pulse.json"), managedShaderEffect -> {
+        PULSE_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/pulse.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -233,7 +234,7 @@ public class ShaderManager implements Wrapper {
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        GRADIENT_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/gradient.json"), managedShaderEffect -> {
+        GRADIENT_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/gradient.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -241,7 +242,7 @@ public class ShaderManager implements Wrapper {
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        SNOW_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/snow.json"), managedShaderEffect -> {
+        SNOW_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/snow.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
@@ -249,14 +250,14 @@ public class ShaderManager implements Wrapper {
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
 
-        FLOW_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/flow.json"), managedShaderEffect -> {
+        FLOW_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/flow.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 
             ((IShaderEffect) effect).addHook("bufIn", mc.worldRenderer.getEntityOutlinesFramebuffer());
             ((IShaderEffect) effect).addHook("bufOut", mc.worldRenderer.getEntityOutlinesFramebuffer());
         });
-        RAINBOW_OUTLINE = ShaderEffectManager.getInstance().manage(new Identifier("shaders/post/rainbow.json"), managedShaderEffect -> {
+        RAINBOW_OUTLINE = ShaderEffectManager.getInstance().manage(Identifier.of("minecraft", "shaders/post/rainbow.json"), managedShaderEffect -> {
             PostEffectProcessor effect = managedShaderEffect.getShaderEffect();
             if (effect == null) return;
 

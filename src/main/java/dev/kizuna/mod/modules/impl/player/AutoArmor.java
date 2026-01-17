@@ -9,9 +9,11 @@ import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
 import dev.kizuna.mod.modules.settings.impl.SliderSetting;
 import net.minecraft.client.gui.screen.ChatScreen;
 import net.minecraft.client.gui.screen.ingame.InventoryScreen;
+import net.minecraft.component.DataComponentTypes;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.ProtectionEnchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ElytraItem;
@@ -135,9 +137,16 @@ public class AutoArmor extends Module {
 				prot = 1;
 			}
 			if (is.hasEnchantments()) {
-				for (Map.Entry<Enchantment, Integer> e: EnchantmentHelper.get(is).entrySet()) {
-					if (e.getKey() instanceof ProtectionEnchantment)
-						prot += e.getValue();
+				ItemEnchantmentsComponent enchantments = is.get(DataComponentTypes.ENCHANTMENTS);
+				if (enchantments != null) {
+					for (var entry : enchantments.getEnchantmentEntries()) {
+						if (entry.getKey().matchesKey(Enchantments.PROTECTION) ||
+							entry.getKey().matchesKey(Enchantments.BLAST_PROTECTION) ||
+							entry.getKey().matchesKey(Enchantments.FIRE_PROTECTION) ||
+							entry.getKey().matchesKey(Enchantments.PROJECTILE_PROTECTION)) {
+							prot += entry.getIntValue();
+						}
+					}
 				}
 			}
 			return (is.getItem() instanceof ArmorItem ? ((ArmorItem) is.getItem()).getProtection() : 0) + prot;

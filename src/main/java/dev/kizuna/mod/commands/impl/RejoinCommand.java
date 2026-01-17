@@ -22,7 +22,7 @@ public class RejoinCommand extends Command {
 			if (mc.world != null && mc.getCurrentServerEntry() != null) {
 				ServerInfo lastestServerEntry = mc.getCurrentServerEntry();
 				new DisconnectS2CPacket(Text.of("Self kick")).apply(mc.getNetworkHandler());
-				ConnectScreen.connect(new TitleScreen(), mc, ServerAddress.parse(lastestServerEntry.address), lastestServerEntry, false);
+				ConnectScreen.connect(new TitleScreen(), mc, ServerAddress.parse(lastestServerEntry.address), lastestServerEntry, false, null);
 			}
 		});
 	}

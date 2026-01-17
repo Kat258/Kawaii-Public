@@ -52,7 +52,7 @@ public class PearlPredict extends Module {
         PearlPredict.matrixStack = matrixStack;
         if (nullCheck()) return;
         RenderSystem.disableDepthTest();
-        float tickDelta = mc.getTickDelta();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
         double radius = (mc.options.getClampedViewDistance() + 1) * 16.0;
         Box scanBox = mc.player.getBoundingBox().expand(radius);
 

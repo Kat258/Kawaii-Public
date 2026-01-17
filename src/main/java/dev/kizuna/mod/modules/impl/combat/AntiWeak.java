@@ -46,10 +46,8 @@ public class AntiWeak extends Module {
         if (mc.player.getMainHandStack().getItem() instanceof SwordItem)
             return;
         if (!delayTimer.passedMs(delay.getValue())) return;
-        if (event.getPacket() instanceof PlayerInteractEntityC2SPacket packet && Criticals.getInteractType(packet) == Criticals.InteractType.ATTACK) {
-
-            if (onlyCrystal.getValue() && !(Criticals.getEntity(packet) instanceof EndCrystalEntity))
-                return;
+        if (event.getPacket() instanceof PlayerInteractEntityC2SPacket packet) {
+            if (onlyCrystal.getValue() && !(mc.targetedEntity instanceof EndCrystalEntity)) return;
             lastPacket = event.getPacket();
             delayTimer.reset();
             ignore = true;

@@ -73,12 +73,12 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
 	@Shadow
 	public float nauseaIntensity;
 
-	@Inject(at = {@At("HEAD")}, method = {"updateNausea"}, cancellable = true)
+	@Inject(at = {@At("HEAD")}, method = {"tickNausea"}, cancellable = true)
 	private void updateNausea(CallbackInfo ci) {
 		ci.cancel();
 		this.prevNauseaIntensity = this.nauseaIntensity;
 		float f = 0.0F;
-		if (this.inNetherPortal) {
+		if (this.portalManager != null && this.portalManager.isInPortal()) {
 			if (!ClientSetting.INSTANCE.portalGui() && this.client.currentScreen != null && !this.client.currentScreen.shouldPause() && !(this.client.currentScreen instanceof DeathScreen)) {
 				if (this.client.currentScreen instanceof HandledScreen) {
 					this.closeHandledScreen();
@@ -92,7 +92,7 @@ public abstract class MixinClientPlayerEntity extends AbstractClientPlayerEntity
 			}
 
 			f = 0.0125F;
-			this.inNetherPortal = false;
+			this.portalManager.setInPortal(false);
 		} else if (this.hasStatusEffect(StatusEffects.NAUSEA) && !this.getStatusEffect(StatusEffects.NAUSEA).isDurationBelow(60)) {
 			f = 0.006666667F;
 		} else if (this.nauseaIntensity > 0.0F) {

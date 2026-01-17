@@ -16,6 +16,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
 import net.minecraft.client.render.DiffuseLighting;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.component.type.ItemEnchantmentsComponent;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
@@ -510,30 +511,12 @@ public class NameTags extends Module {
                     continue;
                 }
 
-                NbtList enchants = stack.getEnchantments();
+                ItemEnchantmentsComponent enchants = stack.getEnchantments();
                 if (enchants == null || enchants.isEmpty()) {
                     armorEnchantLines[i] = EMPTY_STRINGS;
                     continue;
                 }
 
-                ArrayList<String> lines = new ArrayList<>(Math.min(enchants.size(), 6));
-                for (int index = 0; index < enchants.size(); ++index) {
-                    String id = enchants.getCompound(index).getString("id");
-                    short level = enchants.getCompound(index).getShort("lvl");
-                    String encName;
-                    switch (id) {
-                        case "minecraft:blast_protection" -> encName = "B" + level;
-                        case "minecraft:protection" -> encName = "P" + level;
-                        case "minecraft:thorns" -> encName = "T" + level;
-                        case "minecraft:sharpness" -> encName = "S" + level;
-                        case "minecraft:efficiency" -> encName = "E" + level;
-                        case "minecraft:unbreaking" -> encName = "U" + level;
-                        case "minecraft:power" -> encName = "PO" + level;
-                        default -> { continue; }
-                    }
-                    lines.add(encName);
-                }
-                armorEnchantLines[i] = lines.toArray(new String[0]);
             }
         }
     }

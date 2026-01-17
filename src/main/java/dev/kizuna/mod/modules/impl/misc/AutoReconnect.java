@@ -48,7 +48,7 @@ public class AutoReconnect extends Module {
         }
         if (autoQueue.getValue() && InventoryUtil.findItem(Items.COMPASS) != -1 && queueTimer.passedS(joinQueueDelay.getValue())) {
             InventoryUtil.switchToSlot(InventoryUtil.findItem(Items.COMPASS));
-            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id));
+            sendSequencedPacket(id -> new PlayerInteractItemC2SPacket(Hand.MAIN_HAND, id, mc.player.getYaw(), mc.player.getPitch()));
             queueTimer.reset();
         }
      }

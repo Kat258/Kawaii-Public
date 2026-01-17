@@ -93,7 +93,7 @@ public class Speed extends Module {
         if (mode.is(Mode.Custom)) {
             if (event.getPacket() instanceof EntityVelocityUpdateS2CPacket packet) {
                 if (mc.player != null
-                        && packet.getId() == mc.player.getId()
+                        && packet.getEntityId() == mc.player.getId()
                         && this.velocity.getValue()) {
                     double speed = Math.sqrt(
                             packet.getVelocityX() * packet.getVelocityX()
@@ -326,7 +326,8 @@ public class Speed extends Module {
     public Vec2f handleStrafeMotion(final float speed) {
         float forward = mc.player.input.movementForward;
         float strafe = mc.player.input.movementSideways;
-        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * mc.getTickDelta();
+        float tickDelta = mc.getRenderTickCounter().getTickDelta(true);
+        float yaw = mc.player.prevYaw + (mc.player.getYaw() - mc.player.prevYaw) * tickDelta;
         if (forward == 0.0f && strafe == 0.0f) {
             return Vec2f.ZERO;
         } else if (forward != 0.0f) {

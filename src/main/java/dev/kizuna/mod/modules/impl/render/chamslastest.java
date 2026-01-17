@@ -45,7 +45,9 @@ public class chamslastest extends Module {
     public final SliderSetting floatOffset = add(new SliderSetting("YOffset", 0f, -1, 1f, 0.01, crystalChams::isOpen));
 
     public enum CMode {One, Two}
-    private final Identifier crystalTexture2 = new Identifier("textures/end_crystal2.png");
+    private static final Identifier BLANK = Identifier.of("minecraft", "textures/blank.png");
+    private static final Identifier VANILLA_CRYSTAL = Identifier.of("minecraft", "textures/entity/end_crystal/end_crystal.png");
+    private final Identifier crystalTexture2 = Identifier.of("minecraft", "textures/end_crystal2.png");
     @EventHandler
     public void onRenderCrystal(RenderCrystalEvent event) {
         if (!this.isOn() || !this.crystalChams.getValue()) {
@@ -58,22 +60,12 @@ public class chamslastest extends Module {
         RenderSystem.enableBlend();
         RenderSystem.disableCull();
         RenderSystem.disableDepthTest();
-        Tessellator tessellator = Tessellator.getInstance();
-        BufferBuilder buffer;
-        
-        // 使用texture设置
-        if (crystalModes.getValue() != CMode.One && texture.getValue()) {
-            if (crystalModes.getValue() == CMode.Two) {
-                RenderSystem.setShaderTexture(0, crystalTexture2);
-            }
-            RenderSystem.setShader(GameRenderer::getPositionTexProgram);
-            buffer = Tessellator.getInstance().getBuffer();
-            buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION_TEXTURE);
-        } else {
-            RenderSystem.setShader(GameRenderer::getPositionProgram);
-            buffer = Tessellator.getInstance().getBuffer();
-            buffer.begin(VertexFormat.DrawMode.QUADS, VertexFormats.POSITION);
-        }
+
+        VertexConsumerProvider.Immediate vertexConsumers = mc.getBufferBuilders().getEntityVertexConsumers();
+        Identifier tex = !texture.getValue()
+                ? BLANK
+                : (crystalModes.getValue() == CMode.Two ? crystalTexture2 : VANILLA_CRYSTAL);
+        VertexConsumer buffer = vertexConsumers.getBuffer(RenderLayer.getEntityTranslucent(tex));
         
         matrixStack.push();
         
@@ -94,11 +86,7 @@ public class chamslastest extends Module {
         matrixStack.push();
         
         // 渲染外框架，使用outerFrame颜色
-        RenderSystem.setShaderColor(
-                ((float) this.outerFrame.getValue().getRed() / 255.0f),
-                ((float) this.outerFrame.getValue().getGreen() / 255.0f),
-                ((float) this.outerFrame.getValue().getBlue() / 255.0f),
-                ((float) this.outerFrame.getValue().getAlpha() / 255.0f));
+        Color outerColor = this.outerFrame.getValue();
         
         matrixStack.scale(2.0f, 2.0f, 2.0f);
         matrixStack.translate(0.0f, -0.5f, 0.0f);
@@ -110,42 +98,39 @@ public class chamslastest extends Module {
         
         // 渲染第一个框架
         matrixStack.multiply(new Quaternionf().setAngleAxis(1.0471976f, (float) Math.sin(0.7853981633974483), (float) Math.sin(0.7853981633974483), (float) Math.sin(0.7853981633974483)));
-        frame.render(matrixStack, buffer, i, k);
+        if (this.outerFrame.booleanValue) {
+            frame.render(matrixStack, buffer, i, k);
+        }
         
         // 渲染内框架，使用innerFrame颜色
-        RenderSystem.setShaderColor(
-                ((float) this.innerFrame.getValue().getRed() / 255.0f),
-                ((float) this.innerFrame.getValue().getGreen() / 255.0f),
-                ((float) this.innerFrame.getValue().getBlue() / 255.0f),
-                ((float) this.innerFrame.getValue().getAlpha() / 255.0f));
+        Color innerColor = this.innerFrame.getValue();
         
         matrixStack.scale(0.875f, 0.875f, 0.875f);
         matrixStack.multiply(new Quaternionf().setAngleAxis(1.0471976f, (float) Math.sin(0.7853981633974483), 0.0f, (float) Math.sin(0.7853981633974483)));
         matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(j));
-        frame.render(matrixStack, buffer, i, k);
+        if (this.innerFrame.booleanValue) {
+            frame.render(matrixStack, buffer, i, k);
+        }
         
         // 渲染核心，使用core颜色
-        RenderSystem.setShaderColor(
-                ((float) this.core.getValue().getRed() / 255.0f),
-                ((float) this.core.getValue().getGreen() / 255.0f),
-                ((float) this.core.getValue().getBlue() / 255.0f),
-                ((float) this.core.getValue().getAlpha() / 255.0f));
+        Color coreColor = this.core.getValue();
         
         matrixStack.scale(0.875f, 0.875f, 0.875f);
         matrixStack.multiply(new Quaternionf().setAngleAxis(1.0471976f, (float) Math.sin(0.7853981633974483), 0.0f, (float) Math.sin(0.7853981633974483)));
         matrixStack.multiply(RotationAxis.POSITIVE_Y.rotationDegrees(j));
-        core.render(matrixStack, buffer, i, k);
+        if (this.core.booleanValue) {
+            core.render(matrixStack, buffer, i, k);
+        }
         
         // 应用整体crystalColor作为叠加效果
-        RenderSystem.setShaderColor(
-                ((float) this.crystalColor.getValue().getRed() / 255.0f),
-                ((float) this.crystalColor.getValue().getGreen() / 255.0f),
-                ((float) this.crystalColor.getValue().getBlue() / 255.0f),
-                ((float) this.crystalColor.getValue().getAlpha() / 255.0f));
+        Color overlayColor = this.crystalColor.getValue();
+        if (overlayColor.getAlpha() > 0) {
+            frame.render(matrixStack, buffer, i, k);
+        }
         
         matrixStack.pop();
         matrixStack.pop();
-        tessellator.draw();
+        vertexConsumers.draw();
         
         // 重置渲染状态
         RenderSystem.setShaderColor(1.0f, 1.0f, 1.0f, 1.0f);
