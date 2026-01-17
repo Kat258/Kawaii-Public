@@ -178,7 +178,7 @@ public class ShulkerStealer extends Module {
         this.stealCountList[18] = (int) (this.redstone.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.REDSTONE_BLOCK)));
         this.stealCountList[19] = (int) (this.cfruit.getValue() - InventoryUtil.getItemCount(Items.CHORUS_FRUIT));
         this.stealCountList[20] = (int) (this.obsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.OBSIDIAN)));
-        this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount((StatusEffect) StatusEffects.SLOW_FALLING));
+        this.stealCountList[21] = (int) (this.slowfalling.getValue() - InventoryUtil.getPotCount(StatusEffects.SLOW_FALLING.value()));
         this.stealCountList[22] = (int) (this.cryobsidian.getValue() - InventoryUtil.getItemCount(Item.fromBlock(Blocks.CRYING_OBSIDIAN)));
         this.stealCountList[23] = (int) (this.slowfallingarrow.getValue() - InventoryUtil.getItemCount(Items.TIPPED_ARROW));
     }

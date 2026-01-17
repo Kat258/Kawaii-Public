@@ -165,15 +165,15 @@ public class AutoPot extends Module {
                         } catch (Throwable ignored) {}
                     }
                     if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                        throwing = checkThrow((StatusEffect) StatusEffects.SPEED);
+                        throwing = checkThrow(StatusEffects.SPEED.value());
                         if (isThrow()) {
-                            if (throwPotion((StatusEffect) StatusEffects.SPEED)) delayTimer.reset();
+                            if (throwPotion(StatusEffects.SPEED.value())) delayTimer.reset();
                         }
                     }
                     if (!throwing && resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                        throwing = checkThrow((StatusEffect) StatusEffects.RESISTANCE);
+                        throwing = checkThrow(StatusEffects.RESISTANCE.value());
                         if (isThrow()) {
-                            if (throwPotion((StatusEffect) StatusEffects.RESISTANCE)) delayTimer.reset();
+                            if (throwPotion(StatusEffects.RESISTANCE.value())) delayTimer.reset();
                         }
                     }
                 }
@@ -187,18 +187,18 @@ public class AutoPot extends Module {
 
         if (!onlyGround.getValue() || (mc.player.isOnGround() && !mc.world.isAir(new BlockPosX(mc.player.getPos().add(0, -1, 0))))) {
             if (speed.getValue() && (noCheck.getValue() || !mc.player.hasStatusEffect(StatusEffects.SPEED))) {
-                throwing = checkThrow((StatusEffect) StatusEffects.SPEED);
+                throwing = checkThrow(StatusEffects.SPEED.value());
                 if (isThrow() && delayTimer.passedMs((long) (delay.getValue() * 1000))) {
-                    if (throwPotion((StatusEffect) StatusEffects.SPEED)) {
+                    if (throwPotion(StatusEffects.SPEED.value())) {
                         delayTimer.reset();
                         return;
                     }
                 }
             }
             if (resistance.getValue() && (noCheck.getValue() || (!mc.player.hasStatusEffect(StatusEffects.RESISTANCE) || mc.player.getStatusEffect(StatusEffects.RESISTANCE).getAmplifier() < 2))) {
-                throwing = checkThrow((StatusEffect) StatusEffects.RESISTANCE);
+                throwing = checkThrow(StatusEffects.RESISTANCE.value());
                 if (isThrow() && delayTimer.passedMs((long) (delay.getValue() * 1000))) {
-                    if (throwPotion((StatusEffect) StatusEffects.RESISTANCE)) {
+                    if (throwPotion(StatusEffects.RESISTANCE.value())) {
                         delayTimer.reset();
                         return;
                     }
