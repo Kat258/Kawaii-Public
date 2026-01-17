@@ -67,6 +67,7 @@ public class NameTags extends Module {
     private static final Map<UUID, Long> slowFallExpiry = new ConcurrentHashMap<>();
 
     private static final Map<UUID, Integer> lastStuckArrowCount = new ConcurrentHashMap<>();
+    private static final Map<UUID, Integer> lastPopCountMap = new ConcurrentHashMap<>();
 
     private static final Color COLOR_RED = Color.RED;
     private static final Color COLOR_ORANGE = Color.ORANGE;
@@ -143,9 +144,21 @@ public class NameTags extends Module {
     }
 
     private String buildNameTagText(PlayerEntity ent, long now) {
+        UUID uuid = ent.getUuid();
+        Integer currentPopCount = null;
+        if (pops.getValue()) {
+            currentPopCount = Kawaii.POP.getPop(ent.getName().getString());
+            Integer lastPopCount = lastPopCountMap.getOrDefault(uuid, 0);
+
+            if (currentPopCount > lastPopCount) {
+                slowFallExpiry.put(uuid, now + 30_000L);
+                lastPopCountMap.put(uuid, currentPopCount);
+            }
+        }
+
         String fallPrefix = "";
         if (showFallTime.getValue()) {
-            Long expiry = slowFallExpiry.get(ent.getUuid());
+            Long expiry = slowFallExpiry.get(uuid);
             if (expiry != null) {
                 long remain = expiry - now;
                 if (remain > 0) {
@@ -154,7 +167,17 @@ public class NameTags extends Module {
                     int s = sec % 60;
                     fallPrefix = Formatting.AQUA.toString() + String.format("%02d:%02d ", m, s);
                 } else {
-                    slowFallExpiry.remove(ent.getUuid());
+                    slowFallExpiry.remove(uuid);
+                }
+            }
+            
+            if (fallPrefix.isEmpty()) {
+                var slowFalling = ent.getStatusEffect(StatusEffects.SLOW_FALLING);
+                if (slowFalling != null) {
+                    int sec = (int) Math.ceil(slowFalling.getDuration() / 20.0);
+                    int m = sec / 60;
+                    int s = sec % 60;
+                    fallPrefix = Formatting.AQUA.toString() + String.format("%02d:%02d ", m, s);
                 }
             }
         }
@@ -179,14 +202,9 @@ public class NameTags extends Module {
             sb.append(" ").append(Formatting.RESET).append(String.format("%.1f", mc.player.distanceTo(ent))).append("m");
         }
         if (pops.getValue()) {
-            Integer currentPopCount = Kawaii.POP.getPop(ent.getName().getString());
-            Integer lastPopCount = lastStuckArrowCount.getOrDefault(ent.getUuid(), 0);
-
-            if (currentPopCount > lastPopCount) {
-                slowFallExpiry.remove(ent.getUuid());
-                lastStuckArrowCount.put(ent.getUuid(), currentPopCount);
+            if (currentPopCount == null) {
+                currentPopCount = Kawaii.POP.getPop(ent.getName().getString());
             }
-
             sb.append(" §bPop ").append(Formatting.LIGHT_PURPLE).append(currentPopCount);
         }
 

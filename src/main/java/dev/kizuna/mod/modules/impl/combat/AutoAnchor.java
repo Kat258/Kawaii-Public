@@ -213,7 +213,7 @@ public class AutoAnchor extends Module {
 		if (usingPause.getValue() && mc.player.isUsingItem()) {
             return;
         }
-        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
+        if (PacketThrow.INSTANCE.shouldPauseCombat()) return;
         if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
 		if (currentPos != null) {
 			if (breakCrystal.getValue()) CombatUtil.attackCrystal(new BlockPos(currentPos), rotate.getValue(), false);
@@ -588,7 +588,7 @@ public class AutoAnchor extends Module {
 		if (usingPause.getValue() && mc.player.isUsingItem()) {
             return;
         }
-        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
+        if (PacketThrow.INSTANCE.shouldPauseCombat()) return;
         if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
 		if (!assistTimer.passed((long) (delay.getValueFloat() * 1000))) {
 			return;

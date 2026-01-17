@@ -142,7 +142,7 @@ public class WebAura extends Module {
         if (webSlot == -1) {
             return;
         }
-        if (PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) return;
+        if (PacketThrow.INSTANCE.shouldPauseCombat()) return;
         if (Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue()) return;
         if (usingPause.getValue() && mc.player.isUsingItem()) {
             return;

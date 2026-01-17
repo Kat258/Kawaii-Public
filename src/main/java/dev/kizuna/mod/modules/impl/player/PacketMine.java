@@ -118,7 +118,6 @@ public class PacketMine extends Module {
 	private final EnumSetting<Easing> ease = add(new EnumSetting<>("Ease", Easing.CubicInOut, () -> page.is(Page.Render)));
 	public final ColorSetting startColor = add(new ColorSetting("StartColor", new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
 	public final ColorSetting endColor = add(new ColorSetting("EndColor", new Color(255, 255, 255, 100), () -> page.is(Page.Render)));
-	private final EnumSetting<Easing> fadeEase = add(new EnumSetting<>("FadeEase", Easing.CubicInOut, () -> page.is(Page.Render)));
 	public final ColorSetting doubleColor = add(new ColorSetting("DoubleColor", new Color(88, 94, 255, 100), () -> doubleBreak.getValue() && page.is(Page.Render)));
 	private final BooleanSetting text = add(new BooleanSetting("Text", true, () -> page.is(Page.Render)));
 	private final BooleanSetting box = add(new BooleanSetting("Box", true, () -> page.is(Page.Render)));
@@ -216,7 +215,7 @@ public class PacketMine extends Module {
 				progress = (double) mineTimer.getPassedTimeMs() / breakTime;
 				animationTime.setLength((long) getBreakTime(breakPos, slot));
 				double ease = (1 - animationTime.ease(this.ease.getValue())) * 0.5;
-				Render3DUtil.draw3DBox(matrixStack, new Box(breakPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), getColor(animationTime.ease(fadeEase.getValue())), outline.getValue(), box.getValue());
+				Render3DUtil.draw3DBox(matrixStack, new Box(breakPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), isAir(breakPos) ? endColor.getValue() : startColor.getValue(), outline.getValue(), box.getValue());
 				if (text.getValue()) {
 					if (isAir(breakPos)) {
 						Render3DUtil.drawText3D("Done", breakPos.toCenterPos(), -1);
@@ -234,22 +233,6 @@ public class PacketMine extends Module {
 		} else {
 			progress = 0;
 		}
-	}
-
-	private Color getColor(double quad) {
-		int sR = startColor.getValue().getRed();
-		int sG = startColor.getValue().getGreen();
-		int sB = startColor.getValue().getBlue();
-		int sA = startColor.getValue().getAlpha();
-
-		int eR = endColor.getValue().getRed();
-		int eG = endColor.getValue().getGreen();
-		int eB = endColor.getValue().getBlue();
-		int eA = endColor.getValue().getAlpha();
-		return new Color((int) (sR + (eR - sR) * quad),
-				(int) (sG + (eG - sG) * quad),
-				(int) (sB + (eB - sB) * quad),
-				(int) (sA + (eA - sA) * quad));
 	}
 
 	@Override

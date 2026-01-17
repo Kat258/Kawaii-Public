@@ -389,7 +389,7 @@ public class KawaiiAura extends Module {
     }
 
     private boolean shouldReturn() {
-        if (eatingPause.getValue() && mc.player.isUsingItem() || Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue() || PacketThrow.INSTANCE.getBind().isPressed() || PacketThrow.INSTANCE.isOn() && PacketThrow.INSTANCE.pauseCombat.getValue()) {
+        if (eatingPause.getValue() && mc.player.isUsingItem() || Blink.INSTANCE.isOn() && Blink.INSTANCE.pauseModule.getValue() || PacketThrow.INSTANCE.shouldPauseCombat()) {
             lastBreakTimer.reset();
             return true;
         }

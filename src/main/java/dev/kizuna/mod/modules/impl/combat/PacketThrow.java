@@ -110,6 +110,10 @@ public class PacketThrow extends Module {
         return throwing;
     }
 
+    public boolean shouldPauseCombat() {
+        return pauseCombat.getValue() && isOn() && (throwing || getBind().isPressed());
+    }
+
     public boolean checkThrow() {
         if (isOff()) return false;
         if (mc.currentScreen != null) return false;

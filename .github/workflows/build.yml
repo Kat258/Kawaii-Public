@@ -89,4 +89,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Kawaii-jnic-post
-        path: obf-workspace/JNIC-3.5.1/Kawaii-jnic-post.jar
+        path: |
+          obf-workspace/JNIC-3.5.1/Kawaii-jnic-post.jar
+          build/libs
