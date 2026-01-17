@@ -17,6 +17,7 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.*;
+import net.minecraft.potion.Potions;
 import net.minecraft.network.packet.c2s.play.CloseHandledScreenC2SPacket;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.PotionContentsComponent;
@@ -338,11 +339,15 @@ public class ShulkerStealer extends Module {
             stealCountList[8] = stealCountList[8] - i.getCount();
             return true;
         }
-        if(i.getItem().equals(Items.SPLASH_POTION) && this.stealCountList[9] > 0){
+        if(i.getItem() instanceof PotionItem && this.stealCountList[9] > 0){
             PotionContentsComponent contents = i.get(DataComponentTypes.POTION_CONTENTS);
             if (contents != null) {
+                if (contents.matches(Potions.TURTLE_MASTER) || contents.matches(Potions.LONG_TURTLE_MASTER) || contents.matches(Potions.STRONG_TURTLE_MASTER)) {
+                    stealCountList[9] = stealCountList[9] - i.getCount();
+                    return true;
+                }
                 for(StatusEffectInstance potionEffect : contents.getEffects()){
-                    if(potionEffect.getEffectType().value() == StatusEffects.RESISTANCE){
+                    if(potionEffect.getEffectType().value() == StatusEffects.RESISTANCE.value()){
                         stealCountList[9] = stealCountList[9] - i.getCount();
                         return true;
                     }
@@ -396,6 +401,10 @@ public class ShulkerStealer extends Module {
         if(i.getItem() instanceof PotionItem && this.stealCountList[21] > 0) {
             PotionContentsComponent contents = i.get(DataComponentTypes.POTION_CONTENTS);
             if (contents != null) {
+                if (contents.matches(Potions.SLOW_FALLING) || contents.matches(Potions.LONG_SLOW_FALLING)) {
+                    stealCountList[21] = stealCountList[21] - i.getCount();
+                    return true;
+                }
                 for (StatusEffectInstance potionEffect : contents.getEffects()) {
                     if (potionEffect.getEffectType().value() == StatusEffects.SLOW_FALLING.value()) {
                         stealCountList[21] = stealCountList[21] - i.getCount();
