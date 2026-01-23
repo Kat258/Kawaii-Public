@@ -79,19 +79,19 @@ extends Tab {
     private PlayerEntity getTarget() {
         double distance;
         Entity entity;
-        ClientPlayerEntity target = null;
-        if (KawaiiAura.INSTANCE.isOn() && KawaiiAura.INSTANCE.displayTarget != null && !KawaiiAura.INSTANCE.displayTarget.isDead() && KawaiiAura.INSTANCE.displayTarget.getWorld() != null && !KawaiiAura.INSTANCE.displayTarget.isRemoved()) {
-            target = (ClientPlayerEntity) KawaiiAura.INSTANCE.displayTarget;
+        PlayerEntity target = null;
+        if (KawaiiAura.INSTANCE.isOn() && KawaiiAura.INSTANCE.displayTarget instanceof PlayerEntity && !KawaiiAura.INSTANCE.displayTarget.isDead() && KawaiiAura.INSTANCE.displayTarget.getWorld() != null && !KawaiiAura.INSTANCE.displayTarget.isRemoved()) {
+            target = (PlayerEntity) KawaiiAura.INSTANCE.displayTarget;
         } else if (KillAura.INSTANCE.isOn() && (entity = KillAura.target) instanceof PlayerEntity) {
             PlayerEntity killAuraTarget = (PlayerEntity)entity;
             if (!killAuraTarget.isDead() && killAuraTarget.getWorld() != null && !killAuraTarget.isRemoved()) {
-                target = (ClientPlayerEntity) killAuraTarget;
+                target = killAuraTarget;
             }
         } else if (this.mc.currentScreen instanceof ChatScreen || HudEditor.INSTANCE.isOn()) {
             target = this.mc.player;
         }
-        if (target == null && AutoAnchor.INSTANCE.isOn() && AutoAnchor.INSTANCE.displayTarget != null && !AutoAnchor.INSTANCE.displayTarget.isDead() && AutoAnchor.INSTANCE.displayTarget.getWorld() != null && !AutoAnchor.INSTANCE.displayTarget.isRemoved()) {
-            target = (ClientPlayerEntity) AutoAnchor.INSTANCE.displayTarget;
+        if (target == null && AutoAnchor.INSTANCE.isOn() && AutoAnchor.INSTANCE.displayTarget instanceof PlayerEntity && !AutoAnchor.INSTANCE.displayTarget.isDead() && AutoAnchor.INSTANCE.displayTarget.getWorld() != null && !AutoAnchor.INSTANCE.displayTarget.isRemoved()) {
+            target = (PlayerEntity) AutoAnchor.INSTANCE.displayTarget;
         }
         if (target != null && this.mc.player != null && (distance = (double)this.mc.player.distanceTo((Entity)target)) > 12.0) {
             target = null;

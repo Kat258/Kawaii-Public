@@ -20,10 +20,10 @@ import net.minecraft.item.Items;
 public class ItemsCountHUD
 extends Tab {
     public ItemsCountHUD() {
-        this.width = 200;
-        this.height = 20;
-        this.x = (int)Kawaii.CONFIG.getFloat("items_count_x", 574.0f);
-        this.y = (int)Kawaii.CONFIG.getFloat("items_count_y", 518.0f);
+        this.width = 137;
+        this.height = 55;
+        this.x = (int)Kawaii.CONFIG.getFloat("items_count_x", 10.0f);
+        this.y = (int)Kawaii.CONFIG.getFloat("items_count_y", 260.0f);
     }
 
     @Override
