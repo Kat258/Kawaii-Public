@@ -13,6 +13,7 @@ import net.minecraft.util.math.RotationAxis;
 import net.minecraft.util.math.Vec3d;
 import org.joml.Matrix4f;
 import org.joml.Vector3f;
+import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
 
@@ -128,7 +129,7 @@ public class Render3DUtil implements Wrapper {
         if (outline) {
             RenderSystem.setShaderColor(color.getRed() / 255f, color.getGreen() / 255f, color.getBlue() / 255f, color.getAlpha() / 255f);
             RenderSystem.setShader(GameRenderer::getPositionProgram);
-            //GL11.glLineWidth(lineWidth);
+            GL11.glLineWidth(lineWidth);
             RenderSystem.lineWidth(lineWidth);
             BufferBuilder bufferBuilder = tessellator.begin(VertexFormat.DrawMode.DEBUG_LINES, VertexFormats.POSITION);
 
