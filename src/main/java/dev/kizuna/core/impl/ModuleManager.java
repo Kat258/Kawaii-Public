@@ -15,6 +15,7 @@ import dev.kizuna.mod.modules.impl.movement.*;
 import dev.kizuna.mod.modules.impl.player.*;
 import dev.kizuna.mod.modules.impl.player.freelook.FreeLook;
 import dev.kizuna.mod.modules.impl.render.*;
+import dev.kizuna.mod.modules.impl.hud.*;
 import dev.kizuna.mod.modules.settings.Setting;
 import dev.kizuna.mod.gui.font.FontRenderers;
 import dev.kizuna.mod.modules.settings.impl.BindSetting;
@@ -195,6 +196,14 @@ public class ModuleManager implements Wrapper {
         addModule(new AutoFuck());
         addModule(new InfiniteTrident());
         addModule(new HudEditor());
+        addModule(new ItemsCountHud());
+        addModule(new InventoryHud());
+        addModule(new ArmorHud());
+        addModule(new KeyDisplayHud());
+        addModule(new PotionHud());
+        addModule(new SelfHud());
+        addModule(new TargetHud());
+        addModule(new PlayerRadarHud());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
