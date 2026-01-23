@@ -135,6 +135,7 @@ public class ModuleManager implements Wrapper {
         addModule(new Trajectories());
         addModule(new AutoPearl());
         addModule(new Arraylist());
+        addModule(new ModuleList());
         addModule(new NameTags());
         addModule(new NoBadEffects());
         addModule(new NoFall());

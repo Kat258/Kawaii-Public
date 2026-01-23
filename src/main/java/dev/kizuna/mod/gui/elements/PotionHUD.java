@@ -50,10 +50,10 @@ extends Tab {
         float maxWidth = 125.0f;
         float yOffset = 0.0f;
         for (StatusEffectInstance effect : this.mc.player.getStatusEffects()) {
-            maxWidth = Math.max(maxWidth, Math.max(FontRenderers.ui.getWidth(effect.getEffectType() + " " + this.getAmplifierString(effect.getAmplifier())), FontRenderers.ui.getWidth(this.getDurationString(effect))) + 25.0f);
+            maxWidth = Math.max(maxWidth, Math.max(FontRenderers.ui.getWidth(effect.getEffectType().value().getName().getString() + " " + this.getAmplifierString(effect.getAmplifier())), FontRenderers.ui.getWidth(this.getDurationString(effect))) + 25.0f);
         }
         for (StatusEffectInstance effect : this.mc.player.getStatusEffects()) {
-            StatusEffect statusEffect = (StatusEffect) effect.getEffectType();
+            StatusEffect statusEffect = effect.getEffectType().value();
             RenderShadersUtil.drawRect(matrixStack, this.x, (float)this.y + yOffset, maxWidth, 25.0f, 3.0f, new Color(-1962934272, true));
             RenderShadersUtil.drawRect(matrixStack, (float)this.x + maxWidth - 5.0f, (float)this.y + yOffset + 6.25f, 3.0f, 12.5f, 1.0f, new Color(statusEffect.getColor()));
             RenderShadersUtil.drawBlurredShadow(matrixStack, (float)this.x + maxWidth - 5.0f, (float)this.y + yOffset + 6.25f, 3.0f, 12.5f, 10, new Color(statusEffect.getColor()));

@@ -2,6 +2,7 @@ package dev.kizuna;
 
 import dev.kizuna.api.events.eventbus.EventBus;
 import dev.kizuna.api.utils.render.RenderShaderUtil;
+import dev.kizuna.api.utils.render.RenderShadersUtil;
 import dev.kizuna.core.impl.*;
 
 import dev.kizuna.mod.modules.impl.combat.AutoRegear;
@@ -48,6 +49,7 @@ public final class Kawaii implements ModInitializer {
 
     public static void load() {
         RenderShaderUtil.inti();
+        RenderShadersUtil.init();
         EVENT_BUS.registerLambdaFactory((lookupInMethod, klass) -> (MethodHandles.Lookup) lookupInMethod.invoke(null, klass, MethodHandles.lookup()));
         CONFIG = new ConfigManager();
         // 字体渲染器将在游戏完全初始化后初始化，避免窗口为空的问题;
