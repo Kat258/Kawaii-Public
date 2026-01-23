@@ -122,7 +122,8 @@ public class PacketMine extends Module {
 	public final ColorSetting doubleColor = add(new ColorSetting("DoubleColor", new Color(88, 94, 255, 100), () -> doubleBreak.getValue() && page.is(Page.Render)));
 	private final BooleanSetting text = add(new BooleanSetting("Text", true, () -> page.is(Page.Render)));
 	private final BooleanSetting box = add(new BooleanSetting("Box", true, () -> page.is(Page.Render)));
-	private final BooleanSetting outline = add(new BooleanSetting("Outline", true, () -> page.is(Page.Render)));
+	private final BooleanSetting outline = add(new BooleanSetting("Outline", true, () -> page.is(Page.Render))).setParent();
+	private final SliderSetting outlineWidth = add(new SliderSetting("LineWidth", 1.5, 0.1, 5.0, 0.1, () -> outline.isOpen() && page.is(Page.Render)));
 	private final BooleanSetting bold = add(new BooleanSetting("Bold", false)).setParent();
 	private final SliderSetting lineWidth = add(new SliderSetting("LineWidth", 4,1,5,0.1, bold::isOpen));
 	int lastSlot = -1;
@@ -205,7 +206,7 @@ public class PacketMine extends Module {
 					return;
 				}
 				double ease = (1 - secondAnim.ease(this.ease.getValue())) * 0.5;
-				Render3DUtil.draw3DBox(matrixStack, new Box(secondPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), doubleColor.getValue(), outline.getValue(), box.getValue());
+				Render3DUtil.draw3DBox(matrixStack, new Box(secondPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), doubleColor.getValue(), outline.getValue(), box.getValue(), outlineWidth.getValueFloat());
 			}
 			if (breakPos != null) {
 				int slot = getTool(breakPos);
@@ -216,7 +217,7 @@ public class PacketMine extends Module {
 				progress = (double) mineTimer.getPassedTimeMs() / breakTime;
 				animationTime.setLength((long) getBreakTime(breakPos, slot));
 				double ease = (1 - animationTime.ease(this.ease.getValue())) * 0.5;
-				Render3DUtil.draw3DBox(matrixStack, new Box(breakPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), isAir(breakPos) ? endColor.getValue() : startColor.getValue(), outline.getValue(), box.getValue());
+				Render3DUtil.draw3DBox(matrixStack, new Box(breakPos).shrink(ease, ease, ease).shrink(-ease, -ease, -ease), isAir(breakPos) ? endColor.getValue() : startColor.getValue(), outline.getValue(), box.getValue(), outlineWidth.getValueFloat());
 				if (text.getValue()) {
 					if (isAir(breakPos)) {
 						Render3DUtil.drawText3D("Done", breakPos.toCenterPos(), -1);
