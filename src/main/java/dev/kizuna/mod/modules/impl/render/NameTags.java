@@ -14,11 +14,24 @@ import dev.kizuna.mod.modules.impl.player.Freecam;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.network.PlayerListEntry;
-import net.minecraft.client.render.DiffuseLighting;
+import dev.kizuna.api.events.eventbus.EventHandler;
+import dev.kizuna.api.events.impl.EntitySpawnEvent;
+import dev.kizuna.api.events.impl.PacketEvent;
+import net.minecraft.network.packet.s2c.play.EntityStatusEffectS2CPacket;
+import net.minecraft.network.packet.s2c.play.RemoveEntityStatusEffectS2CPacket;
+import net.minecraft.network.packet.s2c.play.EntityAttributesS2CPacket;
+import net.minecraft.network.packet.s2c.play.EntitiesDestroyS2CPacket;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.component.type.ItemEnchantmentsComponent;
+import net.minecraft.entity.Entity;
+import net.minecraft.client.render.DiffuseLighting;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.projectile.thrown.PotionEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtList;
 import net.minecraft.text.OrderedText;
@@ -26,6 +39,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.GameMode;
 import org.jetbrains.annotations.NotNull;
@@ -66,7 +80,7 @@ public class NameTags extends Module {
     private final EnumSetting<Armor> armorMode = add(new EnumSetting<>("ArmorMode", Armor.Full));
 
     private static final Map<UUID, Long> slowFallExpiry = new ConcurrentHashMap<>();
-
+    private static final Map<UUID, Map<StatusEffect, Long>> potionMap = new ConcurrentHashMap<>();
     private static final Map<UUID, Integer> lastStuckArrowCount = new ConcurrentHashMap<>();
     private static final Map<UUID, Integer> lastPopCountMap = new ConcurrentHashMap<>();
 
@@ -81,6 +95,18 @@ public class NameTags extends Module {
     private final Vector4d positionVec = new Vector4d();
     private final HashMap<UUID, CachedTag> tagCache = new HashMap<>();
     private long lastCacheWorldTime = Long.MIN_VALUE;
+    private final Map<Integer, PotionTrack> trackedPotions = new ConcurrentHashMap<>();
+    private static final long TURTLE_SPLASH_MS = 20_000L;
+    private static final double SPLASH_RADIUS = 4.0;
+
+    private static final class PotionTrack {
+        Vec3d pos;
+        long lastSeenTick;
+        PotionTrack(Vec3d pos, long lastSeenTick) {
+            this.pos = pos;
+            this.lastSeenTick = lastSeenTick;
+        }
+    }
 
     public NameTags() {
         super("NameTags", Category.Render);
@@ -166,7 +192,7 @@ public class NameTags extends Module {
                     int sec = (int) Math.ceil(remain / 1000.0);
                     int m = sec / 60;
                     int s = sec % 60;
-                    fallPrefix = Formatting.AQUA.toString() + String.format("%02d:%02d ", m, s);
+                    fallPrefix = Formatting.AQUA.toString() + String.format("%ds ", s);
                 } else {
                     slowFallExpiry.remove(uuid);
                 }
@@ -186,8 +212,42 @@ public class NameTags extends Module {
         StringBuilder sb = new StringBuilder();
         if (!fallPrefix.isEmpty()) sb.append(fallPrefix);
 
-        if (god.getValue() && ent.hasStatusEffect(StatusEffects.SLOWNESS)) {
-            sb.append("§4GOD ");
+        if (god.getValue()) {
+            boolean isGod = false;
+            long godTime = -1;
+
+            if (potionMap.containsKey(uuid) && potionMap.get(uuid).containsKey(StatusEffects.SLOWNESS.value())) {
+                     long expiry = potionMap.get(uuid).get(StatusEffects.SLOWNESS.value());
+                     if (expiry == -1L) {
+                         isGod = true;
+                         godTime = -1;
+                     } else if (expiry > now) {
+                         isGod = true;
+                         godTime = expiry - now;
+                     } else {
+                         potionMap.get(uuid).remove(StatusEffects.SLOWNESS.value());
+                     }
+                 }
+
+            if (ent.hasStatusEffect(StatusEffects.SLOWNESS)) {
+                StatusEffectInstance effect = ent.getStatusEffect(StatusEffects.SLOWNESS);
+                if (effect != null) {
+                    long duration = effect.getDuration() * 50L;
+                    if (duration > godTime) {
+                        isGod = true;
+                        godTime = duration;
+                    }
+                }
+            }
+
+            if (isGod) {
+                if (godTime > 0) {
+                    int sec = (int) Math.ceil(godTime / 1000.0);
+                    sb.append("§e").append(sec).append("s ");
+                } else if (godTime == -1) {
+                    sb.append("§e? ");
+                }
+            }
         }
         if (ping.getValue()) {
             sb.append(getEntityPing(ent)).append("ms ");
@@ -445,6 +505,129 @@ public class NameTags extends Module {
         if (health >= 12) return Formatting.YELLOW;
         if (health >= 6) return Formatting.RED;
         return Formatting.DARK_RED;
+    }
+
+    @Override
+    public void onLogout() {
+        slowFallExpiry.clear();
+        potionMap.clear();
+        lastStuckArrowCount.clear();
+        lastPopCountMap.clear();
+        tagCache.clear();
+        trackedPotions.clear();
+    }
+
+    @Override
+    public void onUpdate() {
+        if (nullCheck()) return;
+        long tick = mc.world.getTime();
+        double radius = (mc.options.getClampedViewDistance() + 2) * 16.0;
+        Box scanBox = mc.player.getBoundingBox().expand(radius);
+        for (PotionEntity potion : mc.world.getEntitiesByClass(PotionEntity.class, scanBox, Entity::isAlive)) {
+            trackedPotions.compute(potion.getId(), (id, track) -> {
+                Vec3d pos = potion.getPos();
+                if (track == null) {
+                    return new PotionTrack(pos, tick);
+                }
+                track.pos = pos;
+                track.lastSeenTick = tick;
+                return track;
+            });
+        }
+
+        long now = System.currentTimeMillis();
+        Iterator<Map.Entry<Integer, PotionTrack>> iterator = trackedPotions.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, PotionTrack> entry = iterator.next();
+            PotionTrack track = entry.getValue();
+            if (track.lastSeenTick != tick) {
+                applySplashAt(track.pos, now);
+                iterator.remove();
+            }
+        }
+    }
+
+    private void applySplashAt(Vec3d pos, long now) {
+        for (PlayerEntity player : mc.world.getPlayers()) {
+            double dist = player.getPos().distanceTo(pos);
+            if (dist > SPLASH_RADIUS) continue;
+            double scale = 1.0 - (dist / SPLASH_RADIUS);
+            if (scale <= 0) continue;
+            int durationTicks = (int) Math.ceil((TURTLE_SPLASH_MS / 50.0) * scale);
+            if (durationTicks < 20) continue;
+            long expiry = now + durationTicks * 50L;
+            potionMap.computeIfAbsent(player.getUuid(), k -> new ConcurrentHashMap<>())
+                    .merge(StatusEffects.SLOWNESS.value(), expiry, (oldVal, newVal) -> {
+                        if (oldVal == -1L) return newVal;
+                        if (oldVal < newVal) return newVal;
+                        return oldVal;
+                    });
+        }
+    }
+
+    @EventHandler
+    public void onEntitySpawn(EntitySpawnEvent event) {
+        if (nullCheck()) return;
+        if (event.getEntity() instanceof PotionEntity potion) {
+            trackedPotions.put(potion.getId(), new PotionTrack(potion.getPos(), mc.world.getTime()));
+        }
+    }
+
+    @EventHandler
+    public void onPacketReceive(PacketEvent.Receive event) {
+        if (mc.world == null) return;
+        if (event.getPacket() instanceof EntityStatusEffectS2CPacket packet) {
+            Entity entity = mc.world.getEntityById(packet.getEntityId());
+            if (entity instanceof PlayerEntity) {
+                potionMap.computeIfAbsent(entity.getUuid(), k -> new ConcurrentHashMap<>())
+                        .put(packet.getEffectId().value(), System.currentTimeMillis() + packet.getDuration() * 50L);
+            }
+        }
+        if (event.getPacket() instanceof RemoveEntityStatusEffectS2CPacket packet) {
+            Entity entity = packet.getEntity(mc.world);
+            if (entity instanceof PlayerEntity) {
+                Map<StatusEffect, Long> effects = potionMap.get(entity.getUuid());
+                if (effects != null) {
+                    effects.remove(packet.effect().value());
+                }
+            }
+        }
+        if (event.getPacket() instanceof EntitiesDestroyS2CPacket packet) {
+            for (int id : packet.getEntityIds()) {
+                PotionTrack track = trackedPotions.remove(id);
+                if (track != null) {
+                    applySplashAt(track.pos, System.currentTimeMillis());
+                }
+            }
+        }
+        if (event.getPacket() instanceof EntityAttributesS2CPacket packet) {
+            Entity entity = mc.world.getEntityById(packet.getEntityId());
+            if (entity instanceof PlayerEntity) {
+                for (EntityAttributesS2CPacket.Entry entry : packet.getEntries()) {
+                    if (entry.attribute().matchesKey(EntityAttributes.GENERIC_MOVEMENT_SPEED.getKey().get())) {
+                        boolean hasSlowness = false;
+                        for (EntityAttributeModifier modifier : entry.modifiers()) {
+                            if (modifier.id().toString().contains("slowness")) {
+                                hasSlowness = true;
+                                break;
+                            }
+                        }
+                        if (hasSlowness) {
+                            potionMap.computeIfAbsent(entity.getUuid(), k -> new ConcurrentHashMap<>())
+                                    .merge(StatusEffects.SLOWNESS.value(), -1L, (oldVal, newVal) -> {
+                                        if (oldVal > System.currentTimeMillis()) return oldVal;
+                                        return newVal;
+                                    });
+                        } else {
+                            Map<StatusEffect, Long> effects = potionMap.get(entity.getUuid());
+                            if (effects != null) {
+                                effects.remove(StatusEffects.SLOWNESS.value());
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     public static float round2(double value) {
