@@ -10,6 +10,7 @@ import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.*;
 import dev.kizuna.mod.modules.impl.combat.*;
 import dev.kizuna.mod.modules.impl.exploit.*;
+import dev.kizuna.mod.modules.impl.hud.DynamicIsland;
 import dev.kizuna.mod.modules.impl.misc.*;
 import dev.kizuna.mod.modules.impl.movement.*;
 import dev.kizuna.mod.modules.impl.player.*;
