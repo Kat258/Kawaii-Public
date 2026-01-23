@@ -4,12 +4,16 @@ import dev.kizuna.Kawaii;
 import dev.kizuna.mod.gui.elements.TargetHUD;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.settings.impl.BooleanSetting;
+import dev.kizuna.mod.modules.settings.impl.ColorSetting;
 import net.minecraft.client.gui.DrawContext;
+
+import java.awt.*;
 
 public class TargetHud
 extends Module {
     public static TargetHud INSTANCE;
     public final BooleanSetting follow = this.add(new BooleanSetting("Follow", false));
+    public final ColorSetting color = this.add(new ColorSetting("Color", new Color(-1383854337, true)));
 
     public TargetHud() {
         super("TargetHud", Module.Category.Hud);

@@ -99,8 +99,9 @@ public class NotificationHUD extends Tab {
             RenderShaderUtil.drawRoundedBlur(matrixStack, (float) offsetX, (float) offsetY, backgroundWidthValue, 20, 3f);
             RenderShaderUtil.drawBlurredShadow(matrixStack, (float) offsetX - 2, (float) offsetY -2, backgroundWidthValue, 20, 20,new Color(0x4C000000, true));
 
-            RenderShaderUtil.drawBlurredShadow(matrixStack, (float) offsetX + 2f, (float) offsetY + (20 - 12.5f) / 2f, 3f, 12.5f,15, new Color(0xFF8308FF));
-            RenderShaderUtil.drawRect(matrixStack, (float) offsetX + 2f, (float) offsetY + (20 - 12.5f) / 2f, 3f, 12.5f, 1f, new Color(0x8E8308FF, true));
+            Color notifColor = HUD.INSTANCE.notificationColor.getValue();
+            RenderShaderUtil.drawBlurredShadow(matrixStack, (float) offsetX + 2f, (float) offsetY + (20 - 12.5f) / 2f, 3f, 12.5f,15, notifColor);
+            RenderShaderUtil.drawRect(matrixStack, (float) offsetX + 2f, (float) offsetY + (20 - 12.5f) / 2f, 3f, 12.5f, 1f, new Color(notifColor.getRed(), notifColor.getGreen(), notifColor.getBlue(), 142));
             int textColor = new Color(255, 255, 255, (int) (255 * notification.getCurrentAlpha())).getRGB();
             float textY = (float) offsetY + (20 - 8) / 2.0f;
             drawText(matrixStack, message, (float) offsetX + 8, textY + 1.0f, textColor, HUD.INSTANCE.notificationFont.getValue());

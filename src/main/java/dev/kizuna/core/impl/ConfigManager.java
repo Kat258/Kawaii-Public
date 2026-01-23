@@ -52,6 +52,20 @@ public class ConfigManager extends Manager {
 			}
 			printwriter.println("armor_x:" + Kawaii.GUI.armorHud.getX());
 			printwriter.println("armor_y:" + Kawaii.GUI.armorHud.getY());
+			printwriter.println("inventory_hud_x:" + Kawaii.GUI.inventoryHud.getX());
+			printwriter.println("inventory_hud_y:" + Kawaii.GUI.inventoryHud.getY());
+			printwriter.println("items_count_x:" + Kawaii.GUI.itemsCountHud.getX());
+			printwriter.println("items_count_y:" + Kawaii.GUI.itemsCountHud.getY());
+			printwriter.println("key_display_hud_x:" + Kawaii.GUI.keyDisplayHud.getX());
+			printwriter.println("key_display_hud_y:" + Kawaii.GUI.keyDisplayHud.getY());
+			printwriter.println("playerRadar_x:" + Kawaii.GUI.playerRadarHud.getX());
+			printwriter.println("playerRadar_y:" + Kawaii.GUI.playerRadarHud.getY());
+			printwriter.println("potion_x:" + Kawaii.GUI.potionHud.getX());
+			printwriter.println("potion_y:" + Kawaii.GUI.potionHud.getY());
+			printwriter.println("target_x:" + Kawaii.GUI.targetHud.getX());
+			printwriter.println("target_y:" + Kawaii.GUI.targetHud.getY());
+			printwriter.println("self_hud_x:" + Kawaii.GUI.selfHud.getX());
+			printwriter.println("self_hud_y:" + Kawaii.GUI.selfHud.getY());
 
 			for (Module module : Kawaii.MODULE.modules) {
 				for (Setting setting : module.getSettings()) {

@@ -132,7 +132,7 @@ extends Tab {
         RenderShadersUtil.drawRect(drawContext.getMatrices(), this.x + 48, this.y + 32, 85.0f, 11.0f, 4.0f, new Color(0x4D000000, true));
         RenderShadersUtil.drawBlurredShadow(drawContext.getMatrices(), this.x + 48 - 2, this.y + 32 - 2, 89.0f, 15.0f, 10, new Color(0x4F000000, true));
         float healthRatio = Math.max(0.0f, Math.min((float)this.healthAnimation.getAnimationD() / target.getMaxHealth(), 1.0f));
-        RenderShadersUtil.drawRect(drawContext.getMatrices(), this.x + 48, this.y + 32, Math.max(8.0f, 85.0f * healthRatio), 11.0f, 4.0f, new Color(-1383854337, true));
+        RenderShadersUtil.drawRect(drawContext.getMatrices(), this.x + 48, this.y + 32, Math.max(8.0f, 85.0f * healthRatio), 11.0f, 4.0f, TargetHud.INSTANCE.color.getValue());
         FontRenderers.ui.drawString(drawContext.getMatrices(), target.getName().getString(), this.x + 48, this.y + 7, Color.WHITE.getRGB());
         FontRenderers.ui.drawCenteredString(drawContext.getMatrices(), String.format("%.1f", Float.valueOf((float)this.healthAnimation.getAnimationD())), (float)(this.x + 48) + 42.5f, (float)this.y + 32.5f, Color.WHITE.getRGB());
     }

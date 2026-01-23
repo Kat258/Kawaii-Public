@@ -61,6 +61,7 @@ public class HUD extends Module {
     public final BooleanSetting waterMark = add(new BooleanSetting("WaterMark", true).setParent());
     public final StringSetting waterMarkString = add(new StringSetting("Title", "%hackname% %version%.",waterMark::isOpen));
     public final SliderSetting offset = add(new SliderSetting("Offset", 5, 0, 100, -1,waterMark::isOpen));
+    public final ColorSetting notificationColor = add(new ColorSetting("NotificationColor", new Color(0xFF8308FF)));
 
     public final BooleanSetting playerRadar = add(new BooleanSetting("PlayerRadar", true).setParent());
     public final BooleanSetting playerIcons = add(new BooleanSetting("Icons", true, playerRadar::isOpen));
