@@ -192,6 +192,8 @@ public class ModuleManager implements Wrapper {
         addModule(new CrystalChams());
         addModule(new ItemTag2());
         addModule(new NoSlowBob());
+        addModule(new AutoFuck());
+        addModule(new InfiniteTrident());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 
