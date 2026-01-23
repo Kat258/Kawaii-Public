@@ -194,6 +194,7 @@ public class ModuleManager implements Wrapper {
         addModule(new NoSlowBob());
         addModule(new AutoFuck());
         addModule(new InfiniteTrident());
+        addModule(new HudEditor());
         modules.sort(Comparator.comparing(Mod::getName));
     }
 

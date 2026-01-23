@@ -91,7 +91,7 @@ public class HUD extends Module {
 
     @Override
     public void onUpdate() {
-        if (Kawaii.GUI != null && Kawaii.GUI.notificationHud != null) {
+        if (Kawaii.GUI != null && Kawaii.GUI.armorHud != null) {
             NotificationHUD.updateNotifications();
         }
     }

@@ -21,22 +21,22 @@ public class NotificationHUD extends Tab {
         this.width = 120;
         this.height = 30;
     }
-    
+
     private int getTextWidth(String text, HUD.FontType fontType) {
         switch (fontType) {
             case UI -> { return (int) FontRenderers.ui.getWidth(text); }
             case ICON -> { return (int) FontRenderers.icon.getWidth(text); }
             case TROLL -> { return (int) FontRenderers.troll.getWidth(text); }
-            case CALIBRI -> { 
-                if (FontRenderers.Calibri != null) { 
-                    return (int) FontRenderers.Calibri.getWidth(text); 
+            case CALIBRI -> {
+                if (FontRenderers.Calibri != null) {
+                    return (int) FontRenderers.Calibri.getWidth(text);
                 }
                 return (int) FontRenderers.ui.getWidth(text);
             }
             default -> { return mc.textRenderer.getWidth(text); }
         }
     }
-    
+
     private void drawText(MatrixStack matrices, String text, float x, float y, int color, HUD.FontType fontType) {
         DrawContext context = new DrawContext(mc, mc.getBufferBuilders().getEntityVertexConsumers());
         boolean useCustomFont = fontType != HUD.FontType.DEFAULT;
@@ -85,7 +85,7 @@ public class NotificationHUD extends Tab {
         // 从HUD模块获取位置偏移设置
         int baseX = HUD.INSTANCE != null ? HUD.INSTANCE.notificationX.getValueInt() : 5;
         int baseY = HUD.INSTANCE != null ? HUD.INSTANCE.notificationY.getValueInt() : 5;
-        
+
         for (int i = 0; i < activeNotifications.size(); i++) {
             NotificationUtil notification = activeNotifications.get(i);
             if (notification == null) continue;

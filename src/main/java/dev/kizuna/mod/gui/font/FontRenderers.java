@@ -8,6 +8,7 @@ import java.util.Objects;
 
 public class FontRenderers {
     public static FontAdapter ui;
+    public static FontAdapter ui2;
     public static FontAdapter troll;
     public static FontAdapter icon;
     public static FontAdapter icon2;
@@ -21,6 +22,7 @@ public class FontRenderers {
         try {
             ui = createDefault(size, "LexendDeca-Regular");
             troll = createDefault(size + 49, "Jura-Light");
+            ui2 = FontRenderers.createDefault(size + 1.0f, "LexendDeca-Regular");
             icon = createDefault(size + 5, "icon");
             icon2 = createDefault(size + 4, "icon");
             icon3 = createDefault(size + 2, "icon");
