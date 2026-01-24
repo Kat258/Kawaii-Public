@@ -107,7 +107,6 @@ tasks.register('proguardJar', ProGuardTask) {
     // dontobfuscate()
     ignorewarnings()
     dontwarn('**')
-    dontshrink()
 
     keepattributes(
             'RuntimeVisibleAnnotations,' +
@@ -193,9 +192,9 @@ tasks.register('proguardHeavyObf', ProGuardTask) {
     dontshrink()
 
     // 使用字典文件
-    obfuscationdictionary('cum_names.txt')
-    classobfuscationdictionary('cum_names.txt')
-    packageobfuscationdictionary('cum_names.txt')
+    obfuscationdictionary('obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
+    classobfuscationdictionary('obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
+    packageobfuscationdictionaryobf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
 
     // 激进重载 (警告：可能导致某些 JVM 崩溃，但混淆效果极佳)
     overloadaggressively()
