@@ -192,9 +192,9 @@ tasks.register('proguardHeavyObf', ProGuardTask) {
     dontshrink()
 
     // 使用字典文件
-    obfuscationdictionary('obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
-    classobfuscationdictionary('obf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
-    packageobfuscationdictionaryobf-workspace\ZKM-21.0.0-Cracked\ZKM 21.0.0\names.txt')
+    obfuscationdictionary('obf-workspace/ZKM-21.0.0-Cracked/ZKM 21.0.0/names.txt')
+    classobfuscationdictionary('obf-workspace/ZKM-21.0.0-Cracked/ZKM 21.0.0/names.txt')
+    packageobfuscationdictionary('obf-workspace/ZKM-21.0.0-Cracked/ZKM 21.0.0/names.txt')
 
     // 激进重载 (警告：可能导致某些 JVM 崩溃，但混淆效果极佳)
     overloadaggressively()
