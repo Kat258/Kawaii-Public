@@ -67,6 +67,184 @@ publishing {
     }
 }
 
+import proguard.gradle.ProGuardTask
+
+tasks.register('proguardJar', ProGuardTask) {
+    dependsOn tasks.remapJar
+    doNotTrackState("ProGuardTask inputs are not fully trackable (e.g. JDK jmods).")
+
+    def inJar = tasks.remapJar.archiveFile.get().asFile
+    def outJar = file("$buildDir/libs/${project.archives_base_name}-${project.version}-optimized.jar")
+
+    injars(inJar.absolutePath)
+    outjars(outJar.absolutePath)
+
+    def javaHome = System.getProperty('java.home')
+    if (System.getProperty('java.version').startsWith('1.')) {
+        libraryjars "${javaHome}/lib/rt.jar"
+    } else {
+        def jmodsDir = file("${javaHome}/jmods")
+        if (jmodsDir.exists()) {
+            def jmodFiles = fileTree(jmodsDir).matching { include('*.jmod') }.files
+            if (!jmodFiles.isEmpty()) {
+                libraryjars(files(jmodFiles), jarfilter: '!**.jar', filter: '!module-info.class')
+            }
+        }
+    }
+
+    def mcIntermediaryJars = fileTree("$rootDir/obf-workspace/zkmLibs").matching {
+        include("minecraft-merged-intermediary-${project.minecraft_version}-*.jar")
+    }.files
+    if (!mcIntermediaryJars.isEmpty()) {
+        libraryjars(files(mcIntermediaryJars))
+    }
+
+    def libJars = new LinkedHashSet<File>()
+    libJars.addAll(configurations.compileClasspath.files)
+    libJars.addAll(configurations.runtimeClasspath.files)
+    libraryjars(files(libJars))
+
+    // dontobfuscate()
+    ignorewarnings()
+    dontwarn('**')
+    dontshrink()
+
+    keepattributes(
+            'RuntimeVisibleAnnotations,' +
+                    'RuntimeInvisibleAnnotations,' +
+                    'RuntimeVisibleParameterAnnotations,' +
+                    'RuntimeInvisibleParameterAnnotations,' +
+                    'AnnotationDefault,' +
+                    'Signature,' +
+                    'InnerClasses,' +
+                    'EnclosingMethod,' +
+                    'SourceFile,' +
+                    'LineNumberTable'
+    )
+
+    // 保持主类
+    keep('class dev.kizuna.Kawaii { *; }')
+    // 保持 Mixin 和 Accessor (因为 json 中通过字符串引用它们)
+    keep('class dev.kizuna.asm.** { *; }')
+    // 保持事件处理器方法及其注解属性
+    // "keepclassmembers" 仅保留方法本身，但如果注解属性（如 priority）的方法被混淆，反射获取注解时会出错
+    // 因此需要同时保留注解类本身的全部成员
+    keepclassmembers('class * { @dev.kizuna.api.events.eventbus.EventHandler *; }')
+    keep('class dev.kizuna.api.events.eventbus.EventHandler { *; }')
+    keep('class dev.kizuna.api.events.eventbus.EventListener { *; }')
+    // 保持所有枚举类的 values() 和 valueOf() 方法，这是 Enum.getEnumConstants() 所必需的
+    keepclassmembers('enum * { public static **[] values(); public static ** valueOf(java.lang.String); }')
+    // 保持 dev.kizuna 包下所有枚举类的字段和方法（防止配置读取失败及方法混淆）
+    keepclassmembers('enum dev.kizuna.** { *; }')
+    // 保持 Mixin 中添加的字段（例如 @Unique 字段）
+    // Mixin 字段可能被混淆或优化掉，导致运行时 NPE
+    keepclassmembers('class dev.kizuna.asm.** { *; }')
+    // 保持 Mixin 类的构造函数（<init>），防止字段初始化逻辑被移除
+    keepclassmembers('class dev.kizuna.asm.** { <init>(...); }')
+    // 保持所有类的类名不被混淆（但仍然会混淆方法和字段）
+    keep 'class dev.kizuna.**'
+
+    keep('class net.fabricmc.api.** { *; }')
+    keep('class net.fabricmc.loader.api.** { *; }')
+    keep('class org.spongepowered.asm.mixin.** { *; }')
+    keep('class com.mojang.blaze3d.** { *; }')
+    keep('class net.minecraft.** { *; }')
+}
+
+tasks.register('proguardHeavyObf', ProGuardTask) {
+    dependsOn tasks.remapJar
+    doNotTrackState("ProGuardTask inputs are not fully trackable (e.g. JDK jmods).")
+
+    def inJar = tasks.remapJar.archiveFile.get().asFile
+    def outJar = file("$buildDir/libs/${project.archives_base_name}-${project.version}-heavyObf.jar")
+
+    injars(inJar.absolutePath)
+    outjars(outJar.absolutePath)
+
+    def javaHome = System.getProperty('java.home')
+    if (System.getProperty('java.version').startsWith('1.')) {
+        libraryjars "${javaHome}/lib/rt.jar"
+    } else {
+        def jmodsDir = file("${javaHome}/jmods")
+        if (jmodsDir.exists()) {
+            def jmodFiles = fileTree(jmodsDir).matching { include('*.jmod') }.files
+            if (!jmodFiles.isEmpty()) {
+                libraryjars(files(jmodFiles), jarfilter: '!**.jar', filter: '!module-info.class')
+            }
+        }
+    }
+
+    def mcIntermediaryJars = fileTree("$rootDir/obf-workspace/zkmLibs").matching {
+        include("minecraft-merged-intermediary-${project.minecraft_version}-*.jar")
+    }.files
+    if (!mcIntermediaryJars.isEmpty()) {
+        libraryjars(files(mcIntermediaryJars))
+    }
+
+    def libJars = new LinkedHashSet<File>()
+    libJars.addAll(configurations.compileClasspath.files)
+    libJars.addAll(configurations.runtimeClasspath.files)
+    libraryjars(files(libJars))
+
+    // 高强度混淆配置
+    // dontobfuscate() // 确保开启混淆
+    ignorewarnings()
+    dontwarn('**')
+    dontshrink()
+
+    // 使用字典文件
+    obfuscationdictionary('cum_names.txt')
+    classobfuscationdictionary('cum_names.txt')
+    packageobfuscationdictionary('cum_names.txt')
+
+    // 激进重载 (警告：可能导致某些 JVM 崩溃，但混淆效果极佳)
+    overloadaggressively()
+
+    // 确保同名成员混淆一致 (对多态支持好)
+    useuniqueclassmembernames()
+
+    keepattributes(
+            'RuntimeVisibleAnnotations,' +
+                    'RuntimeInvisibleAnnotations,' +
+                    'RuntimeVisibleParameterAnnotations,' +
+                    'RuntimeInvisibleParameterAnnotations,' +
+                    'AnnotationDefault,' +
+                    'Signature,' +
+                    'InnerClasses,' +
+                    'EnclosingMethod,' +
+                    'SourceFile,' +
+                    'LineNumberTable'
+    )
+
+    // 保持主类
+    keep('class dev.kizuna.Kawaii { *; }')
+    // 保持 Mixin 和 Accessor
+    keep('class dev.kizuna.asm.** { *; }')
+    // 保持事件处理器
+    keepclassmembers('class * { @dev.kizuna.api.events.eventbus.EventHandler *; }')
+    keep('class dev.kizuna.api.events.eventbus.EventHandler { *; }')
+    keep('class dev.kizuna.api.events.eventbus.EventListener { *; }')
+    // 保持枚举反射方法
+    keepclassmembers('enum * { public static **[] values(); public static ** valueOf(java.lang.String); }')
+    // 保持 dev.kizuna 枚举
+    keepclassmembers('enum dev.kizuna.** { *; }')
+    // 保持 Mixin 成员
+    keepclassmembers('class dev.kizuna.asm.** { *; }')
+    keepclassmembers('class dev.kizuna.asm.** { <init>(...); }')
+    
+    // 仍然保持类名不被重命名（用户要求）
+    keep 'class dev.kizuna.**'
+
+    keep('class net.fabricmc.api.** { *; }')
+    keep('class net.fabricmc.loader.api.** { *; }')
+    keep('class org.spongepowered.asm.mixin.** { *; }')
+    keep('class com.mojang.blaze3d.** { *; }')
+    keep('class net.minecraft.** { *; }')
+}
+
+tasks.assemble.dependsOn(tasks.named('proguardJar'))
+tasks.assemble.dependsOn(tasks.named('proguardHeavyObf'))
+
 task copyZkmLibs(type: Copy) {
     into "$buildDir/zkmLibs"
     from configurations.runtimeClasspath

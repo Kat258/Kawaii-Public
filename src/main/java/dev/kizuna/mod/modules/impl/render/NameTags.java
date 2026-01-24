@@ -243,7 +243,7 @@ public class NameTags extends Module {
             if (isGod) {
                 if (godTime > 0) {
                     int sec = (int) Math.ceil(godTime / 1000.0);
-                    sb.append("§e").append("RS ").append(sec).append("s ");
+                    sb.append("§e").append("r").append(sec).append("s ");
                 } else if (godTime == -1) {
                     sb.append("§eRS ? ");
                 }

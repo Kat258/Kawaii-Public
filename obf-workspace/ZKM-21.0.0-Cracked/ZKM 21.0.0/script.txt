@@ -141,7 +141,7 @@ classpath   "..\..\zkmLibs\httpclient-4.5.13.jar"
 ignoreMissingReferences dev.kizuna.**;
 
 open        openNestedArchives=false
-            "..\..\..\build\libs\Kawaii-Fabric-0.4.2.jar";
+            "..\..\..\build\libs\kawaii-0.4.2-heavyObf.jar";
 
 exclude     *.<link>accesswidener and
             kawaii.accesswidener. and
@@ -250,9 +250,9 @@ obfuscate   changeLogFileIn=""
             encryptIntegerConstants=aggressive
             encryptLongConstants=normal
             newClassNameFile="names.txt"
-            newMethodNameFile="names.txt"
-            newFieldNameFile="names.txt"
-            newPackageNameFile="names.txt"
+            newMethodNameFile="cum_names.txt"
+            newFieldNameFile="cum_names.txt"
+            newPackageNameFile="cum_names.txt"
             mixedCaseClassNames=true
             aggressiveMethodRenaming=true
             randomize=true
