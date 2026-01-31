@@ -1,1 +1,1 @@
-java -jar ZKM.jar script.txt
+"E:\graalvm-jdk-25.0.1+8.1\bin\java.exe" -jar ZKM.jar script.txt

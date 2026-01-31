@@ -23,6 +23,7 @@ import dev.kizuna.mod.gui.elements.SelfHUD;
 import dev.kizuna.mod.gui.elements.TargetHUD;
 import dev.kizuna.mod.modules.Module;
 import dev.kizuna.mod.modules.impl.client.ClickGui;
+import dev.kizuna.mod.modules.impl.client.HudEditor;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.util.math.MatrixStack;
 
@@ -77,7 +78,13 @@ public class GuiManager
 
     public void onUpdate() {
         if (this.isClickGuiOpen()) {
+            boolean hudEditorOn = HudEditor.INSTANCE.isOn();
             for (ClickGuiTab tab : this.tabs) {
+                if (hudEditorOn) {
+                    if (tab.getCategory() != Module.Category.Hud) continue;
+                } else {
+                    if (tab.getCategory() == Module.Category.Hud) continue;
+                }
                 tab.update(this.mouseX, this.mouseY);
             }
             this.armorHud.update(this.mouseX, this.mouseY);
@@ -128,6 +135,11 @@ public class GuiManager
             }
         }
         for (ClickGuiTab tab : this.tabs) {
+            if (HudEditor.INSTANCE.isOn()) {
+                if (tab.getCategory() != Module.Category.Hud) continue;
+            } else {
+                if (tab.getCategory() == Module.Category.Hud) continue;
+            }
             tab.draw(drawContext, tickDelta, this.getColor());
         }
         matrixStack.pop();

@@ -36,6 +36,11 @@ public class ClickGuiTab extends Tab {
 		this(category.name(), x, y);
 		this.category = category;
 	}
+
+    public Module.Category getCategory() {
+        return category;
+    }
+
 	public ArrayList<ModuleComponent> getChildren() {
 		return children;
 	}
