@@ -1,12 +1,4 @@
-## License
-GNU General Public License v3
-## Credits
-- https://github.com/coltonk9043/Aoba-MC-Hacked-Client
-- https://github.com/qualterz/lookaround
-- https://github.com/Pan4ur/ThunderHack-Recode
-- https://github.com/Ladysnake/Satin
-- https://github.com/MeteorDevelopment/meteor-client
-- https://github.com/cabaletta/baritone
-- https://github.com/The-Fireplace-Minecraft-Mods/In-Game-Account-Switcher
-
-bbbb There are some texts.
+無人在意的狗屎
+由於李浩然呼叫mark刪倉庫所以最後一次提交是1/31
+lol
+請不要使用使用這坨狗屎。因爲它夾雜了mark編寫的能將你電腦爆破的渲染。
